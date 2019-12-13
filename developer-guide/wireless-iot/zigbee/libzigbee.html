@@ -1,0 +1,1573 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='libzigbee.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: ARTIK 5/7 libzigbee' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: ARTIK 5/7 libzigbee' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: ARTIK 5/7 libzigbee</title>
+    <link href="..\..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_developer-guide documentation_developer-guide_wireless-iot documentation_developer-guide_wireless-iot_zigbee documentation_developer-guide_wireless-iot_zigbee_libzigbee' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="true">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="index.htm" data-directory="true" data-name="zigbee" aria-expanded="true">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false" class="active">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="libzigbee-api-programming">libzigbee API Programming</h1>
+            
+            <p>The <code>libartik-sdk-zigbee</code> library that comes in the ARTIK SDK is written in C, C++, and JavaScript. It provides generic ZigBee coordinator/router capabilities. You  use the ARTIK IDE to build applications for it on your development PC.</p>
+            
+            <p>Here we discuss the alternative <code>libzigbee</code> library for advanced users.  Written in straight C for more compact code, it implements specific functionality for ZigBee device-side hardware. Typically you will use the <code>gcc</code> compiler on your ARTIK board to build your application.</p>
+            
+            <p>This guide familiarizes you with <code>libzigbee</code> by walking you through development of a basic ZigBee application with two options – "Remote Control" and "Light Sensor" – where the Light Sensor reports its measured value to the Remote Control.</p>
+            
+            <p>Support for the following devices is currently included in the <code>libzigbee</code> library.</p>
+            
+            <ul>
+              <li>On/Off Switch, Level Control Switch</li>
+              <li>On/Off Light, Dimmable Light</li>
+              <li>Light Sensor</li>
+              <li>Remote Control</li>
+              <li>Occupancy Sensor</li>
+              <li>Temperature Sensor</li>
+              <li>IAS Control and Indication Equipment</li>
+              <li>Thermostat (controller and humidity sensor)</li>
+            </ul>
+            
+            <p>More devices will be added as requested.</p>
+            
+            <h2 id="preparation">Preparation</h2>
+            
+            <p>Before you get started developing libzigbee applications, prepare your development environment and run the test programs to get familiar with them.</p>
+            
+            <p class="warning">If your module image is configured to use Thread or Edge Node Manager, <strong>disable</strong> the Thread daemon before proceeding.<br>
+            <code>systemctl stop artik-ip-driver</code>
+            <code>systemctl restart zigbee-daemon </code></p>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu-32" role="tab" data-toggle="tab">Ubuntu 32-bit</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#ubuntu-64" role="tab" data-toggle="tab">Ubuntu 64-bit</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#fedora" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu-32">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for <strong>32-bit</strong> Ubuntu platforms (ARTIK 530).</p>
+            
+                  <ol>
+            
+            
+            <li>
+            Check that you are using the <a href="..\..\update-image\updating-artik-image.html" target="artikle">latest ARTIK image</a> version.
+            </li>
+            
+            
+            <li>
+            
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/libzigbee-ubuntu-32bit/download" download="">
+            	ARTIK 530 (32-bit)
+              </a>
+            </p>
+            
+            
+            </li>
+            <li>
+            On your ARTIK board, start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br>&#x000A;apt install build-essential</code>
+            
+            </li>
+            <li>
+            libzigbee uses <code>glib</code>. Install the development package on your ARTIK board to create/build your own applications.<br>
+            
+            <code> apt-get install libglib2.0-dev</code>
+            </li>
+            <li>
+            If you have installed a prior version of libzigbee, remove it now to prevent conflicts.<br>
+            <code>dpkg --purge --force-all libzigbee:armhf libzigbee-dev:armhf zigbeed:armhf</code>
+            </li>
+            <li>
+            Install the 32-bit deb packages. <br>
+            
+            <code> &#x000A;dpkg -i libzigbee*.deb<br>&#x000A;dpkg -i zigbeed*.deb<br></code>
+            </li>
+            
+            
+            
+            </ol>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="ubuntu-64">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for <strong>64-bit</strong> Ubuntu platforms (ARTIK 710).</p>
+            
+                  <ol>
+            
+            
+            <li>
+            Check that you are using the <a href="..\..\update-image\updating-artik-image.html" target="artikle">latest ARTIK image</a> version.
+            </li>
+            
+            
+            <li>
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/libzigbee-ubuntu-64bit/download" download="">
+            	ARTIK 710 (64-bit)
+              </a>
+            </p>
+            
+            </li>
+            <li>
+            On your ARTIK board, start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br>&#x000A;apt install build-essential</code>
+            
+            </li>
+            <li>
+            libzigbee uses <code>glib</code>. Install the development package on your ARTIK board to create/build your own applications.<br>
+            
+            <code> apt-get install libglib2.0-dev</code>
+            </li>
+            
+            <li>
+            If you have installed a prior version of libzigbee, remove it now to prevent conflicts.<br>
+            <code>dpkg --purge --force-all libzigbee:arm64 libzigbee-dev:arm64 zigbeed:arm64</code>
+            </li>
+            
+            <li>
+            
+            Install the 64-bit deb packages.<br>
+            <code>&#x000A;dpkg -i libzigbee*.deb<br>&#x000A;dpkg -i zigbeed*.deb<br></code>
+            </li>
+            
+            
+            
+            </ol>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for Fedora 24 platforms.</p>
+            
+                  <ol>
+            
+            
+            <li>
+            Check that you are using the <a href="..\..\update-image\updating-artik-image.html" target="artikle">latest ARTIK image</a> version.
+            </li>
+            
+            
+            <li>
+            
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/libzigbee-fedora/download" download="">
+            	ARTIK 520/530/710
+              </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            
+            
+            
+            </li>
+            <li>
+            
+            On your ARTIK board, start as always with a general update.
+            <br>
+            <code>dnf upgrade</code>
+            </li>
+            <li>
+            
+            libzigbee uses <code>glib</code>. Install the development package on your ARTIK board to create/build your own applications.<br>
+            <code>dnf install glib2-devel</code>
+            </li>
+            
+            <li>
+            Install the rpm packages.<br>
+            <code>&#x000A;rpm -Uvh --force libzigbee*.rpm<br>&#x000A;rpm -Uvh --force zigbeed*.rpm</code>
+            </li>
+            </ol>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <p>Once you have the packages installed, you'll want to build the utility programs.</p>
+            
+            <p>First, go to the directory where the sample code has been installed.<br></p>
+            
+            <p><code>cd /usr/share/zigbee_test/</code></p>
+            
+            <p>Now you can compile the sample applications using the following commands.<br>
+            <br>
+            <code>gcc zigbee_test.c zigbee_test_common.c \<br>&#x000A;-o zigbee-test `pkg-config --cflags --libs zigbee`<br>&#x000A;<br>&#x000A;gcc general_testing_remote_control.c \<br>&#x000A;-o remote-control `pkg-config --cflags --libs zigbee`<br>&#x000A;<br>&#x000A;gcc general_testing_light_sensor.c \<br>&#x000A;-o light-sensor `pkg-config --cflags --libs zigbee`<br>&#x000A;<br>&#x000A;gcc sample_IAS_CIE_ONOFF_SWITCH.c \<br>&#x000A;-o ias-test `pkg-config --cflags --libs zigbee`</code><br><br></p>
+            
+            <h3 id="using-the-example-programs">Using the example programs</h3>
+            
+            <p><strong>Remote Control and Light Sensor demo.</strong> You'll need two ARTIK Linux boards. Run the Target (<code>./remote-control</code>) on the first, then run the Initiator (<code>./light-sensor</code>) on the other, to start sending/receiving reports.</p>
+            
+            <p><strong>ZigBee Test.</strong> You'll need one ARTIK Linux board plus other devices of your choice to join the network. Run the <code>./zigbee-test</code> program. To test against the A030 Z3 Light project, for example, you would want to be an on-off switch:<br>
+            1. Start as 'new' if asked<br>
+            2. Select on-Off switch<br>
+            3. Accept default endpoint<br>
+            4. Choose <code>[0]</code> [Enter] to go to main page<br>
+            5. Leave network<br>
+            6. Form network<br>
+            7. Apply power to your Z3Light board and it will join automatically<br>
+            8. Choose <code>Discover devices</code><br>
+            9. Go to the Testing page<br>
+            10. Use Auto test or On-Off Switch test to try out your Z3Light.</p>
+            
+            <p class="info">Note that this version of <span class="code-font">zigbee-test</span> is <strong>not the same</strong> as the pre-built one that comes with the ZigBee API (in the <span class="code-font">/usr/bin</span> directory). Call it in the <span class="code-font">/usr/share/zigbee-test</span> directory where you built it.</p>
+            
+            <p><strong>IAS-CIE On/Off Test.</strong> See how easy and compact a <code>libzigbee</code> application can be. You'll need one ARTIK Linux board, one IAS CIE device (such as an Iris door contact sensor), and the <a href="zigbee-030.html">A030 Z3 Light project</a>. Refer to the <a href="#sensor-bound-to-light">Sensor bound to light</a> section for details.</p>
+            
+            <h2 id="creating-devices">Creating Devices</h2>
+            
+            <p>Creating a ZigBee target device requires two steps: giving it an endpoint handle for reference, and then initializing it.</p>
+            
+            <h3 id="create-endpoint-handle">Create endpoint handle</h3>
+            <p>Call API <code>zigbee_set_local_endpoint</code> to set the local endpoint information. One device (target) can include multiple endpoints (id: 1~239).</p>
+            
+            <table><tr><td class="wysiwyg-macro-body">
+            <pre>zigbee_error ret = EZ_ERROR;&#x000A;zigbee_local_endpoint_info endpoint_info;&#x000A;&#x000A;memset(&amp;endpoint_info, 0, sizeof(zigbee_local_endpoint_info));&#x000A;&#x000A;endpoint_info.endpoints[endpoint_info.count].profile = ZIGBEE_PROFILE_HA;&#x000A;endpoint_info.endpoints[endpoint_info.count].endpoint_id = ENDPOINT_REMOTE_CONTROL;&#x000A;endpoint_info.endpoints[endpoint_info.count].device_id = DEVICE_REMOTE_CONTROL;&#x000A;endpoint_info.count++;&#x000A;&#x000A;/* DEVICE_IAS_CIE endpoint below is to communicate with products that require IAS Zone client cluster */&#x000A;endpoint_info.endpoints[endpoint_info.count].profile = ZIGBEE_PROFILE_HA;&#x000A;endpoint_info.endpoints[endpoint_info.count].endpoint_id = ENDPOINT_IAS_CIE;&#x000A;endpoint_info.endpoints[endpoint_info.count].device_id = DEVICE_IAS_CIE;&#x000A;endpoint_info.count++;&#x000A;&#x000A;ret = <font color="blue">zigbee_set_local_endpoint</font>(&amp;endpoint_info);&#x000A;if (EZ_OK != ret)&#x000A;  fprintf(stderr, "Set local endpoint error %d\n", ret);&#x000A;&#x000A;return ret;</pre>
+            
+            </td></tr></table>
+            
+            <h3 id="initialize-device">Initialize device</h3>
+            
+            <p>Before using a device, you need to initialize it. Use API <code>zigbee_initialize</code> to initialize the device and set the user callback, which type is ZigBee response callback function.   The first parameter is response callback, it can receive response information such as command results.</p>
+            
+            <table><tr><td>
+            
+            <pre>zigbee_error ret = EZ_ERROR;&#x000A;&#x000A;static void _on_callback(void *user_data, zigbee_response_type response_type, void *payload)&#x000A;{&#x000A;  switch (response_type) {&#x000A;    case ZIGBEE_RESPONSE_NOTIFICATION:&#x000A;      ...&#x000A;      break;&#x000A;    case ZIGBEE_RESPONSE_NETWORK_NOTIFICATION:&#x000A;      ...&#x000A;      break;&#x000A;    case ZIGBEE_RESPONSE_DEVICE_DISCOVER:&#x000A;      ...&#x000A;      break;&#x000A;    case .../* there are many response types */&#x000A;            /* you can check the enum zigbee_response_type*/&#x000A;      ...&#x000A;      break;&#x000A;    default:&#x000A;      break;&#x000A;  }&#x000A;}&#x000A;&#x000A;/* Initialize device */&#x000A;ret = <font color="blue">zigbee_initialize</font>(_on_callback, NULL);&#x000A;if (EZ_OK != ret)&#x000A;  goto free_quit;</pre></td></tr></table>
+            
+            <h2 id="handling-network-operations">Handling Network Operations</h2>
+            
+            <p>A ZigBee network has four basic operations: Form, Permit Join, Join, and Leave. Users can additionally choose between the form/join approach and EZ-Mode commissioning, which is just a way to automate the form/join process. To implement all these operations, you need the following seven APIs.</p>
+            
+            <table><tbody><tr><th>API Name</th><th>API Description</th></tr><tr><td>
+            <pre><font color="blue">zigbee_network_start</font></pre></td><td>Start network operation after re-starting the application (deprecated)</td></tr><tr><td>
+            <pre><font color="blue">zigbee_network_form</font></pre></td><td>Form a new network as a coordinator</td></tr><tr><td>
+            <pre><font color="blue">zigbee_network_join</font></pre></td><td>Join to the existing network formed by other coordinator</td></tr><tr><td>
+            <pre><font color="blue">zigbee_network_leave</font></pre></td><td>Leave from the joined network</td></tr><tr><td>
+            <pre><font color="blue">zigbee_network_permitjoin</font></pre></td><td>Allow other devices joining in the formed network in certain duration of time<br></td></tr><tr><td colspan="1">
+            <pre><font color="blue">zigbee_device_discover</font></pre></td><td colspan="1">Request device/service discovery</td></tr><tr><td colspan="1">
+            <pre><font color="blue">zigbee_ezmode_commissioning</font></pre></td><td colspan="1">Start/Stop EZ-Mode commissioning on some endpoint as target/initiator</td></tr></tbody></table>
+            
+            <p>Here are the details for putting together a ZigBee network.</p>
+            
+            <h3 id="form-and-join-network">Form and Join Network</h3>
+            
+            <table><tbody>
+            <tr><th>Coordinator</th><th>Router</th></tr>
+            
+            
+            
+            
+            <tr><td colspan="1"><p>Call <font color="blue">zigbee_network_start</font> to initialize network operation</p>
+            
+            
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#net-start">
+            Network start
+            </a>
+            
+            <div class="collapse" id="net-start">
+            
+            
+            <pre>&#x000A;&#x000A;zigbee_error ret = EZ_ERROR;&#x000A;&#x000A;ret = zigbee_network_start(state);&#x000A;if (EZ_OK != ret)&#x000A;	printf("network_start error %d\n", ret);</pre>
+            </div>
+            
+            </td>
+            <td colspan="1"><p>Source code same as coordinator</p></td></tr>
+            <tr><td colspan="1" class="confluenceTd"><p>Call <font color="blue">zigbee_network_form</font> to form a network.</p>
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#net-form">
+            Network form
+            </a>
+            
+            <div class="collapse" id="net-form">
+            
+            <pre>&#x000A;&#x000A;zigbee_error ret = EZ_ERROR;&#x000A;&#x000A;ret = zigbee_network_form();&#x000A;if (ret == S_OK)&#x000A;    printf("Wait for response\n");&#x000A;else&#x000A;    printf("Network form failed: %d\n", ret);</pre>
+            
+            </div>
+            
+            <p>After doing so, the coordinator device callback will receive<br>&quot;ZIGBEE_RESPONSE_NETWORK<br>_NOTIFICATION&quot; with signal<br><strong>ZIGBEE_NETWORK_FIND_FORM</strong>.</p>
+            
+            </td>
+            
+            <td colspan="1" class="confluenceTd">
+            
+            </td></tr>
+            
+            <tr>
+            <td><p>Call <font color="blue">zigbee_network_permitjoin</font> to allow other devices to join in the network.</p>
+            
+            
+            
+            
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#pjoin">
+            Permit Join
+            </a>
+            
+            <div class="collapse" id="pjoin">
+            
+            
+            <pre>&#x000A;&#x000A;#define EASY_PJOIN_DURATION			0x3C   /* permit join duration time */&#x000A;static void _on_callback(void *user_data,&#x000A;             zigbee_response_type response_type,&#x000A;             void *payload)&#x000A;{&#x000A;    switch (response_type) {&#x000A;        case ZIGBEE_RESPONSE_NETWORK_NOTIFICATION:&#x000A;            network_notification = *((zigbee_network_notification *) payload);&#x000A;            switch (network_notification) {&#x000A;                case ZIGBEE_NETWORK_FIND_FORM:&#x000A;                    showln("NETWORK_NOTIFICATION: FIND FORM SUCCESS");&#x000A;          ret = zigbee_network_permitjoin(EASY_PJOIN_DURATION);&#x000A;          if (ret != EZ_OK)&#x000A;            fprintf(stderr, "zigbee_network_permitjoin failed:%s\n", zigbee_error_msg(ret));&#x000A;          break;&#x000A;                ...&#x000A;                default:&#x000A;            }&#x000A;        ...&#x000A;        default:&#x000A;    }&#x000A;}</pre>
+            
+            
+            </div>
+            
+            </td>
+            <td><p>Once joining is permitted, call <font color="blue">zigbee_network_join</font> to join in the network.</p>
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#join">
+            Join
+            </a>
+            
+            <div class="collapse" id="join">
+            
+            <pre>&#x000A;&#x000A;zigbee_error ret = EZ_ERROR;&#x000A;&#x000A;ret = zigbee_network_join();&#x000A;if (ret == S_OK)&#x000A;    printf("Wait for response\n");&#x000A;else&#x000A;    printf("Network join failed: %d\n", ret);</pre>
+            
+            </div></td>
+            </tr>
+            
+            </tbody></table>
+            
+            <h3 id="device-discovery">Device Discovery</h3>
+            
+            <table><tbody>
+            <tr><th>Coordinator</th><th>Router</th></tr>
+            
+            
+            
+            <tr><td><p>
+            After router joins the network, the coordinator device will receive<br>“<span>ZIGBEE_RESPONSE_NETWORK<br>_NOTIFICATION</span>” with signal<br><strong>ZIGBEE_NETWORK_JOIN</strong>.</p><p>Coordinator needs to call <font color="blue">zigbee_device_discover</font> to update devices and fetch the remote devices information.</p>
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#discover-c">
+            Discover - coordinator
+            </a>
+            
+            <div class="collapse" id="discover-c">
+            
+            <pre>&#x000A;&#x000A;void _on_callback(void *user_data,&#x000A;                  zigbee_response_type response_type,&#x000A;                  void *payload)&#x000A;{&#x000A;  switch (response_type) {&#x000A;    case ZIGBEE_RESPONSE_NETWORK_NOTIFICATION:&#x000A;      network_notification = *((zigbee_network_notification *) payload);&#x000A;      switch (network_notification) {&#x000A;        case ZIGBEE_NETWORK_JOIN:&#x000A;          showln("NETWORK_NOTIFICATION: JOIN");&#x000A;          if (!conducted_by_commissioning) {&#x000A;            showln("Device discovering ...");&#x000A;            ret = zigbee_device_discover();&#x000A;            if (ret != EZ_OK)&#x000A;              fprintf(stderr, "Device discover failed:%s\n", zigbee_error_msg(ret));&#x000A;          }&#x000A;          break;&#x000A;        ...&#x000A;        default:&#x000A;       }&#x000A;     ...&#x000A;  default:&#x000A;  }&#x000A;}</pre>
+            
+            </div>
+            
+            
+            </td><td class="confluenceTd"><p>After router calls <font color="blue">zigbee_network_join</font>, the router callback will receive<br>“ZIGBEE_RESPONSE_NETWORK<br>_NOTIFICATION”  with  signal<br><strong>ZIGBEE_NETWORK_FIND_JOIN</strong>.</p><p>Router needs to call <font color="blue">zigbee_device_discover</font> to update devices and fetch the remote devices information.</p>
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#discover-r">
+            Discover - router
+            </a>
+            
+            <div class="collapse" id="discover-r">
+            
+            
+            <pre>&#x000A;&#x000A;void _on_callback(void *user_data,&#x000A;                  zigbee_response_type response_type,&#x000A;                  void *payload)&#x000A;{&#x000A;    switch (response_type) {&#x000A;        case ZIGBEE_RESPONSE_NETWORK_NOTIFICATION:&#x000A;            network_notification = *((zigbee_network_notification *) payload);&#x000A;            switch (network_notification) {&#x000A;                case ZIGBEE_NETWORK_FIND_JOIN:&#x000A;                    if (!conducted_by_commissioning) {&#x000A;						showln("Device discovering ...");&#x000A;						ret = zigbee_device_discover();&#x000A;						if (ret != EZ_OK)&#x000A;							fprintf(stderr, "Device discover failed:%s\n", zigbee_error_msg(ret));&#x000A;					}&#x000A;					break;&#x000A;                ...&#x000A;                default:&#x000A;            }&#x000A;        ...&#x000A;        default:&#x000A;    }&#x000A;}</pre>
+            
+            </div>
+            
+            </td></tr><tr><td colspan="1" class="confluenceTd"><p>The discovery response will be received after <font color="blue">zigbee_device_discover</font>.</p>
+            
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#disc-resp-c">
+            Discovery response
+            </a>
+            
+            <div class="collapse" id="disc-resp-c">
+            
+            <pre>&#x000A;&#x000A;static void _on_callback(void *user_data,&#x000A;						 zigbee_response_type response_type,&#x000A;						 void *payload)&#x000A;{&#x000A;    switch (response_type) {&#x000A;        case ZIGBEE_RESPONSE_DEVICE_DISCOVER:&#x000A;            device_discovery = (zigbee_device_discovery *) payload;&#x000A;			switch (device_discovery-&gt;status) {&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_START:&#x000A;				showln("Device discovery start");&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_FOUND:&#x000A;				showln("Device discovery found:");&#x000A;				show_device(&amp;(device_discovery-&gt;device));&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_IN_PROGRESS:&#x000A;				showln("Device discovery in progress");&#x000A;				showln("Done");&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_DONE:&#x000A;				showln("Done");&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_NO_DEVICE:&#x000A;				showln("Device discovery no device");&#x000A;				showln("Done");&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_ERROR:&#x000A;				showln("Device discovery error");&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_CHANGED:&#x000A;				showln("Device discovery changed:");&#x000A;				show_device(&amp;(device_discovery-&gt;device));&#x000A;				break;&#x000A;			case ZIGBEE_DEVICE_DISCOVERY_LOST:&#x000A;				showln("Device discovery lost:");&#x000A;				show_device(&amp;(device_discovery-&gt;device));&#x000A;				break;&#x000A;			default:&#x000A;				showln("Discovery device unknown result");&#x000A;				showln("Done");&#x000A;				break;&#x000A;			}&#x000A;			break;&#x000A;        ...&#x000A;        default:&#x000A;    }&#x000A;}</pre>
+            
+            </div>
+            
+            </td>
+            
+            <td colspan="1" class="confluenceTd"><p>Source code same as coordinator</p></td></tr>
+            
+            
+            </tbody></table>
+            
+            <h3 id="leave-network">Leave Network</h3>
+            
+            <table><tbody>
+            <tr><th>Coordinator</th><th>Router</th></tr>
+            
+            
+            <tr><td colspan="1" class="confluenceTd"><p>If device wants to leave current network, it only needs to call <font color="blue">zigbee_network_leave</font></p>
+            
+            
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#leave">
+            Leave
+            </a>
+            
+            <div class="collapse" id="leave">
+            
+            
+            <pre>&#x000A;&#x000A;zigbee_error ret = EZ_ERROR;&#x000A; &#x000A;ret = zigbee_network_leave();&#x000A;if (ret != EZ_OK)&#x000A;	printf("Network leave failed: %d\n", ret);</pre>
+            </div>
+            
+            <p> </p>
+            
+            
+            
+            </td><td colspan="1" class="confluenceTd"><p>If device wants to leave current network, it only needs to call <font color="blue">zigbee_network_leave</font></p><p align="left">Source code same as coordinator.</p><p align="left"> </p> </td></tr>
+            <tr>
+            <td>
+            <p>If router leaves network, the coordinator device will receive<br>&quot;ZIGBEE_RESPONSE_NETWORK<br>_NOTIFICATION&quot;  with  signal<br><strong>ZIGBEE_NETWORK_LEAVE</strong>.</p>
+            
+            
+            
+            <a class="btn btn-primary" role="button" data-toggle="collapse" href="#callback">
+            Callback
+            </a>
+            
+            <div class="collapse" id="callback">
+            
+            
+            <pre>&#x000A;&#x000A;void _on_callback(void *user_data,&#x000A;                  zigbee_response_type response_type,&#x000A;                  void *payload)&#x000A;{&#x000A;  switch (response_type) {&#x000A;    case ZIGBEE_RESPONSE_NETWORK_NOTIFICATION:&#x000A;      network_notification = *((zigbee_network_notification *) payload);&#x000A;      switch (network_notification) {&#x000A;        case ZIGBEE_NETWORK_LEAVE:&#x000A;          printf("NETWORK_NOTIFICATION: LEAVE\n");&#x000A;          break;&#x000A;        ...&#x000A;        default:&#x000A;      }&#x000A;    ...&#x000A;    default:&#x000A;  }&#x000A;}</pre>
+            
+            </div>
+            
+            </td>
+            <td>
+            
+            The router cannot receive any notification after it leaves the network.
+            </td>
+            
+            
+            </tr>
+            
+            
+            
+            </tbody></table>
+            
+            <p> </p>
+            <p>The following sequence shows you how to use EZ-Mode commissioning.</p>
+            
+            <h3 id="ez-mode-commissioning-start-by-target">EZ-Mode Commissioning Start by Target</h3>
+            
+            <p>A target devices starts the EZ-Mode commissioning process as follows.</p>
+            
+            <pre>...&#x000A;ret = <font color="blue">zigbee_ezmode_commissioning</font>(endpoint_id, false, true); &#x000A;...</pre>
+            
+            <p>After target start, device will receive "ZIGBEE_RESPONSE_COMMISSIONING_STATUS" response with signals<br>
+            <strong>COMMISSIONING_NETWORK_STEERING_FORM</strong><br>
+            <strong>COMMISSIONING_NETWORK_STEERING_SUCCESS</strong><br>
+            <strong>COMMISSIONING_TARGET_SUCCESS</strong></p>
+            
+            <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#comm-c">
+            Commissioning - Target
+            </a></p>
+            
+            <div class="collapse" id="comm-c">
+            
+              <pre>static void _on_commissioning_status(zigbee_commissioning_state commissioning_state)&#x000A;{&#x000A;  switch (commissioning_state) {&#x000A;    case COMMISSIONING_ERROR:&#x000A;      printf("Commissioning: error\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_ERR_IN_PROGRESS:&#x000A;      printf("Commissioning: error in progress, please wait\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_FORM:&#x000A;      printf("Commissioning: network steering form\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_SUCCESS:&#x000A;      printf("Commissioning: network steering success\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_FAILED:&#x000A;      printf("Commissioning: network steering failed\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_WAIT_NETWORK_STEERING:&#x000A;      printf("Commissioning: wait for network steering\n");&#x000A;      break;&#x000A;    case COMMISSIONING_TARGET_SUCCESS:&#x000A;      printf("Commissioning: target success, Please run initiator\n");&#x000A;      _device_discover();&#x000A;      break;&#x000A;    case COMMISSIONING_TARGET_FAILED:&#x000A;      printf("Commissioning: target failed\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_TARGET_STOP:&#x000A;      printf("Commissioning: target stopped\n");&#x000A;      break;&#x000A;    default:&#x000A;      printf("Commissioning: Other status\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;  }&#x000A;}&#x000A; &#x000A;static void _on_callback(void *user_data, zigbee_response_type response_type, void *payload)&#x000A;{&#x000A;  switch (response_type) {&#x000A;    case ZIGBEE_RESPONSE_COMMISSIONING_STATUS:&#x000A;      _on_commissioning_status(*(zigbee_commissioning_state *)payload);&#x000A;      break;&#x000A;    ...&#x000A;    default:&#x000A;      break;&#x000A;  }&#x000A;}</pre>
+            
+            </div>
+            
+            <p>After the commissioning process, device needs to call the discovery API to update devices.</p>
+            
+            <h3 id="ez-mode-commissioning-start-by-initiator">EZ-Mode Commissioning Start by Initiator</h3>
+            
+            <p>After the target device receives <strong>COMMISSIONING_TARGET_SUCCESS</strong>,  the initiator device can start EZ-Mode commissioning as follows.</p>
+            
+            <pre>...&#x000A;ret = <font color="blue">zigbee_ezmode_commissioning</font>(endpoint_id, true, true);&#x000A;...</pre>
+            
+            <p>After initiator start, the device will receive<br>
+            "ZIGBEE_RESPONSE_COMMISSIONING_STATUS"  with  signal<br>
+            <strong>COMMISSIONING_NETWORK_STEERING_SUCCESS</strong>.</p>
+            
+            <p>Then the initiator device will receive these responses:<br>
+            "ZIGBEE_RESPONSE_COMMISSIONING_TARGET_INFO"<br>
+            and<br>
+            "ZIGBEE_RESPONSE_COMMISSIONING_BOUND_INFO"</p>
+            
+            <p>Finally, the initiator device receives the <strong>COMMISSIONING_INITIATOR_SUCCESS</strong> signal indicating that the commissioning process has finished.</p>
+            
+            <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#comm-cb">
+            Commissioning - Initiator
+            </a></p>
+            
+            <div class="collapse" id="comm-cb">
+            
+              <pre>static void _on_commissioning_status(zigbee_commissioning_state commissioning_state)&#x000A;{&#x000A;  switch (commissioning_state) {&#x000A;    case COMMISSIONING_ERROR:&#x000A;      printf("Commissioning: error\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_ERR_IN_PROGRESS:&#x000A;      printf("Commissioning: error in progress, please wait\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_FORM:&#x000A;      printf("Commissioning: network steering form\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_SUCCESS:&#x000A;      printf("Commissioning: network steering success\n");&#x000A;      break;&#x000A;    case COMMISSIONING_NETWORK_STEERING_FAILED:&#x000A;      printf("Commissioning: network steering failed\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_WAIT_NETWORK_STEERING:&#x000A;      printf("Commissioning: wait for network steering\n");&#x000A;      break;&#x000A;    case COMMISSIONING_INITIATOR_SUCCESS:&#x000A;      printf("Commissioning: initiator success\n");&#x000A;      _show_operations();&#x000A;      break;&#x000A;    case COMMISSIONING_INITIATOR_FAILED:&#x000A;      printf("Commissioning: initiator failed\n");&#x000A;      printf("Please run target first, application exit\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;    case COMMISSIONING_INITIATOR_STOP:&#x000A;      printf("Commissioning: initiator stopped\n");&#x000A;      break;&#x000A;    default:&#x000A;      printf("Commissioning: Other status\n");&#x000A;      _loop_quit();&#x000A;      break;&#x000A;  }&#x000A;}&#x000A; &#x000A;static void _on_callback(void *user_data, zigbee_response_type response_type, void *payload)&#x000A;{&#x000A;  switch (response_type) {&#x000A;    case ZIGBEE_RESPONSE_COMMISSIONING_STATUS:&#x000A;      _on_commissioning_status(*(zigbee_commissioning_state *)payload);&#x000A;      break;&#x000A;    ...&#x000A;    default:&#x000A;      break;&#x000A;  }&#x000A;}</pre>
+            
+            </div>
+            
+            <p>After the EZ-Mode commissioning process, the device needs to call the discovery API to update devices.</p>
+            
+            <h2 id="implementing-reporting">Implementing Reporting</h2>
+            
+            <p>After joining the ZigBee network, two or more paired devices can communicate with each other. The following example shows you how to develop an application with a reporting feature. This simple example is based on two devices: Remote Control (as Target) and Light Sensor (as Initiator)</p>
+            
+            <h3 id="create-handle-for-remote-control-device">Create handle for Remote Control device</h3>
+            
+            <pre>static int _create_REMOTE_CONTROL_device(void)&#x000A;{&#x000A;  int ret = EZ_OK;&#x000A;  zigbee_local_endpoint_info endpoint_info;&#x000A;&#x000A;  memset(&amp;endpoint_info, 0, sizeof(zigbee_local_endpoint_info));&#x000A;  endpoint_info.endpoints[endpoint_info.count].profile = ZIGBEE_PROFILE_HA;&#x000A;  endpoint_info.endpoints[endpoint_info.count].endpoint_id = ENDPOINT_REMOTE_CONTROL;&#x000A;  endpoint_info.endpoints[endpoint_info.count].device_id = DEVICE_REMOTE_CONTROL;&#x000A;  endpoint_info.count++;&#x000A;&#x000A;  ret = <font color="blue">zigbee_set_local_endpoint</font>(&amp;endpoint_info);&#x000A;  if (EZ_OK != ret)&#x000A;    printf("Set local endpoint error %d", ret);&#x000A;&#x000A;  return ret;&#x000A;}</pre>
+            
+            <h3 id="create-handle-for-light-sensor-device">Create handle for Light Sensor device</h3>
+            <pre>static int _create_LIGHT_SENSOR_device(void)&#x000A;{&#x000A;  int ret = EZ_OK;&#x000A;  zigbee_local_endpoint_info endpoint_info;&#x000A;  memset(&amp;endpoint_info, 0, sizeof(zigbee_local_endpoint_info));&#x000A;  endpoint_info.endpoints[endpoint_info.count].profile = ZIGBEE_PROFILE_HA;&#x000A;  endpoint_info.endpoints[endpoint_info.count].endpoint_id = ENDPOINT_LIGHT_SENSOR;&#x000A;  endpoint_info.endpoints[endpoint_info.count].device_id = DEVICE_LIGHT_SENSOR;&#x000A;  endpoint_info.count++;&#x000A;  ret = <font color="blue">zigbee_set_local_endpoint</font>(&amp;endpoint_info);&#x000A;  if (EZ_OK != ret)&#x000A;    printf("Set local endpoint error %d", ret);&#x000A;  return ret;&#x000A;}</pre>
+            
+            <h3 id="use-ez-mode-commissioning">Use EZ-Mode Commissioning</h3>
+            
+            <p>To enable  reporting, you'll need to use EZ-Mode commissioning to bind devices. You can start with no network and go straight to EZ-Mode  commissioning, or you can form a network first and still use EZ-Mode commissioning. Refer to the Home Automation Public Application Profile chapter 8, Home Automation Commissioning, for more details.</p>
+            
+            <p>When making the call, change the <font color="blue">zigbee_ezmode_commissioning</font> parameter <code>endpoint_id</code> to ENDPOINT_REMOTE_CONTROL or ENDPOINT_LIGHT_SENSOR, and change the second parameter to <code>true</code> for the initiator or <code>false</code> for the target.</p>
+            
+            <h3 id="request-reporting">Request Reporting</h3>
+            
+            <p>An API call is provided to request the Light Sensor to report measured luminance values periodically. You'll find it used in the sample code.</p>
+            
+            <table><tr>
+            <pre>&#x000A;<font color="blue">zigbee_request_reporting</font>(ZCL_ILLUM_MEASUREMENT_CLUSTER_ID, &#x000A;    endpoint, ZIGBEE_REPORTING_MEASURED_ILLUMINANCE, min_interval,&#x000A;    max_interval, threshold, ENDPOINT_REMOTE_CONTROL);</pre>
+            </tr>
+            </table>
+            
+            <p>After requesting "reporting configure", the remote control device can get notification whenever the attribute value in the light sensor device is changed through the callback function.</p>
+            
+            <h2 id="handling-optional-attributes">Handling Optional Attributes</h2>
+            
+            <p>libzigbee does not provide specific API calls for optional attributes. However, you can use the <code>zigbee_general_</code> API calls for reading/writing optional attributes. These work both locally and remotely, with the following requirements.</p>
+            
+            <ul>
+              <li>
+                <p>To read/write attributes on the local device, the current endpoint must contain the specified server cluster.</p>
+              </li>
+              <li>
+                <p>To read/write attributes on the remote device, the remote endpoint must contain the specified server cluster.</p>
+              </li>
+            </ul>
+            
+            <p>We'll provide examples below for reading and writing the optional, but commonly used, "manufacturer name" attribute. You can also refer to the <code>zigbee_test.c</code> program to perform these accesses.</p>
+            
+            <h3 id="readwrite-local-attribute">Read/Write Local Attribute</h3>
+            
+            <p>Start with an endpoint in the local device containing the Basic server cluster. Now call<br> <code>zigbee_general_read_local_attribute()</code> <br>and <br><code>zigbee_general_write_local_attribute()</code> <br>to read and write the manufacturer name attribute.</p>
+            
+            <hr>
+            
+            <pre>&#x000A;char value[MAX_ATTRIBUTE_SIZE];&#x000A;unsigned int value_length = 0;&#x000A;zigbee_attribute_data_type value_type = ZIGBEE_UNKNOWN_ATTRIBUTE_TYPE;&#x000A;char *manufacturer_name = NULL;&#x000A;zigbee_error ret = EZ_OK;&#x000A; &#x000A;manufacturer_name = "artik_manufacturer_name";&#x000A;ret = <font color="blue">zigbee_general_write_local_attribute</font>(ZCL_BASIC_CLUSTER_ID, ZCL_MANUFACTURER_NAME_ATTRIBUTE_ID,&#x000A;        manufacturer_name, strlen(manufacturer_name), ZIGBEE_CHAR_STRING_ATTRIBUTE_TYPE, local_endpoint);&#x000A;if (EZ_OK != ret) {&#x000A;    fprintf(stdout, "Basic: write local manufacturer name %s failed: %d\n", manufacturer_name, ret);&#x000A;    return;&#x000A;} else {&#x000A;    fprintf(stdout, "Basic: write local manufacturer name %s success\n", manufacturer_name);&#x000A;}&#x000A; &#x000A;ret = <font color="blue">zigbee_general_read_local_attribute</font>(ZCL_BASIC_CLUSTER_ID, ZCL_MANUFACTURER_NAME_ATTRIBUTE_ID, value,&#x000A;        &amp;value_length, &amp;value_type, local_endpoint);&#x000A;if (EZ_OK != ret) {&#x000A;    fprintf(stdout, "Basic: read local manufacturer name failed: %d\n", ret);&#x000A;} else {&#x000A;    fprintf(stdout, "Basic: read local manufacturer name %s value length %d value type 0x%02X\n", value,&#x000A;            value_length, value_type);&#x000A;}&#x000A;</pre>
+            
+            <hr>
+            
+            <p>Sample console output would be as shown.</p>
+            
+            <pre>&#x000A;&#x000A;Basic: write local manufacturer name artik_manufacturer_name success&#x000A;Basic: read local manufacturer name artik_manufacturer_name value length 23 value type 0x42&#x000A;</pre>
+            
+            <h3 id="read-remote-attribute">Read Remote Attribute</h3>
+            
+            <p>Start with at least two ZigBee devices in the same network, one with the Basic cluster enabled as client and at least one with the Basic cluster enabled as server. From the client, call<br> <code>zigbee_general_read_remote_attribute()</code> <br>to read the manufacturer name attribute from a remote device.</p>
+            
+            <hr>
+            
+            <pre>&#x000A;zigbee_endpoint_list endpoint_list;&#x000A;struct zigbee_sending_info sending_info;&#x000A;char value[MAX_ATTRIBUTE_SIZE];&#x000A;unsigned int value_length = 0;&#x000A;zigbee_attribute_data_type value_type = ZIGBEE_UNKNOWN_ATTRIBUTE_TYPE;&#x000A;zigbee_error ret = EZ_OK;&#x000A; &#x000A;ret = zigbee_device_find_by_cluster(&amp;endpoint_list, ZCL_BASIC_CLUSTER_ID, 1);&#x000A;if (EZ_OK != ret) {&#x000A;    fprintf(stdout, "Basic: Find endpoint by cluster failed: %d\n", ret);&#x000A;    return;&#x000A;}&#x000A; &#x000A;sending_info.type = ZIGBEE_SENDING_BY_ENDPOINT;&#x000A;memcpy(&amp;sending_info.data.dest_endpoint, &amp;endpoint_list.endpoint[0], sizeof(zigbee_endpoint));&#x000A;ret = <font color="blue">zigbee_general_read_remote_attribute</font>(&amp;sending_info, ZCL_BASIC_CLUSTER_ID,&#x000A;        ZCL_MANUFACTURER_NAME_ATTRIBUTE_ID, value, &amp;value_length, &amp;value_type, local_endpoint);&#x000A;if (EZ_OK != ret) {&#x000A;    fprintf(stdout, "Basic: read remote manufacturer name failed: %d\n", ret);&#x000A;} else {&#x000A;    fprintf(stdout, "Basic: read remote manufacturer name %s value length %d value type 0x%02X\n", value,&#x000A;            value_length, value_type);&#x000A;}</pre>
+            
+            <hr>
+            
+            <p>Sample console output would be as shown.</p>
+            
+            <pre>&#x000A;Basic: read remote manufacturer name artik_manufacturer_name value length 23 value type 0x42</pre>
+            
+            <h3 id="write-remote-attribute">Write Remote Attribute</h3>
+            
+            <p>Most attributes are read-only for the remote device. Before writing a remote attribute, check whether the attribute is read-only or not per the ZigBee Cluster Library Specification (manufacturer name, for example, is read-only). If writable, follow the same scheme as above.</p>
+            
+            <h2 id="ias-zone-devices">IAS Zone Devices</h2>
+            
+            <p>libzigbee is constantly being improved to interoperate with ZigBee products available in the marketplace. Some popular ones go by the Iris<sup>®</sup> brand name. We provide related information below, based on our testing.</p>
+            
+            <p class="info">If there is a specific product for which you need additional information, contact us through the <a href="https://developer.artik.io/forums/" target="artikle">Forums</a> and use 'libzigbee' in the subject line.</p>
+            
+            <p>libzigbee supports IAS Control and Indication Equipment (CIE) reports. The Iris motion and contact sensors are examples of IAS Zone devices. Unlike other attribute reporting, IAS Zone devices report attribute changes through the "Zone Status Change Notification" command from the IAS Zone node to an IAS CIE node.</p>
+            
+            <h3 id="sensor">Sensor</h3>
+            
+            <p>For the example below, you'll need an Iris (or comparable) motion or contact sensor along with your ARTIK board with <code>libzigbee</code> installed and using the <code>zigbee-test</code> program you compiled initially.</p>
+            
+            <p><strong>Prerequisite.</strong> You'll need to start with the sensor reset, unconnected to any network. Follow the manufacturer's instructions for doing so (hold the reset button depressed while inserting the battery to get a <font color="red">red</font> LED, similar to the <a href="zigbee-cli.html#hardware-example">Smart Button</a> example.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the test directory.<br>
+            <code>cd /usr/share/zigbee_test/</code></p>
+              </li>
+              <li>
+                <p>Run <br><code>zigbee-test</code></p>
+              </li>
+              <li>
+                <p>On the first screen, add a new device: Type <code>1</code> [Enter].</p>
+              </li>
+              <li>
+                <p>On the next screen, add IAS CIE support by typing <code>[9]</code> [Enter], and [Enter] again.</p>
+              </li>
+              <li>
+                <p>Type <code>0</code> [Enter] to finish adding device endpoints.</p>
+              </li>
+              <li>
+                <p>Set up and join the network on the main screen:</p>
+                <ol>
+                  <li>
+                    <p>Type <code>7</code> [Enter] to leave the network, and wait for <code>Done</code>.</p>
+                  </li>
+                  <li>
+                    <p>Type <code>1</code> [Enter] to form a new network, then <strong>wait</strong> for <span class="code-font">FIND FORM SUCCESS</span>. You are now in the permit joining phase.</p>
+                  </li>
+                  <li>
+                    <p>Within the join time, insert the battery on the sensor and wait for it to join the network (LED <font color="blue">blue</font> to <font color="green">green</font>).</p>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+            
+            <pre>&#x000A;	NETWORK_NOTIFICATION: FIND FORM SUCCESS&#x000A;	[testzigbee] callback end&#x000A;	In callback, response type : 3307&#x000A;	NETWORK_NOTIFICATION: JOIN&#x000A;	[testzigbee] callback end&#x000A;	In callback, response type : 3407&#x000A;	[testzigbee] callback end</pre>
+            
+            <p>Now, when you make a motion in front of the motion sensor, or move the magnet on the contact sensor, and observe the screen, you should see output like this.</p>
+            
+            <pre>&#x000A;In callback, response type : 3322&#x000A;IAS Zone status 0x0025 source node 0x744D zone id 0x00 delay 3&#x000A; - ALARM1 : opened or alarmed&#x000A; - ALARM2 : closed or not alarmed&#x000A; - TAMPER : Tampered&#x000A; - BATTERY : Battery OK&#x000A; - SUPERVISION_REPORTS : Does not report&#x000A; - RESTORE_REPORTS : Reports restore&#x000A; - TROUBLE : OK&#x000A; - AC : AC/Mains OK&#x000A; - TEST : Sensor is in operation mode&#x000A; - BATTERY_DEFECT : Sensor battery is func-tioning normally&#x000A;[testzigbee] callback end&#x000A;&#x000A;</pre>
+            
+            <h3 id="sensor-bound-to-light">Sensor bound to light</h3>
+            
+            <p>You can use the <strong>IAS-CIE On/Off Test</strong> to do the same thing as you did with <span class="code-font">zigbee-test</span>, as well as bind with a light, without typing in any commands.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the test directory.<br>
+            <code>cd /usr/share/zigbee_test/</code></p>
+              </li>
+              <li>
+                <p>Run the IAS-CIE On/Off Test demonstration program.<br>
+            <code>./ias-test</code></p>
+              </li>
+              <li>
+                <p>Join your <a href="zigbee-030.html">A030 Z3 Light</a>.</p>
+              </li>
+              <li>
+                <p>Join your sensor as you did previously.</p>
+              </li>
+            </ol>
+            
+            <p>Wait several seconds and then try activating the sensor. You should see the Z3 Light LED toggle on and off.</p>
+            
+            <p>This example program is meant as an easy starting point for your IAS Zone device projects, so take advantage of it!</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-10-23 23:31:16 +0000'>Oct 23 2018, 11:31 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="zigbee-prog.html">Prev: ARTIK 5/7 SDK API</a></li>
+              <li class='next-page'><a href="zigbee-030.html">Next: ARTIK 030 -- gcc/IAR</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1619 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='artik__bluetooth_8h.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Software API: inc/bluetooth/artik_bluetooth.h File Reference</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_api documentation_api_artik__bluetooth_8h' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option value='/documentation/api/artik__bluetooth_8h.html'>1.8</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-7/download'>1.7</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-6/download'>1.6</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-5/download'>1.5</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-4/download'>1.4</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-3/download'>1.3</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-2/download'>1.2</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-1/download'>1.1</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-0/download'>1.0</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('artik__bluetooth_8h.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="summary">
+            <a href="#nested-classes">Data Structures</a> &#124;
+            <a href="#define-members">Macros</a> &#124;
+            <a href="#typedef-members">Typedefs</a> &#124;
+            <a href="#enum-members">Enumerations</a> &#124;
+            <a href="#var-members">Variables</a>  </div>
+              <div class="headertitle">
+            <div class="title">artik_bluetooth.h File Reference</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            
+            <p>Bluetooth module definition.  
+            <a href="#details">More...</a></p>
+            <div class="textblock"><code>#include &quot;<a class="el" href="artik__error_8h_source.html">artik_error.h</a>&quot;</code><br>
+            <code>#include &quot;<a class="el" href="artik__types_8h_source.html">artik_types.h</a>&quot;</code><br>
+            </div>
+            <p><a href="artik__bluetooth_8h_source.html">Go to the source code of this file.</a></p>
+            <table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+            Data Structures</h2></td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__callback__property.html">artik_bt_callback_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct to set callbacks of the Bluetooth module.  <a href="structartik__bt__callback__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__spp__connect__property.html">artik_bt_spp_connect_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_SPP_CONNECT event.  <a href="structartik__bt__spp__connect__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__class.html">artik_bt_class</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class structure of device and service.  <a href="structartik__bt__class.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__uuid.html">artik_bt_uuid</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth UUID definition.  <a href="structartik__bt__uuid.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__gatt__data.html">artik_bt_gatt_data</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth GATT data definition.  <a href="structartik__bt__gatt__data.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__gatt__service.html">artik_bt_gatt_service</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GATT service definition.  <a href="structartik__bt__gatt__service.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__gatt__chr.html">artik_bt_gatt_chr</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GATT characteristic definition.  <a href="structartik__bt__gatt__chr.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__gatt__desc.html">artik_bt_gatt_desc</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">GATT descriptor definition.  <a href="structartik__bt__gatt__desc.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__device.html">artik_bt_device</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth device definition.  <a href="structartik__bt__device.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__adapter.html">artik_bt_adapter</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth adapter definition.  <a href="structartik__bt__adapter.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__advertisement.html">artik_bt_advertisement</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth advertisement definition.  <a href="structartik__bt__advertisement.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__scan__filter.html">artik_bt_scan_filter</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth scan filter definition.  <a href="structartik__bt__scan__filter.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__avrcp__track__metadata.html">artik_bt_avrcp_track_metadata</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of AVRCP track metadata.  <a href="structartik__bt__avrcp__track__metadata.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__avrcp__item__property.html">artik_bt_avrcp_item_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of AVRCP item's properties.  <a href="structartik__bt__avrcp__item__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__avrcp__item.html">artik_bt_avrcp_item</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of AVRCP items.  <a href="structartik__bt__avrcp__item.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__spp__profile__option.html">artik_bt_spp_profile_option</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of SPP profile option.  <a href="structartik__bt__spp__profile__option.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__ftp__property.html">artik_bt_ftp_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth FTP definition.  <a href="structartik__bt__ftp__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__ftp__file.html">artik_bt_ftp_file</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of FTP items.  <a href="structartik__bt__ftp__file.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__hrp__data.html">artik_bt_hrp_data</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth HRP data definition.  <a href="structartik__bt__hrp__data.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__agent__request__property.html">artik_bt_agent_request_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_AGENT_REQUEST_PINCODE, BT_EVENT_AGENT_REQUEST_PASSKEY and BT_EVENT_AGENT_AUTHORIZE event.  <a href="structartik__bt__agent__request__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__agent__pincode__property.html">artik_bt_agent_pincode_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_AGENT_DISPLAY_PINCODE event.  <a href="structartik__bt__agent__pincode__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__agent__passkey__property.html">artik_bt_agent_passkey_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_AGENT_DISPLAY_PASSKEY event.  <a href="structartik__bt__agent__passkey__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__agent__confirmation__property.html">artik_bt_agent_confirmation_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_AGENT_CONFIRM event.  <a href="structartik__bt__agent__confirmation__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bt__agent__authorize__property.html">artik_bt_agent_authorize_property</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">the struct of callback user data in BT_EVENT_AGENT_AUTHORIZE_SERVICE event.  <a href="structartik__bt__agent__authorize__property.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__bluetooth__module.html">artik_bluetooth_module</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth module operations.  <a href="structartik__bluetooth__module.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+            Macros</h2></td></tr>
+            <tr class="memitem:a045c9a314ebfecdb7c55d65567f6b24d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a045c9a314ebfecdb7c55d65567f6b24d"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_BT_NAME_LEN</b>&#160;&#160;&#160;128</td></tr>
+            <tr class="separator:a045c9a314ebfecdb7c55d65567f6b24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a54891e4b00d0723c3c6035a0e795dac9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54891e4b00d0723c3c6035a0e795dac9"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_BT_ADDR_LEN</b>&#160;&#160;&#160;128</td></tr>
+            <tr class="separator:a54891e4b00d0723c3c6035a0e795dac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac46fc329c520c0acf27d058f2a0857ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac46fc329c520c0acf27d058f2a0857ab"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_BT_UUID_LEN</b>&#160;&#160;&#160;128</td></tr>
+            <tr class="separator:ac46fc329c520c0acf27d058f2a0857ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8a767323cd15854d0cfbdcc45f8f5628"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a767323cd15854d0cfbdcc45f8f5628"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>BT_ADV_TYPE_BROADCAST</b>&#160;&#160;&#160;&quot;broadcast&quot;</td></tr>
+            <tr class="separator:a8a767323cd15854d0cfbdcc45f8f5628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a198b7fece0fda739edf3b09475831498"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a198b7fece0fda739edf3b09475831498"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>BT_ADV_TYPE_PERIPHERAL</b>&#160;&#160;&#160;&quot;peripheral&quot;</td></tr>
+            <tr class="separator:a198b7fece0fda739edf3b09475831498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+            Typedefs</h2></td></tr>
+            <tr class="memitem:a9311d24756c35813e1b51aa1385402af"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a9311d24756c35813e1b51aa1385402af">artik_bt_callback</a>) (<a class="el" href="artik__bluetooth_8h.html#ac3fb3fabef005fee8d61481aeddaf50d">artik_bt_event</a> event, void *data, void *user_data)</td></tr>
+            <tr class="memdesc:a9311d24756c35813e1b51aa1385402af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event callback function prototype.  <a href="#a9311d24756c35813e1b51aa1385402af">More...</a><br></td></tr>
+            <tr class="separator:a9311d24756c35813e1b51aa1385402af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a7a7f62c88ec12621209bc498c6433985"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a></td></tr>
+            <tr class="memdesc:a7a7f62c88ec12621209bc498c6433985"><td class="mdescLeft">&#160;</td><td class="mdescRight">GATT request handle type.  <a href="#a7a7f62c88ec12621209bc498c6433985">More...</a><br></td></tr>
+            <tr class="separator:a7a7f62c88ec12621209bc498c6433985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a9eca831c345202d63c1476a7297cebf0"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a9eca831c345202d63c1476a7297cebf0">artik_bt_gatt_req_write</a>) (<a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a> request, const unsigned char *value, int len, void *user_data)</td></tr>
+            <tr class="memdesc:a9eca831c345202d63c1476a7297cebf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called when a client performs write on a characteristic.  <a href="#a9eca831c345202d63c1476a7297cebf0">More...</a><br></td></tr>
+            <tr class="separator:a9eca831c345202d63c1476a7297cebf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a7b61aacb73b16ddd08653cf7dd5de4f5"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a7b61aacb73b16ddd08653cf7dd5de4f5">artik_bt_gatt_req_read</a>) (<a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a> request, void *user_data)</td></tr>
+            <tr class="memdesc:a7b61aacb73b16ddd08653cf7dd5de4f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called when a client performs read on a characteristic.  <a href="#a7b61aacb73b16ddd08653cf7dd5de4f5">More...</a><br></td></tr>
+            <tr class="separator:a7b61aacb73b16ddd08653cf7dd5de4f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad2c865b43fa5b38420846f459a589afb"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#ad2c865b43fa5b38420846f459a589afb">artik_bt_gatt_req_notify</a>) (bool state, void *user_data)</td></tr>
+            <tr class="memdesc:ad2c865b43fa5b38420846f459a589afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method called when a client wants subscribe or unsubscribe to GATT notification.  <a href="#ad2c865b43fa5b38420846f459a589afb">More...</a><br></td></tr>
+            <tr class="separator:ad2c865b43fa5b38420846f459a589afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af7e9eb5f0b3b13eefbffdaf2fcf6f85b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7e9eb5f0b3b13eefbffdaf2fcf6f85b"></a>
+            typedef struct <a class="el" href="structartik__bt__avrcp__item.html">artik_bt_avrcp_item</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#af7e9eb5f0b3b13eefbffdaf2fcf6f85b">artik_bt_avrcp_item</a></td></tr>
+            <tr class="memdesc:af7e9eb5f0b3b13eefbffdaf2fcf6f85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of AVRCP items. <br></td></tr>
+            <tr class="separator:af7e9eb5f0b3b13eefbffdaf2fcf6f85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aac04ae03b803486f776bafeded5412bc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structartik__bt__ftp__file.html">artik_bt_ftp_file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#aac04ae03b803486f776bafeded5412bc">artik_bt_ftp_file</a></td></tr>
+            <tr class="memdesc:aac04ae03b803486f776bafeded5412bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of FTP items.  <a href="#aac04ae03b803486f776bafeded5412bc">More...</a><br></td></tr>
+            <tr class="separator:aac04ae03b803486f776bafeded5412bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0b977d910377010aad0ed66b4899132c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b977d910377010aad0ed66b4899132c"></a>
+            typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>prop_change_callback</b>) (<a class="el" href="structartik__bt__ftp__property.html">artik_bt_ftp_property</a> property, char *prop_str, long long prop_int)</td></tr>
+            <tr class="separator:a0b977d910377010aad0ed66b4899132c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a2c568ec45ea282cf25196e551191f2c5"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a2c568ec45ea282cf25196e551191f2c5">artik_bt_agent_request_handle</a></td></tr>
+            <tr class="memdesc:a2c568ec45ea282cf25196e551191f2c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bluetooth service request handle type.  <a href="#a2c568ec45ea282cf25196e551191f2c5">More...</a><br></td></tr>
+            <tr class="separator:a2c568ec45ea282cf25196e551191f2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+            Enumerations</h2></td></tr>
+            <tr class="memitem:af081ddc353af88df50cf77c653da8908"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af081ddc353af88df50cf77c653da8908"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#af081ddc353af88df50cf77c653da8908">artik_bt_agent_capability</a> { <br>
+            &#160;&#160;<b>BT_CAPA_KEYBOARDDISPLAY</b> = 0, 
+            <b>BT_CAPA_DISPLAYONLY</b>, 
+            <b>BT_CAPA_DISPLAYYESNO</b>, 
+            <b>BT_CAPA_KEYBOARDONLY</b>, 
+            <br>
+            &#160;&#160;<b>BT_CAPA_NOINPUTNOOUTPUT</b>, 
+            <b>BT_CAPA_END</b>
+            <br>
+             }</td></tr><tr class="memdesc:af081ddc353af88df50cf77c653da8908"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration reflects the input and output capabilities of the agent. <br></td></tr>
+            
+            <tr class="separator:af081ddc353af88df50cf77c653da8908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac3fb3fabef005fee8d61481aeddaf50d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3fb3fabef005fee8d61481aeddaf50d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#ac3fb3fabef005fee8d61481aeddaf50d">artik_bt_event</a> { <br>
+            &#160;&#160;<b>BT_EVENT_SCAN</b> = 0, 
+            <b>BT_EVENT_BOND</b>, 
+            <b>BT_EVENT_CONNECT</b>, 
+            <b>BT_EVENT_SPP_CONNECT</b>, 
+            <br>
+            &#160;&#160;<b>BT_EVENT_SPP_RELEASE</b>, 
+            <b>BT_EVENT_SPP_DISCONNECT</b>, 
+            <b>BT_EVENT_AGENT_REQUEST_PINCODE</b>, 
+            <b>BT_EVENT_AGENT_DISPLAY_PINCODE</b>, 
+            <br>
+            &#160;&#160;<b>BT_EVENT_AGENT_REQUEST_PASSKEY</b>, 
+            <b>BT_EVENT_AGENT_DISPLAY_PASSKEY</b>, 
+            <b>BT_EVENT_AGENT_CONFIRM</b>, 
+            <b>BT_EVENT_AGENT_AUTHORIZE</b>, 
+            <br>
+            &#160;&#160;<b>BT_EVENT_AGENT_AUTHORIZE_SERVICE</b>, 
+            <b>BT_EVENT_AGENT_RELEASE</b>, 
+            <b>BT_EVENT_AGENT_CANCEL</b>, 
+            <b>BT_EVENT_PROXIMITY</b>, 
+            <br>
+            &#160;&#160;<b>BT_EVENT_PF_HEARTRATE</b>, 
+            <b>BT_EVENT_FTP</b>, 
+            <b>BT_EVENT_SERVICE_RESOLVED</b>, 
+            <b>BT_EVENT_GATT_CHARACTERISTIC</b>, 
+            <br>
+            &#160;&#160;<b>BT_EVENT_GATT_SERVICE_READY</b>, 
+            <b>BT_EVENT_ADVERTISING_READY</b>, 
+            <b>BT_EVENT_END</b>
+            <br>
+             }</td></tr><tr class="memdesc:ac3fb3fabef005fee8d61481aeddaf50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">All events come from the Bluetooth module. <br></td></tr>
+            
+            <tr class="separator:ac3fb3fabef005fee8d61481aeddaf50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aaebd68c9b7fe0439df1915067da8a389"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaebd68c9b7fe0439df1915067da8a389"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#aaebd68c9b7fe0439df1915067da8a389">artik_bt_major_device_class</a> { <br>
+            &#160;&#160;<b>BT_MAJOR_DEVICE_CLASS_MISC</b> = 0x00, 
+            <b>BT_MAJOR_DEVICE_CLASS_COMPUTER</b> = 0x01, 
+            <b>BT_MAJOR_DEVICE_CLASS_PHONE</b> = 0x02, 
+            <b>BT_MAJOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT</b> = 0x03, 
+            <br>
+            &#160;&#160;<b>BT_MAJOR_DEVICE_CLASS_AUDIO_VIDEO</b> = 0x04, 
+            <b>BT_MAJOR_DEVICE_CLASS_PERIPHERAL</b> = 0x05, 
+            <b>BT_MAJOR_DEVICE_CLASS_IMAGING</b> = 0x06, 
+            <b>BT_MAJOR_DEVICE_CLASS_WEARABLE</b> = 0x07, 
+            <br>
+            &#160;&#160;<b>BT_MAJOR_DEVICE_CLASS_TOY</b> = 0x08, 
+            <b>BT_MAJOR_DEVICE_CLASS_HEALTH</b> = 0x09, 
+            <b>BT_MAJOR_DEVICE_CLASS_UNCATEGORIZED</b> = 0x1F
+            <br>
+             }</td></tr><tr class="memdesc:aaebd68c9b7fe0439df1915067da8a389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerations of major device class. <br></td></tr>
+            
+            <tr class="separator:aaebd68c9b7fe0439df1915067da8a389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4a0cac2085a7a40d6c79ea689afe183e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a0cac2085a7a40d6c79ea689afe183e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a4a0cac2085a7a40d6c79ea689afe183e">artik_bt_minor_device_class</a> { <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_COMPUTER_UNCATEGORIZED</b> = 0x00, 
+            <b>BT_MINOR_DEVICE_CLASS_COMPUTER_DESKTOP_WORKSTATION</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_COMPUTER_SERVER_CLASS</b> = 0x08, 
+            <b>BT_MINOR_DEVICE_CLASS_COMPUTER_LAPTOP</b> = 0x0C, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_COMPUTER_HANDHELD_PC_OR_PDA</b> = 0x10, 
+            <b>BT_MINOR_DEVICE_CLASS_COMPUTER_PALM_SIZED_PC_OR_PDA</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_COMPUTER_WEARABLE_COMPUTER</b> = 0x18, 
+            <b>BT_MINOR_DEVICE_CLASS_PHONE_UNCATEGORIZED</b> = 0x00, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_PHONE_CELLULAR</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_PHONE_CORDLESS</b> = 0x08, 
+            <b>BT_MINOR_DEVICE_CLASS_PHONE_SMART_PHONE</b> = 0x0C, 
+            <b>BT_MINOR_DEVICE_CLASS_PHONE_WIRED_MODEM_OR_VOICE_GATEWAY</b> = 0x10, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_PHONE_COMMON_ISDN_ACCESS</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_FULLY_AVAILABLE</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_1_TO_17_PERCENT_UTILIZED</b> = 0x20, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_17_TO_33_PERCENT_UTILIZED</b> = 0x40, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_33_TO_50_PERCENT_UTILIZED</b> = 0x60, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_50_to_67_PERCENT_UTILIZED</b> = 0x80, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_67_TO_83_PERCENT_UTILIZED</b> = 0xA0, 
+            <b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_83_TO_99_PERCENT_UTILIZED</b> = 0xC0, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_LAN_NETWORK_ACCESS_POINT_NO_SERVICE_AVAILABLE</b> = 0xE0, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_UNCATEGORIZED</b> = 0x00, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_WEARABLE_HEADSET</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_HANDS_FREE</b> = 0x08, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_MICROPHONE</b> = 0x10, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_LOUDSPEAKER</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_HEADPHONES</b> = 0x18, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_PORTABLE_AUDIO</b> = 0x1C, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_CAR_AUDIO</b> = 0x20, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_SET_TOP_BOX</b> = 0x24, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_HIFI_AUDIO_DEVICE</b> = 0x28, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_VCR</b> = 0x2C, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_VIDEO_CAMERA</b> = 0x30, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_CAMCORDER</b> = 0x34, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_VIDEO_MONITOR</b> = 0x38, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_VIDEO_DISPLAY_LOUDSPEAKER</b> = 0x3C, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_VIDEO_CONFERENCING</b> = 0x40, 
+            <b>BT_MINOR_DEVICE_CLASS_AUDIO_VIDEO_GAMING_TOY</b> = 0x48, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERA_UNCATEGORIZED</b> = 0x00, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_KEY_BOARD</b> = 0x40, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_POINTING_DEVICE</b> = 0x80, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_COMBO_KEYBOARD_POINTING_DEVICE</b> = 0xC0, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_JOYSTICK</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_GAME_PAD</b> = 0x08, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_REMOTE_CONTROL</b> = 0x0C, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_SENSING_DEVICE</b> = 0x10, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_DIGITIZER_TABLET</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_CARD_READER</b> = 0x18, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_DIGITAL_PEN</b> = 0x1C, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_HANDHELD_SCANNER</b> = 0x20, 
+            <b>BT_MINOR_DEVICE_CLASS_PERIPHERAL_HANDHELD_GESTURAL_INPUT_DEVICE</b> = 0x24, 
+            <b>BT_MINOR_DEVICE_CLASS_IMAGING_DISPLAY</b> = 0x10, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_IMAGING_CAMERA</b> = 0x20, 
+            <b>BT_MINOR_DEVICE_CLASS_IMAGING_SCANNER</b> = 0x40, 
+            <b>BT_MINOR_DEVICE_CLASS_IMAGING_PRINTER</b> = 0x80, 
+            <b>BT_MINOR_DEVICE_CLASS_WEARABLE_WRIST_WATCH</b> = 0x04, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_WEARABLE_PAGER</b> = 0x08, 
+            <b>BT_MINOR_DEVICE_CLASS_WEARABLE_JACKET</b> = 0x0C, 
+            <b>BT_MINOR_DEVICE_CLASS_WEARABLE_HELMET</b> = 0x10, 
+            <b>BT_MINOR_DEVICE_CLASS_WEARABLE_GLASSES</b> = 0x14, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_TOY_ROBOT</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_TOY_VEHICLE</b> = 0x08, 
+            <b>BT_MINOR_DEVICE_CLASS_TOY_DOLL_ACTION</b> = 0x0C, 
+            <b>BT_MINOR_DEVICE_CLASS_TOY_CONTROLLER</b> = 0x10, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_TOY_GAME</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_UNCATEGORIZED</b> = 0x00, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_BLOOD_PRESSURE_MONITOR</b> = 0x04, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_THERMOMETER</b> = 0x08, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_HEALTH_WEIGHING_SCALE</b> = 0x0C, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_GLUCOSE_METER</b> = 0x10, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_PULSE_OXIMETER</b> = 0x14, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_HEART_PULSE_RATE_MONITOR</b> = 0x18, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_HEALTH_DATA_DISPLAY</b> = 0x1C, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_STEP_COUNTER</b> = 0x20, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_BODY_COMPOSITION_ANALYZER</b> = 0x24, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_PEAK_FLOW_MONITOR</b> = 0x28, 
+            <br>
+            &#160;&#160;<b>BT_MINOR_DEVICE_CLASS_HEALTH_MEDICATION_MONITOR</b> = 0x2C, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_KNEE_PROSTHESIS</b> = 0x30, 
+            <b>BT_MINOR_DEVICE_CLASS_HEALTH_ANKLE_PROSTHESIS</b> = 0x34
+            <br>
+             }</td></tr><tr class="memdesc:a4a0cac2085a7a40d6c79ea689afe183e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerations of minor device class. <br></td></tr>
+            
+            <tr class="separator:a4a0cac2085a7a40d6c79ea689afe183e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aab8a8b4881c857608cf61bfde472cd8c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab8a8b4881c857608cf61bfde472cd8c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#aab8a8b4881c857608cf61bfde472cd8c">artik_bt_device_service_class</a> { <br>
+            &#160;&#160;<b>BT_SERVICE_CLASS_LIMITED_DISCOVERABLE_MODE</b> = 0x002000, 
+            <b>BT_SERVICE_CLASS_POSITIONING</b> = 0x010000, 
+            <b>BT_SERVICE_CLASS_NETWORKING</b> = 0x020000, 
+            <b>BT_SERVICE_CLASS_RENDERING</b> = 0x040000, 
+            <br>
+            &#160;&#160;<b>BT_SERVICE_CLASS_CAPTURING</b> = 0x080000, 
+            <b>BT_SERVICE_CLASS_OBJECT_TRANSFER</b> = 0x100000, 
+            <b>BT_SERVICE_CLASS_AUDIO</b> = 0x200000, 
+            <b>BT_SERVICE_CLASS_TELEPHONY</b> = 0x400000, 
+            <br>
+            &#160;&#160;<b>BT_SERVICE_CLASS_INFORMATION</b> = 0x800000
+            <br>
+             }</td></tr><tr class="memdesc:aab8a8b4881c857608cf61bfde472cd8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service class part of class of device returned from device discovery. <br></td></tr>
+            
+            <tr class="separator:aab8a8b4881c857608cf61bfde472cd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad6e22ccdebc756acc4d05530c39d2d2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6e22ccdebc756acc4d05530c39d2d2d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#ad6e22ccdebc756acc4d05530c39d2d2d">artik_bt_gatt_char_properties</a> { <br>
+            &#160;&#160;<b>BT_GATT_CHAR_PROPERTY_BROADCAST</b> = 0x01, 
+            <b>BT_GATT_CHAR_PROPERTY_READ</b> = 0x02, 
+            <b>BT_GATT_CHAR_PROPERTY_WRITE_NO_RESPONSE</b> = 0x04, 
+            <b>BT_GATT_CHAR_PROPERTY_WRITE</b> = 0x08, 
+            <br>
+            &#160;&#160;<b>BT_GATT_CHAR_PROPERTY_NOTIFY</b> = 0x10, 
+            <b>BT_GATT_CHAR_PROPERTY_INDICATE</b> = 0x20, 
+            <b>BT_GATT_CHAR_PROPERTY_SIGNED_WRITE</b> = 0x40
+            <br>
+             }</td></tr><tr class="memdesc:ad6e22ccdebc756acc4d05530c39d2d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Characteristic property. <br></td></tr>
+            
+            <tr class="separator:ad6e22ccdebc756acc4d05530c39d2d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a326622a4edacd688144bf8faad49fd8a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a326622a4edacd688144bf8faad49fd8a">artik_bt_gatt_desc_properties</a> { <br>
+            &#160;&#160;<b>BT_GATT_DESC_PROPERTY_READ</b> = 0x01, 
+            <b>BT_GATT_DESC_PROPERTY_WRITE</b> = 0x02, 
+            <b>BT_GATT_DESC_PROPERTY_ENC_READ</b> = 0x04, 
+            <b>BT_GATT_DESC_PROPERTY_ENC_WRITE</b> = 0x08, 
+            <br>
+            &#160;&#160;<b>BT_GATT_DESC_PROPERTY_ENC_AUTH_READ</b> = 0x10, 
+            <b>BT_GATT_DESC_PROPERTY_ENC_AUTH_WRITE</b> = 0x20, 
+            <b>BT_GATT_DESC_PROPERTY_SEC_READ</b> = 0x40, 
+            <b>BT_GATT_DESC_PROPERTY_SEC_WRITE</b> = 0x80
+            <br>
+             }</td></tr><tr class="memdesc:a326622a4edacd688144bf8faad49fd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descriptor property.  <a href="artik__bluetooth_8h.html#a326622a4edacd688144bf8faad49fd8a">More...</a><br></td></tr>
+            
+            <tr class="separator:a326622a4edacd688144bf8faad49fd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a1c717fb204db3bfbe6221677401383b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c717fb204db3bfbe6221677401383b2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a1c717fb204db3bfbe6221677401383b2">artik_bt_gatt_req_state_type</a> { <br>
+            &#160;&#160;<b>BT_GATT_REQ_STATE_TYPE_OK</b>, 
+            <b>BT_GATT_REQ_STATE_TYPE_FAILED</b>, 
+            <b>BT_GATT_REQ_STATE_TYPE_IN_PROGRESS</b>, 
+            <b>BT_GATT_REQ_STATE_TYPE_NOT_PERMITTED</b>, 
+            <br>
+            &#160;&#160;<b>BT_GATT_REQ_STATE_TYPE_INVALID_VALUE_LENGTH</b>, 
+            <b>BT_GATT_REQ_STATE_TYPE_NOT_AUTHORIZED</b>, 
+            <b>BT_GATT_REQ_STATE_TYPE_NOT_SUPPORTED</b>
+            <br>
+             }</td></tr><tr class="memdesc:a1c717fb204db3bfbe6221677401383b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request status. <br></td></tr>
+            
+            <tr class="separator:a1c717fb204db3bfbe6221677401383b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a945f12171fe9479c1332cdb989ef4b4e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a945f12171fe9479c1332cdb989ef4b4e">artik_bt_device_type</a> { <a class="el" href="artik__bluetooth_8h.html#a945f12171fe9479c1332cdb989ef4b4ea98a17ea75ff631bafd59c0ee2cc41480">BT_DEVICE_PARIED</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#a945f12171fe9479c1332cdb989ef4b4ead5f442b2a73bef666b3b0baa282bb5c3">BT_DEVICE_CONNECTED</a>, 
+            <b>BT_DEVICE_ALL</b>
+             }</td></tr><tr class="memdesc:a945f12171fe9479c1332cdb989ef4b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum type is used to specify the type of device.  <a href="artik__bluetooth_8h.html#a945f12171fe9479c1332cdb989ef4b4e">More...</a><br></td></tr>
+            
+            <tr class="separator:a945f12171fe9479c1332cdb989ef4b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a7e82548381cce150a249a34f7dd1f665"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665">artik_bt_scan_type</a> { <a class="el" href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665a9106d8ccc115254d3d91b10b7e24cd54">BT_SCAN_AUTO</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665aa0d62b20830abc7fd37ebf0e283bf04e">BT_SCAN_BREDR</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665a75f0eec041c72cf89af59d6d1079d74b">BT_SCAN_LE</a>
+             }</td></tr><tr class="memdesc:a7e82548381cce150a249a34f7dd1f665"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum type is used to specify the type of scan.  <a href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665">More...</a><br></td></tr>
+            
+            <tr class="separator:a7e82548381cce150a249a34f7dd1f665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aaaeb8acf57b247081130cd306a98d95f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95f">artik_bt_avrcp_repeat_mode</a> { <a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95fa08f6b2df619639ea972580f9a02166e3">BT_AVRCP_REPEAT_SINGLETRACK</a> = 0x00, 
+            <a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95fa8b6a8a940aeb60c045d854c206a8af4f">BT_AVRCP_REPEAT_ALLTRACKS</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95fad899a5eef4487a688df85b44ea9ec62c">BT_AVRCP_REPEAT_GROUP</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95faa6490fa22c8336c8f3fb8a7226f5883d">BT_AVRCP_REPEAT_OFF</a>
+             }</td></tr><tr class="memdesc:aaaeb8acf57b247081130cd306a98d95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This enum type is used to specify the repeat mode.  <a href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95f">More...</a><br></td></tr>
+            
+            <tr class="separator:aaaeb8acf57b247081130cd306a98d95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a9db66585f2b64c40e843b24a33b8f351"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__bluetooth_8h.html#a9db66585f2b64c40e843b24a33b8f351">artik_bt_agent_request_error</a> { <a class="el" href="artik__bluetooth_8h.html#a9db66585f2b64c40e843b24a33b8f351a5f6fc63b74db88ae2036fb136e41aed9">BT_AGENT_REQUEST_REJECTED</a>, 
+            <a class="el" href="artik__bluetooth_8h.html#a9db66585f2b64c40e843b24a33b8f351a5afae00fe25f88874204c3c507658690">BT_AGENT_REQUEST_CANCELED</a>
+             }</td></tr><tr class="memdesc:a9db66585f2b64c40e843b24a33b8f351"><td class="mdescLeft">&#160;</td><td class="mdescRight">The errors returned to the bluetooth service when a request failed.  <a href="artik__bluetooth_8h.html#a9db66585f2b64c40e843b24a33b8f351">More...</a><br></td></tr>
+            
+            <tr class="separator:a9db66585f2b64c40e843b24a33b8f351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+            Variables</h2></td></tr>
+            <tr class="memitem:a9d06d3496379993e3d46ebf6ad8bedbf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d06d3496379993e3d46ebf6ad8bedbf"></a>
+            const <a class="el" href="structartik__bluetooth__module.html">artik_bluetooth_module</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bluetooth_module</b></td></tr>
+            <tr class="separator:a9d06d3496379993e3d46ebf6ad8bedbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table>
+            <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+            <div class="textblock"><p>Definitions and functions for accessing the Bluetooth modules </p>
+            
+            <p>Definition in file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            </div><h2 class="groupheader">Typedef Documentation</h2>
+            <a class="anchor" id="a2c568ec45ea282cf25196e551191f2c5"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void* <a class="el" href="artik__bluetooth_8h.html#a2c568ec45ea282cf25196e551191f2c5">artik_bt_agent_request_handle</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>Handle type used to carry specific information for a bluetooth service request. The agent register must give a response to the bluetooth service with the methods agent_send_pincode, agent_send_passkey, agent_send_error or agent_send_empty_response. </p>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00928">928</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a9311d24756c35813e1b51aa1385402af"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void(* artik_bt_callback) (<a class="el" href="artik__bluetooth_8h.html#ac3fb3fabef005fee8d61481aeddaf50d">artik_bt_event</a> event, void *data, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>The type of event raised. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>This parameter contains data that describe an event. <h2>Event type | Data type </h2>
+            </td></tr>
+              </table>
+              </dd>
+            </dl>
+            <p>BT_EVENT_SCAN | <a class="el" href="structartik__bt__device.html">artik_bt_device</a> BT_EVENT_BOND | <a class="el" href="structartik__bt__device.html">artik_bt_device</a> BT_EVENT_CONNECT | <a class="el" href="structartik__bt__device.html">artik_bt_device</a> BT_EVENT_SPP_CONNECT | <a class="el" href="structartik__bt__spp__connect__property.html">artik_bt_spp_connect_property</a> BT_EVENT_SPP_RELEASE | NULL BT_EVENT_SPP_DISCONNECT | Char* Address BT_EVENT_AGENT_REQUEST_PINCODE | <a class="el" href="structartik__bt__agent__request__property.html">artik_bt_agent_request_property</a> BT_EVENT_AGENT_DISPLAY_PINCODE | <a class="el" href="structartik__bt__agent__pincode__property.html">artik_bt_agent_pincode_property</a> BT_EVENT_AGENT_REQUEST_PASSKEY | <a class="el" href="structartik__bt__agent__request__property.html">artik_bt_agent_request_property</a> BT_EVENT_AGENT_DISPLAY_PASSKEY | <a class="el" href="structartik__bt__agent__passkey__property.html">artik_bt_agent_passkey_property</a> BT_EVENT_AGENT_CONFIRM | <a class="el" href="structartik__bt__agent__confirmation__property.html">artik_bt_agent_confirmation_property</a> BT_EVENT_AGENT_AUTHORIZE | <a class="el" href="structartik__bt__agent__request__property.html">artik_bt_agent_request_property</a> BT_EVENT_AGENT_AUTHORIZE_SERVICE | <a class="el" href="structartik__bt__agent__authorize__property.html">artik_bt_agent_authorize_property</a> BT_EVENT_AGENT_RELEASE | NULL BT_EVENT_AGENT_CANCEL | NULL BT_EVENT_PROXIMITY | <a class="el" href="structartik__bt__gatt__data.html">artik_bt_gatt_data</a> BT_EVENT_PF_HEARTRATE | <a class="el" href="structartik__bt__hrp__data.html">artik_bt_hrp_data</a> BT_EVENT_FTP | <a class="el" href="structartik__bt__ftp__property.html">artik_bt_ftp_property</a> BT_EVENT_SERVICE_RESOLVED | <a class="el" href="structartik__bt__device.html">artik_bt_device</a> BT_EVENT_GATT_CHARACTERISTIC | <a class="el" href="structartik__bt__gatt__data.html">artik_bt_gatt_data</a> BT_EVENT_GATT_SERVICE_READY | boolean BT_EVENT_ADVERTISING_REGISTER | boolean </p><dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the set_callback. </td></tr>
+              </table>
+              </dd>
+            </dl>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00130">130</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aac04ae03b803486f776bafeded5412bc"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef struct <a class="el" href="structartik__bt__ftp__file.html">artik_bt_ftp_file</a>  <a class="el" href="structartik__bt__ftp__file.html">artik_bt_ftp_file</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>Structure containing the elements defining a Bluetooth FTP file </p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a7a7f62c88ec12621209bc498c6433985"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void* <a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>This type is used to carry specific infomations about a GATT request. The application must give a response to the bluetooth service with the functions gatt_req_set_value and gatt_req_set_result. </p>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00515">515</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="ad2c865b43fa5b38420846f459a589afb"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void(* artik_bt_gatt_req_notify) (bool state, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>True when the client subscribe, false otherwise. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the gatt_set_char_on_read_request function. </td></tr>
+              </table>
+              </dd>
+            </dl>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00549">549</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a7b61aacb73b16ddd08653cf7dd5de4f5"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void(* artik_bt_gatt_req_read) (<a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a> request, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>Use gatt_req_set_value to send a response to the client or gatt_req_set_result to return error.</p>
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>Handle tied to a GATT request </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the gatt_set_char_on_read_request or gatt_set_desc_on_read_request function. </td></tr>
+              </table>
+              </dd>
+            </dl>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00541">541</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a9eca831c345202d63c1476a7297cebf0"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">typedef void(* artik_bt_gatt_req_write) (<a class="el" href="artik__bluetooth_8h.html#a7a7f62c88ec12621209bc498c6433985">artik_bt_gatt_req</a> request, const unsigned char *value, int len, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>Use gatt_req_set_result to accept or reject the request.</p>
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>Handle tied to a GATT request </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the GATT request </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The size of value </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the gatt_set_char_on_write_request or gatt_set_desc_on_write_request function. </td></tr>
+              </table>
+              </dd>
+            </dl>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00527">527</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <h2 class="groupheader">Enumeration Type Documentation</h2>
+            <a class="anchor" id="a9db66585f2b64c40e843b24a33b8f351"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="artik__bluetooth_8h.html#a9db66585f2b64c40e843b24a33b8f351">artik_bt_agent_request_error</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <p>The possible errors returned by the agent handler to the bluetooth service. </p>
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a9db66585f2b64c40e843b24a33b8f351a5f6fc63b74db88ae2036fb136e41aed9"></a>BT_AGENT_REQUEST_REJECTED&#160;</td><td class="fielddoc">
+            <p>The request has been rejected by the agent. </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="a9db66585f2b64c40e843b24a33b8f351a5afae00fe25f88874204c3c507658690"></a>BT_AGENT_REQUEST_CANCELED&#160;</td><td class="fielddoc">
+            <p>The request has been canceled by the agent. </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00935">935</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aaaeb8acf57b247081130cd306a98d95f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="artik__bluetooth_8h.html#aaaeb8acf57b247081130cd306a98d95f">artik_bt_avrcp_repeat_mode</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aaaeb8acf57b247081130cd306a98d95fa08f6b2df619639ea972580f9a02166e3"></a>BT_AVRCP_REPEAT_SINGLETRACK&#160;</td><td class="fielddoc">
+            <p>Repeat a single track </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="aaaeb8acf57b247081130cd306a98d95fa8b6a8a940aeb60c045d854c206a8af4f"></a>BT_AVRCP_REPEAT_ALLTRACKS&#160;</td><td class="fielddoc">
+            <p>Repeat all tracks </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="aaaeb8acf57b247081130cd306a98d95fad899a5eef4487a688df85b44ea9ec62c"></a>BT_AVRCP_REPEAT_GROUP&#160;</td><td class="fielddoc">
+            <p>Repeat a group of tracks </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="aaaeb8acf57b247081130cd306a98d95faa6490fa22c8336c8f3fb8a7226f5883d"></a>BT_AVRCP_REPEAT_OFF&#160;</td><td class="fielddoc">
+            <p>Turn off the repeat mode </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00686">686</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a945f12171fe9479c1332cdb989ef4b4e"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="artik__bluetooth_8h.html#a945f12171fe9479c1332cdb989ef4b4e">artik_bt_device_type</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a945f12171fe9479c1332cdb989ef4b4ea98a17ea75ff631bafd59c0ee2cc41480"></a>BT_DEVICE_PARIED&#160;</td><td class="fielddoc">
+            <p>Indicate devices paired with local device Indicate devices connected with local device </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="a945f12171fe9479c1332cdb989ef4b4ead5f442b2a73bef666b3b0baa282bb5c3"></a>BT_DEVICE_CONNECTED&#160;</td><td class="fielddoc">
+            <p>Indicate all devices </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00649">649</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a326622a4edacd688144bf8faad49fd8a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="artik__bluetooth_8h.html#a326622a4edacd688144bf8faad49fd8a">artik_bt_gatt_desc_properties</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00421">421</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a7e82548381cce150a249a34f7dd1f665"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="artik__bluetooth_8h.html#a7e82548381cce150a249a34f7dd1f665">artik_bt_scan_type</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a7e82548381cce150a249a34f7dd1f665a9106d8ccc115254d3d91b10b7e24cd54"></a>BT_SCAN_AUTO&#160;</td><td class="fielddoc">
+            <p>Indicate interleaved scan </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="a7e82548381cce150a249a34f7dd1f665aa0d62b20830abc7fd37ebf0e283bf04e"></a>BT_SCAN_BREDR&#160;</td><td class="fielddoc">
+            <p>Indicate BR/EDR (basic rate/enhanced data rate) scan </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="a7e82548381cce150a249a34f7dd1f665a75f0eec041c72cf89af59d6d1079d74b"></a>BT_SCAN_LE&#160;</td><td class="fielddoc">
+            <p>Indicate LE scan only </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="artik__bluetooth_8h_source.html#l00661">661</a> of file <a class="el" href="artik__bluetooth_8h_source.html">artik_bluetooth.h</a>.</p>
+            
+            </div>
+            </div>
+            </div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-04-23 18:10:31 +0000'>Apr 23 2018,  6:10 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="datasheets"]').parent();
+      $($sideNavListItem).insertBefore($betaFeatures);
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,466 @@
+{
+  "fields": [
+    {
+      "name": "GPIO",
+      "children": [
+        {
+          "name": "gpio30",
+          "type": "CUSTOM",
+          "isCollection": false,
+          "valueClass": "Integer"
+        },
+        {
+          "name": "gpio31",
+          "type": "CUSTOM",
+          "isCollection": false,
+          "valueClass": "Integer"
+        },
+        {
+          "name": "gpio32",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio37",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio38",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio39",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio40",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio41",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio42",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio43",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio44",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio45",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio46",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio47",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio48",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio49",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio50",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio51",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio52",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio53",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio54",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio55",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio57",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio58",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        },
+        {
+          "name": "gpio59",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "tags": [],
+          "metaData": [
+            {
+              "type": "VALUES_INTEGER",
+              "value": [
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ADC",
+      "children": [
+        {
+          "name": "Channel0",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "description": "ADC Channel 0",
+          "tags": []
+        },
+        {
+          "name": "Channel1",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "description": "ADC Channel 1",
+          "tags": []
+        },
+        {
+          "name": "Channel2",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "description": "ADC Channel 2",
+          "tags": []
+        },
+        {
+          "name": "Channel3",
+          "type": "CUSTOM",
+          "valueClass": "Integer",
+          "isCollection": false,
+          "description": "ADC Channel 3",
+          "tags": []
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "toggleGpio31",
+      "description": "toggle Gpio 31 (On/Off)",
+      "parameters": [],
+      "isStandard": false,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "toggleGpio32",
+      "description": "toggle Gpio 32 (On/Off)",
+      "isStandard": false,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "toggleGpio45",
+      "description": "toggle Gpio 45 (On/Off)",
+      "isStandard": false,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "toggleGpio49",
+      "description": "toggle Gpio 49 (On/Off)",
+      "isStandard": false,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "pwm0Freq87Duty12",
+      "description": "pwm port 0, Frequency 87 Duty 12",
+      "isStandard": false,
+      "type": "CUSTOM"
+    },
+    {
+      "name": "pwm0Freq20Duty80",
+      "description": "pwm port 0, Frequqncy 20 Duty 80",
+      "isStandard": false,
+      "type": "CUSTOM"
+    }
+  ],
+  "messageFormat": "json"
+}

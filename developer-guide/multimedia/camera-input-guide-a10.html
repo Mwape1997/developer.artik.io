@@ -1,0 +1,1396 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='camera-input-guide-a10.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: MIPI Camera' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: MIPI Camera' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: MIPI Camera</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_developer-guide documentation_developer-guide_multimedia documentation_developer-guide_multimedia_camera-input-guide-a10' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="true">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false" class="active">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="mipi-camera">MIPI Camera</h1>
+            
+            <p>This guide describes how to capture still images or movies from a MIPI camera, as well as how to configure video streaming.</p>
+            
+            <p>Environment:<br>
+            –	Image capture program: <code>fswebcam</code><br>
+            –	Video recording and streaming program: <code>ffmpeg</code><br>
+            –	Video streaming server program: <code>ffserver</code><br>
+            –	Image preview program: <code>gstreamer</code> (<code>gst-launch</code> development tool)</p>
+            
+            <h2 id="connect-camera-module">Connect Camera Module</h2>
+            
+            <p>Acquire the proper MIPI camera module. For ARTIK 530 or 710 boards, you have two choices.</p>
+            
+            <ul>
+              <li>
+                <p><a href="https://www.digikey.com/product-detail/en/samsung-semiconductor-inc/SIP-ASRNXS001/1683-1008-ND/6236174" target="_blank">ARTIK S5K4EC</a></p>
+              </li>
+              <li>
+                <p><a href="https://www.artik.io/iotmarketplace/products/li-artik-ov5640-kit" target="_blank">Leopard OV5640</a></p>
+              </li>
+            </ul>
+            
+            <p>ARTIK 520 or 1020 boards require the S5K5EA camera module.</p>
+            
+            <h3 id="connect-artik-s5k4ec-camera">Connect ARTIK S5K4EC Camera</h3>
+            
+            <p>The procedure here shows the ARTIK 530/710 MIPI camera accessory board used with an ARTIK 530/710 development kit. For the ARTIK Eagleye board from Seeed, look <a href="#connect-leopard-ov5640-camera">here</a>.</p>
+            
+            <ol>
+              <li>Connect it to the ARTIK board. With power disconnected and both boards placed upside down, attach
+                <ul>
+                  <li>the flat cable end marked "PLATFORM Board" to the MIPI Camera connector of the ARTIK 530/710 board</li>
+                  <li>the other end to the MIPI camera.</li>
+                </ul>
+            
+                <p>The connectors snap together precisely, so align them carefully before applying pressure.</p>
+            
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><img alt="" src="..\..\images\docs\developer-guide\A710-platform-mipi-conn.jpg?1549048075"></td>
+                      <td><img alt="" src="..\..\images\docs\developer-guide\camera-front.jpg?1549048075"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Connect the ARTIK board to a TV or HDMI monitor as described <a href="display.html">here</a> and power up the system.</p>
+              </li>
+              <li>
+                <p>Verify that you get a console login screen. (You will not be able to log in on that screen unless you have a USB keyboard attached to the ARTIK board.)</p>
+              </li>
+              <li>
+                <p>Check video node information. The video node will be <code>/dev/videoXX</code> – for example:</p>
+            
+                <p># <code>ls -al /dev/video6</code></p>
+            
+                <pre>crw-rw---- 1 root video 81, 5 Jan  1  2014 /dev/video6</pre>
+            
+                <p>The node number will be <strong>different</strong> between board types. For example:</p>
+            
+                <ul>
+                  <li>ARTIK 520 MIPI is <code>video100</code></li>
+                  <li>ARTIK 530 or 710 MIPI is <code>video6</code></li>
+                  <li>ARTIK 1020 MIPI is <code>video101</code></li>
+                </ul>
+            
+                <p><code>video6</code> is used in the examples in this section, but you will need to modify it for your system type.</p>
+            
+                <p class="info">You can use a <code>sysfs</code> feature to list possible video input nodes for your device. Go to <code>/sys/class/video4linux</code> and  run <code>ls -al</code><br>The device that shows <code>v4l2</code> ("video for Linux" – the third character is an L) is the device you will be referencing in the commands below.</p>
+              </li>
+              <li>
+                <p>Read the <a href="camera-input-guide-a10.html#choose-and-install-programs">Choose and Install Programs</a> section to learn about capture programs available. We suggest you start by installing <code>ffmpeg</code>.</p>
+              </li>
+              <li>Follow the <a href="camera-input-guide-a10.html#ffmpeg-display-preview">ffmpeg Display Preview</a> topic. Simply copy and paste the specified line with no modifications.</li>
+            </ol>
+            
+            <p>You should immediately see a sharp, clear video image on the monitor.</p>
+            
+            <h3 id="connect-leopard-ov5640-camera">Connect Leopard OV5640 Camera</h3>
+            
+            <p>The <a href="https://www.artik.io/iotmarketplace/products/li-artik-ov5640-kit" target="_blank">Leopard OV5640</a> MIPI camera can be used with the ARTIK "Eagleye" board from Seeed by attaching it directly, and with the ARTIK 530 and 710 development boards by using the included adapter (flat cable). Attachment to the development board is similar to that shown above.</p>
+            
+            <p>Drivers for this model are present in ARTIK OS_18.05.00 and later source code software releases on GitHub. However, in the OS_18.05.00 release only, the driver is disabled by default. To enable it, you'll need to patch the standard source code and then build a new image from that source code.</p>
+            
+            <p>First, click on the link for your module to obtain the correct patch, and copy the code.</p>
+            
+            <ul>
+              <li>
+                <p><a href="..\..\code-samples\0001_artik530_dtsi_enable_ov5640.patch" target="_blank" download="">ARTIK 530 patch</a></p>
+              </li>
+              <li>
+                <p><a href="..\..\code-samples\0002_artik710_dtsi_enable_ov5640.patch" target="_blank" download="">ARTIK 710 patch</a></p>
+              </li>
+            </ul>
+            
+            <p>Then, follow the patch instructions <a href="..\..\artik\advanced-concepts\configure.html#patches">here</a> to save the patch file and rebuild your code.</p>
+            
+            <h2 id="choose-and-install-programs">Choose and Install Programs</h2>
+            
+            <p>Many programs are available for capturing and displaying video streams. Some of the more popular ones are included in the default system firmware image, or can be installed as noted below if necessary.</p>
+            
+            <h3 id="fswebcam">fswebcam</h3>
+            
+            <p><code>fswebcam</code> is a simple utility program used to capture an image from a webcam. The captured image can be stored as one or more PNG or JPEG files.</p>
+            
+            <ul>
+              <li>Supported image resolution, S5K4EC: VGA(640x480), HD(1280x720), <br>5MP(2560x1920)</li>
+              <li>Supported image resolution, OV5640: VGA(640x480), HD(1280x720), <br>5MP*(2592x1944), FHD(1920x1080)</li>
+              <li>Supported palette format of source image : YUYV</li>
+            </ul>
+            
+            <p><sup>*Note the slight difference in 5MP resolution between the two cameras.</sup></p>
+            
+            <p>To install from the command line, enter:</p>
+            
+            <p>Ubuntu:<br>
+            <code>apt install fswebcam</code><br>
+            Fedora:<br>
+            <code>dnf install fswebcam</code></p>
+            
+            <h3 id="ffmpeg">ffmpeg</h3>
+            
+            <p><code>ffmpeg</code> is widely used to encode and decode video streams from a device or file. It also supports grabbing an input stream from V4L2 (Video4Linux2) devices.</p>
+            
+            <p>Supported resolutions and frame rates</p>
+            
+            <ul>
+              <li>
+                <p>YUYV<br>
+            – VGA(640x480): 15fps, 10fps and 5fps  <br>
+            – HD(1280x720): 7fps and 5fps</p>
+              </li>
+              <li>
+                <p>MJPEG<br>
+                – Either resolution: 30fps, 24fps, 15fps, 10fps and 5fps</p>
+            
+                <p>– OV5640: Limited to 15fps and 30fps only</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Resolution</th>
+                      <th>Frame Rate<br>ARTIK 710</th>
+                      <th>Frame Rate<br>ARTIK 530</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>VGA(640x480)</td>
+                      <td>30fps, 15fps</td>
+                      <td>30fps, 15fps</td>
+                    </tr>
+                    <tr>
+                      <td>HD(1280x720)</td>
+                      <td>30fps, 15fps</td>
+                      <td>15fps</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            </ul>
+            
+            <p>To install from the command line, enter:</p>
+            
+            <p>Ubuntu:<br>
+            <code>apt install ffmpeg</code><br>
+            Fedora:<br>
+            <code>dnf install ffmpeg</code></p>
+            
+            <h3 id="ffserver">ffserver</h3>
+            
+            <p>You can stream a video with RTSP protocol over the network by using <code>ffserver</code> along with <code>ffmpeg</code>. <code>ffserver</code> is installed as part of the <code>ffmpeg</code> package.</p>
+            
+            <h3 id="gstreamer">gstreamer</h3>
+            
+            <p>The Gstreamer framework allows you to build video, audio, and other processing pipelines using Gstreamer "plug-ins".</p>
+            
+            <p>Supported resolution and frame rates for preview:<br>
+            – VGA(640x480) : 30fps, 24fps, 15fps, 10fps and 5fps</p>
+            
+            <p>Additionally supported on ARTIK 7 with S5K4EC:<br>
+            – HD(1280x720) : 15fps, 10fps and 5fps<br>
+            – 5MP(2560x1920) : still</p>
+            
+            <p>Supported on OV5640:<br>
+            – VGA, HD, FHD(1920x1080): 30fps</p>
+            
+            <p>To install Gstreamer plug-ins from the command line, enter:</p>
+            
+            <p>Ubuntu:<br>
+            <code>apt install gstreamer*</code>  <br>
+            <code>apt install gstreamer1.0-plugins-bad</code><br>
+            Fedora:<br>
+            <code>dnf install gstreamer*</code></p>
+            
+            <h2 id="display-preview-on-lcd">Display Preview on LCD</h2>
+            
+            <p>To clear the LCD screen before displaying a new preview, enter on the command line:</p>
+            
+            <p># <code>cat /dev/zero &gt; /dev/fb0</code></p>
+            
+            <h3 id="ffmpeg-display-preview">ffmpeg Display Preview</h3>
+            
+            <p>To display a preview screen on the LCD with <code>ffmpeg</code>, this example</p>
+            
+            <pre>ffmpeg -f v4l2 -s 640x480 -r 30 -i /dev/video6 -pix_fmt bgra -f fbdev /dev/fb0</pre>
+            
+            <p>specifies:</p>
+            
+            <ul>
+              <li><code>-f v4l2</code> – use V4L2 capture device</li>
+              <li><code>-s 640x480</code> – resolution</li>
+              <li><code>-r 30</code> – frame rate is 30 fps</li>
+              <li><code>-i /dev/video6</code> – input device for recording (MIPI camera)</li>
+              <li><code>-pix_fmt bgra</code> – pixel format of LCD screen</li>
+              <li><code>-f fbdev /dev/fb0</code> – output device is frame buffer device.</li>
+            </ul>
+            
+            <h3 id="gstreamer-display-preview">gstreamer Display Preview</h3>
+            
+            <p>You can display a preview screen on the LCD by using <code>gst-launch</code> with plug-ins appended. 
+            You can see a detailed description for each plug-in by executing</p>
+            
+            <p><code>gst-inspect [plug-in name]</code></p>
+            
+            <p>For example,</p>
+            
+            <pre>gst-launch -e v4l2src queue-size=16 device=/dev/video6 ! video/x-raw-yuv,framerate=30/1,width=640,height=480 ! ffmpegcolorspace ! fbdevsink device=/dev/fb0</pre>
+            
+            <p>specifies:</p>
+            
+            <ul>
+              <li><code>-e v4l2src queue-size=16 device=/dev/video6</code> – use v4l2src plugin</li>
+              <li><code>video/x-raw-yuv,framerate=30/1,width=640,height=480</code> – format, framerate, and size of video, respectively</li>
+              <li><code>ffmpegcolorspace</code> – do color space conversion between yuv video and fbdevsink</li>
+              <li><code>fbdevsink device=/dev/fb0</code> – output device is frame buffer device.</li>
+            </ul>
+            
+            <p>Rotate the preview screen on the LCD by adding the “videoflip” plug-in to the Gstreamer pipeline, such as in</p>
+            
+            <pre>gst-launch -e v4l2src queue-size=16 device=/dev/video6 ! video/x-raw-yuv,framerate=30/1,width=640,height=480 ! videoflip method=counterclockwise ! ffmpegcolorspace ! fbdevsink device=/dev/fb0</pre>
+            
+            <p>where:</p>
+            
+            <pre>videoflip method=counterclockwise` </pre>
+            
+            <p>specifies the rotation direction.</p>
+            
+            <h2 id="capture-images-or-movies">Capture Images or Movies</h2>
+            
+            <h3 id="fswebcam-image-capture">fswebcam Image Capture</h3>
+            
+            <p>Refer to online man page for detailed usage information. Typical command line usage:</p>
+            
+            <p><code>fswebcam -d [device node] -r [Resolution] -p [palette format] [filename]</code></p>
+            
+            <p>S5K5EA:<br>
+            ARTIK 710 example</p>
+            <pre>fswebcam -d /dev/video6 -r 2560x1920 -p YUYV -D 1 --no-banner image.jpg</pre>
+            <p>ARTIK 530 example</p>
+            <pre>fswebcam -d /dev/video6 -r 2560x1920 -p YUV420P --no-banner image.jpg</pre>
+            
+            <p>ARTIK 710 example</p>
+            <pre>fswebcam -d /dev/video6 -r 2592x1944 -S 10 -p YUYV --no-banner image.jpg</pre>
+            <p>ARTIK 530 example</p>
+            <pre>fswebcam -d /dev/video6 -r 2592x1944 -S 10 -p YUV420P --no-banner image.jpg</pre>
+            
+            <p>specifies:</p>
+            
+            <ul>
+              <li>
+                <p><code>-d /dev/video6</code> – name of device node (MIPI camera)</p>
+              </li>
+              <li>
+                <p><code>-r 2560x1920</code> – resolution</p>
+              </li>
+              <li>
+                <p><code>-p YUYV</code> or <code>p YUV420P</code> – format of source image</p>
+              </li>
+              <li>
+                <p><code>-D 1</code> – pre-capture Delay time (seconds). Since a camera usually needs time to process details such as focus, exposure, and white balance, use at least a 1 second pre-capture delay in order to capture a clearer image.</p>
+              </li>
+              <li>
+                <p><code>-S xx -- skip first 'xx' frames</code> (OV5640 feature only)</p>
+              </li>
+              <li>
+                <p><code>--no-banner</code> – to hide the banner on the JPEG image.</p>
+              </li>
+            </ul>
+            
+            <h3 id="gstreamer-movie-recording-artik-530710">gstreamer Movie Recording (ARTIK 530/710)</h3>
+            
+            <p>The ARTIK 530 and 710 modules incorporate a hardware video codec. These examples take advantage of the hardware features to record .avi and .mp4 videos. Single image capture is not supported from the command line for OV5640 (you can still do so using the capture application to access the gstreamer library).</p>
+            
+            <p>Example 1 – Record a video with no audio:</p>
+            
+            <pre>&#x000A;gst-launch-1.0 -e camerasrc camera-crop-width=1280 camera-crop-height=720 ! nxvideoenc bitrate=12000000 ! avimux ! filesink location=result.avi&#x000A;</pre>
+            
+            <p>Example 2 – Record a video with preview (using a 'tee' plugin to provide a 1-to-N pipe fitting):</p>
+            
+            <pre>&#x000A;gst-launch-1.0 -e camerasrc camera-crop-width=1280 camera-crop-height=720 ! tee name=t \&#x000A;t. ! queue ! nxvideosink \&#x000A;t. ! queue ! nxvideoenc bitrate=12000000 ! mp4mux ! filesink location=result.mp4&#x000A;</pre>
+            
+            <p>Example 3 – Record FHD movie by using scaler. Although maximum resolution of camera source is HD(1280x720),  recording a FHD(1920x1080) movie using the hardware scaler is possible.</p>
+            
+            <pre>&#x000A;gst-launch-1.0 -e camerasrc camera-crop-width=1280 camera-crop-height=720 ! nxscaler scaler-crop-width=1280 scaler-crop-height=720 scaler-dst-width=1920 scaler-dst-height=1080 ! tee name=t \&#x000A;t. ! queue ! nxvideosink \&#x000A;t. ! queue ! nxvideoenc bitrate=17000000 ! avimux ! filesink location=result_fhd.avi&#x000A;</pre>
+            
+            <p>Example 4 – Record a movie by using camera source plugin with sound, with simultaneous display on LCD or HDMI screen (need to install additional gstreamer plugin for encoding sound)</p>
+            
+            <p>Ubuntu:<br>
+              <code>apt install gstreamer1.0-plugins-ugly gstreamer1.0-plugins-bad</code><br>
+            Fedora:<br>
+              <code>dnf install gstreamer1-plugins-ugly</code></p>
+            
+            <pre>&#x000A;gst-launch-1.0 -e camerasrc camera-crop-width=1280 camera-crop-height=720 ! tee name=t \&#x000A;t. ! queue ! nxvideoenc bitrate=12000000 ! queue ! mux. \&#x000A;autoaudiosrc ! queue max-size-buffers=1000 ! liveadder start-time-selection=2 start-time=600000000 ! lamemp3enc ! queue ! mux. \&#x000A;t. ! nxvideosink \&#x000A;mp4mux name=mux ! filesink location=result_a.mp4</pre>
+            
+            <h3 id="ffmpeg-movie-recording">ffmpeg Movie Recording</h3>
+            
+            <p>Refer to online man page for detailed usage information.</p>
+            
+            <p>For OV5640:</p>
+            
+            <p>– ARTIK 530 supports VGA 15fps recording only.</p>
+            
+            <p>– ARTIK 710 supports VGA 15/30fps, HD 15fps.</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h4 id="record-without-sound"><strong>Record without Sound</strong></h4>
+            
+            <p>To record video with no audio, use this example as a template.</p>
+            
+            <pre>ffmpeg -y -f v4l2 -s 640x480 -r 15 -i /dev/video6 -b:v 2048k -vcodec mpeg4 test.avi&#x000A;&#x000A;&#x000A;</pre>
+            
+            <h4 id="record-with-sound"><strong>Record with Sound</strong></h4>
+            
+            <p>To record a movie with sound, additionally specify audio channels (1:Mono, 2:Stereo), and card number from <code>arecord</code> results (ac: audio channel, hw: card number, -t duration). Refer to the <a href="audio-guide.html">Audio Guide</a> for more examples of ALSA parameters.</p>
+            
+            <p>For an ARTIK 520/1020 example,</p>
+            
+            <pre>ffmpeg -y -thread_queue_size 2048 -f alsa -ac 1 -i hw:0 -f v4l2 -s 1280x720 -r 7 -i /dev/video6 -b:v 3072k -vcodec mpeg4 -t 20 test.avi</pre>
+            
+            <p>specifies:</p>
+            
+            <ul>
+              <li><code>-y</code> – overwrite output files</li>
+              <li><code>-thread_queue_size 2048</code> – maximum number of queued packets. Raising this value can avoid audio packet loss on low-latency and high-rate live streams.</li>
+              <li><code>-f alsa</code> – use ALSA for audio</li>
+              <li><code>-ac 1</code> – audio channel is mono</li>
+              <li><code>-i hw:0</code> – input audio card is 0</li>
+              <li><code>-f v4l2</code> – use V4L2 capture device</li>
+              <li><code>-s 640x480</code> – resolution</li>
+              <li><code>-r 15</code> – frame rate is 15 fps</li>
+              <li><code>-i /dev/video6</code> – input device for recording (MIPI camera)</li>
+              <li><code>-b:v 2048k</code> – target bitrate of recorded video : 2Mbps</li>
+              <li><code>-vcodec mpeg4</code> – use mpeg4 as a video codec</li>
+              <li><code>-t 20</code> – duration of recording is 20 sec.</li>
+              <li><code>test.avi</code> – output file name.</li>
+            </ul>
+            
+            <p>For an ARTIK 530/710 example,</p>
+            
+            <pre>ffmpeg -y -itsoffset 0.15 -thread_queue_size 2048 -f alsa -i hw:0 -f v4l2 -s 1280x720 -r 15 -i /dev/video6 -b:v 3072k -vcodec mpeg4 -t 20 test.avi</pre>
+            
+            <p>additionally specifies:</p>
+            
+            <ul>
+              <li>
+                <p><code>-itsoffset 0.15</code> – synchronize between audio and video by specified audio offset. For example:<br>
+            – when audio is faster than video by 0.15 sec : -itsoffset 0.15<br>
+            – when audio is slower than video by 0.5 sec : -itsoffset -0.5</p>
+            
+                <p>Recommended <code>itsoffset</code> value to apply to <code>.avi</code> video is 0.15 (sec).</p>
+              </li>
+            </ul>
+            
+            <p>Since ffmpeg uses S/W codec for recording a video file, the tool may print DTS warning messages when the timestamp between the image source and encoded stream are not identical.</p>
+            
+            <p>If you want to turn off verbose warning messages, you can change log level of ffmpeg by adding "-log level error" option as follows. Note that default loglevel is "info".</p>
+            
+            <p><code>ffmpeg -y -itsoffset 0.15 -thread_queue_size 2048 -f alsa -i hw:0 -f v4l2 -s 1280x720 -r 15 -i /dev/video6 -b:v 3072k -vcodec mpeg4 -t 20 -loglevel error test.avi</code></p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h4 id="record-with-vcodec-copy-option"><strong>Record with 'vcodec copy' Option</strong></h4>
+            
+            <p>When encoding video using a software codec, rate and resolution are limited by the CPU performance. Maximum frame rate of video encoding with the ARTIK 5 solution is approximately 7 fps for HD (1280x720), requiring use of the <code>-r</code> option to trade off frame rate for resolution.</p>
+            
+            <p>In order to get full frame rate video with high resolution, it is necessary to bypass the software video codec as follows.</p>
+            
+            <ol>
+              <li>Change the output format of the camera to <code>mjpeg</code>.</li>
+              <li>Specify <code>-vcodec copy</code> to just copy the stream without encoding with the codec.</li>
+            </ol>
+            
+            <pre>ffmpeg -y -thread_queue_size 2048 -f alsa -ac 1 -i hw:0 -f v4l2 -s 1280x720 -vcodec mjpeg -r 30 -i /dev/video6 -vcodec copy -t 20 -loglevel error test.avi</pre>
+            
+            <h2 id="stream-video">Stream Video</h2>
+            
+            <h3 id="using-ffmpeg-and-ffserver">Using ffmpeg and ffserver</h3>
+            <p>You can stream a video with RTSP protocol over the network by using <code>ffmpeg</code> and <code>ffserver</code>. <code>ffserver</code> receives FFM streams from the <code>ffmpeg</code> instance as input, then streams them over RTSP. ARTIK acts as the RTSP server.</p>
+            
+            <p>Supported resolutions and frame rates for video streaming</p>
+            
+            <p>S5K5EA:</p>
+            
+            <ul>
+              <li>VGA (640x480) : 15fps, 10fps and 5fps</li>
+              <li>HD (1280x720): 7fps, and 5fps</li>
+            </ul>
+            
+            <p>OV5640:</p>
+            
+            <ul>
+              <li>VGA : 30fps, 15fps</li>
+              <li>HD: 15fps</li>
+            </ul>
+            
+            <ol>
+              <li>Configure <code>ffserver</code> with a server configuration file, such as this <code>ffserver.conf</code> file for VGA 15fps streaming.</li>
+            </ol>
+            
+            <div class="highlight python"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26</pre></td><td class="code"><pre><span class="n">Port</span> <span class="mi">8090</span>&#x000A;<span class="n">BindAddress</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>&#x000A;&#x000A;<span class="n">RTSPPort</span> <span class="mi">8091</span>&#x000A;<span class="n">RTSPBindAddress</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>&#x000A;&#x000A;<span class="n">MaxClients</span> <span class="mi">1000</span>&#x000A;<span class="n">MaxBandwidth</span> <span class="mi">10000</span>&#x000A;<span class="n">CustomLog</span> <span class="o">-</span>&#x000A;&#x000A;<span class="o">&lt;</span><span class="n">Feed</span> <span class="n">feed1</span><span class="o">.</span><span class="n">ffm</span><span class="o">&gt;</span>&#x000A;<span class="n">File</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">feed1</span><span class="o">.</span><span class="n">ffm</span>&#x000A;<span class="n">ACL</span> <span class="n">Allow</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>&#x000A;<span class="o">&lt;/</span><span class="n">Feed</span><span class="o">&gt;</span>&#x000A;&#x000A;<span class="o">&lt;</span><span class="n">Stream</span> <span class="n">test1</span><span class="o">.</span><span class="n">mp4</span><span class="o">&gt;</span>&#x000A;<span class="n">Feed</span> <span class="n">feed1</span><span class="o">.</span><span class="n">ffm</span>&#x000A;<span class="n">Format</span> <span class="n">rtp</span>&#x000A;<span class="n">VideoFrameRate</span> <span class="mi">15</span>&#x000A;<span class="n">VideoBitRate</span> <span class="mi">5000</span>&#x000A;<span class="n">VideoSize</span> <span class="mi">640</span><span class="n">x480</span>&#x000A;<span class="n">VideoQMin</span> <span class="mi">3</span>&#x000A;<span class="n">VideoQMax</span> <span class="mi">31</span>&#x000A;<span class="n">NoAudio</span>&#x000A;<span class="n">NoDefaults</span>&#x000A;<span class="o">&lt;/</span><span class="n">Stream</span><span class="o">&gt;</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <ol start="2">
+            <li>
+            Launch <code>ffserver</code> in the background.<br>
+            # <code>ffserver -f ffserver.conf &amp;</code>
+            </li>
+            <li>
+            Run a stream feed with <code>ffmpeg</code> on ARTIK device.<br>
+            # <code>ffmpeg -f v4l2 -s 640x480 -r 15 -i /dev/video6 http://localhost:8090/feed1.ffm</code>
+            </li>
+            </ol>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h4 id="receive-and-play-streaming-content"><strong>Receive and Play Streaming Content</strong></h4>
+            
+            <p>On your PC, you can use media players like <code>mplayer</code> or VLC as the RTSP client to receive and play video streams.</p>
+            
+            <p><code>mplayer rtsp://[IP Address]:8091/test1.mp4</code></p>
+            
+            <p>Note that you run <code>mplayer</code> on the Host PC, not on the ARTIK board, to receive and play the video stream on the host (although you could set up a second ARTIK 530, 710, or 1020 board with an HDMI monitor to act as host).</p>
+            
+            <h3 id="using-gstreamer">Using Gstreamer</h3>
+            
+            <p>OV5640 – H/W Codec</p>
+            
+            <p>You can stream a video over RTSP with gstreamer. Supported resolutions and frame rates for video streaming:</p>
+            
+            <p>– VGA (640x480) : 30fps, 15fps<br>
+            – HD (1280x720): 30fps, 15fps<br>
+            – FHD (1920x1080): 30fps, 15fps</p>
+            
+            <p>Install additional packages that are needed to build an rtsp application.</p>
+            
+            <p><code>apt install build-essential</code><br>
+            <code>apt install gstreamer1.0-dev gstreamer-plugins-base1.0-dev</code><br>
+            <code>apt install libgstreamer-plugins-base1.0-dev</code><br>
+            <code>apt install libgstrtspserver-1.0-dev</code></p>
+            
+            <p>Build the launcher program, which we will use instead of gst-launch-1.0.</p>
+            
+            <p><code>gcc  -o test-launch test-launch.c `pkg-config --cflags --libs gstreamer-1.0 gstreamer-rtsp-1.0 gstreamer-rtsp-server-1.0`</code></p>
+            
+            <p>Refer to the code snippet of the launcher program below.</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107</pre></td><td class="code"><pre><span class="cp">#include &lt;gst/gst.h&gt;&#x000A;</span> &#x000A;<span class="cp">#include &lt;gst/rtsp-server/rtsp-server.h&gt;&#x000A;</span> &#x000A;<span class="cp">#define DEFAULT_RTSP_PORT "8554"&#x000A;</span> &#x000A;<span class="k">static</span> <span class="kt">char</span> <span class="o">*</span><span class="n">port</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">DEFAULT_RTSP_PORT</span><span class="p">;</span>&#x000A; &#x000A;<span class="k">static</span> <span class="n">GOptionEntry</span> <span class="n">entries</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>&#x000A; &#x000A;  <span class="p">{</span><span class="s">"port"</span><span class="p">,</span> <span class="sc">'p'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">G_OPTION_ARG_STRING</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">port</span><span class="p">,</span>&#x000A; &#x000A;      <span class="s">"Port to listen on (default: "</span> <span class="n">DEFAULT_RTSP_PORT</span> <span class="s">")"</span><span class="p">,</span> <span class="s">"PORT"</span><span class="p">},</span>&#x000A; &#x000A;  <span class="p">{</span><span class="nb">NULL</span><span class="p">}</span>&#x000A; &#x000A;<span class="p">};</span>&#x000A; &#x000A;<span class="kt">int</span>&#x000A; &#x000A;<span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>&#x000A; &#x000A;<span class="p">{</span>&#x000A; &#x000A;  <span class="n">GMainLoop</span> <span class="o">*</span><span class="n">loop</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">GstRTSPServer</span> <span class="o">*</span><span class="n">server</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">GstRTSPMountPoints</span> <span class="o">*</span><span class="n">mounts</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">GstRTSPMediaFactory</span> <span class="o">*</span><span class="n">factory</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">GOptionContext</span> <span class="o">*</span><span class="n">optctx</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">GError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A; &#x000A;  <span class="n">optctx</span> <span class="o">=</span> <span class="n">g_option_context_new</span> <span class="p">(</span><span class="s">"&lt;launch line&gt; - Test RTSP Server, Launch</span><span class="se">\n\n</span><span class="s">"</span>&#x000A; &#x000A;      <span class="s">"Example: </span><span class="se">\"</span><span class="s">( videotestsrc ! x264enc ! rtph264pay name=pay0 pt=96 )</span><span class="se">\"</span><span class="s">"</span><span class="p">);</span>&#x000A; &#x000A;  <span class="n">g_option_context_add_main_entries</span> <span class="p">(</span><span class="n">optctx</span><span class="p">,</span> <span class="n">entries</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A; &#x000A;  <span class="n">g_option_context_add_group</span> <span class="p">(</span><span class="n">optctx</span><span class="p">,</span> <span class="n">gst_init_get_option_group</span> <span class="p">());</span>&#x000A; &#x000A;  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">g_option_context_parse</span> <span class="p">(</span><span class="n">optctx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">))</span> <span class="p">{</span>&#x000A; &#x000A;    <span class="n">g_printerr</span> <span class="p">(</span><span class="s">"Error parsing options: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">error</span><span class="o">-&gt;</span><span class="n">message</span><span class="p">);</span>&#x000A; &#x000A;    <span class="n">g_option_context_free</span> <span class="p">(</span><span class="n">optctx</span><span class="p">);</span>&#x000A; &#x000A;    <span class="n">g_clear_error</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">error</span><span class="p">);</span>&#x000A; &#x000A;    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A; &#x000A;  <span class="p">}</span>&#x000A; &#x000A;  <span class="n">g_option_context_free</span> <span class="p">(</span><span class="n">optctx</span><span class="p">);</span>&#x000A; &#x000A;  <span class="n">loop</span> <span class="o">=</span> <span class="n">g_main_loop_new</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">FALSE</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* create a server instance */</span>&#x000A; &#x000A;  <span class="n">server</span> <span class="o">=</span> <span class="n">gst_rtsp_server_new</span> <span class="p">();</span>&#x000A; &#x000A;  <span class="n">g_object_set</span> <span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="s">"service"</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* get the mount points for this server, every server has a default object&#x000A; &#x000A;   * that be used to map uri mount points to media factories */</span>&#x000A; &#x000A;  <span class="n">mounts</span> <span class="o">=</span> <span class="n">gst_rtsp_server_get_mount_points</span> <span class="p">(</span><span class="n">server</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* make a media factory for a test stream. The default media factory can use&#x000A; &#x000A;   * gst-launch syntax to create pipelines.&#x000A; &#x000A;   * any launch line works as long as it contains elements named pay%d. Each&#x000A; &#x000A;   * element with pay%d names will be a stream */</span>&#x000A; &#x000A;  <span class="n">factory</span> <span class="o">=</span> <span class="n">gst_rtsp_media_factory_new</span> <span class="p">();</span>&#x000A; &#x000A;  <span class="n">gst_rtsp_media_factory_set_launch</span> <span class="p">(</span><span class="n">factory</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>&#x000A; &#x000A;  <span class="n">gst_rtsp_media_factory_set_shared</span> <span class="p">(</span><span class="n">factory</span><span class="p">,</span> <span class="n">TRUE</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* attach the test factory to the /test url */</span>&#x000A; &#x000A;  <span class="n">gst_rtsp_mount_points_add_factory</span> <span class="p">(</span><span class="n">mounts</span><span class="p">,</span> <span class="s">"/test"</span><span class="p">,</span> <span class="n">factory</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* don't need the ref to the mapper anymore */</span>&#x000A; &#x000A;  <span class="n">g_object_unref</span> <span class="p">(</span><span class="n">mounts</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* attach the server to the default maincontext */</span>&#x000A; &#x000A;  <span class="n">gst_rtsp_server_attach</span> <span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A; &#x000A;  <span class="cm">/* start serving */</span>&#x000A; &#x000A;  <span class="n">g_print</span> <span class="p">(</span><span class="s">"stream ready at rtsp://127.0.0.1:%s/test</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>&#x000A; &#x000A;  <span class="n">g_main_loop_run</span> <span class="p">(</span><span class="n">loop</span><span class="p">);</span>&#x000A; &#x000A;  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A; &#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <p>Run the launch program to stream a video on ARTIK host.</p>
+            
+            <p>Video Only</p>
+            
+            <p><code>./test-launch "( v4l2src device=/dev/video6 ! video/x-raw,format=I420,framerate=30/1,width=1280,height=720 ! nxvideoenc ! rtph264pay name=pay0 )"</code></p>
+            
+            <p>Video + Audio</p>
+            
+            <p><code>./test-launch "( v4l2src device=/dev/video6 ! video/x-raw,format=I420,framerate=15/1,width=1280,height=720 ! nxvideoenc ! rtph264pay name=pay0 autoaudiosrc ! opusenc ! rtpopuspay name=pay1 )"</code></p>
+            
+            <p>Audio Only</p>
+            
+            <p>// opus codec</p>
+            
+            <p><code>./test-launch "( autoaudiosrc ! opusenc ! rtpopuspay name=pay0 )"</code>
+            <code>&amp;nbsp;</code></p>
+            
+            <p>//Law audio encoder
+            <code>./test-launch "( autoaudiosrc ! alawenc ! rtppcmapay name=pay0 )"</code></p>
+            
+            <p>Run the gst-launch-1.0 program to show the video stream on client artik. Make sure to connect an LCD or HDMI display.</p>
+            
+            <p><code>gst-launch-1.0 -e rtspsrc location=rtsp://[host ip]:8554/test latency=0 ! rtph264depay ! h264parse ! nxvideodec ! nxvideosink</code></p>
+            
+            <pre>&#x000A;&#x000A;&#x000A;&#x000A;</pre>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-09-19 15:43:02 +0000'>Sep 19 2018,  3:43 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="audio-guide.html">Prev: Audio Record/Play</a></li>
+              <li class='next-page'><a href="usb-camera.html">Next: USB Camera</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

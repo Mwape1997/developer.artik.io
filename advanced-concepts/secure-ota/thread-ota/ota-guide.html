@@ -1,0 +1,1575 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='ota-guide.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Update Procedure' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Update Procedure' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Update Procedure</title>
+    <link href="..\..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_secure-ota documentation_advanced-concepts_secure-ota_thread-ota documentation_advanced-concepts_secure-ota_thread-ota_ota-guide' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="true">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="true">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="ota-guide.html" data-name="update-procedure" aria-expanded="false" class="active">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="general-update-procedure">General Update Procedure</h1>
+            
+            <p>ARTIK 030 devices using the IoTivity framework with Thread technology get their updates by way of the Edge Node Manager running in the gateway.</p>
+            
+            <h2 id="prerequisites">Prerequisites</h2>
+            
+            <p>You'll want to begin from a known-working starting point.</p>
+            
+            <ul>
+              <li>
+                <p>On-board your ARTIK gateway and install the <a href="enm-intro.html" target="artikle">Edge Node Manager</a>.</p>
+              </li>
+              <li>
+                <p><a href="..\..\..\artik-0\getting-started\connect.html#commissioning-artik-030" target="artikle">Commission and on-board</a> your ARTIK 030 board to the gateway and ARTIK Cloud.</p>
+              </li>
+            </ul>
+            
+            <p>This latter step serves mainly to give you the conceptual knowledge of the process. Once it's working, delete this on-boarded device from your phone and from ARTIK Cloud. You'll  create your own device to on-board and eventually update its firmware over-the-air (OTA).</p>
+            
+            <h2 id="operational-overview">Operational Overview</h2>
+            
+            <p>The way the system handles update of edge node firmware is straightforward. 
+            Here's an overview of the flow; follow along on the diagram.</p>
+            
+            <ol>
+              <li>
+                <p>Using the ARTIK Cloud developer site, you need only load the package to be transferred and trigger the update.</p>
+              </li>
+              <li>
+                <p>ARTIK Cloud sends the URI of that package to the gateway.</p>
+              </li>
+            </ol>
+            
+            <p>The next steps are all carried out by the Edge Node Manager, running on the gateway.</p>
+            
+            <ol start="3">
+            <li>
+            Requests and carries out transfer of the package identified by that URI.
+            </li>
+            <li>
+            Verifies that the package has not been tampered with.
+            </li>
+            <li>
+            Extracts package contents: <br>
+            -- <span class="code-font">updater-app</span> tool (executable file)<br>
+            -- <span class="code-font">updater.sh</span> (script file)<br>
+            -- <span class="code-font">package.json</span> (manifest file)<br>
+            -- <span class="code-font">ARTIK_Thread_OTA_server</span> (driver file)<br>
+            -- the update image itself (<span class="code-font">.ebl</span> file).
+            </li>
+            <li>
+            Runs the script and executes its instructions, ultimately running <span class="code-font">updater-app</span> 
+            </li>
+            </ol>
+            
+            <p>The final steps perform the update.</p>
+            
+            <ol start="7">
+            <li>
+            <span class="code-font">updater-app</span> communicates with the intended target to copy over the new image, by way of the driver (gateway side) and a plugin (edge node side).
+            </li>
+            <li>
+            
+            The plugin takes the steps noted in the diagram to activate the update, then returns status to ENM.
+            </li>
+            <li>
+            
+            ENM returns the status of the operation to ARTIK Cloud.
+            </li>
+            </ol>
+            
+            <p class="info">OTA update is available on all levels of ARTIK Cloud service – an Enterprise account is not required.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-procedure-030.jpg?1549048075"></p>
+            
+            <h2 id="ota-package-contents">OTA Package Contents</h2>
+            
+            <p>ENM expects an OTA upgrade packaged in a particular format depending upon the target device type. You construct this package and then load it to ARTIK Cloud for deployment.</p>
+            
+            <p>ARTIK 030 OTA packages must contain:</p>
+            
+            <ul>
+            
+            <li>
+            An <code>updater-app</code> executable that orchestrates update operations from the gateway
+            </li>
+            <li>
+            A script <code>updater.sh</code> that is user-modified to handle any preparatory activities; it calls <code>updater-app</code> as well as other programs you define
+            </li>
+            <li>
+            A gateway-side driver <span class="code-font">ARTIK_Thread_OTA_server</span> that interacts with an Edge Node Client plugin; pushes the firmware to the Edge device over Thread
+            <br>
+            
+            
+            
+            
+            
+            
+            </li>
+            <li>
+            A <a data-toggle="collapse" href="#package-json" aria-expanded="false" aria-controls="package-json">JSON package manifest</a> (a local list, not the same as the ARTIK Cloud manifest)<br>
+            
+            
+            
+            
+            
+            
+            
+            <html>
+            
+            <div class="collapse" id="package-json">
+            <div class="boxed" style="max-height:270px">
+            
+            
+            <strong>package.json</strong>
+            
+            <pre>&#x000A;{ &#x000A;  "application": "&lt; application name &gt;"&#x000A;  "version": "&lt; version of the new firmware &gt;"&#x000A;  "filename": "&lt; name of the firmware .ebl file to flash &gt;"&#x000A;  "sha256sum": "&lt; SHA256 sum of the firmware .ebl file &gt;",&#x000A;  "packet_size" : &lt; Size of each chunk (bytes): 1024 &gt;,&#x000A;  "retry_count" : &lt; Packet retry count : 5 &gt;,&#x000A;  "ack_timeout" : &lt; Packet ack timeout (seconds) :5 &gt;,&#x000A;  "max_ota_attempts" : &lt; Maximum OTA attempts : 5 &gt;,&#x000A;  "ota_retry_wait_period" : &lt; Waiting time between successive <br>OTA attempts (seconds): 60 &gt;&#x000A;}&#x000A;</pre>
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            
+            </li>
+            <li>
+            The <span class="code-font">.ebl</span> file containing the new firmware to flash.
+            </li>
+            </ul>
+            
+            <p>We provide <a href="#extract-starter-package">starter package software bundles</a> containing all of these files. You can try them out to get a feel for the operation, and then modify them for your own application.</p>
+            
+            <p><strong>Updater.</strong> The <code>updater.sh</code> script calls the provided <code>updater-app</code> tool, which:</p>
+            
+            <ol>
+              <li>
+                <p>Checks that the version in the manifest is higher than the current version passed as an environment variable</p>
+              </li>
+              <li>
+                <p>Computes the SHA256 sum of the downloaded file and compares it with the one provided in the JSON manifest</p>
+              </li>
+              <li>
+                <p>Transfers the new <span class="code-font">.ebl</span> file to the edge node device via the driver and plugin</p>
+              </li>
+              <li>
+                <p>Triggers the firmware update, waits for the plugin to indicate completion, and retrieves the result.</p>
+              </li>
+            </ol>
+            
+            <p>The script returns the update result to ARTIK Cloud.</p>
+            
+            <h2 id="incorporating-edge-node-client">Incorporating Edge Node Client</h2>
+            
+            <p>An ARTIK OTA plugin is required on the Edge device to handle the OTA update request from the Updater and driver. It's known as the Edge Node Client (ENC). You'll need to upgrade your Simplicity Studio tool to build this plugin into your edge node firmware. It requires the IAR compiler to be installed.</p>
+            
+            <p class="info">Both the existing edge node firmware image, as well as the new image to be Flash-loaded, must have been compiled with the correct OTA plugin.</p>
+            
+            <h3 id="provision-a030-edge-node-client">Provision A030 Edge Node Client</h3>
+            
+            <p>The ARTIK custom OTA plugin for the Silicon Labs Thread stack is responsible for:</p>
+            
+            <ul>
+              <li>Receiving image packets over CoAP</li>
+              <li>Flashing them to the <strong>external</strong> flash memory device</li>
+              <li>Validating the complete image</li>
+              <li>Triggering a bootloader to load the image into <strong>internal</strong> flash memory.</li>
+            </ul>
+            
+            <p>You'll need to incorporate this custom plugin within your development flow.</p>
+            
+            <ol>
+            <li>
+            
+            Prepare your development system by following this procedure.<br>
+            
+            <a data-toggle="collapse" href="#ota-030-simplicity" aria-controls="ota-030-simplicity"></a>
+            
+            
+            
+            <html>
+            
+            <div id="ota-030-simplicity">
+            <div class="boxed">
+            
+            
+            <h3 id="upgrade-simplicity-thread-stack-for-artik-ota">Upgrade Simplicity Thread stack for ARTIK OTA</h3>
+            
+            <p>Your Simplicity Studio installation requires not only the Silicon Labs Thread stack, but also a custom ARTIK overlay that allows integration of the Edge Node Client in A030 firmware you build. The overlay is provided in a compressed file.</p>
+            
+            <p>Install the A030 OTA Edge Node Client in the Silicon Labs Thread 2.5.0.0 stack.</p>
+            
+            <ol>
+              <li>
+                <p>Download and unzip the overlay folders package.</p>
+            
+                <p><a href="https://developer.artik.io/downloads/a030-ota-edge-node-client-package/download" download="">silabs-thread-v2.5.0.0-artik-3.1.4.zip</a></p>
+              </li>
+              <li>
+                <p>Launch Simplicity Studio and connect the ARTIK 030 Development Kit to the development machine using a USB cable. Make sure the switch is set to <strong>AEM</strong>.</p>
+              </li>
+              <li>
+                <p>In Simplicity Studio, sign into your Silicon Labs account. After you are logged in, click Update Software (the down-arrow icon).</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-030-sign-in.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>You'll be using the Package Manager. In the Product Updates tab, click on Update All to install all available updates. You may be requested to restart Simplicity Studio.</p>
+              </li>
+              <li>
+                <p>Select the SDKs tab, set Version to All (by default only the latest is shown), and install the Thread SDK - 2.5.0.0 package (this may be older than your current Thread). Close Package Manager.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-030-thread-2.5.0.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Under <strong>Window</strong> » <strong>Preferences</strong>, expand <strong>Simplicity Studio</strong> and click on <strong>SDKs</strong>. Make sure the needed Thread stack is checked. Then click on this entry to highlight it and show the file path (under <strong>Location:</strong>).</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-030-SDKs.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Copy</strong> this path and use it to open an explorer window, then <strong>close</strong> Simplicity.</p>
+              </li>
+              <li>
+                <p>From the unzipped software package, copy the folders and their contents to the new window, overlaying the existing folders. Permit overwriting when asked.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-copy-zip.jpg?1549048075"></p>
+              </li>
+              <li><strong>Restart</strong> Simplicity Studio. The changes in the stacks should now be in effect.</li>
+              <li>
+                <p>Go to Launch view. If your A030 board is connected, it now appears in “Devices”. click the [+] on the J-Link adapter, then click the ARTIK 030 Mesh entry to get board-specific documentation and software listings.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-030-mesh-board.jpg?1549048075"></p>
+              </li>
+            </ol>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            </li>
+            <li>
+            
+            Build an image, and initialize your A030 board with it, by following this procedure.<br>
+            
+            
+            <a data-toggle="collapse" href="#ota-030" aria-controls="ota-030"></a>
+            
+            <html>
+            
+            <div id="ota-030">
+            <div class="boxed">
+            
+            
+            <h3 id="make-a030-firmware-ota-update-ready">Make A030 firmware OTA-update-ready</h3>
+            
+            <p>With Thread and the plugin files installed on your development PC, you can build OTA-update-capable A030 firmware.</p>
+            
+            <p><strong>Step 1.</strong> Create the “ARTIK Edge Node” Simplicity project. Follow the same procedure as for a <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html#creating-z3light-project" target="_blank">ZigBee project</a>, but choose as shown.</p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td>Silicon Labs Thread as the application type</td>
+                  <td><img alt="" src="..\..\..\images\docs\developer-guide\ota-thread-app-type.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>Thread 2.5.0.0 as the stack</td>
+                  <td><img alt="" src="..\..\..\images\docs\developer-guide\ota-thread-app-stack.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>ARTIK Edge Node as the application</td>
+                  <td><img alt="" src="..\..\..\images\docs\developer-guide\ota-thread-app-name.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>BRD4300D as the board<br><br>IAR ARM as the compiler</td>
+                  <td><img alt="" src="..\..\..\images\docs\developer-guide\ota-thread-app-compiler.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>Step 2.</strong> Generate the files.</p>
+            
+            <p><strong>Step 3.</strong> Create your Device Type in ARTIK Cloud and add its <span class="code-font">dtid</span> into the A030 edge node code.</p>
+            
+            <ol>
+            
+            <li>
+            
+            <a href="https://developer.artik.cloud/dashboard/devicetypes" target="_blank">Create your Device Type</a>, create and activate the manifest (even a single entry like <span class="code-font">Enabled</span> is enough), and enable Device Properties.
+            
+            <img src="..\..\..\images\docs\developer-guide\akc-new-device-type.jpg"><br><br>
+            
+            
+            </li>
+            
+            <li>
+            
+            Find its  <span class="code-font">dtid</span> and copy it.
+            
+            <img src="..\..\..\images\docs\developer-guide\akc-view-dtid.jpg"><br><br>
+            
+            
+            </li>
+            
+            
+            <li>
+            
+            
+            
+            Go to the <span class="code-font"><strong>iotivity-token.h</strong></span> file and edit the  <code>DEFAULT_AKCDTID</code> value, replacing it with your ARTIK Cloud Device ID <span class="code-font">dtid</span>.
+            
+            <img src="..\..\..\images\docs\developer-guide\ota-030-thread-2.5.0-edge-node-dtid.jpg"><br><br>
+            
+            </li>
+            <li>
+            Build the code to incorporate the change.
+            </li>
+            </ol>
+            
+            <p><strong>Step 4.</strong> Obtain a <a data-toggle="collapse" href="#ota-030-bootloader" aria-expanded="false" aria-controls="ota-030-bootloader">bootloader</a> image, then flash the main and bootloader <span class="code-font">.s37</span> images to the A030 device. Your board now contains the proper OTA-enabled firmware to receive a remote firmware update.</p>
+            
+            <html>
+            
+            <div class="collapse" id="ota-030-bootloader">
+            <div class="boxed" style="max-height:270px">
+            
+            
+            
+            <ul>
+            <li>
+            Build the correct Thread bootloader to match the code release. Follow the <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html#creating-a-bootloader" target="_blank">bootloader procedure</a> in the ZigBee article, this time choosing the "gecko_sdk_suite" <strong>v2.1</strong> (same as the SDK Suite version from Step 1).
+            </li>
+            
+            <br>OR
+            <br><br>
+            
+            <li>
+            
+            Copy a pre-built bootloader from this location.
+            
+            <pre>&#x000A;C:\SiliconLabs\SimplicityStudio\v4\developer\sdks\gecko_sdk_suite\v2.1\protocol\thread_2.5\tool\bootloader-efr32mg1p132f256gm48-brd4300d\app-bootloader-spiflash</pre>
+            
+            </li>
+            </ul>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <p><strong>Step 5.</strong> <a href="..\..\..\artik-0\getting-started\connect.html" target="_blank">Commission and on-board</a> the A030 device. (If you previously did the Connect to the World exercise, make sure you <strong>delete</strong> your instance from the phone app and ARTIK Cloud before attempting to commission and on-board again as a new Device Type.)</p>
+            
+            <p>You should now be able to see your device type on <a href="https://my.artik.cloud/devices">https://my.artik.cloud/devices</a> and can use the Device Management tab to upload an OTA firmware image to update the A030 device at any time.</p>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            
+            </li>
+            </ol>
+            
+            <h2 id="creating-update-packages">Creating Update Packages</h2>
+            
+            <p>It is easiest to create an OTA update package by starting from a reference package. While the update package can be prepared in any Linux environment, you may want to do it on an ARTIK 530/710 board so that you can "try out" the package components locally before deploying to ARTIK Cloud.</p>
+            
+            <h3 id="extract-starter-package">Extract starter package</h3>
+            
+            <ol>
+              <li>
+                <p>From the correct software bundle for your gateway that you downloaded and unzipped <a href="enm-intro.html#prerequisites">here</a>, locate the <span class="code-font">tar.xz</span> files. There are two: an original and an "updated" version, so that you can start with one and later update to the other.</p>
+              </li>
+              <li>
+                <p>Extract the contents of a package (choose the non-updated one to start).</p>
+            
+                <p>    <a data-toggle="collapse" href="#tarball-extract" aria-expanded="false" aria-controls="tarball-extract">Extract using 7-Zip</a>        
+            <a data-toggle="collapse" href="#tarball-extract-linux" aria-expanded="false" aria-controls="tarball-extract-linux">Extract using Linux</a></p>
+              </li>
+            </ol>
+            
+            <html>
+            
+            <div class="collapse" id="tarball-extract">
+            <div class="boxed">
+            <h3 id="extract-the-package-using-7-zip">Extract the package using 7-Zip</h3>
+            
+            <ol>
+              <li>
+                <p>Copy your download to <strong>C:\Temp</strong> or another folder.</p>
+              </li>
+              <li>
+                <p>Browse to this folder in Explorer and right-click on the file to extract.<br>
+            – Click <strong>7-Zip</strong><br>
+            – Click <strong>Extract Here</strong></p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-extract.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Right click on the newly created .tar file to extract.<br>
+            – Click <strong>7-Zip</strong><br>
+            – Click <strong>Extract to …</strong></p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-extract-to.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Browse to the newly created directory. It contains all the files that were contained in the archive.</p>
+              </li>
+            </ol>
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <html>
+            
+            <div class="collapse" id="tarball-extract-linux">
+            <div class="boxed" style="max-height:250px">
+            
+            <h3> Extract the package using Linux</h3>
+            
+            <ol>
+            <li>
+            Copy the downloaded file package to a directory on your Linux development system.
+            </li>
+            
+            <li>
+            Create an output directory to hold the initial package contents.<br>
+            <code>mkdir output</code>
+            </li>
+            <li>
+            Uncompress the standard file package to your created directory.
+            <br>
+            <code>tar -xvf _package.tar.xz -C output/</code>
+            </li>
+            </ol>
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <h3 id="build-an-edge-node-ota-update-package">Build an Edge Node OTA update package</h3>
+            
+            <p>The starter directories already contain <span class="code-font">updater-app</span>, <span class="code-font">updater.sh</span>, driver, and <span class="code-font">package.json</span> files.</p>
+            
+            <ol>
+              <li>
+                <p>Create your updated ARTIK 030 firmware binary in Simplicity Studio, starting from an ARTIK Edge Node project using the appropriate ARTIK OTA plugin.</p>
+              </li>
+              <li>
+                <p>Copy the image file into the appropriate directory, and delete any files that will not be needed. You'll use the <span class="code-font">.ebl</span> format version of the Silicon Labs project image.</p>
+              </li>
+              <li>
+                <p>Edit the <span class="code-font">updater.sh</span> and <span class="code-font">package.json</span> files as needed for your application, paying close attention to the version number in the manifest.</p>
+              </li>
+            </ol>
+            
+            <h3 id="assemble-the-archive">Assemble the archive</h3>
+            
+            <p>The last thing required is to compress the new group of files.</p>
+            
+            <p>    <a data-toggle="collapse" href="#tarball-repackage" aria-expanded="false" aria-controls="tarball-repackage">Repackage using 7-Zip</a>    
+            <a data-toggle="collapse" href="#tarball-repackage-linux" aria-expanded="false" aria-controls="tarball-repackage-linux">Repackage using Linux</a></p>
+            
+            <html>
+            
+            <div class="collapse" id="tarball-repackage">
+            <div class="boxed">
+            <h3 id="repackage-the-archive-using-7-zip">Repackage the archive using 7-Zip</h3>
+            
+            <ol>
+              <li>
+                <p>In the File Explorer, select all the files you want to archive, right-click the selection, click <strong>7-Zip</strong> then <strong>Add to archive</strong></p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-add-to-archive.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>In the 7-Zip window, make sure to select tar as Archive format, change the filename of the archive as you see fit, then click OK. It will generate the new <span class="code-font">.tar</span> file.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-add-to-archive-name.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Right-click on this new file then choose <strong>7-Zip</strong> and Add to archive…</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-add-tar-to-archive.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>In the 7-Zip window, choose xz as the Archive format, change the filename if needed then click OK.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-7zip-add-tar-to-archive-name.jpg?1549048075"></p>
+              </li>
+            </ol>
+            
+            <p>The new package with your modified content has been generated.</p>
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <html>
+            
+            <div class="collapse" id="tarball-repackage-linux">
+            <div class="boxed" style="max-height:250px">
+            
+            <h3> Repackage the archive using Linux</h3>
+            
+            
+            <p>
+            From your output/ directory, compress the files.
+            </p>
+            
+            <code>tar -cJf package.tar.xz  -C output/ .</code>
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <h2 id="deploying-artik-cloud-update">Deploying ARTIK Cloud Update</h2>
+            
+            <p>The final steps will be to sign your package if desired, upload it to ARTIK Cloud, and trigger deployment.</p>
+            
+            <h3 id="sign-the-package-if-needed">Sign the package if needed</h3>
+            
+            <p><strong>Unsigned packages.</strong> If you are not signing your package, the <span class="code-font">.xz</span> file is the one to upload to ARTIK Cloud for deployment.</p>
+            
+            <p><strong>Signed Packages</strong>. If you will be using a <strong>signed</strong> package, sign the <span class="code-font">.xz</span> file now:</p>
+            
+            <ul>
+              <li>
+                <p>Make a copy of the file and call it <span class="code-font"><strong>package.tar.xz</strong></span></p>
+              </li>
+              <li>
+                <p>Jump to <a href="..\signing.html" target="artikle">Package Signing</a> and sign the file</p>
+              </li>
+              <li>
+                <p>Return here to continue.</p>
+              </li>
+            </ul>
+            
+            <p><code> package.tar.xz.signed</code> will be the output. Rename the <code>package</code> part to its original name and version before you upload it to ARTIK Cloud.</p>
+            
+            <p class="info">This package cannot be opened as a <span class="code-font">tar.xz</span> in its current form, as it has a prepended signature.</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h3 id="upload-the-package-to-artik-cloud">Upload the package to ARTIK Cloud</h3>
+            
+            <ol>
+              <li>
+                <p>In the ARTIK Cloud developer portal, go to the Device Management tab of your Device Type, click the <strong>OTA Updates</strong> subtab, then click the <strong>Upload new image</strong> button.</p>
+              </li>
+              <li>
+                <p>In the upload window, use the <strong>browse</strong> button to select the prepared package to upload. Select <strong>Edge Node</strong> as the image type. Finally, enter the version for the package; it <strong>must exactly match</strong> the one you set in the JSON manifest.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\..\images\docs\developer-guide\ota-upload-gateway.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Click the Upload button to finalize the uploading. Note that after uploading a package, it is impossible to delete it from the ARTIK Cloud portal.</p>
+              </li>
+            </ol>
+            
+            <h3 id="trigger-the-update">Trigger the update</h3>
+            
+            <ol>
+              <li>
+                <p>Go to the ARTIK Cloud developer portal, and browse to the <strong>Device Management</strong> pane for that device type. In the devices list, identify the currently connected board by its device ID.</p>
+            
+                <p><img src="..\..\..\images\docs\developer-guide\ota-upload-gateway-trigger.jpg" class="lightbox"></p>
+              </li>
+              <li>
+                <p>Check the device (or devices) you want to update, click <strong>Execute</strong> then <strong>OTA update</strong>.</p>
+            
+                <p><img src="..\..\..\images\docs\developer-guide\ota-execute-update.jpg" class="lightbox"></p>
+              </li>
+              <li>
+                <p>Select the package you want to use for update, then click <strong>Next</strong>.</p>
+              </li>
+              <li>
+                <p>In the final window, you can select a date to schedule the update, or leave empty to launch the update right now. Click <strong>Perform OTA Update</strong> when ready.</p>
+              </li>
+            </ol>
+            
+            <p>To follow the update process from the ARTIK Cloud portal, go to the <strong>Tasks</strong> subtab under the <strong>Device Management</strong> pane. Identify the OTA update task from the list then click it to get the details.</p>
+            
+            <p><img src="..\..\..\images\docs\developer-guide\ota-upload-gateway-tasks.jpg" class="lightbox"></p>
+            
+            <p>On the device side, it should download the OTA package and then flash the new firmware and follow whatever other script instructions were included.</p>
+            
+            <p>You can check the device log to see whether the new firmware has been properly booted by looking at the new version string. On the ARTIK Cloud portal side, the task status will be updated after a bit (usually a couple of minutes) to reflect the success of the OTA update.</p>
+            
+            <p><img src="..\..\..\images\docs\developer-guide\ota-upload-gateway-tasks-succeeded.jpg" class="lightbox"></p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            
+            <p>Having problems? Review these topics to determine what went wrong.</p>
+            
+            <h3 id="general-checks">General checks</h3>
+            
+            <ul>
+              <li>
+                <p><strong>Network connection.</strong> You should see both the IPv4 address of <span class="code-font">wlan0</span> and the tunneled IPv6 addresses <span class="code-font">tun0</span> of the border router. For example:<br>
+            <span class="code-font">[root@artik ~]#</span> <code>hostname -I</code><br>
+            <span class="code-font">10.0.1.122 2001:db8:385:9318:5064:c369:c2ed:9f08 fd39:43d9:a28c:0:4f9f:9b2f:9783:59dc
+            </span></p>
+              </li>
+              <li>
+                <p><strong>Internet access.</strong> Ping a known-accessible site to make sure you have Internet access.<br>
+            <span class="code-font">[root@artik ~]# </span><code>ping 8.8.8.8</code><br>
+            <span class="code-font">PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.<br>
+            64 bytes from 8.8.8.8: icmp_seq=1 ttl=120 time=12.6 ms<br>
+            64 bytes from 8.8.8.8: icmp_seq=2 ttl=120 time=29.9 ms<br>
+            64 bytes from 8.8.8.8: icmp_seq=3 ttl=120 time=56.9 ms
+            </span></p>
+              </li>
+              <li>
+                <p><strong>Thread Network.</strong> Check that your A030 end devices are in the Thread network. Check status on your ARTIK Cloud device managemant portal; they should be shown as 'Active'.</p>
+            
+                <p><img src="..\..\..\images\docs\developer-guide\ota-030-dev-mgmt.jpg" class="lightbox"></p>
+              </li>
+              <li>
+                <p>Check that the enmd is running on the Gateway.</p>
+            
+                <p><code>systemctl status enmd</code></p>
+              </li>
+              <li>
+                <p>Check the ENM logs on the Gateway, It will be easy to debug the problem If there are any errors related to 030 OTA.</p>
+            
+                <p><code>journalctl -f -u enmd</code></p>
+            
+                <p>Click to see a sample <a data-toggle="collapse" href="#otalogs">data log</a> with highlighted points to check.</p>
+              </li>
+            </ul>
+            
+            <html>
+            
+            <div class="collapse" id="otalogs">
+            <div class="boxed">
+            <pre>&#x000A;-- Logs begin at Tue 2018-06-19 20:20:10 UTC. --&#x000A;&#x000A;Jun 19 22:44:00 artik enmd[2510]:  LWM2M client [Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0]: Firmware URL [https://api.artik.cloud/v1.1/updates/urls/eb88e711b70d4aab8e34761f6972c075?tk=W4ZsqbdyT%2Ftn%2FF4Dk%2BXyyW6uVoy5%2BighkGGCfRV1bgcrQTSivSQw1JwyQjr%2FAVZiLGnLC%2BE4P5yPI6bKMdGa7f6TD2PUF3a7ln6ZFzLUvy8%3D] received for node d2dd0fd8-6764-418f-9a29-000b57366fe0&#x000A;Jun 19 22:44:00 artik enmd[2510]: 2018-06-19 22:44:00,119 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update node firmware udpate state to  1&#x000A;Jun 19 22:44:02 artik enmd[2510]: 2018-06-19 22:44:02,276 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update node firmware udpate state to  2&#x000A;Jun 19 22:44:02 artik enmd[2510]:  LWM2M client [Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0]: Firmware Downloaded at /tmp/update-d2dd0fd8-6764-418f-9a29-000b57366fe0&#x000A;Jun 19 22:44:04 artik enmd[2510]:  LWM2M client [Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0]: FIRMWARE UPDATE command received for node d2dd0fd8-6764-418f-9a29-000b57366fe0&#x000A;Jun 19 22:44:04 artik enmd[2510]: 2018-06-19 22:44:04,496 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update node firmware udpate state to  3&#x000A;Jun 19 22:44:05 artik enmd[2510]: 2018-06-19 22:44:05,499 INFO  [EdgeNodeManager] [ d2dd0fd8-6764-418f-9a29-000b57366fe0 ] is  Updating&#x000A;Jun 19 22:44:05 artik enmd[2510]: 2018-06-19 22:44:05,575 INFO  [EdgeNode-3202] Upgrade firmware of device  d2dd0fd8-6764-418f-9a29-000b57366fe0&#x000A;Jun 19 22:44:05 artik enmd[2510]: 2018-06-19 22:44:05,576 INFO  [EdgeNode-3202] Executing command [ cd /tmp/update-d2dd0fd8-6764-418f-9a29-000b57366fe0 ; DEVICE_INFO=/tmp/update-d2dd0fd8-6764-418f-9a29-000b57366fe0/device.json /bin/sh  /tmp/update-d2dd0fd8-6764-418f-9a29-000b57366fe0/updater.sh ]&#x000A;Jun 19 22:44:05 artik enmd[2510]: <strong>File is /tmp/update-d2dd0fd8-6764-418f-9a29-000b57366fe0/device.json</strong>&#x000A;Jun 19 22:44:05 artik enmd[2510]: <strong>Firmware is artik-edge-node.ebl</strong>&#x000A;Jun 19 22:44:05 artik enmd[2510]: <strong>SHA256</strong> computed on firmware file is 129e64dc72e971324ea7a08f3cdbaffbb2cab2a4d0923289d04f90832d074525&#x000A;Jun 19 22:44:05 artik enmd[2510]: <strong>Waiting to acquire lock TRY COUNT 1</strong>&#x000A;Jun 19 22:44:05 artik enmd[2510]: Packet cool off period.Waiting before starting.&#x000A;Jun 19 22:45:05 artik enmd[2510]: Lock acquired for node d2dd0fd8-6764-418f-9a29-000b57366fe0 TRY COUNT  1&#x000A;Jun 19 22:45:05 artik enmd[2510]: Device IP Address is fd62:1f35:3b26:0:ea32:35a7:cd5d:d1d0&#x000A;Jun 19 22:45:05 artik enmd[2510]: launching command [./ARTIK_Thread_OTA_server -f artik-edge-node.ebl -a  fd62:1f35:3b26:0:ea32:35a7:cd5d:d1d0 -p 1024 -r 5 -t 5 &gt; firmwareupdate.log]&#x000A;Jun 19 22:48:31 artik enmd[2510]: <strong>Lock released</strong>&#x000A;Jun 19 22:48:35 artik enmd[2510]: 2018-06-19 22:48:35,798 INFO  [EdgeNode-3202] Firmware system command result  0&#x000A;Jun 19 22:48:35 artik enmd[2510]: 2018-06-19 22:48:35,799 INFO  [EdgeNode-3202] <strong>Firmware Update Result for Node  d2dd0fd8-6764-418f-9a29-000b57366fe0  is   true</strong>&#x000A;Jun 19 22:48:35 artik enmd[2510]: 2018-06-19 22:48:35,799 INFO  [EdgeNodeManager] [ d2dd0fd8-6764-418f-9a29-000b57366fe0 ] is  Online&#x000A;Jun 19 22:48:35 artik enmd[2510]: 2018-06-19 22:48:35,871 INFO  [EdgeNode-3202] NODE :  d2dd0fd8-6764-418f-9a29-000b57366fe0  state : Online&#x000A;Jun 19 22:49:05 artik enmd[2510]: 2018-06-19 22:49:05,937 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Updated resource IP Address to   fd62:1f35:3b26:0:ea32:35a7:cd5d:d1d0&#x000A;Jun 19 22:49:05 artik enmd[2510]: 2018-06-19 22:49:05,937 INFO  [default] Lwm2m [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update resource firmware version to   3.1.4&#x000A;&#x000A;Jun 19 22:50:36 artik enmd[2510]: 2018-06-19 22:50:36,054 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Updated resource IP Address to   fd62:1f35:3b26:0:ea32:35a7:cd5d:d1d0&#x000A;Jun 19 22:50:36 artik enmd[2510]: 2018-06-19 22:50:36,055 INFO  [default] Lwm2m [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update resource firmware version to   3.1.4&#x000A;Jun 19 22:50:36 artik enmd[2510]: 2018-06-19 22:50:36,055 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update node firmware udpate result  1&#x000A;Jun 19 22:50:36 artik enmd[2510]: 2018-06-19 22:50:36,055 INFO  [default] Lwm2m client [ Lwm2mClient-d2dd0fd8-6764-418f-9a29-000b57366fe0 ]: Update node firmware udpate state to  0</pre>
+            
+            </div>
+            </div>
+            
+            </html>
+            
+            <h3 id="enm--configuration-failure">ENM  configuration failure</h3>
+            
+            <p>If you are seeing failures, use the ENM REST APT to check the configuration. In the examples shown below, replace the IP of <span class="code-font">10.0.1.95</span> with your own gateway IP address.</p>
+            
+            <p>Command</p>
+            
+            <p><code>curl -k --digest -uadmin:admin -X GET -H "Content-type: application/json" "https://10.0.1.95/v1.0/service/conf"</code></p>
+            
+            <p>Response</p>
+            
+            <pre>&#x000A;{"AKCApi":1,"DbusApi":0,"Debug":0,"DefaultConfiguration":{"currency":" ","deviceName":"Edge Node Manager","devicename":"",&#x000A;"location":"","locationName":","locationname":"","region":"},"EventApi":1,"Lwm2mApi":1,"RestApi":1,"akcEnableWebsockets":1,"client_id":"","cloudDeviceTypeId":{"ARTIK-030":"","ARTIK-050_EVK":""},"dbPath":"/var/local/enmd.db","deviceOfflineTimeoutInterval":120,"discoveryEnableOnStartup":1,"lwm2m_client_lifetime":120,"lwm2m_server_address":"coaps+tcp://coaps-api.artik.cloud:5689","maxEventDBSize":10240000,"network":{"connectionTimeout":10000,"monitorInterface":"wlan0","testEndpoint":"https://api.artik.cloud"},"notifyEventDBSpace":10,"pingInterval":30,"platformConfiguration":{"otaApplicationName":"enmd","<strong>otaRootCA</strong>":"<strong>artik</strong>","<strong>otaSignatureVerification":false</strong>},"proxy":{"http_proxy":"","https_proxy":""},"resinApplicationId":{"ARTIK-030":"","ARTIK-050_EVK":""},"scan_period":10,"storeAndForward":{"clearStrategy":"NONE","delayUploadInterval":3600,"enable":false,"maxDBStorageSize":1024000,"maxTTL":7200,"useOriginalTimeStamp":true},"token":"15f15ae64ec7468c8f8a7e5768b28efd","user_id":"a961221c464e4823b1a621e03db85cbd","webPort":443}</pre>
+            
+            <p>If you are doing <strong>signed OTA</strong> then update the configuration using these commands.</p>
+            
+            <p><code>curl --digest -k -uadmin:admin -X PUT -H "Content-Type: application/json"  -d'{"platformConfiguration" : {"<strong>otaSignatureVerification</strong>" : <strong>true</strong>}}' "https://10.0.1.95/v1.0/service/conf"</code></p>
+            
+            <p>In the second command, provide the path of your CA.</p>
+            
+            <p><code>curl --digest -k -uadmin:admin -X PUT -H "Content-Type: application/json"  -d'{"platformConfiguration" : {"<strong>otaRootCA</strong>" : "<strong>/etc/artik_root.pem</strong>"}}' "https://10.0.1.95/v1.0/service/conf"</code></p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-10-22 22:32:28 +0000'>Oct 22 2018, 10:32 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="index.htm">Prev: Thread Node - A030</a></li>
+              <li class='next-page'><a href="enm-intro.html">Next: Edge Node Manager</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

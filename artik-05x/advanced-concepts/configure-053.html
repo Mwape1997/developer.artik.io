@@ -1,0 +1,1159 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='configure-053.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Customization Tools' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Customization Tools' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Customization Tools</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_artik-05x documentation_artik-05x_advanced-concepts documentation_artik-05x_advanced-concepts_configure-053' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="true">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="configure-053.html" data-name="customization-tools" aria-expanded="false" class="active">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="customizing-artik-05x">Customizing ARTIK 05X</h1>
+            
+            <p>Having compiled, loaded, and played with the base version of Tizen RT, you can now customize it to use your chosen applications. Although you can manually edit the configuration files, the <code>kconfig-frontend</code> tools are the best choice to add and remove apps and features from the base version of Tizen RT.</p>
+            
+            <h2 id="customization-overview">Customization Overview</h2>
+            
+            <p>You can choose the apps that you want to be able to run from the command line interface (CLI). First, we'll explain how it would be done manually. This definition file:</p>
+            
+            <p><code>build/configs/artik053/&lt;cfg&gt;/defconfig</code></p>
+            
+            <p>selects the apps you want to have listed by the <code>TASH&gt; help</code> command. You'll see from the format of the <code>defconfig</code> file how an app is enabled or disabled.</p>
+            
+            <p>If you were using the <code>nettest</code> configuration, for example, you might edit the file like this:</p>
+            <pre>  vim build/configs/artik053/nettest/defconfig</pre>
+            
+            <p><code>defconfig</code> must be edited prior to configuring the build with <code>config.sh</code>, which creates a hidden <code>os/.config</code> file based on <code>defconfig</code>. If you want to make changes after that, edit  <code>os/.config</code> directly or use <code>Kconfig</code> tools.</p>
+            
+            <p class="info">Editing manually is not advised, as you may miss dependencies that <code>Kconfig</code> takes care of automatically.</p>
+            
+            <h2 id="installing-kconfig-tools">Installing Kconfig Tools</h2>
+            
+            <p>The Tizen RT system is highly configurable and the configuration files are maintained through the <code>kconfig-frontends</code> tool. Each Kconfig file contains declarations for the required configuration variables and provides one configuration option for Tizen RT.</p>
+            
+            <ol>
+              <li>
+                <p>Open a bash terminal window.</p>
+              </li>
+              <li>
+                <p>Change to main directory.<br><code>cd ~/ARTIK05X</code></p>
+              </li>
+              <li>
+                <p>Install the <code>Kconfig-frontend</code> for Tizen RT menu configuration.  <br><br>
+            <code>git clone https://bitbucket.org/nuttx/tools.git tools</code><br><br>
+            <code>cd tools/kconfig-frontends</code>  <br><br>
+            <code>./configure --enable-mconf --disable-gconf  --prefix=/usr</code>  <br><br>
+            <code>make</code>  <br><br>
+            <code>sudo make install</code></p>
+              </li>
+            </ol>
+            
+            <h2 id="addingremoving-apps">Adding/Removing Apps</h2>
+            
+            <p>Use the Kconfig GUI menu to set options. We're going to start you off on the Sensor Board app.</p>
+            
+            <ol>
+              <li>
+                <p>From within your <code>tinyara/os</code> directory, run:<br><code>make menuconfig</code><br>
+             to arrive at the entry screen.</p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\kconfig-init.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Scroll down to <strong><code>Application Configuration</code></strong> (it may initially be below the bottom of the screen) and hit Enter to select.</p>
+              </li>
+              <li>
+                <p>On the sub-menu select <strong><code>Examples...</code></strong>.</p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\kconfig-examples.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Scroll down to <code>Sensor Board Example</code> and hit the space bar to select.</p>
+              </li>
+              <li>
+                <p>Select <code>Save</code> and then exit from the program.</p>
+              </li>
+            </ol>
+            
+            <p>All the settings are stored in the  hidden <code>os/.config</code> file. If you re-initialize your configuration (<code>make distclean</code>) you will lose any changes you made.</p>
+            
+            <h2 id="coding">Coding</h2>
+            
+            <p>You built the unmodified code in the previous article to verify that it would run as expected. Now, as you get started on coding for real, here is some information to get you familiar with the layout.</p>
+            
+            <ul>
+              <li><code>build/configs/artik053</code>, <code>053s</code>, or <code>055s</code> contains the <code>&lt;cfg&gt;</code> directories for selecting the project type (<code>minimal</code>, <code>typical</code>, <code>extra</code>, <code>nettest</code>).</li>
+              <li><code>&lt;cfg&gt;/defconfig</code> lists the specific apps to include or exclude for each configuration.</li>
+              <li><code>apps/examples/</code> contains the source code for each of those apps.</li>
+              <li>Running the <code>config.sh</code> script as you did <a href="communicate-053.html">here</a> generates an <code>os/.config</code> file from <code>defconfig</code>.</li>
+              <li>You customize the contents of  <code>os/.config</code> using the <code>menuconfig</code> command associated with <code>Kconfig</code>.</li>
+              <li><code>os/arch/arm/src/artik05x/src/artik05x_boot.c</code> contains the mapping of GPIO pins.</li>
+            </ul>
+            
+            <p>The Sensor Board example is a good place to start to try modifying code. You'll find it under <code>apps/examples/sensorbd_demo/examples</code>. You can play with your app in the first <a href="..\tutorials\index.htm">Tutorials</a> article.</p>
+            
+            <h2 id="mqtt-example">MQTT Example</h2>
+            
+            <p>If you're familiar with MQTT, try out this easy exercise to see how quickly you can be publishing from your ARTIK 05X module.</p>
+            
+            <h3 id="prerequisites">Prerequisites</h3>
+            
+            <p>You'll need an MQTT broker to be set up and ready to receive your publications.  You could set up <a href="https://mosquitto.org/download/" target="_blank"><code>mosquitto</code></a> as a broker and <a href="http://www.mqttfx.org/" target="_blank">MQTT.fx</a> as a subscriber or publisher on your development PC, for example.</p>
+            
+            <p>If you have an ARTIK 5/7/10 module, you can use it instead with our <a href="..\..\advanced-concepts\mqtt\color-mqtt.html">Node-RED tutorial</a>. That is, with Wi-Fi up and running on your board, enter:<br>
+               <code>mosquitto -v &amp;</code><br>
+               <code>node-red &amp;</code></p>
+            
+            <h3 id="preparation">Preparation</h3>
+            
+            <p>Starting from a fresh configuration and <code>kconfig</code> running, do the following.</p>
+            
+            <ol>
+              <li>
+                <p>Scroll down to <code>Application Configuration</code>.</p>
+              </li>
+              <li>
+                <p>Go to <code>Network Utilities...</code> and select <code>MQTT </code> followed by <code>MQTT with security</code></p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\kcfg-mqtt-security.jpg?1549048075"></p>
+              </li>
+              <li>Exit from that page.</li>
+              <li>
+                <p>Go to <code>Examples...</code> and select <code>"MQTT Test" example</code></p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\kcfg-mqtt-examples.jpg?1549048075"></p>
+              </li>
+              <li>Save your changes and exit the configuration tool.</li>
+              <li>Build and load the image to your ARTIK 05X board as always.</li>
+            </ol>
+            
+            <h3 id="procedure">Procedure</h3>
+            
+            <p>Have your MQTT broker ready to receive your message. You'll need to know its IP address.</p>
+            
+            <ol>
+              <li>
+                <p>Reset your board and get to the <code>TASH&gt;</code> prompt. Verify that <code>mqtt_pub</code> is now in your <code>help</code> list.</p>
+              </li>
+              <li>
+                <p>Manually set up Wi-Fi as you did <a href="..\getting-started\communicate.html#manually-set-up-wi-fi">here</a>. Make sure you're using the <strong>same</strong> Wi-Fi access point as your MQTT broker is using.</p>
+              </li>
+              <li>
+                <p>Send an MQTT publish request, specifying <code>h</code>ost, <code>p</code>ort, <code>t</code>opic, and <code>m</code>essage.</p>
+              </li>
+            </ol>
+            
+            <p>For example:<br></p>
+            <pre>mqtt_pub -h 10.0.0.36 -p 1883 -t brightness -m "100"</pre>
+            
+            <p>That's all there is to it! You should see the message pop up on your MQTT broker screen.</p>
+            
+            <h2 id="creating-tizen-rt-sdk">Creating Tizen RT SDK</h2>
+            
+            <p>The Tizen RT SDKs used by the ARTIK IDE are created from Tizen RT source code and made available to the IDE through <a href="..\..\developer-guide\artik-ide\update-sdk.html">SDK Update</a>. These SDKs come with pre-built Tizen RT System Configurations that you can use to develop your application.</p>
+            
+            <p>You can create your own custom Tizen RT system configuration (that is, having chosen the modules you want included/excluded for build) using the Python-based command line tool described here. It gets copied in when you install <strong>ARTIK IDE v2.0.0</strong>.</p>
+            
+            <p>You develop with a new SDK by configuring and building it, then choosing it for a project. Refer to the <a href="..\..\developer-guide\artik-ide\create-sdk.html">Creating Tizen RT SDK</a> article for details.</p>
+            
+            <h3 id="preparation-1">Preparation</h3>
+            <p>Before using this SDK tool, you must have set up your development environment and gotten comfortable using the <code>kconfig</code> customization tool. Once you are ready, you will use the command line tool to generate the SDK. There is just one form – it either generates a new SDK, or adds a custom configuration to an existing SDK.</p>
+            
+            <p><code>tizenrt-system-config.py [options]</code></p>
+            
+            <p>where options are:<br>
+            <code>-v</code> or <code>--nsdk</code> is the new or existing SDK name;<br>     if existing, a custom configuration is created within the specified SDK<br>
+            <code>-b</code> or <code>--nconfig</code> is the new configuration name<br>
+            <code>-t</code> is the toolchain path<br>
+            <code>-d</code> or <code>--description</code> is a descriptive phrase for the configuration<br>
+            <code>-m</code> or <code>--module</code> is the module name (currently supported: <code>A053</code>,<code>A053s</code>,<code>A055s</code>)<br>
+            <code>-c</code> or <code>--sconfig</code> is the starting configuration.</p>
+            
+            <p>Example:</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>./tizenrt-system-config.py -m A053 -v custom_sdk -c extra -b custom_configuration -d 'This is the custom SDK generated by external tools' -t /home/user/ARTIK/toolchains/gcc-arm-none-eabi/v4.9-2015q3/bin</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>where, if <code>custom_sdk</code> is:</p>
+            
+            <ul>
+              <li>
+                <p>a new SDK name, generates a new SDK (<code>custom_sdk</code>) including a new custom configuration (<code>custom_configuration</code>).</p>
+              </li>
+              <li>
+                <p>an existing SDK name, generates a new <code>custom_configuration</code> within the existing SDK.</p>
+              </li>
+            </ul>
+            
+            <p>If these operations occur while the ARTIK IDE is already open, you must restart it to let the new SDK or new configuration work.</p>
+            
+            <p>Do not perform any other Tizen RT system-configuration-related operations while the tool is executing.</p>
+            
+            <h3 id="case-1-create-a-new-sdk-and-new-configuration">Case 1: Create a new SDK and new Configuration</h3>
+            <p>If you want to add a full customized Tizen RT SDK with any other officially released SDK to the SDK path of the IDE, use this procedure.</p>
+            
+            <ol>
+              <li>
+                <p>Use the command line above, where <code>custom_sdk</code> is a <strong>new</strong> SDK name. The command generates a new SDK (<code>custom_sdk</code>) including a new custom configuration (<code>custom_configuration</code>).</p>
+              </li>
+              <li>
+                <p>After configuring  Tizen RT with the features you want, choose Save and Exit.</p>
+              </li>
+              <li>
+                <p>Wait until Tizen RT is built.</p>
+              </li>
+              <li>
+                <p>Create a new project with this SDK and configuration.</p>
+              </li>
+            </ol>
+            
+            <h3 id="case-2-create-a-new-configuration-within-an-existing-sdk">Case 2: Create a new configuration within an existing SDK</h3>
+            
+            <p>If you want to add a new customized configuration to an existing SDK when Tizen RT source code in IDE, use this procedure.</p>
+            
+            <ol>
+              <li>
+                <p>Use the command line above, where <code>custom_sdk</code> is an existing SDK name. The command generates a new custom configuration (<code>custom_configuration</code>) within the existing SDK.</p>
+              </li>
+              <li>
+                <p>After configuring  Tizen RT with the features you want, choose Save and Exit.</p>
+              </li>
+              <li>
+                <p>Wait until Tizen RT is built.</p>
+              </li>
+              <li>
+                <p>Create a new project with this configuration.</p>
+              </li>
+            </ol>
+            
+            <p>Do not use the system configuration CLI tool and the ARTIK IDE system configuration function at the same time. Cross-use conflicts will occur.
+            {.info}</p>
+            
+            <h3 id="configure-and-build-a-new-sdk">Configure and build a new SDK</h3>
+            <p>Follow these steps, where we've used <code>~/ARTIK</code> as the name of the directory where the ARTIK IDE has been installed.</p>
+            
+            <p>If using a Windows host PC, launch a <code>msys2.exe</code> shell (find it in the <code>&lt;ARTIK Installation&gt;\tools\msys</code> folder) to run the commands below. The Tizen RT system configuration will not work if launched from a Windows command shell.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the ARTIK IDE directory containing the tool. For ARTIK IDE 1.4 and newer, it is in a subdirectory of the installed SDK. In SDK v1.7, for example:<br>
+            <code>cd ~/ARTIK/SDK/A053/v1.7/tools/external-system-config</code><br>
+            For ARTIK IDE v1.3, the location is always the same:<br>
+            <code>cd ~/ARTIK/tools/external-system-config</code></p>
+              </li>
+              <li>
+                <p>Run the command. Here we take the example command from above but leave off the description.<br>
+            <code>./tizenrt-system-config.py -m A053 -v custom_sdk -c extra -b custom_configuration  -t /home/user/ARTIK/toolchains/gcc-arm-none-eabi/v4.9-2015q3/bin</code> <br></p>
+            
+                <p>Doing so launches the <code>kconfig</code> tool.</p>
+              </li>
+              <li>
+                <p>Make changes to the configuration as described <a href="#addingremoving-apps">previously</a>.</p>
+              </li>
+              <li>
+                <p>Save your changes to the default <code>.config</code> file as always, then exit.</p>
+              </li>
+              <li>
+                <p>Wait for the command line program to build the new SDK.</p>
+              </li>
+            </ol>
+            
+            <h3 id="select-created-sdk">Select Created SDK</h3>
+            
+            <p>Once you have created or updated an SDK, it will be available when starting a new project.</p>
+            
+            <p>The image below shows an added SDK in the selector. The name defaults to 'custom' unless you changed it using the <code>-b</code> option with <code>tizenrt-system-config.py</code>.</p>
+            
+            <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-linux-sdk-custom.jpg?1549048075"></p>
+            
+            <p>Refer to the <a href="..\..\developer-guide\artik-ide\create-sdk.html">Creating Tizen RT SDK</a> article for more information.</p>
+            
+            <pre>&#x000A;&#x000A;&#x000A;</pre>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-08-06 22:07:43 +0000'>Aug 6 2018, 10:07 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="communicate-053.html">Prev: Compile and Load</a></li>
+              <li class='next-page'><a href="sign.html">Next: KMS Code Signing</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

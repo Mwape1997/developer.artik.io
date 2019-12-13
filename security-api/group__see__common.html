@@ -1,0 +1,1486 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='group__see__common.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK ARTIK Security (SEE) API: See_Common</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_security-api documentation_security-api_group__see__common' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option selected="" value='/documentation/security-api/group__see__common.html'>3.5</option>
+              <option value='https://developer.artik.io/downloads/security-api-3-4/download'>3.4</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('group__see__common.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="summary">
+            <a href="#nested-classes">Data Structures</a> &#124;
+            <a href="#define-members">Macros</a> &#124;
+            <a href="#typedef-members">Typedefs</a> &#124;
+            <a href="#enum-members">Enumerations</a> &#124;
+            <a href="#func-members">Functions</a> &#124;
+            <a href="#var-members">Variables</a>  </div>
+              <div class="headertitle">
+            <div class="title">See_Common</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            
+            <p>common file to use security api  
+            <a href="#details">More...</a></p>
+            <table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+            Data Structures</h2></td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsee__data.html">see_data</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common Data for input and output at SEE.  <a href="structsee__data.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsee__storage__file.html">see_storage_file</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">File Information in secure storage.  <a href="structsee__storage__file.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsee__csr.html">see_csr</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">csr  <a href="structsee__csr.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+            Macros</h2></td></tr>
+            <tr class="memitem:gaf6f8080c406fc354e560fcebcad6e108"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf6f8080c406fc354e560fcebcad6e108"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>err</b>(fmt,  args...)&#160;&#160;&#160;do { if (see_debug &gt; 0) printf(&quot;&lt;E&gt; : &quot; fmt &quot;\n&quot;, ##args); } while(0)</td></tr>
+            <tr class="separator:gaf6f8080c406fc354e560fcebcad6e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ga173bf362b0a0d3f9dfbc637625c8e61e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga173bf362b0a0d3f9dfbc637625c8e61e"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>info</b>(fmt,  args...)&#160;&#160;&#160;do { if (see_debug &gt; 1) printf(&quot;&lt;I&gt; : &quot; fmt &quot;\n&quot;, ##args); } while(0)</td></tr>
+            <tr class="separator:ga173bf362b0a0d3f9dfbc637625c8e61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ga9d3ae5162934f91be891722d93e65642"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9d3ae5162934f91be891722d93e65642"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>dbg</b>(fmt,  args...)&#160;&#160;&#160;do { if (see_debug &gt; 2) printf(&quot;&lt;D&gt; : &quot; fmt &quot;\n&quot;, ##args); } while(0)</td></tr>
+            <tr class="separator:ga9d3ae5162934f91be891722d93e65642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+            Typedefs</h2></td></tr>
+            <tr class="memitem:gae6ec66da70c626fe9f766d66921e9d7e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae6ec66da70c626fe9f766d66921e9d7e"></a>
+            typedef <a class="el" href="structsee__storage__file.html">see_storage_file</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#gae6ec66da70c626fe9f766d66921e9d7e">see_storage_list</a></td></tr>
+            <tr class="memdesc:gae6ec66da70c626fe9f766d66921e9d7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">File List of secure storage. <br></td></tr>
+            <tr class="separator:gae6ec66da70c626fe9f766d66921e9d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+            Enumerations</h2></td></tr>
+            <tr class="memitem:ga1af709fa885de01443ec205809c6b01a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#ga1af709fa885de01443ec205809c6b01a">see_algorithm</a> { <br>
+            &#160;&#160;<b>AES_ALGORITHM</b> = 0x0000, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa62e1b5b14d75b29e9ddbd89723fd8835">AES_128</a> = AES_ALGORITHM, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa552850501cf9e17912a9b1eec8d32a3c">AES_192</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabbbaa60825067ef5ad16c6328483f8f5">AES_256</a>, 
+            <br>
+            &#160;&#160;<b>RSA_ALGORITHM</b> = 0x1000, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaddfbf4de372c05fb8ca79edaad759687">RSA_1024</a> = RSA_ALGORITHM, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaaa4d22910f8049cacb2f2a84d7d0e573">RSA_2048</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa8b0cb67b0263aa85aa844a33205c95db">RSA_3072</a>, 
+            <br>
+            &#160;&#160;<b>ECC_ALGORITHM</b> = 0x2000, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaa2e67fc6ad5a5ca44292975467b67a99">ECC_BRAINPOOL_P256R1</a> = ECC_ALGORITHM, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa38df76dd27159854f66706a2571caddc">ECC_BRAINPOOL_P384R1</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae6edf7d2af0a4e16ccb062aa8acde95a">ECC_BRAINPOOL_P512R1</a>, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa1c8c7f516327586b450ed50b3b807bb9">ECC_SEC_P256R1</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa042d8a82f5e0b3675df6aef799bff1a8">ECC_SEC_P384R1</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa4bbe8d2b5fde2d8d840ca361bcb21969">ECC_SEC_P521R1</a>, 
+            <b>HASH_ALGORITHM</b> = 0x3000, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa45c78681038e51d5f54554130b0b79ab">HASH_MD5</a> = HASH_ALGORITHM, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa25c481ea5e9f16f9b40fe773528aef03">HASH_SHA1</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa0a7940bf3dbc032d803b1b688e5570e5">HASH_SHA224</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3690b7a5bf11282bcdaa199c11408dd3">HASH_SHA256</a>, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabb45ce56a912f1175c413afcb3e1f970">HASH_SHA384</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6d06d1ec4dbf3aa876fda6ca1c5b0f66">HASH_SHA512</a>, 
+            <b>HMAC_ALGORITHM</b> = 0x4000, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3642cff65c0585b67da1ff4c58497b43">HMAC_MD5</a> = HMAC_ALGORITHM, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6ff5f843a316c2d5b4b08b7238c874ce">HMAC_SHA1</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae3b68beca193554a8373bbcd9a05e0c1">HMAC_SHA224</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa587b9a5be35b67d474ef1e882dd1611e">HMAC_SHA256</a>, 
+            <a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aac5338535f8f8d83efbf342d59c409faa">HMAC_SHA384</a>, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3cbfcdf73561ee310a139c0f8e55358d">HMAC_SHA512</a>
+            <br>
+             }</td></tr><tr class="memdesc:ga1af709fa885de01443ec205809c6b01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cryptography algorithm.  <a href="group__see__common.html#ga1af709fa885de01443ec205809c6b01a">More...</a><br></td></tr>
+            
+            <tr class="separator:ga1af709fa885de01443ec205809c6b01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ga07a8db3b202706e86afa94a1abb0fa21"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#ga07a8db3b202706e86afa94a1abb0fa21">see_aes_mode</a> { <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a8b8bb6ae6a7ac7609548061af4db0e2f">AES_ECB_NOPAD</a> = 0, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21afb71c93cecc24042a58edf4aaa8c6c66">AES_ECB_ISO9797_M1</a> = 1, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c142687743ad1881e62f645e98f6e8c">AES_ECB_ISO9797_M2</a> = 2, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c7603a4ec213f3d3b606e3bbd57fee3">AES_ECB_PKCS5</a> = 3, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a2e8373283c7793a2bfdf621879f64aa5">AES_ECB_PKCS7</a> = 4, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ad26251d81166e3b900c029b49f069bca">AES_CBC_NOPAD</a> = 5, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a03bb3e14a32710c6063582fc8f6e09e7">AES_CBC_ISO9797_M1</a> = 6, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21aa85632f398c130a95fd5875d2923426a">AES_CBC_ISO9797_M2</a> = 7, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ab3386fc4600a7c9967c705633d7e9fbb">AES_CBC_PKCS5</a> = 8, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ac35403d8492ab09465f52a8943f5ad68">AES_CBC_PKCS7</a> = 9, 
+            <a class="el" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a386977c34c671c481407b1a81b03710b">AES_CTR</a> = 10
+            <br>
+             }</td></tr><tr class="memdesc:ga07a8db3b202706e86afa94a1abb0fa21"><td class="mdescLeft">&#160;</td><td class="mdescRight">aes mode  <a href="group__see__common.html#ga07a8db3b202706e86afa94a1abb0fa21">More...</a><br></td></tr>
+            
+            <tr class="separator:ga07a8db3b202706e86afa94a1abb0fa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:gacbbaed998c336eac1d1f4dfd0992ecb2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#gacbbaed998c336eac1d1f4dfd0992ecb2">see_rsa_mode</a> { <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a617b5e1e0f13f61afb2637abce315c0b">RSAES_PKCS1_V1_5</a> = 0, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2abaa329607aa557e6c747fd6ea4b5a6ad">RSAES_PKCS1_OAEP_MGF1_SHA1</a> = 1, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a21e32e018cac42d9bf7eec2ff67bac39">RSAES_PKCS1_OAEP_MGF1_SHA224</a> = 2, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a029185dc452ee9f0d0427e56a4c2f962">RSAES_PKCS1_OAEP_MGF1_SHA256</a> = 3, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2ae9753ead958494d3aefba8d343437221">RSAES_PKCS1_OAEP_MGF1_SHA384</a> = 4, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a507005a57dd800beef7e728051e7c102">RSAES_PKCS1_OAEP_MGF1_SHA512</a> = 5, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a1d54a1ee0e8b8c3d92aeadcc35a96845">RSASSA_PKCS1_V1_5_MD5</a> = 6, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a01f691df1701eb5158d74201693a5af5">RSASSA_PKCS1_V1_5_SHA1</a> = 7, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a97f733182aee8b2c176563df3e92802c">RSASSA_PKCS1_V1_5_SHA224</a> = 8, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a9ed0af6c31df1e20c44eff22e022c6f3">RSASSA_PKCS1_V1_5_SHA256</a> = 9, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a5c110a69a505c202e5e5b677c0f75a70">RSASSA_PKCS1_V1_5_SHA384</a> = 10, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a64ec2d0a40b7f5069d9708dec464c373">RSASSA_PKCS1_V1_5_SHA512</a> = 11, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a397461a09137b12d4455edd93e36a217">RSASSA_PKCS1_PSS_MGF1_SHA1</a> = 12, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7be83f42e148897bf6cf981a83783dbc">RSASSA_PKCS1_PSS_MGF1_SHA224</a> = 13, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a6a912b50578c5e952b484b7776d73d6f">RSASSA_PKCS1_PSS_MGF1_SHA256</a> = 14, 
+            <a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7f922fc03f4a7381bb87586e3ddc21cb">RSASSA_PKCS1_PSS_MGF1_SHA384</a> = 15, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a245f309eb67f2c81b2f46fcaee7eb5b7">RSASSA_PKCS1_PSS_MGF1_SHA512</a> = 16
+            <br>
+             }</td></tr><tr class="memdesc:gacbbaed998c336eac1d1f4dfd0992ecb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">rsa mode  <a href="group__see__common.html#gacbbaed998c336eac1d1f4dfd0992ecb2">More...</a><br></td></tr>
+            
+            <tr class="separator:gacbbaed998c336eac1d1f4dfd0992ecb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ga9b42db9a4528ac28ba44b2b75c98a8cb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#ga9b42db9a4528ac28ba44b2b75c98a8cb">see_ecdsa_curve</a> { <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba355c7350f2aaae0c1720fa8cc58fdd24">ECDSA_BRAINPOOL_P256R1</a> = 0, 
+            <a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbaa3261653f9febf3cfd6fa9ef1871631f">ECDSA_BRAINPOOL_P384R1</a> = 1, 
+            <a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba4c8745d237b2483bb6841aa729f3e5b4">ECDSA_BRAINPOOL_P512R1</a> = 2, 
+            <a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbac0add5276fe7775b698a99a241dc4a8d">ECDSA_SEC_P256R1</a> = 3, 
+            <br>
+            &#160;&#160;<a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba69dabd8473f81657b6fd1b8ae6eeac57">ECDSA_SEC_P384R1</a> = 4, 
+            <a class="el" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba8fbbec0caacf2fd475c294596c0b4800">ECDSA_SEC_P521R1</a> = 5
+            <br>
+             }</td></tr><tr class="memdesc:ga9b42db9a4528ac28ba44b2b75c98a8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ecdsa curve  <a href="group__see__common.html#ga9b42db9a4528ac28ba44b2b75c98a8cb">More...</a><br></td></tr>
+            
+            <tr class="separator:ga9b42db9a4528ac28ba44b2b75c98a8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+            Functions</h2></td></tr>
+            <tr class="memitem:gac329af6acc5a21bd3432699fa9a1d737"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#gac329af6acc5a21bd3432699fa9a1d737">see_init</a> (const char *id, const char *pwd)</td></tr>
+            <tr class="memdesc:gac329af6acc5a21bd3432699fa9a1d737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize see.  <a href="#gac329af6acc5a21bd3432699fa9a1d737">More...</a><br></td></tr>
+            <tr class="separator:gac329af6acc5a21bd3432699fa9a1d737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ga8a325912df2d08b6eb8df43c76a38fae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__see__common.html#ga8a325912df2d08b6eb8df43c76a38fae">see_deinit</a> (void)</td></tr>
+            <tr class="memdesc:ga8a325912df2d08b6eb8df43c76a38fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitialize see.  <a href="#ga8a325912df2d08b6eb8df43c76a38fae">More...</a><br></td></tr>
+            <tr class="separator:ga8a325912df2d08b6eb8df43c76a38fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+            Variables</h2></td></tr>
+            <tr class="memitem:gad9756f2ae10d6730e95f72fd79da6429"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad9756f2ae10d6730e95f72fd79da6429"></a>
+            int&#160;</td><td class="memItemRight" valign="bottom"><b>see_debug</b></td></tr>
+            <tr class="separator:gad9756f2ae10d6730e95f72fd79da6429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table>
+            <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+            <h2 class="groupheader">Enumeration Type Documentation</h2>
+            <a class="anchor" id="ga1af709fa885de01443ec205809c6b01a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="group__see__common.html#ga1af709fa885de01443ec205809c6b01a">see_algorithm</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa62e1b5b14d75b29e9ddbd89723fd8835"></a>AES_128&#160;</td><td class="fielddoc">
+            <p>128 bits aes algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa552850501cf9e17912a9b1eec8d32a3c"></a>AES_192&#160;</td><td class="fielddoc">
+            <p>192 bits aes algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aabbbaa60825067ef5ad16c6328483f8f5"></a>AES_256&#160;</td><td class="fielddoc">
+            <p>256 bits aes algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aaddfbf4de372c05fb8ca79edaad759687"></a>RSA_1024&#160;</td><td class="fielddoc">
+            <p>1024 bits rsa algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aaaa4d22910f8049cacb2f2a84d7d0e573"></a>RSA_2048&#160;</td><td class="fielddoc">
+            <p>2048 bits rsa algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa8b0cb67b0263aa85aa844a33205c95db"></a>RSA_3072&#160;</td><td class="fielddoc">
+            <p>3072 bits rsa algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aaa2e67fc6ad5a5ca44292975467b67a99"></a>ECC_BRAINPOOL_P256R1&#160;</td><td class="fielddoc">
+            <p>ecc brainpool curve for p256r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa38df76dd27159854f66706a2571caddc"></a>ECC_BRAINPOOL_P384R1&#160;</td><td class="fielddoc">
+            <p>ecc brainpool curve for p384r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aae6edf7d2af0a4e16ccb062aa8acde95a"></a>ECC_BRAINPOOL_P512R1&#160;</td><td class="fielddoc">
+            <p>ecc brainpool curve for p512r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa1c8c7f516327586b450ed50b3b807bb9"></a>ECC_SEC_P256R1&#160;</td><td class="fielddoc">
+            <p>nist curve for p256r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa042d8a82f5e0b3675df6aef799bff1a8"></a>ECC_SEC_P384R1&#160;</td><td class="fielddoc">
+            <p>nist curve for p384r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa4bbe8d2b5fde2d8d840ca361bcb21969"></a>ECC_SEC_P521R1&#160;</td><td class="fielddoc">
+            <p>nist curve for p521r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa45c78681038e51d5f54554130b0b79ab"></a>HASH_MD5&#160;</td><td class="fielddoc">
+            <p>md5 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa25c481ea5e9f16f9b40fe773528aef03"></a>HASH_SHA1&#160;</td><td class="fielddoc">
+            <p>sha1 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa0a7940bf3dbc032d803b1b688e5570e5"></a>HASH_SHA224&#160;</td><td class="fielddoc">
+            <p>sha224 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa3690b7a5bf11282bcdaa199c11408dd3"></a>HASH_SHA256&#160;</td><td class="fielddoc">
+            <p>sha256 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aabb45ce56a912f1175c413afcb3e1f970"></a>HASH_SHA384&#160;</td><td class="fielddoc">
+            <p>sha384 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa6d06d1ec4dbf3aa876fda6ca1c5b0f66"></a>HASH_SHA512&#160;</td><td class="fielddoc">
+            <p>sha512 hash algorithm </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa3642cff65c0585b67da1ff4c58497b43"></a>HMAC_MD5&#160;</td><td class="fielddoc">
+            <p>hmac with md5 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa6ff5f843a316c2d5b4b08b7238c874ce"></a>HMAC_SHA1&#160;</td><td class="fielddoc">
+            <p>hmac with sha1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aae3b68beca193554a8373bbcd9a05e0c1"></a>HMAC_SHA224&#160;</td><td class="fielddoc">
+            <p>hmac with sha224 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa587b9a5be35b67d474ef1e882dd1611e"></a>HMAC_SHA256&#160;</td><td class="fielddoc">
+            <p>hmac with sha256 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aac5338535f8f8d83efbf342d59c409faa"></a>HMAC_SHA384&#160;</td><td class="fielddoc">
+            <p>hmac with sha384 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga1af709fa885de01443ec205809c6b01aa3cbfcdf73561ee310a139c0f8e55358d"></a>HMAC_SHA512&#160;</td><td class="fielddoc">
+            <p>hmac with sha512 </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="see__common_8h_source.html#l00067">67</a> of file <a class="el" href="see__common_8h_source.html">see_common.h</a>.</p>
+            <div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;             {</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    AES_ALGORITHM = 0x0000,</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa62e1b5b14d75b29e9ddbd89723fd8835">AES_128</a> = AES_ALGORITHM, </div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa552850501cf9e17912a9b1eec8d32a3c">AES_192</a>, </div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabbbaa60825067ef5ad16c6328483f8f5">AES_256</a>, </div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    RSA_ALGORITHM = 0x1000,</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaddfbf4de372c05fb8ca79edaad759687">RSA_1024</a> = RSA_ALGORITHM, </div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaaa4d22910f8049cacb2f2a84d7d0e573">RSA_2048</a>, </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa8b0cb67b0263aa85aa844a33205c95db">RSA_3072</a>, </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ECC_ALGORITHM = 0x2000,</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaa2e67fc6ad5a5ca44292975467b67a99">ECC_BRAINPOOL_P256R1</a> = ECC_ALGORITHM, </div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa38df76dd27159854f66706a2571caddc">ECC_BRAINPOOL_P384R1</a>, </div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae6edf7d2af0a4e16ccb062aa8acde95a">ECC_BRAINPOOL_P512R1</a>, </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa1c8c7f516327586b450ed50b3b807bb9">ECC_SEC_P256R1</a>, </div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa042d8a82f5e0b3675df6aef799bff1a8">ECC_SEC_P384R1</a>, </div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa4bbe8d2b5fde2d8d840ca361bcb21969">ECC_SEC_P521R1</a>, </div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    HASH_ALGORITHM = 0x3000,</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa45c78681038e51d5f54554130b0b79ab">HASH_MD5</a> = HASH_ALGORITHM, </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa25c481ea5e9f16f9b40fe773528aef03">HASH_SHA1</a>, </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa0a7940bf3dbc032d803b1b688e5570e5">HASH_SHA224</a>, </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3690b7a5bf11282bcdaa199c11408dd3">HASH_SHA256</a>, </div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabb45ce56a912f1175c413afcb3e1f970">HASH_SHA384</a>, </div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6d06d1ec4dbf3aa876fda6ca1c5b0f66">HASH_SHA512</a>, </div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    HMAC_ALGORITHM = 0x4000,</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3642cff65c0585b67da1ff4c58497b43">HMAC_MD5</a> = HMAC_ALGORITHM, </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6ff5f843a316c2d5b4b08b7238c874ce">HMAC_SHA1</a>, </div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae3b68beca193554a8373bbcd9a05e0c1">HMAC_SHA224</a>, </div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa587b9a5be35b67d474ef1e882dd1611e">HMAC_SHA256</a>, </div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aac5338535f8f8d83efbf342d59c409faa">HMAC_SHA384</a>, </div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3cbfcdf73561ee310a139c0f8e55358d">HMAC_SHA512</a> </div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <a class="code" href="group__see__common.html#ga1af709fa885de01443ec205809c6b01a">see_algorithm</a>;</div><div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa4bbe8d2b5fde2d8d840ca361bcb21969"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa4bbe8d2b5fde2d8d840ca361bcb21969">ECC_SEC_P521R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00082">see_common.h:82</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa587b9a5be35b67d474ef1e882dd1611e"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa587b9a5be35b67d474ef1e882dd1611e">HMAC_SHA256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00094">see_common.h:94</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aaa2e67fc6ad5a5ca44292975467b67a99"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaa2e67fc6ad5a5ca44292975467b67a99">ECC_BRAINPOOL_P256R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00077">see_common.h:77</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aae6edf7d2af0a4e16ccb062aa8acde95a"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae6edf7d2af0a4e16ccb062aa8acde95a">ECC_BRAINPOOL_P512R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00079">see_common.h:79</a></div></div>
+            <div class="ttc" id="group__see__common_html_ga1af709fa885de01443ec205809c6b01a"><div class="ttname"><a href="group__see__common.html#ga1af709fa885de01443ec205809c6b01a">see_algorithm</a></div><div class="ttdeci">see_algorithm</div><div class="ttdoc">Cryptography algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00067">see_common.h:67</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa3690b7a5bf11282bcdaa199c11408dd3"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3690b7a5bf11282bcdaa199c11408dd3">HASH_SHA256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00087">see_common.h:87</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa38df76dd27159854f66706a2571caddc"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa38df76dd27159854f66706a2571caddc">ECC_BRAINPOOL_P384R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00078">see_common.h:78</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa552850501cf9e17912a9b1eec8d32a3c"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa552850501cf9e17912a9b1eec8d32a3c">AES_192</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00070">see_common.h:70</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa0a7940bf3dbc032d803b1b688e5570e5"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa0a7940bf3dbc032d803b1b688e5570e5">HASH_SHA224</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00086">see_common.h:86</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa6ff5f843a316c2d5b4b08b7238c874ce"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6ff5f843a316c2d5b4b08b7238c874ce">HMAC_SHA1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00092">see_common.h:92</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aaddfbf4de372c05fb8ca79edaad759687"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaddfbf4de372c05fb8ca79edaad759687">RSA_1024</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00073">see_common.h:73</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa1c8c7f516327586b450ed50b3b807bb9"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa1c8c7f516327586b450ed50b3b807bb9">ECC_SEC_P256R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00080">see_common.h:80</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aae3b68beca193554a8373bbcd9a05e0c1"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aae3b68beca193554a8373bbcd9a05e0c1">HMAC_SHA224</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00093">see_common.h:93</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aabbbaa60825067ef5ad16c6328483f8f5"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabbbaa60825067ef5ad16c6328483f8f5">AES_256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00071">see_common.h:71</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa6d06d1ec4dbf3aa876fda6ca1c5b0f66"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa6d06d1ec4dbf3aa876fda6ca1c5b0f66">HASH_SHA512</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00089">see_common.h:89</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa8b0cb67b0263aa85aa844a33205c95db"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa8b0cb67b0263aa85aa844a33205c95db">RSA_3072</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00075">see_common.h:75</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa042d8a82f5e0b3675df6aef799bff1a8"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa042d8a82f5e0b3675df6aef799bff1a8">ECC_SEC_P384R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00081">see_common.h:81</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa3642cff65c0585b67da1ff4c58497b43"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3642cff65c0585b67da1ff4c58497b43">HMAC_MD5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00091">see_common.h:91</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa45c78681038e51d5f54554130b0b79ab"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa45c78681038e51d5f54554130b0b79ab">HASH_MD5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00084">see_common.h:84</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aabb45ce56a912f1175c413afcb3e1f970"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aabb45ce56a912f1175c413afcb3e1f970">HASH_SHA384</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00088">see_common.h:88</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aac5338535f8f8d83efbf342d59c409faa"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aac5338535f8f8d83efbf342d59c409faa">HMAC_SHA384</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00095">see_common.h:95</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa25c481ea5e9f16f9b40fe773528aef03"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa25c481ea5e9f16f9b40fe773528aef03">HASH_SHA1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00085">see_common.h:85</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa3cbfcdf73561ee310a139c0f8e55358d"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa3cbfcdf73561ee310a139c0f8e55358d">HMAC_SHA512</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00096">see_common.h:96</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aaaa4d22910f8049cacb2f2a84d7d0e573"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aaaa4d22910f8049cacb2f2a84d7d0e573">RSA_2048</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00074">see_common.h:74</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga1af709fa885de01443ec205809c6b01aa62e1b5b14d75b29e9ddbd89723fd8835"><div class="ttname"><a href="group__see__common.html#gga1af709fa885de01443ec205809c6b01aa62e1b5b14d75b29e9ddbd89723fd8835">AES_128</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00069">see_common.h:69</a></div></div>
+            </div><!-- fragment -->
+            </div>
+            </div>
+            <a class="anchor" id="ga07a8db3b202706e86afa94a1abb0fa21"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="group__see__common.html#ga07a8db3b202706e86afa94a1abb0fa21">see_aes_mode</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a8b8bb6ae6a7ac7609548061af4db0e2f"></a>AES_ECB_NOPAD&#160;</td><td class="fielddoc">
+            <p>aes128 ecb nopad mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21afb71c93cecc24042a58edf4aaa8c6c66"></a>AES_ECB_ISO9797_M1&#160;</td><td class="fielddoc">
+            <p>aes128 ecb iso9797 m1 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a5c142687743ad1881e62f645e98f6e8c"></a>AES_ECB_ISO9797_M2&#160;</td><td class="fielddoc">
+            <p>aes128 ecb iso9797 m2 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a5c7603a4ec213f3d3b606e3bbd57fee3"></a>AES_ECB_PKCS5&#160;</td><td class="fielddoc">
+            <p>aes128 ecb pkcs5 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a2e8373283c7793a2bfdf621879f64aa5"></a>AES_ECB_PKCS7&#160;</td><td class="fielddoc">
+            <p>aes128 ecb pkcs7 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21ad26251d81166e3b900c029b49f069bca"></a>AES_CBC_NOPAD&#160;</td><td class="fielddoc">
+            <p>aes128 cbc nopad mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a03bb3e14a32710c6063582fc8f6e09e7"></a>AES_CBC_ISO9797_M1&#160;</td><td class="fielddoc">
+            <p>aes128 cbc iso9797 m1 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21aa85632f398c130a95fd5875d2923426a"></a>AES_CBC_ISO9797_M2&#160;</td><td class="fielddoc">
+            <p>aes128 cbc iso9797 m2 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21ab3386fc4600a7c9967c705633d7e9fbb"></a>AES_CBC_PKCS5&#160;</td><td class="fielddoc">
+            <p>aes128 cbc pkcs5 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21ac35403d8492ab09465f52a8943f5ad68"></a>AES_CBC_PKCS7&#160;</td><td class="fielddoc">
+            <p>aes128 cbc pkcs7 mode </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga07a8db3b202706e86afa94a1abb0fa21a386977c34c671c481407b1a81b03710b"></a>AES_CTR&#160;</td><td class="fielddoc">
+            <p>aes128 ctr nopad mode </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="see__common_8h_source.html#l00102">102</a> of file <a class="el" href="see__common_8h_source.html">see_common.h</a>.</p>
+            <div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;             {</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a8b8bb6ae6a7ac7609548061af4db0e2f">AES_ECB_NOPAD</a> = 0, </div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21afb71c93cecc24042a58edf4aaa8c6c66">AES_ECB_ISO9797_M1</a> = 1, </div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c142687743ad1881e62f645e98f6e8c">AES_ECB_ISO9797_M2</a> = 2, </div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c7603a4ec213f3d3b606e3bbd57fee3">AES_ECB_PKCS5</a> = 3, </div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a2e8373283c7793a2bfdf621879f64aa5">AES_ECB_PKCS7</a> = 4, </div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ad26251d81166e3b900c029b49f069bca">AES_CBC_NOPAD</a> = 5, </div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a03bb3e14a32710c6063582fc8f6e09e7">AES_CBC_ISO9797_M1</a> = 6, </div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21aa85632f398c130a95fd5875d2923426a">AES_CBC_ISO9797_M2</a> = 7, </div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ab3386fc4600a7c9967c705633d7e9fbb">AES_CBC_PKCS5</a> = 8, </div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ac35403d8492ab09465f52a8943f5ad68">AES_CBC_PKCS7</a> = 9, </div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a386977c34c671c481407b1a81b03710b">AES_CTR</a> = 10 </div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <a class="code" href="group__see__common.html#ga07a8db3b202706e86afa94a1abb0fa21">see_aes_mode</a>;</div><div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a03bb3e14a32710c6063582fc8f6e09e7"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a03bb3e14a32710c6063582fc8f6e09e7">AES_CBC_ISO9797_M1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00109">see_common.h:109</a></div></div>
+            <div class="ttc" id="group__see__common_html_ga07a8db3b202706e86afa94a1abb0fa21"><div class="ttname"><a href="group__see__common.html#ga07a8db3b202706e86afa94a1abb0fa21">see_aes_mode</a></div><div class="ttdeci">see_aes_mode</div><div class="ttdoc">aes mode </div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00102">see_common.h:102</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a2e8373283c7793a2bfdf621879f64aa5"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a2e8373283c7793a2bfdf621879f64aa5">AES_ECB_PKCS7</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00107">see_common.h:107</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21aa85632f398c130a95fd5875d2923426a"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21aa85632f398c130a95fd5875d2923426a">AES_CBC_ISO9797_M2</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00110">see_common.h:110</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a5c142687743ad1881e62f645e98f6e8c"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c142687743ad1881e62f645e98f6e8c">AES_ECB_ISO9797_M2</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00105">see_common.h:105</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21ab3386fc4600a7c9967c705633d7e9fbb"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ab3386fc4600a7c9967c705633d7e9fbb">AES_CBC_PKCS5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00111">see_common.h:111</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21ad26251d81166e3b900c029b49f069bca"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ad26251d81166e3b900c029b49f069bca">AES_CBC_NOPAD</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00108">see_common.h:108</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a8b8bb6ae6a7ac7609548061af4db0e2f"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a8b8bb6ae6a7ac7609548061af4db0e2f">AES_ECB_NOPAD</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00103">see_common.h:103</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a386977c34c671c481407b1a81b03710b"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a386977c34c671c481407b1a81b03710b">AES_CTR</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00113">see_common.h:113</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21a5c7603a4ec213f3d3b606e3bbd57fee3"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21a5c7603a4ec213f3d3b606e3bbd57fee3">AES_ECB_PKCS5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00106">see_common.h:106</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21afb71c93cecc24042a58edf4aaa8c6c66"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21afb71c93cecc24042a58edf4aaa8c6c66">AES_ECB_ISO9797_M1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00104">see_common.h:104</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga07a8db3b202706e86afa94a1abb0fa21ac35403d8492ab09465f52a8943f5ad68"><div class="ttname"><a href="group__see__common.html#gga07a8db3b202706e86afa94a1abb0fa21ac35403d8492ab09465f52a8943f5ad68">AES_CBC_PKCS7</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00112">see_common.h:112</a></div></div>
+            </div><!-- fragment -->
+            </div>
+            </div>
+            <a class="anchor" id="gacbbaed998c336eac1d1f4dfd0992ecb2"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="group__see__common.html#gacbbaed998c336eac1d1f4dfd0992ecb2">see_rsa_mode</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a617b5e1e0f13f61afb2637abce315c0b"></a>RSAES_PKCS1_V1_5&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 v1_5 for enc/dec </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2abaa329607aa557e6c747fd6ea4b5a6ad"></a>RSAES_PKCS1_OAEP_MGF1_SHA1&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 oaep mgf1 sha1 for enc/dec </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a21e32e018cac42d9bf7eec2ff67bac39"></a>RSAES_PKCS1_OAEP_MGF1_SHA224&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 oaep mgf1 sha224 for enc/dec </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a029185dc452ee9f0d0427e56a4c2f962"></a>RSAES_PKCS1_OAEP_MGF1_SHA256&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 oaep mgf1 sha256 for enc/dec </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2ae9753ead958494d3aefba8d343437221"></a>RSAES_PKCS1_OAEP_MGF1_SHA384&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 oaep mgf1 sha384 for enc/dec </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a507005a57dd800beef7e728051e7c102"></a>RSAES_PKCS1_OAEP_MGF1_SHA512&#160;</td><td class="fielddoc">
+            <p>rsaes pkcs1 oaep mgf1 sha512 for enc/dec, not support rsa1024 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a1d54a1ee0e8b8c3d92aeadcc35a96845"></a>RSASSA_PKCS1_V1_5_MD5&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 v1_5 md5 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a01f691df1701eb5158d74201693a5af5"></a>RSASSA_PKCS1_V1_5_SHA1&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 v1_5 sha1 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a97f733182aee8b2c176563df3e92802c"></a>RSASSA_PKCS1_V1_5_SHA224&#160;</td><td class="fielddoc">
+            <p>rssssa pkcs1 v1_5 sha224 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a9ed0af6c31df1e20c44eff22e022c6f3"></a>RSASSA_PKCS1_V1_5_SHA256&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 v1_5 sha256 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a5c110a69a505c202e5e5b677c0f75a70"></a>RSASSA_PKCS1_V1_5_SHA384&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 v1_5 sha384 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a64ec2d0a40b7f5069d9708dec464c373"></a>RSASSA_PKCS1_V1_5_SHA512&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 v1_5 sha512 for sign/verify, not support rsa1024 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a397461a09137b12d4455edd93e36a217"></a>RSASSA_PKCS1_PSS_MGF1_SHA1&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 pss mgf1 sha1 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a7be83f42e148897bf6cf981a83783dbc"></a>RSASSA_PKCS1_PSS_MGF1_SHA224&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 pss mgf1 sha224 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a6a912b50578c5e952b484b7776d73d6f"></a>RSASSA_PKCS1_PSS_MGF1_SHA256&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 pss mgf1 sha256 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a7f922fc03f4a7381bb87586e3ddc21cb"></a>RSASSA_PKCS1_PSS_MGF1_SHA384&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 pss mgf1 sha384 for sign/verify </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="ggacbbaed998c336eac1d1f4dfd0992ecb2a245f309eb67f2c81b2f46fcaee7eb5b7"></a>RSASSA_PKCS1_PSS_MGF1_SHA512&#160;</td><td class="fielddoc">
+            <p>rsassa pkcs1 pss mgf1 sha512 for sign/verify, not support rsa1024 </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="see__common_8h_source.html#l00119">119</a> of file <a class="el" href="see__common_8h_source.html">see_common.h</a>.</p>
+            <div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;             {</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a617b5e1e0f13f61afb2637abce315c0b">RSAES_PKCS1_V1_5</a> = 0, </div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2abaa329607aa557e6c747fd6ea4b5a6ad">RSAES_PKCS1_OAEP_MGF1_SHA1</a> = 1, </div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a21e32e018cac42d9bf7eec2ff67bac39">RSAES_PKCS1_OAEP_MGF1_SHA224</a> = 2, </div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a029185dc452ee9f0d0427e56a4c2f962">RSAES_PKCS1_OAEP_MGF1_SHA256</a> = 3, </div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2ae9753ead958494d3aefba8d343437221">RSAES_PKCS1_OAEP_MGF1_SHA384</a> = 4, </div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a507005a57dd800beef7e728051e7c102">RSAES_PKCS1_OAEP_MGF1_SHA512</a> = 5, </div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a1d54a1ee0e8b8c3d92aeadcc35a96845">RSASSA_PKCS1_V1_5_MD5</a> = 6, </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a01f691df1701eb5158d74201693a5af5">RSASSA_PKCS1_V1_5_SHA1</a> = 7, </div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a97f733182aee8b2c176563df3e92802c">RSASSA_PKCS1_V1_5_SHA224</a> = 8, </div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a9ed0af6c31df1e20c44eff22e022c6f3">RSASSA_PKCS1_V1_5_SHA256</a> = 9, </div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a5c110a69a505c202e5e5b677c0f75a70">RSASSA_PKCS1_V1_5_SHA384</a> = 10, </div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a64ec2d0a40b7f5069d9708dec464c373">RSASSA_PKCS1_V1_5_SHA512</a> = 11, </div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a397461a09137b12d4455edd93e36a217">RSASSA_PKCS1_PSS_MGF1_SHA1</a> = 12, </div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7be83f42e148897bf6cf981a83783dbc">RSASSA_PKCS1_PSS_MGF1_SHA224</a> = 13, </div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a6a912b50578c5e952b484b7776d73d6f">RSASSA_PKCS1_PSS_MGF1_SHA256</a> = 14, </div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7f922fc03f4a7381bb87586e3ddc21cb">RSASSA_PKCS1_PSS_MGF1_SHA384</a> = 15, </div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a245f309eb67f2c81b2f46fcaee7eb5b7">RSASSA_PKCS1_PSS_MGF1_SHA512</a> = 16, </div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;} <a class="code" href="group__see__common.html#gacbbaed998c336eac1d1f4dfd0992ecb2">see_rsa_mode</a>;</div><div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2ae9753ead958494d3aefba8d343437221"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2ae9753ead958494d3aefba8d343437221">RSAES_PKCS1_OAEP_MGF1_SHA384</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00124">see_common.h:124</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a7f922fc03f4a7381bb87586e3ddc21cb"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7f922fc03f4a7381bb87586e3ddc21cb">RSASSA_PKCS1_PSS_MGF1_SHA384</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00135">see_common.h:135</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a64ec2d0a40b7f5069d9708dec464c373"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a64ec2d0a40b7f5069d9708dec464c373">RSASSA_PKCS1_V1_5_SHA512</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00131">see_common.h:131</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a507005a57dd800beef7e728051e7c102"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a507005a57dd800beef7e728051e7c102">RSAES_PKCS1_OAEP_MGF1_SHA512</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00125">see_common.h:125</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a01f691df1701eb5158d74201693a5af5"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a01f691df1701eb5158d74201693a5af5">RSASSA_PKCS1_V1_5_SHA1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00127">see_common.h:127</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a21e32e018cac42d9bf7eec2ff67bac39"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a21e32e018cac42d9bf7eec2ff67bac39">RSAES_PKCS1_OAEP_MGF1_SHA224</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00122">see_common.h:122</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a1d54a1ee0e8b8c3d92aeadcc35a96845"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a1d54a1ee0e8b8c3d92aeadcc35a96845">RSASSA_PKCS1_V1_5_MD5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00126">see_common.h:126</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a245f309eb67f2c81b2f46fcaee7eb5b7"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a245f309eb67f2c81b2f46fcaee7eb5b7">RSASSA_PKCS1_PSS_MGF1_SHA512</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00136">see_common.h:136</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a029185dc452ee9f0d0427e56a4c2f962"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a029185dc452ee9f0d0427e56a4c2f962">RSAES_PKCS1_OAEP_MGF1_SHA256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00123">see_common.h:123</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a7be83f42e148897bf6cf981a83783dbc"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a7be83f42e148897bf6cf981a83783dbc">RSASSA_PKCS1_PSS_MGF1_SHA224</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00133">see_common.h:133</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a397461a09137b12d4455edd93e36a217"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a397461a09137b12d4455edd93e36a217">RSASSA_PKCS1_PSS_MGF1_SHA1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00132">see_common.h:132</a></div></div>
+            <div class="ttc" id="group__see__common_html_gacbbaed998c336eac1d1f4dfd0992ecb2"><div class="ttname"><a href="group__see__common.html#gacbbaed998c336eac1d1f4dfd0992ecb2">see_rsa_mode</a></div><div class="ttdeci">see_rsa_mode</div><div class="ttdoc">rsa mode </div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00119">see_common.h:119</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a97f733182aee8b2c176563df3e92802c"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a97f733182aee8b2c176563df3e92802c">RSASSA_PKCS1_V1_5_SHA224</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00128">see_common.h:128</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a5c110a69a505c202e5e5b677c0f75a70"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a5c110a69a505c202e5e5b677c0f75a70">RSASSA_PKCS1_V1_5_SHA384</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00130">see_common.h:130</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a617b5e1e0f13f61afb2637abce315c0b"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a617b5e1e0f13f61afb2637abce315c0b">RSAES_PKCS1_V1_5</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00120">see_common.h:120</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2abaa329607aa557e6c747fd6ea4b5a6ad"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2abaa329607aa557e6c747fd6ea4b5a6ad">RSAES_PKCS1_OAEP_MGF1_SHA1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00121">see_common.h:121</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a9ed0af6c31df1e20c44eff22e022c6f3"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a9ed0af6c31df1e20c44eff22e022c6f3">RSASSA_PKCS1_V1_5_SHA256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00129">see_common.h:129</a></div></div>
+            <div class="ttc" id="group__see__common_html_ggacbbaed998c336eac1d1f4dfd0992ecb2a6a912b50578c5e952b484b7776d73d6f"><div class="ttname"><a href="group__see__common.html#ggacbbaed998c336eac1d1f4dfd0992ecb2a6a912b50578c5e952b484b7776d73d6f">RSASSA_PKCS1_PSS_MGF1_SHA256</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00134">see_common.h:134</a></div></div>
+            </div><!-- fragment -->
+            </div>
+            </div>
+            <a class="anchor" id="ga9b42db9a4528ac28ba44b2b75c98a8cb"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">enum <a class="el" href="group__see__common.html#ga9b42db9a4528ac28ba44b2b75c98a8cb">see_ecdsa_curve</a></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <table class="fieldtable">
+            <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cba355c7350f2aaae0c1720fa8cc58fdd24"></a>ECDSA_BRAINPOOL_P256R1&#160;</td><td class="fielddoc">
+            <p>brainpool curve for P256 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cbaa3261653f9febf3cfd6fa9ef1871631f"></a>ECDSA_BRAINPOOL_P384R1&#160;</td><td class="fielddoc">
+            <p>brainpool curve for P384r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cba4c8745d237b2483bb6841aa729f3e5b4"></a>ECDSA_BRAINPOOL_P512R1&#160;</td><td class="fielddoc">
+            <p>brainpool curve for P512r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cbac0add5276fe7775b698a99a241dc4a8d"></a>ECDSA_SEC_P256R1&#160;</td><td class="fielddoc">
+            <p>nist curve for P256r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cba69dabd8473f81657b6fd1b8ae6eeac57"></a>ECDSA_SEC_P384R1&#160;</td><td class="fielddoc">
+            <p>nist curve for P384r1 </p>
+            </td></tr>
+            <tr><td class="fieldname"><a class="anchor" id="gga9b42db9a4528ac28ba44b2b75c98a8cba8fbbec0caacf2fd475c294596c0b4800"></a>ECDSA_SEC_P521R1&#160;</td><td class="fielddoc">
+            <p>nist curve for P521r1 </p>
+            </td></tr>
+            </table>
+            
+            <p>Definition at line <a class="el" href="see__common_8h_source.html#l00142">142</a> of file <a class="el" href="see__common_8h_source.html">see_common.h</a>.</p>
+            <div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;             {</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba355c7350f2aaae0c1720fa8cc58fdd24">ECDSA_BRAINPOOL_P256R1</a> = 0, </div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbaa3261653f9febf3cfd6fa9ef1871631f">ECDSA_BRAINPOOL_P384R1</a> = 1, </div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba4c8745d237b2483bb6841aa729f3e5b4">ECDSA_BRAINPOOL_P512R1</a> = 2, </div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbac0add5276fe7775b698a99a241dc4a8d">ECDSA_SEC_P256R1</a> = 3, </div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba69dabd8473f81657b6fd1b8ae6eeac57">ECDSA_SEC_P384R1</a> = 4, </div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba8fbbec0caacf2fd475c294596c0b4800">ECDSA_SEC_P521R1</a> = 5, </div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;} <a class="code" href="group__see__common.html#ga9b42db9a4528ac28ba44b2b75c98a8cb">see_ecdsa_curve</a>;</div><div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cba355c7350f2aaae0c1720fa8cc58fdd24"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba355c7350f2aaae0c1720fa8cc58fdd24">ECDSA_BRAINPOOL_P256R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00143">see_common.h:143</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cba4c8745d237b2483bb6841aa729f3e5b4"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba4c8745d237b2483bb6841aa729f3e5b4">ECDSA_BRAINPOOL_P512R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00145">see_common.h:145</a></div></div>
+            <div class="ttc" id="group__see__common_html_ga9b42db9a4528ac28ba44b2b75c98a8cb"><div class="ttname"><a href="group__see__common.html#ga9b42db9a4528ac28ba44b2b75c98a8cb">see_ecdsa_curve</a></div><div class="ttdeci">see_ecdsa_curve</div><div class="ttdoc">ecdsa curve </div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00142">see_common.h:142</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cbaa3261653f9febf3cfd6fa9ef1871631f"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbaa3261653f9febf3cfd6fa9ef1871631f">ECDSA_BRAINPOOL_P384R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00144">see_common.h:144</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cba8fbbec0caacf2fd475c294596c0b4800"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba8fbbec0caacf2fd475c294596c0b4800">ECDSA_SEC_P521R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00148">see_common.h:148</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cba69dabd8473f81657b6fd1b8ae6eeac57"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cba69dabd8473f81657b6fd1b8ae6eeac57">ECDSA_SEC_P384R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00147">see_common.h:147</a></div></div>
+            <div class="ttc" id="group__see__common_html_gga9b42db9a4528ac28ba44b2b75c98a8cbac0add5276fe7775b698a99a241dc4a8d"><div class="ttname"><a href="group__see__common.html#gga9b42db9a4528ac28ba44b2b75c98a8cbac0add5276fe7775b698a99a241dc4a8d">ECDSA_SEC_P256R1</a></div><div class="ttdef"><b>Definition:</b> <a href="see__common_8h_source.html#l00146">see_common.h:146</a></div></div>
+            </div><!-- fragment -->
+            </div>
+            </div>
+            <h2 class="groupheader">Function Documentation</h2>
+            <a class="anchor" id="gac329af6acc5a21bd3432699fa9a1d737"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">int see_init </td>
+                      <td>(</td>
+                      <td class="paramtype">const char *&#160;</td>
+                      <td class="paramname"><em>id</em>, </td>
+                    </tr>
+                    <tr>
+                      <td class="paramkey"></td>
+                      <td></td>
+                      <td class="paramtype">const char *&#160;</td>
+                      <td class="paramname"><em>pwd</em>&#160;</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>)</td>
+                      <td></td><td></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <ul>
+            <li>Initialize 'see' for using the API and determine supported API functionality.</li>
+            <li>Find secure devices such as Secure Element and Secure OS and initialize the devices.</li>
+            <li>With Secure OS, a user must enter ID nad PASSWORD for using the APIs.</li>
+            <li>If the user wants to access the same Secure Storage next time, the same ID and PWD must be used.</li>
+            <li>Without a Secure OS, a user can enter NULL for ID and PWD.</li>
+            </ul>
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>: User id for APIs </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">pwd</td><td>: User password for APIs </td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>0 if succeeded. Returns other value if failed. </dd></dl>
+            <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__see__common.html#ga8a325912df2d08b6eb8df43c76a38fae" title="Deinitialize see. ">see_deinit()</a> </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="see-authentication-test_8c-example.html#a3">see-authentication-test.c</a>, <a class="el" href="see-encdec-test_8c-example.html#a3">see-encdec-test.c</a>, <a class="el" href="see-keymanager-test_8c-example.html#a3">see-keymanager-test.c</a>, and <a class="el" href="see-securestorage-test_8c-example.html#a4">see-securestorage-test.c</a>.</dd>
+            </dl>
+            </div>
+            </div>
+            <a class="anchor" id="ga8a325912df2d08b6eb8df43c76a38fae"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname">int see_deinit </td>
+                      <td>(</td>
+                      <td class="paramtype">void&#160;</td>
+                      <td class="paramname"></td><td>)</td>
+                      <td></td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <ul>
+            <li>Finalize see.</li>
+            </ul>
+            <dl class="section return"><dt>Returns</dt><dd>0 if succeeded. Returns other value if failed. </dd></dl>
+            <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__see__common.html#gac329af6acc5a21bd3432699fa9a1d737" title="Initialize see. ">see_init</a> </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="see-authentication-test_8c-example.html#a15">see-authentication-test.c</a>, <a class="el" href="see-encdec-test_8c-example.html#a14">see-encdec-test.c</a>, <a class="el" href="see-keymanager-test_8c-example.html#a11">see-keymanager-test.c</a>, and <a class="el" href="see-securestorage-test_8c-example.html#a10">see-securestorage-test.c</a>.</dd>
+            </dl>
+            </div>
+            </div>
+            </div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-03-09 18:53:00 +0000'>Mar 9 2018,  6:53 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+    
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="production-kms"]').parent();
+      $($sideNavListItem).insertAfter($betaFeatures);
+      $('a[data-name="s-module-security"]').data('directory', 'true').attr('aria-expanded', 'true');
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

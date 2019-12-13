@@ -1,0 +1,1002 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='artik__mqtt_8h_source.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Software API: inc/mqtt/artik_mqtt.h Source File</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_api documentation_api_artik__mqtt_8h_source' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option value='/documentation/api/artik__mqtt_8h_source.html'>1.8</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-7/download'>1.7</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-6/download'>1.6</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-5/download'>1.5</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-4/download'>1.4</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-3/download'>1.3</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-2/download'>1.2</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-1/download'>1.1</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-0/download'>1.0</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('artik__mqtt_8h_source.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="headertitle">
+            <div class="title">artik_mqtt.h</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            <a href="artik__mqtt_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright 2017 Samsung Electronics All Rights Reserved.</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing,</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * software distributed under the License is distributed on an</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * either express or implied. See the License for the specific</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * language governing permissions and limitations under the License.</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef ARTIK_MQTT_H_</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define ARTIK_MQTT_H_</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="artik__error_8h.html">artik_error.h</a>&quot;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="artik__types_8h.html">artik_types.h</a>&quot;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="artik__ssl_8h.html">artik_ssl.h</a>&quot;</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structartik__mqtt__psk__param.html">   47</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structartik__mqtt__psk__param.html#aca7b6f4f495128fe09f9d1270175c8b6">   48</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__psk__param.html#aca7b6f4f495128fe09f9d1270175c8b6">psk</a>; </div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structartik__mqtt__psk__param.html#adf681bac721280deadb119a5666b0356">   49</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__psk__param.html#adf681bac721280deadb119a5666b0356">identity</a>; </div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structartik__mqtt__psk__param.html#acda70edc9e7e1b1501b8533bf95aa743">   50</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__psk__param.html#acda70edc9e7e1b1501b8533bf95aa743">ciphers</a>; </div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <a class="code" href="structartik__mqtt__psk__param.html">artik_mqtt_psk_param</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html">   59</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#a8fb61414567b71dcd07d422927418628">   60</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structartik__mqtt__msg.html#a8fb61414567b71dcd07d422927418628">msg_id</a>; </div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#ae10c026ba344bfecdde4fe6a836b3978">   61</a></span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__msg.html#ae10c026ba344bfecdde4fe6a836b3978">topic</a>; </div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#abfb7c8cfec336797a4e0cb319deec079">   62</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="structartik__mqtt__msg.html#abfb7c8cfec336797a4e0cb319deec079">payload</a>; </div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#a7098ed1259d6ba6a7993f05f1e9ce174">   63</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structartik__mqtt__msg.html#a7098ed1259d6ba6a7993f05f1e9ce174">payload_len</a>; </div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#a96867a2bdb76af47ce1494aae56c96fc">   64</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structartik__mqtt__msg.html#a96867a2bdb76af47ce1494aae56c96fc">qos</a>; </div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structartik__mqtt__msg.html#ab2b56ee203f8c2bc4b160ca5879dcc10">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structartik__mqtt__msg.html#ab2b56ee203f8c2bc4b160ca5879dcc10">retain</a>; </div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <a class="code" href="structartik__mqtt__msg.html">artik_mqtt_msg</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a190cc92c7631e416ff361edefe8f7210">   73</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span> *<a class="code" href="artik__mqtt_8h.html#a190cc92c7631e416ff361edefe8f7210">artik_mqtt_handle</a>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html">   81</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a96fba11340849c755f791d7d94572fee">   82</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__config.html#a96fba11340849c755f791d7d94572fee">client_id</a>; </div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#ab18d3f36dea15a549668a24e146f97fe">   83</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__config.html#ab18d3f36dea15a549668a24e146f97fe">user_name</a>; </div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a869f9341020e3aa8b4d1a8929be7b0e0">   84</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structartik__mqtt__config.html#a869f9341020e3aa8b4d1a8929be7b0e0">pwd</a>; </div><div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a0797c77163700a94e65f93b924ae1aad">   85</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structartik__mqtt__config.html#a0797c77163700a94e65f93b924ae1aad">clean_session</a>; </div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#afe1b5efe6c44a350f307ac694a308379">   86</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structartik__mqtt__config.html#afe1b5efe6c44a350f307ac694a308379">keep_alive_time</a>; </div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a72f6b79be79bf44f754debb75479fff8">   87</a></span>&#160;    <a class="code" href="structartik__mqtt__msg.html">artik_mqtt_msg</a> *<a class="code" href="structartik__mqtt__config.html#a72f6b79be79bf44f754debb75479fff8">will_msg</a>; </div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a84ed254c1a899b867320798ec7c80af2">   88</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structartik__mqtt__config.html#a84ed254c1a899b867320798ec7c80af2">block</a>; </div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a84eb2558bf7bb6f474ab825723c4d46e">   90</a></span>&#160;    <a class="code" href="structartik__ssl__config.html">artik_ssl_config</a> *<a class="code" href="structartik__mqtt__config.html#a84eb2558bf7bb6f474ab825723c4d46e">tls</a>;</div><div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#a855b9fb080aa6da5a41876769fd39edd">   92</a></span>&#160;    <a class="code" href="structartik__mqtt__psk__param.html">artik_mqtt_psk_param</a> *<a class="code" href="structartik__mqtt__config.html#a855b9fb080aa6da5a41876769fd39edd">psk</a>;</div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structartik__mqtt__config.html#aaefd3815a5f8ea09eb688ae412e69bac">   94</a></span>&#160;    artik_mqtt_handle <a class="code" href="structartik__mqtt__config.html#aaefd3815a5f8ea09eb688ae412e69bac">handle</a>; </div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a>;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a770f1ba0213a671a1f3a3d5f0804be87">  103</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#a770f1ba0213a671a1f3a3d5f0804be87">connect_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordtype">void</span> *data_user, <span class="keywordtype">int</span> <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a0369779c75a95b130ae46e368d3ce77c">  112</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#a0369779c75a95b130ae46e368d3ce77c">disconnect_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordtype">void</span> *data_user, <span class="keywordtype">int</span> <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>);</div><div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a78f6fd24debc34ff250dd4b2334f4ba6">  120</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#a78f6fd24debc34ff250dd4b2334f4ba6">subscribe_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordtype">void</span> *data_user, <span class="keywordtype">int</span> mid, <span class="keywordtype">int</span> qos_count,</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> *granted_qos);</div><div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a6ee59b1bd920c18396dd9a0115f5f900">  129</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#a6ee59b1bd920c18396dd9a0115f5f900">unsubscribe_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordtype">void</span> *data_user, <span class="keywordtype">int</span> mid);</div><div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#aa4d18ad6153d3c266a5581de28b8d1bf">  137</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#aa4d18ad6153d3c266a5581de28b8d1bf">publish_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordtype">void</span> *data_user, <span class="keywordtype">int</span> mid);</div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="artik__mqtt_8h.html#a4aaaf30d18f4c8cc7742eaeadc5db045">  145</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="artik__mqtt_8h.html#a4aaaf30d18f4c8cc7742eaeadc5db045">message_callback</a>)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *client_config,</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <span class="keywordtype">void</span> *data_user, <a class="code" href="structartik__mqtt__msg.html">artik_mqtt_msg</a> *msg);</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div><div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html">  155</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#ae976538ede0992abeddc921db0345a18">  163</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*create_client)(artik_mqtt_handle *client,</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *config);</div><div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#aed67bade735deec1067cfa6cde74ec15">  170</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*destroy_client)(artik_mqtt_handle handle);</div><div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a2c2ad7ddbaddcedde5b8e2881eb0ff51">  181</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_willmsg)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *config,</div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *willtopic, <span class="keyword">const</span> <span class="keywordtype">char</span> *willmsg,</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordtype">int</span> qos, <span class="keywordtype">bool</span> retain);</div><div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#ad217a4fb2cb4e0e87d45ed4c1a849d58">  191</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*free_willmsg)(<a class="code" href="structartik__mqtt__config.html">artik_mqtt_config</a> *config);</div><div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a6caf622bee68525ae685c28e68984122">  198</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*clear_willmsg)(artik_mqtt_handle client);</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div><div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#ab0e88ecc6e227854165a12a566615360">  208</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_connect)(artik_mqtt_handle client,</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <a class="code" href="artik__mqtt_8h.html#a770f1ba0213a671a1f3a3d5f0804be87">connect_callback</a> cb, <span class="keywordtype">void</span> *user_connect_data);</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div><div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a78455fbaf57946a703040b8ec4f70939">  219</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_disconnect)(artik_mqtt_handle client,</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="artik__mqtt_8h.html#a0369779c75a95b130ae46e368d3ce77c">disconnect_callback</a> cb, <span class="keywordtype">void</span> *user_disconnect_data);</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div><div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a9d0ea4efc883f320164a9b49c040431b">  230</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_subscribe)(artik_mqtt_handle client,</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="artik__mqtt_8h.html#a78f6fd24debc34ff250dd4b2334f4ba6">subscribe_callback</a> cb, <span class="keywordtype">void</span> *user_subscribe_data);</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div><div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a2155fc2fbd0c5c4ce01c3018d3ceb183">  240</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_unsubscribe)(artik_mqtt_handle client,</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="artik__mqtt_8h.html#a6ee59b1bd920c18396dd9a0115f5f900">unsubscribe_callback</a> cb, <span class="keywordtype">void</span> *user_unsubscribe_data);</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div><div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a9b977b713a7d56a5becb835358dec381">  250</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_publish)(artik_mqtt_handle client,</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <a class="code" href="artik__mqtt_8h.html#aa4d18ad6153d3c266a5581de28b8d1bf">publish_callback</a> cb, <span class="keywordtype">void</span> *user_publish_data);</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div><div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#aefea2c7bfce984105d9d2a2d82693c21">  260</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*set_message)(artik_mqtt_handle client,</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <a class="code" href="artik__mqtt_8h.html#a4aaaf30d18f4c8cc7742eaeadc5db045">message_callback</a> cb, <span class="keywordtype">void</span> *data);</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div><div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a0f43b2e2ab843cc130e2cebb3e12e5a4">  271</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*connect)(artik_mqtt_handle client, <span class="keyword">const</span> <span class="keywordtype">char</span> *host,</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                            <span class="keywordtype">int</span> port);</div><div class="line"><a name="l00278"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a1d901887319279a16b48f73961ad9f58">  278</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*disconnect)(artik_mqtt_handle client);</div><div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#aec80935af7e3a5dff9832812c9dcb485">  287</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*subscribe)(artik_mqtt_handle client, <span class="keywordtype">int</span> qos,</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span> *msgtopic);</div><div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#aa043a51c9318b2e6188973584bcb4a5e">  295</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*unsubscribe)(artik_mqtt_handle client,</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span> *msgtopic);</div><div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="structartik__mqtt__module.html#a07677e781d18c993a0e500d5af210741">  309</a></span>&#160;    <a class="code" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*publish)(artik_mqtt_handle client, <span class="keywordtype">int</span> qos,</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="keywordtype">bool</span> retain, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_topic,</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordtype">int</span> payload_len, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg_content);</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;} <a class="code" href="structartik__mqtt__module.html">artik_mqtt_module</a>;</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="structartik__mqtt__module.html">artik_mqtt_module</a> mqtt_module;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;}</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ARTIK_MQTT_H_ */</span><span class="preprocessor"></span></div><div class="ttc" id="structartik__mqtt__config_html_a96fba11340849c755f791d7d94572fee"><div class="ttname"><a href="structartik__mqtt__config.html#a96fba11340849c755f791d7d94572fee">artik_mqtt_config::client_id</a></div><div class="ttdeci">const char * client_id</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00082">artik_mqtt.h:82</a></div></div>
+            <div class="ttc" id="structartik__mqtt__psk__param_html"><div class="ttname"><a href="structartik__mqtt__psk__param.html">artik_mqtt_psk_param</a></div><div class="ttdoc">MQTT PSK parameters definition. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00047">artik_mqtt.h:47</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html"><div class="ttname"><a href="structartik__mqtt__config.html">artik_mqtt_config</a></div><div class="ttdoc">MQTT configuration definition. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00081">artik_mqtt.h:81</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a855b9fb080aa6da5a41876769fd39edd"><div class="ttname"><a href="structartik__mqtt__config.html#a855b9fb080aa6da5a41876769fd39edd">artik_mqtt_config::psk</a></div><div class="ttdeci">artik_mqtt_psk_param * psk</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00092">artik_mqtt.h:92</a></div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_a7098ed1259d6ba6a7993f05f1e9ce174"><div class="ttname"><a href="structartik__mqtt__msg.html#a7098ed1259d6ba6a7993f05f1e9ce174">artik_mqtt_msg::payload_len</a></div><div class="ttdeci">int payload_len</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00063">artik_mqtt.h:63</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a190cc92c7631e416ff361edefe8f7210"><div class="ttname"><a href="artik__mqtt_8h.html#a190cc92c7631e416ff361edefe8f7210">artik_mqtt_handle</a></div><div class="ttdeci">void * artik_mqtt_handle</div><div class="ttdoc">MQTT handle type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00073">artik_mqtt.h:73</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_aa4d18ad6153d3c266a5581de28b8d1bf"><div class="ttname"><a href="artik__mqtt_8h.html#aa4d18ad6153d3c266a5581de28b8d1bf">publish_callback</a></div><div class="ttdeci">void(* publish_callback)(artik_mqtt_config *client_config, void *data_user, int mid)</div><div class="ttdoc">MQTT Publish callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00137">artik_mqtt.h:137</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a4aaaf30d18f4c8cc7742eaeadc5db045"><div class="ttname"><a href="artik__mqtt_8h.html#a4aaaf30d18f4c8cc7742eaeadc5db045">message_callback</a></div><div class="ttdeci">void(* message_callback)(artik_mqtt_config *client_config, void *data_user, artik_mqtt_msg *msg)</div><div class="ttdoc">MQTT Message callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00145">artik_mqtt.h:145</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a0369779c75a95b130ae46e368d3ce77c"><div class="ttname"><a href="artik__mqtt_8h.html#a0369779c75a95b130ae46e368d3ce77c">disconnect_callback</a></div><div class="ttdeci">void(* disconnect_callback)(artik_mqtt_config *client_config, void *data_user, int artik_error)</div><div class="ttdoc">MQTT Disconnect callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00112">artik_mqtt.h:112</a></div></div>
+            <div class="ttc" id="artik__types_8h_html"><div class="ttname"><a href="artik__types_8h.html">artik_types.h</a></div><div class="ttdoc">Custom types. </div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_a8fb61414567b71dcd07d422927418628"><div class="ttname"><a href="structartik__mqtt__msg.html#a8fb61414567b71dcd07d422927418628">artik_mqtt_msg::msg_id</a></div><div class="ttdeci">int msg_id</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00060">artik_mqtt.h:60</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_afe1b5efe6c44a350f307ac694a308379"><div class="ttname"><a href="structartik__mqtt__config.html#afe1b5efe6c44a350f307ac694a308379">artik_mqtt_config::keep_alive_time</a></div><div class="ttdeci">int keep_alive_time</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00086">artik_mqtt.h:86</a></div></div>
+            <div class="ttc" id="structartik__mqtt__psk__param_html_acda70edc9e7e1b1501b8533bf95aa743"><div class="ttname"><a href="structartik__mqtt__psk__param.html#acda70edc9e7e1b1501b8533bf95aa743">artik_mqtt_psk_param::ciphers</a></div><div class="ttdeci">const char * ciphers</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00050">artik_mqtt.h:50</a></div></div>
+            <div class="ttc" id="structartik__mqtt__psk__param_html_aca7b6f4f495128fe09f9d1270175c8b6"><div class="ttname"><a href="structartik__mqtt__psk__param.html#aca7b6f4f495128fe09f9d1270175c8b6">artik_mqtt_psk_param::psk</a></div><div class="ttdeci">const char * psk</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00048">artik_mqtt.h:48</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a72f6b79be79bf44f754debb75479fff8"><div class="ttname"><a href="structartik__mqtt__config.html#a72f6b79be79bf44f754debb75479fff8">artik_mqtt_config::will_msg</a></div><div class="ttdeci">artik_mqtt_msg * will_msg</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00087">artik_mqtt.h:87</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_ab18d3f36dea15a549668a24e146f97fe"><div class="ttname"><a href="structartik__mqtt__config.html#ab18d3f36dea15a549668a24e146f97fe">artik_mqtt_config::user_name</a></div><div class="ttdeci">const char * user_name</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00083">artik_mqtt.h:83</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a0797c77163700a94e65f93b924ae1aad"><div class="ttname"><a href="structartik__mqtt__config.html#a0797c77163700a94e65f93b924ae1aad">artik_mqtt_config::clean_session</a></div><div class="ttdeci">bool clean_session</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00085">artik_mqtt.h:85</a></div></div>
+            <div class="ttc" id="structartik__mqtt__module_html"><div class="ttname"><a href="structartik__mqtt__module.html">artik_mqtt_module</a></div><div class="ttdoc">MQTT module operations. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00155">artik_mqtt.h:155</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a84eb2558bf7bb6f474ab825723c4d46e"><div class="ttname"><a href="structartik__mqtt__config.html#a84eb2558bf7bb6f474ab825723c4d46e">artik_mqtt_config::tls</a></div><div class="ttdeci">artik_ssl_config * tls</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00090">artik_mqtt.h:90</a></div></div>
+            <div class="ttc" id="artik__error_8h_html_a9b1d9ae639ccc7c1b865a73d74b06c74"><div class="ttname"><a href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a></div><div class="ttdeci">int artik_error</div><div class="ttdoc">Error type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__error_8h_source.html#l00035">artik_error.h:35</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a78f6fd24debc34ff250dd4b2334f4ba6"><div class="ttname"><a href="artik__mqtt_8h.html#a78f6fd24debc34ff250dd4b2334f4ba6">subscribe_callback</a></div><div class="ttdeci">void(* subscribe_callback)(artik_mqtt_config *client_config, void *data_user, int mid, int qos_count, const int *granted_qos)</div><div class="ttdoc">MQTT Subscribe callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00120">artik_mqtt.h:120</a></div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_ab2b56ee203f8c2bc4b160ca5879dcc10"><div class="ttname"><a href="structartik__mqtt__msg.html#ab2b56ee203f8c2bc4b160ca5879dcc10">artik_mqtt_msg::retain</a></div><div class="ttdeci">bool retain</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00065">artik_mqtt.h:65</a></div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_a96867a2bdb76af47ce1494aae56c96fc"><div class="ttname"><a href="structartik__mqtt__msg.html#a96867a2bdb76af47ce1494aae56c96fc">artik_mqtt_msg::qos</a></div><div class="ttdeci">int qos</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00064">artik_mqtt.h:64</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a6ee59b1bd920c18396dd9a0115f5f900"><div class="ttname"><a href="artik__mqtt_8h.html#a6ee59b1bd920c18396dd9a0115f5f900">unsubscribe_callback</a></div><div class="ttdeci">void(* unsubscribe_callback)(artik_mqtt_config *client_config, void *data_user, int mid)</div><div class="ttdoc">MQTT Unsubscribe callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00129">artik_mqtt.h:129</a></div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_ae10c026ba344bfecdde4fe6a836b3978"><div class="ttname"><a href="structartik__mqtt__msg.html#ae10c026ba344bfecdde4fe6a836b3978">artik_mqtt_msg::topic</a></div><div class="ttdeci">char * topic</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00061">artik_mqtt.h:61</a></div></div>
+            <div class="ttc" id="artik__ssl_8h_html"><div class="ttname"><a href="artik__ssl_8h.html">artik_ssl.h</a></div><div class="ttdoc">SSL/TLS related definitions. </div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a869f9341020e3aa8b4d1a8929be7b0e0"><div class="ttname"><a href="structartik__mqtt__config.html#a869f9341020e3aa8b4d1a8929be7b0e0">artik_mqtt_config::pwd</a></div><div class="ttdeci">const char * pwd</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00084">artik_mqtt.h:84</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_a84ed254c1a899b867320798ec7c80af2"><div class="ttname"><a href="structartik__mqtt__config.html#a84ed254c1a899b867320798ec7c80af2">artik_mqtt_config::block</a></div><div class="ttdeci">bool block</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00088">artik_mqtt.h:88</a></div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html_abfb7c8cfec336797a4e0cb319deec079"><div class="ttname"><a href="structartik__mqtt__msg.html#abfb7c8cfec336797a4e0cb319deec079">artik_mqtt_msg::payload</a></div><div class="ttdeci">void * payload</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00062">artik_mqtt.h:62</a></div></div>
+            <div class="ttc" id="artik__mqtt_8h_html_a770f1ba0213a671a1f3a3d5f0804be87"><div class="ttname"><a href="artik__mqtt_8h.html#a770f1ba0213a671a1f3a3d5f0804be87">connect_callback</a></div><div class="ttdeci">void(* connect_callback)(artik_mqtt_config *client_config, void *data_user, int artik_error)</div><div class="ttdoc">MQTT Connect callback type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00103">artik_mqtt.h:103</a></div></div>
+            <div class="ttc" id="artik__error_8h_html"><div class="ttname"><a href="artik__error_8h.html">artik_error.h</a></div><div class="ttdoc">Error codes. </div></div>
+            <div class="ttc" id="structartik__mqtt__msg_html"><div class="ttname"><a href="structartik__mqtt__msg.html">artik_mqtt_msg</a></div><div class="ttdoc">MQTT message definition. </div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00059">artik_mqtt.h:59</a></div></div>
+            <div class="ttc" id="structartik__mqtt__config_html_aaefd3815a5f8ea09eb688ae412e69bac"><div class="ttname"><a href="structartik__mqtt__config.html#aaefd3815a5f8ea09eb688ae412e69bac">artik_mqtt_config::handle</a></div><div class="ttdeci">artik_mqtt_handle handle</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00094">artik_mqtt.h:94</a></div></div>
+            <div class="ttc" id="structartik__mqtt__psk__param_html_adf681bac721280deadb119a5666b0356"><div class="ttname"><a href="structartik__mqtt__psk__param.html#adf681bac721280deadb119a5666b0356">artik_mqtt_psk_param::identity</a></div><div class="ttdeci">const char * identity</div><div class="ttdef"><b>Definition:</b> <a href="artik__mqtt_8h_source.html#l00049">artik_mqtt.h:49</a></div></div>
+            <div class="ttc" id="structartik__ssl__config_html"><div class="ttname"><a href="structartik__ssl__config.html">artik_ssl_config</a></div><div class="ttdoc">SSL configuration structure. </div><div class="ttdef"><b>Definition:</b> <a href="artik__ssl_8h_source.html#l00106">artik_ssl.h:106</a></div></div>
+            </div><!-- fragment --></div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2017-11-30 20:55:09 +0000'>Nov 30 2017,  8:55 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="datasheets"]').parent();
+      $($sideNavListItem).insertBefore($betaFeatures);
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+From 49b4238a8ea3512981b6164de0ba463f78fea55a Mon Sep 17 00:00:00 2001
+From: Chanho Park <chanho61.park@samsung.com>
+Date: Sat, 11 Nov 2017 03:01:43 +0900
+Subject: [PATCH] qtbase: mkspec: add artik device conf
+
+This patch adds artik device configurations for artik710(aarch64) and
+artik530(armhf).
+
+Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+---
+ .../devices/linux-artik-aarch64-g++/qmake.conf     | 27 ++++++++++++++++++++
+ .../linux-artik-aarch64-g++/qplatformdefs.h        |  1 +
+ .../mkspecs/devices/linux-artik530-g++/qmake.conf  | 29 ++++++++++++++++++++++
+ .../devices/linux-artik530-g++/qplatformdefs.h     |  1 +
+ 4 files changed, 58 insertions(+)
+ create mode 100644 qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+ create mode 100644 qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+ create mode 100644 qtbase/mkspecs/devices/linux-artik530-g++/qmake.conf
+ create mode 100644 qtbase/mkspecs/devices/linux-artik530-g++/qplatformdefs.h
+
+diff --git a/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+new file mode 100644
+index 000000000000..22a5476a7150
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+@@ -0,0 +1,27 @@
++include(../common/linux_device_pre.conf)
++QT_QPA_DEFAULT_PLATFORM = eglfs
++
++QMAKE_INCDIR += \
++		$$[QT_SYSROOT]/usr/include
++
++QMAKE_LIBDIR += \
++		$$[QT_SYSROOT]/usr/lib \
++		$$[QT_SYSROOT]/lib/aarch64-linux-gnu \
++		$$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu
++
++QMAKE_LFLAGS += \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/lib/aarch64-linux-gnu
++
++QMAKE_LIBS             += -lrt -lpthread -ldl
++
++DISTRO_OPTS		+= aarch64
++QMAKE_CFLAGS		+= -march=armv8-a -mtune=cortex-a53
++
++EGLFS_DEVICE_INTEGRATION = eglfs_kms
++QMAKE_INCDIR_EGL += $$[QT_SYSROOT]/usr/include
++QMAKE_LIBS_EGL         += -lEGL -lGLESv2
++QMAKE_LIBS_OPENGL_ES2  += $${QMAKE_LIBS_EGL}
++
++load(qt_config)
+diff --git a/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+new file mode 100644
+index 000000000000..99e9a2792329
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+@@ -0,0 +1 @@
++#include "../../linux-g++/qplatformdefs.h"
+diff --git a/qtbase/mkspecs/devices/linux-artik530-g++/qmake.conf b/qtbase/mkspecs/devices/linux-artik530-g++/qmake.conf
+new file mode 100644
+index 000000000000..19f98363bf63
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik530-g++/qmake.conf
+@@ -0,0 +1,29 @@
++include(../common/linux_device_pre.conf)
++QT_QPA_DEFAULT_PLATFORM = eglfs
++
++QMAKE_INCDIR += \
++		$$[QT_SYSROOT]/usr/include
++
++QMAKE_LIBDIR += \
++		$$[QT_SYSROOT]/usr/lib \
++		$$[QT_SYSROOT]/lib/arm-linux-gnueabihf \
++		$$[QT_SYSROOT]/usr/arm-linux-gnueabihf
++
++QMAKE_LFLAGS += \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib/arm-linux-gnueabihf \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/lib/arm-linux-gnueabihf
++
++QMAKE_LIBS             += -lrt -lpthread -ldl
++
++DISTRO_OPTS		+= hard-float
++QMAKE_CFLAGS		+=-march=armv7-a -mcpu=cortex-a9 -mfpu=neon
++
++EGLFS_DEVICE_INTEGRATION = eglfs_kms
++QMAKE_INCDIR_EGL += $$[QT_SYSROOT]/usr/include
++QMAKE_LIBS_EGL         += -lEGL -lGLESv2
++QMAKE_LIBS_OPENGL_ES2  += $${QMAKE_LIBS_EGL}
++
++include(../common/linux_arm_device_post.conf)
++
++load(qt_config)
+diff --git a/qtbase/mkspecs/devices/linux-artik530-g++/qplatformdefs.h b/qtbase/mkspecs/devices/linux-artik530-g++/qplatformdefs.h
+new file mode 100644
+index 000000000000..99e9a2792329
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik530-g++/qplatformdefs.h
+@@ -0,0 +1 @@
++#include "../../linux-g++/qplatformdefs.h"
+-- 
+2.7.4

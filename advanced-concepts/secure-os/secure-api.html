@@ -1,0 +1,1241 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='secure-api.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Security API thru SEE' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Security API thru SEE' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Security API thru SEE</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_secure-os documentation_advanced-concepts_secure-os_secure-api' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="s-module-security" aria-expanded="true">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-api.html" data-name="security-api-thru-see" aria-expanded="false" class="active">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="security-api-through-see">Security API through SEE</h1>
+            
+            <p>The basic Secure Element API calls can be made through the <a href="..\secure-element\secure-api.html#security-api-through-sdk">ARTIK SDK</a>. However, for the advanced features like post-provisioning provided by the ARTIK "s" modules, you will need to use the <code>artiksee</code> interface described here.</p>
+            
+            <h2 id="samsung-see">Samsung SEE</h2>
+            
+            <p>The Samsung ARTIK solution includes a <a href="..\..\security-api\index.htm">Security Library</a> that consists of APIs to communicate with the <strong>Samsung SEE</strong> from the non-secure OS (Linux). The Security Library offers specific functions related to key management, authentication, secure storage, and post-provisioning.</p>
+            
+            <p>The following table lists the descriptions of the APIs available as part of the <code>artiksee</code> Security Library. For ARTIK "s" modules, access to all the APIs of ARTIK Security Library is available. For standard modules, only the three highlighted APIs are available.</p>
+            
+            <html>
+            <table>
+            <tr><th>Category</th><th>ARTIK API</th><th>Description</th></tr>
+            
+            <tr>
+            <td rowspan="2">Initialize</td>
+            <td>
+            <code>see_init</code>
+            </td>
+            <td rowspan="2">For Initializing a new SEE session. </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_deinit</code>
+            </td><td></td>
+            </tr>
+            
+            
+            
+            
+            <tr>
+            <td rowspan="4"><a href="..\..\security-api\group__see__key__manager.html" target="artiksee"><font color="red">Key Manager</font></a></td>
+            
+            <td>
+            <code>see_generate_key</code>
+            </td>
+            
+            <td rowspan="4">
+            For management of symmetric and asymmetric keys that are not exposed to non-secure operating system user space.</td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_set_key</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_get_pubkey</code><br>
+            <code>see_get_publickey</code>(05Xs)<br>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_remove_key</code>
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td rowspan="11"><a href="..\..\security-api\group__see__authentication.html" target="artiksee"><font color="red">Authentication</font></a></td>
+            
+            <td>
+            <code><strong>see_generate_random</strong></code>
+            </td>
+            
+            <td rowspan="11">
+            For use with the TLS library with callback functions to generate a digital true random number, generate or get certificates, get signatures and verify, and to generate or compute DHM parameters.
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td>
+            <code>see_generate_certificate</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_set_certificate</code> *
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code><strong>see_get_certificate</strong></code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_remove_certificate</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_get_rsa_signature</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_verify_rsa_signature</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code><strong>see_get_ecdsa_signature</strong></code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_verify_ecdsa_signature</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_get_hash</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_get_hmac</code>
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td></td><td>
+            <code>see_generate_dhm_params</code> (05Xs)
+            </td><td></td>
+            </tr>
+            
+            <tr>
+            <td></td><td>
+            <code>see_compute_dhm_param</code> (05Xs)
+            </td><td></td>
+            </tr>
+            
+            <tr>
+            <td rowspan="4"><a href="..\..\security-api\group__see__secure__storage.html" target="artiksee"><font color="red">Secure Storage</font></a></td>
+            
+            <td>
+            <code>see_write_secure_storage</code>
+            </td>
+            
+            <td rowspan="4">
+            For access to the secure storage for data, credentials, and keys.
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_read_secure_storage</code>
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_list_secure_storage</code> *
+            </td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_delete_secure_storage</code> *
+            </td>
+            </tr>
+            
+            <tr>
+            <td rowspan="2">Post Provisioning</td>
+            
+            <td>
+            <code>see_post_provision</code> *
+            </td>
+            
+            <td rowspan="2">
+            For injecting an HMAC key or asymmetric key pair (ECC/RSA) into the secure element.</td>
+            </tr>
+            
+            <tr>
+            <td>
+            <code>see_post_provision_lock</code> *
+            </td>
+            </tr>
+            
+            
+            <tr>
+            
+            
+            <td rowspan="4"><a href="..\..\security-api\group__see__enc__decryption.html" target="artiksee"><font color="red">Encryption/<br>Decryption</font></a></td>
+            
+            <td>
+            <code>see_rsa_decryption</code>
+            </td>
+            
+            <td rowspan="4">For Data encryption and decryption using a key in secure storage.
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td>
+            <code>see_rsa_encryption</code>
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td>
+            <code>see_aes_decryption</code>
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td>
+            <code>see_aes_encryption</code>
+            </td>
+            </tr>
+            
+            
+            
+            </table>
+            </html>
+            <p>*Not available on ARTIK 05Xs</p>
+            
+            <p class="info">Set <span class="code-font">see_debug=1</span> (or <span class="code-font">2</span> or <span class="code-font">3</span>) in your code to see helpful output messages.</p>
+            
+            <p>The various ARTIK SDK API calls make seamless use of the Samsung ARTIK SEE security libraries. A few ARTIK API calls correspond directly to SEE API calls. Others are indirectly assisted by calls to the SEE libraries, for example:</p>
+            
+            <p><strong>SSL Parameters for Connectivity</strong> – Within ARTIK SDK connectivity features, HTTP requests, MQTT messaging, and WebSockets are available to create secure connections. Included is an SSL configuration structure to easily customize TLS handshake parameters for secure connections.  Refer to the <a href="..\..\api\examples.html">API examples</a> for sample code.</p>
+            
+            <p><strong>OpenSSL Library</strong> – For applications that are already using or plan to use the OpenSSL software library, the developer can still take advantage of the ARTIK Security features. OpenSSL command support is available directly without installation of the header files. Refer to the <a href="openssl.html">OpenSSL Support</a> article for information and test examples.</p>
+            
+            <h2 id="developing-with-security-libraries">Developing with Security Libraries</h2>
+            
+            <p>The <code>artiksee</code> libraries are installed in Ubuntu from <code>libartik-security</code> when you build the system image. The library header files are typically installed separately, since they don't need to be part of the image if you're just using them during development.</p>
+            
+            <p>Refer to the <a href="..\..\artik\advanced-concepts\prepare-dev-env.html#locating-required-software">Advanced Developers</a> article for information on downloading and installing the optional security development package. Basically, you'll just need to execute:<br>
+            <code>dpkg -i libartik-security-dev*</code><br>
+            to install the header files. Look for them under the directories noted.</p>
+            
+            <p>For A530s: <code>/usr/include/arm-linux-gnueabihf/artik/security</code></p>
+            
+            <p>For A710s: <code>/usr/include/aarch64-linux-gnu/artik/security</code></p>
+            
+            <p>Once you have the header files installed, follow the tutorial below on developing your own secure applications.</p>
+            
+            <h3 id="tutorial">Tutorial</h3>
+            
+            <p>Test code examples in the API demonstrate how the SEE calls might be used in a typical application. We've taken that code and modified it slightly, to give you a repeatable sequence for demonstration.</p>
+            
+            <p>Try out these routines <strong>in the order noted</strong>.</p>
+            
+            <p><strong>Test #1: SEE Key Generation</strong> – demonstrates how to generate an HMAC_SHA256 key, an AES128 key, and an RSA1024 key, and how to set the AES128 key data. Run this test first <strong>before running the others</strong> to generate keys for them to use.</p>
+            
+            <blockquote>
+              <p>File: <code><font color="red"><a data-toggle="collapse" href="#keygen">see-keygen.c</a></font></code><br>
+            To build : <code>gcc see-keygen.c -o keygen -lartik-security</code><br>
+            To run : <code>./keygen</code></p>
+            </blockquote>
+            
+            <div class="collapse" id="keygen">
+              <div class="boxed">
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79</pre></td><td class="code"><pre><span class="cp">#include &lt;artik/security.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;stdint.h&gt;&#x000A;#include &lt;unistd.h&gt;&#x000A;#include &lt;string.h&gt;&#x000A;#include &lt;ctype.h&gt;&#x000A;#include &lt;time.h&gt;&#x000A;</span><span class="kt">void</span> <span class="nf">PrintBuffer</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">header</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">register</span> <span class="kt">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"%s : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>&#x000A;    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="p">}</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">" %02X"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="n">see_data</span> <span class="n">hash_gen_key</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">aes_gen_key</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">rsa_gen_key</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">get_key</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">set_key</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Initialize ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_init</span><span class="p">(</span><span class="s">"TEST_ID"</span><span class="p">,</span><span class="s">"TEST_PASSWORD"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_init</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Generate Key : HMAC_SHA256 ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_generate_key</span><span class="p">(</span><span class="n">HMAC_SHA256</span><span class="p">,</span> <span class="s">"hmacsha256key"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hash_gen_key</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_generate_key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Generate Key : AES128 ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_generate_key</span><span class="p">(</span><span class="n">AES_128</span><span class="p">,</span> <span class="s">"aes128key"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">aes_gen_key</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_generate_key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Generate Key : RSA1024 ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_generate_key</span><span class="p">(</span><span class="n">RSA_1024</span><span class="p">,</span> <span class="s">"rsa1024key"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rsa_gen_key</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_generate_key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"RSA1024 Public key"</span><span class="p">,</span> <span class="n">rsa_gen_key</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">rsa_gen_key</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get Publickey ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_get_pubkey</span><span class="p">(</span><span class="n">RSA_1024</span><span class="p">,</span> <span class="s">"rsa1024key"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">get_key</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_get_pubkey</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"RSA1024 Public key"</span><span class="p">,</span> <span class="n">get_key</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">get_key</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Set Key : AES128 ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="n">set_key</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">"1234567890123456"</span><span class="p">;</span>&#x000A;    <span class="n">set_key</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_set_key</span><span class="p">(</span><span class="n">AES_128</span><span class="p">,</span> <span class="s">"aes128setkey"</span><span class="p">,</span> <span class="n">set_key</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_set_key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="nl">exit:</span>&#x000A;        <span class="n">see_deinit</span><span class="p">();</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Deinitialize ...</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+              </div>
+            </div>
+            
+            <p class="warning">You <strong>cannot</strong> run this test twice without first using SEE Key Removal; once a <code>key_name</code> (like <code>aes128key</code>) is generated, it cannot be overwritten. Refer to the <a href="..\..\security-api\group__see__key__manager.html" target="artiksee"><code><font color="red">see_generate_key</font></code></a> description for details.</p>
+            
+            <p><strong>Test #2: SEE Authentication</strong> – demonstrates how to get the certificate, generate random bytes, etc. You'll need to generate keys before calling this routine.</p>
+            
+            <blockquote>
+              <p>File: <code><font color="red"><a data-toggle="collapse" href="#auth">see-auth.c</a></font></code><br>
+            To build : <code>gcc see-auth.c -o auth -lartik-security</code><br>
+            To run : <code>./auth</code></p>
+            </blockquote>
+            
+            <div class="collapse" id="auth">
+              <div class="boxed">
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94</pre></td><td class="code"><pre><span class="cp">#include &lt;artik/security.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;stdint.h&gt;&#x000A;#include &lt;unistd.h&gt;&#x000A;#include &lt;string.h&gt;&#x000A;#include &lt;ctype.h&gt;&#x000A;#include &lt;time.h&gt;&#x000A;</span><span class="kt">void</span> <span class="nf">PrintBuffer</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">header</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">register</span> <span class="kt">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"%s : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>&#x000A;    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="p">}</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">" %02X"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="n">see_data</span> <span class="n">rand</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">cert</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">plaintext</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">hashed</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">hash</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">sign</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">hmac</span><span class="p">;</span>&#x000A;    <span class="n">plaintext</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">"01234567890123456789"</span><span class="p">;</span>&#x000A;    <span class="n">plaintext</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>&#x000A;    <span class="n">hashed</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">"01234567890123456789012345678901"</span><span class="p">;</span>&#x000A;    <span class="n">hashed</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Initialize ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_init</span><span class="p">(</span><span class="s">"TEST_ID"</span><span class="p">,</span><span class="s">"TEST_PASSWORD"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_init</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get Random ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_generate_random</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rand</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_generate_random</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Random"</span><span class="p">,</span> <span class="n">rand</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">rand</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">rand</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get Certificate ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_get_certificate</span><span class="p">(</span><span class="s">"ARTIK/0"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cert</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_get_certificate</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Certificate"</span><span class="p">,</span> <span class="n">cert</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">cert</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">cert</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get ECDSA Signature ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_get_ecdsa_signature</span><span class="p">(</span><span class="n">ECDSA_SEC_P256R1</span><span class="p">,</span> <span class="s">"ARTIK/0"</span><span class="p">,</span> <span class="n">hashed</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sign</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  fail</span><span class="se">\n</span><span class="s">  ! see_get_ecdsa_signature</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Hashed Data"</span><span class="p">,</span> <span class="n">hashed</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">hashed</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Signed Data"</span><span class="p">,</span> <span class="n">sign</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">sign</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">sign</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get HMAC ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_get_hmac</span><span class="p">(</span><span class="n">HMAC_SHA256</span><span class="p">,</span> <span class="s">"hmacsha256key"</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hmac</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  fail</span><span class="se">\n</span><span class="s">  ! see_get_hmac</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Plain Data"</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"HMAC Data"</span><span class="p">,</span> <span class="n">hmac</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">hmac</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">hmac</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Get Hash ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_get_hash</span><span class="p">(</span><span class="n">HASH_SHA256</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hash</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  fail</span><span class="se">\n</span><span class="s">  ! see_get_hash</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Plain Text"</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">plaintext</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Hashed Data"</span><span class="p">,</span> <span class="n">hash</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">hash</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">hash</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="nl">exit:</span>&#x000A;        <span class="n">see_deinit</span><span class="p">();</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Deinitialize ...</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+              </div>
+            </div>
+            
+            <p><strong>Test #3: SEE Encode/Decode</strong> – demonstrates how, using the AES key, to encode data and then decode from that to return to the original value. You'll need to generate keys before calling this routine.</p>
+            
+            <blockquote>
+              <p>File: <code><font color="red"><a data-toggle="collapse" href="#enc">see-encdec.c</a></font></code><br>
+            To build : <code>gcc see-encdec.c -o enc -lartik-security</code><br>
+            To run : <code>./enc</code></p>
+            </blockquote>
+            
+            <div class="collapse" id="enc">
+              <div class="boxed">
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86</pre></td><td class="code"><pre><span class="cp">#include &lt;artik/security.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;stdint.h&gt;&#x000A;#include &lt;unistd.h&gt;&#x000A;#include &lt;string.h&gt;&#x000A;#include &lt;ctype.h&gt;&#x000A;#include &lt;time.h&gt;&#x000A;</span><span class="kt">void</span> <span class="nf">PrintBuffer</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">header</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span><span class="o">*</span> <span class="n">buffer</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">len</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">register</span> <span class="kt">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"%s : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>&#x000A;    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;            <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="p">}</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">" %02X"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="n">see_data</span> <span class="n">iv</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">input</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">aes_enc_data</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">aes_dec_data</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">rsa_enc_data</span><span class="p">;</span>&#x000A;    <span class="n">see_data</span> <span class="n">rsa_dec_data</span><span class="p">;</span>&#x000A;    <span class="n">iv</span><span class="p">.</span><span class="n">data</span><span class="o">=</span><span class="s">"1234567890123456"</span><span class="p">;</span>&#x000A;    <span class="n">iv</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>&#x000A;    <span class="n">input</span><span class="p">.</span><span class="n">data</span><span class="o">=</span><span class="s">"1234567890123456"</span><span class="p">;</span>&#x000A;    <span class="n">input</span><span class="p">.</span><span class="n">length</span><span class="o">=</span><span class="mi">16</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Initialize ...</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_init</span><span class="p">(</span><span class="s">"TEST_ID"</span><span class="p">,</span><span class="s">"TEST_PASSWORD"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_init</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE AES Encryption ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_aes_encryption</span><span class="p">(</span><span class="n">AES_ECB_NOPAD</span><span class="p">,</span> <span class="s">"aes128key"</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">aes_enc_data</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_aes_encryption</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Input"</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Enc Data"</span><span class="p">,</span> <span class="n">aes_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">aes_enc_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE AES Decryption ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_aes_decryption</span><span class="p">(</span><span class="n">AES_ECB_NOPAD</span><span class="p">,</span> <span class="s">"aes128key"</span><span class="p">,</span> <span class="n">iv</span><span class="p">,</span> <span class="n">aes_enc_data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">aes_dec_data</span> <span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_aes_decryption</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Enc Data"</span><span class="p">,</span> <span class="n">aes_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">aes_enc_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Dec Data"</span><span class="p">,</span> <span class="n">aes_dec_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">aes_dec_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">aes_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">aes_dec_data</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE RSA Encryption ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_rsa_encryption</span><span class="p">(</span><span class="n">RSAES_PKCS1_V1_5</span><span class="p">,</span> <span class="s">"rsa1024key"</span><span class="p">,</span> <span class="n">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rsa_enc_data</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_rsa_encryption</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Input"</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Enc Data"</span><span class="p">,</span> <span class="n">rsa_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">rsa_enc_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE RSA Decryption ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_rsa_decryption</span><span class="p">(</span><span class="n">RSAES_PKCS1_V1_5</span><span class="p">,</span> <span class="s">"rsa1024key"</span><span class="p">,</span> <span class="n">rsa_enc_data</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rsa_dec_data</span> <span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_rsa_decryption</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">goto</span> <span class="n">exit</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Enc Data"</span><span class="p">,</span> <span class="n">rsa_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">rsa_enc_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">PrintBuffer</span><span class="p">(</span><span class="s">"Dec Data"</span><span class="p">,</span> <span class="n">rsa_dec_data</span><span class="p">.</span><span class="n">data</span><span class="p">,</span> <span class="n">rsa_dec_data</span><span class="p">.</span><span class="n">length</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">rsa_enc_data</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="n">free</span><span class="p">(</span><span class="n">rsa_dec_data</span><span class="p">.</span><span class="n">data</span><span class="p">);</span>&#x000A;    <span class="nl">exit:</span>&#x000A;        <span class="n">see_deinit</span><span class="p">();</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Deinitialize ...</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+              </div>
+            </div>
+            
+            <p><strong>Test #4: SEE Key Removal</strong> – demonstrates how to remove generated keys. You'll need to run this one to undo what you did with the SEE Key Generation Test; otherwise, you will get an error if you try to re-run that test.</p>
+            
+            <blockquote>
+              <p>File: <code><font color="red"><a data-toggle="collapse" href="#keyrem">see-keyrem.c</a></font></code><br>
+            To build : <code>gcc see-keyrem.c -o keyrem -lartik-security</code><br>
+            To run : <code>./keyrem</code></p>
+            </blockquote>
+            
+            <div class="collapse" id="keyrem">
+              <div class="boxed">
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41</pre></td><td class="code"><pre>&#x000A;<span class="cp">#include &lt;artik/security.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;stdint.h&gt;&#x000A;#include &lt;unistd.h&gt;&#x000A;#include &lt;string.h&gt;&#x000A;#include &lt;ctype.h&gt;&#x000A;#include &lt;time.h&gt;&#x000A;</span>&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Initialize ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_init</span><span class="p">(</span><span class="s">"TEST_ID"</span><span class="p">,</span><span class="s">"TEST_PASSWORD"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! see_init</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"  . SEE Remove Key ..."</span><span class="p">);</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_remove_key</span><span class="p">(</span><span class="n">HMAC_SHA256</span><span class="p">,</span> <span class="s">"hmacsha256key"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! rem hmac key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_remove_key</span><span class="p">(</span><span class="n">AES_128</span><span class="p">,</span> <span class="s">"aes128key"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! rem aes key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_remove_key</span><span class="p">(</span><span class="n">AES_128</span><span class="p">,</span> <span class="s">"aes128setkey"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! rem aes set key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">see_remove_key</span><span class="p">(</span><span class="n">RSA_1024</span><span class="p">,</span> <span class="s">"rsa1024key"</span><span class="p">))</span> <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Fail</span><span class="se">\n</span><span class="s">  ! rem rsa key</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"ok</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="nl">exit:</span>&#x000A;        <span class="n">see_deinit</span><span class="p">();</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"  . See Deinitialize ...</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="n">fflush</span><span class="p">(</span><span class="n">stdout</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+              </div>
+            </div>
+            
+            <p><strong>Test #5: SEE Secure Storage</strong> – demonstrates how to put information into Secure Storage, and later delete it. The link below takes you to the API test example file.</p>
+            
+            <blockquote>
+              <p>File: <a href="..\..\security-api\see-securestorage-test_8c-example.html" target="artiksee"><code><font color="red">see-securestorage-test.c</font></code></a><br>
+            To build : <code>gcc see-securestorage-test.c -o secstor -lartik-security</code><br>
+            To run : <code>./secstor</code></p>
+            </blockquote>
+            
+            <p><strong>SEE Post-Provisioning</strong> – contact your ARTIK Sales representative for information on post-provisioning. It requires disclosures under NDA.</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-10-29 15:52:24 +0000'>Oct 29 2018,  3:52 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="secure-api-sdk.html">Prev: Security API thru SDK</a></li>
+              <li class='next-page'><a href="openssl.html">Next: OpenSSL Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

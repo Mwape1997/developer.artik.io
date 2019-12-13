@@ -1,0 +1,2108 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='structartik__cloud__module.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Software API: artik_cloud_module Struct Reference</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_api documentation_api_structartik__cloud__module' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option value='/documentation/api/structartik__cloud__module.html'>1.8</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-7/download'>1.7</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-6/download'>1.6</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-5/download'>1.5</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-4/download'>1.4</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-3/download'>1.3</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-2/download'>1.2</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-1/download'>1.1</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-0/download'>1.0</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('structartik__cloud__module.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="summary">
+            <a href="#pub-attribs">Data Fields</a>  </div>
+              <div class="headertitle">
+            <div class="title">artik_cloud_module Struct Reference</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            
+            <p>Cloud module operations.  
+             <a href="structartik__cloud__module.html#details">More...</a></p>
+            
+            <p><code>#include &lt;<a class="el" href="artik__cloud_8h_source.html">connectivity/artik_cloud.h</a>&gt;</code></p>
+            <table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+            Data Fields</h2></td></tr>
+            <tr class="memitem:a3b0ec153341b02f0dee9ef1ecb141781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a3b0ec153341b02f0dee9ef1ecb141781">send_message</a> )(const char *access_token, const char *device_id, const char *message, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a3b0ec153341b02f0dee9ef1ecb141781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the Cloud.  <a href="#a3b0ec153341b02f0dee9ef1ecb141781">More...</a><br></td></tr>
+            <tr class="separator:a3b0ec153341b02f0dee9ef1ecb141781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a378833037954704db23924e8d6ccf58f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a378833037954704db23924e8d6ccf58f">send_message_async</a> )(const char *access_token, const char *device_id, const char *message, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a378833037954704db23924e8d6ccf58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the Cloud asynchronously.  <a href="#a378833037954704db23924e8d6ccf58f">More...</a><br></td></tr>
+            <tr class="separator:a378833037954704db23924e8d6ccf58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a817a39fc514891817d375612391d3e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a817a39fc514891817d375612391d3e8b">send_action</a> )(const char *access_token, const char *device_id, const char *action, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a817a39fc514891817d375612391d3e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send actions to a device.  <a href="#a817a39fc514891817d375612391d3e8b">More...</a><br></td></tr>
+            <tr class="separator:a817a39fc514891817d375612391d3e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a26af89b70014233c18e78d71f36c674a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a26af89b70014233c18e78d71f36c674a">send_action_async</a> )(const char *access_token, const char *device_id, const char *action, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a26af89b70014233c18e78d71f36c674a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send actions to a device asynchronously.  <a href="#a26af89b70014233c18e78d71f36c674a">More...</a><br></td></tr>
+            <tr class="separator:a26af89b70014233c18e78d71f36c674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0f4567284b370b02b5f3c9fb8487ef4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a0f4567284b370b02b5f3c9fb8487ef4a">get_current_user_profile</a> )(const char *access_token, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a0f4567284b370b02b5f3c9fb8487ef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current user profile.  <a href="#a0f4567284b370b02b5f3c9fb8487ef4a">More...</a><br></td></tr>
+            <tr class="separator:a0f4567284b370b02b5f3c9fb8487ef4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a15e140cf16301263a95bdba1d7a2880e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a15e140cf16301263a95bdba1d7a2880e">get_current_user_profile_async</a> )(const char *access_token, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a15e140cf16301263a95bdba1d7a2880e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current user profile asynchronously.  <a href="#a15e140cf16301263a95bdba1d7a2880e">More...</a><br></td></tr>
+            <tr class="separator:a15e140cf16301263a95bdba1d7a2880e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4e46746209d35812ad9d0191667bd296"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a4e46746209d35812ad9d0191667bd296">get_user_devices</a> )(const char *access_token, int count, bool properties, int offset, const char *user_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a4e46746209d35812ad9d0191667bd296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user devices.  <a href="#a4e46746209d35812ad9d0191667bd296">More...</a><br></td></tr>
+            <tr class="separator:a4e46746209d35812ad9d0191667bd296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aef87c7259cf8354417e26a35caeaae91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aef87c7259cf8354417e26a35caeaae91">get_user_devices_async</a> )(const char *access_token, int count, bool properties, int offset, const char *user_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:aef87c7259cf8354417e26a35caeaae91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user devices asynchronously.  <a href="#aef87c7259cf8354417e26a35caeaae91">More...</a><br></td></tr>
+            <tr class="separator:aef87c7259cf8354417e26a35caeaae91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac59da16649412071a92edbabccc98c4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#ac59da16649412071a92edbabccc98c4b">get_user_device_types</a> )(const char *access_token, int count, bool shared, int offset, const char *user_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:ac59da16649412071a92edbabccc98c4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user device types.  <a href="#ac59da16649412071a92edbabccc98c4b">More...</a><br></td></tr>
+            <tr class="separator:ac59da16649412071a92edbabccc98c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aeffed64609934dae6fd4575eab4e7873"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aeffed64609934dae6fd4575eab4e7873">get_user_device_types_async</a> )(const char *access_token, int count, bool shared, int offset, const char *user_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:aeffed64609934dae6fd4575eab4e7873"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user device types asynchronously.  <a href="#aeffed64609934dae6fd4575eab4e7873">More...</a><br></td></tr>
+            <tr class="separator:aeffed64609934dae6fd4575eab4e7873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af87e09df5d2e7c7da39fe13f7d2f8ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#af87e09df5d2e7c7da39fe13f7d2f8ce6">get_user_application_properties</a> )(const char *access_token, const char *user_id, const char *app_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:af87e09df5d2e7c7da39fe13f7d2f8ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user application properties.  <a href="#af87e09df5d2e7c7da39fe13f7d2f8ce6">More...</a><br></td></tr>
+            <tr class="separator:af87e09df5d2e7c7da39fe13f7d2f8ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4b603c0da4fba8e1b43b7e12bdd4c1dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a4b603c0da4fba8e1b43b7e12bdd4c1dc">get_user_application_properties_async</a> )(const char *access_token, const char *user_id, const char *app_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a4b603c0da4fba8e1b43b7e12bdd4c1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get user application properties asynchronously.  <a href="#a4b603c0da4fba8e1b43b7e12bdd4c1dc">More...</a><br></td></tr>
+            <tr class="separator:a4b603c0da4fba8e1b43b7e12bdd4c1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a76be3ac32d9ac9857dd0553c3af6a33f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a76be3ac32d9ac9857dd0553c3af6a33f">get_device</a> )(const char *access_token, const char *device_id, bool properties, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a76be3ac32d9ac9857dd0553c3af6a33f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device.  <a href="#a76be3ac32d9ac9857dd0553c3af6a33f">More...</a><br></td></tr>
+            <tr class="separator:a76be3ac32d9ac9857dd0553c3af6a33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a9d912f0ac59097d09ee326eef6843414"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a9d912f0ac59097d09ee326eef6843414">get_device_async</a> )(const char *access_token, const char *device_id, bool properties, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a9d912f0ac59097d09ee326eef6843414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device asynchronously.  <a href="#a9d912f0ac59097d09ee326eef6843414">More...</a><br></td></tr>
+            <tr class="separator:a9d912f0ac59097d09ee326eef6843414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a2689aef24903819b5d9abdd5076581b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a2689aef24903819b5d9abdd5076581b0">get_device_token</a> )(const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a2689aef24903819b5d9abdd5076581b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device token.  <a href="#a2689aef24903819b5d9abdd5076581b0">More...</a><br></td></tr>
+            <tr class="separator:a2689aef24903819b5d9abdd5076581b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a5c45f987ae2d62046856699f69053f67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a5c45f987ae2d62046856699f69053f67">get_device_token_async</a> )(const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a5c45f987ae2d62046856699f69053f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device token asynchronously.  <a href="#a5c45f987ae2d62046856699f69053f67">More...</a><br></td></tr>
+            <tr class="separator:a5c45f987ae2d62046856699f69053f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a15e77645c1fee7e8a12cfb0069f351d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a15e77645c1fee7e8a12cfb0069f351d4">add_device</a> )(const char *access_token, const char *user_id, const char *dt_id, const char *name, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a15e77645c1fee7e8a12cfb0069f351d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add device.  <a href="#a15e77645c1fee7e8a12cfb0069f351d4">More...</a><br></td></tr>
+            <tr class="separator:a15e77645c1fee7e8a12cfb0069f351d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a01a31e762ba2a0af3237211f4a85d0c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a01a31e762ba2a0af3237211f4a85d0c2">add_device_async</a> )(const char *access_token, const char *user_id, const char *dt_id, const char *name, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a01a31e762ba2a0af3237211f4a85d0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add device asynchronously.  <a href="#a01a31e762ba2a0af3237211f4a85d0c2">More...</a><br></td></tr>
+            <tr class="separator:a01a31e762ba2a0af3237211f4a85d0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aee5fcd7b701ff7d236879479f62e455a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aee5fcd7b701ff7d236879479f62e455a">update_device_token</a> )(const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:aee5fcd7b701ff7d236879479f62e455a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create device token. If exists, update it.  <a href="#aee5fcd7b701ff7d236879479f62e455a">More...</a><br></td></tr>
+            <tr class="separator:aee5fcd7b701ff7d236879479f62e455a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aac99de7c342d3f11c63d5a82f40f38b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aac99de7c342d3f11c63d5a82f40f38b9">update_device_token_async</a> )(const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:aac99de7c342d3f11c63d5a82f40f38b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create device token asynchronously. If exists, update it.  <a href="#aac99de7c342d3f11c63d5a82f40f38b9">More...</a><br></td></tr>
+            <tr class="separator:aac99de7c342d3f11c63d5a82f40f38b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a864295fbae3a9f3887e13cd186e1fe4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a864295fbae3a9f3887e13cd186e1fe4e">delete_device_token</a> )(const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a864295fbae3a9f3887e13cd186e1fe4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete device token.  <a href="#a864295fbae3a9f3887e13cd186e1fe4e">More...</a><br></td></tr>
+            <tr class="separator:a864295fbae3a9f3887e13cd186e1fe4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a40d19cebfb43eceb88c8925059d48195"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a40d19cebfb43eceb88c8925059d48195">delete_device_token_async</a> )(const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a40d19cebfb43eceb88c8925059d48195"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete device token asynchronously.  <a href="#a40d19cebfb43eceb88c8925059d48195">More...</a><br></td></tr>
+            <tr class="separator:a40d19cebfb43eceb88c8925059d48195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a07249cf6eda8b788a6b836de91126d5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a07249cf6eda8b788a6b836de91126d5b">delete_device</a> )(const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a07249cf6eda8b788a6b836de91126d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete device.  <a href="#a07249cf6eda8b788a6b836de91126d5b">More...</a><br></td></tr>
+            <tr class="separator:a07249cf6eda8b788a6b836de91126d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae224967e62d757b39ed8d2d82226e3da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#ae224967e62d757b39ed8d2d82226e3da">delete_device_async</a> )(const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:ae224967e62d757b39ed8d2d82226e3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete device asynchronously.  <a href="#ae224967e62d757b39ed8d2d82226e3da">More...</a><br></td></tr>
+            <tr class="separator:ae224967e62d757b39ed8d2d82226e3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a32e6e7643c35bc3ce25d3428f153795f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a32e6e7643c35bc3ce25d3428f153795f">get_device_properties</a> )(const char *access_token, const char *device_id, bool timestamp, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a32e6e7643c35bc3ce25d3428f153795f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a device's properties (server/system/device properties)  <a href="#a32e6e7643c35bc3ce25d3428f153795f">More...</a><br></td></tr>
+            <tr class="separator:a32e6e7643c35bc3ce25d3428f153795f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aa3d69fd6724e743b302bcf52750c7f9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aa3d69fd6724e743b302bcf52750c7f9f">get_device_properties_async</a> )(const char *access_token, const char *device_id, bool timestamp, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:aa3d69fd6724e743b302bcf52750c7f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a device's properties (server/system/device properties) asynchronously.  <a href="#aa3d69fd6724e743b302bcf52750c7f9f">More...</a><br></td></tr>
+            <tr class="separator:aa3d69fd6724e743b302bcf52750c7f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acef8a515811755c49319641c7a11254c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#acef8a515811755c49319641c7a11254c">set_device_server_properties</a> )(const char *access_token, const char *device_id, const char *data, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:acef8a515811755c49319641c7a11254c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a device's server properties.  <a href="#acef8a515811755c49319641c7a11254c">More...</a><br></td></tr>
+            <tr class="separator:acef8a515811755c49319641c7a11254c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a90aec14b6646c4fff35b8de94c7c343b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a90aec14b6646c4fff35b8de94c7c343b">set_device_server_properties_async</a> )(const char *access_token, const char *device_id, const char *data, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a90aec14b6646c4fff35b8de94c7c343b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a device's server properties asynchronously.  <a href="#a90aec14b6646c4fff35b8de94c7c343b">More...</a><br></td></tr>
+            <tr class="separator:a90aec14b6646c4fff35b8de94c7c343b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac46f73f9b7b73e4eecca8a84fe1cfd1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *device_type_id, const char *vendor_id, char **response)</td></tr>
+            <tr class="memdesc:ac46f73f9b7b73e4eecca8a84fe1cfd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Secure Device Registration process.  <a href="#ac46f73f9b7b73e4eecca8a84fe1cfd1f">More...</a><br></td></tr>
+            <tr class="separator:ac46f73f9b7b73e4eecca8a84fe1cfd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a837b51d4f4a283717ac989438f64f2c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *device_type_id, const char *vendor_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td></tr>
+            <tr class="memdesc:a837b51d4f4a283717ac989438f64f2c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start Secure Device Registration process asynchronously.  <a href="#a837b51d4f4a283717ac989438f64f2c0">More...</a><br></td></tr>
+            <tr class="separator:a837b51d4f4a283717ac989438f64f2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0e163ba7501d136305f3de239f84e647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a0e163ba7501d136305f3de239f84e647">sdr_registration_status</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, char **response)</td></tr>
+            <tr class="memdesc:a0e163ba7501d136305f3de239f84e647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Secure Device Registration process status.  <a href="#a0e163ba7501d136305f3de239f84e647">More...</a><br></td></tr>
+            <tr class="separator:a0e163ba7501d136305f3de239f84e647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a73beaaeb74ada6515a7d37c16f295276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a73beaaeb74ada6515a7d37c16f295276">sdr_registration_status_async</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td></tr>
+            <tr class="memdesc:a73beaaeb74ada6515a7d37c16f295276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Secure Device Registration process status asynchronously.  <a href="#a73beaaeb74ada6515a7d37c16f295276">More...</a><br></td></tr>
+            <tr class="separator:a73beaaeb74ada6515a7d37c16f295276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af1e3232abcb605df6155e644a7cd73c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#af1e3232abcb605df6155e644a7cd73c9">sdr_complete_registration</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, const char *reg_nonce, char **response)</td></tr>
+            <tr class="memdesc:af1e3232abcb605df6155e644a7cd73c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete Secure Device Registration process.  <a href="#af1e3232abcb605df6155e644a7cd73c9">More...</a><br></td></tr>
+            <tr class="separator:af1e3232abcb605df6155e644a7cd73c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a20e95d3bfde7bde0580a631d33b124f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a20e95d3bfde7bde0580a631d33b124f2">sdr_complete_registration_async</a> )(<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, const char *reg_nonce, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td></tr>
+            <tr class="memdesc:a20e95d3bfde7bde0580a631d33b124f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete Secure Device Registration process asynchronously.  <a href="#a20e95d3bfde7bde0580a631d33b124f2">More...</a><br></td></tr>
+            <tr class="separator:a20e95d3bfde7bde0580a631d33b124f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a866e8f2942bf4ec5bd179ad3c5f6209a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a866e8f2942bf4ec5bd179ad3c5f6209a">websocket_open_stream</a> )(<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> *handle, const char *access_token, const char *device_id, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td></tr>
+            <tr class="memdesc:a866e8f2942bf4ec5bd179ad3c5f6209a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open websocket stream.  <a href="#a866e8f2942bf4ec5bd179ad3c5f6209a">More...</a><br></td></tr>
+            <tr class="separator:a866e8f2942bf4ec5bd179ad3c5f6209a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a322fe73385393942729e9368dbd9fc8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a322fe73385393942729e9368dbd9fc8d">websocket_send_message</a> )(<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, char *message)</td></tr>
+            <tr class="memdesc:a322fe73385393942729e9368dbd9fc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message through websocket stream.  <a href="#a322fe73385393942729e9368dbd9fc8d">More...</a><br></td></tr>
+            <tr class="separator:a322fe73385393942729e9368dbd9fc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a200da97e8255c07276eb6642f2a7fed6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a200da97e8255c07276eb6642f2a7fed6">websocket_set_receive_callback</a> )(<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, <a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> callback, void *user_data)</td></tr>
+            <tr class="memdesc:a200da97e8255c07276eb6642f2a7fed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function handling received data.  <a href="#a200da97e8255c07276eb6642f2a7fed6">More...</a><br></td></tr>
+            <tr class="separator:a200da97e8255c07276eb6642f2a7fed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aee137b35eaa115a96f671560b188f599"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#aee137b35eaa115a96f671560b188f599">websocket_set_connection_callback</a> )(<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, <a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> callback, void *user_data)</td></tr>
+            <tr class="memdesc:aee137b35eaa115a96f671560b188f599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback function handling changes in connection state.  <a href="#aee137b35eaa115a96f671560b188f599">More...</a><br></td></tr>
+            <tr class="separator:aee137b35eaa115a96f671560b188f599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a9651813ca5f2a89d57e75b98213a63dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__cloud__module.html#a9651813ca5f2a89d57e75b98213a63dd">websocket_close_stream</a> )(<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle)</td></tr>
+            <tr class="memdesc:a9651813ca5f2a89d57e75b98213a63dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close websocket stream.  <a href="#a9651813ca5f2a89d57e75b98213a63dd">More...</a><br></td></tr>
+            <tr class="separator:a9651813ca5f2a89d57e75b98213a63dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table>
+            <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+            <div class="textblock"><p>Structure containing all the operations exposed by the module to perform Cloud requests </p>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#_a1">cloud_test/artik_cloud_test.c</a>, and <a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#_a4">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00075">75</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            </div><h2 class="groupheader">Field Documentation</h2>
+            <a class="anchor" id="a15e77645c1fee7e8a12cfb0069f351d4"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::add_device) (const char *access_token, const char *user_id, const char *dt_id, const char *name, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to assign the new device </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">dt_id</td><td>Device type ID of the device to create </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Friendly name to give to the new device </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a15">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00472">472</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a01a31e762ba2a0af3237211f4a85d0c2"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::add_device_async) (const char *access_token, const char *user_id, const char *dt_id, const char *name, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to assign the new device </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">dt_id</td><td>Device type ID of the device to create </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Friendly name to give to the new device </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a32">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00494">494</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a07249cf6eda8b788a6b836de91126d5b"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::delete_device) (const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to delete </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a17">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00595">595</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="ae224967e62d757b39ed8d2d82226e3da"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::delete_device_async) (const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to delete </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a30">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00613">613</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a864295fbae3a9f3887e13cd186e1fe4e"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::delete_device_token) (const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to delete the token from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a14">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00556">556</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a40d19cebfb43eceb88c8925059d48195"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::delete_device_token_async) (const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to delete the token from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a29">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00575">575</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a0f4567284b370b02b5f3c9fb8487ef4a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_current_user_profile) (const char *access_token, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token. It must be a user token associated to the user whose profile is requested </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a4">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00186">186</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a15e140cf16301263a95bdba1d7a2880e"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_current_user_profile_async) (const char *access_token, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token. It must be a user token associated to the user whose profile is requested </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a20">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00205">205</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a76be3ac32d9ac9857dd0553c3af6a33f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device) (const char *access_token, const char *device_id, bool properties, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device from which to read the information </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">properties</td><td>Return also the device properties if true </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a9">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00387">387</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a9d912f0ac59097d09ee326eef6843414"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device_async) (const char *access_token, const char *device_id, bool properties, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device from which to read the information </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">properties</td><td>Return also the device properties if true </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback functio </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a24">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00408">408</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a32e6e7643c35bc3ce25d3428f153795f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device_properties) (const char *access_token, const char *device_id, bool timestamp, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to read properties from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">timestamp</td><td>Include timestamp </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a18">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00634">634</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aa3d69fd6724e743b302bcf52750c7f9f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device_properties_async) (const char *access_token, const char *device_id, bool timestamp, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to read properties from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">timestamp</td><td>Include timestamp </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a33">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00654">654</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a2689aef24903819b5d9abdd5076581b0"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device_token) (const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to get the token from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a10">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00430">430</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a5c45f987ae2d62046856699f69053f67"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_device_token_async) (const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to get the token from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a25">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00449">449</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="af87e09df5d2e7c7da39fe13f7d2f8ce6"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_application_properties) (const char *access_token, const char *user_id, const char *app_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user owning the application to get the properties from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>ID of the application to get the properties from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a8">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00339">339</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a4b603c0da4fba8e1b43b7e12bdd4c1dc"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_application_properties_async) (const char *access_token, const char *user_id, const char *app_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user owning the application to get the properties from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>ID of the application to get the properties from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a23">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00362">362</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="ac59da16649412071a92edbabccc98c4b"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_device_types) (const char *access_token, int count, bool shared, int offset, const char *user_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of entries to return </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">shared</td><td>Return also the shared public devices if true </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset in the complete device list to return 'count' entries from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to get the device type list from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a7">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00285">285</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aeffed64609934dae6fd4575eab4e7873"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_device_types_async) (const char *access_token, int count, bool shared, int offset, const char *user_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of entries to return </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">shared</td><td>Return also the shared public devices if true </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset in the complete device list to return 'count' entries from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to get the device type list from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a22">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00313">313</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a4e46746209d35812ad9d0191667bd296"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_devices) (const char *access_token, int count, bool properties, int offset, const char *user_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of entries to return </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">properties</td><td>Returns the properties of the devices if true </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset in the complete device list to return 'count' entries from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to get the device list from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a5">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00231">231</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aef87c7259cf8354417e26a35caeaae91"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::get_user_devices_async) (const char *access_token, int count, bool properties, int offset, const char *user_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">count</td><td>Number of entries to return </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">properties</td><td>Returns the properties of the devices if true </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset in the complete device list to return 'count' entries from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_id</td><td>ID of the user to get the device list from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a21">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00257">257</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="af1e3232abcb605df6155e644a7cd73c9"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_complete_registration) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, const char *reg_nonce, char **response)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_id</td><td>Registration ID (rid) returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_nonce</td><td>Registration nonce returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00799">799</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a20e95d3bfde7bde0580a631d33b124f2"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_complete_registration_async) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, const char *reg_nonce, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_id</td><td>Registration ID (rid) returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_nonce</td><td>Registration nonce returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00819">819</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a0e163ba7501d136305f3de239f84e647"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_registration_status) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, char **response)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_id</td><td>Registration ID (rid) returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. In the SDR process, this response returns a JSON object containing the current status of the SDR process.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00762">762</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a73beaaeb74ada6515a7d37c16f295276"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_registration_status_async) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *reg_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">reg_id</td><td>Registration ID (rid) returned by <a class="el" href="structartik__cloud__module.html#ac46f73f9b7b73e4eecca8a84fe1cfd1f">sdr_start_registration</a> or <a class="el" href="structartik__cloud__module.html#a837b51d4f4a283717ac989438f64f2c0">sdr_start_registration_async</a> </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00779">779</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="ac46f73f9b7b73e4eecca8a84fe1cfd1f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_start_registration) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *device_type_id, const char *vendor_id, char **response)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_type_id</td><td>Device Type ID of the device to register </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">vendor_id</td><td>Vendor ID of the device to register </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. In the SDR process, this response returns a JSON object containing a registration ID (rid), a nonce, and a PIN. These values should be used for the rest of the SDR process.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00722">722</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a837b51d4f4a283717ac989438f64f2c0"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::sdr_start_registration_async) (<a class="el" href="artik__security_8h.html#a0a49f286e64c203d97bcc902793db026">artik_security_certificate_id</a> cert_id, const char *device_type_id, const char *vendor_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">Certificate</td><td>identifier </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_type_id</td><td>Device Type ID of the device to register </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">vendor_id</td><td>Vendor ID of the device to register </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00741">741</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a817a39fc514891817d375612391d3e8b"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::send_action) (const char *access_token, const char *device_id, const char *action, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the destination device to send the actions to </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">action</td><td>JSON formatted string containing the list of actions to send with/without parameters </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a12">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00141">141</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a26af89b70014233c18e78d71f36c674a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::send_action_async) (const char *access_token, const char *device_id, const char *action, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the destination device to send the actions to </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">action</td><td>JSON formatted string containing the list of actions to send with/without parameters </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a27">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00164">164</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a3b0ec153341b02f0dee9ef1ecb141781"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::send_message) (const char *access_token, const char *device_id, const char *message, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the source device from which the message is sent </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Content of the message to send in a JSON formatted string </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a11">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00094">94</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a378833037954704db23924e8d6ccf58f"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::send_message_async) (const char *access_token, const char *device_id, const char *message, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the source device from which the message is sent </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Content of the message to send in a JSON formatted string </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a26">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00116">116</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="acef8a515811755c49319641c7a11254c"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::set_device_server_properties) (const char *access_token, const char *device_id, const char *data, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to set server properties to </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>JSON data for setting a device's server properties </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a19">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00677">677</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a90aec14b6646c4fff35b8de94c7c343b"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::set_device_server_properties_async) (const char *access_token, const char *device_id, const char *data, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to set server properties to </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>JSON data for setting a device's server properties </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a34">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00697">697</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aee5fcd7b701ff7d236879479f62e455a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::update_device_token) (const char *access_token, const char *device_id, char **response, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to create the token from </td></tr>
+                <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Pointer to a string allocated and filled up by the function with the response JSON data returned by the Cloud. It should be freed by the calling function after use. </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a13">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00517">517</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aac99de7c342d3f11c63d5a82f40f38b9"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::update_device_token_async) (const char *access_token, const char *device_id, <a class="el" href="artik__cloud_8h.html#a216696ab940d071a45ca3384e8a10e04">artik_cloud_callback</a> callback, void *user_data, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to create the token from </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>Function called upon receiving response returned by the server </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer to user data that will be passed as a parameter to the callback function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="cloud_test_2artik_cloud_test_8c-example.html#a28">cloud_test/artik_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00536">536</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a9651813ca5f2a89d57e75b98213a63dd"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::websocket_close_stream) (<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Handle value of the stream that you want to close</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#a13">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00898">898</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a866e8f2942bf4ec5bd179ad3c5f6209a"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::websocket_open_stream) (<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> *handle, const char *access_token, const char *device_id, <a class="el" href="structartik__ssl__config.html">artik_ssl_config</a> *ssl)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Pointer of the handle that is used for controlling the stream </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">access_token</td><td>Authorization token </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">device_id</td><td>ID of the device to be connected on the Cloud </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">use_se</td><td>Whether you want to use SE or not </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">ssl</td><td>SSL configuration to use when targeting https urls. Can be NULL.</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#a8">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00839">839</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a322fe73385393942729e9368dbd9fc8d"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::websocket_send_message) (<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, char *message)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Handle value that is used for controlling the stream </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Content of the message to send in a JSON formatted string</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#a5">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00853">853</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="aee137b35eaa115a96f671560b188f599"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::websocket_set_connection_callback) (<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, <a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> callback, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Handle value obtained from websocket_request function </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td><a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> type function pointer of a callback to be called upon connection </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer of a data that you want to pass into callback</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#a9">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00885">885</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <a class="anchor" id="a200da97e8255c07276eb6642f2a7fed6"></a>
+            <div class="memitem">
+            <div class="memproto">
+                  <table class="memname">
+                    <tr>
+                      <td class="memname"><a class="el" href="artik__error_8h.html#a9b1d9ae639ccc7c1b865a73d74b06c74">artik_error</a>(* artik_cloud_module::websocket_set_receive_callback) (<a class="el" href="artik__websocket_8h.html#a70d9bc558dc9be95149e39bd55d49e36">artik_websocket_handle</a> handle, <a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> callback, void *user_data)</td>
+                    </tr>
+                  </table>
+            </div><div class="memdoc">
+            <dl class="params"><dt>Parameters</dt><dd>
+              <table class="params">
+                <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>Handle value that is used for controlling the stream </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td><a class="el" href="artik__websocket_8h.html#a9c6b300e524ab80534728af1ab6c7fd7">artik_websocket_callback</a> type function pointer of a callback </td></tr>
+                <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>Pointer of a data that you want to pass into callback</td></tr>
+              </table>
+              </dd>
+            </dl>
+            <dl class="section return"><dt>Returns</dt><dd>S_OK on success, error code otherwise </dd></dl>
+            <dl><dt><b>Examples: </b></dt><dd><a class="el" href="websocket_test_2artik_websocket_cloud_test_8c-example.html#a10">websocket_test/artik_websocket_cloud_test.c</a>.</dd>
+            </dl>
+            <p>Definition at line <a class="el" href="artik__cloud_8h_source.html#l00867">867</a> of file <a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a>.</p>
+            
+            </div>
+            </div>
+            <hr>The documentation for this struct was generated from the following file:<ul>
+            <li>inc/connectivity/<a class="el" href="artik__cloud_8h_source.html">artik_cloud.h</a></li>
+            </ul>
+            </div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-04-23 18:10:31 +0000'>Apr 23 2018,  6:10 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="datasheets"]').parent();
+      $($sideNavListItem).insertBefore($betaFeatures);
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

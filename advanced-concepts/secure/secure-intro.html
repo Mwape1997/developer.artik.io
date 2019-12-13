@@ -1,0 +1,1237 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='secure-intro.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: SSL/TLS-Secured Links' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: SSL/TLS-Secured Links' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: SSL/TLS-Secured Links</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_secure documentation_advanced-concepts_secure_secure-intro' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="true">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false" class="active">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="ssltls-secured-links">SSL/TLS-Secured Links</h1>
+            
+            <p>Before we even started the MQTT tutorial on <a href="..\mqtt\color-mqtt-actions.html">ARTIK Cloud Actions</a>, we had already established a secure means of communicating sensor data to ARTIK Cloud and receiving appropriate Actions back for sending to the remote modules. But the local links were relatively unprotected, leaving a gaping security hole. In this tutorial, we plug that hole.</p>
+            
+            <p><strong>Prerequisites</strong></p>
+            
+            <p>In preparation for this tutorial, you must:</p>
+            
+            <ul>
+              <li>Complete and understand the tutorial on ARTIK Cloud Actions, as the present tutorial suggests changes to code of that previous one.</li>
+              <li>Have available as many SSL/TLS-capable MQTT edge devices as possible for testing.</li>
+            </ul>
+            
+            <p>The "remote" ARTIK board from last time is sufficient as a securable MQTT edge device. We will later address adding security to the ARTIK 053 code.</p>
+            
+            <p>The time for completing this installment of the tutorial series is approximately 1 hour.</p>
+            
+            <h2 id="overview">Overview</h2>
+            
+            <p>The Arduino libraries offer Wi-Fi<sup>®</sup> drivers that make it effortless to upgrade to secure Wi-Fi links – you simply replace <code>WiFiClient</code> with <code>WiFiSSLClient</code>.  In our previous tutorials, that step alone was enough to secure MQTT as well, where the only SSL/TLS-enabled link was the one to the ARTIK Cloud MQTT server.</p>
+            
+            <p>In that configuration, we were acting only as a <strong>client</strong>. As it falls on the <strong>server</strong> to provide certificates to clients while setting up the encrypted link, we did not need to consider anything further from our side – the standard CA certificate bundle that came with our Linux<sup>®</sup> installation was enough for verification.</p>
+            
+            <p>However, had we chosen to secure the links between our local Mosquitto MQTT broker and its client devices (Node-RED and the "remote" ARTIK board), the broker would have needed to act as a secure server.</p>
+            
+            <p>Let's assume that we now have decided to make our entire system secure and free from outside threats.  That means Mosquitto and all its clients must use SSL/TLS-secured links for all communication, leaving us responsible for generating and installing the proper certificates and keys using standard Linux methodologies.</p>
+            
+            <p>Setting this up is not all that easy! Here, in brief, is what we'll need to do for the Linux-based ARTIK devices.</p>
+            
+            <ol>
+              <li>"Name" the server and use that common name for every connection.</li>
+              <li>Create a private server key.</li>
+              <li>Create a key and certificate pair as a Certificate Authority (CA).</li>
+              <li>Use the CA credentials to create a server certificate using the private server key.</li>
+              <li>Store the created files in known locations where they can be found.</li>
+              <li>Adjust all file paths to find the files in those locations.</li>
+              <li>Modify programs to use the encryption library commands and the chosen server name.</li>
+            </ol>
+            
+            <p>You must follow the procedure carefully so as not to miss any steps. All are critical to making the security scheme work (it's "all or nothing").</p>
+            
+            <h2 id="creating-certificates">Creating Certificates</h2>
+            
+            <p>Our security system will rely on two public "certificates", one from a trusted Certificate Authority (CA) and another derived from that and linked to your private server key.</p>
+            
+            <ul>
+              <li>You will start by generating a random private server key. Using that, you will create a "certificate signing request" (CSR) to send to a CA.</li>
+              <li>In our case, that CA happens to be you: You will be able to "sign" the CSR to create a server certificate.</li>
+              <li>You will copy that certificate file in advance onto each client that you want to allow to communicate with the server.</li>
+              <li>During operation, your server will serially transmit that certificate to each client who tries to connect. The client compares the two – if they match, you're connected.</li>
+            </ul>
+            
+            <p>Got it? Don't worry, we'll walk you through the steps.</p>
+            
+            <h3 id="about-certificate-infrastructure">About Certificate Infrastructure</h3>
+            
+            <p>We provide here a brief overview of SSL/TLS security. Skip to the <a href="#generate-certificates">Generate Certificates</a> section if you don't need these details. If you would instead like even more background, Web resources like <a href="http://www.ibm.com/support/knowledgecenter/SSFKSJ_7.1.0/com.ibm.mq.doc/sy10670_.htm" target="_blank">this one</a> provide excellent discussions about who needs what keys and certificates.</p>
+            
+            <p>TLS security is based on Public Key Infrastructure (PKI), where mated "public" and "private" keys are used. We'll take advantage of <a href="#openssl-vs-nss">OpenSSL</a> commands to create them.</p>
+            
+            <p><strong>Certificate Authority.</strong> The "Certificate Authority" (CA) is the entity empowered (by who? read below) to create a trustworthy <strong>public</strong> and <strong>private</strong> key pair.</p>
+            
+            <p>The <strong>public</strong> key is inside a "certificate" that also contains institutional data about the entity – domain name, company name, e-mail contact, etc. It's that bound combination of key and origination data that makes the certificate traceable and trustworthy.</p>
+            
+            <p>The <strong>private</strong> key is held only by its creator, who uses it to encrypt messages.</p>
+            
+            <p class="info"><strong>"Key" point:</strong> Someone reading data encrypted by the <strong>private</strong> key can decrypt it using only the corresponding <strong>public</strong> key.</p>
+            
+            <p>The "business model" of the CA is to sell additional trustworthy certificates to you. The new certificates, linked to the CA's original certificate but using additional private keys, inherit the trustworthiness of the original. They are created for use on a specific server or client on your network, and contain data specific to you or your company.</p>
+            
+            <p><strong>Server Certificate.</strong> In our application, the MQTT broker/server requires such a server certificate, along with its original private key. Clients that will communicate with the MQTT server must have the original CA certificate (not the server certificate) copied to them ahead of time before they can trust a request to set up a secure link.</p>
+            
+            <p><strong>Who is Trustworthy?</strong> If your server were open to the public, you would need to submit a Certificate Signing Request (CSR), with verifiable institutional information, to a trusted Certificate Authority (CA) – for example, Symantec or GoDaddy – to buy a "signed" server certificate. Your certificate would thereby inherit the trustworthiness of theirs.</p>
+            
+            <p>You would encrypt data, using your own private server key, that could be decrypted by clients using your public server certificate, which gets transmitted at connect time. But a client user won't trust or use your transmitted server certificate unless they can verify that it derives from a CA certificate already installed on their system.</p>
+            
+            <p>However, if your "users" will be local MQTT devices that you set up with a CA certificate of your choosing, and since you trust yourself, you can "self-sign" to avoid the expense of buying a CA certificate. The  OpenSSL command sequence below does this – it signs the server certificate using the credentials from your own CA key and certificate, making you a "mini CA".</p>
+            
+            <p><strong>Expiration.</strong> Certificates must eventually expire. In the commands below, we choose an expiration of 10 years (3650 days). You can adjust this as needed.</p>
+            
+            <h2 id="making-server-name-known-to-clients">Making Server Name Known to Clients</h2>
+            
+            <p>Until now, we have been able to provide clients with just a raw IP address to contact the MQTT broker. With SSL/TLS certificates involved, it's no longer that simple.</p>
+            
+            <p>Each SSL/TLS client needs to know both an IP address and the <strong>server name</strong> of the broker. As part of the certificate validation process, the software will check the server name you use in code against the so-called <strong>Common Name</strong> in the transmitted server certificate to verify that they match. (Sorry, it won't work to just type in a fixed IP address for Common Name.)</p>
+            
+            <p>There are automated ways to implement the name assignment using DNS and DHCP that might work for you. For example, you could assign names to IP addresses at your Wi-Fi gateway/router. You can investigate various approaches on your own to determine the one you want to take.</p>
+            
+            <p>However, here we will choose a simple method: adding the remote server name and its IP address to the <code>/etc/hosts</code> file of each client.</p>
+            
+            <p>For example, if you chose a Common Name of <code>marks-iot-srvr</code> for your server certificate, you would need to edit every <code>hosts</code> file to contain an entry like this:</p>
+            
+            <pre>	10.0.0.3    marks-iot-srvr</pre>
+            
+            <p>A user-friendly way to do this would be to write a script that automatically figures out the broker IP address like we did in the <a href="..\mqtt\color-mqtt-actions.html#remote-ac-unit-artik-controller-arduino-code">Remote ARTIK Code</a>, and then auto-generates <code>/etc/hosts</code> with the IP address and the Common Name you decided on. We've provided a starting point <a href="wifi-reconnect.html#connecting-to-the-right-server">here</a>.</p>
+            
+            <h2 id="setting-up-ssltls-server">Setting Up SSL/TLS Server</h2>
+            
+            <h3 id="generate-certificates">Generate Certificates</h3>
+            
+            <p>Follow the steps below to generate keys and certificates. You may need to repeat the process several times to get a solid understanding of why you are doing it. There is a lot to comprehend!</p>
+            
+            <p>Note that both the CA and server OpenSSL calls will ask a series of questions about your organization. As you are the "mini CA", enter as much or as little information as you choose, with two exceptions.</p>
+            
+            <p><strong>Common Name.</strong> The "Common Name" on the <strong>server</strong> certificate must match the name that the ARTIK server will be known by in <code>/etc/hosts</code> files on both server and client as noted <a href="#making-server-name-known-to-clients">here</a>. The Common Name on the CA certificate does not need to be the same and usually is different.</p>
+            
+            <p><strong>Pass phrase.</strong> Enter a simple pass phrase when requested, like <code>1234</code>. We will be removing it in a later step so it doesn't matter what you choose.</p>
+            
+            <p><strong>Steps</strong></p>
+            
+            <ol>
+              <li>
+                <p>Go to the directory (create it if it does not exist)<br><code>/etc/pki/tls</code></p>
+              </li>
+              <li>
+                <p>Generate a new private key for the server, in RSA encryption format.<br>
+             <code>openssl genrsa -des3 -out m2mqtt_srv.key 2048</code></p>
+              </li>
+              <li>
+                <p>Using that private key, generate a server "certificate signing request" (CSR) file.<br>
+             <code>openssl req -key m2mqtt_srv.key -out m2mqtt_srv.csr -new</code></p>
+              </li>
+              <li>
+                <p>Acting as your own "mini" <a href="http://info.ssl.com/article.aspx?id=12149" target="_blank">X.509</a> Certificate Authority (CA), create your own CA private key file and <strong>CA certificate</strong>.<br>
+             <code>openssl req -new -x509 -days 3650 -keyout ca.key -out ca.crt</code></p>
+              </li>
+              <li>
+                <p>"Sign" the CSR, using your newly-minted CA credentials, to create your <strong>server certificate</strong>.<br>
+             <code>openssl x509 -req -in m2mqtt_srv.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out m2mqtt_srv.crt -days 3650</code></p>
+              </li>
+            </ol>
+            
+            <p>You have now created a <strong>server private key</strong> to be kept securely on the Mosquitto server, and a mated <strong>server certificate</strong> that the server will automatically transmit to the MQTT client each time the client requests a connection. You will need to copy your <strong>CA certificate</strong> to each client in advance, thus establishing a "chain of trust" where the incoming server certificate can be recognized as having been "signed" by the trusted CA certificate on hand.</p>
+            
+            <p>The files are written in ASCII format but are encoded. If you want to see the contents of the server certificate you just created, try this:</p>
+            
+            <p><code>openssl x509 -in m2mqtt_srv.crt -noout -text</code></p>
+            
+            <p>The command to look at the contents of a private key is similar:</p>
+            
+            <p><code>openssl pkey -in m2mqtt_srv.key -noout -text</code></p>
+            
+            <h3 id="disable-pass-phrase-question">Disable Pass Phrase Question</h3>
+            
+            <p>During certificate creation, the <code>openssl</code> command asked for a pass phrase. On start-up, Mosquitto will wait for you to enter it. Since we are trying to run Mosquitto in the background, there will be no easy way for you to do so.</p>
+            
+            <p>The sequence below removes the pass phrase from the server key file.</p>
+            
+            <ol>
+              <li>Make a copy of the server key.<br>
+             <code>cp m2mqtt_srv.key m2mqtt_srv.key.org</code></li>
+              <li>Strip out the password from the copied key, and overwrite the original file with the updated version.<br>
+             <code>openssl rsa -in m2mqtt_srv.key.org -out m2mqtt_srv.key</code><br>
+             Enter the pass phrase when requested.</li>
+            </ol>
+            
+            <p>When Mosquitto loads the updated <code>m2mqtt_srv.key</code> file, it will not stop for a pass phrase.</p>
+            
+            <h3 id="relocate-files">Relocate Files</h3>
+            
+            <p>The convention within the different operating systems is to move files to specific server directories as follows.</p>
+            
+            <p><strong>Ubuntu:</strong></p>
+            
+            <p>CA certificate: <code>mv ca.crt /etc/ssl/certs/.</code><br>
+            CA private key: <code>mv ca.key /etc/ssl/private/.</code><br>
+            Server certificate: <code>mv m2mqtt_srv.crt /etc/ssl/certs/.</code><br>
+            Server private key: <code>mv m2mqtt_srv.key /etc/ssl/private/.</code></p>
+            
+            <p><strong>Fedora:</strong></p>
+            
+            <p>CA certificate: <code>mv ca.crt /etc/pki/CA/certs/.</code><br>
+            CA private key: <code>mv ca.key /etc/pki/CA/private/.</code><br>
+            Server certificate: <code>mv m2mqtt_srv.crt /etc/pki/tls/certs/.</code><br>
+            Server private key: <code>mv m2mqtt_srv.key /etc/pki/tls/private/.</code></p>
+            
+            <p>You may delete the <code>.csr</code> and <code>.srl</code> files, as they have served their purpose.</p>
+            
+            <p>Copy your files as suggested by convention, or put them wherever you prefer. We will follow the convention in the remainder of this article, so if you choose to keep the files elsewhere, make sure to update the paths provided. Keep in mind that many Arduino libraries expect you to use these paths.</p>
+            
+            <p class="info">The master sketch running on the ARTIK server board acts as a <strong>client</strong> to the Mosquitto server, so don't forget to additionally copy the CA certificate to the expected place for clients (<code>/etc/pki/tls/</code>) as noted <a href="#copy-ca-certificate-to-clients">here</a>.</p>
+            
+            <h3 id="set-file-paths-in-mosquitto">Set File Paths in Mosquitto</h3>
+            
+            <p>You'll find in the <code>/etc/mosquitto</code> directory the <code>mosquitto.conf.example</code> file, which is well worth reading through if you have an hour to spare. If not, just create a <code>mosquitto.conf</code> file as we explain below to get the basic certificate structure in place.</p>
+            
+            <ol>
+              <li>
+                <p>Enter the following lines in the <code>mosquitto.conf</code> file, or modify the existing lines.<br>
+            <strong>Ubuntu:</strong><br>
+            <code>cafile /etc/ssl/certs/ca.crt  </code><br>
+            <code>certfile /etc/ssl/certs/m2mqtt_srv.crt  </code><br>
+            <code>keyfile /etc/ssl/private/m2mqtt_srv.key</code><br>
+            <code>port 8883</code><br>
+            <strong>Fedora:</strong><br>
+            <code>cafile /etc/pki/CA/certs/ca.crt  </code><br>
+            <code>certfile /etc/pki/tls/certs/m2mqtt_srv.crt  </code><br>
+            <code>keyfile /etc/pki/tls/private/m2mqtt_srv.key</code><br>
+            <code>port 8883</code></p>
+              </li>
+              <li>
+                <p>Make sure when you run Mosquitto that the command line can get to the config file.  This could mean using<br>
+             <code>mosquitto -c /etc/mosquitto/mosquitto.conf &amp;</code><br>
+            or changing to that directory before calling<br>
+             <code>mosquitto -c mosquitto.conf &amp;</code><br>
+            or pre-specifying the path.</p>
+              </li>
+            </ol>
+            
+            <h3 id="modify-server-arduino-code"><strong>Modify Server Arduino Code</strong></h3>
+            
+            <p>The code for the server must be upgraded to SSL/TLS operation. 
+            With reference to the Arduino master sketch code from the ARTIK Cloud Actions tutorial:</p>
+            
+            <ul>
+              <li>
+                <p>Remove the code that figures out the IP address. We're now using the name assigned in <code>/etc/hosts</code>.</p>
+              </li>
+              <li>
+                <p>Assign to <code>mqttServerName</code> the server name you've chosen (and put in the server certificate as Common Name).</p>
+              </li>
+              <li>Replace all instances of <code>mqttServer</code> with <code>mqttServerName</code>. Make sure that your code no longer uses the IP address directly.</li>
+              <li>
+                <p>Replace <code>WiFiClient</code> with <code>WiFiSSLClient</code></p>
+              </li>
+              <li>Change the <code>mqttPort</code> value from 1883 to 8883.</li>
+            </ul>
+            
+            <h2 id="setting-up-ssltls-clients">Setting Up SSL/TLS Clients</h2>
+            
+            <h3 id="copy-ca-certificate-to-clients">Copy CA Certificate to Clients</h3>
+            
+            <p>Provide each Mosquitto client with a copy of your trusted <strong>CA</strong> certificate, and separately, an entry in the <code>hosts</code> file matching the Common Name you used on the <strong>server</strong> certificate.</p>
+            
+            <ul>
+              <li>Copy <code>ca.crt</code> to<br>
+            <strong>Ubuntu:</strong> <code>/etc/ssl/certs/</code><br>
+            <strong>Fedora:</strong> <code>/etc/pki/tls/</code></li>
+              <li>Use <code>vi</code> (or an <a href="wifi-reconnect.html#connecting-to-the-right-server">automated script</a>) to add the Common Name to the <code>/etc/hosts</code> file along with the server IP address.</li>
+            </ul>
+            
+            <h3 id="enable-ssltls-on-node-red">Enable SSL/TLS on Node-RED</h3>
+            
+            <p>On the Node-RED canvas, edit the node address.</p>
+            
+            <ul>
+              <li>
+                <p>Double-click on an MQTT node, and click on the "pencil" icon.</p>
+              </li>
+              <li>
+                <p>On the Connection tab, change the port from 1883 to 8883.</p>
+              </li>
+              <li>
+                <p>On the Security tab, enable SSL/TLS.</p>
+            
+                <p><img alt="" src="..\..\images\docs\tutorials\node-red-ssl.jpg"></p>
+            
+                <p>In our testing, it was not necessary to give Node-RED any information about the certificate location.</p>
+              </li>
+              <li>
+                <p>Click Update and finish out the editing session.</p>
+              </li>
+              <li>
+                <p>Click Deploy to save the changes.</p>
+              </li>
+            </ul>
+            
+            <h3 id="modify-client-arduino-code">Modify Client Arduino Code</h3>
+            
+            <p>The code for each client must be upgraded to SSL/TLS operation. 
+            With reference to the Arduino remote sketch code from the ARTIK Cloud Actions tutorial:</p>
+            
+            <ul>
+              <li>
+                <p>Remove the code that figures out the IP address for the broker. We're now using the name assigned in <code>/etc/hosts</code> (possibly by an external script).</p>
+              </li>
+              <li>
+                <p>Assign to <code>mqttServerName</code> the server name you've chosen (and put in the server certificate as Common Name).</p>
+              </li>
+              <li>
+                <p>Replace all instances of <code>mqttServer</code> with <code>mqttServerName</code>. Make sure that your code no longer uses the IP address directly.</p>
+              </li>
+              <li>
+                <p>Replace <code>WiFiClient</code> with <code>WiFiSSLClient</code></p>
+              </li>
+              <li>
+                <p>Change the <code>mqttPort</code> value from 1883 to 8883.</p>
+              </li>
+            </ul>
+            
+            <p>You're done! You should now have working and secure MQTT links.</p>
+            
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            
+            <h3 id="basic-connection-checks">Basic Connection Checks</h3>
+            <p>OpenSSL provides a way to test the remote SSL/TLS MQTT server port from the command line as a client. You can type in the host IP address directly, like this:</p>
+            
+            <p><code>openssl s_client -connect 10.0.0.3:8883</code></p>
+            
+            <p>The outcome may help verify whether your problem is with the connection or within the Arduino sketch. It does not check certificate validity, however – a Web search will show how to do that with <code>openssl</code> if needed.</p>
+            
+            <p>If you want to verify that your <code>/etc/hosts</code> file is correct, try something like this:</p>
+            
+            <p><code>curl -vs --connect-timeout 2 marks-iot-srvr:8883 2&gt;&amp;1</code></p>
+            
+            <h3 id="error-messages-in-sketches">Error Messages in Sketches</h3>
+            
+            <p>When using the Arduino IDE, a good way to see more debug information is to save the compiled binary as an <code>.elf</code> file and copy it to the ARTIK board as noted <a href="..\..\developer-guide\ide\arduino.html#copying-executable-binary-file-to-artik">here</a>, then run it in the foreground. Helpful tracing and error messages from the mbedTLS library will show up on the terminal emulator output.</p>
+            
+            <h3 id="x509verifycert-failures">x509_verify_cert() Failures</h3>
+            <p>The SSL/TLS handshake will <strong>fail</strong> with a somewhat vague <code>x509_verify_cert()</code> error message for various reasons. The cause may not be readily apparent, but typically the error can occur if:</p>
+            
+            <ul>
+              <li>Common Name in the server certificate does not match <code>mqttServerName</code> supplied to the MQTT <code>client.begin(mqttServerName, mqttPort, ipStack)</code> command.</li>
+              <li>You call for 1024-bit instead of 2048-bit encryption when creating certificates.</li>
+              <li>The correct <strong>CA</strong> certificate is not found on the <strong>client</strong>, in the <code>/etc/pki/tls</code> or <code>/etc/ssl/certs/</code> directory.</li>
+            </ul>
+            
+            <h3 id="artik-master-and-remote-connection-issues">ARTIK Master and Remote Connection Issues</h3>
+            
+            <p>If you are running the ARTIK master and remote boards along with Node-RED, you will (as before) have three clients to Mosquitto. Upon launching each of their respective programs, you should see a clear "New client connected" message from Mosquitto. In the case of the master and remote boards, you will see the name used in the code, "ARTIK-Master" or "ARTIK-Remote", along with the IP address.</p>
+            
+            <p>If the Mosquitto connect message does <strong>not</strong> display board name, just the IP address, then you did <strong>not</strong> succeed in getting an SSL/TLS-secured connection. It is especially easy on the server side to miss one of these critical requirements:</p>
+            
+            <ul>
+              <li>Server name (such as <code>marks-iot-srvr</code>) and its IP address in <code>/etc/hosts</code></li>
+              <li>Same server name in the <code>mqttClient.begin()</code> statement.</li>
+              <li><code>ca.crt</code> copied to <code>/etc/pki/tls/</code> or <code>etc/ssl/certs</code></li>
+            </ul>
+            
+            <h3 id="openssl-vs-nss">OpenSSL vs NSS</h3>
+            
+            <p>While there are several options for managing certificates under Linux, in-depth discussion of  <a href="https://en.wikipedia.org/wiki/Comparison_of_TLS_implementations" target="_blank">cryptographic libraries</a> is well beyond the scope of our article. We chose to use OpenSSL to take care of our needs; you may instead choose to use Network Security Services (NSS) or another method.</p>
+            
+            <p>Here is why you need to consider such things. Remember how we used the <code>curl</code> command to check broker connectivity in our Remote ARTIK code? Our installed version of <code>curl</code> is pre-built to use NSS when it is called for an SSL/TLS-secured port. When we do so without the NSS certificate infrastructure in place, we'll get an error message.</p>
+            
+            <p>For this particular case, we can work around it with the <code>--insecure</code> option to bypass the certificate check. We could also rebuild the command from source and configure it for OpenSSL protocols. Otherwise we'd have to support a duplicate certificate infrastructure (NSS as well as OpenSSL).</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-09-19 15:33:59 +0000'>Sep 19 2018,  3:33 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="index.htm">Prev: SSL/TLS Security</a></li>
+              <li class='next-page'><a href="secure-programs.html">Next: Start-up Program Load</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

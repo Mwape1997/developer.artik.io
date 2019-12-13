@@ -1,0 +1,1624 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='hass.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Home Assistant' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Home Assistant' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Home Assistant</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_developer-guide documentation_developer-guide_wireless-iot documentation_developer-guide_wireless-iot_hass' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="true">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="hass.html" data-name="home-assistant" aria-expanded="false" class="active">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="home-assistant">Home Assistant</h1>
+            
+            <p>For tying together of all the various wireless IoT technologies, you may want to look into <a href="https://home-assistant.io/developers/" target="_blank">Home Assistant</a>. Running on Python from your ARTIK board, it serves a "master control" Web page covering these and other interfaces:</p>
+            
+            <ul>
+              <li>ZigBee HA (zha)</li>
+              <li>Z-Wave</li>
+              <li>Wi-Fi (including HTTP, MQTT, CoAP)</li>
+              <li>Bluetooth</li>
+            </ul>
+            
+            <p>You can then use its Automations feature to allow devices from different networks and technologies to control and monitor each other.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\hass-typ-zb-zw.jpg?1549048075"></p>
+            
+            <p>Here we provide instructions for installation on any ARTIK Linux-based system using Ubuntu.</p>
+            
+            <h2 id="prerequisites">Prerequisites</h2>
+            
+            <p>Have your ARTIK board and development PC both connected to the same Wi-Fi network or Ethernet router.</p>
+            
+            <h2 id="installation">Installation</h2>
+            
+            <p>Home Assistant is a Python-based solution. It runs on a specific Python version that is <strong>not</strong> the same as the one used by ARTIK modules. You cannot upgrade/downgrade to get them to match, as doing so would negatively impact other Python-based tools.</p>
+            
+            <p>Therefore, in this procedure you'll be installing Home Assistant within a virtual environment where it can use the version of Python it expects to see. You'll install each related software package in the <span class="code-font">homeassistant</span> virtual environment.</p>
+            
+            <h2 id="one-time-setup">One-Time Setup</h2>
+            
+            <p>Pay close attention to the installation messages to make sure that the packages are actually getting installed. Time-out conditions can cause installation failure requiring one or more retries.</p>
+            
+            <h3 id="step-1-install-base-support-packages">Step 1. Install base support packages</h3>
+            
+            <p>We've put these packages on separate lines for clarity. You may find you do not need all of them for your ultimate application.</p>
+            
+            <p><code>apt update</code><br>
+            <code>apt upgrade</code><br>
+            <code>apt install build-essential</code><br>
+            <code>apt install libffi-dev</code><br>
+            <code>apt install zlib1g-dev</code><br>
+            <code>apt install libreadline-gplv2-dev</code><br>
+            <code>apt install libncursesw5-dev</code><br>
+            <code>apt install libsqlite3-dev</code><br>
+            <code>apt install tk-dev</code><br>
+            <code>apt install libgdbm-dev</code><br>
+            <code>apt install libc6-dev</code><br>
+            <code>apt install libbz2-dev</code></p>
+            
+            <h3 id="step-2-download-and-prepare-python-36-for-installation">Step 2. Download and prepare Python 3.6 for installation</h3>
+            
+            <p><code>cd /usr/src</code><br>
+            <code>wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tar.xz</code><br>
+            <code>tar xvf Python-3.6.4.tar.xz</code><br>
+            <code>cd Python-3.6.4</code></p>
+            
+            <p>Install security headers.<br>
+            <code>apt install libssl-dev</code></p>
+            
+            <p>You'll also need to make sure the setup routine can find your SSL headers.</p>
+            
+            <ol>
+            <li>
+            Open the setup routine for editing.
+            <br>
+            <code>vi setup.py</code>
+            </li>
+            <li>
+            Search for "ssl" and add in the highlighted include path as shown.
+            
+            <pre>&#x000A;# Detect SSL support for the socket module (via _ssl)&#x000A;        search_for_ssl_incs_in = [&#x000A;                      '/usr/local/ssl/include',&#x000A;                      <font style="color:blue">'/usr/include/openssl/',</font>&#x000A;                      '/usr/contrib/ssl/include/'&#x000A;                     ]</pre>
+            </li>
+            <li>
+            Save the changes and continue.
+            </li>
+            </ol>
+            
+            <h3 id="step-3-install-python-36">Step 3. Install Python 3.6</h3>
+            
+            <p>This procedure assumes you currently have only Python 2.7 installed (it is part of the ARTIK build configuration). If you have any other earlier 3.X versions of Python installed, you must remove them and upgrade to at least 3.5.3. Here we use 3.6.</p>
+            
+            <p class="warning">Home Assistant requires Python 3.5.3 or later. The newer versions are not yet in the repo so you <strong>cannot</strong> use <span class="code-font">apt install python3</span> to install it.</p>
+            
+            <p>Configure and compile Python 3.6.<br>
+            <code>./configure --enable-optimizations</code><br>
+            <code>make altinstall</code></p>
+            
+            <p>Now type <br>
+            <code>python3.6</code><br>
+            just to verify that you can run it without problems.</p>
+            
+            <p>Use Ctrl-D to exit, and continue Python setup.<br>
+            <code>apt install python3-setuptools</code></p>
+            
+            <h3 id="step-4-set-up-user-account-for-virtual-environment">Step 4. Set up user account for virtual environment</h3>
+            
+            <p>Home Assistant cannot run in <span class="code-font">root</span> because it needs a specific version of Python. It will not work right if you don't set up and run it from a user account as directed below.</p>
+            
+            <ol>
+              <li>
+                <p>Add an account called <span class="code-font">homeassistant</span>. Since this account is only for running Home Assistant, add the extra arguments of -rm to create a system account and a home directory.</p>
+            
+                <p><code>useradd -rm homeassistant</code></p>
+              </li>
+              <li>
+                <p>Make a directory for the installation of Home Assistant and change the owner to the <span class="code-font">homeassistant</span> account.</p>
+            
+                <p><code>cd /srv</code><br>
+            <code>mkdir homeassistant</code><br>
+            <code>chown homeassistant:homeassistant homeassistant</code></p>
+              </li>
+              <li>
+                <p>Make the USB and serial ports, used to access things like the Z-Wave modem and the ZigBee NCP, accessible by this new group.</p>
+            
+                <p><code>usermod -a -G dialout homeassistant</code></p>
+              </li>
+              <li>
+                <p>Change to the <span class="code-font">homeassistant</span> account and set up the virtual Python environment there.</p>
+            
+                <p><code>cd /srv/homeassistant</code><br>
+             <code>su -s /bin/bash homeassistant</code><br>
+             <code>python3.6 -m venv .</code><br>
+             <code>source bin/activate</code></p>
+              </li>
+            </ol>
+            
+            <p>Once you have activated the virtual environment, you will notice the prompt change, indicating that you are in the correct account.</p>
+            <pre>(homeassistant) [homeassistant@localhost homeassistant]$</pre>
+            
+            <p>If you type<br>
+            <code>python -V</code><br>
+            you can see that you are now using Python 3.6.</p>
+            
+            <h3 id="step-5-install-home-assistant">Step 5. Install Home Assistant</h3>
+            
+            <p>Install Home Assistant by typing:</p>
+            
+            <p><code>pip3 install homeassistant</code><br></p>
+            
+            <p>This command runs quickly as it only puts the basic program in place; it will finish the job during the initialization sequence below.</p>
+            
+            <h3 id="step-6-initialize-home-assistant">Step 6. Initialize Home Assistant</h3>
+            
+            <p>Have your ARTIK board and development PC both connected to the same router network.  Make sure you know the IP address assigned to your ARTIK board, typically using eth0 or wlan0.</p>
+            
+            <p><code>ifconfig</code></p>
+            
+            <p>On your development PC, open a browser to:</p>
+            
+            <p><code>http://</code><span class="code-font">_ip_address_</span><code>:8123</code></p>
+            
+            <p>You'll need to let Home Assistant initialize itself.</p>
+            
+            <ol>
+              <li>
+                <p>Enter the virtual environment.<br>
+            <br>
+            <code>cd /srv/homeassistant</code><br>
+            <code>su -s /bin/bash homeassistant</code><br>
+            <code>source bin/activate</code></p>
+              </li>
+              <li>
+                <p>Run this script, which will report an error because initialization has not yet taken place. However, it will also make error logs more colorful in the next step.<br>
+            <br>
+            <code>hass --script check_config</code></p>
+              </li>
+              <li>
+                <p>Now run the program. The first time you run it, Home Assistant will create the <span class="code-font">/.homeasssistant</span> configuration directory in <span class="code-font">/home/homeassistant</span>, install dependencies, and complete the installation.<br>
+            <br>
+            <code>hass</code><br>
+            <br>
+            If there were no blocking issues, you should see the Welcome Home! screen appear in your browser.</p>
+              </li>
+              <li>
+                <p>Once it stops installing, exit with Ctrl-C.</p>
+              </li>
+            </ol>
+            
+            <p>During initial installation (or if you later make a change to the configuration files), <span class="code-font">hass</span> installs new dependencies. The log screen could hang while the installation proceeds.</p>
+            
+            <p class="info"><span class="code-font">hass</span> may time out for slow sites and fail to install on the first try. Pay close attention to the log information for problematic packages. If needed, install the packages separately and then re-run <span class="code-font">hass</span>.</p>
+            
+            <h2 id="running-home-assistant">Running Home Assistant</h2>
+            
+            <p>You must always launch <code>hass</code> from within the virtual environment. If you are there the prompt will look like this:</p>
+            <pre>(homeassistant) [homeassistant@localhost homeassistant]$</pre>
+            
+            <p>To get to the Python 3.6 virtual environment, type:</p>
+            
+            <p><code>cd /srv/homeassistant</code><br>
+            <code>su -s /bin/bash homeassistant</code><br>
+            <code>source bin/activate</code></p>
+            
+            <p>Whenever you need to leave the environment, type <code>exit</code>.</p>
+            
+            <p>To start the program once you are in the virtual environment, enter:</p>
+            
+            <p><code>hass</code></p>
+            
+            <p>You will see lots of information on the terminal emulator screen during load that gives you clues to whether devices were installed successfully.</p>
+            
+            <p>To exit, type Ctrl-C and wait for the program to shut down gracefully.</p>
+            
+            <h2 id="adding-technologies">Adding Technologies</h2>
+            
+            <p>Adding new IoT technology support to Home Assistant is surprisingly easy. While it requires manual additions to the configuration file, once the keywords are detected, driver discovery and installation happen with little intervention.</p>
+            
+            <p>You'll be editing the <span class="code-font">configuration.yaml</span> file in the Home Assistant environment. You must enter that environment (as explained earlier) before doing this, or you will be editing the <strong>wrong</strong> copy of the file.</p>
+            
+            <p><code>cd /home/homeassistant/.homeassistant</code></p>
+            
+            <p><code>vi configuration.yaml</code></p>
+            
+            <p>Make sure your indents are correct, or Python will not interpret them correctly.</p>
+            
+            <p>After exiting the editor, use this command to verify your changes.<br>
+            <code>hass --script check_config</code></p>
+            
+            <p>Refer to the relevant instructions below for adding each type of functionality.</p>
+            
+            <p class="info"><strong>Troubleshooting Tip:</strong> If you add a new technology and <span class="code-font">hass</span> hangs during load, there is likely a problem with the communications to the modem device or NCP. Review the technology installation steps carefully.</p>
+            
+            <h3 id="zigbee">ZigBee</h3>
+            
+            <p>Home Assistant does a good job recognizing many common ZigBee HA (Home Automation) devices.</p>
+            
+            <p><strong>Daemon.</strong> If you plan to support ZigBee devices under Home Assistant, you will need to disable <span class="code-font">zigbee-daemon</span> used by the ARTIK API as the two cannot share the same resource.</p>
+            
+            <p><code>apt remove zigbeed</code></p>
+            
+            <p>Home Assistant supports EZSP mode with XON-XOFF flow control to the NCP, so you will need to follow the <a href="..\update-image\ncp-update.html">NCP Update</a> instructions to install a suitable image.</p>
+            
+            <p class="warning">With an EZSP image loaded, you can no longer use <span class="code-font">libzigbee</span> or ARTIK SDK ZigBee-based programs.</p>
+            
+            <p><strong>A710, A520, A1020:</strong> Use the A710 class <span class="code-font">.ebl</span> file that has <strong>xon-xoff</strong> in the name. It is specified for the ARTIK 710, but also works on the ARTIK 520 and 1020.</p>
+            
+            <p><strong>A530:</strong> Use the A530 class <span class="code-font">.ebl</span> file that has <strong>SWFC</strong> (software flow control) in the name. Note that the interface runs at a higher baud rate (see below).</p>
+            
+            <p>To configure ZigBee operation, add to the end of the <span class="code-font">configuration.yaml</span> file :</p>
+            
+            <p><span class="code-font">zha:<br>
+              usb_path: /dev/ttyXXXX<br>
+              baudrate: BBBBBB<br>
+              database_path: /home/homeassistant/.homeassistant/zigbee.db</span></p>
+            
+            <p>where:<br>
+            – <code>XXXX</code> is specified in the <a href="..\update-image\ncp-update.html#load-the-ncp-firmware">NCP port table</a> for your module type<br>
+            – <code>BBBBBB</code> is <code>57600</code> except for A530, which is <code>115200</code>.</p>
+            
+            <p><strong>Adding a new device.</strong>  ZigBee uses "permit join" on the Coordinator to allow adding of new devices to the network.</p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td><br><br>1. In Home Assistant, click this icon</td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\hass-dev-services-icons.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>2. Under Domain select</td>
+                  <td><code>zha</code></td>
+                </tr>
+                <tr>
+                  <td>3. Under Service select</td>
+                  <td><code>permit</code></td>
+                </tr>
+                <tr>
+                  <td>4. Click</td>
+                  <td>CALL SERVICE</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>You are now in Permit Join mode, and can join a ZigBee Device to the network in the usual manner. Make sure you have commanded the device to <code>network leave</code> any previous networks so that it can join the new one.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\hass-dev-service-zha-permit.jpg?1549048075"></p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td>To test: Go back to the overview page, and look for your added device. Components such as temperature reporting devices may take some time to show their value.</td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\hass-centralite-icon.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>To remove a device: <br>1. Under Domain select <code>zha</code> <br>2. Under Service select <code>remove</code> <br>3. For Service Data, put the MAC address in the format <code>{"ieee_address":"ff:ff:ff:ff:ff:ff:ff:ff"}</code> <br>4. Click CALL SERVICE</td>
+                  <td> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>Troubleshooting ZigBee issues.</strong> Home Assistant installs the Python <span class="code-font">bellows</span> program to communicate with the NCP using EZSP. Use the program from outside Home Assistant, but within the Python 3.6 virtual environment, to troubleshoot issues. For example, try the following command to return ZigBee configuration information from an ARTIK 530 board.</p>
+            
+            <p><code>bellows -v DEBUG -b 115200 -d /dev/ttyAMA1 config --all</code></p>
+            
+            <p>Use <span class="code-font">bellows</span> by itself to get a list of available commands and options.</p>
+            
+            <h3 id="z-wave">Z-Wave</h3>
+            
+            <p>If you plan to support Z-Wave devices:</p>
+            
+            <ol>
+              <li>From outside the Python 3.6 virtual environment:
+                <ol>
+                  <li>
+                    <p>Follow the <a href="zwave.html">Z-Wave</a> article to install the correct drivers. Make sure you can run <span class="code-font">MinOZW</span> and see your devices before proceeding.</p>
+                  </li>
+                  <li>
+                    <p>Set up the necessary links to the library by running<br>
+            <code>ldconfig</code></p>
+                  </li>
+                  <li>
+                    <p>Manually fix references to openzwave header files. <br>
+            <code>cd /usr/local/include/openzwave</code><br>
+            <code>ln -s value_classes/* .</code><br>
+            <code>ln -s platform/* .</code></p>
+                  </li>
+                  <li>
+                    <p>Install Cython packages.<br>
+             <code>apt install cython3</code></p>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <p>From within the Python 3.6 virtual environment:<br></p>
+            
+                <ol>
+                  <li>
+                    <p>Install Cython. 
+            <br><code>pip install Cython --install-option="--no-cython-compile"</code></p>
+                  </li>
+                  <li>
+                    <p>Install OpenZWave.<br>
+            <code>pip install python_openzwave</code><br></p>
+                  </li>
+                  <li>
+                    <p>Check your installation.<br>
+            <code>pyozw_check</code></p>
+                  </li>
+                </ol>
+            
+                <p>Note that each install may seem to hang – wait a few minutes before giving up.</p>
+              </li>
+              <li>Configure Z-Wave operation. Add to the end of the <span class="code-font">configuration.yaml</span> file :<br><br>
+            <span class="code-font">zwave:<br>
+              usb_path: /dev/ttyACM0</span><br>
+            <br>
+            where you need to replace <code>ACM0</code> with the USB port where your Z-Stick will be inserted. If in doubt, do <br>
+            <code>ls /dev/tty*</code> <br>
+            and identify the device that appears/disappears when you plug/unplug the Z-Stick.</li>
+            </ol>
+            
+            <h3 id="subscribe-with-mqtt">Subscribe with MQTT</h3>
+            
+            <p>You'll need to set up an MQTT broker, as described in the <a href="..\..\advanced-concepts\mqtt\color-mqtt.html">ARTIK MQTT Broker</a> article. You can instead use the broker internal to Home Assistant.</p>
+            
+            <p>To configure MQTT operation, add to the end of the <code>configuration.yaml</code> file :</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8</pre></td><td class="code"><pre><span class="nl">mqtt:</span>&#x000A;  <span class="n">broker</span><span class="o">:</span> <span class="p">(</span><span class="n">broker_address</span><span class="p">)</span> &#x000A;  <span class="p">(</span><span class="n">leave</span> <span class="n">this</span> <span class="n">line</span> <span class="n">off</span> <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span> <span class="n">HA</span><span class="err">'</span><span class="n">s</span> <span class="n">internal</span> <span class="n">mqtt</span> <span class="n">broker</span><span class="p">)</span>&#x000A;&#x000A;<span class="n">device_tracker</span><span class="o">:</span>&#x000A;  <span class="o">-</span> <span class="n">platform</span><span class="o">:</span> <span class="n">mqtt</span>&#x000A;    <span class="n">devices</span><span class="o">:</span>&#x000A;      <span class="p">(</span><span class="n">friendly_name</span><span class="p">)</span><span class="o">:</span> <span class="o">/</span><span class="p">(</span><span class="n">topic_name</span><span class="p">)</span></pre></td></tr></tbody></table>
+            </div>
+            <p>For example:</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8</pre></td><td class="code"><pre><span class="nl">mqtt:</span>&#x000A;  <span class="n">broker</span><span class="o">:</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">13</span>&#x000A;&#x000A;&#x000A;<span class="n">device_tracker</span><span class="o">:</span>&#x000A;  <span class="o">-</span> <span class="n">platform</span><span class="o">:</span> <span class="n">mqtt</span>&#x000A;    <span class="n">devices</span><span class="o">:</span>&#x000A;      <span class="n">whoknows</span><span class="o">:</span> <span class="o">/</span><span class="n">artik</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td>To test: Just set up a publisher and send a message. Device Tracker will <br>capture messages published to the topic of <code>/artik</code> and will show <br>the messages with the other icons.</td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\hass-whoknows-icon.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3 id="publish-to-artik-cloud-with-mqtt">Publish to ARTIK Cloud with MQTT</h3>
+            
+            <p>You'll probably want to be able to send the data from other devices to ARTIK Cloud. Publishing it over MQTT is the simplest approach.</p>
+            
+            <p>To configure Home Assistant operation with ARTIK Cloud over MQTT, add this MQTT section to the <span class="code-font">configuration.yaml</span> file :</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6</pre></td><td class="code"><pre>mqtt:&#x000A;  broker: api.artik.cloud&#x000A;  username: _your_DEVICE_ID_here_&#x000A;  password: _your_DEVICE_TOKEN_here_&#x000A;  port: 8883&#x000A;  certificate: /home/artikcloud.crt</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>For the <span class="code-font">artikcloud.crt</span> certificate, use the following. Make sure you are saving it in the <span class="code-font">homeassistant</span> environment <span class="code-font">home</span> directory, not the <span class="code-font">root</span> directory.</p>
+            
+            <p><a class="btn btn-primary" role="button" data-toggle="collapse" href="#sami-crt">
+            Certificate
+            </a></p>
+            
+            <div class="collapse" id="sami-crt">
+            
+              <pre>&#x000A;-----BEGIN CERTIFICATE-----&#x000A;MIIGazCCBVOgAwIBAgIQUQ7MqdQi65jhxr9oCRZ2jDANBgkqhkiG9w0BAQsFADB+&#x000A;MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAd&#x000A;BgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVj&#x000A;IENsYXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MB4XDTE2MDMxNjAwMDAwMFoX&#x000A;DTE4MDMxNTIzNTk1OVowczELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3Ju&#x000A;aWExETAPBgNVBAcMCFNhbiBKb3NlMSQwIgYDVQQKDBtTYW1zdW5nIFNlbWljb25k&#x000A;dWN0b3IsIEluYy4xFjAUBgNVBAMMDSouYXJ0aWsuY2xvdWQwggEiMA0GCSqGSIb3&#x000A;DQEBAQUAA4IBDwAwggEKAoIBAQDYITWk11g32FfyVoAZ1+IZoXApT0jtKJ8eQdrq&#x000A;5WM6b03NzAWkPtPGAaQCr06mbz6qyVCDOOUPdTN9NSOXtpM9AzKts0GThgdAfN1f&#x000A;zjuL8BE6uDwowD4TIpxeHTeh3iQrqqNQi4fHr4X5BYib6RH0Fk8XY8zydGXY/9lP&#x000A;BPB7e81eaVog7bno7SAxweR+nwseMXkMvxPuZeFekdwZ0SqWbCbZYU4dERalocOQ&#x000A;yf1lqRj//9VU2Uh8lvUgAbD3foz9WIA62kQ+G+JWQVOnPJwuak93YXYmKBusVIE2&#x000A;95H4FIYZThaXt7AbUd9jkvEbhaxXkAxmmt6+qX0stOiqYf3hAgMBAAGjggLuMIIC&#x000A;6jAlBgNVHREEHjAcgg0qLmFydGlrLmNsb3VkggthcnRpay5jbG91ZDAJBgNVHRME&#x000A;AjAAMA4GA1UdDwEB/wQEAwIFoDArBgNVHR8EJDAiMCCgHqAchhpodHRwOi8vc3Mu&#x000A;c3ltY2IuY29tL3NzLmNybDBhBgNVHSAEWjBYMFYGBmeBDAECAjBMMCMGCCsGAQUF&#x000A;BwIBFhdodHRwczovL2Quc3ltY2IuY29tL2NwczAlBggrBgEFBQcCAjAZDBdodHRw&#x000A;czovL2Quc3ltY2IuY29tL3JwYTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH&#x000A;AwIwHwYDVR0jBBgwFoAUX2DPYZBV34RDFIpgKrL1evRDGO8wVwYIKwYBBQUHAQEE&#x000A;SzBJMB8GCCsGAQUFBzABhhNodHRwOi8vc3Muc3ltY2QuY29tMCYGCCsGAQUFBzAC&#x000A;hhpodHRwOi8vc3Muc3ltY2IuY29tL3NzLmNydDCCAXsGCisGAQQB1nkCBAIEggFr&#x000A;BIIBZwFlAHUA3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFTfSa4&#x000A;SAAABAMARjBEAiBWbuO1LGslxrERGTsZRmf0RCP5hzFWJi2q+9UsCZtOPgIgC/fN&#x000A;rL3gLCD5WQw+/wRAIp2QsziMd83xyJ/jRiWSoaAAdQCkuQmQtBhYFIe7E6LMZ3AK&#x000A;PDWYBPkb37jjd80OyA3cEAAAAVN9JrhoAAAEAwBGMEQCICcUbZYNecAWGf9XCWmO&#x000A;FziyFts+Z2V6FfJ+/bgJntslAiA67Az9obN6maIfa11IirC5ZpSII+X8aYXXrkdh&#x000A;v2r3DQB1AGj2mPgfZIK+OozuuSgdTPxxUV1nk9RE0QpnrLtPT/vEAAABU30muGgA&#x000A;AAQDAEYwRAIgbEwTAAl72dv0e+GLxC1jv34DIk/K+0iFSLywt1D/GSQCIEt39UVk&#x000A;TSoz4FkyS61yGRE9qmSkPMpUKre3WTa+ZcORMA0GCSqGSIb3DQEBCwUAA4IBAQBA&#x000A;icvCtJDGWtpLonENFIZwl7JnDACA2jxdIKZYoGHgyDwxwln9Lg78bcRvOp0vZ168&#x000A;kwvvu0DXzZmtnYLU92bxQfcfQpJOpii88AMX2iyk7uFx4YI9HYbUXZph9uwt77b4&#x000A;PyyJONz1V+wR0YNQ5Ukcg1S4nZy1XgrI5tq2LVd0pPgAbA0O6/3RRjPcF1vkIKuy&#x000A;ppmVqcaoiNij18ALeNEKkblBzGq0zr8csdvzKQ/FZXEhT3gJY/Gv5H6pA+8ZEsMQ&#x000A;+0BGiYKkbI2IHY47dWXH394iSsWAZq73AIwo+Xi76FI1cG3NPECHD92w1iTBS8ej&#x000A;uW7KrUwGg+cPXREDasEb&#x000A;-----END CERTIFICATE-----&#x000A;-----BEGIN CERTIFICATE-----&#x000A;MIIFODCCBCCgAwIBAgIQUT+5dDhwtzRAQY0wkwaZ/zANBgkqhkiG9w0BAQsFADCB&#x000A;yjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQL&#x000A;ExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJp&#x000A;U2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxW&#x000A;ZXJpU2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0&#x000A;aG9yaXR5IC0gRzUwHhcNMTMxMDMxMDAwMDAwWhcNMjMxMDMwMjM1OTU5WjB+MQsw&#x000A;CQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNV&#x000A;BAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVjIENs&#x000A;YXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MIIBIjANBgkqhkiG9w0BAQEFAAOC&#x000A;AQ8AMIIBCgKCAQEAstgFyhx0LbUXVjnFSlIJluhL2AzxaJ+aQihiw6UwU35VEYJb&#x000A;A3oNL+F5BMm0lncZgQGUWfm893qZJ4Itt4PdWid/sgN6nFMl6UgfRk/InSn4vnlW&#x000A;9vf92Tpo2otLgjNBEsPIPMzWlnqEIRoiBAMnF4scaGGTDw5RgDMdtLXO637QYqzu&#x000A;s3sBdO9pNevK1T2p7peYyo2qRA4lmUoVlqTObQJUHypqJuIGOmNIrLRM0XWTUP8T&#x000A;L9ba4cYY9Z/JJV3zADreJk20KQnNDz0jbxZKgRb78oMQw7jW2FUyPfG9D72MUpVK&#x000A;Fpd6UiFjdS8W+cRmvvW1Cdj/JwDNRHxvSz+w9wIDAQABo4IBYzCCAV8wEgYDVR0T&#x000A;AQH/BAgwBgEB/wIBADAwBgNVHR8EKTAnMCWgI6Ahhh9odHRwOi8vczEuc3ltY2Iu&#x000A;Y29tL3BjYTMtZzUuY3JsMA4GA1UdDwEB/wQEAwIBBjAvBggrBgEFBQcBAQQjMCEw&#x000A;HwYIKwYBBQUHMAGGE2h0dHA6Ly9zMi5zeW1jYi5jb20wawYDVR0gBGQwYjBgBgpg&#x000A;hkgBhvhFAQc2MFIwJgYIKwYBBQUHAgEWGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20v&#x000A;Y3BzMCgGCCsGAQUFBwICMBwaGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20vcnBhMCkG&#x000A;A1UdEQQiMCCkHjAcMRowGAYDVQQDExFTeW1hbnRlY1BLSS0xLTUzNDAdBgNVHQ4E&#x000A;FgQUX2DPYZBV34RDFIpgKrL1evRDGO8wHwYDVR0jBBgwFoAUf9Nlp8Ld7LvwMAnz&#x000A;Qzn6Aq8zMTMwDQYJKoZIhvcNAQELBQADggEBAF6UVkndji1l9cE2UbYD49qecxny&#x000A;H1mrWH5sJgUs+oHXXCMXIiw3k/eG7IXmsKP9H+IyqEVv4dn7ua/ScKAyQmW/hP4W&#x000A;Ko8/xabWo5N9Q+l0IZE1KPRj6S7t9/Vcf0uatSDpCr3gRRAMFJSaXaXjS5HoJJtG&#x000A;QGX0InLNmfiIEfXzf+YzguaoxX7+0AjiJVgIcWjmzaLmFN5OUiQt/eV5E1PnXi8t&#x000A;TRttQBVSK/eHiXgSgW7ZTaoteNTCLD0IX4eRnh8OsN4wUmSGiaqdZpwOdgyA8nTY&#x000A;Kvi4Os7X1g8RvmurFPW9QaAiY4nxug9vKWNmLT+sjHLF+8fk1A/yO0+MKcc=&#x000A;-----END CERTIFICATE-----&#x000A;-----BEGIN CERTIFICATE-----&#x000A;MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh&#x000A;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#x000A;d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD&#x000A;QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT&#x000A;MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j&#x000A;b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG&#x000A;9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB&#x000A;CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97&#x000A;nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt&#x000A;43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P&#x000A;T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4&#x000A;gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO&#x000A;BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR&#x000A;TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw&#x000A;DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr&#x000A;hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg&#x000A;06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF&#x000A;PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls&#x000A;YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk&#x000A;CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=&#x000A;-----END CERTIFICATE-----&#x000A;</pre>
+            </div>
+            
+            <p><strong>Publishing Data.</strong>  Once you are in Home Assistant, you can publish a test message using Developer Tools – Services.</p>
+            
+            <p>ARTIK Cloud depends on a "manifest" describing the data types it can expect for each device. In our <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html">Publish to ARTIK Cloud</a> tutorial, we show you how to set up such a manifest. Done? Run a test using Home Assistant to update the <span class="code-font">insTemp</span> value.</p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td><br>1. In Home Assistant,<br> click this icon</td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\hass-dev-services-icons.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>2. Under Domain select</td>
+                  <td><code>mqtt</code></td>
+                </tr>
+                <tr>
+                  <td>3. Under Service select</td>
+                  <td><code>publish</code></td>
+                </tr>
+                <tr>
+                  <td>4. Under Service Data,<br>cut and paste in</td>
+                  <td><code>{<br>&nbsp;&nbsp;"topic":&nbsp;"/v1.1/messages/_your_DEVICE_ID_here_",<br>&nbsp;&nbsp;"payload": "{\"insTemp\": 19.3}"<br>}</code></td>
+                </tr>
+                <tr>
+                  <td>5. Replace</td>
+                  <td><code>_your_DEVICE_ID_here_</code> with your own Device ID<br>(your ARTIK Cloud <code>username</code> in the <code>configuration.yaml</code> file)</td>
+                </tr>
+                <tr>
+                  <td>6. Click</td>
+                  <td>CALL SERVICE</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>On your <span class="code-font">my.artik.cloud/data</span> page, you'll see the <span class="code-font">insTemp</span> data come through as always.</p>
+            
+            <h3 id="gpio-multiplexer">GPIO Multiplexer</h3>
+            
+            <p>A common HA use case involves retrofitting an existing home alarm sensor monitoring station to interface with the cloud. Many older homes that were wired for alarms still have the existing wiring in place, with contact sensors on each door and window.</p>
+            
+            <p>For the cost of a single wireless sensor, you can monitor 30-40 existing hard-wired contacts.  A multiplexing solution is convenient for bringing the signal states to the ARTIK module by way of USB. The "GP Wiz" is one example of such a device.</p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-board.jpg"></p>
+            
+            <p><strong>Preparation.</strong> Connect a piece of wire stripped on both ends to the ground screw-down terminal for testing. Leave the other end free for now. Plug the GP Wiz into the USB port on the ARTIK board and power up the board. Open a PuTTY terminal and access your ARTIK board.</p>
+            
+            <p><strong>Installation.</strong> You'll be installing the <span class="code-font">evdev</span> package to manage the inputs.</p>
+            
+            <p><code>apt get install evdev</code></p>
+            
+            <p><strong>Initial Test.</strong> You'll want to try out the device to make sure it is working. Run:</p>
+            
+            <p><code>evtest</code></p>
+            
+            <p>From the test output prompt, choose <code>1</code>.</p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-evtest-in.jpg" class="lightbox"></p>
+            
+            <p>Touch the free end of the ground wire to one of the A-Z terminals and note the output of the available device <span class="code-font">/dev/input/event1</span></p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-evtest-out.jpg" class="lightbox"></p>
+            
+            <p>Note the <span class="code-font">EV_KEY</span> code 709 is for button number 6 (shown as <span class="code-font">BTN_TRIGGER_HAPPY6</span>).</p>
+            
+            <p><strong>Home Assistant Installation.</strong>  Our example here will be used later with Automations to trigger a light on or off based on input from the GP Wiz multiplexer.</p>
+            
+            <ol>
+            <li>
+            
+            Add this section to the <span class="code-font">configuration.yaml</span> file.
+            
+            <pre>&#x000A;&#x000A;keyboard_remote:&#x000A;- device_descriptor: /dev/input/event1&#x000A;  type: key_up&#x000A;&#x000A;</pre>
+            
+            </li>
+            <li>
+            
+            Add permissions. <span class="code-font">homeassistant</span> will require access to the device. 
+            Set permissions in the folder <span class="code-font">/dev/input/event1</span> 
+            
+            <ol>
+            <li>
+            Go to <br>
+            <code>cd /etc/udev/rules.d</code>
+            </li>
+            <li>
+            
+            Use your editor to modify the input rules.<br>
+            <code>sudo vi 99-userdev-input.rules</code>
+            </li>
+            <li>
+            
+            Paste in this line, changing your username to, in this case, <span class="code-font">homeassistant</span><br><br>
+            <span class="code-font">KERNEL=="event*", SUBSYSTEM=="input", RUN+="/usr/bin/setfacl -m u:homeassistant:rw $env{DEVNAME}"</span><br><br>
+            </li>
+            <li>
+            
+            Save and exit.
+            </li>
+            </ol>
+            
+            
+            </li>
+            <li>
+            
+            
+            Reboot the ARTIK board and remember to return to the virtual environment.
+            </li>
+            </ol>
+            
+            <p>Before you launch Home Assistant, you can check the ACLs permission.
+            <br>
+            <code> getfacl /dev/input/event*</code></p>
+            
+            <p>
+            Note that under user: it now is populated with <span class="code-font">homeassistant</span> read write permission.<br>
+            </p>
+            <p><b>Use this at your own risk, as a keyboard would expose key strokes.</b></p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-permissions1.jpg" class="lightbox"></p>
+            
+            <p>Proceed now to the <a href="#actions-from-gpio-multiplexer">GPIO multiplexer automations</a> section to complete the setup.</p>
+            
+            <h2 id="automation">Automation</h2>
+            
+            <p>With Home Assistant, you'll be able to easily create automation associations that tie 'data in' from one technology to 'data out' of another. For example:</p>
+            
+            <ul>
+              <li>Receive temperature from a ZigBee sensor</li>
+              <li>Send the temperature to ARTIK Cloud, where it can be evaluated by a Rule</li>
+              <li>Based on the Rule, send an Action to turn on/off a Z-Wave relay controlling a fan.</li>
+            </ul>
+            
+            <p>You'll find the 'Automation' selection on the <strong>Configuration</strong> page. You can use its script generation facility, or you can edit the <span class="code-font">automations.yaml</span> file directly. We'll show you both ways in the examples below.</p>
+            
+            <p><strong>Setting Triggers.</strong> Any of the input devices you see can be used as Triggers for your automation. You can trigger on things like</p>
+            
+            <ul>
+              <li>exact match (<code>state</code>)</li>
+              <li>range (<code>numeric_state</code>)</li>
+              <li>formula (<code>event</code>)</li>
+            </ul>
+            
+            <p>You can also set multiple Triggers, such as one for on-to-off transitions and another for off-to-on transitions.</p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td><br><br>1. In Home Assistant, click this icon (Tools "States" page)</td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\hass-dev-services-icons-states.jpg?1549048075"></td>
+                </tr>
+                <tr>
+                  <td>2. Scroll down to an <strong>entity</strong> you installed, and click on it</td>
+                  <td><code>binary_sensor.centralite_3320l_0bbe2747_1</code></td>
+                </tr>
+                <tr>
+                  <td>3. Copy the entity name from where it populates at the top</td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>4. Go to the Automations page and click <font size="5"><strong>+</strong></font></td>
+                  <td><img src="..\..\images\docs\developer-guide\hass-action-add-plus.jpg" style="max-width:50px;"></td>
+                </tr>
+                <tr>
+                  <td>5. Paste the Entity ID in the Trigger</td>
+                  <td><code>binary_sensor.centralite_3320l_0bbe2747_1</code></td>
+                </tr>
+                <tr>
+                  <td>5. Set other parameters as necessary</td>
+                  <td>Name – Trigger Type – From – To – Above – Below</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>Setting Actions.</strong> Now it's time to associate Actions with the Triggers. Here, the procedure becomes more technology-specific. Go to the section below to specify the device that will receive the Action.</p>
+            
+            <p class="warning">The Automations facility is relatively new and is still working through issues. One to note: It can be difficult to get an Action section set up. If it becomes unresponsive, delete the Action, Save, and add a new one.</p>
+            
+            <h3 id="actions-involving-zigbee">Actions involving ZigBee</h3>
+            
+            <p>Data from ZigBee devices is recoverable using Templates.</p>
+            
+            <p><code>{{states.Entity_ID.state.name}}</code> – the device friendly name<br>
+            <code>{{states.Entity_ID.state.state}}</code> – the status or measurement being returned</p>
+            
+            <p>where <code>Entity_ID</code> can be found in the Tools - States table. Refer to the Templates page in Home Assistant for a good illustration of the concept – make sure you have some ZigBee reporting devices connected so you can see the output! 
+            <img src="..\..\images\docs\developer-guide\hass-dev-services-icons-templates.jpg" style="max-width:500px;"></p>
+            
+            <h3 id="actions-involving-z-wave">Actions involving Z-Wave</h3>
+            
+            <p>Once a device is recognized and incorporated, Home Assistant can handle it in a particularly generic manner that makes automation a breeze. Here we'll set up a ZigBee door contact sensor to control a Z-Wave heavy-duty contactor/relay.</p>
+            
+            <p>For this trivial example, you can edit the <span class="code-font">~/.homeassistant/automations.yaml</span> file directly. The first automation takes off-to-on input from the door contact sensor as its trigger, and turns on the relay as its action. The second one does the opposite.</p>
+            
+            <p>Note that the service for the action is simply <span class="code-font">homeassistant.turn_on</span> or <span class="code-font">_off</span>, and does not need to specify <span class="code-font">zwave</span> – Home Assistant takes care of abstracting devices on the Z-Wave and ZigBee networks, so you only need to specify the <span class="code-font">entity_id</span>.</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17</pre></td><td class="code"><pre><span class="o">-</span> <span class="n">alias</span><span class="o">:</span> <span class="n">Turn</span> <span class="n">off</span>&#x000A;  <span class="n">trigger</span><span class="o">:</span>&#x000A;    <span class="n">platform</span><span class="o">:</span> <span class="n">state</span>&#x000A;    <span class="n">entity_id</span><span class="o">:</span> <span class="n">binary_sensor</span><span class="p">.</span><span class="n">centralite_3320l_057d30ec_1</span>&#x000A;    <span class="n">to</span><span class="o">:</span> <span class="err">'</span><span class="n">on</span><span class="err">'</span>&#x000A;  <span class="n">action</span><span class="o">:</span>&#x000A;    <span class="n">service</span><span class="o">:</span> <span class="n">homeassistant</span><span class="p">.</span><span class="n">turn_on</span>&#x000A;    <span class="n">entity_id</span><span class="o">:</span> <span class="k">switch</span><span class="p">.</span><span class="n">intermatic_unknown_type4341_id3750_switch</span>&#x000A;&#x000A;<span class="o">-</span> <span class="n">alias</span><span class="o">:</span> <span class="n">Turn</span> <span class="n">on</span>&#x000A;  <span class="n">trigger</span><span class="o">:</span>&#x000A;    <span class="n">platform</span><span class="o">:</span> <span class="n">state</span>&#x000A;    <span class="n">entity_id</span><span class="o">:</span> <span class="n">binary_sensor</span><span class="p">.</span><span class="n">centralite_3320l_057d30ec_1</span>&#x000A;    <span class="n">to</span><span class="o">:</span> <span class="err">'</span><span class="n">off</span><span class="err">'</span>&#x000A;  <span class="n">action</span><span class="o">:</span>&#x000A;    <span class="n">service</span><span class="o">:</span> <span class="n">homeassistant</span><span class="p">.</span><span class="n">turn_off</span>&#x000A;    <span class="n">entity_id</span><span class="o">:</span> <span class="k">switch</span><span class="p">.</span><span class="n">intermatic_unknown_type4341_id3750_switch</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="publishing-to-artik-cloud">Publishing to ARTIK Cloud</h3>
+            
+            <p><strong>Setting Simple Action.</strong> This part may look familiar to you. It's basically the same information that you used <a href="#publsh-to-artik-cloud-with-mqtt">here</a> to test the MQTT connection to ARTIK Cloud.</p>
+            
+            <table>
+              <tbody>
+                <tr>
+                  <td>1. Scroll to the Actions section</td>
+                  <td>If not already open, click ADD ACTION</td>
+                </tr>
+                <tr>
+                  <td>2. Under Action Type, select</td>
+                  <td><strong>Call Service</strong></td>
+                </tr>
+                <tr>
+                  <td>3. Under Service, type</td>
+                  <td><code>mqtt.publish</code></td>
+                </tr>
+                <tr>
+                  <td>4. Under Service Data, cut and paste in (editing <code>DEVICE_ID</code>)</td>
+                  <td><code>{<br>&nbsp;&nbsp;"topic":&nbsp;"/v1.1/messages/_your_DEVICE_ID_here_",<br>&nbsp;&nbsp;"payload": "{\"insTemp\": 19.3}"<br>}</code></td>
+                </tr>
+                <tr>
+                  <td>5. Click the Save icon.</td>
+                  <td><img src="..\..\images\docs\developer-guide\hass-action-add-save.jpg" style="max-width:50px;"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><img alt="" src="..\..\images\docs\developer-guide\hass-auto-action-publish.jpg?1549048075"></p>
+            
+            <p><strong>Setting Action by Template.</strong>  To dynamically create the payload based on the current state or sensed value of another device, you'll send</p>
+            
+            <p><code>payload_template</code></p>
+            
+            <p>and use a template that can be evaluated in the scripting language used by Home Assistant.</p>
+            
+            <p>For example, let's send the status (<code>on</code> or <code>off</code>) of the contact sensor from the Trigger example we used above.  According to the manifest we set up in ARTIK Cloud, <code>refOpen</code> is expecting a Boolean value of <code>true</code> or <code>false</code> so we end up with:</p>
+            
+            <p><code>{% if is_state('Entity_ID', 'on') %} false  {% else %} true {% endif %}</code></p>
+            
+            <p>where you replace <code>Entity_ID</code> with the entity value from the Tools States page. You choose the association to meet your needs; in the case of our sensor, it's <code>on</code> when the contact sensor door is open, which we've associated with <code>false</code>.</p>
+            
+            <p>In our example, the <span class="code-font">automations.yaml</span> file created by the actions editor (or manually created by you) would look like this.</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16</pre></td><td class="code"><pre><span class="o">-</span> <span class="n">action</span><span class="o">:</span>&#x000A;  <span class="o">-</span> <span class="n">data</span><span class="o">:</span>&#x000A;      <span class="n">payload_template</span><span class="o">:</span> <span class="err">'</span><span class="p">{</span><span class="s">"refOpen"</span><span class="o">:</span> <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">is_state</span><span class="p">(</span><span class="err">''</span><span class="n">binary_sensor</span><span class="p">.</span><span class="n">centralite_3320l_0bbe2747_1</span><span class="err">'</span><span class="sc">','</span><span class="err">'</span><span class="n">on</span><span class="err">''</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span> <span class="nb">false</span>  <span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span> <span class="nb">true</span> <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span> <span class="p">}</span><span class="err">'</span>&#x000A;      <span class="n">topic</span><span class="o">:</span> <span class="o">/</span><span class="n">v1</span><span class="p">.</span><span class="mi">1</span><span class="o">/</span><span class="n">messages</span><span class="o">/</span><span class="n">_your_DEVICE_ID_here_</span>&#x000A;    <span class="n">service</span><span class="o">:</span> <span class="n">mqtt</span><span class="p">.</span><span class="n">publish</span>&#x000A;  <span class="n">alias</span><span class="o">:</span> <span class="n">Contact</span> <span class="n">sensor</span>&#x000A;  <span class="n">id</span><span class="o">:</span> <span class="err">'</span><span class="mi">1501541144629</span><span class="err">'</span>&#x000A;  <span class="n">trigger</span><span class="o">:</span>&#x000A;  <span class="o">-</span> <span class="n">entity_id</span><span class="o">:</span> <span class="n">binary_sensor</span><span class="p">.</span><span class="n">centralite_3320l_0bbe2747_1</span>&#x000A;    <span class="n">from</span><span class="o">:</span> <span class="err">'</span><span class="n">on</span><span class="err">'</span>&#x000A;    <span class="n">platform</span><span class="o">:</span> <span class="n">state</span>&#x000A;    <span class="n">to</span><span class="o">:</span> <span class="err">'</span><span class="n">off</span><span class="err">'</span>&#x000A;  <span class="o">-</span> <span class="n">entity_id</span><span class="o">:</span> <span class="n">binary_sensor</span><span class="p">.</span><span class="n">centralite_3320l_0bbe2747_1</span>&#x000A;    <span class="n">from</span><span class="o">:</span> <span class="err">'</span><span class="n">off</span><span class="err">'</span>&#x000A;    <span class="n">platform</span><span class="o">:</span> <span class="n">state</span>&#x000A;    <span class="n">to</span><span class="o">:</span> <span class="err">'</span><span class="n">on</span><span class="err">'</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="actions-from-artik-cloud">Actions from ARTIK Cloud</h3>
+            
+            <p>An Action from ARTIK Cloud is not the same as an action in Home Assistant, although the concepts are similar.</p>
+            
+            <p>To act on an Action sent by ARTIK Cloud, you must define an automation in Home Assistant. You might generate an immediate Home Assistant action, or you might just store the received data from ARTIK Cloud for later use.</p>
+            
+            <h3 id="controlling-gpio-output-pins">Controlling GPIO output pins</h3>
+            
+            <p>Controlling pins through the <span class="code-font">sysfs</span> interface is a very accessible way to do it in Linux, even if it's a bit clunky.</p>
+            
+            <p>We'll provide this information based on the blue LED of the ARTIK 530 or 710 development board; you'll need to fill in your own GPIO numbers for other pins and boards. First off, go to the <a href="..\..\artik\tutorials\blink-an-led.html#artik-530-and-710-boards">GPIO LED tutorial</a> and make sure you are able to manually turn the blue LED on and off.</p>
+            
+            <p>To make this happen under Home Assistant will be a little more difficult – it operates within a virtual environment that does not, by default, have write privileges to the GPIO pins.  You'll need to fix that on a per-pin basis.</p>
+            
+            <p><strong>One-time operation.</strong> Create a new group, which we'll call  <span class="code-font">gpio</span>, that we'll eventually give special permissions to. This is similar to what you did in <a href="#step-4-set-up-user-account-for-virtual-environment">step 4.3</a>, except you're creating a new group instead of using an existing one (<span class="code-font">dialout</span> in that case).</p>
+            
+            <p><code>groupadd gpio</code><br>
+            <code>usermod -a -G gpio homeassistant</code></p>
+            
+            <p><strong>Outside virtual environment.</strong> Before entering the virtual environment, you'll need to create the pin and set its direction as output. You can do this manually or through a startup script, but it needs to happen after every board reset.</p>
+            
+            <ol>
+              <li>
+                <p>Pick the pin you want to use, and export it. Here we'll follow the original example and use GPIO 38 (controlling the blue LED).<br>
+            <code>echo 38 &gt; /sys/class/gpio/export</code></p>
+              </li>
+              <li>
+                <p>Configure the GPIO pin to be an output. Note that this "subdirectory" didn't exist until you exported the pin, and will exist only until the next reboot.<br>
+            <code>echo out &gt; /sys/class/gpio/gpio38/direction</code></p>
+              </li>
+              <li>
+                <p>Assign your new group to refer the GPIO pin you are planning to use.<br>
+            <code>chown -R root:gpio /sys/class/gpio/gpio38/value</code><br>
+            <code>chmod -R ug+rw /sys/class/gpio/gpio38/value</code></p>
+              </li>
+            </ol>
+            
+            <p>Repeat these steps for each of the GPIO pins you plan to control from within Home Assistant.</p>
+            
+            <p><strong>Within virtual environment.</strong> You've done all the hard work ahead of time. Now, after entering the virtual environment, you need to call shell commands from Home Assistant to turn the GPIO pin on and off.</p>
+            
+            <p>Before you actually run <span class="code-font">hass</span>, let's do a quick check within the virtual environment to ensure you have access to the pin control.<br>
+            <code>echo 1 &gt; /sys/class/gpio/gpio38/value</code></p>
+            
+            <p>If you can turn the LED on and off, then so can Home Assistant.</p>
+            
+            <p>You'll put these command definitions in your <span class="code-font"><strong>configuration.yaml</strong></span> file. Put them at the bottom of the file or at least outside of other sections.</p>
+            
+            <p><code>shell_command:</code><br>
+              <code>turn_on_led: 'echo 1 &gt; /sys/class/gpio/gpio38/value'</code><br>
+              <code>turn_off_led: 'echo 0 &gt; /sys/class/gpio/gpio38/value'</code></p>
+            
+            <p>Feel free to change the service names to something meaningful for your application.</p>
+            
+            <p>Now, anywhere in your <span class="code-font"><strong>automations.yaml</strong></span> file that you need to change the GPIO as the result of some trigger, just put in a line like this.</p>
+            
+            <p>  <span class="code-font">- action:</span><br>
+                  <code>- service: shell_command.turn_on_led</code></p>
+            
+            <p class="info">Note that the first line of a group starts with the "dash" (–) but not the second one. Just try to follow the format of the existing automations.</p>
+            
+            <p>Before starting the program, do a sanity check on your <span class="code-font">.yaml</span> files. It's almost certain that Home Assistant will find something for you to fix.</p>
+            
+            <p><code>hass --script check_config</code></p>
+            
+            <p><strong>Miscellaneous hints.</strong> If it gets confusing figuring out what groups you have assigned, use these commands to help.</p>
+            
+            <p>Find out what groups homeassistant currently has access to.<br>
+            <code>groups homeassistant</code></p>
+            
+            <p>Find out the name of all groups on the system.<br>
+            <code>getent group</code></p>
+            
+            <h3 id="actions-from-gpio-multiplexer">Actions from GPIO Multiplexer</h3>
+            
+            <p>This automation uses inputs from the "GP Wiz" device you installed <a href="#gpio-multiplexer">here</a>.</p>
+            
+            <p>To the <span class="code-font">automations.yaml</span> file, add a section for every input button you want to utilize. In this example, we're using one input to turn the light on and another to turn it off.</p>
+            
+            <pre>&#x000A;&#x000A;- id: 'button709'&#x000A;  alias: 709 Tripped&#x000A;  trigger:&#x000A;    platform: event&#x000A;    event_type: keyboard_remote_command_received&#x000A;    event_data:&#x000A;      device_descriptor: /dev/input/event1&#x000A;      key_code: 709    # inspect log to obtain desired keycode&#x000A;  action:&#x000A;    service: switch.turn_on&#x000A;    entity_id: switch.aeotec_micro_switch_2nd_edition_switch_3&#x000A;&#x000A;- id: 'button708'&#x000A;  alias: 708 Tripped&#x000A;  trigger:&#x000A;    platform: event&#x000A;    event_type: keyboard_remote_command_received&#x000A;    event_data:&#x000A;      device_descriptor: /dev/input/event1&#x000A;      key_code: 708 &#x000A;  action:&#x000A;    service: switch.turn_off&#x000A;    entity_id: switch.aeotec_micro_switch_2nd_edition_switch_3&#x000A;&#x000A;</pre>
+            
+            <p>Copy and paste the above code over and over for each input, changing the fields in green to correspond to the buttons on the GP Wiz and whichever device you wish to trigger in the action.</p>
+            
+            <p>Now type <span class="code-font">hass</span> to launch Home Assistant and view your buttons.  The log file clearly posts all the actions, and the response of the device is instantaneous.</p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-permissions2.jpg" class="lightbox"></p>
+            
+            <p>From the Home Assistant console, you can readily see the state of the inputs.</p>
+            
+            <p><img src="..\..\images\docs\developer-guide\gpwiz-ha-panel.jpg" style="max-width:200px"></p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-11-16 03:10:51 +0000'>Nov 16 2018,  3:10 AM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="sigfox.html">Prev: SIGFOX</a></li>
+              <li class='next-page'><a href="..\storage\index.htm">Next: USB and microSD</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

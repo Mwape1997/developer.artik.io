@@ -1,0 +1,1194 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='mqtt-to-cloud.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: MQTT to ARTIK Cloud' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: MQTT to ARTIK Cloud' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: MQTT to ARTIK Cloud</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_artik-05x documentation_artik-05x_tutorials documentation_artik-05x_tutorials_mqtt-to-cloud' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="index.htm" data-directory="true" data-name="tutorials" aria-expanded="true">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false" class="active">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="artik-05x-to-artik-cloud-via-mqtt">ARTIK 05X to ARTIK Cloud via MQTT</h1>
+            
+            <p>Having connected your ARTIK 05X module to an MQTT broker, you're just a step away from making that broker ARTIK Cloud. Doing so, you'll be accomplishing much the same thing as you did in <a href="..\getting-started\communicate.html">Connect to the World</a>, but this time you'll do it over a frugal MQTT link and you will have complete control of all you send and receive.</p>
+            
+            <p><strong>Prerequisites</strong></p>
+            
+            <p>Before you begin:</p>
+            
+            <ul>
+              <li>
+                <p>Complete the previous ARTIK 05X MQTT <a href="mqtt-subscriber.html">subscriber</a> and <a href="mqtt-publisher.html">publisher</a> articles.</p>
+              </li>
+              <li>
+                <p>Determine the GPIO pins you plan to use. Look at the <a href="..\getting-started\board-ref.html#artik-05x-header-map">mappings</a> page, as well as the noted Tizen RT source code files. The XGPIO pins are referenced as gpio30-32, 37-55, and 57-59. Our code uses only gpio37-55.</p>
+              </li>
+            </ul>
+            
+            <h2 id="creating-device-on-artik-cloud">Creating Device on ARTIK Cloud</h2>
+            
+            <p>Samsung ARTIK Cloud makes it easy to interact with your IoT devices.  Once you have acquired data, it's a simple matter to send it off to ARTIK Cloud for viewing and archiving. ARTIK Cloud can also analyze the data and send back appropriate actions according to the rules you decide.</p>
+            
+            <h3 id="open-your-artik-cloud-home-page">Open your ARTIK Cloud home page</h3>
+            
+            <p>Open and log into the My ARTIK Cloud page in your browser to get ready to use ARTIK Cloud. If you haven't signed up for a free account, you will be given the chance to do so.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Site</th>
+                  <th>Looks Like This</th>
+                  <th>Used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="https://www.artik.cloud/my" target="userPortal"> My ARTIK Cloud</a></td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\artik-cloud-user-portal.jpg"></td>
+                  <td>Connecting a device; obtaining access tokens; viewing data sent by the device</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>This first page is what the User sees. However, as a Developer creating a device, you will also use the separate <a href="https://developer.artik.cloud/dashboard" target="devDashboard"> Developer Dashboard</a> page, which we talk about below.</p>
+            
+            <h3 id="create-a-new-device-and-upload-manifest">Create a new device and upload Manifest</h3>
+            
+            <p>We will stream GPIO and ADC data from your ARTIK 053 board to ARTIK Cloud. In order to do this, we need to create a matching device in ARTIK Cloud that knows what kind of data tags to expect.</p>
+            
+            <p>ARTIK Cloud refers to the file containing the data template information as the Manifest. It's just a .JSON-format file. Setting it up here is easy, since we've already built it for you!</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Looks Like This</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Go to the ARTIK Cloud <a href="https://developer.artik.cloud/dashboard" target="devDashboard"> Developer Dashboard</a> and log in.</td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\cloud-dashboard.jpg"></td>
+                </tr>
+                <tr>
+                  <td>2. Click <strong>+ New Device Type</strong></td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>3. Name your device. The Unique Name<br> requires camel case: start each portion with a lower-case letter.</td>
+                  <td>For ours we chose <br>DEVICE DISPLAY NAME: "A053 all-in-one"<br> UNIQUE NAME: "mqtt-A053"</td>
+                </tr>
+                <tr>
+                  <td>4. Click <strong>CREATE DEVICE TYPE</strong>.<br><br><br><br>5. Click <strong>ADD DEVICE TYPE INFO</strong>.</td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\mqtt-cloud-ready-for-dev.jpg"></td>
+                </tr>
+                <tr>
+                  <td>6. Download the pre-built manifest.<br><br>             <a class="btn btn-primary" role="button" href="mqtt-cloud.json" download="">.json manifest</a> <br><br><br> <br>7. Click <strong>UPLOAD A MANIFEST</strong>.<br>and browse to your downloaded <br>manifest.</td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\mqtt-cloud-upload-manifest.jpg"></td>
+                </tr>
+                <tr>
+                  <td>8. Click <strong>ACTIVATE MANIFEST</strong> at the <br>bottom of the manifest as shown below.</td>
+                  <td> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>You've created an ARTIK device using the manifest code we supplied. You can see now why we called it "all-in-one" – there's probably a lot more GPIO control than you'll  need! You can strip it down later to just cover the I/O functions of interest to you.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\mqtt-cloud-activate-manifest.jpg"></p>
+            
+            <p>Take a moment to appreciate how easy it was to set up a new project to store its data on ARTIK Cloud. That's all there was to it!</p>
+            
+            <h3 id="connect-the-device">Connect the device</h3>
+            
+            <p>As a Developer, you just created a device. Now it's time for you to act as a User so that you can select and use that device. Go back to your <strong><a href="https://www.artik.cloud/my" target="userPortal"> My ARTIK Cloud</a></strong> page.</p>
+            
+            <p>You can now click <strong>CONNECT A DEVICE</strong> and choose your new device to get started. Be careful to <strong>not</strong> select some other device with a similar name, or a public device.</p>
+            
+            <p>Under Give Your Device a Name you can pick something like "MyA053AIO". Your device general name is still "A053 all-in-one" but this instance of it is now MyA053AIO.</p>
+            
+            <h3 id="get-the-device-token">Get the Device Token</h3>
+            
+            <p>Every call you make to ARTIK Cloud requires an access token. The Device Token is one of three types of access tokens, and is the one we'll use in this tutorial.</p>
+            
+            <p>Still on your <strong><a href="https://www.artik.cloud/my" target="userPortal"> My ARTIK Cloud</a></strong> page, click on your newly connected device.</p>
+            
+            <p>It's easy for any valid user to obtain the Device ID and Device Token needed to exchange information with ARTIK Cloud.  In this case, the device of interest will be our newly created “My Temp Sensor”, but you'll follow this procedure any time you need to insert Device information into your code.</p>
+            
+            <ol>
+              <li>
+                <p>Go to My ARTIK Cloud and log in (if you have not already).</p>
+              </li>
+              <li>
+                <p>Click on the device of interest.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\getting-started-artik\node-red-cloud-p4-1.jpg"></p>
+              </li>
+              <li>
+                <p>When you see the Device Info pop-up, click <strong>GENERATE DEVICE TOKEN…</strong> to get a Device Token. You'll only see that link the first time; after that, the token will already be visible as shown below.</p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\node-red-cloud-token.jpg"></p>
+              </li>
+              <li>
+                <p>Leave the Device Info page open.</p>
+              </li>
+            </ol>
+            
+            <h2 id="setting-up-subscriberpublisher-edge-device">Setting Up Subscriber/Publisher Edge Device</h2>
+            
+            <p>You will use an ARTIK 05X module as your edge device and create a project in the ARTIK IDE as you did <a href="mqtt-subscriber.html#set-up-subscriber-edge-device">here</a>.</p>
+            
+            <ol>
+            <li>
+            
+            Start with complete MQTT subscriber and publisher code. Copy it in place of the "Hello World" <code>main.c</code> code like you did previously.
+            
+            <p style="margin-left: 0px;"><strong style="display: inline-block; margin-right: 5px;"><font color="blue"></font> </strong>
+            
+              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mqtt-sub-main" aria-expanded="false" aria-controls="mqtt-sub-main">
+                main.c code
+              </a>
+            </p>
+            
+            <div class="collapse" id="mqtt-sub-main">
+            <div class="boxed">
+              <h3 id="mainc-code">main.c code</h3>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108&#x000A;109&#x000A;110&#x000A;111&#x000A;112&#x000A;113&#x000A;114&#x000A;115&#x000A;116&#x000A;117&#x000A;118&#x000A;119&#x000A;120&#x000A;121&#x000A;122&#x000A;123&#x000A;124&#x000A;125&#x000A;126&#x000A;127&#x000A;128&#x000A;129&#x000A;130&#x000A;131&#x000A;132&#x000A;133&#x000A;134&#x000A;135&#x000A;136&#x000A;137&#x000A;138&#x000A;139&#x000A;140&#x000A;141&#x000A;142&#x000A;143&#x000A;144&#x000A;145&#x000A;146&#x000A;147&#x000A;148&#x000A;149&#x000A;150&#x000A;151&#x000A;152&#x000A;153&#x000A;154&#x000A;155&#x000A;156&#x000A;157&#x000A;158&#x000A;159&#x000A;160&#x000A;161&#x000A;162&#x000A;163&#x000A;164&#x000A;165&#x000A;166&#x000A;167&#x000A;168&#x000A;169&#x000A;170&#x000A;171&#x000A;172&#x000A;173&#x000A;174&#x000A;175&#x000A;176&#x000A;177&#x000A;178&#x000A;179&#x000A;180&#x000A;181&#x000A;182&#x000A;183&#x000A;184&#x000A;185&#x000A;186&#x000A;187&#x000A;188&#x000A;189&#x000A;190&#x000A;191&#x000A;192&#x000A;193&#x000A;194&#x000A;195&#x000A;196&#x000A;197&#x000A;198&#x000A;199&#x000A;200&#x000A;201&#x000A;202&#x000A;203&#x000A;204&#x000A;205&#x000A;206&#x000A;207&#x000A;208&#x000A;209&#x000A;210&#x000A;211&#x000A;212&#x000A;213&#x000A;214&#x000A;215&#x000A;216&#x000A;217&#x000A;218&#x000A;219&#x000A;220&#x000A;221&#x000A;222&#x000A;223&#x000A;224&#x000A;225&#x000A;226&#x000A;227&#x000A;228&#x000A;229&#x000A;230&#x000A;231&#x000A;232&#x000A;233&#x000A;234&#x000A;235&#x000A;236&#x000A;237&#x000A;238&#x000A;239&#x000A;240&#x000A;241&#x000A;242&#x000A;243&#x000A;244&#x000A;245&#x000A;246&#x000A;247&#x000A;248&#x000A;249&#x000A;250&#x000A;251&#x000A;252&#x000A;253&#x000A;254&#x000A;255&#x000A;256&#x000A;257&#x000A;258&#x000A;259&#x000A;260&#x000A;261&#x000A;262&#x000A;263&#x000A;264&#x000A;265&#x000A;266&#x000A;267&#x000A;268&#x000A;269&#x000A;270&#x000A;271&#x000A;272&#x000A;273&#x000A;274&#x000A;275&#x000A;276&#x000A;277&#x000A;278&#x000A;279&#x000A;280&#x000A;281&#x000A;282&#x000A;283&#x000A;284&#x000A;285&#x000A;286&#x000A;287&#x000A;288&#x000A;289&#x000A;290&#x000A;291&#x000A;292&#x000A;293&#x000A;294&#x000A;295&#x000A;296&#x000A;297&#x000A;298&#x000A;299&#x000A;300&#x000A;301&#x000A;302&#x000A;303&#x000A;304&#x000A;305&#x000A;306&#x000A;307&#x000A;308&#x000A;309&#x000A;310&#x000A;311&#x000A;312&#x000A;313&#x000A;314&#x000A;315&#x000A;316&#x000A;317&#x000A;318&#x000A;319&#x000A;320&#x000A;321&#x000A;322&#x000A;323&#x000A;324&#x000A;325&#x000A;326&#x000A;327&#x000A;328&#x000A;329&#x000A;330&#x000A;331&#x000A;332&#x000A;333&#x000A;334&#x000A;335&#x000A;336&#x000A;337&#x000A;338&#x000A;339&#x000A;340&#x000A;341&#x000A;342&#x000A;343&#x000A;344&#x000A;345&#x000A;346&#x000A;347&#x000A;348&#x000A;349&#x000A;350&#x000A;351&#x000A;352&#x000A;353&#x000A;354&#x000A;355&#x000A;356&#x000A;357&#x000A;358&#x000A;359&#x000A;360&#x000A;361&#x000A;362&#x000A;363&#x000A;364&#x000A;365&#x000A;366&#x000A;367&#x000A;368&#x000A;369&#x000A;370&#x000A;371&#x000A;372&#x000A;373&#x000A;374&#x000A;375&#x000A;376&#x000A;377&#x000A;378&#x000A;379&#x000A;380&#x000A;381&#x000A;382&#x000A;383&#x000A;384&#x000A;385&#x000A;386&#x000A;387&#x000A;388&#x000A;389&#x000A;390&#x000A;391&#x000A;392&#x000A;393&#x000A;394&#x000A;395&#x000A;396&#x000A;397&#x000A;398&#x000A;399&#x000A;400&#x000A;401&#x000A;402&#x000A;403&#x000A;404&#x000A;405&#x000A;406&#x000A;407&#x000A;408&#x000A;409&#x000A;410&#x000A;411&#x000A;412&#x000A;413&#x000A;414&#x000A;415&#x000A;416&#x000A;417&#x000A;418&#x000A;419&#x000A;420&#x000A;421&#x000A;422&#x000A;423&#x000A;424&#x000A;425&#x000A;426&#x000A;427&#x000A;428&#x000A;429&#x000A;430&#x000A;431&#x000A;432&#x000A;433&#x000A;434&#x000A;435&#x000A;436&#x000A;437&#x000A;438&#x000A;439&#x000A;440&#x000A;441&#x000A;442&#x000A;443&#x000A;444&#x000A;445&#x000A;446&#x000A;447&#x000A;448&#x000A;449&#x000A;450&#x000A;451&#x000A;452&#x000A;453&#x000A;454&#x000A;455&#x000A;456&#x000A;457&#x000A;458&#x000A;459&#x000A;460&#x000A;461&#x000A;462&#x000A;463&#x000A;464&#x000A;465&#x000A;466&#x000A;467&#x000A;468&#x000A;469&#x000A;470&#x000A;471&#x000A;472&#x000A;473&#x000A;474&#x000A;475&#x000A;476&#x000A;477&#x000A;478&#x000A;479&#x000A;480&#x000A;481&#x000A;482&#x000A;483&#x000A;484&#x000A;485&#x000A;486&#x000A;487&#x000A;488&#x000A;489&#x000A;490&#x000A;491&#x000A;492&#x000A;493&#x000A;494&#x000A;495&#x000A;496&#x000A;497&#x000A;498&#x000A;499&#x000A;500&#x000A;501&#x000A;502&#x000A;503&#x000A;504&#x000A;505&#x000A;506&#x000A;507&#x000A;508&#x000A;509&#x000A;510&#x000A;511&#x000A;512&#x000A;513&#x000A;514&#x000A;515&#x000A;516&#x000A;517&#x000A;518&#x000A;519&#x000A;520&#x000A;521&#x000A;522&#x000A;523&#x000A;524&#x000A;525&#x000A;526&#x000A;527&#x000A;528&#x000A;529&#x000A;530&#x000A;531</pre></td><td class="code"><pre><span class="cm">/****************************************************************************&#x000A; *&#x000A; * Copyright 2016 Samsung Electronics All Rights Reserved.&#x000A; *&#x000A; * Licensed under the Apache License, Version 2.0 (the "License");&#x000A; * you may not use this file except in compliance with the License.&#x000A; * You may obtain a copy of the License at&#x000A; *&#x000A; * http://www.apache.org/licenses/LICENSE-2.0&#x000A; *&#x000A; * Unless required by applicable law or agreed to in writing,&#x000A; * software distributed under the License is distributed on an&#x000A; * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,&#x000A; * either express or implied. See the License for the specific&#x000A; * language governing permissions and limitations under the License.&#x000A; */</span>&#x000A;&#x000A;<span class="cp">#include &lt;tinyara/config.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;ctype.h&gt;&#x000A;#include "wifi.h"&#x000A;#include "keys.h"&#x000A;#include &lt;tinyara/gpio.h&gt;&#x000A;#include &lt;tinyara/pwm.h&gt;&#x000A;#include &lt;tinyara/analog/adc.h&gt;&#x000A;#include &lt;tinyara/analog/ioctl.h&gt;&#x000A;#include &lt;apps/netutils/dhcpc.h&gt;&#x000A;#include &lt;apps/netutils/mqtt_api.h&gt;&#x000A;#include &lt;apps/netutils/ntpclient.h&gt;&#x000A;</span>&#x000A;&#x000A;<span class="c1">// NTP&#x000A;</span><span class="cp">#define NTP_REFRESH_PERIOD  (60 * 60) </span><span class="cm">/* seconds */</span><span class="cp">&#x000A;#define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))&#x000A;</span>&#x000A;<span class="cp">#define RED_ON_BOARD_LED 45&#x000A;#define ADC_MAX_SAMPLES 4&#x000A;#define NET_DEVNAME "wl1"&#x000A;#define DEFAULT_CLIENT_ID "123456789"&#x000A;#define SERVER_ADDR "api.artik.cloud"//"52.200.124.224"&#x000A;#define DEVICE_ID "_your_DEVICE_ID_goes_here_" //FIX&#x000A;#define DEVICE_TOKEN "_your_DEVICE_TOKEN_goes_here_" // FIX&#x000A;#define ACTION_TOPIC "/v1.1/actions/_your_DEVICE_ID_goes_here_" // FIX&#x000A;#define MESSAGE_TOPIC "/v1.1/messages/_your_DEVICE_ID_goes_here_" //FIX&#x000A;</span>&#x000A;<span class="c1">// NTP&#x000A;</span><span class="k">static</span> <span class="k">struct</span> <span class="n">ntpc_server_conn_s</span> <span class="n">ntp_server_conn</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{{</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">123</span> <span class="p">},};</span>&#x000A;&#x000A;<span class="k">static</span> <span class="kt">void</span> <span class="nf">ntp_link_error</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"NTP error: stopping client</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;  <span class="n">ntpc_stop</span><span class="p">();</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// mqtt tls config handle&#x000A;</span><span class="k">static</span> <span class="n">mqtt_tls_param_t</span> <span class="n">g_tls</span><span class="p">;</span>&#x000A;&#x000A;<span class="c1">// mqtt client handle&#x000A;</span><span class="n">mqtt_client_t</span><span class="o">*</span> <span class="n">pClientHandle</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;&#x000A;<span class="c1">// mqtt client parameters&#x000A;</span><span class="n">mqtt_client_config_t</span> <span class="n">clientConfig</span><span class="p">;</span>&#x000A;&#x000A;<span class="c1">// Read the value of the given gpio port&#x000A;</span><span class="kt">int</span> <span class="nf">gpio_read</span><span class="p">(</span><span class="kt">int</span> <span class="n">port</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>&#x000A;  <span class="kt">char</span> <span class="n">devpath</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>&#x000A;  <span class="n">snprintf</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s">"/dev/gpio%d"</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>&#x000A;  <span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="n">O_RDWR</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">fd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"fd open fail</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"read error</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">return</span> <span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'1'</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// Write (toggle) the value of given gpio port.&#x000A;</span><span class="kt">void</span> <span class="nf">gpio_write</span><span class="p">(</span><span class="kt">int</span> <span class="n">port</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>&#x000A;  <span class="k">static</span> <span class="kt">char</span> <span class="n">devpath</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>&#x000A;  <span class="kt">int</span> <span class="n">curValue</span> <span class="o">=</span> <span class="n">gpio_read</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"Current value of the gpio port%d is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">port</span><span class="p">,</span><span class="n">curValue</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">curValue</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>&#x000A;  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">curValue</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>&#x000A;    <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;  <span class="n">snprintf</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s">"/dev/gpio%d"</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>&#x000A;  <span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="n">O_RDWR</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">ioctl</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">GPIOIOC_SET_DIRECTION</span><span class="p">,</span> <span class="n">GPIO_DIRECTION_OUT</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">str</span><span class="p">,</span> <span class="n">snprintf</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="n">value</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// mqtt client on connect callback&#x000A;</span><span class="kt">void</span> <span class="nf">onConnect</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">client</span><span class="p">,</span> <span class="kt">int</span> <span class="n">result</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client connected to the server</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// mqtt client on disconnect callback&#x000A;</span><span class="kt">void</span> <span class="nf">onDisconnect</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">client</span><span class="p">,</span> <span class="kt">int</span> <span class="n">result</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client disconnected from the server</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// mqtt client on message callback&#x000A;</span><span class="kt">void</span> <span class="nf">onMessage</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">client</span><span class="p">,</span> <span class="n">mqtt_msg_t</span> <span class="o">*</span><span class="n">msg</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client on message received</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;  <span class="n">mqtt_client_t</span> <span class="o">*</span><span class="n">mqtt_client</span> <span class="o">=</span> <span class="p">(</span><span class="n">mqtt_client_t</span> <span class="o">*</span><span class="p">)</span><span class="n">client</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">mqtt_client</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">||</span> <span class="n">mqtt_client</span><span class="o">-&gt;</span><span class="n">config</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"message callback: is NULL.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">payload_len</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Topic - %s , payload -  %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">msg</span><span class="o">-&gt;</span><span class="n">topic</span><span class="p">,</span> <span class="n">msg</span><span class="o">-&gt;</span><span class="n">payload</span><span class="p">);</span>&#x000A;  <span class="p">}</span> <span class="k">else</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"&gt;&gt;&gt; message callback: payload_len is 0</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">payload_len</span><span class="p">];</span>&#x000A;  <span class="n">strcpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="n">msg</span><span class="o">-&gt;</span><span class="n">payload</span><span class="p">);</span>&#x000A;&#x000A;  <span class="c1">// Check if the action is related to GPIO&#x000A;</span>  <span class="k">if</span> <span class="p">(</span><span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"Gpio"</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="c1">// Extract the gpio port number&#x000A;</span>    <span class="kt">int</span> <span class="n">ref</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="kt">char</span> <span class="n">tempBuf</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>&#x000A;    <span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"Gpio"</span><span class="p">);</span>&#x000A;    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>&#x000A;        <span class="n">tempBuf</span><span class="p">[</span><span class="n">ref</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>&#x000A;      <span class="n">p</span><span class="o">++</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">tempBuf</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>&#x000A;    <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">tempBuf</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"port is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">port</span><span class="p">);</span>&#x000A;    <span class="n">gpio_write</span><span class="p">(</span><span class="n">port</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"pwm"</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span><span class="c1">// Action is related to PWM&#x000A;</span>  <span class="p">{</span>&#x000A;    <span class="c1">//Extract pwm port&#x000A;</span>    <span class="kt">int</span> <span class="n">ref</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="kt">char</span> <span class="n">tempBuf</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>&#x000A;    <span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"pwm"</span><span class="p">);</span>&#x000A;    <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">tempBuf</span><span class="p">[</span><span class="n">ref</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>&#x000A;        <span class="k">break</span><span class="p">;</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="n">p</span><span class="o">++</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">tempBuf</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span><span class="sc">'\0'</span><span class="p">;</span>&#x000A;    <span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">tempBuf</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"PWM port %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">port</span><span class="p">);</span>&#x000A;&#x000A;    <span class="c1">// Extract frequency and duty&#x000A;</span>&#x000A;    <span class="c1">// Extract Frequency&#x000A;</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"Freq"</span><span class="p">);</span>&#x000A;    <span class="n">bool</span> <span class="n">fFlag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;    <span class="n">ref</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="kt">char</span> <span class="n">freqBuf</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>&#x000A;    <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">fFlag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;        <span class="n">freqBuf</span><span class="p">[</span><span class="n">ref</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">fFlag</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="k">break</span><span class="p">;</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="n">p</span><span class="o">++</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">freqBuf</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>&#x000A;    <span class="kt">int</span> <span class="n">freqValue</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">freqBuf</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Frequency values is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">freqValue</span><span class="p">);</span>&#x000A;&#x000A;&#x000A;    <span class="c1">// Extract Duty&#x000A;</span>&#x000A;    <span class="n">p</span> <span class="o">=</span> <span class="n">strstr</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"Duty"</span><span class="p">);</span>&#x000A;    <span class="n">ref</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="kt">char</span> <span class="n">dutyBuf</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>&#x000A;    <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">isdigit</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">))</span>&#x000A;        <span class="n">dutyBuf</span><span class="p">[</span><span class="n">ref</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>&#x000A;      <span class="n">p</span><span class="o">++</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">dutyBuf</span><span class="p">[</span><span class="n">ref</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>&#x000A;    <span class="kt">int</span> <span class="n">dutyValue</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">dutyBuf</span><span class="p">);</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Duty value is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">dutyValue</span><span class="p">);</span>&#x000A;&#x000A;    <span class="c1">// Set the values to the corresponding pwm port&#x000A;</span>    <span class="k">struct</span> <span class="n">pwm_info_s</span> <span class="n">pwm_info</span><span class="p">;</span>&#x000A;    <span class="n">pwm_info</span><span class="p">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="n">freqValue</span><span class="p">;</span>&#x000A;    <span class="kt">char</span> <span class="n">devpath</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>&#x000A;    <span class="n">snprintf</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="s">"/dev/pwm%d"</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>&#x000A;    <span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="n">devpath</span><span class="p">,</span> <span class="n">O_RDWR</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">fd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"fd open fail</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="k">return</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="n">pwm_info</span><span class="p">.</span><span class="n">duty</span> <span class="o">=</span> <span class="n">dutyValue</span> <span class="o">*</span> <span class="mi">65536</span> <span class="o">/</span> <span class="mi">100</span><span class="p">;</span>&#x000A;    <span class="n">ioctl</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">PWMIOC_SETCHARACTERISTICS</span><span class="p">,</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)((</span><span class="kt">uintptr_t</span><span class="p">)</span><span class="o">&amp;</span><span class="n">pwm_info</span><span class="p">));</span>&#x000A;    <span class="n">ioctl</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">PWMIOC_START</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="c1">// Utility function to configure mqtt client&#x000A;</span><span class="kt">void</span> <span class="nf">initializeConfigUtil</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="kt">uint8_t</span> <span class="n">macId</span><span class="p">[</span><span class="n">IFHWADDRLEN</span><span class="p">];</span>&#x000A;  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">netlib_getmacaddr</span><span class="p">(</span><span class="s">"wl1"</span><span class="p">,</span> <span class="n">macId</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Get MAC Address failed. Assigning \&#x000A;        Client ID as 123456789"</span><span class="p">);</span>&#x000A;    <span class="n">clientConfig</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span>&#x000A;        <span class="n">DEFAULT_CLIENT_ID</span><span class="p">;</span> <span class="c1">// MAC id Artik 053&#x000A;</span>  <span class="p">}</span>&#x000A;  <span class="k">else</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"MAC: %02x:%02x:%02x:%02x:%02x:%02x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">3</span><span class="p">],</span> <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">4</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">5</span><span class="p">]);</span>&#x000A;    <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">12</span><span class="p">];</span>&#x000A;    <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">"%02x%02x%02x%02x%02x%02x"</span><span class="p">,</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">2</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">3</span><span class="p">],</span> <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">4</span><span class="p">],</span>&#x000A;        <span class="p">((</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">macId</span><span class="p">)[</span><span class="mi">5</span><span class="p">]);</span>&#x000A;    <span class="n">clientConfig</span><span class="p">.</span><span class="n">client_id</span> <span class="o">=</span> <span class="n">buf</span><span class="p">;</span> <span class="c1">// MAC id Artik 053&#x000A;</span>    <span class="n">clientConfig</span><span class="p">.</span><span class="n">user_name</span> <span class="o">=</span> <span class="n">DEVICE_ID</span><span class="p">;</span>&#x000A;    <span class="n">clientConfig</span><span class="p">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">DEVICE_TOKEN</span><span class="p">;</span>&#x000A;    <span class="n">clientConfig</span><span class="p">.</span><span class="n">clean_session</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// check&#x000A;</span>&#x000A;    <span class="n">clientConfig</span><span class="p">.</span><span class="n">protocol_version</span> <span class="o">=</span> <span class="n">MQTT_PROTOCOL_VERSION_31</span><span class="p">;</span>&#x000A;    <span class="n">g_tls</span><span class="p">.</span><span class="n">ca_cert</span> <span class="o">=</span> <span class="n">mqtt_get_ca_certificate</span><span class="p">();</span>  <span class="c1">//the pointer of ca_cert buffer&#x000A;</span>    <span class="n">g_tls</span><span class="p">.</span><span class="n">ca_cert_len</span> <span class="o">=</span> <span class="n">mqtt_get_ca_certificate_size</span><span class="p">();</span> <span class="c1">// the length of ca_cert buffer&#x000A;</span>&#x000A;&#x000A;    <span class="n">g_tls</span><span class="p">.</span><span class="n">cert</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;    <span class="n">g_tls</span><span class="p">.</span><span class="n">cert_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;&#x000A;    <span class="n">g_tls</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;    <span class="n">g_tls</span><span class="p">.</span><span class="n">key_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Registering mqtt client with id = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">clientConfig</span><span class="p">.</span><span class="n">on_connect</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">onConnect</span><span class="p">;</span>&#x000A;  <span class="n">clientConfig</span><span class="p">.</span><span class="n">on_disconnect</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">onDisconnect</span><span class="p">;</span>&#x000A;  <span class="n">clientConfig</span><span class="p">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="n">onMessage</span><span class="p">;</span>&#x000A;  <span class="n">clientConfig</span><span class="p">.</span><span class="n">tls</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">g_tls</span><span class="p">;</span>&#x000A;  <span class="c1">//printf("Size of CA is %d\n",g_tls.ca_cert_len);&#x000A;</span><span class="p">}</span>&#x000A;&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">bool</span> <span class="n">wifiConnected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;  <span class="n">gpio_write</span><span class="p">(</span><span class="n">RED_ON_BOARD_LED</span><span class="p">);</span> <span class="c1">// Turn on on board Red LED to indicate no WiFi connection is established&#x000A;</span>&#x000A;  <span class="cp">#ifdef CONFIG_CTRL_IFACE_FIFO&#x000A;</span>  <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">wifiConnected</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">ret</span> <span class="o">=</span> <span class="n">mkfifo</span><span class="p">(</span><span class="n">CONFIG_WPA_CTRL_FIFO_DEV_REQ</span><span class="p">,</span>&#x000A;        <span class="n">CONFIG_WPA_CTRL_FIFO_MK_MODE</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ret</span> <span class="o">!=</span> <span class="o">-</span><span class="n">EEXIST</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"mkfifo error for %s: %s"</span><span class="p">,</span>&#x000A;          <span class="n">CONFIG_WPA_CTRL_FIFO_DEV_REQ</span><span class="p">,</span>&#x000A;          <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">ret</span> <span class="o">=</span> <span class="n">mkfifo</span><span class="p">(</span><span class="n">CONFIG_WPA_CTRL_FIFO_DEV_CFM</span><span class="p">,</span>&#x000A;        <span class="n">CONFIG_WPA_CTRL_FIFO_MK_MODE</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ret</span> <span class="o">!=</span> <span class="o">-</span><span class="n">EEXIST</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"mkfifo error for %s: %s"</span><span class="p">,</span>&#x000A;          <span class="n">CONFIG_WPA_CTRL_FIFO_DEV_CFM</span><span class="p">,</span>&#x000A;          <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="n">ret</span> <span class="o">=</span> <span class="n">mkfifo</span><span class="p">(</span><span class="n">CONFIG_WPA_MONITOR_FIFO_DEV</span><span class="p">,</span>&#x000A;        <span class="n">CONFIG_WPA_CTRL_FIFO_MK_MODE</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ret</span> <span class="o">!=</span> <span class="o">-</span><span class="n">EEXIST</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"mkfifo error for %s: %s"</span><span class="p">,</span>&#x000A;          <span class="n">CONFIG_WPA_MONITOR_FIFO_DEV</span><span class="p">,</span>&#x000A;          <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="cp">#endif&#x000A;</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">start_wifi_interface</span><span class="p">()</span> <span class="o">==</span> <span class="n">SLSI_STATUS_ERROR</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"Connect Wi-Fi failed. Try Again.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">else</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">wifiConnected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;      <span class="n">gpio_write</span><span class="p">(</span><span class="n">RED_ON_BOARD_LED</span><span class="p">);</span> <span class="c1">// Turn off Red LED to indicate WiFi connection is established&#x000A;</span>    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"Connect to Wi-Fi success</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">bool</span> <span class="n">mqttConnected</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;  <span class="n">bool</span> <span class="n">ipObtained</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"Get IP address</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">struct</span> <span class="n">dhcpc_state</span> <span class="n">state</span><span class="p">;</span>&#x000A;  <span class="kt">void</span> <span class="o">*</span><span class="n">dhcp_handle</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">ipObtained</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">dhcp_handle</span> <span class="o">=</span> <span class="n">dhcpc_open</span><span class="p">(</span><span class="n">NET_DEVNAME</span><span class="p">);</span>&#x000A;    <span class="n">ret</span> <span class="o">=</span> <span class="n">dhcpc_request</span><span class="p">(</span><span class="n">dhcp_handle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">state</span><span class="p">);</span>&#x000A;    <span class="n">dhcpc_close</span><span class="p">(</span><span class="n">dhcp_handle</span><span class="p">);</span>&#x000A;&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="n">OK</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"Failed to get IP address</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"Try again</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">else</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">ipObtained</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">netlib_set_ipv4addr</span><span class="p">(</span><span class="n">NET_DEVNAME</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">state</span><span class="p">.</span><span class="n">ipaddr</span><span class="p">);</span>&#x000A;  <span class="n">netlib_set_ipv4netmask</span><span class="p">(</span><span class="n">NET_DEVNAME</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">state</span><span class="p">.</span><span class="n">netmask</span><span class="p">);</span>&#x000A;  <span class="n">netlib_set_dripv4addr</span><span class="p">(</span><span class="n">NET_DEVNAME</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">state</span><span class="p">.</span><span class="n">default_router</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">printf</span><span class="p">(</span><span class="s">"IP address  %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">inet_ntoa</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">ipaddr</span><span class="p">));</span>&#x000A;&#x000A;  <span class="c1">// NTP&#x000A;</span>  <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>&#x000A;  <span class="n">ntp_server_conn</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">hostname</span> <span class="o">=</span> <span class="s">"0.pool.ntp.org"</span><span class="p">;</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">ntpc_start</span><span class="p">(</span><span class="n">ntp_server_conn</span><span class="p">,</span> <span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">ntp_server_conn</span><span class="p">),</span> <span class="n">NTP_REFRESH_PERIOD</span><span class="p">,</span> <span class="n">ntp_link_error</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Failed to start NTP client.</span><span class="se">\n</span><span class="s">"</span>&#x000A;        <span class="s">"The date may be incorrect and lead to undefined behavior</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="kt">int</span> <span class="n">num_retries</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>&#x000A;&#x000A;    <span class="cm">/* Wait for the date to be set */</span>&#x000A;    <span class="k">while</span> <span class="p">((</span><span class="n">ntpc_get_link_status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">NTP_LINK_UP</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">--</span><span class="n">num_retries</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">num_retries</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"Failed to reach NTP server.</span><span class="se">\n</span><span class="s">"</span>&#x000A;          <span class="s">"The date may be incorrect and lead to undefined behavior</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;&#x000A;  <span class="n">initializeConfigUtil</span><span class="p">();</span>&#x000A;&#x000A;  <span class="n">pClientHandle</span> <span class="o">=</span> <span class="n">mqtt_init_client</span><span class="p">(</span><span class="o">&amp;</span><span class="n">clientConfig</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">pClientHandle</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client handle initialization fail</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">while</span> <span class="p">(</span><span class="n">mqttConnected</span> <span class="o">==</span> <span class="nb">false</span> <span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>&#x000A;    <span class="c1">// Connect mqtt client to server&#x000A;</span>    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">mqtt_connect</span><span class="p">(</span><span class="n">pClientHandle</span><span class="p">,</span>&#x000A;        <span class="n">SERVER_ADDR</span><span class="p">,</span> <span class="mi">8883</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client connect to server fail - %d</span><span class="se">\n</span><span class="s"> "</span><span class="p">,</span><span class="n">result</span><span class="p">);</span>&#x000A;      <span class="k">continue</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">mqttConnected</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">bool</span> <span class="n">mqttSubscribe</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;&#x000A;  <span class="c1">// Subscribe to topic of interest&#x000A;</span>  <span class="k">while</span> <span class="p">(</span><span class="n">mqttSubscribe</span> <span class="o">==</span> <span class="nb">false</span> <span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>&#x000A;    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">mqtt_subscribe</span><span class="p">(</span><span class="n">pClientHandle</span><span class="p">,</span>&#x000A;        <span class="n">ACTION_TOPIC</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client subscribe to topic \&#x000A;          failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="k">continue</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">mqttSubscribe</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"mqtt client Subscribed to the topic \&#x000A;        successfully</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;&#x000A;    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>&#x000A;    <span class="n">bool</span> <span class="n">tempFlag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;&#x000A;    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// Publish message to ARTIK cloud every 10s&#x000A;</span>      <span class="c1">// Publish ADC port readings&#x000A;</span>      <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">600</span><span class="p">];</span>&#x000A;      <span class="n">bool</span> <span class="n">adcFlag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;      <span class="n">strcpy</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">"{</span><span class="se">\"</span><span class="s">ADC</span><span class="se">\"</span><span class="s">:{"</span><span class="p">);</span>&#x000A;      <span class="kt">int</span> <span class="n">fd</span><span class="p">;</span>&#x000A;      <span class="k">struct</span> <span class="n">adc_msg_s</span> <span class="n">samples</span><span class="p">[</span><span class="n">ADC_MAX_SAMPLES</span><span class="p">];</span>&#x000A;      <span class="kt">ssize_t</span> <span class="n">nbytes</span><span class="p">;</span>&#x000A;&#x000A;      <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">"/dev/adc0"</span><span class="p">,</span> <span class="n">O_RDONLY</span><span class="p">);</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">fd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"fd open failed: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">errno</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;&#x000A;      <span class="n">ret</span> <span class="o">=</span> <span class="n">ioctl</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">ANIOC_TRIGGER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"ioctl failed: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">errno</span><span class="p">);</span>&#x000A;        <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;&#x000A;      <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//wait after trigger before reading samples&#x000A;</span>&#x000A;      <span class="n">nbytes</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">samples</span><span class="p">));</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">nbytes</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">errno</span> <span class="o">!=</span> <span class="n">EINTR</span><span class="p">)</span>&#x000A;        <span class="p">{</span>&#x000A;          <span class="n">printf</span><span class="p">(</span><span class="s">"fd read failed: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">errno</span><span class="p">);</span>&#x000A;          <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A;        <span class="p">}</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nbytes</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"No data read, Ignoring</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="kt">int</span> <span class="n">nsamples</span> <span class="o">=</span> <span class="n">nbytes</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">adc_msg_s</span><span class="p">);</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">nsamples</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">adc_msg_s</span><span class="p">)</span> <span class="o">!=</span> <span class="n">nbytes</span><span class="p">)</span>&#x000A;        <span class="p">{</span>&#x000A;          <span class="n">printf</span><span class="p">(</span><span class="s">"read size=%ld is not a multiple of sample size=%d, Ignoring</span><span class="se">\n</span><span class="s">"</span><span class="p">,(</span><span class="kt">long</span><span class="p">)</span><span class="n">nbytes</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">adc_msg_s</span><span class="p">));</span>&#x000A;        <span class="p">}</span>&#x000A;        <span class="k">else</span>&#x000A;        <span class="p">{</span>&#x000A;          <span class="n">printf</span><span class="p">(</span><span class="s">"ADC Sample:</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;          <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>&#x000A;          <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nsamples</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>&#x000A;          <span class="p">{</span>&#x000A;            <span class="n">printf</span><span class="p">(</span><span class="s">"%d: channel: %d, value: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">am_channel</span><span class="p">,</span> <span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">am_data</span><span class="p">);</span>&#x000A;            <span class="k">if</span> <span class="p">(</span><span class="n">adcFlag</span><span class="p">)</span>&#x000A;              <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">","</span><span class="p">);</span>&#x000A;            <span class="kt">char</span> <span class="n">tempBuf</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>&#x000A;            <span class="n">sprintf</span><span class="p">(</span><span class="n">tempBuf</span><span class="p">,</span><span class="s">"</span><span class="se">\"</span><span class="s">Channel%d</span><span class="se">\"</span><span class="s">:%d"</span><span class="p">,</span><span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">am_channel</span><span class="p">,</span> <span class="n">samples</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">am_data</span><span class="p">);</span>&#x000A;            <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">tempBuf</span><span class="p">);</span>&#x000A;            <span class="n">adcFlag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;          <span class="p">}</span>&#x000A;        <span class="p">}</span>&#x000A;      <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">"},"</span><span class="p">);</span>&#x000A;&#x000A;      <span class="c1">// Publish GPIO port readings&#x000A;</span>&#x000A;      <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">"</span><span class="se">\"</span><span class="s">GPIO</span><span class="se">\"</span><span class="s">:{"</span><span class="p">);</span>&#x000A;      <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>&#x000A;      <span class="k">for</span> <span class="p">(</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">37</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">55</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">"</span><span class="se">\"</span><span class="s">gpio"</span><span class="p">);</span>&#x000A;        <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>&#x000A;        <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span><span class="s">"%d</span><span class="se">\"</span><span class="s">:%d"</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">gpio_read</span><span class="p">(</span><span class="n">j</span><span class="p">));</span>&#x000A;        <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">buf</span><span class="p">);</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">!=</span> <span class="mi">55</span><span class="p">)</span>&#x000A;        <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">","</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="n">strcat</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">"}}"</span><span class="p">);</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">mqtt_publish</span><span class="p">(</span><span class="n">pClientHandle</span><span class="p">,</span> <span class="n">MESSAGE_TOPIC</span><span class="p">,</span> <span class="n">str</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">str</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Error: mqtt_publish() failed.</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">printf</span><span class="p">(</span><span class="s">"Published %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">str</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+            </div>
+            </div>
+            
+            </li>
+            <li>
+            
+            You'll also need to create the <code>wifi.h</code> header file like you did before, as well as a new header file that you'll call <code>keys.h</code> for the ARTIK Cloud security keys. 
+            
+            
+            
+            <p style="margin-left: 0px;"><strong style="display: inline-block; margin-right: 5px;"><font color="blue"></font> </strong>
+            
+              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mqtt-sub-wifi" aria-expanded="false" aria-controls="mqtt-sub-wifi">
+                wifi.h code
+              </a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mqtt-sub-key" aria-expanded="false" aria-controls="mqtt-sub-key">
+                keys.h code
+              </a>
+            
+            </p>
+            
+            
+            <div class="collapse" id="mqtt-sub-wifi">
+            <div class="boxed">
+              
+            <h3 id="wific-code">wifi.c code</h3>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98</pre></td><td class="code"><pre>&#x000A;<span class="cp">#include &lt;net/if.h&gt;&#x000A;#include &lt;apps/netutils/wifi/slsi_wifi_api.h&gt;&#x000A;</span>&#x000A;<span class="c1">// WIFi&#x000A;</span><span class="cp">#define STATE_DISCONNECTED      0&#x000A;#define STATE_CONNECTED       1&#x000A;</span>&#x000A;<span class="cp">#define SLSI_WIFI_SECURITY_OPEN   "open"&#x000A;#define SLSI_WIFI_SECURITY_WPA2_AES "wpa2_aes"&#x000A;</span>&#x000A;<span class="cp">#define SSID "hotspot" //FIX&#x000A;#define PSK  "12345672" //FIX&#x000A;</span>&#x000A;<span class="n">slsi_security_config_t</span> <span class="o">*</span><span class="n">getSecurityConfig</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">sec_type</span><span class="p">,</span>&#x000A;    <span class="kt">char</span> <span class="o">*</span><span class="n">psk</span><span class="p">,</span> <span class="n">WiFi_InterFace_ID_t</span> <span class="n">mode</span><span class="p">);</span>&#x000A;&#x000A;<span class="k">static</span> <span class="kt">int</span> <span class="n">g_connection_state</span> <span class="o">=</span> <span class="n">STATE_DISCONNECTED</span><span class="p">;</span>&#x000A;<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">g_join_result</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;<span class="k">static</span> <span class="n">sem_t</span> <span class="n">g_sem_join</span><span class="p">;</span>&#x000A;&#x000A;<span class="cm">/**&#x000A; * Handler for network link up connection event&#x000A; *&#x000A; *   Sets the global connection state variable and the&#x000A; *   result of the network join request.&#x000A; */</span>&#x000A;<span class="kt">void</span> <span class="nf">networkLinkUpHandler</span><span class="p">(</span><span class="n">slsi_reason_t</span><span class="o">*</span> <span class="n">reason</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">g_connection_state</span> <span class="o">=</span> <span class="n">STATE_CONNECTED</span><span class="p">;</span>&#x000A;&#x000A;  <span class="n">g_join_result</span> <span class="o">=</span> <span class="n">reason</span><span class="o">-&gt;</span><span class="n">reason_code</span><span class="p">;</span>&#x000A;  <span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_sem_join</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="cm">/**&#x000A; * Handler for network link down connection event&#x000A; *&#x000A; *   Sets the global connection variable when the access&#x000A; *   point is disconnected from the network.&#x000A; */</span>&#x000A;<span class="kt">void</span> <span class="nf">networkLinkDownHandler</span><span class="p">(</span><span class="n">slsi_reason_t</span><span class="o">*</span> <span class="n">reason</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">g_connection_state</span> <span class="o">=</span> <span class="n">STATE_DISCONNECTED</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">reason</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Disconnected from network %s "</span>&#x000A;         <span class="s">"reason_code: %d %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">reason</span><span class="o">-&gt;</span><span class="n">bssid</span><span class="p">,</span>&#x000A;        <span class="n">reason</span><span class="o">-&gt;</span><span class="n">reason_code</span><span class="p">,</span>&#x000A;        <span class="n">reason</span><span class="o">-&gt;</span><span class="n">locally_generated</span> <span class="o">?</span>&#x000A;            <span class="s">"(locally_generated)"</span><span class="o">:</span> <span class="s">""</span><span class="p">);</span>&#x000A;  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"Disconnected from network</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="cm">/**&#x000A; * Starts the Wi-Fi interface and request connection to the&#x000A; * specified network&#x000A; *&#x000A; *   Return: Completed successfully or failed&#x000A; *&#x000A; *   Starts the Wi-Fi interface in Station mode and requests&#x000A; *   to join the specified network.&#x000A; */</span>&#x000A;<span class="kt">int8_t</span> <span class="nf">start_wifi_interface</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span> <span class="n">WiFiRegisterLinkCallback</span><span class="p">(</span><span class="o">&amp;</span><span class="n">networkLinkUpHandler</span><span class="p">,</span>&#x000A;      <span class="o">&amp;</span><span class="n">networkLinkDownHandler</span><span class="p">)</span> <span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="n">SLSI_STATUS_ERROR</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span> <span class="n">WiFiStart</span><span class="p">(</span><span class="n">SLSI_WIFI_STATION_IF</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">==</span>&#x000A;      <span class="n">SLSI_STATUS_ERROR</span> <span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="n">SLSI_STATUS_ERROR</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_sem_join</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">slsi_security_config_t</span> <span class="o">*</span><span class="n">security_config</span> <span class="o">=</span>&#x000A;      <span class="n">getSecurityConfig</span><span class="p">(</span><span class="n">SLSI_WIFI_SECURITY_WPA2_AES</span><span class="p">,</span>&#x000A;        <span class="n">PSK</span><span class="p">,</span> <span class="n">SLSI_WIFI_STATION_IF</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span> <span class="n">WiFiNetworkJoin</span><span class="p">((</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">SSID</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">SSID</span><span class="p">),</span>&#x000A;      <span class="nb">NULL</span><span class="p">,</span> <span class="n">security_config</span><span class="p">)</span> <span class="o">==</span> <span class="n">SLSI_STATUS_ERROR</span> <span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="n">SLSI_STATUS_ERROR</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">sem_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_sem_join</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">if</span><span class="p">(</span> <span class="n">g_join_result</span> <span class="p">)</span> <span class="p">{</span>&#x000A;     <span class="k">return</span> <span class="n">SLSI_STATUS_ERROR</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">free</span><span class="p">(</span><span class="n">security_config</span><span class="p">);</span>&#x000A;  <span class="n">sem_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">g_sem_join</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">return</span> <span class="n">SLSI_STATUS_SUCCESS</span><span class="p">;</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            </div>
+            </div>
+            
+            
+            <div class="collapse" id="mqtt-sub-key">
+            <div class="boxed">
+              
+            <h3 id="keysh-code">keys.h code</h3>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108&#x000A;109&#x000A;110&#x000A;111&#x000A;112&#x000A;113&#x000A;114&#x000A;115&#x000A;116&#x000A;117&#x000A;118&#x000A;119&#x000A;120&#x000A;121&#x000A;122&#x000A;123&#x000A;124&#x000A;125&#x000A;126&#x000A;127&#x000A;128&#x000A;129&#x000A;130&#x000A;131&#x000A;132&#x000A;133&#x000A;134&#x000A;135&#x000A;136&#x000A;137&#x000A;138&#x000A;139&#x000A;140&#x000A;141&#x000A;142&#x000A;143&#x000A;144&#x000A;145&#x000A;146&#x000A;147&#x000A;148&#x000A;149&#x000A;150&#x000A;151&#x000A;152&#x000A;153&#x000A;154&#x000A;155&#x000A;156&#x000A;157&#x000A;158&#x000A;159&#x000A;160&#x000A;161&#x000A;162&#x000A;163&#x000A;164&#x000A;165&#x000A;166&#x000A;167&#x000A;168&#x000A;169&#x000A;170&#x000A;171&#x000A;172&#x000A;173&#x000A;174</pre></td><td class="code"><pre><span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">mqtt_ca_crt_rsa</span><span class="p">[]</span> <span class="o">=</span>&#x000A;        <span class="s">"-----BEGIN CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MIIGazCCBVOgAwIBAgIQUQ7MqdQi65jhxr9oCRZ2jDANBgkqhkiG9w0BAQsFADB+</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAd</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVj</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"IENsYXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MB4XDTE2MDMxNjAwMDAwMFoX</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"DTE4MDMxNTIzNTk1OVowczELMAkGA1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3Ju</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"aWExETAPBgNVBAcMCFNhbiBKb3NlMSQwIgYDVQQKDBtTYW1zdW5nIFNlbWljb25k</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"dWN0b3IsIEluYy4xFjAUBgNVBAMMDSouYXJ0aWsuY2xvdWQwggEiMA0GCSqGSIb3</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"DQEBAQUAA4IBDwAwggEKAoIBAQDYITWk11g32FfyVoAZ1+IZoXApT0jtKJ8eQdrq</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"5WM6b03NzAWkPtPGAaQCr06mbz6qyVCDOOUPdTN9NSOXtpM9AzKts0GThgdAfN1f</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"zjuL8BE6uDwowD4TIpxeHTeh3iQrqqNQi4fHr4X5BYib6RH0Fk8XY8zydGXY/9lP</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BPB7e81eaVog7bno7SAxweR+nwseMXkMvxPuZeFekdwZ0SqWbCbZYU4dERalocOQ</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"yf1lqRj//9VU2Uh8lvUgAbD3foz9WIA62kQ+G+JWQVOnPJwuak93YXYmKBusVIE2</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"95H4FIYZThaXt7AbUd9jkvEbhaxXkAxmmt6+qX0stOiqYf3hAgMBAAGjggLuMIIC</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"6jAlBgNVHREEHjAcgg0qLmFydGlrLmNsb3VkggthcnRpay5jbG91ZDAJBgNVHRME</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"AjAAMA4GA1UdDwEB/wQEAwIFoDArBgNVHR8EJDAiMCCgHqAchhpodHRwOi8vc3Mu</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"c3ltY2IuY29tL3NzLmNybDBhBgNVHSAEWjBYMFYGBmeBDAECAjBMMCMGCCsGAQUF</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BwIBFhdodHRwczovL2Quc3ltY2IuY29tL2NwczAlBggrBgEFBQcCAjAZDBdodHRw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"czovL2Quc3ltY2IuY29tL3JwYTAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"AwIwHwYDVR0jBBgwFoAUX2DPYZBV34RDFIpgKrL1evRDGO8wVwYIKwYBBQUHAQEE</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"SzBJMB8GCCsGAQUFBzABhhNodHRwOi8vc3Muc3ltY2QuY29tMCYGCCsGAQUFBzAC</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"hhpodHRwOi8vc3Muc3ltY2IuY29tL3NzLmNydDCCAXsGCisGAQQB1nkCBAIEggFr</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BIIBZwFlAHUA3esdK3oNT6Ygi4GtgWhwfi6OnQHVXIiNPRHEzbbsvswAAAFTfSa4</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"SAAABAMARjBEAiBWbuO1LGslxrERGTsZRmf0RCP5hzFWJi2q+9UsCZtOPgIgC/fN</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"rL3gLCD5WQw+/wRAIp2QsziMd83xyJ/jRiWSoaAAdQCkuQmQtBhYFIe7E6LMZ3AK</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"PDWYBPkb37jjd80OyA3cEAAAAVN9JrhoAAAEAwBGMEQCICcUbZYNecAWGf9XCWmO</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"FziyFts+Z2V6FfJ+/bgJntslAiA67Az9obN6maIfa11IirC5ZpSII+X8aYXXrkdh</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"v2r3DQB1AGj2mPgfZIK+OozuuSgdTPxxUV1nk9RE0QpnrLtPT/vEAAABU30muGgA</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"AAQDAEYwRAIgbEwTAAl72dv0e+GLxC1jv34DIk/K+0iFSLywt1D/GSQCIEt39UVk</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"TSoz4FkyS61yGRE9qmSkPMpUKre3WTa+ZcORMA0GCSqGSIb3DQEBCwUAA4IBAQBA</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"icvCtJDGWtpLonENFIZwl7JnDACA2jxdIKZYoGHgyDwxwln9Lg78bcRvOp0vZ168</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"kwvvu0DXzZmtnYLU92bxQfcfQpJOpii88AMX2iyk7uFx4YI9HYbUXZph9uwt77b4</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"PyyJONz1V+wR0YNQ5Ukcg1S4nZy1XgrI5tq2LVd0pPgAbA0O6/3RRjPcF1vkIKuy</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"ppmVqcaoiNij18ALeNEKkblBzGq0zr8csdvzKQ/FZXEhT3gJY/Gv5H6pA+8ZEsMQ</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"+0BGiYKkbI2IHY47dWXH394iSsWAZq73AIwo+Xi76FI1cG3NPECHD92w1iTBS8ej</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"uW7KrUwGg+cPXREDasEb</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"-----END CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"-----BEGIN CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MIIFODCCBCCgAwIBAgIQUT+5dDhwtzRAQY0wkwaZ/zANBgkqhkiG9w0BAQsFADCB</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"yjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQL</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"ExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJp</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"U2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxW</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"ZXJpU2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"aG9yaXR5IC0gRzUwHhcNMTMxMDMxMDAwMDAwWhcNMjMxMDMwMjM1OTU5WjB+MQsw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"CQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNV</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVjIENs</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"YXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MIIBIjANBgkqhkiG9w0BAQEFAAOC</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"AQ8AMIIBCgKCAQEAstgFyhx0LbUXVjnFSlIJluhL2AzxaJ+aQihiw6UwU35VEYJb</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"A3oNL+F5BMm0lncZgQGUWfm893qZJ4Itt4PdWid/sgN6nFMl6UgfRk/InSn4vnlW</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"9vf92Tpo2otLgjNBEsPIPMzWlnqEIRoiBAMnF4scaGGTDw5RgDMdtLXO637QYqzu</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"s3sBdO9pNevK1T2p7peYyo2qRA4lmUoVlqTObQJUHypqJuIGOmNIrLRM0XWTUP8T</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"L9ba4cYY9Z/JJV3zADreJk20KQnNDz0jbxZKgRb78oMQw7jW2FUyPfG9D72MUpVK</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Fpd6UiFjdS8W+cRmvvW1Cdj/JwDNRHxvSz+w9wIDAQABo4IBYzCCAV8wEgYDVR0T</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"AQH/BAgwBgEB/wIBADAwBgNVHR8EKTAnMCWgI6Ahhh9odHRwOi8vczEuc3ltY2Iu</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Y29tL3BjYTMtZzUuY3JsMA4GA1UdDwEB/wQEAwIBBjAvBggrBgEFBQcBAQQjMCEw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"HwYIKwYBBQUHMAGGE2h0dHA6Ly9zMi5zeW1jYi5jb20wawYDVR0gBGQwYjBgBgpg</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"hkgBhvhFAQc2MFIwJgYIKwYBBQUHAgEWGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20v</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Y3BzMCgGCCsGAQUFBwICMBwaGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20vcnBhMCkG</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"A1UdEQQiMCCkHjAcMRowGAYDVQQDExFTeW1hbnRlY1BLSS0xLTUzNDAdBgNVHQ4E</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"FgQUX2DPYZBV34RDFIpgKrL1evRDGO8wHwYDVR0jBBgwFoAUf9Nlp8Ld7LvwMAnz</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Qzn6Aq8zMTMwDQYJKoZIhvcNAQELBQADggEBAF6UVkndji1l9cE2UbYD49qecxny</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"H1mrWH5sJgUs+oHXXCMXIiw3k/eG7IXmsKP9H+IyqEVv4dn7ua/ScKAyQmW/hP4W</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Ko8/xabWo5N9Q+l0IZE1KPRj6S7t9/Vcf0uatSDpCr3gRRAMFJSaXaXjS5HoJJtG</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"QGX0InLNmfiIEfXzf+YzguaoxX7+0AjiJVgIcWjmzaLmFN5OUiQt/eV5E1PnXi8t</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"TRttQBVSK/eHiXgSgW7ZTaoteNTCLD0IX4eRnh8OsN4wUmSGiaqdZpwOdgyA8nTY</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"Kvi4Os7X1g8RvmurFPW9QaAiY4nxug9vKWNmLT+sjHLF+8fk1A/yO0+MKcc=</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"-----END CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"-----BEGIN CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBh</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"QTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVT</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"b20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsB</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"CSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7P</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"T19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAO</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"BgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbR</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"TLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"DQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/Esr</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"hMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJF</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"PnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0ls</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"YSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQk</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;        <span class="s">"-----END CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span><span class="p">;</span>&#x000A;&#x000A;&#x000A;<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">mqtt_cli_crt_rsa</span><span class="p">[]</span> <span class="o">=</span>&#x000A;    <span class="s">"-----BEGIN CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"MIIDNzCCAh+gAwIBAgIBAjANBgkqhkiG9w0BAQUFADA7MQswCQYDVQQGEwJOTDER</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"MA8GA1UEChMIUG9sYXJTU0wxGTAXBgNVBAMTEFBvbGFyU1NMIFRlc3QgQ0EwHhcN</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"MTEwMjEyMTQ0NDA2WhcNMjEwMjEyMTQ0NDA2WjA0MQswCQYDVQQGEwJOTDERMA8G</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"A1UEChMIUG9sYXJTU0wxEjAQBgNVBAMTCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcN</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"AQEBBQADggEPADCCAQoCggEBAMFNo93nzR3RBNdJcriZrA545Do8Ss86ExbQWuTN</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"owCIp+4ea5anUrSQ7y1yej4kmvy2NKwk9XfgJmSMnLAofaHa6ozmyRyWvP7BBFKz</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"NtSj+uGxdtiQwWG0ZlI2oiZTqqt0Xgd9GYLbKtgfoNkNHC1JZvdbJXNG6AuKT2kM</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"tQCQ4dqCEGZ9rlQri2V5kaHiYcPNQEkI7mgM8YuG0ka/0LiqEQMef1aoGh5EGA8P</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"hYvai0Re4hjGYi/HZo36Xdh98yeJKQHFkA4/J/EwyEoO79bex8cna8cFPXrEAjya</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"HT4P6DSYW8tzS1KW2BGiLICIaTla0w+w3lkvEcf36hIBMJcCAwEAAaNNMEswCQYD</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"VR0TBAIwADAdBgNVHQ4EFgQUpQXoZLjc32APUBJNYKhkr02LQ5MwHwYDVR0jBBgw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"FoAUtFrkpbPe0lL2udWmlQ/rPrzH/f8wDQYJKoZIhvcNAQEFBQADggEBAJxnXClY</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"oHkbp70cqBrsGXLybA74czbO5RdLEgFs7rHVS9r+c293luS/KdliLScZqAzYVylw</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"UfRWvKMoWhHYKp3dEIS4xTXk6/5zXxhv9Rw8SGc8qn6vITHk1S1mPevtekgasY5Y</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"iWQuM3h4YVlRH3HHEMAD1TnAexfXHHDFQGe+Bd1iAbz1/sH9H8l4StwX6egvTK3M</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"wXRwkKkvjKaEDA9ATbZx0mI8LGsxSuCqe9r9dyjmttd47J1p1Rulz3CLzaRcVIuS</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"RRQfaD8neM9c1S/iJ/amTVqJxA1KOdOS5780WhPfSArA+g4qAmSjelc3p4wWpha8</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"zhuYwjVuX6JHG0c=</span><span class="se">\r\n</span><span class="s">"</span> <span class="s">"-----END CERTIFICATE-----</span><span class="se">\r\n</span><span class="s">"</span><span class="p">;</span>&#x000A;&#x000A;<span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="n">mqtt_cli_key_rsa</span><span class="p">[]</span> <span class="o">=</span>&#x000A;    <span class="s">"-----BEGIN RSA PRIVATE KEY-----</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"MIIEpAIBAAKCAQEAwU2j3efNHdEE10lyuJmsDnjkOjxKzzoTFtBa5M2jAIin7h5r</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"lqdStJDvLXJ6PiSa/LY0rCT1d+AmZIycsCh9odrqjObJHJa8/sEEUrM21KP64bF2</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"2JDBYbRmUjaiJlOqq3ReB30Zgtsq2B+g2Q0cLUlm91slc0boC4pPaQy1AJDh2oIQ</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"Zn2uVCuLZXmRoeJhw81ASQjuaAzxi4bSRr/QuKoRAx5/VqgaHkQYDw+Fi9qLRF7i</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"GMZiL8dmjfpd2H3zJ4kpAcWQDj8n8TDISg7v1t7HxydrxwU9esQCPJodPg/oNJhb</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"y3NLUpbYEaIsgIhpOVrTD7DeWS8Rx/fqEgEwlwIDAQABAoIBAQCXR0S8EIHFGORZ</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"++AtOg6eENxD+xVs0f1IeGz57Tjo3QnXX7VBZNdj+p1ECvhCE/G7XnkgU5hLZX+G</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"Z0jkz/tqJOI0vRSdLBbipHnWouyBQ4e/A1yIJdlBtqXxJ1KE/ituHRbNc4j4kL8Z</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"/r6pvwnTI0PSx2Eqs048YdS92LT6qAv4flbNDxMn2uY7s4ycS4Q8w1JXnCeaAnYm</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"WYI5wxO+bvRELR2Mcz5DmVnL8jRyml6l6582bSv5oufReFIbyPZbQWlXgYnpu6He</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"GTc7E1zKYQGG/9+DQUl/1vQuCPqQwny0tQoX2w5tdYpdMdVm+zkLtbajzdTviJJa</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"TWzL6lt5AoGBAN86+SVeJDcmQJcv4Eq6UhtRr4QGMiQMz0Sod6ettYxYzMgxtw28</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"CIrgpozCc+UaZJLo7UxvC6an85r1b2nKPCLQFaggJ0H4Q0J/sZOhBIXaoBzWxveK</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"nupceKdVxGsFi8CDy86DBfiyFivfBj+47BbaQzPBj7C4rK7UlLjab2rDAoGBAN2u</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"AM2gchoFiu4v1HFL8D7lweEpi6ZnMJjnEu/dEgGQJFjwdpLnPbsj4c75odQ4Gz8g</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"sw9lao9VVzbusoRE/JGI4aTdO0pATXyG7eG1Qu+5Yc1YGXcCrliA2xM9xx+d7f+s</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"mPzN+WIEg5GJDYZDjAzHG5BNvi/FfM1C9dOtjv2dAoGAF0t5KmwbjWHBhcVqO4Ic</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"BVvN3BIlc1ue2YRXEDlxY5b0r8N4XceMgKmW18OHApZxfl8uPDauWZLXOgl4uepv</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"whZC3EuWrSyyICNhLY21Ah7hbIEBPF3L3ZsOwC+UErL+dXWLdB56Jgy3gZaBeW7b</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"vDrEnocJbqCm7IukhXHOBK8CgYEAwqdHB0hqyNSzIOGY7v9abzB6pUdA3BZiQvEs</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"3LjHVd4HPJ2x0N8CgrBIWOE0q8+0hSMmeE96WW/7jD3fPWwCR5zlXknxBQsfv0gP</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"3BC5PR0Qdypz+d+9zfMf625kyit4T/hzwhDveZUzHnk1Cf+IG7Q+TOEnLnWAWBED</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"ISOWmrUCgYAFEmRxgwAc/u+D6t0syCwAYh6POtscq9Y0i9GyWk89NzgC4NdwwbBH</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"4AgahOxIxXx2gxJnq3yfkJfIjwf0s2DyP0kY2y6Ua1OeomPeY9mrIS4tCuDQ6LrE</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"TB6l9VGoxJL4fyHnZb8L5gGvnB1bbD8cL6YPaDiOhcRseC9vBiEuVg==</span><span class="se">\r\n</span><span class="s">"</span>&#x000A;    <span class="s">"-----END RSA PRIVATE KEY-----</span><span class="se">\r\n</span><span class="s">"</span><span class="p">;</span>&#x000A;&#x000A;&#x000A;&#x000A;<span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">mqtt_get_ca_certificate</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">mqtt_ca_crt_rsa</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">mqtt_get_client_certificate</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">mqtt_cli_crt_rsa</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="nf">mqtt_get_client_key</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="p">(</span><span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">mqtt_cli_key_rsa</span><span class="p">;</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">int</span> <span class="nf">mqtt_get_ca_certificate_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mqtt_ca_crt_rsa</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">int</span> <span class="nf">mqtt_get_client_certificate_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mqtt_cli_crt_rsa</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">int</span> <span class="nf">mqtt_get_client_key_size</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">mqtt_cli_key_rsa</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+            </div>
+            </div>
+            
+            </li>
+            <li>
+            
+            
+            
+            From your open ARTIK Cloud "Device Info" page, copy and paste these codes into your <code>main.c</code> code:  
+            <ul>
+            <li>
+            Device ID --  to the <code>DEVICE_ID</code>,  <code>ACTION_TOPIC</code>, and <code>MESSAGE_TOPIC</code>  fields
+            </li>
+            <li>
+            Device Token -- to the <code>DEVICE_TOKEN</code> field.
+            </li>
+            </ul>
+            
+            Replace only the highlighted fields.
+            
+            <pre>&#x000A;#define DEVICE_ID "<font color="blue">_your_DEVICE_ID_goes_here_</font>"  &#x000A;#define DEVICE_TOKEN "<font color="blue">_your_DEVICE_TOKEN_goes_here_</font>"&#x000A;#define ACTION_TOPIC "/v1.1/actions/<font color="blue">_your_DEVICE_ID_goes_here_</font>"&#x000A;#define MESSAGE_TOPIC "/v1.1/messages/<font color="blue">_your_DEVICE_ID_goes_here_</font>"</pre>
+            
+            </li>
+            <li>
+            
+            
+            Change the Wi-Fi credentials in <code>wifi.h</code> as you did in the previous tutorials.
+            </li>
+            <li>
+            Flash-load the code to your ARTIK 05X board as always. 
+            </li>
+            </ol>
+            
+            <p>You're ready to go!</p>
+            
+            <h2 id="running-the-a053-all-in-one-project">Running the A053 All-in-One Project</h2>
+            
+            <p>Any time you apply power, your board will:</p>
+            
+            <ul>
+              <li>Retrieve the date using Network Time Protocol (<code>ntp</code>)</li>
+              <li>Publish to ARTIK Cloud all A053 GPIO and ADC input information</li>
+              <li>Receive Actions from ARTIK Cloud to the A053 to control GPIO and PWM outputs.</li>
+            </ul>
+            
+            <p>You will need a functioning Wi-Fi network for this to operate correctly, of course. But you won't need a terminal connection!</p>
+            
+            <h3 id="data-published">Data published</h3>
+            
+            <p>The 053 board sends the readings of each of the GPIO pins and the ADC values to the ARTIK Cloud every 10s, in an array and in a single payload.</p>
+            
+            <p>Here is an example of the full JSON format payload sent to ARTIK Cloud:</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8</pre></td><td class="code"><pre><span class="p">{</span><span class="s">"ADC"</span><span class="o">:</span><span class="p">{</span>&#x000A;   <span class="s">"Channel0"</span><span class="o">:</span><span class="mi">14</span><span class="p">,</span><span class="s">"Channel1"</span><span class="o">:</span><span class="mi">16</span><span class="p">,</span><span class="s">"Channel2"</span><span class="o">:</span><span class="mi">16</span><span class="p">,</span><span class="s">"Channel3"</span><span class="o">:</span><span class="mi">16</span>&#x000A; <span class="p">},</span>&#x000A; <span class="s">"GPIO"</span><span class="p">{</span>&#x000A;    <span class="s">"gpio37"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio38"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio39"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio40"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio41"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio42"</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s">"gpio43"</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s">"gpio44"</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s">"gpio45"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio46"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="s">"gpio47"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio48"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio49"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio50"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio51"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio52"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio53"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio54"</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s">"gpio55"</span><span class="o">:</span><span class="mi">0</span>&#x000A; <span class="p">}</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <p>You can shorten this to send just the items you need to update on that particular transmission,  send multiple payloads, send at different intervals, etc. just by modifying the code.</p>
+            
+            <p>On the ARTIK Cloud side, click on <strong>+/- CHARTS</strong> to display only the GPIO pins and ADC channels of your choosing.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\mqtt-cloud-chart-filter.jpg"></p>
+            
+            <p>The resulting charts will provide all the information you need. You can then use ARTIK Cloud Rules to act on that data, possibly including sending back an Action to your A053 device or any other device you control through ARTIK Cloud.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\mqtt-cloud-chart-gpios.jpg"></p>
+            
+            <p><strong>Board switches.</strong> <code>gpio42</code> reflects the state of SW702; <code>gpio44</code> reflects the state of SW703. Push and hold a switch, then wait for the next 10s cycle on ARTIK Cloud to see the state change.</p>
+            
+            <h3 id="actions">Actions</h3>
+            <p>The code subscribes to Actions to toggle  a GPIO pin or activate a PWM pin. You just need to specify the Action in the manifest. For example:</p>
+            
+            <p><code>toggleGpio31  </code></p>
+            
+            <p><code>pwm0Freq20Duty80</code></p>
+            
+            <p><strong>GPIO output.</strong> Toggle GPIO pins using the format <code>toggleGpioXX</code></p>
+            
+            <p>Our code is set up to drive <code>gpio31</code>, <code>32</code>, <code>45</code>, and <code>49</code>. You can easily change this in the code. <code>gpio45/49</code> toggle the  Red and Blue LEDs on the A053 board.</p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\mqtt-cloud-choose-action.jpg"></p>
+            
+            <p>To test:</p>
+            
+            <ol>
+              <li>On the My ARTIK Cloud user site, go to <strong>Rules</strong> and click <strong>+ NEW RULE</strong>.</li>
+              <li>For "Select a field on a device", you could choose any GPIO pin. Consider <code>gpio42</code> or <code>gpio44</code> since they are activated by convenient board switches.</li>
+              <li>For the Action to send, pick <code>gpio45</code> or <code>gpio49</code>.</li>
+              <li>Back on the <strong>Rules</strong> page, just hover over the action and click <strong>TEST</strong> when you see it.</li>
+            </ol>
+            
+            <p>Did it work? Try holding down the switch you chose and see if that will also (after the 10s cycle) toggle the output GPIO pin.</p>
+            
+            <p><strong>PWM output.</strong> You can set up a simple LED circuit 
+            to show the output from the PWM pin, set with the frequency and duty mentioned in the Action, using the format <code>pwmXFreqXXXXDutyXXXX</code></p>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\mqtt-cloud-board-leds.jpg"></p>
+            
+            <p>To test: Set up a Rule similarly to what you did for the GPIO pins.</p>
+            
+            <h2 id="extra-credit">Extra Credit</h2>
+            
+            <p>A primary advantage of using MQTT instead of Websockets is the savings in not only bandwidth but also in code overhead.</p>
+            
+            <p>When you set up your project, you had to choose the "extra" configuration to get MQTT. But you didn't really need all the other baggage that went along with it.</p>
+            
+            <p>Once your code is working, try your hand at <a href="..\..\developer-guide\artik-ide\create-sdk.html">creating a custom SDK</a> – un-select the Websocket module, rebuild your project using the new SDK, and see how much code space you've freed up!</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-01-11 20:07:07 +0000'>Jan 11 2018,  8:07 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="mqtt-publisher.html">Prev: MQTT Publisher</a></li>
+              <li class='next-page'><a href="i2c.html">Next: I2C Interface</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2128 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='kernel-gpio.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Pin Programming' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Pin Programming' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Pin Programming</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_developer-guide documentation_developer-guide_gpio documentation_developer-guide_gpio_kernel-gpio' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="true">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="kernel-gpio.html" data-name="pin-programming" aria-expanded="false" class="active">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="pin-programming">Pin Programming</h1>
+            
+            <p>ARTIK 520, 530, 710, and 1020 boards provide many programmable signal pins. Some of these are General-Purpose Input/Output (GPIO) pins, while others are fixed-purpose pins for analog input, pulse-width-modulated output, and serialized communication.</p>
+            
+            <p>You can configure whether GPIO pins are input or output,  driven or not driven, etc.  either through the Linux<sup>®</sup> <code>sysfs</code> interface or directly at the ARTIK hardware level. Either way, kernel-level drivers ultimately access the hardware pin MODE and DATA ports directly.</p>
+            
+            <p>If your project design allows you to make custom improvements to reduce GPIO handling times, you will minimize CPU time spent on those tasks and see significant improvements in system efficiency. Fixed-purpose pins can also be programmed at the kernel level, but doing so may not offer any advantage over the <code>sysfs</code> method.</p>
+            
+            <p>Here we provide the hardware register-level information you need to reach the I/O ports the same way the kernel code does, as well as the corresponding information for using the <code>sysfs</code> approach.</p>
+            
+            <h2 id="digital-io-interface">Digital I/O Interface</h2>
+            
+            <p>Different pins on each board type are available for programming as inputs or outputs. On an ARTIK 520 developer board, for example, pins 2-4 and 7-13 of J26-27 are GPIO and can be used as digital input or output. To use a particular GPIO, you would first set its direction (mode) as either input or output, and then read from or write to it as needed.</p>
+            
+            <p>The <a href="..\..\artik\tutorials\blink-an-led.html">Blink an LED</a> and <a href="..\..\artik\tutorials\read-a-button.html">Reading a Button</a> tutorials provided examples of the necessary programming for digital I/O pins.</p>
+            
+            <h3 id="which-way-to-go----kernel-or-sysfs">Which Way to Go – Kernel or <code>sysfs</code>?</h3>
+            
+            <p>CPU time used for handling GPIO pins affects the platform as a whole, so it may be worthwhile to write kernel-based drivers to optimize performance for a particular GPIO usage. For example, custom driver code might be able to set a group of related pins in a single write operation, instead of acting on each pin change individually.</p>
+            
+            <p>However, the standard Linux <code>sysfs</code> functionality (documented <a href="#gpio-control-through-sysfs">below</a>) is more than adequate for many applications. When starting a project: If using the Arduino IDE, use its built-in GPIO functions; if not. use <code>sysfs</code> calls. Only after you have the project debugged at that level should you introduce kernel-level efficiency improvements, which can sometimes cause unforeseen difficulties during development.</p>
+            
+            <h3 id="notes-on-gpio-pins">Notes on GPIO Pins</h3>
+            
+            <p>The ARTIK 520 and 1020 development boards provide external connectors (J24, J26, J27) to map ARTIK signals to an Arduino-friendly configuration. Accordingly, the J26-27 signals are numbered as a single run of 0 to 13 from left to right.</p>
+            
+            <p class="info">If you’ve looked at the ARTIK developer board schematics, you’ll notice that the pin numbers don’t match the ones in these articles. For this guide, we’ve chosen to show only the Arduino pin labeling convention.</p>
+            
+            <p>The ARTIK 530 and 710 boards provide access to an electrically similar signal set, but the Interface board connector layout does not accept Arduino shields.</p>
+            
+            <h3 id="reserved-pins">Reserved Pins</h3>
+            
+            <p>The ARTIK modules themselves have numerous programmable signal pins. Some of these are brought out for GPIO or programmable pin use through pin headers on the development boards. Others are reserved, meaning that they are connected to other devices within the ARTIK module, extended exclusively to devices on the development board, or not connected. Refer to the <a href="https://developer.artik.io/documentation/downloads.html#schematics">schematics</a> for signal usage details.</p>
+            
+            <p>In the tables that follow, pins that are reserved for internal use are listed as (input) or (output), meaning that their use and mode has already been pre-determined for system needs and must not be changed. Therefore, drivers that directly access ports must not overwrite critical settings – <strong>component damage</strong> could occur.</p>
+            
+            <p class="warning">Be careful with shared control registers when modifying kernel code.</p>
+            
+            <h3 id="active-level">Active Level</h3>
+            
+            <p>The general-purpose physical I/O pins provided by ARTIK are typical of those on many devices, in that each can be programmed dynamically to become either an input or a driven output.</p>
+            
+            <p>The output-capable pins are, by circuit design, considered active either when driving HIGH (Vcc) or when driving LOW (GND).  This designation is fixed and cannot be altered or reprogrammed.</p>
+            
+            <p>The "active" direction of driving is that to which, when the driver cell logic is programmed to 1, the pin circuitry drives strongly.</p>
+            
+            <ul>
+              <li>Vcc – in the case of "active HIGH"</li>
+              <li>GND – in the case of "active LOW".</li>
+            </ul>
+            
+            <p>When this same logic is programmed to 0, the circuitry simply stops driving. An internal resistor, possibly assisted by an external one, pulls the signal back to the opposite (inactive) state. Depending on the resistors chosen, the signal rise or fall time may not be as steep as during the driven phase.</p>
+            
+            <p>Note that the active high or low designation does not affect read-back data when a pin is set to input mode – the true signal state is always returned (never an inverted one).</p>
+            
+            <p class="info">All GPIO pins on ARTIK are active-HIGH unless otherwise stated. Other programmable pins operate as noted in the Datasheet.</p>
+            
+            <h3 id="v-tolerance">3.3V Tolerance</h3>
+            
+            <p>In one group of ARTIK 520 and 1020 programmable pins, those associated with port GPX0 / module names XEINT 0-6, the pins are 3.3V-tolerant. The ARTIK 530 and 710 modules have many such pins. Characteristics of these pins:</p>
+            
+            <ul>
+              <li>When programmed to drive an output, it will be only to 1.8V.</li>
+              <li>When programmed as inputs, external circuits can apply 3.3V without a requirement for intermediate buffers.</li>
+            </ul>
+            
+            <p>Refer to "Type B" pins in the ARTIK 520 or 1020 Datasheets, or search for "Characteristics GPIO" in the ARTIK 530 or 710  Datasheets, for additional details.</p>
+            
+            <p>All other programmable pins support operation at 1.8V only, or as noted in the Datasheet.</p>
+            
+            <h3 id="artik-530710-gpio-control-registers">ARTIK 530/710 GPIO Control Registers</h3>
+            
+            <p>The ARTIK 530/710 control register interface differs significantly from that of the ARTIK 520 and 1020 modules. Refer to the source code for detailed information.</p>
+            
+            <p>ARTIK 530/710 base address:</p>
+            
+            <ul>
+              <li>gpio0 = 0xC001A000</li>
+            </ul>
+            
+            <p><strong>GPIO Export Numbers</strong>. ARTIK 530/710 <code>export</code> GPIO numbers for Linux <code>sysfs</code> calls can be found in the <a href="gpio-mapping.html#artik-710-headers">GPIO Header Map</a> section. Read more on <code>sysfs</code> access <a href="#gpio-control-through-sysfs">here</a>.</p>
+            
+            <p class="info">The <a href="https://developer.artik.io/documentation/downloads.html#ds">ARTIK Hardware Datasheets</a> contain detailed mapping information in the pin listings sections.</p>
+            
+            <h3 id="artik-5201020-gpio-control-registers">ARTIK 520/1020 GPIO Control Registers</h3>
+            
+            <p>Internal registers control, and return status on, module hardware activities. The registers are accessed through addressable ports. There are several ports of interest for the programmable pins. The tables below provide programming information arranged by internal port grouping.</p>
+            
+            <p>ARTIK 520 and 1020 use different base I/O addresses for internal port access.  Even where they use similarly named bases such as <code>gpio0,</code> its address differs, as do the registers referenced from it. Look in the <code>gpio.h</code> file within each Linux code base for clarification.</p>
+            
+            <p>ARTIK 1020 base addresses:</p>
+            
+            <ul>
+              <li>gpio0 = 0x13400000</li>
+              <li>gpio3 = 0x14010000</li>
+            </ul>
+            
+            <p>ARTIK 520 base addresses:</p>
+            
+            <ul>
+              <li>gpio0 = 0x11400000</li>
+              <li>gpio1 = 0x11000000</li>
+            </ul>
+            
+            <p>[port address] = [base address] + [offset]<br>
+            where offsets are listed in table section headers below.</p>
+            
+            <p>To make use of this port information for each [port address] and bit that refer to a programmable digital I/O pin:</p>
+            
+            <ul>
+              <li>
+                <p>Set MODE at [port address] by writing the bit to 0=input or 1=output.</p>
+              </li>
+              <li>
+                <p>Set DATA at [port address + 0x1] by writing the bit to 0=low or 1=high, for active-high pins.</p>
+              </li>
+              <li>
+                <p>Read DATA at [port address + 0x1] by reading the bit, where 0=low, 1=high.</p>
+              </li>
+            </ul>
+            
+            <p class="info">The <a href="https://developer.artik.io/documentation/downloads.html#ds">ARTIK Hardware Datasheets</a> contain detailed mapping information in the pin listings sections.</p>
+            
+            <p><strong>GPIO Export Numbers</strong>. Table columns "A10 GPIO" and "A5 GPIO" are the <code>export</code> GPIO numbers for Linux <code>sysfs</code> calls; they are <strong>not</strong> involved when using direct (kernel-level) port access.</p>
+            
+            <p class="info">The A520/A1020 GPIO numbers are in the tables only for <code>sysfs</code> reference.</p>
+            
+            <p>You can find more on <code>sysfs</code> access <a href="#gpio-control-through-sysfs">here</a>.</p>
+            
+            <p><strong>Interface Mapping Differences</strong>.  Two external serial interfaces are accessed at different internal ports for the ARTIK 520 and 1020 boards. The external connector supports:</p>
+            
+            <ul>
+              <li>A serial UART interface on header pins TXD and RXD, accessed through ports
+                <ul>
+                  <li>GPA1[5:4] for ARTIK 520 (Xu3)</li>
+                  <li>GPA0[5:4] for ARTIK 1020 (Xu1)</li>
+                </ul>
+            
+                <p>The UART ports are discussed further <a href="#uart-interface">here</a>.</p>
+              </li>
+              <li>An I<sup>2</sup>C interface on header pins SCL and SDA, accessed through ports
+                <ul>
+                  <li>GPD0[3:2] for ARTIK 520 (xi2c7)</li>
+                  <li>GPB[3:2] for ARTIK 1020 (xi2c9)</li>
+                </ul>
+            
+                <p>The I<sup>2</sup>C ports are discussed further <a href="#isup2supc-interface">here</a>.</p>
+              </li>
+            </ul>
+            
+            <p><strong>GPX0</strong></p>
+            
+            <p>The GPX0 port has a single reserved signal, GPX0 bit 7, which is internally used for a USB status sense function by ARTIK 1020 (and not used at all by ARTIK 520).  Therefore, as long as a GPIO device driver leaves MODE bit 7 set as INPUT, it could set any remaining GPIO output pins with a single DATA write (as opposed to a read-modify-write cycle).</p>
+            
+            <p>For example, if XEINT_6:0 are all used as outputs, it is safe to set their values with a single port write, ignoring bit 7 (being an input, it will be unaffected by a data write).</p>
+            
+            <ul>
+              <li>ARTIK 1020 port address:  gpio0 + 0x300</li>
+              <li>ARTIK 520 port address: gpio1 + 0x300</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td>(input)</td>
+                  <td>DRD_VBUS_SENSE_0 (ARTIK 1020)</td>
+                  <td>–</td>
+                  <td>(USB VBus sense)</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td> </td>
+                  <td>XEINT_6</td>
+                  <td>J27 pin 10</td>
+                  <td>14</td>
+                  <td>127</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td> </td>
+                  <td>XEINT_5</td>
+                  <td>J27 pin 9</td>
+                  <td>13</td>
+                  <td>126</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td> </td>
+                  <td>XEINT_4</td>
+                  <td>J27 pin 8</td>
+                  <td>12</td>
+                  <td>125</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> </td>
+                  <td>XEINT_3</td>
+                  <td>J26 pin 7</td>
+                  <td>11</td>
+                  <td>124</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> </td>
+                  <td>XEINT_2</td>
+                  <td>J26 pin 4</td>
+                  <td>10</td>
+                  <td>123</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> </td>
+                  <td>XEINT_1</td>
+                  <td>J26 pin 3</td>
+                  <td>9</td>
+                  <td>122</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>XEINT_0</td>
+                  <td>J26 pin 2</td>
+                  <td>8</td>
+                  <td>121</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>GPX1</strong></p>
+            
+            <p>The GPX1 port has multiple reserved signals, with mixed input and output use. Therefore, use caution when setting output signaling on the GPIO pins; always use read-modify-write actions when changing the MODE or DATA port setting.</p>
+            
+            <ul>
+              <li>ARTIK 1020 port address:  gpio0 + 0x308</li>
+              <li>ARTIK 520 port address: gpio1 + 0x308</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td>(output)</td>
+                  <td>BT_REG_ON</td>
+                  <td>–</td>
+                  <td>power ctl</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td> </td>
+                  <td>XEINT_14</td>
+                  <td>J27 pin 13</td>
+                  <td>22</td>
+                  <td>135</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td> </td>
+                  <td>XEINT_13</td>
+                  <td>J27 pin 12</td>
+                  <td>21</td>
+                  <td>134</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>n/c</td>
+                  <td>XEINT_12</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>133</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>(output)</td>
+                  <td>XGPIO17/XT_INT163</td>
+                  <td>–</td>
+                  <td>chrg ckt</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>(input)</td>
+                  <td>V_ADP_SENSE</td>
+                  <td>–</td>
+                  <td>chrg ckt</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>n/c</td>
+                  <td>XEINT_9</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>XEINT_8</td>
+                  <td>J27 pin 11</td>
+                  <td>16</td>
+                  <td>129</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>GPA0</strong></p>
+            
+            <p>GPA0 allows access to the UART on ARTIK 1020.</p>
+            
+            <ul>
+              <li>ARTIK 1020 port address:  gpio3 + 0x00</li>
+              <li>ARTIK 520: Not used</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td> </td>
+                  <td>Xu1_RTS</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td> </td>
+                  <td>Xu1_CTS</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td> </td>
+                  <td>Xu1_TXD</td>
+                  <td>J26 pin 1</td>
+                  <td>176</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td> </td>
+                  <td>Xu1_RXD</td>
+                  <td>J26 pin 0</td>
+                  <td>175</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> </td>
+                  <td>BT_UART_RTSn</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> </td>
+                  <td>BT_UART_CTSn</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> </td>
+                  <td>BT_UART_TXD</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>BT_UART_RXD</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>GPA1</strong></p>
+            
+            <p>GPA1 allows access to the UART on ARTIK 520.</p>
+            
+            <ul>
+              <li>ARTIK 520 port address: gpio0 + 0x8</li>
+              <li>ARTIK 1020: Not used</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td> </td>
+                  <td>Not used</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td> </td>
+                  <td>Not used</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td> </td>
+                  <td>Xu3_TXD</td>
+                  <td>J26 pin 1</td>
+                  <td>–</td>
+                  <td>13</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td> </td>
+                  <td>Xu3_RXD</td>
+                  <td>J26 pin 0</td>
+                  <td>–</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> </td>
+                  <td>Xi2c3_SCL</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>11</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> </td>
+                  <td>Xi2c3_SDA</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> </td>
+                  <td>DEBUG_TXD</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>DEBUG_RXD</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>8</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>GPA2</strong></p>
+            
+            <p>The ARTIK 1020 external I<sup>2</sup>C interface on J27 is accessed through this port (as Xi2c9).</p>
+            
+            <ul>
+              <li>ARTIK 1020 port address:  gpio3 + 0x10</li>
+              <li>ARTIK 520: Not used</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7</td>
+                  <td> </td>
+                  <td>XspiMOSI1</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td> </td>
+                  <td>XspiMISO1</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td> </td>
+                  <td>XspiCSn1</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td> </td>
+                  <td>XspiCLK1</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> </td>
+                  <td>XspiMOSI0/XEXT_SCL</td>
+                  <td>J27 pin SCL</td>
+                  <td>188</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> </td>
+                  <td>XspiMISO0/XEXT_SDA</td>
+                  <td>J27 pin SDA</td>
+                  <td>187</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> </td>
+                  <td>XspiCSn0</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>XspiCLK0</td>
+                  <td>–</td>
+                  <td>–</td>
+                  <td>–</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><strong>GPD0/GPB2</strong></p>
+            
+            <p>The ARTIK 520 external I<sup>2</sup>C interface on J27 is accessed through this port (as Xi2c7), as are the PWM pins for both ARTIK 1020 and ARTIK 520.</p>
+            
+            <ul>
+              <li>ARTIK 1020 port address (GPB2):  gpio3 + 0x28</li>
+              <li>ARTIK 520 port address (GPD0): gpio0 + 0x28</li>
+            </ul>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Bit</th>
+                  <th>Fct Type</th>
+                  <th>Module Name</th>
+                  <th><a href="#notes-on-gpio-pins">External</a> pin</th>
+                  <th>A1020-GPIO</th>
+                  <th>A520-GPIO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7-4</td>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> </td>
+                  <td>Xi2c7_SCL</td>
+                  <td>J27 pin SCL</td>
+                  <td>–</td>
+                  <td>35</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> </td>
+                  <td>Xi2c7_SDA</td>
+                  <td>J27 pin SDA</td>
+                  <td>–</td>
+                  <td>34</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td> </td>
+                  <td>Xpwmo_1</td>
+                  <td>J26 pin 6</td>
+                  <td>204</td>
+                  <td>33</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td> </td>
+                  <td>Xpwmo_0</td>
+                  <td>J26 pin 5</td>
+                  <td>203</td>
+                  <td>32</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3 id="gpio-control-through-sysfs">GPIO Control through Sysfs</h3>
+            
+            <p>The <code>sysfs</code> functionality of the Linux kernel provides libraries to control and monitor programmable pins. Details are available at the following reference.</p>
+            
+            <p><code>https://www.kernel.org/doc/Documentation/gpio/sysfs.txt</code></p>
+            
+            <p>To make use of a GPIO pin, write the code to create the node and assign its attributes.</p>
+            
+            <p><strong>Create GPIO Node (Export Control)</strong></p>
+            
+            <p>The kernel will export control of a GPIO to userspace when the <a href="#gpio-export-numbers">GPIO number</a> is written to the “export” file.</p>
+            
+            <p><strong>ARTIK 520 Example</strong>. Manually take control of GPIO #124 (pin 7) using the following command line entry:</p>
+            
+            <p>$ <code>echo 124 &gt; /sys/class/gpio/export</code></p>
+            
+            <p>or write generic code for doing this, like the following, and call it with <code>pin = 124</code>.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18</pre></td><td class="code"><pre>#define HIGH 1&#x000A;#define LOW 0&#x000A;#define INPUT 1&#x000A;#define OUTPUT 0&#x000A;&#x000A;bool digitalPinMode(int pin, int dir){&#x000A;  FILE * fd;&#x000A;  char fName[128];&#x000A; &#x000A;  //Exporting the pin to be used&#x000A;  if(( fd = fopen("/sys/class/gpio/export", "w")) == NULL) {&#x000A;    printf("Error: unable to export pin\n");  &#x000A;    return false;&#x000A;  }&#x000A; &#x000A;  fprintf(fd, "%d\n", pin);&#x000A;  fclose(fd);&#x000A;}</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>Either approach creates a <code>/sys/class/gpio/gpio124</code> directory node for GPIO #124, containing attributes for direction, value, active_low, and edge.</p>
+            
+            <p><strong>Set or Get GPIO Attributes</strong></p>
+            
+            <p>With the GPIO node created, it becomes possible to configure or read back the GPIO pin attributes. Each GPIO node file below contains a string of characters.</p>
+            
+            <p><code>direction</code> contains a string of either <code>in</code> or <code>out</code>. This value is normally just written, but can be read back if desired.</p>
+            
+            <p><code>value</code> contains a string of either 0 (low) or 1 (high). If pin <code>direction</code> was configured as:</p>
+            
+            <ul>
+              <li><code>out</code> – then <code>value</code> can be written or read. Reads return the last value written.</li>
+              <li><code>in</code> – then <code>value</code> can only be read. Reads return the signal state at the GPIO pin.</li>
+            </ul>
+            
+            <p>Additional attribute information is provided in the sysfs reference noted above.</p>
+            
+            <p><strong>ARTIK 520 Example</strong>. Configure GPIO #124 (pin 7) manually as an output by using:</p>
+            
+            <p>$ <code>echo out &gt; /sys/class/gpio/gpio124/direction</code></p>
+            
+            <p>Make the output signal HIGH by setting <code>value</code> to "1" :</p>
+            
+            <p>$ <code>echo 1 &gt; /sys/class/gpio/gpio124/value</code></p>
+            
+            <p>or LOW by setting <code>value</code> to "0".</p>
+            
+            <p>Following on from the 'export' example code above, additional code for setting direction and driving state might look like the following.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68</pre></td><td class="code"><pre>bool digitalPinMode(int pin, int dir){&#x000A;  FILE * fd;&#x000A;  char fName[128];&#x000A; &#x000A;  //Exporting the pin to be used&#x000A;  if(( fd = fopen("/sys/class/gpio/export", "w")) == NULL) {&#x000A;    printf("Error: unable to export pin\n");  &#x000A;    return false;&#x000A;  }&#x000A; &#x000A;  fprintf(fd, "%d\n", pin);&#x000A;  fclose(fd);	// Setting direction of the pin&#x000A;  sprintf(fName, "/sys/class/gpio/gpio%d/direction", pin); &#x000A;  if((fd = fopen(fName, "w")) == NULL) { &#x000A;    printf("Error: can't open pin direction\n");&#x000A;    return false;&#x000A;  }&#x000A; &#x000A;  if(dir == OUTPUT) {&#x000A;    fprintf(fd, "out\n");&#x000A;  } else {&#x000A;    fprintf(fd, "in\n");&#x000A;  }&#x000A; &#x000A;  fclose(fd);&#x000A;  return true;&#x000A;}&#x000A;&#x000A; &#x000A;int digitalRead(int pin) {&#x000A;  FILE * fd;&#x000A;  char fName[128];&#x000A;  char val[2];&#x000A; &#x000A;  //Open pin value file&#x000A;  sprintf(fName, "/sys/class/gpio/gpio%d/value", pin);&#x000A;  if((fd = fopen(fName, "r")) == NULL) {&#x000A;     printf("Error: can't open pin value\n");&#x000A;     return false;&#x000A;  }&#x000A; &#x000A;  fgets(val, 2, fd);&#x000A;  fclose(fd);&#x000A; &#x000A;  return atoi(val);&#x000A;}&#x000A;&#x000A; &#x000A;bool digitalWrite(int pin, int val) { &#x000A;  FILE * fd;&#x000A;  char fName[128];&#x000A; &#x000A;  // Open pin value file&#x000A;  sprintf(fName, "/sys/class/gpio/gpio%d/value", pin);&#x000A;  if((fd = fopen(fName, "w")) == NULL) {&#x000A;    printf("Error: can't open pin value\n");&#x000A;    return false;&#x000A;  }&#x000A; &#x000A;  if(val == HIGH) { &#x000A;    fprintf(fd, "1\n");&#x000A;  } else { &#x000A;    fprintf(fd, "0\n");&#x000A;  }&#x000A; &#x000A;  fclose(fd);&#x000A;  return true;&#x000A;}</pre></td></tr></tbody></table>
+            </div>
+            
+            <h2 id="power-control-interface">Power Control Interface</h2>
+            
+            <p>Through the <code>sysfs</code> interface, the ARTIK module can be put into various power-saving modes.</p>
+            
+            <p><code>cat /sys/power/state</code> returns the options.</p>
+            
+            <p>For suspend-to-RAM (<code>mem</code>) for ARTIK 530 or 710, for example, you would use the following sequence.</p>
+            
+            <p><code>echo disabled &gt; /sys/devices/platform/i2c@8/i2c-8/8-0062/power_supply/rk-ac/power/wakeup</code><br>
+            <code>echo disabled &gt; /sys/devices/platform/i2c@8/i2c-8/8-0062/power_supply/rk-bat/power/wakeup</code><br>
+            <code>echo mem &gt; /sys/power/state</code></p>
+            
+            <p>Refer to online documentation for <a href="https://www.kernel.org/doc/Documentation/power/states.txt" target="_blank">System Power Management Sleep States</a> for more details.</p>
+            
+            <h2 id="uart-interface">UART Interface</h2>
+            
+            <p>The ARTIK development boards each provide a single UART interface on their external connector.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>ARTIK TYPE</th>
+                  <th>Linux device name</th>
+                  <th>External connection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>520</td>
+                  <td>/dev/ttySAC3</td>
+                  <td>J26 pins 0, 1</td>
+                </tr>
+                <tr>
+                  <td>530</td>
+                  <td>/dev/ttyAMA4</td>
+                  <td><a href="gpio-mapping.html#artik-710-test-header-pin-mapping">Test Header</a> pins 33, 35<br>or Tx-Rx on Interface board</td>
+                </tr>
+                <tr>
+                  <td>710</td>
+                  <td>/dev/ttySAC4</td>
+                  <td><a href="gpio-mapping.html#artik-710-test-header-pin-mapping">Test Header</a> pins 33, 35<br>or Tx-Rx on Interface board</td>
+                </tr>
+                <tr>
+                  <td>1020</td>
+                  <td>/dev/ttySAC1</td>
+                  <td>J26 pins 0, 1</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>The modules use additional serial ports for other internal and external connections. We list some here for reference.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>ARTIK TYPE</th>
+                  <th>External</th>
+                  <th>Debug<br>console</th>
+                  <th><a href="..\update-image\ncp-update.html#command-line-parameters">NCP</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>520</td>
+                  <td>ttySAC3</td>
+                  <td>ttySAC2</td>
+                  <td>ttySAC1</td>
+                </tr>
+                <tr>
+                  <td>530</td>
+                  <td>ttyAMA4</td>
+                  <td>ttyAMA3</td>
+                  <td>ttyAMA1</td>
+                </tr>
+                <tr>
+                  <td>710</td>
+                  <td>ttySAC4</td>
+                  <td>ttySAC3</td>
+                  <td>ttySAC0</td>
+                </tr>
+                <tr>
+                  <td>1020</td>
+                  <td>ttySAC1</td>
+                  <td>ttySAC3</td>
+                  <td>ttySAC0</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3 id="example">Example</h3>
+            
+            <p><code>stty</code> is useful for reading back and configuring the serial port settings. Our examples will use ARTIK 530 terminal device names. To read current settings:</p>
+            
+            <pre>[root]# <font color="blue">stty -F /dev/ttyAMA4 </font>&#x000A;speed 115200 baud; line = 0;&#x000A;.&#x000A;.</pre>
+            <p>To configure the baud rate and then read back to confirm:</p>
+            <pre>&#x000A;[root]# <font color="blue">stty -F /dev/ttyAMA4 9600</font>&#x000A;&#x000A;[root]# <font color="blue">stty -F /dev/ttyAMA4 </font>&#x000A;speed 9600 baud; line = 0;&#x000A;.&#x000A;.</pre>
+            
+            <p>Once configured, you can treat the interface like a file and use standard read/write commands. To test this, you could connect two ARTIK boards together, with the Tx header pin of each board connected to the Rx of the other and a GND wire tied to both. Then use <code>stty</code> as above to set matching baud rates and such for each interface.</p>
+            
+            <p>Let's say one board is an ARTIK 520 board, and the other is an ARTIK 530 board. You could enter this command on the ARTIK 520 board to set it up for receiving data:</p>
+            <pre>&#x000A;[root-artik520]# <font color="blue"> cat /dev/ttySAC3</font></pre>
+            
+            <p>Then, if you enter this command on the ARTIK 530 board to write data:</p>
+            
+            <pre>&#x000A;[root-artik530]# <font color="blue">echo “hello ..” &gt; /dev/ttyAMA4</font></pre>
+            
+            <p>you would see</p>
+            
+            <pre>&#x000A;  hello ..</pre>
+            
+            <p>on the ARTIK 520 terminal console.</p>
+            
+            <h3 id="adding-serial-ports">Adding Serial Ports</h3>
+            
+            <p>On ARTIK modules that support USB host controller operation (530, 710, 1020), you may choose to add extra external serial ports by using a USB-to-serial adapter. You'll see them as <code>/dev/ttyUSBx</code> ports.</p>
+            
+            <p>A USB-based serial port will not be accessible by default to Arduino sketches. To expose one, instantiate an object inside the sketch, outside <code>setup()</code> and <code>loop()</code>, like this:</p>
+            
+            <p><code>HardwareSerial SerialX("/dev/ttyACM0");</code></p>
+            
+            <p>and then you can use it as a normal serial port. All <code>SerialX.print()</code>, <code>SerialX.read()</code>, etc. methods will work seamlessly.</p>
+            
+            <h2 id="isup2supc-interface">I<sup>2</sup>C Interface</h2>
+            
+            <p>Various I<sup>2</sup>C buses are present on the different ARTIK platforms.</p>
+            
+            <p>For ARTIK 520:</p>
+            
+            <ul>
+              <li>Xi2c0 (internal)</li>
+              <li>Xi2c1 (internal)</li>
+              <li>Xi2c3 (available on J510)</li>
+              <li>Xi2c7 (externally available on connector J27 pins SCL-SDA)</li>
+            </ul>
+            
+            <p>For ARTIK 530 and 710:</p>
+            
+            <ul>
+              <li>xi2c0 (externally available from Interface board)</li>
+              <li>3 x i2c (available on optional <a href="..\..\artik\tutorials\sensor-tutorial.html">sensor</a> board plugged into Interface board)</li>
+            </ul>
+            
+            <p>For ARTIK 1020:</p>
+            
+            <ul>
+              <li>Xi2c0 (internal)</li>
+              <li>Xi2c9 (externally available on connector J27 pins SCL-SDA)</li>
+            </ul>
+            
+            <p>Unlike GPIO, I<sup>2</sup>C cannot be accessed through a <code>sysfs</code> node. Instead, use the pre-installed tools described below.</p>
+            
+            <h3 id="i2cdetect">i2cdetect</h3>
+            
+            <p><code>i2cdetect</code> is a userspace program to scan an I<sup>2</sup>C bus for devices. It generates a table with the list of detected devices on the specified bus. Specify one of the valid bus numbers with the command.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15</pre></td><td class="code"><pre>$ i2cdetect 0  &#x000A;WARNING! This program can confuse your I2C bus, &#x000A;cause data loss and worse!  &#x000A;I will probe file /dev/i2c-0. &#x000A;I will probe address range 0x03-0x77  &#x000A;Continue? [Y/n] y&#x000A;     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f &#x000A;00:          -- -- -- UU -- -- -- -- -- -- -- -- -- &#x000A;10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- &#x000A;20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- &#x000A;30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- &#x000A;40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- &#x000A;50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- &#x000A;60: -- -- -- -- -- -- UU -- -- -- -- -- -- -- -- -- &#x000A;70: -- -- -- -- -- -- -- --</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>In this case a device has been detected on address 0x06 and 0x66. 0x66 is the address of the PMIC.</p>
+            
+            <p class="info">Xi2c9 on ARTIK 1020 does not support the SMBus Quick Command, so the <code>i2cdetect</code> utility will generate an error message for that bus.</p>
+            
+            <h3 id="i2cset----i2cget">i2cset – i2cget</h3>
+            
+            <p><code>i2cset</code> and <code>i2cget</code> are small helper programs to set/get values of registers visible on the I<sup>2</sup>C bus.  Specify one of the valid bus numbers with the command.</p>
+            
+            <p>For example, the following command reads the byte value from the PMIC (s2mps14) register of ARTIK 520 at address 0x66 on I<sup>2</sup>C bus 0.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="code"><pre># i2cget -f -y 0 0x66 0x0&#x000A;0x00&#x000A;# i2cget -f -y 0 0x66 0x1&#x000A;0x03&#x000A;# i2cget -f -y 0 0x66 0x2&#x000A;0x11&#x000A;# i2cget -f -y 0 0x66 0x3&#x000A;0x00&#x000A;# i2cget -f -y 0 0x66 0x4&#x000A;0xff</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>For the ARTIK 530 and 710, examples for addressing the sensors over I<sup>2</sup>C can be found <a href="..\..\artik\tutorials\sensor-tutorial.html">here</a>.</p>
+            
+            <h3 id="isup2supc--using-python">I<sup>2</sup>C  using Python</h3>
+            <p>You can also use Python scripts to access I<sup>2</sup>C interfaces through the <a href="https://pypi.python.org/pypi/smbus-cffi/">SMBus module</a> after installing the following packages:</p>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#fedora" aria-controls="linux-ide" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu">
+                <div class="boxed" style="max-height:160px">
+                  <ul>
+            <code>&#x000A;apt install python-dev<br>&#x000A;apt install libffi-dev<br>  &#x000A;apt install python-pip<br>&#x000A;pip install setuptools<br>&#x000A;pip install smbus-cffi</code>
+            </ul>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora">
+                <div class="boxed" style="max-height:160px">
+                  <ul>
+            <code>&#x000A;dnf install python-devel<br>&#x000A;dnf install redhat-rpm-config<br>  &#x000A;dnf install libffi-devel<br>  &#x000A;pip install smbus-cffi</code>
+            </ul>
+                </div>
+              </div>
+            
+            </div>
+            
+            <p><strong>Example 1.</strong> Enter <code>ls -al /sys/class/i2c-dev/</code> to list the I<sup>2</sup>C adapters. If you see symlinks, go to the linked directory for easier viewing.</p>
+            
+            <pre>&#x000A;..<br>&#x000A;lrwxrwxrwx  1 root root 0 Sep 26 15:36 i2c-1 -&gt; ../../devices/platform/c0000000.soc/c00a5000.i2c/i2c-1/i2c-dev/i2c-1&#x000A;..</pre>
+            
+            <p><code>cd /sys/devices/platform</code><br>
+            <code>ls</code></p>
+            
+            <pre>&#x000A;Fixed MDIO bus.0    f0000000.0xf0000000  nexell-pcm    sd8x-rfkill&#x000A;alarmtimer          gpio_keys            nx-devfreq    snd-soc-dummy&#x000A;artik_s3t9mf        i2c@10               nx-v4l2       sound&#x000A;artik_zb_power      i2c@4                panel-simple  spdif-out&#x000A;c0000000.soc        i2c@5                power         thermal&#x000A;c0010000.oscillator i2c@6                psci          uevent&#x000A;c00e0000.busqos     i2c@7                pwm-backlight&#x000A;camerasensor0       i2c@8                reg-dummy&#x000A;cpu                 i2c@9                regulatory.0</pre>
+            
+            <p>In this example, you can see that you'll have access to I<sup>2</sup>C buses numbered 4 to 10.</p>
+            
+            <p>You'll be using the <a href="http://wiki.erazor-zone.de/wiki:linux:python:smbus:doc">SMBus module API</a> to communicate with your device. Replace the <code>7</code> in <code>SMBus(7)</code> with your bus of interest, and replace the address <code>0x1d</code> with the one you would like to read. Then save the code and run it (<code>python i2c.py</code> for example).</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16</pre></td><td class="code"><pre>import smbus&#x000A;import time&#x000A;bus = smbus.SMBus(7)&#x000A;address = 0x1d&#x000A;&#x000A;def status():&#x000A;        status1 = bus.read_byte_data(address, 1)&#x000A;        print(status1)&#x000A;        status2 = bus.read_byte_data(address, 2)&#x000A;        print(status2)&#x000A;        return&#x000A;&#x000A;while True:&#x000A;        status()&#x000A;        time.sleep(1)&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+            <p><strong>Example 2.</strong> If you have an <a href="..\..\artik\tutorials\sensor-tutorial.html#barometric-pressure-sensor">ARTIK Sensor Board</a> attached to your ARTIK 530 or 710, you also have access to bus <code>1</code>. You could use a Python program to read the barometric pressure as shown in that article, for example.</p>
+            
+            <p>Here we'll get you started. The bus is <code>1</code>, the address is <code>0x5d</code>. Reading the identification register at <code>0xf</code> should return <code>189</code> (<code>0xBD</code>). For the rest, we're following the same sequence as shown in the tutorial to reset the device, write it to trigger, and then read back the results.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20</pre></td><td class="code"><pre>import smbus&#x000A;import time&#x000A;bus = smbus.SMBus(1)&#x000A;address = 0x5d&#x000A;&#x000A;bus.write_byte_data(address, 0x21, 0xc4)&#x000A;id1 = bus.read_byte_data(address, 0xf)&#x000A;print(id1)&#x000A;def status():&#x000A;        bus.write_byte_data(address, 0x20, 0x90)&#x000A;        preshigh = bus.read_byte_data(address,0x2a)&#x000A;        presmid = bus.read_byte_data(address,0x29)&#x000A;        preslow = bus.read_byte_data(address,0x28)&#x000A;        print(preshigh,presmid,preslow)&#x000A;        return&#x000A;&#x000A;while True:&#x000A;        status()&#x000A;        time.sleep(1)&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>We'll leave it to you to write code to convert the three bytes to a final value in either hPa or inches of mercury.</p>
+            
+            <h3 id="isup2supc--using-python-with-grovepi-shield">I<sup>2</sup>C  using Python with GrovePi+ Shield</h3>
+            
+            <p>If you are using an ARTIK "Eagleye" board with a Grove Pi+ shield kit as in the <a href="..\..\artik\projects\facial-recog.html">Face Detection article</a>, you need to install I2C drivers.</p>
+            
+            <ol>
+              <li>
+                <p>Install these packages.</p>
+            
+                <p><code>apt-get install g++ libi2c-dev</code></p>
+              </li>
+              <li>
+                <p>Modify the source code /root/GrovePi/Software/Cpp/grovepi.cpp and add one line as shown.</p>
+            
+                <p><img src="..\..\images\docs\tutorials\grovepi-i2ccode.jpg"></p>
+              </li>
+              <li>
+                <p>Every time you reset the board, run the following two commands. Put them in a bash file to make it automatic.</p>
+              </li>
+            </ol>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2</pre></td><td class="code"><pre>mkdir /sys/kernel/config/device-tree/overlays/i2c&#x000A;cat /boot/overlays/s5p4418-artik533-compy-i2c1.dtbo &gt; /sys/kernel/config/device-tree/overlays/i2c/dtbo</pre></td></tr></tbody></table>
+            </div>
+            
+            <h2 id="pwm-interface">PWM Interface</h2>
+            
+            <p>ARTIK 520 and  1020 modules support two active-high PWM signal pins PWM0 and PWM1 (software-controlled as <code>pwm0</code> and <code>pwm1</code>), and ARTIK 530/710 modules support signal pin PWM0 (software-controlled as <code>pwm2</code>), to generate periodic waveforms.</p>
+            
+            <h3 id="mapping-on-artik-520-and-1020">Mapping on ARTIK 520 and 1020</h3>
+            <p>The default PWM mapping to pins <strong>differs</strong> between ARTIK 520 and ARTIK 1020. For convenience, the ARTIK 520 PWM output pins are reassigned in the Arduino IDE to make them match the ARTIK 1020. Some explanation may help clarify things.</p>
+            
+            <h4 id="native-development-environment"><strong>Native Development Environment</strong></h4>
+            
+            <p>The following table shows the default mapping of the PWM signals to the pins. The mappings apply when you are using Python or gcc, for example, to compile your code. They  correspond to the <code>sysfs pwm0</code> or <code>pwm1</code> keywords as you would expect. It is possible to remap the assignments through kernel code, a topic not covered here.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Header Pin<br>artik 520 and 1020</th>
+                  <th>Native Mapping<br>ARTIK 520 rev 0.5 board</th>
+                  <th>Native Mapping<br>ARTIK 1020 board*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span style="font-weight:bold">J26[</span><span style="font-weight:bold;color:orange">5</span><span style="font-weight:bold">]  </span></td>
+                  <td>PWM<span style="font-weight:bold;color:red">1</span></td>
+                  <td>PWM<span style="font-weight:bold;color:blue">0</span></td>
+                </tr>
+                <tr>
+                  <td><span style="font-weight:bold">J26[</span><span style="font-weight:bold;color:limegreen">6</span><span style="font-weight:bold">]  </span></td>
+                  <td>PWM<span style="font-weight:bold;color:blue">0</span></td>
+                  <td>PWM<span style="font-weight:bold;color:red">1</span></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>*<sub>Also on older ARTIK 520 rev 3.x boards</sub></p>
+            
+            <h4 id="arduino-integrated-development-environment"><strong>Arduino Integrated Development Environment</strong></h4>
+            
+            <p>The libArduino board manager remaps the PWM signals to the appropriate location on connector J26 for Arduino shields. The "v0.5" selection swaps J26[5] and [6]. The remapping applies only to Arduino sketches, <strong>not</strong> to native or <code>sysfs</code> environments.</p>
+            
+            <p><img alt="" src="..\..\images\docs\developer-guide\Arduino-board-selector-ARTIK-0-5.jpg?1549048075"></p>
+            
+            <p>Open "Board Manager" and install the latest "ARM Linux Boards" package to get this option (go <a href="..\ide\arduino.html#step-5-select-arm-linux-boards-package">here</a> for detailed instructions). Using the feature, the following table shows the mapping of the PWM signals to the pins.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Header Pin</th>
+                  <th>Mapping with 'Samsung Artik 520 v0.5' selected from Arduino IDE</th>
+                  <th>As accessed from <code>sysfs</code></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span style="font-weight:bold">J26[</span><span style="font-weight:bold;color:orange">5</span><span style="font-weight:bold">]</span></td>
+                  <td>XPWMO<span style="font-weight:bold;color:blue">0</span></td>
+                  <td><code>pwm1</code></td>
+                </tr>
+                <tr>
+                  <td><span style="font-weight:bold">J26[</span><span style="font-weight:bold;color:limegreen">6</span><span style="font-weight:bold">]</span></td>
+                  <td>XPWMO<span style="font-weight:bold;color:red">1</span></td>
+                  <td><code>pwm0</code></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>As you can see, choosing this reassignment within the Arduino IDE does <strong>not</strong> affect <code>sysfs</code> assignments – they match the 'native' environment for that board revision.</p>
+            
+            <p>You can prove this to yourself with the exercises below. Use the Arduino IDE example to make an LED connected to J25[5] (corresponding to Arduino PWM#0) pulse on and off. Then, try to stop it from the command line by using <code>unexport</code>. You will find that it is <code>pwm1</code>, not <code>pwm0</code>, that has been exported.</p>
+            
+            <h3 id="duplication-on-headers">Duplication on headers</h3>
+            
+            <p>The PWM outputs are duplicated across two headers; J513[1] and [2] are wired on the board to J26[5] and [6].</p>
+            
+            <ul>
+              <li>
+                <p><span style="font-family:Arial;font-weight:bold">J26[</span><span style="font-family:Arial;font-weight:bold;color:orange">5</span><span style="font-family:Arial;font-weight:bold">] = </span>
+            <span style="font-family:Arial;font-weight:bold">J513[</span><span style="font-family:Arial;font-weight:bold;color:orange">1</span><span style="font-family:Arial;font-weight:bold">] </span></p>
+              </li>
+              <li>
+                <p><span style="font-family:Arial;font-weight:bold">J26[</span><span style="font-family:Arial;font-weight:bold;color:limegreen">6</span><span style="font-family:Arial;font-weight:bold">] = </span>
+            <span style="font-family:Arial;font-weight:bold">J513[</span><span style="font-family:Arial;font-weight:bold;color:limegreen">2</span><span style="font-family:Arial;font-weight:bold">] </span></p>
+              </li>
+            </ul>
+            
+            <p>We show this to note that the pin swap issue between Native and Arduino programming modes affects both header sets. The ARTIK 520 ver. 0.5 board image below is labeled to show this, although it does <strong>not</strong> match the board silkscreen.</p>
+            
+            <h4 id="artik-520-rev-05-board"><strong>ARTIK 520 rev 0.5 Board</strong></h4>
+            <p><img alt="ARTIK 5 GPIO" class="lightbox" src="..\..\images\docs\developer-guide\artik-5-rev0.5-J513-J26.jpg?1549048075"></p>
+            
+            <h3 id="pwm-control-through-sysfs">PWM control through <code>sysfs</code></h3>
+            <p>You can use <code>sysfs</code> to control the PWM outputs, either by command line interaction or by writing appropriate code (similar to that described for GPIO pins). Here is the path information you will need to export control of these pins.</p>
+            
+            <p><code>#define SYSFS_PWM_PATH    "/sys/class/pwm/pwmchip0/"</code></p>
+            
+            <p>When you program the PWM:</p>
+            
+            <ul>
+              <li>Maximum limit for <code>period</code> and <code>duty_cycle</code> is 1,000,000,000 (expressed in ns)</li>
+              <li><code>duty_cycle</code> should always be less than period.</li>
+            </ul>
+            
+            <p>Kernel-level control of the PWM pins is typically not necessary unless the period or duty cycle are being rapidly modulated.</p>
+            
+            <h3 id="exercise----command-line">Exercise – Command Line</h3>
+            
+            <p>The following exercise demonstrates use of a PWM pin, setting a fixed blink rate. Connect PWM pin:</p>
+            
+            <ul>
+              <li>ARTIK 1020: J26[5], controlled as <code>pwm0</code></li>
+              <li>ARTIK 530 or 710: PWM0 (as marked on board), controlled as <code>pwm2</code></li>
+              <li>ARTIK 520: J26[6] (for ARTIK 5 rev 0.5 boards), controlled as <code>pwm0</code></li>
+            </ul>
+            
+            <p>to an LED as in the <a href="..\..\artik\tutorials\blink-an-led.html">Blink an LED</a> tutorial to see the effect of the commands.</p>
+            
+            <ol>
+              <li>Export  PWM0<br>
+            <code>echo 0 &gt; /sys/class/pwm/pwmchip0/export</code><br>
+            A <code>pwm0</code> subdirectory is created. (You would use <code>echo 1</code> to create <code>pwm1</code>, or for the ARTIK 530/710, use <code>echo 2</code> to create <code>pwm2</code>.)</li>
+              <li>
+                <p>Set attributes<br>
+            a)	Set period (Unit: ns) to 1 sec<br>
+            <code>echo 1000000000 &gt; /sys/class/pwm/pwmchip0/pwm0/period</code><br>
+            b)	Set duty_cycle (Unit: ns) to 500 msec<br>
+            <code>echo 500000000 &gt; /sys/class/pwm/pwmchip0/pwm0/duty_cycle</code><br>
+            c)	Enable PWM0<br>
+            <code>echo 1 &gt; /sys/class/pwm/pwmchip0/pwm0/enable</code><br>
+            d)	Disable PWM0<br>
+            <code>echo 0 &gt; /sys/class/pwm/pwmchip0/pwm0/enable</code></p>
+              </li>
+              <li>Unexport  PWM0<br>
+            <code>echo 0 &gt; /sys/class/pwm/pwmchip0/unexport</code><br>
+            The <code>PWM0</code> subdirectory is removed. (Or use <code>echo 1</code> or <code>echo 2</code> as noted above.)</li>
+            </ol>
+            
+            <h3 id="exercise----arduino-ide">Exercise – Arduino IDE</h3>
+            
+            <p>The following exercise demonstrates use of a PWM pin, making the LED pulse slowly on and off. Connect the PWM0 pin to an LED as in the <a href="..\..\artik\tutorials\blink-an-led.html">Blink an LED</a> tutorial to see the effect of the commands.  Make sure you have selected your board correctly as noted in <a href="kernel-gpio.html#arduino-integrated-development-environment">Arduino Integrated Development Environment</a>.</p>
+            
+            <ol>
+              <li>
+                <p>Copy the following code into a blank sketch in the Arduino IDE.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20</pre></td><td class="code"><pre> const int thisPin = 5;&#x000A;&#x000A; void setup() {&#x000A; }&#x000A;&#x000A; void loop() {&#x000A;   // brighten the LED&#x000A;     for (int brightness = 0; brightness &lt; 255; brightness++) {&#x000A;       analogWrite(thisPin, brightness);&#x000A;       delay(2);&#x000A;     }&#x000A;     // fade the LED&#x000A;     for (int brightness = 255; brightness &gt;= 0; brightness--) {&#x000A;       analogWrite(thisPin, brightness);&#x000A;       delay(2);&#x000A;     }&#x000A;     // pause between runs&#x000A;     delay(100);&#x000A;	  &#x000A; }</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Load the code to ARTIK to run it.</p>
+              </li>
+            </ol>
+            
+            <h2 id="adc-interface">ADC Interface</h2>
+            
+            <p>The ADC pins are available on the external connector pins of each development board as shown. Click on the header links to see the header mappings.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>ADC Pin<br>reference<br>in arduino</th>
+                  <th>ARTIK 520<br><a href="gpio-mapping.html#artik-520-headers">j24 header</a></th>
+                  <th>ARTIK 530/710<br><a href="gpio-mapping.html#artik-530710-test-header-pin-mapping">test header</a></th>
+                  <th>ARTIK 1020<br><a href="gpio-mapping.html#artik-1020-headers">j24 header</a></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ADC0</td>
+                  <td>J24[0]</td>
+                  <td>[39]</td>
+                  <td>J24[0]</td>
+                </tr>
+                <tr>
+                  <td>ADC1</td>
+                  <td>J24[1]</td>
+                  <td>[41]</td>
+                  <td>J24[1]</td>
+                </tr>
+                <tr>
+                  <td>ADC2</td>
+                  <td> </td>
+                  <td>[43]</td>
+                  <td>J24[2]</td>
+                </tr>
+                <tr>
+                  <td>ADC3</td>
+                  <td> </td>
+                  <td>[45]</td>
+                  <td>J24[3]</td>
+                </tr>
+                <tr>
+                  <td>ADC4</td>
+                  <td> </td>
+                  <td>[47]</td>
+                  <td>J24[4]</td>
+                </tr>
+                <tr>
+                  <td>ADC5</td>
+                  <td> </td>
+                  <td>[49]</td>
+                  <td>J24[5]</td>
+                </tr>
+                <tr>
+                  <td>–</td>
+                  <td> </td>
+                  <td>[*]</td>
+                  <td> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>*With the <code>sysfs</code> interface, you will see ADC6 and ADC7 mappings. These are not available for external use.</p>
+            
+            <h3 id="adc-readback-through-sysfs">ADC readback through <code>sysfs</code></h3>
+            
+            <p>You can use <code>sysfs</code> to read the ADC inputs, initially by command line interaction and eventually by writing appropriate C, Python, or Arduino IDE code as described in <a href="..\..\artik\tutorials\blink-an-led.html">Blink an LED</a>. Here is the path information you will need.</p>
+            
+            <p>ARTIK 1020:<br>
+            <code>/sys/devices/12d10000.adc/iio:device0/</code></p>
+            
+            <p>ARTIK 530/710:<br>
+            <code>/sys/devices/platform/c0000000.soc/c0053000.adc/iio:device0/</code></p>
+            
+            <p>ARTIK 520:<br>
+            <code>/sys/devices/126c0000.adc/iio:device0/</code></p>
+            
+            <p>The following command line examples demonstrate how to read the current value of ADC pins 0 and 2, using different ARTIK boards as examples. In your application, substitute the path information for ARTIK module as needed.</p>
+            
+            <ul>
+              <li>
+                <p>Read a raw voltage from ADC0 of ARTIK 520</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  cat /sys/devices/126c0000.adc/iio:device0/in_voltage0_raw</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Read a raw voltage from ADC2 of ARTIK 530 or 710</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>  cat /sys/devices/platform/c0000000.soc/c0053000.adc/iio:device0/in_voltage2_raw</pre></td></tr></tbody></table>
+            </div>
+              </li>
+            </ul>
+            
+            <p class="info"><code>in_voltage0_raw</code> returns a raw (unscaled) measurement value. To convert it to a voltage measurement, the equation :<br>
+            <code>v = in_voltageX_raw * 0.439453125 mV</code><br>
+            is valid for the ARTIK module. <strong>Multiply <code>v</code> by 2</strong> for the ARTIK development board, as it uses resistors to divide the input voltage by 2.</p>
+            
+            <p>Kernel-level monitoring of the ADC pins is also possible, but may not provide a significant advantage over using the standard Linux routines.</p>
+            
+            <p>C code to read the ADC port is provided below, using ARTIK 1020 mapping for this example.</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20</pre></td><td class="code"><pre><span class="kt">int</span> <span class="nf">analogRead</span><span class="p">(</span><span class="kt">int</span> <span class="n">pin</span><span class="p">)</span> <span class="p">{</span> &#x000A;  <span class="kt">FILE</span> <span class="o">*</span> <span class="n">fd</span><span class="p">;</span>&#x000A;  <span class="kt">char</span> <span class="n">fName</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>&#x000A;  <span class="kt">char</span> <span class="n">val</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>&#x000A; &#x000A;  <span class="c1">// open value file&#x000A;</span>  <span class="n">sprintf</span><span class="p">(</span><span class="n">fName</span><span class="p">,</span> &#x000A;      <span class="s">"/sys/devices/12d10000.adc/iio:device0/in_voltage%d_raw"</span><span class="p">,</span>&#x000A;       <span class="n">pin</span><span class="p">);</span>&#x000A; &#x000A;  <span class="k">if</span><span class="p">((</span><span class="n">fd</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">fName</span><span class="p">,</span> <span class="s">"r"</span><span class="p">))</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>&#x000A;     <span class="n">printf</span><span class="p">(</span><span class="s">"Error: can't open analog voltage value</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>   &#x000A;     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> &#x000A;  <span class="p">}</span>	&#x000A; &#x000A;  <span class="n">fgets</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">fd</span><span class="p">);</span>&#x000A;  <span class="n">fclose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>&#x000A; &#x000A;  <span class="k">return</span> <span class="n">atoi</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="exercise-read-temperature-data">Exercise: Read Temperature Data</h3>
+            
+            <p>Use a TMP36 sensor to return a voltage proportional to temperature. Connect its middle pin to pin A0, pin 1 to +5V, and pin 3 to GND as shown in this figure for the TO-92 case version from the Analog Devices TMP36 data sheet.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\AD_TMP36_TO-92.jpg?1549048075"></p>
+            
+            <p>Implement the following code to collect temperature sensor data every second using analogRead(), whose function code is shown above along with the formula for converting the analog sensor output to a voltage value.</p>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21</pre></td><td class="code"><pre><span class="kt">int</span> <span class="n">inputPin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A; &#x000A;<span class="kt">int</span> <span class="n">currentRun</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="k">const</span> <span class="kt">int</span> <span class="n">MAX_RUNS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>&#x000A; &#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>&#x000A; &#x000A;  <span class="k">while</span><span class="p">(</span><span class="n">currentRun</span> <span class="o">&lt;</span> <span class="n">MAX_RUNS</span><span class="p">){</span>&#x000A;   &#x000A;    <span class="kt">int</span> <span class="n">sensorVal</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">inputPin</span><span class="p">);</span>&#x000A;   &#x000A;    <span class="n">printf</span><span class="p">(</span><span class="s">"current sensor is %f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sensorVal</span><span class="p">);</span>&#x000A;    &#x000A;    <span class="cm">/* convert sensor data to temperature here */</span>&#x000A;   &#x000A;    <span class="n">currentRun</span><span class="o">++</span><span class="p">;</span>&#x000A;   &#x000A;    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>&#x000A; &#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-03-12 22:06:47 +0000'>Mar 12 2018, 10:06 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="gpio-mapping.html">Prev: GPIO Header Maps</a></li>
+              <li class='next-page'><a href="..\multimedia\index.htm">Next: Audio-Display-Camera</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

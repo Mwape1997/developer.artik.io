@@ -1,0 +1,1646 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='color-mqtt-actions.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Actions and ARTIK Cloud' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Actions and ARTIK Cloud' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Actions and ARTIK Cloud</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_mqtt documentation_advanced-concepts_mqtt_color-mqtt-actions' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="true">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false" class="active">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="taking-action-with-artik-cloud">Taking Action with ARTIK Cloud</h1>
+            
+            <p>In this article, we'll focus on how the Samsung ARTIK Cloud can analyze data sent by the Samsung ARTIK module over MQTT, and send back appropriate <strong>Actions</strong>. And when we say "actions", we really mean it! You'll watch ARTIK Cloud trigger significant events.</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <iframe width="560" height="315" class="video-embed" data-youtube="https://www.youtube.com/embed/Z3bI-9gJKmQ?rel=0" data-youku="https://player.youku.com/embed/XMzAzNzk2Mzg1Ng=="></iframe>
+            
+            <p><strong>Prerequisites</strong></p>
+            
+            <p>In preparation for this tutorial, you must:</p>
+            
+            <ul>
+              <li>
+                <p>Obtain a second ARTIK board, which you will provision as your outside temperature sensor and air conditioner unit control  board</p>
+              </li>
+              <li>
+                <p>Complete the <a href="/documentation/tutorials/color-mqtt-arduino.html">ARTIK Cloud – via Arduino</a> tutorial; its concluding exercise is the starting point for the present tutorial</p>
+              </li>
+              <li>
+                <p>Open and log into <a href="https://www.artik.cloud/my" target="userPortal"> My ARTIK Cloud</a> and <a href="https://developer.artik.cloud/dashboard" target="devDashboard"> Developer Dashboard</a>.</p>
+              </li>
+            </ul>
+            
+            <p>The time for completing this installment of the tutorial series is approximately 1 hour.</p>
+            
+            <h2 id="choosing-delivery-method">Choosing Delivery Method</h2>
+            
+            <p>Your application will have several options for communicating with ARTIK Cloud.  Here we talk about the trade-offs of using each, and why we chose MQTT. You can skip to <a href="#defining-actions-in-artik-cloud">Defining Actions</a> if you want to get right to building the demonstration platform.</p>
+            
+            <h3 id="overview-of-tradeoffs">Overview of Tradeoffs</h3>
+            
+            <p>The table below compares using MQTT protocol to Web REST API protocol, <strong>specifically</strong> in reference to ARTIK Cloud. We highlight the advantages of each. Note that using Web Sockets, if practical for your application, avoids all of these disadvantages.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Topic</th>
+                  <th>MQTT</th>
+                  <th>Web REST API</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Overhead</td>
+                  <td><strong>Minimal data structure size</strong></td>
+                  <td>Large nested data structure</td>
+                </tr>
+                <tr>
+                  <td>Speed</td>
+                  <td><strong>Quick</strong></td>
+                  <td>Slower than MQTT due to SSL/TLS handshaking over HTTPS</td>
+                </tr>
+                <tr>
+                  <td>Code complexity</td>
+                  <td><strong>Concise, simple code blocks</strong></td>
+                  <td>Usual bulky code for Web headers</td>
+                </tr>
+                <tr>
+                  <td>Archived data retrieval</td>
+                  <td>Not possible – must fall back on Web protocol to retrieve from ARTIK Cloud</td>
+                  <td><strong>Unified solution for sending messages and retrieving archived ones</strong></td>
+                </tr>
+                <tr>
+                  <td>Action Notify vs Subscribe</td>
+                  <td><strong>Subscribe model delivers Action immediately</strong></td>
+                  <td>Notification model requires subsequent follow-up Web call to retrieve Action list</td>
+                </tr>
+                <tr>
+                  <td>Sending Actions to other devices</td>
+                  <td>Cannot be done directly by MQTT clients (can be done indirectly through ARTIK Cloud)</td>
+                  <td><strong>Can be done directly by Web REST clients</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>For our Economy A/C Database demonstration scenario, MQTT is the clear winner – despite its drawbacks.
+            For your own application, you may decide to choose Web protocols, but also consider a hybrid model: Use MQTT for most transactions and Web API REST protocol for data retrieval tasks.</p>
+            
+            <p style="margin-left: 0px;"><strong style="display: inline-block; margin-right: 5px;"><font color="blue"></font> </strong>
+            
+              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#mqtt-actions-tradeoffs" aria-expanded="false" aria-controls="mqtt-actions-tradeoffs">
+                Tradeoff Details
+              </a>
+            </p>
+            
+            <div class="collapse" id="mqtt-actions-tradeoffs">
+              <div class="boxed">
+                <h3 id="tradeoffs-by-protocol">Tradeoffs by Protocol</h3>
+            
+                <h4 id="mqtt"><strong>MQTT</strong></h4>
+            
+                <p>ARTIK Cloud MQTT handling is designed expressly for rapid, responsive service with low overhead costs. Over MQTT, ARTIK Cloud clients may:</p>
+            
+                <ul>
+              <li>Send Data messages</li>
+              <li>Subscribe to and receive Action messages directed to their Device ID</li>
+            </ul>
+            
+                <p>but</p>
+            
+                <ul>
+              <li>Are <strong>not</strong> able to subscribe to or receive Data messages.</li>
+            </ul>
+            
+                <p>This is not as great a limitation as it seems. All messages (both Data and Action) are archived by ARTIK Cloud and can be retrieved by the client on demand using Web protocols. <a href="https://www.artik.cloud/my" target="dataLogs">Sign in</a> and check the <a href="https://www.artik.cloud/my/messages" target="dataLogs">data logs</a> page, and you will see the messages that have accumulated from your testing so far.</p>
+            
+                <h4 id="web-rest-api"><strong>Web REST API</strong></h4>
+                <p>Through the ARTIK Cloud API, Web REST clients do have a way to "subscribe", but it differs from MQTT in that only a notification, not the Action message, is delivered.  Once notified, the client can request messages (including Actions) that are associated with that notification. Refer to the <a href="https://developer.artik.cloud/documentation/api-spec.html#notifications">API Specification</a> and to <a href="https://developer.artik.cloud/documentation/connect-the-data/subscribe-and-notify.html#subscribe-and-notify">Subscribe and Notify</a> for details.</p>
+            
+                <p>Web REST clients can at any time retrieve any messages (including Actions) that have been archived on ARTIK Cloud. That is, subscription is not required if polling is the preferred option, and not subscribing does not prevent received messages from being archived.</p>
+            
+                <h4 id="websockets"><strong>WebSockets</strong></h4>
+                <p>ARTIK Cloud clients can use the WebSocket interface for all the same things as the Web REST API. In addition, this method offers a live and always-available feed of activity and data, so there are no limitations on notifications or response times. WebSockets are typically associated with applications needing greater throughput than required for ours, but you may want to consider them for yours. They are not addressed in this tutorial.</p>
+            
+                <h3 id="tradeoffs-by-data-direction">Tradeoffs by Data Direction</h3>
+            
+                <p>Our strategy is to use MQTT as our primary method of communication with ARTIK Cloud. By doing so, we are saying that it is sufficient to have only two transaction types:</p>
+            
+                <ul>
+              <li>ARTIK Module <strong>–&gt;</strong> ARTIK Cloud : Data only</li>
+              <li>ARTIK Cloud <strong>–&gt;</strong> ARTIK Module : Actions for module code to carry out</li>
+            </ul>
+            
+                <p>We describe below how outgoing and incoming payloads are handled in general, and within that context, how our strategy of choosing MQTT will play out.</p>
+            
+                <pre>&#x000A;&#x000A;</pre>
+            
+                <h4 id="outgoing-payloads"><strong>Outgoing Payloads</strong></h4>
+                <p>Regardless of protocol, payloads that ARTIK module code might want to send <strong>to</strong> ARTIK Cloud can contain Data or an Action.</p>
+            
+                <ul>
+              <li><strong>Actions</strong> sent are executed by ARTIK Cloud as specified in the payload. MQTT clients are <strong>not</strong> allowed to deliver Action messages to ARTIK Cloud; only Web clients may.</li>
+              <li><strong>Data</strong> sent is archived by ARTIK Cloud, which also analyzes the data using Rules you have set up and generates Actions called for.</li>
+            </ul>
+            
+                <p>Because ARTIK Cloud can analyze and act on data content, the inability of MQTT clients to send Actions is not a limitation in most cases. The ARTIK Cloud mechanism for defining and enabling Actions it takes based on data received is found at the <a href="https://www.artik.cloud/my/rules/new" target="pageRules"> <b>Rules</b></a>
+            page of My ARTIK Cloud. Go there now and try it out – you'll find it easy and quite intuitive.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\rule-new-1.jpg"></p>
+            
+                <p>In our scenario, we do not need to send Actions. We are counting on ARTIK Cloud Rules to generate Actions, both to the ARTIK module and to other devices, based on:</p>
+            
+                <ul>
+              <li>Home control and sensor data that the ARTIK module sends to ARTIK Cloud</li>
+              <li>Data and Actions that the power company sends to ARTIK Cloud.</li>
+            </ul>
+            
+                <p>In other words, we are depending on the intelligence of ARTIK Cloud to interpret data and send Actions on our behalf. This approach enables us to solely employ MQTT for our outgoing payload needs.</p>
+            
+                <pre>&#x000A;&#x000A;</pre>
+            
+                <h4 id="incoming-payloads"><strong>Incoming Payloads</strong></h4>
+            
+                <p>Regardless of protocol, payloads the ARTIK module code might want to receive <strong>from</strong> ARTIK Cloud may contain Data or an Action.</p>
+            
+                <ul>
+              <li>
+                <p><strong>Actions</strong>, possibly originating from other devices, explicitly direct the ARTIK module to do something. Only MQTT clients receive these directly.  Web clients receive them only when they retrieve them as part of archived messages.</p>
+              </li>
+              <li>
+                <p><strong>Data</strong> can only arrive by way of Web protocols. ARTIK Cloud clients <strong>cannot</strong> retrieve or subscribe to data messages via MQTT.</p>
+              </li>
+            </ul>
+            
+                <p>As an ARTIK Cloud MQTT client, the ARTIK module subscribes to messages intended for its Device ID. In our scenario, we need to receive Actions – directly from ARTIK Cloud, and indirectly from others by way of ARTIK Cloud Rules. Subscribing to them with MQTT is the fastest and most efficient way to get Actions, which the ARTIK module can then execute rapidly.</p>
+            
+                <p>Our application is not retrieving data from ARTIK Cloud, so MQTT is sufficient for our incoming payload needs. You will have to decide whether you would need data retrieval, and therefore Web protocols, based on your own application requirements.</p>
+            
+              </div>
+            </div>
+            
+            <h2 id="defining-actions-in-artik-cloud">Defining Actions in ARTIK Cloud</h2>
+            
+            <p>Let's review our demonstration scenario, using the Economy A/C Database manifest.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\ARTIKCloud_InfographicV1.jpg"></p>
+            
+            <p>This scenario is ideally suited to the MQTT-only method described above.</p>
+            
+            <ul>
+              <li>Data and controls are all managed locally by the ARTIK module.</li>
+              <li>
+                <p>Relevant data is sent to the power company for archiving and analysis.<br>
+            ARTIK Module <strong>–&gt;</strong> ARTIK Cloud : Data only</p>
+              </li>
+              <li>The power company sends back actions to influence electric grid loading if needed.<br>
+            ARTIK Cloud <strong>–&gt;</strong> ARTIK Module : Actions only</li>
+            </ul>
+            
+            <p>Specifically, the power company wants to establish a small set of Actions it can send on very hot days.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>ID</th>
+                  <th>Description</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pre-cool house</td>
+                  <td>actionPrecoolHouse</td>
+                  <td>Request to cool down house early in anticipation of a warm afternoon</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>Pre-cool refrigerator</td>
+                  <td>actionPrecoolRefrig</td>
+                  <td>Request to run food cooling appliances ahead of expected heat peak</td>
+                  <td>Low</td>
+                </tr>
+                <tr>
+                  <td>Set thermostat</td>
+                  <td>actionSetLowTemp</td>
+                  <td>Request to limit coolest setting on thermostat</td>
+                  <td>Medium</td>
+                </tr>
+                <tr>
+                  <td>Control A/C compressor</td>
+                  <td>actionStopAC</td>
+                  <td>Urgent need to immediately cycle off compressor to avoid imminent blackout</td>
+                  <td>High</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>In our scenario, we envision most of these requests to be under homeowner control. "Priority", from the power company perspective, means the following.</p>
+            
+            <ul>
+              <li>Low: Customer can pre-configure their local system to prevent the request from being acted on (if, say, pre-cooling the refrigerator would ruin food for a person with special dietary needs).</li>
+              <li>Medium: Customer can override the requests on a per-instance basis (for example, if the thermostat is blocked from being set below 75 degrees, the homeowner can hold the setting buttons for 10s to override).</li>
+              <li>High: Customer is not allowed to override the Action.</li>
+            </ul>
+            
+            <p>While MQTT protocols offer Quality of Service levels to check for payload arrival, these alone would never be enough to guarantee that a High Priority Action was acted on. Therefore, it is up to your application to verify that such commands are carried out.</p>
+            
+            <p class="info">ARTIK Cloud delivers Actions with QoS 0 only. But even QoS 1 or 2 would not guarantee that a MQTT payload was not lost due to connectivity issues.  While delivery loss is inconvenient, the harm is not irreparable. Source data and Actions can always be retrieved by polling ARTIK Cloud.</p>
+            
+            <h3 id="decide-data-and-actions-of-interest">Decide Data and Actions of Interest</h3>
+            <p>For our demonstration tests, our outgoing data of interest will be <code>insTemp</code> and <code>outTemp</code>. Our incoming Actions of interest will be <code>actionSetLowTemp</code> and <code>actionStopAC</code>. Here are the Rules we want to put in place.</p>
+            
+            <ul>
+              <li>
+                <p>When <code>outTemp</code> exceeds 40 C (104 F), the power company wants ARTIK Cloud to send a <code>setTemperature</code> message with a parameter of <code>actionSetLowTemp</code> and a value of 24 C (75 F).</p>
+              </li>
+              <li>
+                <p>When <code>insTemp</code> drops below 15.5 C (60 F), the power company wants ARTIK Cloud to stop the air conditioning by sending a <code>setOff</code> message with a parameter of <code>actionStopAC</code>.</p>
+              </li>
+              <li>
+                <p>In a pending emergency blackout situation, the power company wants to directly command an Action via ARTIK Cloud to immediately shut off the A/C compressor unit using the same message as above.</p>
+              </li>
+            </ul>
+            
+            <h3 id="modify-manifest">Modify Manifest</h3>
+            <p>To give your manifest new capabilities, use the same approach you did when setting it up originally, but this time select Actions.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the ARTIK Cloud Developer Dashboard and log in.</p>
+              </li>
+              <li>
+                <p>Click on</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th><img alt="" src="..\..\images\docs\tutorials\device-types-used.jpg"></th>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>^</td>
+                      <td>then select <code>Economy A/C Database</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Click on</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>+ New Version</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>^</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Click on</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>+ Device Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>^</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Click through steps a–d below for <code>setTemperature</code> with a parameter of 'actionSetLowTemp' and type 'Double'.</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>+ New Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>a. ^</td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Browse Standard Actions</th>
+                      <th> </th>
+                      <th>Save</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>b. ^</td>
+                      <td>then select <code>setTemperature</code></td>
+                      <td>^</td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>+ New Parameter</th>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>c. ^</td>
+                      <td>then select <code>actionSetLowTemp</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Data Type</th>
+                      <th> </th>
+                      <th>Save</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>d. ^</td>
+                      <td>then select <code>Double</code></td>
+                      <td>^</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Repeat steps a–d, this time for <code>setOff</code>with a parameter of <code>actionStopAC</code> and type <code>Boolean</code>.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\artik-cloud-actions-1.jpg"></p>
+              </li>
+              <li>
+                <p>Click <code>Next: Activate Manifest</code>.</p>
+              </li>
+              <li>
+                <p>Click the list item that looks like this to get back to where you left off.</p>
+            
+                <p><img alt="" src="..\..\images\docs\tutorials\manifest-checked-image.jpg?1549048075"></p>
+              </li>
+            </ol>
+            
+            <p>You have now added Actions to your project. All you have left to do on ARTIK Cloud is to define and activate the Rules needed to trigger these Actions, which we'll do in the <a href="#taking-action">Taking Action</a> section after we have written code on the ARTIK Module side to receive and process Actions.</p>
+            
+            <h2 id="assembling-the-edge-devices">Assembling the Edge Devices</h2>
+            
+            <p>Since our demonstration scenario is for home air conditioning, the test platform we have in mind represents the edge device, temp sensor, and A/C compressor unit. We will base this on a second ARTIK development board, which we will call the <strong>remote</strong> board.</p>
+            
+            <p>We will also use the ARTIK 053 device from the previous tutorial to control our shades, so that they open and close automatically depending on outside temperature.</p>
+            
+            <h3 id="components">Components</h3>
+            
+            <p>To have a little fun with our demonstration device, we modeled it on an outdoor air conditioner compressor unit and gave it sound effects. You can duplicate this, or can simply use an LED and earphones.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th><a href="http://www.pcgearhead.com/speakers.php" target="_blank">GEARHEAD speaker </a></th>
+                  <th>+  <a href="https://littlebits.cc/bits/fan" target="_blank">Little Bits 5V Fan</a></th>
+                  <th>= air conditioner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\tutorials\gearhead-speaker.jpg"></td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\little-bits-fan.jpg"></td>
+                  <td><img alt="" src="..\..\images\docs\tutorials\Infographic-AC-only.jpg"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>The sound effects serve a practical purpose, demonstrating how to write Arduino code to trigger Linux<sup>®</sup> command line operations (in this case, playing an audio file). In a future tutorial, we will also use this setup to demonstrate Bluetooth<sup>®</sup> audio.</p>
+            
+            <h3 id="connections">Connections</h3>
+            <p>The following instructions refer to connecting the components to the <strong>remote</strong> ARTIK board. Power off while connecting.</p>
+            
+            <ul>
+              <li>Speaker: Plug into ARTIK board audio output jack (charge with USB before using, then leave USB unconnected and put switch to AUX position).</li>
+              <li>Photoresistor and resistor: Connect as on the original ARTIK board (like <a href="color-mqtt-arduino.html#data-source-preparation">this</a>).</li>
+              <li>Fan: Attach GND to ARTIK GND, Vcc to ARTIK +5V, SIG to GPIO pin 2.<br>
+              <img alt="" src="..\..\images\docs\tutorials\little-bits-conn.jpg"></li>
+            </ul>
+            
+            <p>You may also want to connect a resistor (we chose 220 ohm) between SIG and GND. Otherwise, the signal floats and causes the fan to "flutter" while idle.</p>
+            
+            <h2 id="coding--how-it-works">Coding / How It Works</h2>
+            
+            <p>As in previous tutorials, we supply <code>insTemp</code> readings from the primary ARTIK board.  However, we will now use the remote ARTIK board outside to monitor and transmit <code>outTemp</code> readings and to control our improvised air conditioner. A Web-page control panel driven by Node-RED will display the data and provide threshold settings.</p>
+            
+            <p>In this tutorial, we will scale the readings to make them a little more like real Fahrenheit temperatures (even though they will still come from photosensors instead of temperature sensors for quicker response). We will also name the published topics appropriately (for example, the 'brightness' topic we used for the ARTIK 053 module now changes to 'outTemp' for the ARTIK board).</p>
+            
+            <h3 id="preparation">Preparation</h3>
+            
+            <p>Here we will be referring to the <strong>main</strong> and <strong>remote</strong> ARTIK boards and associated code.</p>
+            
+            <ol>
+              <li>Connect both ARTIK boards to the host PC, running separate USB cables and terminal emulator instances to each.</li>
+              <li>Connect each board to Wi-Fi<sup>®</sup> through the usual <code>dhclient wlan0</code> sequence, and check for correct connectivity.</li>
+              <li>Launch Mosquitto on the <strong>main</strong> board.</li>
+              <li>Copy three sound effect files by right-clicking each of these links and saving to any convenient temporary location on your PC: <a href="..\..\code-samples\ac.wav">ac.wav</a> – <a href="..\..\code-samples\ac-run.wav">ac-run.wav</a> – <a href="..\..\code-samples\ac-off.wav">ac-off.wav</a></li>
+              <li>Use <code>scp</code> to load the sound effects files to the root directory on the <strong>remote</strong> board.</li>
+            </ol>
+            
+            <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\tutorial_graphic_101.jpg"></p>
+            
+            <h3 id="main-artik-controller-arduino-code"><strong>Main ARTIK Controller Arduino Code</strong></h3>
+            
+            <p>The Arduino code for the main board is provided below. It is similar to that developed in the previous tutorial but does not use Web calls. The code creates two MQTT clients: one to ARTIK Cloud (SSL/TLS-secured) and a separate one to Mosquitto (local and unsecured).</p>
+            
+            <h4 id="improvements"><strong>Improvements</strong></h4>
+            
+            <p>We added a <code>getIPAddress</code> routine to simplify setup. Now, the Arduino code just reads the <code>localhost</code> address directly from an <code>ifconfig wlan0</code> statement, so you need not specify the mqttServer address. To implement this, we use shell commands, which we'll talk about in the "remote" code section below.</p>
+            
+            <p>We also needed a <code>parseBuffer</code> routine, sort of the inverse of the <code>loadBuffer</code> routine from previous tutorials, to deconstruct the incoming json payloads from ARTIK Cloud. You'll see an example in the <a href="#test-2-check-the-ac-compressor-cycling">Taking Action</a> section of what those messages look like. It might help you understand this routine better.</p>
+            
+            <h4 id="setup-instructions"><strong>Setup Instructions</strong></h4>
+            
+            <ol>
+              <li>Copy the code below to the Arduino IDE, replacing Device ID in <strong>three</strong> places and Device Token in one place.</li>
+              <li>Pick the correct network under Arduino <strong>Tools-&gt;Port</strong>.</li>
+              <li>Compile and load the code to your <strong>main</strong> ARTIK board through the Arduino IDE.</li>
+            </ol>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108&#x000A;109&#x000A;110&#x000A;111&#x000A;112&#x000A;113&#x000A;114&#x000A;115&#x000A;116&#x000A;117&#x000A;118&#x000A;119&#x000A;120&#x000A;121&#x000A;122&#x000A;123&#x000A;124&#x000A;125&#x000A;126&#x000A;127&#x000A;128&#x000A;129&#x000A;130&#x000A;131&#x000A;132&#x000A;133&#x000A;134&#x000A;135&#x000A;136&#x000A;137&#x000A;138&#x000A;139&#x000A;140&#x000A;141&#x000A;142&#x000A;143&#x000A;144&#x000A;145&#x000A;146&#x000A;147&#x000A;148&#x000A;149&#x000A;150&#x000A;151&#x000A;152&#x000A;153&#x000A;154&#x000A;155&#x000A;156&#x000A;157&#x000A;158&#x000A;159&#x000A;160&#x000A;161&#x000A;162&#x000A;163&#x000A;164&#x000A;165&#x000A;166&#x000A;167&#x000A;168&#x000A;169&#x000A;170&#x000A;171&#x000A;172&#x000A;173&#x000A;174&#x000A;175</pre></td><td class="code"><pre><span class="cp">#include &lt;WiFi.h&gt;&#x000A;#include &lt;MQTTClient.h&gt;&#x000A;#include &lt;ArduinoJson.h&gt;&#x000A;#include &lt;DebugSerial.h&gt;&#x000A;</span>&#x000A;<span class="c1">//-------------&#x000A;// ARTIK Cloud MQTT params&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudServer</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">"api.artik.cloud"</span><span class="p">;</span>&#x000A;<span class="kt">int</span>  <span class="n">mqttCloudPort</span>         <span class="o">=</span> <span class="mi">8883</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttCloudClientName</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ARTIK-Arduino"</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttCloudUsername</span><span class="p">[]</span>   <span class="o">=</span> <span class="s">"_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudPassword</span><span class="p">[]</span>   <span class="o">=</span> <span class="s">"_your_DEVICE_TOKEN_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudDataOut</span><span class="p">[]</span>    <span class="o">=</span> <span class="s">"/v1.1/messages/_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudActionsIn</span><span class="p">[]</span>  <span class="o">=</span> <span class="s">"/v1.1/actions/_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span>&#x000A;<span class="n">WiFiSSLClient</span> <span class="n">ipCloudStack</span><span class="p">;</span>&#x000A;<span class="n">MQTTClient</span> <span class="n">mqttCloudClient</span><span class="p">;</span>&#x000A;&#x000A;<span class="c1">//------------&#x000A;// Mosquitto local MQTT params&#x000A;</span><span class="kt">char</span> <span class="n">mqttServer</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span> <span class="c1">//ip address acquisition is automatic now&#x000A;</span><span class="kt">int</span>  <span class="n">mqttPort</span>         <span class="o">=</span> <span class="mi">1883</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttClientName</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ARTIK-Master Indoor"</span><span class="p">;</span>&#x000A;<span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">,</span> <span class="n">insTempPrev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="n">bool</span> <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">bufLength</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">scalingFactor</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">debounce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>&#x000A;&#x000A;<span class="n">WiFiClient</span> <span class="n">ipStack</span><span class="p">;</span>&#x000A;<span class="n">MQTTClient</span> <span class="n">mqttClient</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>&#x000A;&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">getIPAddress</span><span class="p">();</span> <span class="c1">//automatic now&#x000A;</span>&#x000A;  <span class="n">scalingFactor</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">37</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span>&#x000A;&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">mqttCloudServer</span><span class="p">,</span> <span class="n">mqttCloudPort</span><span class="p">,</span> <span class="n">ipCloudStack</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"start ARTIK Cloud connect"</span><span class="p">);</span>&#x000A;  <span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mqttCloudClientName</span><span class="p">,</span> <span class="n">mqttCloudUsername</span><span class="p">,</span> <span class="n">mqttCloudPassword</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"connect result:"</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">rc</span><span class="p">);</span>&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">mqttCloudActionsIn</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">,</span> <span class="n">mqttPort</span><span class="p">,</span> <span class="n">ipStack</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mqttClient</span><span class="p">.</span><span class="n">connected</span><span class="p">())</span> <span class="p">{</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mqttClientName</span><span class="p">);</span>&#x000A;    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">"outTemp"</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">"desTemp"</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">"insTemp"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>&#x000A;  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">debounce</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"*"</span><span class="p">);</span>&#x000A;&#x000A;  <span class="n">insTemp</span> <span class="o">=</span> <span class="mi">110</span> <span class="o">-</span> <span class="p">(</span><span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">scalingFactor</span><span class="p">);</span> <span class="c1">// from ARTIK photosensor&#x000A;</span>  <span class="k">if</span> <span class="p">(</span><span class="n">insTemp</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span> <span class="n">insTemp</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">insTemp</span> <span class="o">&gt;</span> <span class="n">insTempPrev</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">||</span> <span class="n">insTemp</span> <span class="o">&lt;</span> <span class="n">insTempPrev</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">"%4.0f"</span><span class="p">,</span> <span class="n">insTemp</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"insTemp"</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>&#x000A;    <span class="n">insTempPrev</span> <span class="o">=</span> <span class="n">insTemp</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">insTemp</span> <span class="o">&gt;</span> <span class="n">desTemp</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">debounce</span><span class="o">++</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">debounce</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span> <span class="c1">//countdown value&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="n">compOnCtl</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;        <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"compOnCtl"</span><span class="p">,</span> <span class="s">"true"</span><span class="p">);</span>&#x000A;        <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"!"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// insTemp must be &lt;= desTemp&#x000A;</span>    <span class="k">if</span> <span class="p">(</span><span class="n">debounce</span><span class="o">--</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;      <span class="n">debounce</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">compOnCtl</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;        <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"compOnCtl"</span><span class="p">,</span> <span class="s">"false"</span><span class="p">);</span>&#x000A;        <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"X"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">getIPAddress</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//figure out IP address from ifconfig&#x000A;</span>  <span class="kt">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="n">Process</span> <span class="n">p</span><span class="p">;</span>&#x000A;  <span class="n">p</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="s">"ifconfig wlan0 | grep 'inet ' | awk '{ print $2 }'"</span><span class="p">);</span>&#x000A;  <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">running</span><span class="p">());</span>&#x000A;  <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">available</span><span class="p">())</span> <span class="p">{</span>&#x000A;    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>&#x000A;    <span class="n">mqttServer</span><span class="p">[</span><span class="n">indx</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">mqttServer</span><span class="p">[</span><span class="n">indx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"wlan0 IP address:"</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">messageReceived</span><span class="p">(</span><span class="n">String</span> <span class="n">topic</span><span class="p">,</span> <span class="n">String</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">bytes</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">payload</span><span class="p">;</span><span class="c1">// convert payload to float&#x000A;</span>  <span class="kt">float</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">toFloat</span><span class="p">();</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">topic</span> <span class="o">==</span> <span class="s">"outTemp"</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// from remote sensor&#x000A;</span>    <span class="n">outTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>&#x000A;    <span class="n">sendToArtikCloud</span><span class="p">(</span><span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">topic</span> <span class="o">==</span> <span class="s">"insTemp"</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// from internal analog read&#x000A;</span>    <span class="n">insTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>&#x000A;    <span class="n">sendToArtikCloud</span><span class="p">(</span><span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">topic</span> <span class="o">==</span> <span class="s">"desTemp"</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// from Node-RED slider&#x000A;</span>    <span class="n">desTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>&#x000A;    <span class="n">insTempPrev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// force trigger of new sensing round&#x000A;</span>    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"desTemp:"</span><span class="p">);</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">desTemp</span><span class="p">);</span>&#x000A;    <span class="n">sendToArtikCloud</span><span class="p">(</span><span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span> <span class="p">{</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Action:"</span><span class="p">);</span> <span class="c1">//&#x000A;</span>    <span class="n">parseBuffer</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">sendToArtikCloud</span><span class="p">(</span><span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">desTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">outTemp</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">loadBuffer</span><span class="p">(</span><span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">);</span> <span class="c1">// load current values into the buffer&#x000A;</span>  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">mqttCloudDataOut</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">loadBuffer</span><span class="p">(</span><span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">desTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">outTemp</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">StaticJsonBuffer</span><span class="o">&lt;</span><span class="mi">200</span><span class="o">&gt;</span> <span class="n">jsonBuffer</span><span class="p">;</span>&#x000A;  <span class="n">JsonObject</span><span class="o">&amp;</span> <span class="n">dataPair</span> <span class="o">=</span> <span class="n">jsonBuffer</span><span class="p">.</span><span class="n">createObject</span><span class="p">();</span>&#x000A;&#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"insTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">insTemp</span><span class="p">;</span>&#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"desTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">desTemp</span><span class="p">;</span>&#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"outTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">outTemp</span><span class="p">;</span>&#x000A;&#x000A;  <span class="n">dataPair</span><span class="p">.</span><span class="n">printTo</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">parseBuffer</span><span class="p">(</span><span class="n">String</span> <span class="n">_payload</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">StaticJsonBuffer</span><span class="o">&lt;</span><span class="mi">200</span><span class="o">&gt;</span> <span class="n">jsonBuffer</span><span class="p">;</span>&#x000A;  <span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="n">_payload</span><span class="p">;</span>&#x000A;  <span class="n">JsonObject</span><span class="o">&amp;</span> <span class="n">root</span> <span class="o">=</span> <span class="n">jsonBuffer</span><span class="p">.</span><span class="n">parseObject</span><span class="p">(</span><span class="n">json</span><span class="p">);</span>&#x000A;  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">nameparam</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="s">"actions"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"name"</span><span class="p">];</span>&#x000A;  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">actionSetLowTemp</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="s">"actions"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"parameters"</span><span class="p">][</span><span class="s">"actionSetLowTemp"</span><span class="p">];</span>&#x000A;  <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">actionStopAC</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="s">"actions"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">"parameters"</span><span class="p">][</span><span class="s">"actionStopAC"</span><span class="p">];</span>&#x000A;&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">nameparam</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">actionSetLowTemp</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">actionStopAC</span><span class="p">);</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">nameparam</span><span class="p">,</span> <span class="s">"setTemperature"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">desTemp</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="n">actionSetLowTemp</span><span class="p">).</span><span class="n">toFloat</span><span class="p">();</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"desTemp"</span><span class="p">,</span> <span class="n">actionSetLowTemp</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">nameparam</span><span class="p">,</span> <span class="s">"setOff"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"compOnCtl"</span><span class="p">,</span> <span class="s">"false"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;</pre></td></tr></tbody></table>
+            </div>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h3 id="remote-ac-unit-artik-controller-arduino-code"><strong>Remote A/C Unit ARTIK Controller Arduino Code</strong></h3>
+            
+            <p>For the outdoor temp sensor and A/C Unit Controller, we require only a tiny amount of code to publish <code>outTemp</code> and to subscribe to receive <code>compOnCtl</code> commands.</p>
+            
+            <h4 id="improvements-1"><strong>Improvements</strong></h4>
+            
+            <p>Note the <code>Process</code> class <code>runShellCommand</code> operations. They bring the convenience of Linux command line operations into our Arduino sketch. Using them here, we:</p>
+            
+            <ul>
+              <li>Play a "sound effect" file each time we receive a control command over MQTT telling us to turn the compressor on or off.</li>
+              <li>Run a script to read and figure out who our local MQTT broker is automatically, eliminating the need to manually change the IP address in the sketch.</li>
+            </ul>
+            
+            <p>The <code>curl</code> command string may look strange, but it's just trying to open the MQTT port at each IP address to see if it gets a "connected" state. Only the address of the MQTT broker will return this state successfully, with a line beginning with an asterisk (*).</p>
+            
+            <p>Try copying the command strings themselves to your Linux prompt to run them and see how they work. Once you see how easy it is, we're sure you will find many additional ways to use <code>runShellCommand</code> routines.</p>
+            
+            <h4 id="setup-instructions-1"><strong>Setup Instructions</strong></h4>
+            
+            <ol>
+              <li>Copy the code below to the Arduino IDE.</li>
+              <li>Pick the correct network (the other one this time) under Arduino <strong>Tools-&gt;Port</strong>.</li>
+              <li>Compile and load the code to your <strong>remote</strong> ARTIK board through the Arduino IDE.</li>
+            </ol>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108&#x000A;109&#x000A;110&#x000A;111&#x000A;112&#x000A;113&#x000A;114&#x000A;115&#x000A;116&#x000A;117&#x000A;118&#x000A;119&#x000A;120&#x000A;121&#x000A;122&#x000A;123&#x000A;124&#x000A;125&#x000A;126&#x000A;127&#x000A;128&#x000A;129&#x000A;130&#x000A;131</pre></td><td class="code"><pre><span class="c1">// THIS SKETCH IS FOR STANDALONE ARTIK ACTING AS OUTDOOR TEMP SENSOR / AC COMPRESSOR CONTROLLER&#x000A;</span>&#x000A;<span class="cp">#include &lt;WiFi.h&gt;&#x000A;#include &lt;MQTTClient.h&gt;&#x000A;#include &lt;DebugSerial.h&gt;&#x000A;</span>&#x000A;<span class="c1">//-------------&#x000A;// Mosquitto local MQTT params&#x000A;</span><span class="kt">char</span> <span class="n">mqttServer</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>&#x000A;<span class="kt">int</span>  <span class="n">mqttPort</span>         <span class="o">=</span> <span class="mi">1883</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttClientName</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ARTIK-Remote A/C"</span><span class="p">;</span>&#x000A;<span class="kt">float</span>  <span class="n">outTemp</span><span class="p">,</span> <span class="n">outTempPrev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="n">bool</span> <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">retryCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">bufLength</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">scalingFactor</span><span class="p">;</span>&#x000A;<span class="kt">FILE</span> <span class="o">*</span> <span class="n">ipFile</span><span class="p">;</span>&#x000A;<span class="kt">FILE</span> <span class="o">*</span> <span class="n">checkFile</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>&#x000A;&#x000A;<span class="n">WiFiClient</span> <span class="n">ipStack</span><span class="p">;</span>&#x000A;<span class="n">MQTTClient</span> <span class="n">mqttClient</span><span class="p">;</span>&#x000A;<span class="n">Process</span> <span class="n">p</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>&#x000A;&#x000A;  <span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>&#x000A;  <span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>&#x000A;  <span class="n">scalingFactor</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">75</span><span class="p">;</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">scalingFactor</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="n">scalingFactor</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">// avoid div by 0 later&#x000A;</span>  &#x000A;  <span class="c1">// this command saves list of possible ip addresses&#x000A;</span>  <span class="n">Process</span> <span class="n">ip</span><span class="p">;</span>&#x000A;  <span class="n">String</span> <span class="n">ipcmd</span> <span class="o">=</span> <span class="s">"ip neigh | grep 'lladdr' |  grep -F '.' | awk '{ print $1 }' &gt; ipneighbors"</span><span class="p">;</span>&#x000A;  <span class="n">ip</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="n">ipcmd</span><span class="p">);</span>&#x000A;  <span class="n">ipFile</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"ipneighbors"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>&#x000A;&#x000A;  <span class="c1">//this section tries each neighboring address to see if port 1883 is open&#x000A;</span>  <span class="c1">//if curl can connect, it's an MQTT broker&#x000A;</span>  <span class="kt">int</span> <span class="n">checkSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="kt">char</span> <span class="n">curlcode</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>&#x000A;  <span class="k">do</span> <span class="p">{</span>&#x000A;    <span class="n">fgets</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">ipFile</span><span class="p">);</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Trying:"</span><span class="p">);</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">);</span>&#x000A;    <span class="kt">char</span> <span class="o">*</span> <span class="n">e</span> <span class="o">=</span> <span class="n">strchr</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">,</span> <span class="sc">'\n'</span><span class="p">);</span> <span class="c1">//search for CR&#x000A;</span>    <span class="k">if</span> <span class="p">(</span><span class="n">e</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"No MQTT broker found!"</span><span class="p">);</span>&#x000A;      <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="kt">int</span> <span class="n">eolPosn</span> <span class="o">=</span> <span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">e</span> <span class="o">-</span> <span class="n">mqttServer</span><span class="p">));</span>&#x000A;    <span class="n">mqttServer</span><span class="p">[</span><span class="n">eolPosn</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span> <span class="c1">//replace with EOL&#x000A;</span>&#x000A;    <span class="n">String</span> <span class="n">cmdline</span> <span class="o">=</span> <span class="s">"curl -vs --connect-timeout 2 http://"</span> <span class="o">+</span> <span class="n">String</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">)</span> <span class="o">+</span> <span class="s">":1883 2&gt;&amp;1 | grep 'Connected' &gt; out"</span><span class="p">;</span>&#x000A;    <span class="n">ip</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="n">cmdline</span><span class="p">);</span>&#x000A;&#x000A;    <span class="c1">//If the word "connected" isn't found then it's not an MQTT broker port&#x000A;</span>    <span class="n">checkFile</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"out"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>&#x000A;    <span class="n">fgets</span><span class="p">(</span><span class="n">curlcode</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">checkFile</span><span class="p">);</span>&#x000A;    <span class="n">fclose</span><span class="p">(</span><span class="n">checkFile</span><span class="p">);</span>&#x000A;  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">curlcode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">'*'</span><span class="p">);</span>&#x000A;  <span class="n">fclose</span><span class="p">(</span><span class="n">ipFile</span><span class="p">);</span>&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">,</span> <span class="n">mqttPort</span><span class="p">,</span> <span class="n">ipStack</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">mqttClient</span><span class="p">.</span><span class="n">connected</span><span class="p">())</span> <span class="p">{</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"reconnecting"</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mqttClientName</span><span class="p">);</span>&#x000A;    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">mqttClient</span><span class="p">.</span><span class="n">connected</span><span class="p">())</span> <span class="p">{</span>&#x000A;      <span class="n">retryCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;      <span class="n">mqttClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">"compOnCtl"</span><span class="p">);</span>&#x000A;    <span class="p">}</span> <span class="k">else</span> <span class="n">retryCount</span> <span class="o">=</span> <span class="n">retryCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">retryCount</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span>&#x000A;      <span class="n">mqttClient</span><span class="p">.</span><span class="n">disconnect</span><span class="p">();</span>&#x000A;  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>&#x000A;    <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="n">outTemp</span> <span class="o">=</span> <span class="mi">150</span> <span class="o">-</span> <span class="p">(</span><span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">scalingFactor</span><span class="p">);</span> <span class="c1">// from ARTIK photosensor&#x000A;</span>  <span class="k">if</span> <span class="p">(</span><span class="n">outTemp</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">outTemp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">outTemp</span> <span class="o">&gt;</span> <span class="n">outTempPrev</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">||</span> <span class="n">outTemp</span> <span class="o">&lt;</span> <span class="n">outTempPrev</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">"%4.0f"</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">);</span>&#x000A;    <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"outTemp"</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>&#x000A;    <span class="n">outTempPrev</span> <span class="o">=</span> <span class="n">outTemp</span><span class="p">;</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">outTemp</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">)</span> <span class="p">{</span>&#x000A;      <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">// turn fan off&#x000A;</span>      <span class="n">p</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="s">"aplay ac-off.wav --nonblock --quiet"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">outTemp</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">)</span>&#x000A;      <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"color"</span><span class="p">,</span> <span class="s">"RED"</span><span class="p">);</span>&#x000A;&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"*"</span><span class="p">);</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">compOnCtl</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">running</span><span class="p">()</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span>&#x000A;      <span class="n">p</span><span class="p">.</span><span class="n">runShellCommandAsynchronously</span><span class="p">(</span><span class="s">"aplay ac-run.wav --nonblock --quiet "</span><span class="p">);</span><span class="c1">//foreground&#x000A;</span>    <span class="n">mqttClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">"color"</span><span class="p">,</span> <span class="s">"GREEN"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  &#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">messageReceived</span><span class="p">(</span><span class="n">String</span> <span class="n">topic</span><span class="p">,</span> <span class="n">String</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">bytes</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">topic</span> <span class="o">==</span> <span class="s">"compOnCtl"</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// command from main controller&#x000A;</span>    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">compOnCtl:"</span><span class="p">);</span>&#x000A;    <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'t'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// true&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="n">compOnCtl</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span> <span class="c1">// turn fan on&#x000A;</span>        <span class="n">p</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="s">"aplay ac.wav --nonblock --quiet &amp;"</span><span class="p">);</span>&#x000A;        <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>&#x000A;        <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"*ON*"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'f'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// false&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="n">compOnCtl</span> <span class="o">==</span> <span class="nb">true</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">running</span><span class="p">());</span> <span class="c1">// wait for prior audio to complete&#x000A;</span>        <span class="n">digitalWrite</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span> <span class="c1">// turn fan off&#x000A;</span>        <span class="n">p</span><span class="p">.</span><span class="n">runShellCommand</span><span class="p">(</span><span class="s">"aplay ac-off.wav --nonblock --quiet &amp;"</span><span class="p">);</span>&#x000A;        <span class="n">compOnCtl</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>&#x000A;        <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"*OFF*"</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="artik-053-code"><strong>ARTIK 053 Code</strong></h3>
+            
+            <p>As an example of how the window shades might be conveniently controlled, we use the ARTIK 053 module with its code pretty much unchanged from previous tutorials. We just send a "RED" command when outdoor temperatures exceed 80 F, and send a "GREEN" command once the air conditioner has been turned on. If you have actual hardware available to control, try some experiments with the ARTIK 053 GPIO pins!</p>
+            
+            <h4 id="setup-instructions-2"><strong>Setup Instructions</strong></h4>
+            
+            <p>Nothing changes for the ARTIK 053 setup. We haven't implemented the automatic IP address code for the ARTIK 053 module, so don't forget to change it manually to match that of the MQTT broker.</p>
+            
+            <p>As soon as you apply power to the ARTIK 053 module, you should see a 'connect' message from Mosquitto.</p>
+            
+            <h3 id="node-red-code">Node-RED Code</h3>
+            
+            <p>For our Node-RED code, the most significant change comes with introduction of <strong>context</strong> variables, replacing the copy-to-file scheme we used previously.  We also made the control panel much nicer.</p>
+            
+            <h4 id="setup-instructions-3"><strong>Setup Instructions</strong></h4>
+            
+            <p>Make sure you have Mosquitto running.</p>
+            
+            <ol>
+              <li>Launch Node-RED on your ARTIK board as you would normally do.</li>
+              <li>Open your Node-RED browser window at <code>localhost:1880/#</code> as usual.</li>
+              <li>Right-click on this <a href="..\..\code-samples\node-red-flow-07-26-16.txt" target="_blank">flow file</a> link to save the complete set of nodes.</li>
+              <li>Open the file in your text editor to replace the IP address entry after <code>"broker":</code> with your <code>localhost</code> address, then save and copy the text to your clipboard.</li>
+              <li>Import it to Node-RED through the Clipboard.</li>
+              <li>Click Deploy and check that all MQTT nodes are connected.</li>
+              <li>Open another browser window at <code>localhost:1880/mcp</code> to display the gauges and slider control.</li>
+            </ol>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h4 id="how-it-works-function-node-code"><strong>How it Works: Function Node Code</strong></h4>
+            
+            <p>Node-RED allows assignment of node variables that persist between invocations. The variable can be accessible just by that Function node (<code>context</code>), by all Function nodes on the page (<code>flow</code>), or by all Function nodes across all pages (<code>global</code>). We only need  <code>flow</code> level persistence for this exercise.</p>
+            
+            <p>If you open any one of the function nodes connected to the MQTT input nodes, you will see code like:</p>
+            
+            <div class="highlight javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="nx">flow</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">'insTemp'</span><span class="p">,</span><span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <p>where we have assigned the MQTT payload to a flow-wide variable called <code>insTemp</code>.</p>
+            
+            <p>Now open the Function node connected to the <code>HTTP [get] /data</code> node. The code creates a nested <code>/data</code> object that can be sent to the HTML page generated by our Template node.</p>
+            
+            <div class="highlight javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>&#x000A;    <span class="na">insTemp</span><span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">flow</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'insTemp'</span><span class="p">)),</span>&#x000A;    <span class="na">outTemp</span><span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">flow</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'outTemp'</span><span class="p">)),</span>&#x000A;    <span class="na">desTemp</span><span class="p">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">flow</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'desTemp'</span><span class="p">))</span>&#x000A;<span class="p">}</span>&#x000A;<span class="nx">msg</span><span class="p">.</span><span class="nx">payload</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>&#x000A;<span class="k">return</span> <span class="nx">msg</span><span class="p">;</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            <h4 id="how-it-works-template-node-html-code"><strong>How it Works: Template Node HTML Code</strong></h4>
+            
+            <p>The Template HTML code is significantly improved. We incorporate gauges from <a href="http://justgage.com" target="_blank"> JustGage</a> to show the incoming published sensor values.  The layout is more mobile-friendly so that you can use your Wi-Fi-enabled cell phone for monitoring and control.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\gauge-panel-1.jpg"></p>
+            
+            <p>To feed the gauges, we take the incoming <code>/data</code> object and parse it into <code>obj</code>, whose <code>insTemp</code>, <code>desTemp</code>, and <code>outTemp</code> elements we can access individually. If we had tried to access the context variables directly by using a reference like <code>{{insTemp}}</code>, they would not be updated dynamically. By contrast, the <code>/data</code> object gets resent to the page every time <code>function myTimer()</code> executes.</p>
+            
+            <div class="highlight javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108&#x000A;109&#x000A;110&#x000A;111&#x000A;112&#x000A;113&#x000A;114&#x000A;115&#x000A;116&#x000A;117&#x000A;118&#x000A;119&#x000A;120&#x000A;121&#x000A;122&#x000A;123&#x000A;124&#x000A;125&#x000A;126&#x000A;127&#x000A;128&#x000A;129&#x000A;130&#x000A;131&#x000A;132&#x000A;133&#x000A;134&#x000A;135&#x000A;136&#x000A;137&#x000A;138&#x000A;139&#x000A;140&#x000A;141&#x000A;142&#x000A;143&#x000A;144&#x000A;145&#x000A;146&#x000A;147&#x000A;148&#x000A;149&#x000A;150&#x000A;151</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>&#x000A;&#x000A;<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>&#x000A;  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;&#x000A;</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"http://cdn.jsdelivr.net/justgage/1.0.1/justgage.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;&#x000A;</span>&#x000A;  <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>&#x000A;    <span class="nx">html</span> <span class="p">{</span>&#x000A;      <span class="nx">font</span><span class="o">-</span><span class="nx">family</span><span class="err">:</span> <span class="nx">Arial</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;&#x000A;</span><span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;&#x000A;</span>&#x000A;<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>&#x000A;  <span class="o">&lt;</span><span class="nx">table</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"250"</span><span class="o">&gt;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span><span class="nx">Temp</span> <span class="nx">Setting</span><span class="err">:</span> <span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>      <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"valGreen"</span><span class="o">&gt;</span><span class="mi">80</span><span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;      <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"75%"</span><span class="o">&gt;&lt;</span><span class="nx">input</span> <span class="nx">onchange</span><span class="o">=</span><span class="s2">"changeGreen(this.value)"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"range"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"slideGreen"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">"80"</span> <span class="nx">min</span><span class="o">=</span><span class="s2">"60"</span> <span class="nx">max</span><span class="o">=</span><span class="s2">"90"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"width:90%"</span><span class="o">&gt;&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"change"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"height:35px"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>&#x000A;    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;       <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"acIcon"</span><span class="o">&gt;&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>       <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"changetxt"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;&lt;/</span><span class="nx">td</span><span class="o">&gt;</span>&#x000A;    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;       <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">colspan</span><span class="o">=</span><span class="mi">3</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"gauge2"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"200x140px"</span><span class="o">&gt;&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;       <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">colspan</span><span class="o">=</span><span class="mi">3</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"gauge"</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"200x160px"</span><span class="o">&gt;&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>  <span class="o">&lt;</span><span class="sr">/table</span><span class="err">&gt;&#x000A;</span>&#x000A;  <span class="o">&lt;</span><span class="nx">table</span><span class="o">&gt;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">tr</span><span class="o">&gt;</span>&#x000A;      <span class="o">&lt;</span><span class="nx">td</span> <span class="nx">align</span><span class="o">=</span><span class="s2">"center"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"width:70%"</span><span class="o">&gt;</span><span class="nx">Manual</span> <span class="nx">AC</span> <span class="nx">Control</span> <span class="o">&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"acOn()"</span><span class="o">&gt;</span><span class="nx">ON</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;&#x000A;</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="s2">"acOff()"</span><span class="o">&gt;</span><span class="nx">OFF</span><span class="o">&lt;</span><span class="sr">/button&gt; &lt;/</span><span class="nx">td</span><span class="o">&gt;</span>&#x000A;      <span class="o">&lt;</span><span class="nx">td</span><span class="o">&gt;&lt;</span><span class="sr">/td</span><span class="err">&gt;&#x000A;</span>    <span class="o">&lt;</span><span class="sr">/tr</span><span class="err">&gt;&#x000A;</span>  <span class="o">&lt;</span><span class="sr">/table</span><span class="err">&gt;&#x000A;</span>&#x000A;  <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>&#x000A;    <span class="kd">function</span> <span class="nx">acOn</span><span class="p">()</span> <span class="p">{</span>&#x000A;      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'AC on'</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="kd">function</span> <span class="nx">acOff</span><span class="p">()</span> <span class="p">{</span>&#x000A;      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'AC off'</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="kd">var</span> <span class="nx">x</span><span class="p">;</span>&#x000A;    <span class="kd">var</span> <span class="nx">iconColor</span> <span class="o">=</span> <span class="s1">'Black'</span><span class="p">;</span>&#x000A;    <span class="kd">var</span> <span class="nx">myVar</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="nx">myTimer</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>&#x000A;&#x000A;    <span class="kd">function</span> <span class="nx">myTimer</span><span class="p">()</span> <span class="p">{</span>&#x000A;      <span class="c1">// Get incoming data from MQTT nodes as part of "data" object</span>&#x000A;      <span class="kd">var</span> <span class="nx">obj</span><span class="p">;</span>&#x000A;      <span class="kd">var</span> <span class="nx">site</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>&#x000A;&#x000A;      <span class="nx">site</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"/data"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>&#x000A;      <span class="nx">site</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>&#x000A;&#x000A;      <span class="nx">site</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#x000A;        <span class="k">if</span> <span class="p">(</span><span class="nx">site</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">site</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>&#x000A;          <span class="nx">obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">site</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>&#x000A;&#x000A;          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>&#x000A;&#x000A;          <span class="c1">// Refresh the gauges</span>&#x000A;          <span class="nx">g2</span><span class="p">.</span><span class="nx">refresh</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">insTemp</span><span class="p">);</span>&#x000A;          <span class="nx">g</span><span class="p">.</span><span class="nx">refresh</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">outTemp</span><span class="p">);</span>&#x000A;&#x000A;          <span class="c1">// Refresh the slider area</span>&#x000A;          <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'slideGreen'</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span><span class="p">;</span>&#x000A;&#x000A;          <span class="kd">var</span> <span class="nx">valGreen</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'valGreen'</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">);</span>&#x000A;&#x000A;          <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span> <span class="o">!=</span> <span class="nx">valGreen</span><span class="p">)</span> <span class="p">{</span>&#x000A;            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'change'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"rgb(255,"</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span> <span class="o">+</span> <span class="s2">", 0)"</span><span class="p">;</span>&#x000A;            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'changetxt'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"Action:"</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span><span class="p">;</span>&#x000A;          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'change'</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"rgb(0,"</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", 0)"</span><span class="p">;</span>&#x000A;            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'changetxt'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">desTemp</span><span class="p">;</span>&#x000A;          <span class="p">}</span>&#x000A;&#x000A;          <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">compOnCtl</span> <span class="o">==</span> <span class="s2">"true"</span><span class="p">)</span> <span class="p">{</span>&#x000A;            <span class="k">if</span> <span class="p">(</span><span class="nx">iconColor</span><span class="o">==</span><span class="s1">'Black'</span><span class="p">)</span> <span class="p">{</span>&#x000A;              <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'acIcon'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&lt;font color='Gray' size='24'&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"</span><span class="p">;</span>&#x000A;              <span class="nx">iconColor</span><span class="o">=</span><span class="s1">'Gray'</span><span class="p">;</span>&#x000A;            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;              <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'acIcon'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&lt;font color='Black' size='24'&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"</span><span class="p">;</span>&#x000A;              <span class="nx">iconColor</span><span class="o">=</span><span class="s1">'Black'</span><span class="p">;</span>&#x000A;            <span class="p">}</span>&#x000A;          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'acIcon'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">"&lt;font color='LightGray' size='24'&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"</span><span class="p">;</span>&#x000A;          <span class="p">}</span>&#x000A;        <span class="p">}</span>&#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>&#x000A;      <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JustGage</span><span class="p">({</span>&#x000A;        <span class="na">id</span><span class="p">:</span> <span class="s2">"gauge"</span><span class="p">,</span>&#x000A;        <span class="na">value</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>&#x000A;        <span class="na">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;        <span class="na">max</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>&#x000A;        <span class="na">title</span><span class="p">:</span> <span class="s2">"Outside Temp (F)"</span>&#x000A;      <span class="p">});</span>&#x000A;&#x000A;      <span class="kd">var</span> <span class="nx">g2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">JustGage</span><span class="p">({</span>&#x000A;        <span class="na">id</span><span class="p">:</span> <span class="s2">"gauge2"</span><span class="p">,</span>&#x000A;        <span class="na">value</span><span class="p">:</span> <span class="mi">70</span><span class="p">,</span>&#x000A;        <span class="na">min</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>&#x000A;        <span class="na">max</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>&#x000A;        <span class="na">title</span><span class="p">:</span> <span class="s2">"Inside Temp (F)"</span>&#x000A;      <span class="p">});</span>&#x000A;    <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;&#x000A;</span>&#x000A;    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>&#x000A;      <span class="nx">changeAll</span><span class="p">();</span>&#x000A;&#x000A;      <span class="kd">function</span> <span class="nx">changeGreen</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>&#x000A;        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'valGreen'</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>&#x000A;        <span class="nx">changeAll</span><span class="p">();</span>&#x000A;      <span class="p">}</span>&#x000A;&#x000A;      <span class="kd">function</span> <span class="nx">changeAll</span><span class="p">()</span> <span class="p">{</span>&#x000A;        <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'valGreen'</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">;</span>&#x000A;        <span class="kd">var</span> <span class="nx">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;        <span class="c1">// Send out new slider setting</span>&#x000A;        <span class="kd">var</span> <span class="nx">MQTTsite</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>&#x000A;        <span class="nx">MQTTsite</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"/mcp"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>&#x000A;        <span class="nx">MQTTsite</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span> <span class="s1">'application/json'</span><span class="p">);</span>&#x000A;        <span class="nx">MQTTsite</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>&#x000A;          <span class="s2">"sliderSetting"</span><span class="p">:</span> <span class="nx">g</span>&#x000A;        <span class="p">}));</span>&#x000A;      <span class="p">}</span>&#x000A;  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;&#x000A;</span>&#x000A;<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;&#x000A;</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;&#x000A;</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="final-setup-checklist">Final Setup Checklist</h3>
+            
+            <p>Up to this point, you should have set up the following.</p>
+            
+            <h4 id="main-artik-board"><strong>Main ARTIK Board</strong></h4>
+            <ul>
+              <li>Photosensor (<code>insTemp</code>) still in place from previous tutorial</li>
+              <li>Load Mosquitto and Node-RED</li>
+              <li>Load Arduino program to communicate with remote board, Node-RED, and ARTIK Cloud, and to read sensor</li>
+              <li>Ensure Device ID (2x) and Device Token are correct.</li>
+            </ul>
+            
+            <h4 id="remote-artik-board"><strong>Remote ARTIK Board</strong></h4>
+            <ul>
+              <li>Add photosensor (<code>outTemp</code>) same as on first board</li>
+              <li>Connect fan (or LED) and speaker</li>
+              <li>Load Arduino program to read sensor, communicate with first board, and control model A/C unit</li>
+              <li>Load sound effects <code>.wav</code> files.</li>
+            </ul>
+            
+            <h4 id="artik-053-board"><strong>ARTIK 053 Board</strong></h4>
+            <ul>
+              <li>Check and make sure IP address is correct.</li>
+            </ul>
+            
+            <h4 id="node-red-browser-windows"><strong>Node-RED Browser Windows</strong></h4>
+            <ul>
+              <li>Deploy main flow from <code>localhost:1880/#</code></li>
+              <li>Bring up Web control panel at <code>localhost:1880/mcp</code></li>
+            </ul>
+            
+            <p>Now comes the easy part: Programming ARTIK Cloud with Rules.</p>
+            
+            <h2 id="taking-action">Taking Action</h2>
+            
+            <p>With our infrastructure ready, it's a simple matter to teach ARTIK Cloud the rules of when and why it should send Actions.</p>
+            
+            <h3 id="set-up-rules">Set Up Rules</h3>
+            
+            <p>Rules are set up through My ARTIK Cloud (not the Developer Dashboard).</p>
+            
+            <ol>
+              <li>
+                <p>Go to My ARTIK Cloud and log in.</p>
+              </li>
+              <li>
+                <p>Click on</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>My ARTIK Cloud</th>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>^</td>
+                      <td>then select <code>Rules</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Click on</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>+ New Rule</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>^</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Set up Rules as follows.</p>
+                <ul>
+                  <li>IF Economy A/C Database outTemp is more than 104 and desTemp is less than 75 THEN send to Economy A/C Database the action setTemperature with actionSetLowTemp = 75‌</li>
+                  <li>IF Economy A/C Database insTemp is less than 60 THEN send to Economy A/C Database the action setOff with actionStopAC = true‌</li>
+                </ul>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\tutorials\artik-cloud-rules-1.jpg"></p>
+              </li>
+            </ol>
+            
+            <p>That's it! That's all there is to creating Rules to make Actions take place.</p>
+            
+            <h3 id="test-1-turn-on-the-air-conditioner">Test 1: Turn on the Air Conditioner</h3>
+            
+            <p>The slider on the Web display panel stands in for the homeowner's thermostat temperature setting control.  Let's try it out.</p>
+            
+            <ol>
+              <li>Slide the temperature setting to the left.</li>
+              <li>Verify that the sound effect is triggered and the fan turns on.</li>
+              <li>Slide the control back and forth to check it out thoroughly.</li>
+              <li>Finish up by moving the control to the left so that the fan stays on.</li>
+            </ol>
+            
+            <p>Note in the code that the displayed temperature setting is returned through the MQTT path. If you open a second instance of this Web page on a mobile device, you will see that both reflect the settings of each other.</p>
+            
+            <h3 id="test-2-check-the-ac-compressor-cycling">Test 2: Check the AC Compressor Cycling</h3>
+            
+            <p>Let's verify that the ARTIK Cloud compressor shutdown rule is having the desired effect.</p>
+            
+            <p><strong>To test the rule:</strong> Verify the Disable AC Compressor rule by using the mouse to hover over the rule to make its Test button appear, then click it.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>&gt; Test</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>^</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p>You can see that the Compressor on the outside temp controller board has been turned off. The message coming from ARTIK Cloud looks like this.</p>
+            
+            <pre>  {"actions":[{"name":"setOff","parameters":{"actionStopAC":true}}]}</pre>
+            
+            <p>The <strong>main</strong> ARTIK module receives this action and sends out the local message</p>
+            
+            <pre>  mqttClient.publish("compOnCtl","false");</pre>
+            
+            <p><strong>To restore operation:</strong> Slide the temperature control to a higher temperature, and then to a lower one again.</p>
+            
+            <p><strong>To verify real operation:</strong> We need to "fool" our stand-in temperature sensor into returning a "cold" value. Shine a light on the photosensor – when it gets below 60 F, you should see the Rule from ARTIK Cloud take effect.</p>
+            
+            <h3 id="test-3-close-the-blinds">Test 3: Close the Blinds</h3>
+            
+            <p>To represent possible operation of controlled blinds, we have the ARTIK 053 board set to change color when the outside temperature goes up or the AC turns on. You could easily connect its GPIO pins to a relay to control motorized drapes or blinds in the house.</p>
+            
+            <ol>
+              <li>Wave your hand over the outdoor temperature sensor (remote ARTIK board).</li>
+              <li>Verify that the red LED comes on.</li>
+              <li>Slide the temperature control so that the A/C turns on.</li>
+              <li>Verify that the green LED comes on.</li>
+            </ol>
+            
+            <h3 id="test-4-check-the-thermostat-limit">Test 4: Check the Thermostat Limit</h3>
+            
+            <p>Let's make sure automatic indoor temperature limiting is applied when outside temperatures get high.</p>
+            
+            <ol>
+              <li>Slide the control and set Desired Temp to 68 F (or thereabouts).</li>
+              <li>Hold your hand over the <strong>remote</strong> temperature sensor board to simulate an increase in temperature.  Watch the Web console outdoor temperature indicator.</li>
+              <li>When the outdoor temp gets above 104 F, notice the slider. You should see that it has reset to 75 F.</li>
+            </ol>
+            
+            <h2 id="summary">Summary</h2>
+            
+            <p>You have seen how a small amount of MQTT code can support a sophisticated application, easily handling the typical needs of a complex IoT solution. You set up Actions from ARTIK Cloud to interact with the local code – and it was not all that difficult!</p>
+            
+            <p>We hope you noticed how minor a task it is to make real "actions" take place. You can play an audio or video clip, trigger recording of one, or do a hundred other things, just as simply as you can toggle an I/O pin. So why settle for just bare minimum functionality in your project?</p>
+            
+            <hr>
+            
+            <p>Coming up next: We take care of some unanswered questions.</p>
+            
+            <ul>
+              <li>
+                <p>Our current design used a sensor link that, at most, you password-protected for security. However, it was not SSL/TLS-secured. A determined hacker could eventually break it. That sensor data  – temperature readings – is of seemingly little value for a hacker to exploit. But what if an evil-doer could inject false readings throughout the neighborhood to the point where it triggers a power grid overload?</p>
+              </li>
+              <li>
+                <p>Compiling and loading an Arduino sketch is pretty straightforward, but as you saw here, it got pretty complicated to do it with two boards. Then there's the matter of loading Mosquitto and Node-RED. Wouldn't it be nice to have them all self-load on reset?</p>
+              </li>
+              <li>
+                <p>Connecting to Wi-Fi sometimes seems hit-and-miss. You may have noticed that our remote board code attempts to reconnect when its connection is lost. How can we extend that ease-of-use and reliability across all devices in our IoT network?</p>
+              </li>
+            </ul>
+            
+            <p>Jump right to the <a href="..\secure\index.htm"><strong>Secure Deployment</strong></a> article for all the details!</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2017-11-28 22:53:39 +0000'>Nov 28 2017, 10:53 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="color-mqtt-arduino.html">Prev: ARTIK Cloud via Arduino</a></li>
+              <li class='next-page'><a href="..\secure\index.htm">Next: SSL/TLS Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

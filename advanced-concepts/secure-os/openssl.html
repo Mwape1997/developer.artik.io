@@ -1,0 +1,1742 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='openssl.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: OpenSSL Support' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: OpenSSL Support' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: OpenSSL Support</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_secure-os documentation_advanced-concepts_secure-os_openssl' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="s-module-security" aria-expanded="true">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="openssl.html" data-name="openssl-support" aria-expanded="false" class="active">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="openssl-support">OpenSSL Support</h1>
+            
+            <p>For applications that are already using or plan to use the OpenSSL software library, the developer can still take advantage of the ARTIK Security features. The OpenSSL engine takes advantage of the hardware-accelerated ARTIK security library to get keys from the Secure Element, encrypt and decrypt, encode and decode, sign and verify, get a hash digest, etc.</p>
+            
+            <p>The OpenSSL engine calls the lower-level security routines. It is used by all the ARTIK SDK modules that rely on OpenSSL (http through <span class="code-font">libcurl</span>, websockets through <span class="code-font">libwebsockets</span>, mqtt through <span class="code-font">mosquitto</span>, etc…) to utilize the Secure Element.</p>
+            
+            <p>Only certain OpenSSL operations are supported in hardware. The remainder are supported by software emulation.</p>
+            
+            <p><strong>Note:</strong> In addition to <a href="secure-api.html#developing-with-security-libraries">installing the security libraries</a>, you also need to install the security test package to run the tests in this section.</p>
+            
+            <p><code>dpkg -i libartik-security-test*</code></p>
+            
+            <p>Once the security test installation has been done, you will have a convenient testing program available. Try it out with no parameters to see the functions available.</p>
+            
+            <p><code>see_test</code></p>
+            
+            <p>For OpenSSL testing, we'll only be using the key management functions. The full functionality is outlined in the <a href="#see-test-utility">SEE Test Utility</a> section.</p>
+            
+            <h2 id="openssl-artiksee-engine">OpenSSL 'artiksee' Engine</h2>
+            
+            <p>ARTIK "s" modules incorporate the 'artiksee' engine that is loaded when specified in OpenSSL commands. You can get an overview of its supported features using this command.</p>
+            
+            <p><code> openssl engine artiksee -vv</code></p>
+            
+            <pre>&#x000A;(artiksee) ARTIK Secure Element Support&#x000A;     SO_PATH: Specifies the path to the  artik shared library&#x000A;     LOAD_CERT_CTRL: Loads a public cert&#x000A;     CREATE_KEY: Create a new key in SE&#x000A;     REMOVE_KEY: Delete a key in SE&#x000A;     SET_KEY: Set a key in SE</pre>
+            
+            <p>To see capabilities, use this command.</p>
+            
+            <p><code>openssl engine -c</code></p>
+            
+            <pre>&#x000A;(dynamic) Dynamic engine loading support&#x000A;(artiksee) ARTIK Secure Element Support&#x000A; [RSA, RAND, AES-128-CBC, AES-192-CBC, AES-256-CBC, AES-128-ECB, AES-192-ECB, AES-256-ECB, AES-128-CTR, AES-192-CTR, AES-256-CTR, MD5, SHA1, SHA224, SHA256, SHA384, SHA512]</pre>
+            
+            <h2 id="openssl-engine----test-guide">OpenSSL Engine – Test Guide</h2>
+            
+            <p>The test cases demonstrate how to use the  OpenSSL engine. The RSA, Digests algorithms, and AES tests are only supported by ARTIK Linux "s" modules.</p>
+            
+            <h3 id="rsa-test-case-1">RSA Test case 1</h3>
+            
+            <p>Scenario: Get a key from the secure element.</p>
+            
+            <ol>
+              <li>
+                <p>Generate a 1024 bits RSA key in the secure element and get the public key with the openssl engine, by executing the following command on the artik board.<br>
+            <code>see_test -K gen-key -k my_rsa -a 4096 -O my_rsa.pub </code></p>
+            
+                <p>This command stores the generated public key in the file <span class="code-font">my_rsa.pub</span> in DER format. The private key is inaccessible as noted <a href="..\secure-element\secure-api.html#operational-overview">here</a>.</p>
+            
+                <p>Use the table below to select the <code>-a</code> option for the desired RSA key length. Refer to <a href="#options">Options</a> for details.</p>
+            
+                <table>
+                  <thead>
+                    <tr>
+                      <th>RSA Key Length</th>
+                      <th>option setting</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1024</td>
+                      <td><code>-a 4096</code></td>
+                    </tr>
+                    <tr>
+                      <td>2048</td>
+                      <td><code>-a 4097</code></td>
+                    </tr>
+                    <tr>
+                      <td>3072</td>
+                      <td><code>-a 4098</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+              <li>
+                <p>Read the public key from the file my_rsa.pub with the following OpenSSL command:<br>
+            <code>openssl rsa -in my_rsa.pub -inform DER -pubin -noout -text </code></p>
+              </li>
+              <li>
+                <p>Read the public key from the secure element (use <span class="code-font">rsa2048://</span> or <span class="code-font">rsa3072://</span> if you use a key with length 2048 or 3072).<br>
+            <code>openssl rsa -engine artiksee -in "rsa1024://my_rsa" -noout -pubout -text -inform e </code></p>
+              </li>
+            </ol>
+            
+            <p>The output of the two last commands must be the same.</p>
+            
+            <h3 id="rsa-test-case-2">RSA Test case 2</h3>
+            
+            <p>Scenario: Encrypt data without the artiksee engine and decrypt data with the engine.</p>
+            
+            <ol>
+              <li>
+                <p>Create a file to encrypt.<br>
+            <code>echo "123456" &gt; file.txt </code></p>
+              </li>
+              <li>
+                <p>Encrypt file.txt with the following command.  <br>
+            <code>openssl rsautl -encrypt -pubin -inkey my_rsa.pub -keyform DER -in file.txt -out file.txt.enc</code></p>
+              </li>
+              <li>
+                <p>Use the artik engine to decrypt the file.<br>
+            <code>openssl rsautl -decrypt -engine artiksee -inkey "rsa1024://my_rsa" -keyform e -in file.txt.enc -out file.txt.dec </code></p>
+              </li>
+              <li>
+                <p>Check if the original file and the decrypted file are identical.<br>
+            <code>cmp --silent file.txt file.txt.dec &amp;&amp; echo "### SUCCESS: files are identical" || echo "### FAILED: files are different" </code></p>
+              </li>
+              <li>
+                <p>Clean up.<br>
+            <code>rm file.txt file.txt.enc file.txt.dec</code></p>
+              </li>
+            </ol>
+            
+            <h3 id="rsa-test-case-3">RSA Test case 3</h3>
+            
+            <p>Scenario: Encrypt and decrypt with artiksee engine.</p>
+            
+            <ol>
+              <li>
+                <p>Create a file to encrypt.<br>
+            <code>echo "123456" &gt; file.txt</code></p>
+              </li>
+              <li>
+                <p>Use the artik engine to encrypt the file.<br>
+            <code>openssl rsautl -encrypt -engine artiksee -inkey "rsa1024://my_rsa" -keyform e -in file.txt -out file.txt.enc</code></p>
+              </li>
+              <li>
+                <p>Use the artik engine to decrypt the file.<br>
+            <code>openssl rsautl -decrypt -engine artiksee -inkey rsa1024://my_rsa -keyform e -in file.txt.enc -out file.txt.dec</code></p>
+              </li>
+              <li>
+                <p>Check if the original file and the decrypted file are identical.<br>
+            <code>cmp --silent file.txt file.txt.dec &amp;&amp; echo "### SUCCESS: files are identical" || echo "### FAILED: files are different"</code></p>
+              </li>
+              <li>
+                <p>Clean up.<br>
+            <code>rm file.txt file.txt.enc file.txt.dec</code></p>
+              </li>
+            </ol>
+            
+            <h3 id="rsa-test-case-4">RSA Test case 4</h3>
+            
+            <p>Scenario: Sign with <span class="code-font">artiksee</span> and then verify without <span class="code-font">artiksee</span>.</p>
+            
+            <ol>
+            <li>
+            Create a file to sign.  <br>
+            <code>echo "123456" &gt; file.txt</code><br><br>
+            </li>
+            <li>
+            Sign the file <span class="code-font">file.txt</span> and save the result in <span class="code-font">file.txt.sha256</span>  <br>
+            <code>openssl dgst -engine artiksee -sha256 -sign "rsa1024://my_rsa" -keyform e -out file.txt.sha256 file.txt</code><br>
+            Use <span class="code-font">-md5 -sha1 -sha224 -sha384</span> or <span class="code-font"> -sha512</span> instead of <span class="code-font">-sha256</span> to change the digest algorithm. <br><br>
+            </li>
+            <li>
+            We can't use the <span class="code-font">-verify</span> option  of the <span class="code-font">dgst</span> command because by default, openssl uses PKCS#2, but the openssl engine uses PKCS#1.5. So we need to check the signature with the command <span class="code-font">rsautl</span> and <span class="code-font">ans1parse</span>.  <br>
+            <code>openssl rsautl -verify -inkey my_rsa.pub.pem -in file.txt.sha256 -pubin -out file.txt.sha256.dec </code><br><br>
+            </li>
+            <li>
+            Decode the raw signature file with the <span class="code-font">asn1parse</span> command.  <br>
+            <code>openssl asn1parse -inform der &lt; file.txt.sha256.dec </code><br>  
+            The output of the <span class="code-font">asn1parse</span> command:  <br>
+            <pre>0:d=0 hl=2 l= 49 cons: SEQUENCE&#x000A;2:d=1 hl=2 l= 13 cons: SEQUENCE&#x000A;4:d=2 hl=2 l= 9 prim: OBJECT :sha256&#x000A;15:d=2 hl=2 l= 0 prim: NULL&#x000A;17:d=1 hl=2 l= 32 prim: OCTET STRING [HEX DUMP]:&#x000A;E150A1EC81E8E93E1EAE2C3A77E66EC6DBD6A3B460F89C1D08AECF422EE401A0</pre>
+            	The last line of the output gives the sha256 in hexadecimal.<br><br>
+            </li>
+            <li>
+            Compute the sha256 of file.txt with the following command:  <br>
+            <code>openssl dgst -sha256 -hex file.txt</code>  <br>
+            <pre> SHA256(file.txt)= e150a1ec81e8e93e1eae2c3a77e66ec6dbd6a3b460f89c1d08aecf422ee401a0 </pre>
+            
+            
+            	You can see that the sha256 stored in file.txt.sha256.dec and the sha256 returned by openssl are identical.
+            <br><br>
+            </li>
+            <li>
+            Clean up.  <br>
+            <code>rm file.txt file.txt.sha256 file.txt.sha256.dec</code>
+            </li>
+            </ol>
+            
+            <h3 id="rsa-test-case-5">RSA Test case 5</h3>
+            
+            <p>Scenario: Sign &amp; verify with <span class="code-font">artiksee</span>.</p>
+            
+            <ol>
+              <li>
+                <p>Create a file to sign.<br>
+            <code>echo "123456" &gt; file.txt</code></p>
+              </li>
+              <li>
+                <p>Sign the file "file.txt" and save the result in "file.txt.sha256" (use one of the following options -md5, -sha1, -sha224, -sha384, -sha512 instead of -sha256 to change the digest algorithm).<br>
+            <code>openssl dgst -engine artiksee -sha256 -sign "rsa1024://my_rsa" -keyform e -out file.txt.sha256 file.txt </code></p>
+              </li>
+              <li>
+                <p>Check the signature with the following command:<br>
+            <code>openssl dgst -engine artiksee -sha256 -verify "rsa1024://my_rsa" -keyform ENGINE -signature file.txt.sha256 file.txt </code><br>
+            This command returns "Verified OK" if the signature is verified.</p>
+              </li>
+              <li>
+                <p>Clean up.<br>
+            <code>rm file.txt file.txt.sha256 file.txt.sha256.dec </code></p>
+              </li>
+              <li>
+                <p>Remove the rsa key.<br>
+            <code>see_test -K remove-key -k my_rsa -a 4096 </code></p>
+              </li>
+            </ol>
+            
+            <h3 id="digest-test-case">Digest test case</h3>
+            
+            <p>Scenario: Get the digest with <span class="code-font">artiksee</span> and without it.</p>
+            
+            <ol>
+              <li>
+                <p>Create a file<br>
+            <code>echo "123456" &gt; file.txt</code></p>
+              </li>
+              <li>
+                <p>Execute the following command to compute the sha256 of the file file.txt<br>
+            <code>openssl dgst -sha256 -hex file.txt</code></p>
+              </li>
+              <li>
+                <p>Execute the following command to compute the sha256 of file.txt with <code>artiksee</code>.<br>
+            <code>openssl dgst -engine artiksee -sha256 -hex file.txt </code></p>
+              </li>
+            </ol>
+            
+            <p>The output of the two commands must be identical.</p>
+            
+            <h3 id="aes-test-case-1">AES Test case 1</h3>
+            
+            <p>The <span class="code-font">artiksee</span> engine supports the following OpenSSL ciphers:</p>
+            
+            <p><code>aes-128-cbc</code>       <code>aes-128-ecb</code>      <code>aes-128-ctr</code></p>
+            
+            <p><code>aes-192-cbc</code>       <code>aes-192-ecb</code>      <code>aes-192-ctr</code></p>
+            
+            <p><code>aes-256-cbc</code>       <code>aes-256-ecb</code>      <code>aes-256-ctr</code></p>
+            
+            <p>The AES tests here use the cipher <span class="code-font">aes-128-cbc</span>.</p>
+            
+            <p>Scenario: Encode without artiksee and decode with artiksee</p>
+            
+            <ol>
+            <li>
+            Generate a new AES key:  <br>
+            <code>openssl aes-128-cbc -k toto -P </code><br>
+            where "toto" is an example password<br>
+            
+            <pre>&#x000A; salt=8C5BA8C5BBFF9B51                 &#x000A; key=472B8ABBA7D61BC70257830C3C90F629  &#x000A; iv =F7D8F3EC97479A3E33B70B201C889D36  </pre>
+            <br>
+            </li>
+            <li>
+            
+            Create a file containing the AES 128 bit key.  <br>
+            <code>echo "472B8ABBA7D61BC70257830C3C90F629" | xxd -r -p &gt; aes128.key</code><br>
+            The package <code>vim-common</code> on your ARTIK board provides the <code>xxd</code> command.
+            <br><br>
+            </li>
+            <li>
+            
+            Set the key in the SE with see_test (use options -a 1 if the key length is 192 bits or -a 2 if 256 bits).<br>
+            <code>see_test -K set-key -a 0 -k test_aes_128 -I aes128.key</code><br><br>
+            </li>
+            <li>
+            Create a file.<br>
+            <code>echo "123456" &gt; file.txt</code><br><br>
+            </li>
+            <li>
+            Encode data without <span class="code-font">artiksee</span>.  <br>
+            <code>openssl aes-128-cbc -e -K 472B8ABBA7D61BC70257830C3C90F629 -iv F7D8F3EC97479A3E33B70B201C889D36 -in file.txt -out file.txt.aes</code><br><br>
+            </li>
+            <li>
+            Decode data with <span class="code-font">artiksee</span>.<br>
+            <code>openssl aes-128-cbc -engine artiksee -d -K $(printf "test_aes_128" | xxd -pu) -iv F7D8F3EC97479A3E33B70B201C889D36 -in file.txt.aes  -out file.txt.decode`</code><br><br>
+            </li>
+            <li>
+            Compare the original file with the decoded file.  <br>
+            <code>cmp --silent file.txt file.txt.decode &amp;&amp; echo "### SUCCESS: files are identical" || echo "### FAILED: files are different" </code>
+            <br><br>
+            </li>
+            <li>
+            Clean up.<br>
+            <code>rm file.txt file.txt.decode file.txt.aes</code>
+            </li>
+            </ol>
+            
+            <h3 id="aes-test-case-2">AES Test case 2</h3>
+            
+            <p>Scenario: Encode and decode with artiksee</p>
+            
+            <ol>
+              <li>
+                <p>Create a file.<br>
+            <code>echo "123456" &gt; file.txt</code></p>
+              </li>
+              <li>
+                <p>To encode the file with artiksee use the following command:<br>
+            <code>openssl aes-128-cbc -engine artiksee -d -K $(printf "test_aes_128" | xxd -pu) -iv 4C7FB595220D6F5CCB68902C9358F27D -in file.txt -out  &#x000A; file.txt.aes</code></p>
+              </li>
+              <li>
+                <p>To decode the file with artiksee use the following command:<br>
+            <code>openssl aes-128-cbc -engine artiksee -d -K $(printf "test_aes_128" | xxd -pu) -iv 4C7FB595220D6F5CCB68902C9358F27D -in file.txt.aes  &#x000A; -out file.txt.decode</code></p>
+              </li>
+              <li>
+                <p>Compare the original file and the decoded file.<br>
+            <code>cmp --silent file.txt file.txt.decode &amp;&amp; echo "### SUCCESS: files are identical" || echo "### FAILED: files are different" </code></p>
+              </li>
+              <li>
+                <p>Clean up.<br>
+            <code>rm file.txt file.txt.decode file.txt.aes</code></p>
+              </li>
+              <li>
+                <p>Remove the AES key.<br>
+            <code>see_test -K remove-key -k test_aes_128 -a 0</code></p>
+              </li>
+            </ol>
+            
+            <h3 id="ecc-example-1">ECC Example 1</h3>
+            
+            <p>Scenario: Store a key in the secure element and compare the public key versions.</p>
+            
+            <ol>
+              <li>
+                <p>Generate an ECC key using the ECC_SEC_P256R1 curve in the secure element.<br>
+            <code>see_test -K gen-key -k my_ecc -a 8195 -O my_ecc.pub</code></p>
+            
+                <p>This command stores the generated public key in the file <span class="code-font">my_ecc.pub</span> in DER format. The private key is inaccessible, as noted <a href="..\secure-element\secure-api.html#operational-overview">here</a>.</p>
+              </li>
+              <li>
+                <p>Read the public key from the public key file with the following OpenSSL command:<br>
+            <code>openssl ecparam -name prime256v1 -in my_ecc.pub -inform DER -text</code></p>
+              </li>
+              <li>
+                <p>Retrieve the public key from the Secure Element.<br>
+            <code>see_test -K get-pubkey -k my_ecc -a 8195 -O my_se_ecc.pub</code></p>
+              </li>
+            </ol>
+            
+            <p>The output of the two last commands must be the same.</p>
+            
+            <h2 id="see-test-utility">SEE Test Utility</h2>
+            
+            <p>The security test package installation includes the <code>see_test</code> binary. The reference below covers the basic functions available. Refer to the <a href="secure-api.html">Security API thru SEE</a> article for the underlying SEE calls.</p>
+            
+            <h3 id="options">Options</h3>
+            
+            <p>Once you have installed <code>libartik-security-test*</code>, you'll find the file<br>
+            <code>/usr/include/artik/security/see_common.h</code></p>
+            
+            <p>that contains definitions for many of the Option parameters used here. For example, <code>--algorithm </code>:</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>value</th>
+                  <th>algorithm used</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>4096</td>
+                  <td>RSA_1024</td>
+                </tr>
+                <tr>
+                  <td>4097</td>
+                  <td>RSA_2048</td>
+                </tr>
+                <tr>
+                  <td>8195</td>
+                  <td>ECC_SEC_P256R1</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3 id="key-management">Key management</h3>
+            
+            <p><code>see_test --key-manager [test] [options] ...</code></p>
+            
+            <p><code>see_test -K [test] [options] ...</code></p>
+            
+            <table>
+            <tr>
+            <th>
+            test
+            </th>
+            <th>
+            options
+            </th>
+            </tr>
+            <tr>
+            <td>
+            <span class="code-font">
+            gen-key<br>
+            set-key<br>
+            get-pubkey<br>
+            remove-key
+            </span>
+            </td>
+            <td>
+            
+            <span class="code-font">
+            -i | --input          <br>
+            -I | --input-file     <br>
+            -z | --input-size     <br>
+            -k | --key-name       <br>
+            -a | --algorithm      <br>
+            -d | --debug          
+            </span>
+            </td>
+            
+            
+            
+            </tr>
+            </table>
+            
+            <p>Examples</p>
+            
+            <p><code>see_test --key-manager=gen-key --algorithm=4096</code></p>
+            
+            <p><code>see_test -K gen-key -a 4096</code></p>
+            
+            <h3 id="authentication">Authentication</h3>
+            
+            <p><code>see_test --authentication [test] [options] ...</code></p>
+            
+            <p><code>see_test -A [test] [options] ...</code></p>
+            
+            <table>
+            <tr>
+            <th>
+            test
+            </th>
+            <th>
+            options
+            </th>
+            </tr>
+            <tr>
+            <td>
+            <span class="code-font">
+            generate-random<br>
+            generate-certificate<br>
+            set-certificate<br>
+            get-certificate<br>
+            remove-certificate<br>
+            rsa-signature<br>
+            rsa-verify<br>
+            ecdsa-signature<br>
+            ecdsa-verify<br>
+            get-hash<br>
+            get-hmac<br>
+            generate-dhparams<br>
+            set-dhparams<br>
+            compute-dhparams<br>
+            generate-ecdhkey<br>
+            compute-ecdhkey
+            </span>
+            </td>
+            <td>
+            <span class="code-font">
+            -i | --input          (string)<br>
+            -I | --input-file     <br>
+            -z | --input-size     <br>
+            -O | --output-file    (path)<br>
+            -a | --algorithm      (issuer alg)<br>
+            -A | --sub-algorithm  (subject alg)<br>
+            -r | --random-size    (test size)<br>
+            -s | --sign           (input string)<br>
+            -S | --sign-file      (input file)<br>
+            -c | --cert-name      <br>
+            -k | --key-name       (issuer key)<br>
+            -K | --sub-key-name   (subject key)<br>
+            -P | --public-file    <br>
+            -d | --debug          (result)
+            </span>
+            </td>
+            </tr>
+            </table>
+            
+            <p>Examples</p>
+            
+            <p><code>see_test --authentication=generate-random --random-size=128 --debug=1</code></p>
+            
+            <p><code>see_test -A generate-random -r 128 -d 1</code></p>
+            
+            <h3 id="secure-storage">Secure storage</h3>
+            <p><code>see_test --secure-storage [test] [options] ...</code></p>
+            
+            <p><code>see_test -S [test] [options] ...</code></p>
+            
+            <table>
+            <tr>
+            <th>
+            test
+            </th>
+            <th>
+            options
+            </th>
+            </tr>
+            <tr>
+            <td>
+            <span class="code-font">
+            read<br>
+            write<br>
+            delete<br>
+            size<br>
+            list<br>
+            provision<br>
+            prov-lock
+            </span>
+            </td>
+            <td>
+            <span class="code-font">
+            
+            -i | --input          (string)<br>
+            -I | --input-file     <br>
+            -z | --input-size     <br>
+            -O | --output-file    (path)<br>
+            -n | --file-name      (read/write data name)<br>
+            -s | --read-size      <br>
+            -e | --offset         (read/write offset)<br>
+            -d | --debug          (result)
+            </span>
+            </td>
+            </tr>
+            </table>
+            
+            <p>Examples</p>
+            
+            <p><code>see_test --secure-storage=write --name=test ...</code></p>
+            
+            <p><code>see_test -S write -n test -i test</code></p>
+            
+            <h3 id="encryptiondecryption">Encryption/decryption</h3>
+            
+            <p><code>see_test --enc-decryption [test] [options] ...</code></p>
+            
+            <p><code>see_test -E [test] [options] ...</code></p>
+            
+            <table>
+            <tr>
+            <th>
+            test
+            </th>
+            <th>
+            options
+            </th>
+            </tr>
+            <tr>
+            <td>
+            <span class="code-font">
+            aes-encryption<br>
+            aes-decryption<br>
+            rsa-encryption<br>
+            rsa-decryption]
+            
+            </span>
+            </td>
+            <td>
+            <span class="code-font">
+            -i | --input          (string)<br>
+            -I | --input-file     <br>
+            -z | --input-size     <br>
+            -O | --output-file    (path)<br>
+            -v | --iv             (initial vector)<br>
+            -k | --key-name       <br>
+            -m | --mode           (aes/rsa)<br>
+            -d | --debug          (result)
+            </span>
+            </td>
+            </tr>
+            </table>
+            
+            <p>Examples</p>
+            
+            <p><code>see_test --enc-decryption=aes-encryption --key-name=aes...</code></p>
+            
+            <p><code>see_test -E aes-encryption -k aes ...</code></p>
+            
+            <h3 id="key-management-examples">Key Management Examples</h3>
+            
+            <p><strong>Generate secure private keys</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -K gen-key -k "my_ecc" -a 8195</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Generate [0x2003, my_ecc] …ok<br>
+            [root@artik ~]# <code>see_test -K gen-key -k "my_rsa" -a 4096</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Generate [0x1000, my_rsa] …ok<br>
+            </span></p>
+            
+            <p><strong>Recover the public EC key</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]#
+             <code>see_test -K get-pubkey -k my_ecc -a 8195 -O my_ecc.pub</code><br>
+              . See Initialize …ok<br>
+              . SEE Public Key Get [0x2003, my_ecc] …ok<br>
+             &gt; save output : my_ecc.pub<br>
+            </span></p>
+            
+            <p><strong>View it</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>openssl ecparam -name prime256v1 -in my_ecc.pub -inform DER</code><br>
+            -----BEGIN EC PARAMETERS-----<br>
+            BgUrgQQACg==<br>
+            -----END EC PARAMETERS-----<br>
+            </span></p>
+            
+            <p><strong>Delete keys</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -K remove-key -k "my_ecc" -a 8195</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Remove [0x2003, my_ecc] …ok<br>
+            [root@artik ~]# <code>see_test -K remove-key -k "my_rsa" -a 4096</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Remove [0x1000, my_rsa] …ok<br>
+            </span></p>
+            
+            <p><strong>Set Private ECC key</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>openssl ecparam -out marks.key -name prime256v1 -genkey</code><br>
+            </span>
+            <span class="code-font">[root@artik ~]# <code>openssl ec -in marks.key -outform DER -out marks.der</code><br>
+            </span>
+            <span class="code-font">
+            [root@artik ~]# <code>see_test -K set-key -a 8195 -k my_own -I marks.der</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Set [0x2003, my_own] …ok<br>
+            </span></p>
+            
+            <p><strong>Generate secure private keys, specifying exponent</strong></p>
+            
+            <p>First, create an exponent input file in binary.</p>
+            
+            <p><code>echo -e "\x01\x00\x01\c" &gt; params.bin</code></p>
+            
+            <p>Read it back – the standard exponent of 0x10001 is used.<br></p>
+            
+            <p><code>xxd params.bin</code><br>
+            <span class="code-font">00000000: 0100 01      …</span></p>
+            
+            <p>Now use it to create a random RSA 2048-bit key with that exponent.</p>
+            
+            <p><span class="code-font">
+            <code>see_test -K gen-key-with-params -k "rsaDevCert.key" -a 4097 -I params.bin</code><br>
+              . See Initialize …ok<br>
+              . SEE Key Generate [0x1001, rsaDevCert.key] …ok<br>
+            </span></p>
+            
+            <p>Create a CSR using that key.</p>
+            
+            <p><code>openssl req -new -engine artiksee -key "rsa2048://rsaDevCert.key" -out "filename.csr" -subj "/O=Samsung Semiconductor ARTIK/OU=ARTIK High Security Device/CN=ARTIK HS Device (01001703-0600-0000-03fe-259e86f03d9d)/C=US" -keyform e</code></p>
+            
+            <p>Read its contents to verify the exponent.</p>
+            
+            <p><code>openssl req -text -noout -verify -in filename.csr</code></p>
+            
+            <pre>&#x000A;verify OK&#x000A;Certificate Request:&#x000A;    Data:&#x000A;        Version: 0 (0x0)&#x000A;        Subject: O=Samsung Semiconductor ARTIK, OU=ARTIK High Security Device, CN=ARTIK HS Device (01001703-0600-0000-03fe-259e86f03d9d), C=KR&#x000A;        Subject Public Key Info:&#x000A;            Public Key Algorithm: rsaEncryption&#x000A;                Public-Key: (2047 bit)&#x000A;                Modulus:&#x000A;                    7a:ed:36:d3:39:52:cf:91:b8:92:6a:94:d8:33:92:&#x000A;                    . . .&#x000A;                    86:a9:b2:57:8d:ee:62:eb:24:b3:6e:30:67:27:33:&#x000A;                    77&#x000A;                <b>Exponent: 65537 (0x10001)</b>&#x000A;        Attributes:&#x000A;            a0:00&#x000A;    Signature Algorithm: sha256WithRSAEncryption&#x000A;         47:7e:53:5b:d6:ab:0b:57:8a:ae:11:b2:16:80:2c:e8:b7:da:&#x000A;         . . .&#x000A;         bf:de:6c:6e:ea:e7:93:0a:6e:c7:19:6d:d4:9f:c1:49:e7:46:&#x000A;         cb:bb:65:fb&#x000A;</pre>
+            
+            <h3 id="authentication-examples">Authentication Examples</h3>
+            
+            <p><strong>Set/remove cert</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -A set-certificate -I deviceCert.crt -c deviceCert.crt</code><br>
+              . See Initialize …ok<br>
+              . SEE Set Certificate [deviceCert.crt] …ok<br>
+            </span>
+            <span class="code-font">
+            [root@artik ~]# <code>see_test -A get-certificate -c deviceCert.crt -O x</code><br>
+              . See Initialize …ok<br>
+              . SEE Get Certificate [deviceCert.crt] …ok<br>
+             &gt; save output : x<br>
+            [root@artik ~]# <code>cat x</code><br>
+            -----BEGIN CERTIFICATE-----<br>
+            MIICRjCCAe0CCQCihWCYOn6kdzAKBggqhkjOPQQDAjCBjzELMAkGA1UEBhMCVVMx<br>
+            CzAJBgNVBAgMAkNBMREwDwYDVQQHDAhTYW4gSm9zZTEQMA4GA1UECgwHU2Ftc3Vu<br>
+            ZzEOMAwGA1UECwwFUy1MU0kxEjAQBgNVBAMMCW1hcmtzLWlvdDEqMCgGCSqGSIb3<br>
+            DQEJARYbbWEud2lsbGlhbXNAc3NpLnNhbXN1bmcuY29tMB4XDTE4MDgxNzE2MjI1<br>
+            OFoXDTE5MDgxNzE2MjI1OFowgcYxCzAJBgNVBAYTAlVTMQswCQYDVQQIDAJDQTER<br>
+            MA8GA1UEBwwIU2FuIEpvc2UxEDAOBgNVBAoMB1NhbXN1bmcxDjAMBgNVBAsMBVMt<br>
+            TFNJMUkwRwYDVQQDDEA5MmZiOTI0NThkNjQxZjZlNDY2ZjMyODZmYjZiMjIwMzg2<br>
+            ZjkxYmUxYjliYzQ5NzU0YTUwZWNlOTk1YjY2ODM5MSowKAYJKoZIhvcNAQkBFhtt<br>
+            YS53aWxsaWFtc0Bzc2kuc2Ftc3VuZy5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMB<br>
+            BwNCAAT6ZfqBsAE3QlkZ4nHj58Mcj3bgOrleASpYQoAJ7JA3J/dnVgpVZNw5Z0Hn<br>
+            PFQ5IhfWemxx+gdWrxevYYWxt89wMAoGCCqGSM49BAMCA0cAMEQCIB1dpk9ou8Nn<br>
+            M8awKf3O61nwbfBgasmNdb6dxQS6o48EAiBlTsuuqUnJOtcOs+DCni9RhImLWWIJ<br>
+            Kx9IdLMnHzxLAA==<br>
+            -----END CERTIFICATE-----<br>
+            </span>
+            <span class="code-font"><br>
+            [root@artik ~]# <code>see_test -A remove-certificate -c deviceCert.crt</code><br>
+              . See Initialize …ok<br>
+              . SEE Remove Certificate [deviceCert.crt] …ok<br>
+            </span></p>
+            
+            <p><strong>Get ARTIK pre-provisioned certificates</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -A get-certificate -c ARTIK/0 -O x</code><br>
+              . See Initialize …ok<br>
+              . SEE Get Certificate [ARTIK/0] …ok<br>
+             &gt; save output : x<br>
+            [root@artik ~]# <code>cat x</code><br>
+            -----BEGIN CERTIFICATE-----<br>
+            MIICBzCCAa6gAwIBAgIQWULxj69HCVoOkJmX6zLgSzAKBggqhkjOPQQDAjBjMQsw<br>
+            CQYDVQQGEwJLUjEkMCIGA1UEChMbU2Ftc3VuZyBTZW1pY29uZHVjdG9yIEFSVElL<br>
+            MRYwFAYDVQQLEw1BUlRJSyBSb290IENBMRYwFAYDVQQDEw1BUlRJSyBSb290IENB<br>
+            MCAXDTE3MDYxNTIwNDM1OVoYDzIwNjcwNjE1MjA0MzU5WjBjMQswCQYDVQQGEwJL<br>
+            UjEkMCIGA1UEChMbU2Ftc3VuZyBTZW1pY29uZHVjdG9yIEFSVElLMRYwFAYDVQQL<br>
+            Ew1BUlRJSyBSb290IENBMRYwFAYDVQQDEw1BUlRJSyBSb290IENBMFkwEwYHKoZI<br>
+            zj0CAQYIKoZIzj0DAQcDQgAEMXHP576GyYS6P7SKSiHTVNmnoHsBRQUe/PTytK1W<br>
+            9972fZeiJCwknJxnnUTH0kzVe2yNi+DmPnME2oL2zIDu/qNCMEAwDgYDVR0PAQH/<br>
+            BAQDAgEGMB0GA1UdDgQWBBSi0+GxtetCghfueBp61CoWUr4UlzAPBgNVHRMBAf8E<br>
+            BTADAQH/MAoGCCqGSM49BAMCA0cAMEQCIGuP4Hdn20Qe8JjRVrVFJRP6SlKdm8Tx<br>
+            Oqg0CwqyldZMAiA9cfcrALT8YrnR4zeluoDB5jrJDWSYMzTFwm6+2idLnA==<br>
+            -----END CERTIFICATE-----<br>
+            -----BEGIN CERTIFICATE-----<br>
+            MIICTjCCAfOgAwIBAgIQWUL1fKzBBjERX+SwyMwSLTAKBggqhkjOPQQDAjBjMQsw<br>
+            CQYDVQQGEwJLUjEkMCIGA1UEChMbU2Ftc3VuZyBTZW1pY29uZHVjdG9yIEFSVElL<br>
+            MRYwFAYDVQQLEw1BUlRJSyBSb290IENBMRYwFAYDVQQDEw1BUlRJSyBSb290IENB<br>
+            MCAXDTE3MDYxNTIxMDA0NFoYDzIwNjcwNjE1MjEwMDQ0WjCBgzELMAkGA1UEBhMC<br>
+            S1IxJDAiBgNVBAoTG1NhbXN1bmcgU2VtaWNvbmR1Y3RvciBBUlRJSzEmMCQGA1UE<br>
+            CxMdQVJUSUsgSGlnaCBTZWN1cml0eSBEZXZpY2UgQ0ExJjAkBgNVBAMTHUFSVElL<br>
+            IEhpZ2ggU2VjdXJpdHkgRGV2aWNlIENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD<br>
+            QgAEstT6Q1hw1k5rUoGeSQhx1Mvj2bt1HyLRvu3AeIhiEXtFjdFRDJuDOGBSm14E<br>
+            1u8X8wjySHAEa+E9TZJH8q0MC6NmMGQwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQW<br>
+            BBQWDA5QmlAYB5/JgEgm+wR4aWAtwDAfBgNVHSMEGDAWgBSi0+GxtetCghfueBp6<br>
+            1CoWUr4UlzASBgNVHRMBAf8ECDAGAQH/AgEAMAoGCCqGSM49BAMCA0kAMEYCIQDc<br>
+            PnvKZUfmyucxjVdavcfEOKDEDfGHRwpZBUPRaprr8wIhAPLxwuIvm8qw+DB63/po<br>
+            PUintppHfivCZNukdWecHBOI<br>
+            -----END CERTIFICATE-----<br>
+            -----BEGIN CERTIFICATE-----<br>
+            MIIChzCCAi2gAwIBAgIJAQAXBiEAAJ9XMAoGCCqGSM49BAMCMIGDMQswCQYDVQQG<br>
+            EwJLUjEkMCIGA1UEChMbU2Ftc3VuZyBTZW1pY29uZHVjdG9yIEFSVElLMSYwJAYD<br>
+            VQQLEx1BUlRJSyBIaWdoIFNlY3VyaXR5IERldmljZSBDQTEmMCQGA1UEAxMdQVJU<br>
+            SUsgSGlnaCBTZWN1cml0eSBEZXZpY2UgQ0EwHhcNMTcwNjIxMDE0MDQ1WhcNNDcw<br>
+            NjIxMDE0MDQ1WjCBoDELMAkGA1UEBhMCS1IxJDAiBgNVBAoTG1NhbXN1bmcgU2Vt<br>
+            aWNvbmR1Y3RvciBBUlRJSzEjMCEGA1UECxMaQVJUSUsgSGlnaCBTZWN1cml0eSBE<br>
+            ZXZpY2UxRjBEBgNVBAMTPVMzRlQ5TUZFU0MtWTQzRi04RzlQVUYgKDAxMDAxNzA2<br>
+            LTIxMDAtMDA5Zi01NzI2LWI3MDMwMDFiYTM4NykwWTATBgcqhkjOPQIBBggqhkjO<br>
+            PQMBBwNCAAR49rQ50BieboRsotWXh7YC8vVnITDxnlOqhFmQRJhaJ5lnl0Ssv8p2<br>
+            m+YaWtd+f3YYrxonHyotD+m4ZmewFoLYo2swaTAOBgNVHQ8BAf8EBAMCBsAwHQYD<br>
+            VR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMDgGA1UdHwQxMC8wLaAroCmGJ2h0<br>
+            dHA6Ly9wa2kuYXJ0aWsuaW8vYXJ0aWstaHMtZGV2aWNlLmNybDAKBggqhkjOPQQD<br>
+            AgNIADBFAiBQWlos9NYJA5+Iib4jrGJlE1FtzjwTury+YZ8mdR76fwIhAPESATfh<br>
+            X0K00+ZKNIoU229EAQtwo55cjUM1hn9Xardg<br>
+            -----END CERTIFICATE-----<br>
+            [root@artik ~]#<br>
+            </span></p>
+            
+            <p><strong>Generate certificate</strong></p>
+            
+            <p><span class="code-font">-a</span> and <span class="code-font">-k</span> refer to Issuer algorithm; <span class="code-font">-A</span> and <span class="code-font">-K</span> refer to Subject algorithm.</p>
+            
+            <p><span class="code-font">
+            [root@artik ~]#</span> <code>see_test -A generate-certificate -c "SE/1" -k "my_rsa" -a 4097 -K "my_rsa" -A 4097</code><br>
+            <span class="code-font">  . See Initialize …ok<br>
+              . SEE Generate Certificate [0x1001, 0x1001, SE/1, my_rsa, my_rsa] …ok<br>
+            [root@artik ~]#</span> <code>see_test -A get-certificate -c SE/1 -O cert.der</code><br>
+            <span class="code-font">[root@artik ~]#</span> <code>openssl x509 -inform der -in cert.der -out cert.crt -text</code></p>
+            <pre>&#x000A;Certificate:&#x000A;    Data:&#x000A;        Version: 3 (0x2)&#x000A;        Serial Number: 1 (0x1)&#x000A;    Signature Algorithm: sha256WithRSAEncryption&#x000A;        Issuer: C=US, O=Test, CN=Issuer&#x000A;        Validity&#x000A;            Not Before: Sep  5 20:42:01 2018 GMT&#x000A;            Not After : Sep  5 20:42:01 2021 GMT&#x000A;        Subject: C=KR, O=Test, CN=Subject&#x000A;        Subject Public Key Info:&#x000A;            Public Key Algorithm: rsaEncryption&#x000A;                Public-Key: (2048 bit)&#x000A;                Modulus:&#x000A;                    00:e4:6d:57:55:1b:6c:1b:74:5b:37:cf:de:85:24:&#x000A;                    17:bd:11:13:11:d8:39:26:cb:6b:be:d0:2e:e6:bf:&#x000A;                    67:65:ec:40:75:d0:7a:e3:df:49:ee:e8:e2:b2:eb:&#x000A;                    45:74:8d:34:c5:26:3e:29:a9:3a:a2:66:88:18:2e:&#x000A;                    9b:03:cf:71:0f:56:fe:57:86:29:c5:70:bb:2a:8e:&#x000A;                    d7:a4:cd:19:54:45:0b:d9:7f:0b:39:52:fb:fb:88:&#x000A;                    75:1e:1a:d5:10:a3:7b:68:58:25:31:d8:6d:85:e2:&#x000A;                    62:31:75:2f:37:25:a4:dd:9e:e8:2e:c6:41:9f:6c:&#x000A;                    c9:fe:9c:7c:eb:65:5a:b5:14:e9:8e:1e:70:83:ec:&#x000A;                    8d:8d:82:cf:f3:6c:24:58:49:2d:fb:61:06:d1:bd:&#x000A;                    62:e9:29:fd:d3:76:43:39:5e:63:bc:79:11:24:12:&#x000A;                    f4:4c:cd:35:23:64:8b:09:03:67:f6:ac:1e:0f:08:&#x000A;                    f8:d8:7b:c9:68:89:10:0e:a9:bf:83:32:7f:90:89:&#x000A;                    da:3b:db:ed:11:e9:54:7a:0a:79:95:a4:d2:ef:b9:&#x000A;                    0f:5e:a4:c0:18:9e:4f:49:0f:f0:16:0f:21:4a:2d:&#x000A;                    d1:1d:fb:1f:b2:66:d0:9d:3c:fb:04:1a:1d:5e:8c:&#x000A;                    ad:05:ca:02:44:44:90:18:16:94:a5:9c:f3:48:5c:&#x000A;                    df:fb&#x000A;                Exponent: 65537 (0x10001)&#x000A;        X509v3 extensions:&#x000A;            X509v3 Basic Constraints:&#x000A;                CA:FALSE&#x000A;            X509v3 Subject Key Identifier:&#x000A;                89:83:1B:24:CC:9F:BE:B5:BE:0A:54:B4:45:E8:3D:D7:73:6B:6A:93&#x000A;            X509v3 Authority Key Identifier:&#x000A;                keyid:89:83:1B:24:CC:9F:BE:B5:BE:0A:54:B4:45:E8:3D:D7:73:6B:6A:93&#x000A;&#x000A;    Signature Algorithm: sha256WithRSAEncryption&#x000A;         1e:a5:cb:0e:7f:e1:fb:d7:7e:d4:03:ab:02:51:21:78:b6:1c:&#x000A;         0d:5f:fb:92:a9:e6:31:04:a8:08:11:ad:43:44:57:19:2f:ce:&#x000A;         5d:88:72:ba:dd:e4:9e:22:07:8e:55:3a:0e:2b:05:48:a2:6a:&#x000A;         bd:57:44:b7:82:b4:10:0c:52:5b:2a:71:4d:8e:3b:26:ce:e1:&#x000A;         53:6e:05:cf:e2:8c:b8:55:56:ff:35:e8:23:61:5c:4a:f3:16:&#x000A;         38:98:96:04:cc:f2:98:80:a9:0f:4c:29:50:0c:69:1f:1e:50:&#x000A;         c7:3c:eb:0b:25:9f:cd:e7:9a:1a:0c:b1:64:08:94:a2:70:e3:&#x000A;         40:48:aa:9a:f1:cf:7d:fe:2f:42:05:6f:4c:35:ad:73:7a:76:&#x000A;         7a:b4:8a:42:13:f4:63:d0:b9:ab:8f:24:4f:6e:59:14:35:1d:&#x000A;         7c:1b:78:c1:16:05:95:5f:de:26:84:63:31:82:d3:86:94:3a:&#x000A;         7d:a6:e9:14:d4:46:08:bc:4d:1a:b3:88:91:a0:94:be:09:4c:&#x000A;         2f:b4:fc:bf:d0:a7:9b:18:36:1c:18:d0:15:40:37:47:cb:1a:&#x000A;         c8:59:8c:8b:c1:b1:1a:8a:c9:02:79:6a:68:fe:f7:a6:9b:b1:&#x000A;         e7:58:55:81:f6:ed:d4:83:a1:c5:53:01:e8:8b:62:80:13:0b:&#x000A;         60:63:d9:1c&#x000A;[root@artik ~]#</pre>
+            
+            <p><strong>Generate CSR</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>openssl req -new -engine artiksee -key "rsa2048://my_rsa" -out "filename.csr" -subj "/O=Samsung Semiconductor ARTIK/OU=ARTIK High Security Device/CN=ARTIK HS Device (01001703-0600-0000-03fe-259e86f03d9d)/C=KR" -keyform e</code>
+            engine "artiksee" set.<br>
+            [root@artik ~]#</span> <code>openssl req -noout -text -in filename.csr</code></p>
+            <pre>&#x000A;Certificate Request:&#x000A;    Data:&#x000A;        Version: 0 (0x0)&#x000A;        Subject: O=Samsung Semiconductor ARTIK, OU=ARTIK High Security Device, CN=ARTIK HS Device (01001703-0600-0000-03fe-259e86f03d9d), C=KR&#x000A;        Subject Public Key Info:&#x000A;            Public Key Algorithm: rsaEncryption&#x000A;                Public-Key: (2048 bit)&#x000A;                Modulus:&#x000A;                    00:e4:6d:57:55:1b:6c:1b:74:5b:37:cf:de:85:24:&#x000A;                    17:bd:11:13:11:d8:39:26:cb:6b:be:d0:2e:e6:bf:&#x000A;                    67:65:ec:40:75:d0:7a:e3:df:49:ee:e8:e2:b2:eb:&#x000A;                    45:74:8d:34:c5:26:3e:29:a9:3a:a2:66:88:18:2e:&#x000A;                    9b:03:cf:71:0f:56:fe:57:86:29:c5:70:bb:2a:8e:&#x000A;                    d7:a4:cd:19:54:45:0b:d9:7f:0b:39:52:fb:fb:88:&#x000A;                    75:1e:1a:d5:10:a3:7b:68:58:25:31:d8:6d:85:e2:&#x000A;                    62:31:75:2f:37:25:a4:dd:9e:e8:2e:c6:41:9f:6c:&#x000A;                    c9:fe:9c:7c:eb:65:5a:b5:14:e9:8e:1e:70:83:ec:&#x000A;                    8d:8d:82:cf:f3:6c:24:58:49:2d:fb:61:06:d1:bd:&#x000A;                    62:e9:29:fd:d3:76:43:39:5e:63:bc:79:11:24:12:&#x000A;                    f4:4c:cd:35:23:64:8b:09:03:67:f6:ac:1e:0f:08:&#x000A;                    f8:d8:7b:c9:68:89:10:0e:a9:bf:83:32:7f:90:89:&#x000A;                    da:3b:db:ed:11:e9:54:7a:0a:79:95:a4:d2:ef:b9:&#x000A;                    0f:5e:a4:c0:18:9e:4f:49:0f:f0:16:0f:21:4a:2d:&#x000A;                    d1:1d:fb:1f:b2:66:d0:9d:3c:fb:04:1a:1d:5e:8c:&#x000A;                    ad:05:ca:02:44:44:90:18:16:94:a5:9c:f3:48:5c:&#x000A;                    df:fb&#x000A;                Exponent: 65537 (0x10001)&#x000A;        Attributes:&#x000A;            a0:00&#x000A;    Signature Algorithm: sha256WithRSAEncryption&#x000A;         97:65:91:ae:8b:ac:b4:fb:96:ef:9c:7d:f9:ab:e8:c8:d0:a4:&#x000A;         2b:3e:0a:a6:75:21:23:4a:78:d5:c9:f7:85:5b:d5:52:c5:fd:&#x000A;         92:f1:cf:e8:56:23:1c:14:ae:30:a9:47:0f:44:01:ea:f7:f0:&#x000A;         5d:24:29:6a:a9:35:7b:85:f5:44:76:42:22:3f:16:51:62:c0:&#x000A;         bf:19:a5:37:85:8c:b1:bf:e3:3f:92:eb:2d:ee:95:9a:e3:d0:&#x000A;         87:6d:30:0d:cd:c6:2e:59:41:8f:b4:da:30:8d:6c:ad:f5:78:&#x000A;         3c:e7:76:a5:36:80:20:6f:c7:e6:79:03:10:a1:c2:e6:46:bd:&#x000A;         5b:20:18:d4:ca:e9:00:23:2b:9f:a6:20:d3:05:ec:bb:a6:d0:&#x000A;         07:e0:1e:2e:fa:9c:f0:db:ce:2a:a9:18:e2:f0:20:ed:26:62:&#x000A;         a6:5f:44:24:bf:7e:4a:9a:1e:96:a6:ab:7f:fe:5f:e5:35:1c:&#x000A;         11:6c:10:54:ca:75:f6:7c:82:74:59:4d:49:bd:21:5b:46:32:&#x000A;         88:dd:72:43:fa:0e:df:b4:c2:4e:e9:98:11:a7:9a:de:fc:60:&#x000A;         8b:56:2e:eb:04:88:dc:92:fe:22:d5:63:8b:6d:04:e0:77:2c:&#x000A;         0d:da:d1:a9:d0:d7:33:f7:c8:ee:d6:34:2a:9f:75:04:e8:4d:&#x000A;         dd:11:fd:1a</pre>
+            
+            <p><strong>Get signed data</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -A ecdsa-signature -a 8195 -k my_ecc -I (hashed data file) -O outputfile</code><br>
+            </span></p>
+            
+            <p><strong>List secure storage contents</strong></p>
+            
+            <p><span class="code-font">
+            [root@artik ~]# <code>see_test -S list -d 1</code><br>
+              . See Initialize …ok<br>
+              . SEE List Secure Storage …ok<br>
+            [           FILE NAME] [FILE ATTR]<br>
+            [     key-ENMD-id-alg] [10000004]<br>
+            [              my_ecc] [10000004]<br>
+            </span></p>
+            
+            <h2 id="working-with-certificates">Working with Certificates</h2>
+            
+            <p>If you're new to dealing with RSA keys and certificates, we provide here a few helpful hints.</p>
+            
+            <h3 id="x590v3-extensions">x590v3 Extensions</h3>
+            
+            <p>If your certificate includes x590v3 extensions, you can see them when you use this command.</p>
+            
+            <p><code>openssl x509  -in CACertificate.pem -noout  -text</code></p>
+            
+            <pre>&#x000A;X509v3 extensions:&#x000A;&#x000A;  X509v3 Subject Key Identifier:&#x000A;   56:30:53:22:94:B1:97:6F:58:6A:77:A0:B5:99:38:EA:42:9B:A6:94&#x000A;&#x000A;  X509v3 Authority Key Identifier:&#x000A;   keyid:56:30:53:22:94:B1:97:6F:58:6A:77:A0:B5:99:38:EA:42:9B:A6:94&#x000A;&#x000A;  X509v3 Basic Constraints:&#x000A;   CA:TRUE</pre>
+            
+            <p>You'll see the Authority Key Identifier (AKI) referencing the issuer of the certificate, and the Subject Key Identifier (SKI) of the derived certificate. In the case shown, the certificate was self-signed so the same key was used for both – the AKI and SKI match.</p>
+            
+            <p>You can use some scripts to check a .key or .crt file to verify that the identifiers match – that is, that the cert was signed by that key.</p>
+            
+            <h3 id="script-to-extract-ski-from-cert">Script to extract SKI from cert</h3>
+            
+            <p>Call this file <code>skic</code></p>
+            
+            <div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="code"><pre><span class="c">#!/bin/bash</span>&#x000A;openssl x509  -noout -in <span class="nv">$1</span> -pubkey  | openssl asn1parse  -strparse 19 -out tmp.pub.der&#x000A;openssl dgst -c -sha1 tmp.pub.der</pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="script-to-extract-ski-from-key">Script to extract SKI from key</h3>
+            
+            <p>Call this file <code>skik</code></p>
+            
+            <div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="code"><pre><span class="c">#!/bin/bash</span>&#x000A;openssl rsa -in <span class="nv">$1</span>  -pubout | openssl asn1parse -strparse 19 -out tmp.pub.der&#x000A;openssl dgst -c -sha1 tmp.pub.der</pre></td></tr></tbody></table>
+            </div>
+            
+            <h3 id="script-to-extract-ski-from-rsa-2048-bit-see-key">Script to extract SKI from RSA 2048-bit SEE key</h3>
+            
+            <p>Call this file <code>skisk</code></p>
+            
+            <div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="code"><pre><span class="c">#!/bin/bash</span>&#x000A;openssl rsa -engine artiksee -in rsa2048://<span class="nv">$1</span> -pubout -inform e | openssl asn1parse -strparse 19 -out tmp.pub.der&#x000A;openssl dgst -c -sha1 tmp.pub.der</pre></td></tr></tbody></table>
+            </div>
+            
+            <p>Don't forget to make all the batch files executable:</p>
+            
+            <p><code>chmod 777 ski*</code></p>
+            
+            <h3 id="utilize-them-to-check-that-a-cert-was-signed-by-a-key">Utilize them to check that a cert was signed by a key</h3>
+            
+            <p><code>./skic rsaDevCert.crt</code></p>
+            
+            <pre>&#x000A;    0:d=0  hl=4 l= 266 cons: SEQUENCE&#x000A;    4:d=1  hl=4 l= 257 prim: INTEGER           :C02E24ABFDD36198927ACEA70F1B83299554A8C132454CE948A7D504D5C37BCCA7CB01C647D3EDB56860634F72C2EA61253C5104771E674280EA7A4D7464310EA38458D8EC1B8730D03E88773A567960A8FBAD06E6E9BDE4101F12E40A3C2F775FD42BBE14CA19D150615B07F1F8A037D72DF1C10C59C3836962FEBFA43F87A4CE0C2211186D3B607C85C5B7DFDC21C8DA82AEA03EBF131B8A959D0E107459FD7C7C7126B436ACB7D5C84B669991981269424452710001250C10B5ABBFDF6F56C4DC38499E43E7D9F965E6AE70C65702FEC56C98095EBE53535E6F4CD23123A8A80E927E4BD45FA76E324BA4261AB5C867C77FC0DF552584609D89C1DB12C607&#x000A;  265:d=1  hl=2 l=   3 prim: INTEGER           :010001&#x000A;SHA1(tmp.pub.der)= 1a:db:3e:12:4c:0c:e1:19:60:bf:df:be:fe:4c:86:d8:85:7c:0a:21</pre>
+            
+            <p><code>./skik rsaDevCert.key</code></p>
+            <pre>&#x000A;writing RSA key&#x000A;    0:d=0  hl=4 l= 266 cons: SEQUENCE&#x000A;    4:d=1  hl=4 l= 257 prim: INTEGER           :C02E24ABFDD36198927ACEA70F1B83299554A8C132454CE948A7D504D5C37BCCA7CB01C647D3EDB56860634F72C2EA61253C5104771E674280EA7A4D7464310EA38458D8EC1B8730D03E88773A567960A8FBAD06E6E9BDE4101F12E40A3C2F775FD42BBE14CA19D150615B07F1F8A037D72DF1C10C59C3836962FEBFA43F87A4CE0C2211186D3B607C85C5B7DFDC21C8DA82AEA03EBF131B8A959D0E107459FD7C7C7126B436ACB7D5C84B669991981269424452710001250C10B5ABBFDF6F56C4DC38499E43E7D9F965E6AE70C65702FEC56C98095EBE53535E6F4CD23123A8A80E927E4BD45FA76E324BA4261AB5C867C77FC0DF552584609D89C1DB12C607&#x000A;  265:d=1  hl=2 l=   3 prim: INTEGER           :010001&#x000A;SHA1(tmp.pub.der)= 1a:db:3e:12:4c:0c:e1:19:60:bf:df:be:fe:4c:86:d8:85:7c:0a:21</pre>
+            
+            <p>Note that the SHA1 output matches between cert and key, and would match the SKI in the x509v3 extension (if present).</p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-11-19 23:55:21 +0000'>Nov 19 2018, 11:55 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="secure-api.html">Prev: Security API thru SEE</a></li>
+              <li class='next-page'><a href="secure-boot.html">Next: Secure Boot</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+From e56ee95fe6c354564796c9f29b06084bc0e729f3 Mon Sep 17 00:00:00 2001
+From: Chanho Park <chanho61.park@samsung.com>
+Date: Sat, 11 Nov 2017 03:01:43 +0900
+Subject: [PATCH] qtbase: mkspec: add artik aarch64 device conf
+
+Signed-off-by: Chanho Park <chanho61.park@samsung.com>
+---
+ .../devices/linux-artik-aarch64-g++/qmake.conf     | 27 ++++++++++++++++++++++
+ .../linux-artik-aarch64-g++/qplatformdefs.h        |  1 +
+ 2 files changed, 28 insertions(+)
+ create mode 100644 qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+ create mode 100644 qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+
+diff --git a/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+new file mode 100644
+index 000000000000..22a5476a7150
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qmake.conf
+@@ -0,0 +1,27 @@
++include(../common/linux_device_pre.conf)
++QT_QPA_DEFAULT_PLATFORM = eglfs
++
++QMAKE_INCDIR += \
++		$$[QT_SYSROOT]/usr/include
++
++QMAKE_LIBDIR += \
++		$$[QT_SYSROOT]/usr/lib \
++		$$[QT_SYSROOT]/lib/aarch64-linux-gnu \
++		$$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu
++
++QMAKE_LFLAGS += \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/usr/lib/aarch64-linux-gnu \
++		-Wl,-rpath-link,$$[QT_SYSROOT]/lib/aarch64-linux-gnu
++
++QMAKE_LIBS             += -lrt -lpthread -ldl
++
++DISTRO_OPTS		+= aarch64
++QMAKE_CFLAGS		+= -march=armv8-a -mtune=cortex-a53
++
++EGLFS_DEVICE_INTEGRATION = eglfs_kms
++QMAKE_INCDIR_EGL += $$[QT_SYSROOT]/usr/include
++QMAKE_LIBS_EGL         += -lEGL -lGLESv2
++QMAKE_LIBS_OPENGL_ES2  += $${QMAKE_LIBS_EGL}
++
++load(qt_config)
+diff --git a/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+new file mode 100644
+index 000000000000..99e9a2792329
+--- /dev/null
++++ b/qtbase/mkspecs/devices/linux-artik-aarch64-g++/qplatformdefs.h
+@@ -0,0 +1 @@
++#include "../../linux-g++/qplatformdefs.h"
+-- 
+2.7.4

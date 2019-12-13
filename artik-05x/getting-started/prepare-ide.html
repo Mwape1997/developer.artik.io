@@ -1,0 +1,1918 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='prepare-ide.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Set up the ARTIK IDE' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Set up the ARTIK IDE' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Set up the ARTIK IDE</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_artik-05x documentation_artik-05x_getting-started documentation_artik-05x_getting-started_prepare-ide' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="index.htm" data-directory="true" data-name="getting-started" aria-expanded="true">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false" class="active">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="set-up-the-artik-ide">Set Up the ARTIK IDE</h1>
+            
+            <p>The ARTIK Integrated Development Environment (IDE) makes for easy application development on ARTIK modules. The installer includes all software SDK packages, tools, and drivers required to build and debug applications.</p>
+            
+            <p><strong>Install the ARTIK IDE.</strong> Initially, we'll just use its terminal emulator interface to your ARTIK board.  Then, once you have a chance to play with the command line interface, we'll show you how to use the IDE to compile and run your first application.</p>
+            
+            <p>
+              <span class="step">Step 1.</span> <strong>Click the tab</strong> for ARTIK IDE setup instructions for your OS.
+            </p>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#windows-ide" aria-controls="windows-ide" role="tab" data-toggle="tab">Windows</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#linux-ide" aria-controls="linux-ide" role="tab" data-toggle="tab">Linux</a> 
+              </li>
+            
+              <li role="presentation">
+                <a href="#mac-ide" aria-controls="mac-ide" role="tab" data-toggle="tab">Mac</a>
+              </li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="windows-ide">
+                <div class="boxed" style="min-height:600px">
+                  <h1 id="artik-ide-installation-under-windows">ARTIK IDE Installation under Windows</h1>
+            
+                  <p>The ARTIK IDE is a breeze to install, configure, and use. Install as described below, then follow the subsequent articles to configure the <a href="..\..\developer-guide\artik-ide\serial-debug.html">terminal emulator</a> and to use the IDE for an embedded <a href="..\..\developer-guide\artik-ide\linux-apps.html">Linux</a> or <a href="..\..\developer-guide\artik-ide\tizen-apps.html">Tizen RT</a> project.</p>
+            
+                  <h2 id="installing-artik-ide">Installing ARTIK IDE</h2>
+                  <p>We recommend that Windows users install ARTIK IDE <strong>v2.0.0</strong>. As part of its complete development environment, it integrates a convenient <strong>terminal emulator</strong> that you can start using right away to talk to your ARTIK board.</p>
+            
+                  <p>System Requirements<br>– Microsoft Windows 7/8/10 (64-bit)  <br>– 3 GB RAM minimum, 8 GB recommended  <br>– 2.5 GB disk space minimum, 5 GB recommended  <br>–	1280 x 800 screen resolution</p>
+            
+                  <p><strong>Uninstalling previous IDE revisions.</strong> If you have installed an older version of the ARTIK IDE, you will need to uninstall it through the normal process for your development system OS. But first, bring up and review the <a href="..\..\developer-guide\artik-ide\update-sdk.html#migrating-projects" target="artikle">Migrating Projects</a> article and <strong>export</strong> your old projects before uninstallation.</p>
+            
+                  <p><strong>Installing the IDE.</strong> The ARTIK IDE installation on your development PC enables creation of a binary file that runs on your target ARTIK board. It has been tested on Windows 7, 8, and 10.</p>
+            
+                  <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/artik-ide/download" download="">
+            	Download Installer
+              </a>
+            </p>
+            
+                  <p>Install the ARTIK IDE on your development system by downloading and running the installer package. If you already installed the ARTIK IDE for one ARTIK module type, you do not need to install it again – just follow the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Update SDK</a> article to install SDK packages to support other ARTIK module types.</p>
+            
+                  <ol>
+              <li>
+                <p><strong>Accept the license agreement.</strong> Upon launching the installer, you will be presented with the ARTIK IDE license agreement. Read it through and accept to proceed.</p>
+              </li>
+              <li>
+                <p><strong>Specify the location.</strong> Specify the installation directory for the IDE using Browse, or accept the default directory location. Ensure there are no spaces in the directory path name. Click Next to proceed.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\ide-directory.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Proceed with installation.</strong> The installer will display the installation location. If there is no further change, click Install to install the IDE and tools. Click Finish to complete the procedure.</p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\ide-installing.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Install SDKs.</strong> On the initial run, the IDE will bring up the Package Manager. Simply check the box next to your module type(s), then click Apply. Appropriate SDKs will be listed, with the latest selected by default. Your SDK selection (like SDK 18.05.00) must <strong>match</strong> your module OS (like os_18.05.00).</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-win7.jpg?1549048075"></p>
+            
+                <p>You'll be able to repeat this process at any time, or check for updates, as shown in the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Updating ARTIK SDK</a> article.<br><br>
+            <strong>Note:</strong> You must be connected to the Internet, or you will see this message.<br>
+            <img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-not-connected.jpg?1549048075"><br>
+            If that happens, go to the Updating ARTIK SDK article once you have re-established a connection.</p>
+              </li>
+              <li>
+                <p><strong>Proceed with support module installation.</strong> If the installation details are correct (check for errors like the example shown), click OK to continue. Downloads (especially of toolchains) might take a long time, so be patient.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-details-win7.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Restart the IDE</strong> when requested.</p>
+              </li>
+            </ol>
+            
+                  <p><strong>Running the IDE.</strong> Each time you want to open the ARTIK IDE:</p>
+            
+                  <ul>
+              <li>
+                <p>Locate and run the installed ARTIK IDE program.</p>
+            
+                <p><img alt="" src="..\..\images\docs\getting-started-artik\artik-ide-start.jpg?1549048075"></p>
+              </li>
+            </ul>
+            
+                  <p>Go ahead now to terminal emulator setup. When finished, you'll be ready for the Tutorials.</p>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="linux-ide">
+                <div class="boxed" style="min-height:600px">
+                  <h1 id="artik-ide-installation-under-linux">ARTIK IDE Installation under Linux</h1>
+            
+                  <p>The ARTIK IDE is a breeze to install, configure, and use. Install as described below, then follow the subsequent articles to configure the <a href="..\..\developer-guide\artik-ide\serial-debug.html">terminal emulator</a> and to use the IDE for an embedded <a href="..\..\developer-guide\artik-ide\linux-apps.html">Linux</a> or <a href="..\..\developer-guide\artik-ide\tizen-apps.html">Tizen RT</a> project.</p>
+            
+                  <h2 id="installing-artik-ide">Installing ARTIK IDE</h2>
+                  <p>We recommend that Linux users install ARTIK IDE <strong>v2.0.0</strong>. As part of its complete development environment, it integrates a convenient <strong>terminal emulator</strong> that you can start using right away to talk to your ARTIK board.</p>
+            
+                  <p>System Requirements<br>– Ubuntu-14 x64 16.04 (64-bit) <br>– 3 GB RAM minimum, 8 GB recommended  <br>– 2.5 GB disk space minimum, 5 GB recommended  <br>–	1280 x 800 screen resolution</p>
+            
+                  <p><strong>Uninstalling previous IDE revisions.</strong> If you have installed an older version of the ARTIK IDE, you will need to uninstall it through the normal process for your development system OS. But first, bring up and review the <a href="..\..\developer-guide\artik-ide\update-sdk.html#migrating-projects" target="artikle">Migrating Projects</a> article and <strong>export</strong> your old projects before uninstallation.</p>
+            
+                  <p><strong>Installing the IDE.</strong> The ARTIK IDE installation on your development PC enables creation of a binary file that runs on your target ARTIK board. You can download the installer package to your desktop and be up and running in no time. If you already installed the ARTIK IDE for one ARTIK module type, you do not need to install it again – just follow the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Update SDK</a> article to install SDK packages to support other ARTIK module types.</p>
+            
+                  <ol>
+              <li>
+                <p>Using a Linux terminal window, add the necessary support packages.<br>
+            <code>sudo dpkg --add-architecture i386</code><br>
+            <code>sudo apt-get update</code><br>
+            <code>sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386</code></p>
+              </li>
+              <li>
+                <p>Download the installation package. If you're reading this using your Linux-based browser, click below to download the package right to your Linux Home directory.
+            <br>
+            <br>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/artik-ide-linux/download" download="">
+             Download Installer
+              </a></p>
+            
+                <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\artik-ide-tar.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Double-click on the package to open it with Archive Manager.</p>
+            
+                <p><img src="..\..\images\docs\developer-guide\artik-ide-arch-man.jpg" style="max-width:400px"></p>
+            
+                <p><img src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-linux-archive-mgr.jpg" style="max-width:400px"></p>
+              </li>
+              <li>
+                <p>Double-click on the <strong>.run</strong> file icon to begin.
+             <img src="..\..\images\docs\developer-guide\artik-ide-linux-run-file.jpg" style="max-width:400px"></p>
+              </li>
+              <li>
+                <p><strong>Accept the license agreement.</strong> Upon launching the installer, you will be presented with the ARTIK IDE license agreement. Read it through and accept to proceed.</p>
+              </li>
+              <li>
+                <p><strong>Specify the location.</strong> Specify the installation directory. If you have ARTIK IDE v1 installed, you will need to either uninstall it or change the default installation path. Ensure there are no spaces in the directory path name. Click Next to proceed.</p>
+              </li>
+              <li>
+                <p><strong>Proceed with installation.</strong> The installer will display the installation location. If there is no further change, click Install to install the IDE and tools. The installation can take as little as 5 minutes, but may take much longer, depending on the system.</p>
+              </li>
+              <li>
+                <p><strong>Launch the ARTIK IDE.</strong> Once the installer is done, allow it to launch the IDE.</p>
+              </li>
+              <li>
+                <p><strong>Install SDKs.</strong> On the initial run, the IDE will bring up the Package Manager. Simply check the box next to your module type(s), then click Apply. Appropriate SDKs will be listed, with the latest selected by default. Your SDK selection (like SDK 18.05.00) must <strong>match</strong> your module OS (like os_18.05.00).</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-linux-add-remove.jpg?1549048075"></p>
+            
+                <p>You'll be able to repeat this process at any time, or check for updates, as shown in the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Updating ARTIK SDK</a> article.<br><br>
+            <strong>Note:</strong> You must be connected to the Internet, or you will see this message.<br>
+            <img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-linux-not-connected.jpg?1549048075"><br>
+            If that happens, go to the Updating ARTIK SDK article once you have re-established a connection.</p>
+              </li>
+            </ol>
+            
+                  <p><strong>Running the IDE.</strong> Each time you want to open the ARTIK IDE:</p>
+            
+                  <ol>
+              <li>Go to the IDE/v1 subdirectory of the directory where you installed the IDE.</li>
+              <li>
+                <p>Double-click on the artik_ide icon.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-start-icon.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Click on the Workbench icon to enter the IDE.</p>
+            
+                <p><img src="..\..\images\docs\developer-guide\artik-ide-linux-workbench-icon.jpg" style="max-width:100px"></p>
+              </li>
+            </ol>
+            
+                  <p><strong>ARTIK 053 only: Configure USB permissions on Linux</strong>. The first time you connect an ARTIK 053 board to your Linux PC, you need to add new rules in <code>udev</code>. Otherwise, when you try to flash a new image with regular user rights in the ARTIK IDE, <code>openocd</code> access might fail for lack of superuser rights.</p>
+            
+                  <p>1. Copy the entire rule below and paste it into a terminal window command line.</p>
+            
+                  <div class="highlight c">
+                    <table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3</pre></td><td class="code"><pre><span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">udev</span><span class="o">/</span><span class="n">rules</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">99</span><span class="o">-</span><span class="n">artik051</span><span class="o">-</span><span class="n">evalboard</span><span class="p">.</span><span class="n">rules</span> <span class="o">&lt;&lt;</span> <span class="n">__EOF__</span>&#x000A;<span class="n">SUBSYSTEMS</span><span class="o">==</span><span class="s">"usb"</span><span class="p">,</span><span class="n">ATTRS</span><span class="p">{</span><span class="n">idVendor</span><span class="p">}</span><span class="o">==</span><span class="s">"0403"</span><span class="p">,</span><span class="n">ATTRS</span><span class="p">{</span><span class="n">idProduct</span><span class="p">}</span><span class="o">==</span><span class="s">"6010"</span><span class="p">,</span><span class="n">MODE</span><span class="o">=</span><span class="s">"0666"</span> <span class="n">RUN</span><span class="o">+=</span><span class="s">"/sbin/modprobe ftdi_sio"</span> <span class="n">RUN</span><span class="o">+=</span><span class="s">"/bin/sh -c 'echo 0403 6010 &gt; /sys/bus/usb-serial/drivers/ftdi_sio/new_id'"</span>&#x000A;<span class="n">__EOF__</span></pre></td></tr></tbody></table>
+                  </div>
+            
+                  <p>2. Trigger the rule.</p>
+            
+                  <p><code>sudo udevadm trigger</code></p>
+            
+                  <p>Go ahead now to terminal emulator setup. When finished, you'll be ready for the Tutorials.</p>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="mac-ide">
+                <div class="boxed" style="min-height:600px">
+                  <h1 id="artik-ide-installation-under-mac-os">ARTIK IDE Installation under Mac OS</h1>
+            
+                  <p>The ARTIK IDE is a breeze to install, configure, and use. Install as described below, then follow the subsequent articles to configure the <a href="..\..\developer-guide\artik-ide\serial-debug.html">terminal emulator</a> and to use the IDE for an embedded <a href="..\..\developer-guide\artik-ide\linux-apps.html">Linux</a> or <a href="..\..\developer-guide\artik-ide\tizen-apps.html">Tizen RT</a> project.</p>
+            
+                  <p>The ARTIK IDE for Mac currently supports <strong>only</strong> the ARTIK 05X series. For other module types, you have several options, all of which start with installing VirtualBox for the Mac. After that:</p>
+            
+                  <ul>
+              <li>
+                <p>Attach a Windows disk image (ISO). Then install the Windows version of the ARTIK IDE on top of it. You develop the applications with the IDE.</p>
+              </li>
+              <li>
+                <p>Install an Ubuntu ISO. The process will be somewhat similar to our procedure <a href="..\..\developer-guide\ide\virtualbox.html">here</a>. Then set up a command line style <a href="..\advanced-concepts\prepare-dev-env.html">development environment</a>.</p>
+              </li>
+              <li>
+                <p>Install an Ubuntu ISO as above, but instead install the Linux version of the ARTIK IDE.</p>
+              </li>
+            </ul>
+            
+                  <h2 id="installing-artik-ide">Installing ARTIK IDE</h2>
+                  <p>We recommend that Mac users install the ARTIK IDE. As part of its complete development environment, it integrates a convenient <strong>terminal emulator</strong> program that you can start using right away to talk to your ARTIK board.</p>
+            
+                  <p>System Requirements<br>
+            – Mac Cocoa (64-bit) <br>– 3 GB RAM minimum, 8 GB recommended  <br>– 2.5 GB disk space minimum, 5 GB recommended  <br>–	1280 x 800 screen resolution</p>
+            
+                  <p><strong>Uninstalling previous IDE revisions.</strong> If you have installed an older version of the ARTIK IDE, you will need to uninstall it through the normal process for your development system OS. But first, bring up and review the <a href="..\..\developer-guide\artik-ide\update-sdk.html#migrating-projects" target="artikle">Migrating Projects</a> article and <strong>export</strong> your old projects before uninstallation.</p>
+            
+                  <p><strong>Installing the IDE.</strong> The ARTIK IDE installation on your development PC enables creation of a binary file that runs on your target ARTIK board. You can download the installer package to your desktop and be up and running in no time. If you already installed the ARTIK IDE for one ARTIK module type, you do not need to install it again – just follow the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Update SDK</a> article to install SDK packages to support other ARTIK module types.</p>
+            
+                  <ol>
+              <li>
+                <p>Download the installation package. Click below to download the package, then move it to the folder of your choice.
+            <br>
+            <br>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/artik-ide-mac/download" download="">
+             Download Installer
+              </a></p>
+              </li>
+              <li>
+                <p>Double-click to extract the installer.<br>
+            <img src="..\..\images\docs\developer-guide\artik-ide-mac-tar-icon.jpg" style="max-width:100px"></p>
+              </li>
+              <li>
+                <p>Double-click the installer icon to begin.<br>
+            <img src="..\..\images\docs\developer-guide\artik-ide-mac-installer-icon.jpg" style="max-width:100px"></p>
+              </li>
+              <li>
+                <p><strong>Accept the license agreement.</strong> From the initial screen, click Next to be see the ARTIK IDE license agreement. Read it through and accept to proceed.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-mac-license.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Specify the location.</strong> Specify the installation directory for the IDE using Browse, or accept the default directory location. Ensure there is no space in the directory path. Click Next to proceed.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-mac-install-location.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Proceed with installation.</strong> The installer will display the installation location. If there is no further change, click Install to install the IDE and tools. The installation can take as little as 5 minutes, but may take much longer, depending on the system.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-mac-install-progress.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p><strong>Un-check</strong> the "Launch ARTIK IDE" checkbox, then click Finish to complete the procedure.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-mac-uncheck-start.jpg?1549048075"></p>
+              </li>
+            </ol>
+            
+                  <ol start="8">
+            <li>
+            Install FTDI drivers.
+            
+            <ol>
+            <li>
+            
+            Go to the <code>/Applications/ARTIK/tools</code> directory in Finder. 
+            </li>
+            <li>
+            
+            Locate and double-click on <code>Artik053FTDIDriverForMac.pkg</code> to install the FTDI drivers for Mac.
+            </li>
+            <li>
+            
+            After the installation is successful, restart the Mac.
+            </li>
+            
+            </ol>
+            
+            </li>
+            
+            </ol>
+            
+                  <p><strong>Running the IDE.</strong> Each time you want to open the ARTIK IDE:</p>
+            
+                  <ol>
+              <li>
+                <p>Click on the ARTIK IDE icon in the Launchpad to open the ARTIK IDE.</p>
+              </li>
+              <li>
+                <p>Click on the Workbench icon to enter the IDE.</p>
+            
+                <p><img src="..\..\images\docs\developer-guide\artik-ide-linux-workbench-icon.jpg" style="max-width:100px"></p>
+              </li>
+              <li>
+                <p>On the initial run, the IDE will ask you which Software Development Kits (SDKs) to install. Appropriate SDKs will be listed, with the latest selected by default.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-mac-add-remove.jpg?1549048075"></p>
+            
+                <p>You'll be able to repeat this process at any time, or check for updates, as shown in the <a href="..\..\developer-guide\artik-ide\update-sdk.html">Updating ARTIK SDK</a> article.<br><br>
+            <strong>Note:</strong> You must be connected to the Internet, or you will see this message.<br>
+            <img alt="" src="..\..\images\docs\developer-guide\artik-ide-pkg-mgr-linux-not-connected.jpg?1549048075"><br>
+            If that happens, go to the Updating ARTIK SDK article once you have re-established a connection.</p>
+              </li>
+              <li>
+                <p>The package update will proceed.</p>
+            
+                <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-mac-pkg-update.jpg?1549048075"></p>
+              </li>
+            </ol>
+            
+                  <p>Go ahead now to terminal emulator setup. When finished, you'll be ready for the Tutorials.</p>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <p><br></p>
+            
+            <p><strong>Terminal Emulator Interface.</strong> Your interaction with the board takes place through a terminal emulator window.</p>
+            
+            <p style="margin-left: 12px;">
+              <a class="btn btn-primary" role="button" data-toggle="collapse" href="#term-emu" aria-expanded="false" aria-controls="term-emu">
+                see it demonstrated
+              </a>
+            </p>
+            
+            <div class="collapse" id="term-emu">
+              <div class="boxed">
+                <iframe width="560" height="315" class="video-embed" data-youtube="https://www.youtube.com/embed/BKPRTgFhR20?rel=0" data-youku="https://player.youku.com/embed/XMzAzODEwMTgyOA=="></iframe>
+            
+              </div>
+            </div>
+            
+            <p>The ARTIK 05X Starter Kit communicates through an FTDI USB-to-serial device that requires installation of an FTDI driver. The driver exposes two COM port devices:</p>
+            
+            <ul>
+              <li>
+                <p>UART interface for console debug, which you will use with a serial terminal emulator console to access the command line interface (CLI)</p>
+              </li>
+              <li>
+                <p>JTAG interface for program transfer, which will be controlled by the utility programs supplied with the kit.</p>
+              </li>
+            </ul>
+            
+            <p>Once the base COM port drivers are installed on your development PC and the ARTIK board is attached, the two serial COM ports become accessible:</p>
+            
+            <p>– The lower-numbered port will typically be for JTAG transfer</p>
+            
+            <p>– The higher-numbered port will typically be the UART interface.</p>
+            
+            <p>Your terminal emulator console connects to the <strong>UART</strong> interface. Follow the correct procedure below for your PC type. Select the higher-numbered port to start with; if you fail to get a connection, try the other port.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>PC type</th>
+                  <th>Terminal Emulator</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Windows</td>
+                  <td>ARTIK IDE or PuTTY</td>
+                  <td>COM22 – <strong>COM23</strong></td>
+                </tr>
+                <tr>
+                  <td>Linux</td>
+                  <td><code>screen</code> or <code>minicom</code></td>
+                  <td>/dev/ttyUSB2 – <strong>/dev/ttyUSB3</strong></td>
+                </tr>
+                <tr>
+                  <td>Mac</td>
+                  <td>Terminal</td>
+                  <td>/dev/tty.usbserial-AI02ZWTO – *</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p><sup>*You may need to try each displayed port to determine the correct one.</sup></p>
+            
+            <p>   <span class="step">Step 2.</span> <strong>Click the tab</strong> for terminal emulator setup instructions for your system.</p>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#windows-term" aria-controls="windows-term" role="tab" data-toggle="tab">Windows</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#linux-term" aria-controls="linux-term" role="tab" data-toggle="tab">Linux</a> 
+              </li>
+            
+              <li role="presentation">
+                <a href="#mac-term" aria-controls="mac-term" role="tab" data-toggle="tab">Mac</a>
+              </li>
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="windows-term">
+                <div class="boxed">
+                  <h2 id="communicating-with-artik-windows">Communicating with ARTIK (Windows)</h2>
+            
+                  <p>You'll first identify the COM port, then configure the ARTIK IDE (and optionally, PuTTY) to use it.</p>
+            
+                  <h3 id="identify-the-com-port">Identify the COM port</h3>
+            
+                  <p>You'll need to determine the COM port number assigned to your board. Start with the USB cable unattached, then watch Device Manager to see which device appears when you plug it in.</p>
+            
+                  <ol>
+              <li>
+                <p>Open Device Manager in the Control Panel.  <br><br>
+            Click Start.<br>
+            <img alt="" src="..\..\images\docs\getting-started-artik\windows-start-button.jpg?1549048075"><br>
+            <br>
+            Type “device manager” and Enter.<br>
+            <img alt="" src="..\..\images\docs\getting-started-artik\windows-device-manager.jpg?1549048075"></p>
+              </li>
+              <li>
+                <p>Check the COM port number when you connect a USB serial cable to the PC. (If the COM port connection is not detected, you may need to <a href="..\..\artik\getting-started\powering-up.html">power on</a> the ARTIK board.)</p>
+              </li>
+            </ol>
+            
+                  <table>
+              <thead>
+                <tr>
+                  <th>ARTIK 5/7/10</th>
+                  <th>ARTIK 053</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\getting-started-artik\windows-devmgr-ports.jpg?1549048075"></td>
+                  <td><br>For ARTIK 053 you'll find <strong>two</strong> COM ports. <br>The <strong>higher-numbered</strong> one is for the debug serial port.<br><br> <img alt="" src="..\..\images\docs\getting-started-artik\ARTIK-053-serial-ports-dev-manager.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+                  <p class="info"><strong>Troubleshooting Tip.</strong> Does the port not install, or install with an error as FT232R USB UART? 
+              <a data-toggle="collapse" href="#install-driver" aria-expanded="false" aria-controls="install-driver">
+                Update the drivers.
+              </a></p>
+            
+                  <html>
+            
+            <div class="collapse" id="install-driver">
+            <div class="boxed">
+            
+            
+            <strong>Update COM Port Drivers</strong>
+            
+            <ol>
+            <li>
+            Browse to the <code>ARTIK_IDE_Installation_Directory\tools</code> directory.
+            </li>
+            <li>
+            Run the <code>zadig-2.3.exe</code> application.  
+            </li>
+            <li>
+            Under <strong>Options</strong>, select <strong>List All Devices</strong>.
+            </li>
+            <li>
+            Under the devices drop-down list, select <br>
+            -- for ARTIK 5/7/10: FT232R USB UART<br>
+            -- for ARTIK 05x: Interface <strong>1</strong> of the dual COM port interfaces.  
+            </li>
+            
+            <li>
+            Update the driver to the WinUSB driver by clicking <strong>Replace Driver</strong>. 
+            </li>
+            </ol>
+            
+            
+            <table>
+            <tr>
+            <td>ARTIK 5/7/10</td><td>ARTIK 05x</td>
+            </tr>
+            <tr>
+            <td><img src="..\..\images\docs\getting-started-artik\ide-zadg-driver.jpg"></td>
+            <td><img src="..\..\images\docs\getting-started-artik\a053-ide-zadg-driver.jpg"></td>
+            </tr>
+            </table>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+                  <h3 id="set-up-the-artik-ide-integrated-console">Set up the ARTIK IDE integrated console</h3>
+            
+                  <p>With the ARTIK IDE installed and running, you'll need to set up the COM port in its terminal emulator application.  Open a serial terminal emulator console as follows.</p>
+            
+                  <ol>
+              <li>
+                <p>Select <strong>Windows » Show View » Console</strong> to open the console view in the lower right part of the IDE.</p>
+              </li>
+              <li>
+                <p>Create a new Command Shell Console by clicking the drop down icon shown.<br><br>
+              <img src="..\..\images\docs\developer-guide\artik-ide-console-view.jpg" style="max-width:300px;"></p>
+              </li>
+              <li>
+                <p>Select the Connection Type to Serial Port. Create a new Connection name with the options as shown below; specify the correct COM port.</p>
+              </li>
+            </ol>
+            
+                  <table>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-serial-connect.jpg?1549048075"></td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-remote-connect.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+                  <p>When you reset the board, you should see boot messages on the console view. If prompted to log in, use:<br>
+               <strong>login</strong>: root <br>
+               <strong>password</strong>: root</p>
+            
+                  <table>
+              <thead>
+                <tr>
+                  <th>Linux</th>
+                  <th>Tizen RT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-login.jpg?1549048075"></td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-tash.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+                  <p>You've completed the COM port assignment. You won't need to revisit this procedure unless you plug your board into a different USB port.</p>
+            
+                  <h3 id="using-the-console-port">Using the Console port</h3>
+            
+                  <p>You'll need to run through these steps each time you want to open the console for use.</p>
+            
+                  <ol>
+            
+            <li>
+            Open a Console View by selecting <strong>Windows » Show View » Console</strong>.
+            </li>
+            
+            <li>
+            Create a new Command Shell Console, and select a port using the connection name you set up previously.
+            
+            <table>
+            <tr>
+            <td>
+            <img src="..\..\images\docs\developer-guide\artik-ide-console-view.jpg">
+            </td>
+            <td>
+            <img src="..\..\images\docs\developer-guide\artik-ide-remote-connect-1.jpg">
+            </td>
+            </tr>
+            </table>
+            
+            </li>
+            
+            <li>
+            Use the pull-down icon shown to select among multiple Eclipse console views (build and load status, debug tool, serial interface to your ARTIK board). <br>
+              <img src="..\..\images\docs\developer-guide\artik-ide-console-select.jpg"><br>
+            </li>
+            </ol>
+            
+                  <p>Create multiple console windows by opening a new command shell console and dragging its tab to a position elsewhere on the screen.</p>
+            
+                  <p>All good? Great! You're ready for the Tutorials.</p>
+            
+                  <h3 id="optional-set-up-putty">Optional: Set Up PuTTY</h3>
+            
+                  <p><a data-toggle="collapse" href="#install-putty" aria-expanded="false" aria-controls="install-putty">
+                Click for instructions
+              </a></p>
+            
+                  <html>
+            
+            <div class="collapse" id="install-putty">
+            <div class="boxed">
+            
+            <p>
+            
+            <strong>Install PuTTY.</strong>
+            Windows users may optionally install and configure PuTTY, a free serial console program.
+            </p>
+            <ol>
+            <li>
+            Download <a href="http://www.putty.org/" target="_blank">PuTTY</a> and install it according to instructions.<br><br>
+              <img src="..\..\images\docs\getting-started-artik\putty_config.jpg">
+            </li>
+            <li>
+            
+            Set the PuTTY configuration as follows:<br>
+               -- Serial line is the COM port number found previously.<br>
+               -- Set speed to "115200".<br>
+               -- Set connection type to "Serial".<br>
+               -- Name and save the session.  <br>
+              Next time, you can just double-click on the saved session name.
+            
+            </li>
+            <li>
+            Click "Open". Initially, the resulting screen will be blank.
+            </li>
+            <li>
+            Reset the board. The ARTIK module will now go through the boot sequence.<br>
+              <strong>Troubleshooting Tip.</strong> No display? Refer to the <strong>No Display</strong> section.
+            </li>
+            <li>
+            When prompted to log in, use:<br>
+            &nbsp;&nbsp;&nbsp;<strong>login:</strong> root   <br>
+            &nbsp;&nbsp;&nbsp;<strong>password:</strong> root
+            </li>
+            </ol>
+            <p>
+            You should see something like this:<br><br>
+            <img src="..\..\images\docs\getting-started-artik\after-login.jpg">
+            </p>
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="linux-term">
+                <div class="boxed">
+                  <h2 id="communicating-with-artik-linux">Communicating with ARTIK (Linux)</h2>
+            
+                  <p>You'll first identify the COM port, then configure the ARTIK IDE (and optionally, Screen or Minicom) to use it.</p>
+            
+                  <h3 id="identify-the-serial-port">Identify the serial port</h3>
+            
+                  <p>From your development PC, you'll need to determine the serial port number assigned to your board. Start with the USB cable unattached.</p>
+            
+                  <p>Use the following command to find the port name.</p>
+            
+                  <p>$ <code>dmesg | tail | grep tty</code></p>
+            
+                  <p>For USB serial devices, this command returns something like <code>ttyUSB*</code> after plugging in the USB cable (we'll show <code>ttyUSB0</code> throughout this example).</p>
+            
+                  <p><img alt="" src="..\..\images\docs\getting-started-artik\dmesg-grep-ports.jpg?1549048075"></p>
+            
+                  <p><strong>Note:</strong> If your Linux development is by way of VirtualBox, you'll need to <a href="..\..\developer-guide\ide\virtualbox.html#usb-port-access">transfer control</a> of the USB port to be able to see the serial port.</p>
+            
+                  <h3 id="set-up-artik-ide-integrated-console">Set up ARTIK IDE integrated console</h3>
+            
+                  <p>With the ARTIK IDE installed and running, you'll need to set up the serial port in its terminal emulator application.  Open a serial terminal emulator console as follows.</p>
+            
+                  <ol>
+              <li>
+                <p>Select <strong>Windows » Show View » Console</strong> to open the console view in the lower right part of the IDE.</p>
+              </li>
+              <li>
+                <p>Create a new Command Shell Console by clicking the drop down icon shown.<br><br>
+              <img src="..\..\images\docs\developer-guide\artik-ide-console-view-linux.jpg" style="max-width:300px;"></p>
+              </li>
+              <li>
+                <p>Select the Connection Type to Serial Port. Create a new Connection name with the options as shown below; specify the correct serial port.</p>
+              </li>
+            </ol>
+            
+                  <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\artik-ide-remote-connect-linux.jpg?1549048075"></p>
+            
+                  <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-remote-connect-select-linux.jpg?1549048075"></p>
+            
+                  <p>When you reset the board, you should see boot messages on the console view. If prompted to log in, use:<br>
+               <strong>login</strong>: root <br>
+               <strong>password</strong>: root</p>
+            
+                  <table>
+              <thead>
+                <tr>
+                  <th>Linux</th>
+                  <th>Tizen RT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-login.jpg?1549048075"></td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-tash.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+                  <p>You've completed the serial port assignment. You won't need to revisit this procedure unless you plug your board into a different USB port.</p>
+            
+                  <p>All good? Great! You're ready for the Tutorials.</p>
+            
+                  <h2 id="optional-screen-or-minicom">Optional: Screen or Minicom</h2>
+            
+                  <p><a data-toggle="collapse" href="#install-minicom" aria-expanded="false" aria-controls="install-minicom">
+                Click for instructions
+              </a></p>
+            
+                  <html>
+            
+            <div class="collapse" id="install-minicom">
+            <div class="boxed">
+            
+            
+            <strong>Install Screen or Minicom.</strong>
+            
+            
+            You can optionally set up one of these free programs to listen to the specified device port and provide a serial console.
+            <ul>
+            <li>
+            <a href="https://www.gnu.org/software/screen/" target="_blank">Screen</a>
+            </li>
+            <li>
+            <a href="https://alioth.debian.org/projects/minicom" target="_blank">Minicom</a>  
+            </li>
+            </ul>
+            Follow the instructions below to install and run either program. All commands shown are entered at the <strong>command prompt</strong> of the Linux host system, except as noted.
+            
+            
+            <h3>Install Screen</h3>
+            <p>
+            Install Screen using:<br>
+            $ <code>sudo apt-get install screen</code>  
+            </p><p>
+            Start Screen as superuser. <br> 
+            $ <code>sudo screen /dev/ttyUSB0 115200 cs8 ixoff</code>  
+            </p>
+            <p>Login instructions are below.</p>
+            
+            
+            <h3>Install Minicom</h3>
+            
+            <p>Install Minicom using:<br>
+            $ <code>sudo apt-get install minicom</code>
+            </p>
+            <p>
+            Configure Minicom, first time only.
+            </p>
+            <ol>
+            <li>
+            Start Minicom in configuration mode.<br>
+              $ <code>sudo minicom –o –s </code><br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-o-s.jpg">
+            </li>
+            <li>
+            Using the alphabet letters indicated, select serial port settings to change.<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-nav.jpg">
+            
+            </li>
+            <li>
+            
+            Press [Enter] by itself to leave this screen.
+            </li>
+            <li>
+            
+            Select 'Save setup as dfl', and then select 'Exit' from Minicom.<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-save.jpg">
+            </li>
+            </ol>
+            
+            <p>
+            Start Minicom as superuser.<br>
+            
+            $ <code>sudo minicom</code>
+            </p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            
+            <h3>Log In (Screen or Minicom)</h3>
+            <p>
+            Once you have connected using Minicom or Screen, the display window will initially be blank. 
+            </p>
+            <ol>
+            <li>
+            Reset the board. The ARTIK module will now go through the boot sequence.<br>
+            <strong>Troubleshooting Tip.</strong> No display? Refer to the <strong>No Display</strong> section.
+            </li>
+            <li>
+            When prompted to log in, use:<br>
+            &nbsp;&nbsp;&nbsp;<strong>login</strong>: root <br>
+            &nbsp;&nbsp;&nbsp;<strong>password</strong>: root
+            </li>
+            </ol>
+            <p>
+            For Linux, you should see something like this:<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-login.jpg">
+            </p>
+            
+            
+            
+            
+            
+            <h3>Mac Users</h3>
+            <p>
+            You can use Screen with the Mac by issuing the command in this format (replace `XXXXXXXX` with the correct ID):  <br>    
+                $<code> screen /dev/tty.usbserial-XXXXXXXX 115200</code><br>
+            </p>
+            <p>
+              Initially, the resulting screen will be blank. Reset the board. The ARTIK module will now go through the boot sequence.
+            </p>
+            <p>
+            When closing the connection, use \&lt;Ctrl-A\&gt; followed by \&lt;Ctrl-\\\&gt; to kill all windows and cleanly terminate Screen.  
+            </p>
+            <p>
+            <strong>Troubleshooting Tip</strong>: If it is still not properly released, preventing a new instance from reconnecting, try killing the previous instance with <code>pkill SCREEN</code>, or using  <code>-R</code> to open, as in: $ <code>screen –R /dev/tty.usbserial-XXXXXXXX 115200</code>
+            </p>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="mac-term">
+                <div class="boxed">
+                  <h2 id="communicating-with-artik-mac">Communicating with ARTIK (Mac)</h2>
+            
+                  <p>Once the serial connector is attached and the board is <a href="..\..\artik\getting-started\powering-up.html">powered on</a>, Mac users can follow these instructions.</p>
+            
+                  <h3 id="identify-the-serial-port">Identify the serial port</h3>
+            
+                  <p>From your development system, you'll need to determine the serial port number assigned to your board.</p>
+            
+                  <p>In Terminal, go to /dev and look for an entry like this <code class="param">tty.usbserial-XXXXXXXX</code>, where "XXXXXXXX" is a unique identifier (e.g., <code class="param">tty.usbserial-AI02ZWTO</code>). This is the  serial connection to the development board.</p>
+            
+                  <h3 id="set-up-artik-ide-integrated-console">Set up ARTIK IDE integrated console</h3>
+            
+                  <p>With the ARTIK IDE installed and running, you'll need to set up the serial port in its terminal emulator application.  Open a serial terminal emulator console as follows.</p>
+            
+                  <ol>
+              <li>
+                <p>Select <strong>Windows » Show View » Console</strong> to open the console view in the lower right part of the IDE.</p>
+              </li>
+              <li>
+                <p>Create a new Command Shell Console by clicking the drop down icon shown.<br><br>
+              <img src="..\..\images\docs\developer-guide\artik-ide-console-view-mac.jpg" style="max-width:300px;"></p>
+              </li>
+              <li>
+                <p>Select the Connection Type to Serial Port. Create a new Connection name with the options as shown below; specify the correct serial port.</p>
+              </li>
+            </ol>
+            
+                  <p><img alt="" class="lightbox" src="..\..\images\docs\developer-guide\artik-ide-remote-connect-mac.jpg?1549048075"></p>
+            
+                  <p><img alt="" src="..\..\images\docs\developer-guide\artik-ide-remote-connect-select-mac.jpg?1549048075"></p>
+            
+                  <p>When you reset the board, you should see boot messages on the console view. If prompted to log in, use:<br>
+               <strong>login</strong>: root <br>
+               <strong>password</strong>: root</p>
+            
+                  <table>
+              <thead>
+                <tr>
+                  <th>Linux</th>
+                  <th>Tizen RT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-login.jpg?1549048075"></td>
+                  <td><img alt="" src="..\..\images\docs\developer-guide\artik-ide-console-tash.jpg?1549048075"></td>
+                </tr>
+              </tbody>
+            </table>
+            
+                  <p>You've completed the serial port assignment. You won't need to revisit this procedure unless you plug your board into a different USB port.</p>
+            
+                  <h2 id="optional-screen-or-minicom">Optional: Screen or Minicom</h2>
+            
+                  <p><a data-toggle="collapse" href="#install-screen" aria-expanded="false" aria-controls="install-screen">
+                Click for instructions
+              </a></p>
+            
+                  <html>
+            
+            <div class="collapse" id="install-screen">
+            <div class="boxed">
+            
+            
+            <strong>Install Screen or Minicom.</strong>
+            
+            
+            You can optionally set up one of these free programs to listen to the specified device port and provide a serial console.
+            <ul>
+            <li>
+            <a href="https://www.gnu.org/software/screen/" target="_blank">Screen</a>
+            </li>
+            <li>
+            <a href="https://alioth.debian.org/projects/minicom" target="_blank">Minicom</a>  
+            </li>
+            </ul>
+            Follow the instructions below to install and run either program. All commands shown are entered at the <strong>command prompt</strong> of the Linux host system, except as noted.
+            
+            
+            <h3>Install Screen</h3>
+            <p>
+            Install Screen using:<br>
+            $ <code>sudo apt-get install screen</code>  
+            </p><p>
+            Start Screen as superuser. <br> 
+            $ <code>sudo screen /dev/ttyUSB0 115200 cs8 ixoff</code>  
+            </p>
+            <p>Login instructions are below.</p>
+            
+            
+            <h3>Install Minicom</h3>
+            
+            <p>Install Minicom using:<br>
+            $ <code>sudo apt-get install minicom</code>
+            </p>
+            <p>
+            Configure Minicom, first time only.
+            </p>
+            <ol>
+            <li>
+            Start Minicom in configuration mode.<br>
+              $ <code>sudo minicom –o –s </code><br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-o-s.jpg">
+            </li>
+            <li>
+            Using the alphabet letters indicated, select serial port settings to change.<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-nav.jpg">
+            
+            </li>
+            <li>
+            
+            Press [Enter] by itself to leave this screen.
+            </li>
+            <li>
+            
+            Select 'Save setup as dfl', and then select 'Exit' from Minicom.<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-save.jpg">
+            </li>
+            </ol>
+            
+            <p>
+            Start Minicom as superuser.<br>
+            
+            $ <code>sudo minicom</code>
+            </p>
+            
+            <pre>&#x000A;&#x000A;</pre>
+            
+            
+            <h3>Log In (Screen or Minicom)</h3>
+            <p>
+            Once you have connected using Minicom or Screen, the display window will initially be blank. 
+            </p>
+            <ol>
+            <li>
+            Reset the board. The ARTIK module will now go through the boot sequence.<br>
+            <strong>Troubleshooting Tip.</strong> No display? Refer to the <strong>No Display</strong> section.
+            </li>
+            <li>
+            When prompted to log in, use:<br>
+            &nbsp;&nbsp;&nbsp;<strong>login</strong>: root <br>
+            &nbsp;&nbsp;&nbsp;<strong>password</strong>: root
+            </li>
+            </ol>
+            <p>
+            For Linux, you should see something like this:<br><br>
+              <img src="..\..\images\docs\getting-started-artik\sudo-minicom-login.jpg">
+            </p>
+            
+            
+            
+            
+            
+            <h3>Mac Users</h3>
+            <p>
+            You can use Screen with the Mac by issuing the command in this format (replace `XXXXXXXX` with the correct ID):  <br>    
+                $<code> screen /dev/tty.usbserial-XXXXXXXX 115200</code><br>
+            </p>
+            <p>
+              Initially, the resulting screen will be blank. Reset the board. The ARTIK module will now go through the boot sequence.
+            </p>
+            <p>
+            When closing the connection, use \&lt;Ctrl-A\&gt; followed by \&lt;Ctrl-\\\&gt; to kill all windows and cleanly terminate Screen.  
+            </p>
+            <p>
+            <strong>Troubleshooting Tip</strong>: If it is still not properly released, preventing a new instance from reconnecting, try killing the previous instance with <code>pkill SCREEN</code>, or using  <code>-R</code> to open, as in: $ <code>screen –R /dev/tty.usbserial-XXXXXXXX 115200</code>
+            </p>
+            
+            
+            
+            </div>
+            </div>
+            
+            </html>
+            
+                  <p>All good? Great! You're ready for the Tutorials.</p>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <p>That's it for now – you're ready to connect to the outside world!</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2017-11-22 23:43:39 +0000'>Nov 22 2017, 11:43 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="in-the-box.html">Prev: In the box</a></li>
+              <li class='next-page'><a href="communicate.html">Next: Connect to the World</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

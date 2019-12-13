@@ -1,0 +1,1383 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='color-mqtt-arduino.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: ARTIK Cloud via Arduino' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: ARTIK Cloud via Arduino' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: ARTIK Cloud via Arduino</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_advanced-concepts documentation_advanced-concepts_mqtt documentation_advanced-concepts_mqtt_color-mqtt-arduino' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="true">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false" class="active">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="artik-cloud----via-arduino">ARTIK Cloud – via Arduino</h1>
+            
+            <p>Our previous tutorial installment provided a demonstration scenario for communicating with Samsung ARTIK Cloud. We used Node-RED to give you a familiar and interactive introduction.</p>
+            
+            <p>In this article, we'll program the Samsung ARTIK module to send those same messages to ARTIK Cloud using the Arduino IDE to build a "sketch" and load it to the ARTIK module, just as you did with <a href="..\..\artik\tutorials\blink-an-led.html">Blink an LED</a>. You'll tie in actual sensor input: stand-in devices for the thermostat setting, inside temperature, and outside temperature.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\house-temp-artik-1.jpg"></p>
+            
+            <p>We will be demonstrating both MQTT protocol and Web REST API protocol to give you a well-rounded education. After you've played with both, you can decide which one best suits your application.</p>
+            
+            <p><strong>Prerequisites</strong></p>
+            
+            <p>In preparation for this tutorial, you will need to:</p>
+            
+            <ul>
+              <li>Download and install updated Arduino IDE files and new libraries, as noted below.</li>
+              <li>Complete prior tutorials, paying particular attention to:<br>
+              – Writing and running a sketch in the Arduino IDE (<a href="..\..\artik\tutorials\blink-an-led.html#using-the-arduino-ide">Blink an LED</a>)<br>
+              – Setting up the "Economy A/C Database" manifest (<a href="color-mqtt-client.html#setting-up-artik-cloud-manifest">Publishing to ARTIK Cloud</a>).</li>
+              <li>Log your ARTIK board in with the same Wi-Fi<sup>®</sup> network as you use on your Arduino IDE system. The sketch code does not include Wi-Fi login commands, which are not needed if you are connected to Wi-Fi beforehand.</li>
+              <li>Have a spare photoresistor and resistor on hand, similar to the ones you used for the ARTIK 053 <a href="color-mqtt-adv.html#returning-sensor-data-from-edge-devices">"sunshine detector"</a> exercise.</li>
+            </ul>
+            
+            <p>The time for the three coding exercises in this installment, once the Arduino IDE and library code are installed, comes to less than 10 minutes each. Setting up the sensors and other preparation for the concluding exercise could take 10-30 minutes, depending on how much you still have set up from prior tutorials.</p>
+            
+            <h2 id="installing-libraries">Installing Libraries</h2>
+            
+            <p>As always, Arduino makes life simpler with libraries. Here we use three: one for Wi-Fi, one to implement an MQTT client, and one to handle JSON-related formatting.</p>
+            
+            <h3 id="wifisslclient">WiFiSSLClient</h3>
+            <p>The latest Arduino IDE builds include a built-in <code>WiFiSSLClient</code> library that transparently replaces <code>WiFiClient</code>, yet in the background secures the link with SSL/TLS encryption.</p>
+            
+            <p><code>WiFiClient</code> and <code>WiFiSSLClient</code> bind to the HTTP or MQTT client through an IP stack. The choice of whether your calls are secured or not depends on the one you bind.</p>
+            
+            <ul>
+              <li>In our first MQTT example below, we use MQTT with SSL/TLS (bound to <code>WiFiSSLClient</code>) because ARTIK Cloud requires this encryption.</li>
+              <li>In our concluding example, we use MQTT with no encryption (bound to <code>WiFiClient</code>), instead communicating with ARTIK Cloud using secure Web protocols (bound to <code>WiFiSSLClient</code>).</li>
+            </ul>
+            
+            <p class="warning"><strong>Important:</strong> Install Arduino IDE 1.6.9 or later, and additionally update to ARTIK board version 0.3.6 or later through the Arduino IDE Board Manager.</p>
+            
+            <h3 id="mqtt-client-library">MQTT Client Library</h3>
+            
+            <p>The MQTT client library handles the details of packet transfers so that you can subscribe and publish with minimal code.</p>
+            
+            <ol>
+              <li>Install the Arduino MQTTClient library using Manage Libraries.  (If you don't see the library, search online about deleting <code>library_index.json</code> to force the IDE to rebuild the library list.)</li>
+              <li>Add <code>#include &lt;MQTTClient.h&gt;</code> to your sketch.</li>
+            </ol>
+            
+            <p>The author has provided useful information about this library <a href="https://github.com/256dpi/arduino-mqtt" target="_blank"> here</a>. Be sure to take note of the discussion on <strong>maximum packet size</strong> and consider it for your own application.</p>
+            
+            <h3 id="json-formatting-library">.JSON Formatting Library</h3>
+            
+            <p>We will need a simple way to structure data packets to match the .JSON format that ARTIK Cloud is expecting.</p>
+            
+            <ol>
+              <li>Install the Arduino .JSON library.</li>
+              <li>Add <code>#include &lt;ArduinoJson.h&gt;</code> to your sketch.</li>
+            </ol>
+            
+            <p>You'll find the author's very helpful write-up about this library <a href="https://github.com/bblanchon/ArduinoJson/wiki/Encoding-JSON" target="_blank"> here</a>.</p>
+            
+            <h2 id="coding-for-mqtt">Coding for MQTT</h2>
+            
+            <p>Owing to the power of the ARTIK module with the Arduino IDE, here we can offer a surprisingly short exercise to demonstrate MQTT communication with ARTIK Cloud.</p>
+            
+            <h3 id="basic-mqtt-code">Basic MQTT Code</h3>
+            
+            <p>Load the Arduino IDE and start a new sketch. Our data this time will all be temperatures <br>(<code>insTemp</code>, <code>desTemp</code>, and <code>outTemp</code>).</p>
+            
+            <ol>
+            <li>
+            Copy in the code below. For clarity, we have left out error checking code. 
+            </li>
+            </ol>
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29</pre></td><td class="code"><pre><span class="cp">#include &lt;WiFi.h&gt;&#x000A;#include &lt;MQTTClient.h&gt;&#x000A;#include &lt;ArduinoJson.h&gt;&#x000A;</span>&#x000A;<span class="c1">// MQTT params  &#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudServer</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">"api.artik.cloud"</span><span class="p">;</span>&#x000A;<span class="kt">int</span>  <span class="n">mqttCloudPort</span>         <span class="o">=</span> <span class="mi">8883</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttCloudClientName</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ARTIK-Arduino"</span><span class="p">;</span> <span class="c1">// or whatever you prefer&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudUsername</span><span class="p">[]</span>   <span class="o">=</span> <span class="s">"_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudPassword</span><span class="p">[]</span>   <span class="o">=</span> <span class="s">"_your_DEVICE_TOKEN_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX&#x000A;</span><span class="kt">char</span> <span class="n">mqttCloudTopic</span><span class="p">[]</span>      <span class="o">=</span> <span class="s">"/v1.1/messages/_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX &#x000A;</span><span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="s">"\{</span><span class="se">\"</span><span class="s">insTemp</span><span class="se">\"</span><span class="s">:19.3,  </span><span class="se">\"</span><span class="s">desTemp</span><span class="se">\"</span><span class="s">:19.1, </span><span class="se">\"</span><span class="s">outTemp</span><span class="se">\"</span><span class="s">:23.7 \}"</span><span class="p">;</span>&#x000A;&#x000A;<span class="n">WiFiSSLClient</span> <span class="n">ipCloudStack</span><span class="p">;</span>&#x000A;<span class="n">MQTTClient</span> <span class="n">mqttCloudClient</span><span class="p">;</span>&#x000A;  &#x000A;<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">mqttCloudServer</span><span class="p">,</span> <span class="n">mqttCloudPort</span><span class="p">,</span> <span class="n">ipCloudStack</span><span class="p">);</span>&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mqttCloudClientName</span><span class="p">,</span> <span class="n">mqttCloudUsername</span><span class="p">,</span> <span class="n">mqttCloudPassword</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;  &#x000A;<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">mqttCloudClient</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">mqttCloudTopic</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>&#x000A;  <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>   &#x000A;<span class="p">}</span> &#x000A;&#x000A;<span class="kt">void</span> <span class="nf">messageReceived</span><span class="p">(</span><span class="n">String</span> <span class="n">topic</span><span class="p">,</span> <span class="n">String</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">bytes</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>&#x000A;<span class="p">}</span> </pre></td></tr></tbody></table>
+            </div>
+            
+            <ol start="2">
+            <li>
+            Replace the ARTIK Cloud device placeholders with your own. As you will recall, they both come from <a href="https://artik.cloud/my" target="_blank">My ARTIK Cloud</a>. 
+            </li>
+            <ul>
+            <li>
+            Paste in Device ID (<code>sdid</code>) in <b>two</b> places.
+            </li>
+            <li>
+            Paste in Device Token (<code>accessToken</code>). 
+            </li>
+            <li>
+            Close the Device Info window and go to ARTIK Cloud Charts.
+            </li>
+            </ul>
+            
+            <li>
+            Take a moment to understand this compact code.  
+            
+            <ul>
+            <li>
+            <code>WiFiSSLClient</code> sets up SSL/TLS network connectivity for <code>MQTTClient</code>;  the two interact through <code>ipCloudStack</code>.  
+            </li>
+            <li>
+            <code>mqttCloudClient.connect</code> makes the MQTT connection to ARTIK Cloud.  
+            </li>
+            <li>
+            <code>mqttCloudClient.publish</code> publishes the data to the Device ID specified in Topic.  
+            </li>
+            <li>
+            The <code>MQTT params</code> should already look familiar to you from previous tutorials.  
+            </li>
+            
+            </ul>
+            </li>
+            <li>
+            
+            Load the sketch to the ARTIK module to run it.
+            </li>
+            </ol>
+            
+            <p>You have just sent ARTIK Cloud a data message, and should see it at My ARTIK Cloud as always.</p>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\sami-chart-1.jpg"></p>
+            
+            <p class="info">No data? Make sure you have the latest Arduino IDE and ARTIK board manager releases installed, as noted in <a href="color-mqtt-arduino.html#installing-libraries">Installing Libraries</a>.  Correct installation may require you to <strong>uninstall</strong> the Arduino IDE first.</p>
+            
+            <h3 id="automating-the-json-formatting">Automating the JSON Formatting</h3>
+            
+            <p>Notice how we had to manually format our 'publish' data (in <code>buf</code>), using backslashes in front of the interior quotes and curly braces. It's not a pleasant task.</p>
+            
+            <p><code>\{\"insTemp\":19.3,  \"desTemp\":19.1, \"outTemp\":23.7"...</code></p>
+            
+            <p>We'll automate this with the JSON library.</p>
+            
+            <ol>
+              <li>
+                <p>Write a <code>loadBuffer()</code> routine to format data into .JSON. We want to create:</p>
+            
+                <ul>
+                  <li>
+                    <p>A reserved spot in memory to put our raw data<br>
+              <code>StaticJsonBuffer&lt;200&gt; jsonBuffer;</code></p>
+                  </li>
+                  <li>
+                    <p>A JSON object addressed at that spot, to be populated by data pairs<br>
+              <code>JsonObject&amp; dataPair = jsonBuffer.createObject();</code></p>
+                  </li>
+                  <li>
+                    <p>Our data pairs (using variables this time)<br>
+              <code>dataPair["insTemp"] = insTemp;</code><br>
+              <code>dataPair["desTemp"] = desTemp;</code><br>
+              <code>dataPair["outTemp"] = outTemp;</code></p>
+                  </li>
+                  <li>
+                    <p>An operation to extract the data, one pair at a time, and "print" it JSON-formatted into the original <code>buf</code> that we used.<br>
+              <code>dataPair.printTo(buf, sizeof(buf));</code></p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Add in the completed JSON formatting routine at the end of your sketch.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10</pre></td><td class="code"><pre> void loadBuffer(float insTemp, float desTemp, float outTemp) {  &#x000A;   StaticJsonBuffer&lt;200&gt; jsonBuffer;  &#x000A;   JsonObject&amp; dataPair = jsonBuffer.createObject();  &#x000A;&#x000A;   dataPair["insTemp"] = insTemp;  &#x000A;   dataPair["desTemp"] = desTemp;  &#x000A;   dataPair["outTemp"] = outTemp;  &#x000A;	&#x000A;   dataPair.printTo(buf, sizeof(buf));  &#x000A; }</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Call the routine with some data (values of your choice) right after your <code>loop()</code> statement.  You'll replace these hard-coded values with sensor input variables later.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre> loadBuffer(19.3,19.1,23.7);</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Load the sketch to the ARTIK module to run it.</p>
+              </li>
+            </ol>
+            
+            <p>The JSON-formatted data goes to ARTIK Cloud and shows up in My ARTIK Cloud.</p>
+            
+            <p>You now have a simple formula to publish data to ARTIK Cloud over MQTT using the Arduino IDE. You can use Web protocols to do the same thing, as described below. Even if you do not plan to use Web protocols, you will need to understand them to complete the 'sensors' portion of this tutorial.</p>
+            
+            <h2 id="coding-for-web">Coding for Web</h2>
+            
+            <p>Here we will duplicate in Web REST API protocols what we did using MQTT. As in the MQTT example, <code>WiFiSSLClient</code> takes care of all SSL/TLS issues in the background.</p>
+            
+            <h3 id="basic-web-rest-api-code">Basic Web REST API Code</h3>
+            
+            <p>This example creates a client object that connects and transfers data using a link encrypted by SSL/TLS.</p>
+            
+            <ol>
+              <li>Copy in the code below. For clarity, we have left out error checking code.</li>
+            </ol>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37</pre></td><td class="code"><pre><span class="cp">#include &lt;WiFi.h&gt;&#x000A;#include &lt;ArduinoJson.h&gt;&#x000A;</span>&#x000A;<span class="c1">// Web REST API params&#x000A;</span><span class="kt">char</span> <span class="n">server</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"api.artik.cloud"</span><span class="p">;</span>  &#x000A;<span class="kt">int</span> <span class="n">port</span> <span class="o">=</span> <span class="mi">443</span><span class="p">;</span> <span class="c1">//(port 443 is default for HTTPS)&#x000A;</span>&#x000A;<span class="n">String</span> <span class="n">AuthorizationData</span> <span class="o">=</span> <span class="s">"Authorization: Bearer _your_DEVICE_TOKEN_goes_here_"</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">;</span>&#x000A;<span class="n">String</span> <span class="n">PostData</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n</span><span class="s">  </span><span class="se">\"</span><span class="s">sdid</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">_your_DEVICE_ID_goes_here_</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\"</span><span class="s">type</span><span class="se">\"</span><span class="s">: 	</span><span class="se">\"</span><span class="s">message</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\"</span><span class="s">data</span><span class="se">\"</span><span class="s">: \{</span><span class="se">\"</span><span class="s">insTemp</span><span class="se">\"</span><span class="s">:19.3,  </span><span class="se">\"</span><span class="s">desTemp</span><span class="se">\"</span><span class="s">:19.1, </span><span class="se">\"</span><span class="s">outTemp</span><span class="se">\"</span><span class="s">:23.7 \}}"</span><span class="p">;</span>  &#x000A;&#x000A;<span class="n">WiFiSSLClient</span> <span class="n">client</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>&#x000A;<span class="p">}</span>&#x000A;	&#x000A;<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="n">connected</span><span class="p">())</span> <span class="p">{</span> &#x000A;	<span class="p">;</span> <span class="c1">// service the error &#x000A;</span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"POST /v1.1/messages HTTP/1.1"</span><span class="p">);</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Host: api.artik.cloud"</span><span class="p">);</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Accept: */*"</span><span class="p">);</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Content-Type: application/json"</span><span class="p">);</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">AuthorizationData</span><span class="p">);</span>&#x000A;&#x000A;      <span class="c1">// POST data section&#x000A;</span>      <span class="n">client</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Content-Length: "</span><span class="p">);</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">PostData</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>&#x000A;      <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">PostData</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>&#x000A;  <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            
+            <ol start="2">
+            <li>
+            Replace the ARTIK Cloud device placeholders with your own. As you will recall, they both come from my ARTIK Cloud as described <a href="color-mqtt-client.html#getting-token-from-artik-cloud">here</a>. 
+            <ul>
+            <li>
+            Paste in Device ID (<code>sdid</code>).
+            </li>
+            <li>
+            Paste in Device Token (<code>accessToken</code>). 
+            </li>
+            <li>
+            Close the Device Info window and go to ARTIK Cloud Charts.
+            </li>
+            </ul>
+            </li>
+            <li>
+            Load the sketch to the ARTIK module to run it.
+            </li>
+            </ol>
+            <p>You have just sent ARTIK Cloud a data message using Web REST API protocols.</p>
+            
+            <h3 id="automating-the-json-formatting-1">Automating the JSON Formatting</h3>
+            
+            <p>For Web calls, formatting the data as JSON is trickier than for MQTT, because:</p>
+            
+            <ul>
+              <li>The data is "nested" within the Web REST API call <code>data:</code> element.</li>
+              <li>The Web REST API needs to know <code>Content-Length</code>. MQTT just uses the null (<code>\0</code>) at the end of the string.</li>
+            </ul>
+            
+            <p>So we need to create not only the JSON data pairs, but also a root <code>data</code> object, and bigger buffers (both within this call and for the global <code>buf</code>).</p>
+            
+            <p>To upgrade the previous Web code to automated JSON formatting:</p>
+            
+            <ol>
+              <li>
+                <p>Add in this completed JSON formatting routine at the bottom of your sketch.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16</pre></td><td class="code"><pre> int loadBuffer(float insTemp, float desTemp, float outTemp) {  &#x000A;   StaticJsonBuffer&lt;200&gt; jsonBuffer; // reserve spot in memory&#x000A;&#x000A;   JsonObject&amp; root = jsonBuffer.createObject(); // create root objects&#x000A;     root["sdid"] = "_your_DEVICE_ID_goes_here_"; // FIX &#x000A;     root["type"] = "message";&#x000A;&#x000A;   JsonObject&amp; dataPair = root.createNestedObject("data"); // create nested objects&#x000A;     dataPair["insTemp"] = insTemp;  &#x000A;     dataPair["desTemp"] = desTemp;  &#x000A;     dataPair["outTemp"] = outTemp;  &#x000A;&#x000A;   root.printTo(buf, sizeof(buf)); // JSON-print to buffer&#x000A;&#x000A;   return (root.measureLength()); // also return length&#x000A; }</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Copy your Device ID (in the <code>PostData</code> string) to the JSON code.</p>
+              </li>
+              <li>
+                <p>Delete the <code>String PostData...</code> line and replace it with</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre> char buf[200];</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Replace the POST data section with the following code.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5</pre></td><td class="code"><pre>       // Automated POST data section&#x000A;       client.print("Content-Length: ");&#x000A;       client.println(loadBuffer(19.3,19.1,23.7)); // loads buf, returns length&#x000A;       client.println();&#x000A;       client.println(buf);</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Load and run the new sketch.</p>
+              </li>
+            </ol>
+            
+            <p>You should once again be seeing data on ARTIK Cloud.</p>
+            
+            <p class="info"><strong>Troubleshooting Tip.</strong> Pay attention to <code>StaticJsonBuffer</code> and <code>buf</code> sizes when creating data objects for your own application. If tight for space, remove <code>sdid</code> and <code>type</code> from the JSON routine and return them to <code>client.println(...)</code> functions (shrink buffer sizes accordingly).</p>
+            
+            <h2 id="adding-controls-and-sensors">Adding Controls and Sensors</h2>
+            
+            <p>In this section, we present implementation details of the system hardware that you might find useful as part of the complete demonstration scenario.</p>
+            
+            <p>Because you may not have a full set of edge device controls and sensors available to play with (not to mention the refrigerator/freezer, A/C, and economizer units), we are going to simulate just a few inputs using what we have on-hand: our ARTIK 053 module and a couple of sensors from previous exercises. Here's how we plan to get data.</p>
+            
+            <table>
+              <thead>
+                <tr>
+                  <th>Temp Inputs</th>
+                  <th>ID</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Inside actual</td>
+                  <td>insTemp</td>
+                  <td>photoresistor connected locally to the ARTIK module</td>
+                </tr>
+                <tr>
+                  <td>Inside desired</td>
+                  <td>desTemp</td>
+                  <td>our Web page 'green' slider control</td>
+                </tr>
+                <tr>
+                  <td>Outdoor</td>
+                  <td>outTemp</td>
+                  <td><a href="color-mqtt-adv.html#returning-sensor-data-from-edge-devices">"sunshine detector"</a> attached to ARTIK 053 module</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3 id="mqtt-plus-web">MQTT plus Web</h3>
+            
+            <p>For educational purposes, we want to demonstrate how you can "mix and match" elements of both MQTT and Web protocols to your advantage.  So, for this concluding exercise, you will set up the ARTIK module to:</p>
+            
+            <ul>
+              <li>Act as an SSL/TLS-secured Web client to ARTIK Cloud</li>
+              <li>Run Node-RED as host for your custom user interface Web page</li>
+              <li>Run Mosquitto as MQTT broker for two clients:<br>
+              – the ARTIK 053 module<br>
+              – the Node-RED MQTT 'color' output node.</li>
+            </ul>
+            
+            <p>Mosquitto can run as an SSL/TLS-secured broker, but the required setup (including certificate generation) is not trivial and best left to another tutorial. Here, we will leave all MQTT link communications in cleartext (only temperature values are being exchanged).</p>
+            
+            <h3 id="data-source-preparation">Data Source Preparation</h3>
+            <p>Before we code the sketch, take a moment to set up your data input sources.</p>
+            
+            <h4 id="instemp-local-thermometer"><strong>insTemp: Local Thermometer</strong></h4>
+            
+            <p>For our first data input, let's try a quick test. We would like to start sending live <code>insTemp</code> (inside temperature) values to ARTIK Cloud. However, a temperature sensor is a very slow-reacting device. We want something where we can see changes immediately.</p>
+            
+            <p>So instead of a temperature sensor, let's use a spare photoresistor – the same type you used on the ARTIK 053 board. This time we will connect it directly to the ARTIK 5/7/10 board on analog pin 0.</p>
+            
+            <ol>
+              <li>
+                <p>Wire up the photoresistor and series resistor as shown. You'll find the 3.3V and GND connections on J25 and the A0 analog input connection on J24 (both are on the Interface board for the ARTIK 530/710 system).</p>
+            
+                <p><img alt="" src="..\..\images\docs\tutorials\photoresistor-ckt.jpg"></p>
+              </li>
+              <li>
+                <p>In the POST data section of your Web REST API code, change the buffer loading call to use the <code>analogRead</code> function for pin A0 in place of the hard-coded test value for <code>insTemp</code>.</p>
+            
+            <div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre> client.println(loadBuffer(analogRead(0),19.1,23.7));</pre></td></tr></tbody></table>
+            </div>
+              </li>
+              <li>
+                <p>Comment out the <code>exit(0);</code> statement and adjust <code>delay()</code> so that the program will run in a loop and send new values every 100ms.</p>
+              </li>
+              <li>
+                <p>Load and run the new sketch.</p>
+            
+                <p>You should once again be seeing data on ARTIK Cloud. Wave your hand slowly over the photoresistor – ARTIK Cloud data should be following along (delayed by a few seconds).</p>
+            
+                <p class="info">No data? Try it the "manual" way shown in the <a href="..\..\developer-guide\gpio\kernel-gpio.html#adc-interface">ADC Interface</a> guide.</p>
+              </li>
+              <li>
+                <p>When done, reset the ARTIK board. Remember, there are <a href="https://developer.artik.cloud/documentation/connect-the-data/rate-limiting.html#rest-limits" target="_blank"> rate limits</a> to the amount of data that ARTIK Cloud will accept, and they are lower for Web REST than for MQTT. Therefore, you don't want to leave a high-data-rate sketch running indefinitely.</p>
+              </li>
+            </ol>
+            
+            <p>In the real application, you would want to send data only when there has been a meaningful change of the temperature being sensed.</p>
+            
+            <h4 id="outtemp-remote-thermometer"><strong>outTemp: Remote Thermometer</strong></h4>
+            
+            <p>For our second data input, we will use the ARTIK 053 module as you had it set up previously, with its attached photoresistor. We don't really need to change the code – we'll just use its "brightness" messages and pretend that they are outside temperature messages.</p>
+            
+            <p>Make sure that your ARTIK 053 module is still working the way it was originally; repeat that tutorial if you have any doubts.</p>
+            
+            <h4 id="destemp-web-temp-slider"><strong>desTemp: Web Temp Slider</strong></h4>
+            
+            <p>For our final data input, we will use the color slider that we implemented as Web page code using Node-RED.  As with <code>outTemp</code>, we won't change anything from that code, so we will take its "color" messages and pretend that they are temperature setting request messages coming from the homeowner's thermostat or climate control console.</p>
+            
+            <p>You must implement the slider code in your Node-RED page for this feature to work.</p>
+            
+            <ol>
+              <li>Revisit the <a href="color-mqtt-web.html">Web Window to MQTT</a> tutorial.</li>
+              <li>Set up and verify the slider code to be working before proceeding.</li>
+            </ol>
+            
+            <p>Our code below uses the middle two hex digits (of 6) sent by that code, representing 'g' of r-g-b, and converting them to a value of 0-255.</p>
+            
+            <h3 id="procedure">Procedure</h3>
+            
+            <p>You'll find below the full code for this exercise.  You haven't had to use the ARTIK 053 module, Mosquitto, or Node-RED in the current tutorial so far, but you'll use them all in this part.</p>
+            
+            <ol>
+              <li>
+                <p>Have Node-RED prepared (with its flow coded and known-working) as noted above, but do not run it at this time.</p>
+              </li>
+              <li>
+                <p>Have your ARTIK 053 device prepared (programmed and known-working) as noted above, but do not power it up just yet.</p>
+              </li>
+              <li>
+                <p>Start with your ARTIK board freshly powered up; log in, and connect to your Wi-Fi network.</p>
+              </li>
+              <li>
+                <p>Run Mosquitto as the local MQTT broker. Do not start Node-RED.</p>
+            
+                <p class="info"><strong>Troubleshooting Tip.</strong> Invoke Mosquitto with <code>mosquitto -v &amp;</code> as 'verbose' mode shows events like ConnAck and Publish taking place.</p>
+            
+                <p><img alt="" src="..\..\images\docs\tutorials\CONNACK-Putty.jpg"></p>
+              </li>
+              <li>
+                <p>Copy the complete code listed below to a blank sketch in the Arduino IDE.  Its functionality is explained in the next section.</p>
+              </li>
+            </ol>
+            
+            <div class="highlight c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1&#x000A;2&#x000A;3&#x000A;4&#x000A;5&#x000A;6&#x000A;7&#x000A;8&#x000A;9&#x000A;10&#x000A;11&#x000A;12&#x000A;13&#x000A;14&#x000A;15&#x000A;16&#x000A;17&#x000A;18&#x000A;19&#x000A;20&#x000A;21&#x000A;22&#x000A;23&#x000A;24&#x000A;25&#x000A;26&#x000A;27&#x000A;28&#x000A;29&#x000A;30&#x000A;31&#x000A;32&#x000A;33&#x000A;34&#x000A;35&#x000A;36&#x000A;37&#x000A;38&#x000A;39&#x000A;40&#x000A;41&#x000A;42&#x000A;43&#x000A;44&#x000A;45&#x000A;46&#x000A;47&#x000A;48&#x000A;49&#x000A;50&#x000A;51&#x000A;52&#x000A;53&#x000A;54&#x000A;55&#x000A;56&#x000A;57&#x000A;58&#x000A;59&#x000A;60&#x000A;61&#x000A;62&#x000A;63&#x000A;64&#x000A;65&#x000A;66&#x000A;67&#x000A;68&#x000A;69&#x000A;70&#x000A;71&#x000A;72&#x000A;73&#x000A;74&#x000A;75&#x000A;76&#x000A;77&#x000A;78&#x000A;79&#x000A;80&#x000A;81&#x000A;82&#x000A;83&#x000A;84&#x000A;85&#x000A;86&#x000A;87&#x000A;88&#x000A;89&#x000A;90&#x000A;91&#x000A;92&#x000A;93&#x000A;94&#x000A;95&#x000A;96&#x000A;97&#x000A;98&#x000A;99&#x000A;100&#x000A;101&#x000A;102&#x000A;103&#x000A;104&#x000A;105&#x000A;106&#x000A;107&#x000A;108</pre></td><td class="code"><pre>&#x000A;<span class="cp">#include &lt;WiFi.h&gt;&#x000A;#include &lt;MQTTClient.h&gt;&#x000A;#include &lt;ArduinoJson.h&gt;&#x000A;#include &lt;DebugSerial.h&gt;&#x000A;</span>  &#x000A;<span class="c1">// MQTT params  &#x000A;</span><span class="kt">char</span> <span class="n">mqttServer</span><span class="p">[]</span>     <span class="o">=</span> <span class="s">"192.168.1.232"</span><span class="p">;</span>&#x000A;<span class="kt">int</span>  <span class="n">mqttPort</span>         <span class="o">=</span> <span class="mi">1883</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">mqttClientName</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ARTIK-Arduino"</span><span class="p">;</span> <span class="c1">// or whatever you prefer&#x000A;</span><span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="n">desTemp</span><span class="p">,</span> <span class="n">outTemp</span><span class="p">;</span>&#x000A;      &#x000A;<span class="n">WiFiClient</span> <span class="n">ipStack</span><span class="p">;</span>&#x000A;<span class="n">MQTTClient</span> <span class="n">mqttClient</span><span class="p">;</span>&#x000A;  &#x000A;<span class="c1">// Web REST API params&#x000A;</span><span class="kt">char</span> <span class="n">server</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"api.artik.cloud"</span><span class="p">;</span>  &#x000A;<span class="kt">int</span> <span class="n">httpsPort</span> <span class="o">=</span> <span class="mi">443</span><span class="p">;</span> <span class="c1">//(port 443 is default for HTTPS)&#x000A;</span><span class="n">String</span> <span class="n">AuthorizationData</span> <span class="o">=</span> <span class="s">"Authorization: Bearer _your_DEVICE_TOKEN_goes_here_"</span><span class="p">;</span>&#x000A;<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">128</span><span class="p">];</span>&#x000A;&#x000A;<span class="n">WiFiSSLClient</span> <span class="n">client</span><span class="p">;</span>&#x000A;  &#x000A;<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>  &#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">mqttServer</span><span class="p">,</span> <span class="n">mqttPort</span><span class="p">,</span> <span class="n">ipStack</span><span class="p">);</span>&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mqttClientName</span><span class="p">);</span>&#x000A;  <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">"#"</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;  &#x000A;<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>&#x000A;  <span class="n">mqttClient</span><span class="p">.</span><span class="n">loop</span><span class="p">();</span>&#x000A;  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>&#x000A;<span class="p">}</span>  &#x000A;  &#x000A;<span class="kt">void</span> <span class="nf">messageReceived</span><span class="p">(</span><span class="n">String</span> <span class="n">topic</span><span class="p">,</span> <span class="n">String</span> <span class="n">payload</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">bytes</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">length</span><span class="p">)</span> <span class="p">{</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Message arrived ["</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">topic</span><span class="p">);</span>&#x000A;  <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"] "</span><span class="p">);</span>&#x000A;      &#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">topic</span><span class="o">==</span><span class="s">"brightness"</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="c1">// convert payload to float&#x000A;</span>    <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">payload</span><span class="p">;</span>&#x000A;    <span class="kt">float</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">toFloat</span><span class="p">();</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">600</span><span class="p">)</span> <span class="p">{</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//expected range for photoresistor&#x000A;</span>        <span class="n">outTemp</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>&#x000A;      <span class="p">}</span>  &#x000A;    <span class="p">}</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"outTemp:"</span><span class="p">);</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">outTemp</span><span class="p">);</span>&#x000A;&#x000A;  <span class="p">}</span> &#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">topic</span><span class="o">==</span><span class="s">"color"</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// from Node-RED slider&#x000A;</span>      <span class="k">const</span> <span class="kt">char</span> <span class="n">p</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">payload</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="sc">'\0'</span> <span class="p">};</span>&#x000A;      <span class="n">desTemp</span> <span class="o">=</span> <span class="n">strtol</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"desTemp:"</span><span class="p">);</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">desTemp</span><span class="p">);</span>&#x000A;  <span class="p">}</span>      &#x000A;     &#x000A;  <span class="n">insTemp</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="mi">40</span><span class="p">;</span> <span class="c1">// from ARTIK photoresistor&#x000A;</span>      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"insTemp:"</span><span class="p">);</span>&#x000A;      <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">insTemp</span><span class="p">);</span>&#x000A;    &#x000A;  <span class="c1">// load current values into the buffer&#x000A;</span>  <span class="kt">int</span> <span class="n">bufLength</span> <span class="o">=</span> <span class="n">loadBuffer</span><span class="p">(</span><span class="n">insTemp</span><span class="p">,</span><span class="n">desTemp</span><span class="p">,</span><span class="n">outTemp</span><span class="p">);</span>&#x000A;  &#x000A;  <span class="c1">// send it out to ARTIK Cloud&#x000A;</span>  <span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">httpsPort</span><span class="p">);</span>&#x000A;  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="n">connected</span><span class="p">())</span> <span class="p">{</span> &#x000A;     <span class="n">DebugSerial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"No connection to ARTIK Cloud!"</span><span class="p">);</span>&#x000A;     <span class="p">;</span> <span class="c1">// service the error &#x000A;</span>   <span class="p">}</span> &#x000A;   <span class="k">else</span> <span class="p">{</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"POST /v1.1/messages HTTP/1.1"</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Host: api.artik.cloud"</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Accept: */*"</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"Content-Type: application/json"</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">AuthorizationData</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Content-Length: "</span><span class="p">);</span>&#x000A;    &#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bufLength</span><span class="p">);</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>&#x000A;     <span class="n">client</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>&#x000A;   <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;    &#x000A;<span class="kt">int</span> <span class="nf">loadBuffer</span><span class="p">(</span><span class="kt">float</span> <span class="n">insTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">desTemp</span><span class="p">,</span> <span class="kt">float</span> <span class="n">outTemp</span><span class="p">)</span> <span class="p">{</span>  &#x000A;  <span class="c1">// Step 1: reserve memory space&#x000A;</span>  <span class="n">StaticJsonBuffer</span><span class="o">&lt;</span><span class="mi">200</span><span class="o">&gt;</span> <span class="n">jsonBuffer</span><span class="p">;</span>&#x000A;    &#x000A;  <span class="c1">// Step 2: Build object tree root in memory&#x000A;</span>  <span class="n">JsonObject</span><span class="o">&amp;</span> <span class="n">root</span> <span class="o">=</span> <span class="n">jsonBuffer</span><span class="p">.</span><span class="n">createObject</span><span class="p">();</span> &#x000A;  <span class="n">root</span><span class="p">[</span><span class="s">"sdid"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"_your_DEVICE_ID_goes_here_"</span><span class="p">;</span> <span class="c1">// FIX &#x000A;</span>  <span class="n">root</span><span class="p">[</span><span class="s">"type"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"message"</span><span class="p">;</span>&#x000A;    &#x000A;  <span class="c1">// Step 2A: Build nested object within root "data:" element  &#x000A;</span>  <span class="n">JsonObject</span><span class="o">&amp;</span> <span class="n">dataPair</span> <span class="o">=</span> <span class="n">root</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">(</span><span class="s">"data"</span><span class="p">);</span>  &#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"insTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">insTemp</span><span class="p">;</span>  &#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"desTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">desTemp</span><span class="p">;</span>  &#x000A;  <span class="n">dataPair</span><span class="p">[</span><span class="s">"outTemp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">outTemp</span><span class="p">;</span>  &#x000A;    &#x000A;  <span class="c1">// Step 3: "print" JSON-formatted info to the buffer&#x000A;</span>  <span class="n">root</span><span class="p">.</span><span class="n">printTo</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">));</span>&#x000A;  <span class="k">return</span> <span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">measureLength</span><span class="p">()</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>&#x000A;<span class="p">}</span></pre></td></tr></tbody></table>
+            </div>
+            <ol start="6">
+            <li>
+            Replace the <code>mqttServer</code> address with your own <code>localhost</code> IP address.  
+            </li>
+            <li>
+            Update the Device information to use your ARTIK Cloud device.  
+            <ul>
+            <li>
+            	Log in to My ARTIK Cloud, and click on your device.  
+            </li>
+            <li>
+            	Copy the information to two places: Device ID (near the bottom) and Device Token (near the top).  
+            </li>
+            <li>
+            	Close the Device Info screen and go to the ARTIK Cloud Charts page.  
+            </li>
+            </ul>
+            </li>
+            
+            <li>
+            Load the code to the ARTIK module to run it. Because you ran Mosquitto in verbose mode, you should see ConnAck and SubAck screen messages like these.
+            </li>
+            </ol>
+            
+            <p><img alt="" src="..\..\images\docs\tutorials\SUBACK-Putty.jpg"></p>
+            
+            <p class="info">No data? To help troubleshoot, take advantage of the debug facilities:<br>
+            – <code>#include &lt;DebugSerial.h&gt;</code><br>
+            – <code>DebugSerial.begin(9600)</code> within <code>setup() {...}</code><br>
+            – Add <code>DebugSerial.println(xxx)</code> as needed to print variables.</p>
+            
+            <ol start="9">
+            <li>
+            Publish <code>desTemp</code> ('color') data from Node-RED.
+            
+            <ul>
+            <li>
+            Run Node-RED, set up the way you left off at the end of the <a href="color-mqtt-web.html"> Web Window to MQTT</a> exercise (with the slider code added into your Web HTML template).
+            </li>
+            <li>
+            Look at the terminal window to verify connection. There should not be any Publish messages yet.
+            </li>
+            <li>
+            Move the "green" slider on the Node-RED Web page and look for Publish.
+            </li>
+            <li>
+            Watch for output on ARTIK Cloud.
+            </li>
+            </ul>
+            
+            </li>
+            <li>
+            Publish <code>outTemp</code> ('brightness') data from ARTIK 053 module.
+            <ul>
+            <li>
+            Power up the pre-programmed ARTIK 053 module with its photoresistor connected.  
+            </li>
+            <li>
+            Look at the terminal window to verify connection and publishing.
+            </li>
+            <li>
+            Watch for output on ARTIK Cloud.
+            </li>
+            </ul>
+            
+            </li>
+            </ol>
+            
+            <p>Feel free to connect up the ARTIK 053 module and Node-RED in the reverse order. They are both just Mosquitto clients so it should work either way.</p>
+            
+            <h3 id="how-it-works">How It Works</h3>
+            
+            <p>The Web code is unchanged from the earlier exercise. Its main <code>loop()</code> code now resides in the <code>messageReceived</code> routine.</p>
+            
+            <p>The MQTTClient code is used with the local broker (not ARTIK Cloud), and is only Subscribe code (no Publish activity is needed here). The Subscribe aspects are new.</p>
+            
+            <ul>
+              <li>The subscribe topic of <code>#</code> in <code>mqttClient.subscribe("#")</code> captures all messages. The <code>messageReceived</code> code then checks to see if the topic is:<br>
+              – 'color' (<code>desTemp</code> slider output from Node-RED user interface page)<br>
+              – 'brightness' (<code>outTemp</code> sensor message sent by the ARTIK 053 module).</li>
+              <li>If the topic matches, conversion of the incoming payload bytes is as follows.<br>
+              – For 'color', the middle two bytes represent 'g' of r-g-b as two hexadecimal digits.<br>
+              – For 'brightness', the string is decimal.<br>
+              In both cases, the data is converted to the <code>float</code> values expected by ARTIK Cloud.</li>
+              <li>The <code>messageReceived</code> routine is only executed on receipt of a message.</li>
+              <li><code>insTemp</code> (the local analog input we tested in Web code) is only checked when in the <code>messageReceived</code> routine; otherwise, its value is not updated (change this if desired).</li>
+            </ul>
+            
+            <h2 id="summary">Summary</h2>
+            
+            <p>You now have working Arduino IDE code examples not only for MQTT transactions, but also for making general-purpose Web POST calls. At this point, you should have some pretty good ideas about how to adapt our elementary code to your own sophisticated design.</p>
+            
+            <p>In our next installment, we will fill in more details of our ARTIK module and ARTIK Cloud sample scenario.  We will introduce the concept of Actions that you can send from ARTIK Cloud, and act on when received from ARTIK Cloud, and will discuss the Rules you can write to generate these Actions.</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-01-26 21:13:23 +0000'>Jan 26 2018,  9:13 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="color-mqtt-client.html">Prev: Publish to ARTIK Cloud</a></li>
+              <li class='next-page'><a href="color-mqtt-actions.html">Next: Actions and ARTIK Cloud</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

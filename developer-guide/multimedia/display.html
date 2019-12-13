@@ -1,0 +1,1684 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='display.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: MIPI/LVDS/HDMI Display' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: MIPI/LVDS/HDMI Display' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: MIPI/LVDS/HDMI Display</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_developer-guide documentation_developer-guide_multimedia documentation_developer-guide_multimedia_display' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="true">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false" class="active">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="mipilvdshdmi-display">MIPI/LVDS/HDMI Display</h1>
+            
+            <p>All ARTIK Linux-based modules support display panels as follows.</p>
+            
+            <h2 id="artik-520">ARTIK 520</h2>
+            
+            <p>The ARTIK 520 has a Mali 400MP2 (two pixel) GPU.</p>
+            
+            <ul>
+              <li>Supports MIPI display EH400WV: 480x800</li>
+            </ul>
+            
+            <h2 id="artik-530-and-710">ARTIK 530 and 710</h2>
+            
+            <p>The ARTIK 710 has a Mali 400MP4 (four pixel) GPU; the ARTIK 530 has a Mali 400MP2 (two pixel) GPU. The driver name is <code>utgard</code> and it  supports OpenGL ES 1.1 and 2.0. The Mali <code>utgard</code> DDK supports <code>fbdev</code>, <code>x11</code>, and <code>wayland</code> backends (with installation of the appropriate packages).</p>
+            
+            <ul>
+              <li>Supports MIPI display at resolutions up to 1080x1920</li>
+              <li>Supports LVDS display at resolutions up to 1920x1080</li>
+              <li>Supports HDMI 1.4a displays at resolutions up to 1920x1080</li>
+            </ul>
+            
+            <h2 id="artik-1020">ARTIK 1020</h2>
+            
+            <p>The ARTIK 1020 has a Mali 628MP6 (six pixel) GPU.</p>
+            
+            <ul>
+              <li>Supports MIPI display AMS499QP84: 1080x1920</li>
+              <li>Supports HDMI 1.4a monitors at resolutions up to 1920x1080</li>
+            </ul>
+            
+            <p class="info">When multiple displays are attached, only one of the display outputs can be enabled at a time.</p>
+            
+            <h2 id="preparation">Preparation</h2>
+            
+            <p>The LVDS and MIPI panels come with a flat cable for connection.</p>
+            
+            <ol>
+              <li>
+                <p>With power disconnected, connect the display to the ARTIK board as follows. <br></p>
+            
+                <ul>
+                  <li>For an LVDS display, place both boards on a work surface and attach
+                    <ul>
+                      <li>the flat cable end marked INTERPOSER BOARD to the connector on TOP of the ARTIK board</li>
+                      <li>the other end to the display.</li>
+                    </ul>
+            
+                    <p>The connectors snap together precisely, so align them carefully before applying pressure.</p>
+            
+                    <p><img alt="" src="..\..\images\docs\getting-started-artik\lvds-cable.jpg?1549048075"></p>
+                  </li>
+                  <li>For a MIPI display, place both boards <strong>upside down</strong> on a work surface and attach
+                    <ul>
+                      <li>the flat cable end marked PLATFORM BOARD to the connector on the BOTTOM side of the ARTIK board</li>
+                      <li>the other end to the display.</li>
+                    </ul>
+            
+                    <p>The connectors snap together precisely, so align them carefully before applying pressure.</p>
+                  </li>
+                  <li>For an HDMI display (all except ARTIK 520), use an HDMI cable with micro HDMI on one end. (Note that the "Eagleye" board uses a standard HDMI connector.)</li>
+                </ul>
+              </li>
+              <li>
+                <p>Upgrade your system image to the latest revision as described <a href="..\update-image\updating-artik-image.html">here</a>.</p>
+              </li>
+              <li>
+                <p>Download a sample <code>.mp4</code> movie file. For convenience, rename it to <code>sample.mp4</code> (to be used in the commands below).</p>
+              </li>
+              <li>
+                <p>With the display cable connected, power up the system. You should see:<br>
+             – Two to eight Linux<sup>®</sup> penguins (depending on GPU type) during boot<br>
+             – <code>tty1</code> console output on the display.</p>
+              </li>
+            </ol>
+            
+            <p class="info">No HDMI output? Follow the instructions <a href="#hdmi-edid-workaround">here</a>.</p>
+            
+            <h2 id="blanking-display">Blanking Display</h2>
+            
+            <p>You can block the initial screen display by setting <a href="..\update-image\u-boot.html">U-Boot environment variables</a> as follows.</p>
+            
+            <p><code>setenv opts loglevel=0 logo.nologo vt.color=0x00 vt.global_cursor_default=0</code><br>
+            <code>saveenv</code><br>
+            <code>reset</code></p>
+            
+            <h2 id="graphical-user-interface">Graphical User Interface</h2>
+            
+            <p>Optionally, for a complete stand-alone solution where you can interact using the console:</p>
+            
+            <ul>
+              <li>Attach a USB keyboard and mouse</li>
+              <li>Set up the board with your Wi-Fi network name and password as described <a href="..\ethernet-wifi\wifi.html">here</a></li>
+              <li>Download and <a href="display.html#using-x-windows">install X Windows</a> and Firefox.</li>
+            </ul>
+            
+            <h2 id="controlling-display">Controlling Display</h2>
+            
+            <ul>
+              <li>Turn off (blank) display<br>
+            <code>echo 1 &gt; /sys/class/graphics/fb0/blank</code></li>
+              <li>Turn on (unblank) display<br>
+            – as above, but use <code>echo 0</code></li>
+              <li>Disable cursor blink<br>
+            <code>echo 0 &gt; /sys/class/graphics/fbcon/cursor_blink</code></li>
+              <li>Enable cursor blink<br>
+            – as above, but use <code>echo 1</code></li>
+            </ul>
+            
+            <h2 id="demonstrating-display">Demonstrating Display</h2>
+            
+            <ol>
+              <li>
+                <p>Display a .jpg file on the screen.<br>
+              <code>fbi -T 2 test.jpg</code></p>
+              </li>
+              <li>
+                <p>Play a movie.</p>
+            
+                <ul>
+                  <li>
+                    <p>ARTIK 520 MIPI<br>
+             <code>mplayer -vo fbdev2 -framedrop -vf rotate=2 sample.mp4</code></p>
+                  </li>
+                  <li>
+                    <p>ARTIK 530/710/1020 MIPI<br>
+             <code>mplayer -vo fbdev2 -framedrop -vf rotate=1 sample.mp4</code></p>
+                  </li>
+                  <li>
+                    <p>ARTIK HDMI<br>
+             <code>mplayer -vo fbdev2 -framedrop sample.mp4</code></p>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            
+            <h2 id="using-x-windows">Using X-Windows</h2>
+            
+            <p>You can run an X11 graphical user interface on all modules except the ARTIK 520 module. For the window environment we offer LXDE for Ubuntu and Fluxbox for Fedora. Have a USB keyboard and mouse available to plug into the USB 2.0 ports to take full advantage of your mini PC!</p>
+            
+            <h3 id="artik-driver-setup">ARTIK Driver Setup</h3>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu-32bit-drivers" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu 32-bit</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#ubuntu-64bit-drivers" aria-controls="linux-ide" role="tab" data-toggle="tab">Ubuntu 64-bit</a> 
+              </li>
+            
+            
+              <li role="presentation">
+                <a href="#fedora-drivers" aria-controls="linux-ide" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu-32bit-drivers">
+                <div class="boxed" style="min-height:420px">
+            
+                  <p>These instructions are for <strong>32-bit</strong> Ubuntu platforms (ARTIK 530).</p>
+            
+                  <ol>
+            <li>
+            
+            Start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br></code>
+            
+            </li>
+            <li>
+            Install base packages. <br>
+            <code>&#x000A;apt install build-essential xorg<br></code>
+            
+            </li>
+            <li>
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/x11-ubuntu-32bit/download" download="">
+            	ARTIK 520/530 (32-bit)
+              </a>
+            </p>
+            
+            </li>
+            <li>
+            Install graphics drivers.<br>
+            <code>&#x000A;dpkg -i opengl-es-mali-utgard-x11_7.0-2.1_armhf.deb<br>&#x000A;dpkg -i xserver-xorg-video-armsoc-nexell_1.4.0-0ubuntu2.1_armhf.deb</code>
+            
+            </li>
+            </ol>
+            
+                  <p><br></p>
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="ubuntu-64bit-drivers">
+                <div class="boxed" style="min-height:420px">
+            
+                  <p>These instructions are for <strong>64-bit</strong> Ubuntu platforms (ARTIK 710).</p>
+            
+                  <ol>
+            <li>
+            
+            Start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br></code>
+            
+            </li>
+            <li>
+            Install base packages. <br>
+            <code>&#x000A;apt install build-essential xorg<br></code>
+            
+            </li>
+            <li>
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/x11-ubuntu-64bit/download" download="">
+            	ARTIK 710 (64-bit)
+              </a>
+            </p>
+            
+            </li>
+            <li>
+            Install graphics drivers.<br>
+            <code>&#x000A;&#x000A;&#x000A;dpkg -i opengl-es-mali-utgard-x11_7.0-2.1_arm64.deb<br>&#x000A;dpkg -i xserver-xorg-video-armsoc-nexell_1.4.0-0ubuntu2.1_arm64.deb</code>
+            
+            </li>
+            </ol>
+            
+                  <p><br></p>
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora-drivers">
+                <div class="boxed" style="max-height:150px">
+            
+                  <p>These instructions are for Fedora platforms.</p>
+            
+                  <p>Start as always with a general update.
+            <br>
+            <code>dnf upgrade</code></p>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <h3 id="x-windows-installation">X-Windows Installation</h3>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#fedora" aria-controls="linux-ide" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu">
+                <div class="boxed" style="max-height:220px">
+            
+                  <p>
+            Install the following packages for basic cursor support. </p>
+                  <p><code>&#x000A;apt install libxcb-cursor0 <br><br>&#x000A;apt install xcursor-themes <br><br>&#x000A;apt install policykit-1 <br><br></code></p>
+                  <p>The remaining packages are optional.</p>
+                  <p><code>&#x000A;apt install xserver-xorg-video-fbdev <br><br>&#x000A;apt install xkb-data <br><br>&#x000A;apt install policykit-desktop-privileges<br><br></code></p>
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora">
+                <div class="boxed" style="max-height:220px">
+            
+                  <p>
+            Install the following packages. </p>
+                  <p><code>&#x000A;dnf install xorg-x11-*<br><br>&#x000A;dnf install xorg-x11-drv-evdev.armv7hl<br><br>&#x000A;dnf install xinit<br><br>&#x000A;dnf install mesa*<br><br></code></p>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <h3 id="desktop-environment-installation">Desktop Environment Installation</h3>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu-dt" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#fedora-dt" aria-controls="linux-ide" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu-dt">
+                <div class="boxed" style="max-height:300px">
+            
+                  <ol>
+            <li>
+            <p>Install a minimal <a ref="http://lxde.org/" target="_blank">LXDE</a> desktop environment.</p>
+            <code>&#x000A;apt install lxde <br>&#x000A;apt install lubuntu-icon-theme&#x000A;<br></code>
+            </li>
+            <li>
+            <p>Install Firefox version 45. Later versions may not be compatible.</p>
+            <code>&#x000A;apt install firefox=45*<br></code>
+            </li>
+            </ol>
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora-dt">
+                <div class="boxed" style="max-height:300px">
+            
+                  <ol>
+            <li>
+            Install the <a href="http://fluxbox.org/" target="_blank">Fluxbox</a> window manager.<br>
+            <code>&#x000A;dnf install fluxbox<br></code>
+            </li>
+            
+            <li>
+            Create a file <code>/root/.xinitrc</code> with the contents:<br>
+            <code>exec /usr/bin/startfluxbox</code>
+            </li>
+            
+            <li>
+            Install Firefox version 47. Later versions may not be compatible.<br>
+            <code>&#x000A;dnf install firefox-47.0-4.fc24 --allowerasing</code>
+            </li>
+            
+            <li>
+            Edit the <code>~/.fluxbox/menu</code> file to enter the Firefox file path into the Fluxbox menu. After you edit the entry it should look like:<br>
+            <code>[exec] (firefox) {/usr/bin/firefox}</code>
+            </li>
+            
+            
+            
+            
+            </ol>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <h3 id="x-windows-operation">X-Windows Operation</h3>
+            <p>Launch the X-window program by running</p>
+            
+            <p><code>startx</code></p>
+            
+            <p>from the <strong>terminal emulator window</strong>, not from the USB keyboard.</p>
+            
+            <ul>
+              <li>
+                <p>LXDE: Click the Web Browser icon (in the bottom left grouping) to run Firefox.</p>
+              </li>
+              <li>
+                <p>Fluxbox: Right-click the mouse to get to a menu where you can run Firefox.</p>
+              </li>
+            </ul>
+            
+            <p>If Firefox Internet access is blocked, you can configure it to go through your corporate proxy as noted <a href="..\ethernet-wifi\proxies.html#mozilla-firefox">here</a>.</p>
+            
+            <h2 id="using-qt">Using Qt</h2>
+            
+            <p><a href="http://doc.qt.io/qt-5/embedded-linux.html" target="_blank">Qt for Embedded Linux</a>  is a cross-platform C++ application framework with widgets that provide GUI functionality. You can run a Qt graphical user interface on LVDS, MIPI, or HDMI (except ARTIK 520). A MIPI display with a built-in touch screen is the best way to see the results. There is no need to install the X11 environment (and you will encounter package conflicts if you try to install both).</p>
+            
+            <p>A pre-compiled solution is provided below. You also have the option to build it yourself.</p>
+            
+            <ul>
+              <li>
+                <p><a href="qt5-530.html" target="artikle">Instructions for cross-compiling  Qt5 for the ARTIK 530</a></p>
+              </li>
+              <li>
+                <p><a href="qt5.html" target="artikle">Instructions for cross-compiling  Qt5 for the ARTIK 710</a></p>
+              </li>
+            </ul>
+            
+            <h3 id="qt-package-installation">Qt Package Installation</h3>
+            
+            <p>Qt does not supply a window system, so here we'll use the EGL platform plugin EGLFS.</p>
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#ubuntu-qt32" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu 32-bit</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#ubuntu-qt64" aria-controls="windows-ide" role="tab" data-toggle="tab">Ubuntu 64-bit</a>
+              </li>
+            
+              <li role="presentation">
+                <a href="#fedora-qt" aria-controls="linux-ide" role="tab" data-toggle="tab">Fedora</a> 
+              </li>
+            
+            </ul>
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+            
+              <div role="tabpanel" class="tab-pane active" id="ubuntu-qt32">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for <strong>32-bit</strong> Ubuntu platforms (ARTIK 520 and 530).</p>
+            
+                  <ol>
+            <li>
+            
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/qt-ubuntu-32bit/download" download="">
+            	ARTIK 530 (32-bit)
+              </a>
+            </p>
+            
+            
+            </li>
+            <li>
+            Start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br></code>
+            
+            </li>
+            <li>
+            Install the DRM libraries. It's a large set, as the <span class="code-font">libdrm-dev</span> library has all sorts of GPU libraries as dependencies.<br>
+            
+            <code> dpkg -i libdrm*.deb</code><br>
+            <br>
+            
+            With OS_18.05.00 and later, a newer version of <span class="code-font">libdrm2</span> comes pre-installed. You will get dependency issues unless you perform these steps.
+            <ol>
+            
+            <li>
+            Manually remove the <span class="code-font">libdrm-dev-2.4.76</span> installation. <br>
+            <code>dpkg --remove --force-depends libdrm-dev:armhf</code>
+            </li>
+            
+            <li>
+            Manually install the latest version of <span class="code-font">libdrm-dev</span><br>
+            <code>apt install libdrm-dev</code>
+            </li>
+            
+            <li>
+            Upgrade the <span class="code-font">libdrm*</span> packages installed above to the latest version.<br>
+            <code>apt upgrade</code>
+            
+            </li>
+            
+            </ol>
+            
+            
+            
+            
+            </li>
+            <li>
+            Install the Wayland libraries. <br>
+            
+            <code> &#x000A;dpkg -i libwayland*.deb<br></code>
+            <br>
+            
+            
+            
+            </li>
+            
+            <li>
+            
+            Install the required Qt5 packages.<br>
+            <code>&#x000A;apt install qt5-default qtwayland5<br>&#x000A;apt install qmlscene qml-module-qtgraphicaleffects</code>
+            </li>
+            
+            <li>
+            Install Qt5 example files.<br>
+            <code>&#x000A;apt install qtbase5-examples qtquick1-5-examples<br>&#x000A;apt install qtdeclarative5-examples</code>
+            
+            </li>
+            
+            
+            <li>
+            Install opengl libraries.<br>
+            <code>&#x000A;dpkg -i opengl-es-mali-utgard-wayland_7.0-2.1_armhf.deb<br></code>
+            Failed to install? See below.
+            </li>
+            
+            
+            <li>
+            
+            <p>Create a file 'kms.json' in your root directory or elsewhere to hold the configuration parameters.<br>
+            a) Put the following lines in it, editing out the unneeded display devices. <br>   UNKNOWN1 refers to the MIPI display.
+            <br>
+            <code>&#x000A;{<br>&#x000A;&nbsp;&nbsp;"device": "/dev/dri/card0",<br>&#x000A;&nbsp;&nbsp;"hwcursor": false,<br>&#x000A;&nbsp;&nbsp;"outputs": [<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "LVDS1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1024x600"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "UNKNOWN1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1080x1920"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "HDMI1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1920x1080"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&#x000A;&nbsp;&nbsp;]<br>&#x000A;}</code><br>
+            b) Add these lines to your <code>/etc/profile</code> or other start-up batch file to point Qt to the right parameters. Use the path you chose above for 'kms.json'.<code><br>export QT_QPA_PLATFORM=eglfs<br>&#x000A;export QT_QPA_EGLFS_KMS_CONFIG=~/kms.json</code></p>
+            
+            
+            </li>
+            
+            
+            </ol>
+            
+                  <p><br></p>
+            
+                  <p>Now you can run some of the demonstration programs. Start with Cube.<br></p>
+            
+                  <p><code>cd /usr/lib/arm-linux-gnueabihf/qt5/examples/opengl/cube</code></p>
+            
+                  <p><code>./cube</code></p>
+            
+                  <p>Use the touch screen (MIPI/LVDS) or mouse (HDMI) to manipulate the cube.</p>
+            
+                  <p><strong>Note:</strong> If you get an error message due to a previously installed opengl X11 driver, uninstall it: <br>
+            <code>&#x000A;dpkg <font color="red">-r</font> opengl-es-mali-utgard-x11</code><br>
+            then retry the Wayland opengl installation.</p>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="ubuntu-qt64">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for <strong>64-bit</strong> Ubuntu platforms (ARTIK 710).</p>
+            
+                  <ol>
+            <li>
+            
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/qt-ubuntu-64bit/download" download="">
+            	ARTIK 710 (64-bit)
+              </a>
+            </p>
+            
+            
+            </li>
+            <li>
+            Start as always with a general update.
+            <br>
+            <code>apt update<br>&#x000A;apt upgrade<br></code>
+            
+            </li>
+            <li>
+            Install the DRM libraries. It's a large set, as the 'libdrm-dev' library has all sorts of GPU libraries as dependencies.<br>
+            
+            <code> dpkg -i libdrm*.deb<br>&#x000A;apt install -f</code><br>
+            
+            
+            <br>
+            
+            With OS_18.05.00 and later, a newer version of <span class="code-font">libdrm2</span> comes pre-installed. You will get dependency issues unless you perform these steps.
+            <ol>
+            
+            <li>
+            Manually remove the <span class="code-font">libdrm-dev-2.4.76</span> installation. <br>
+            <code>dpkg --remove --force-depends libdrm-dev:arm64</code>
+            </li>
+            <li>
+            Block a repo source to avoid a "hash sum mismatch" message.
+            <ul>
+            <li>
+            Go to the directory noted.<br>
+            <code>cd /etc/apt/sources.list.d/</code>
+            </li>
+            <li>
+            Edit the file noted.<br>
+            <code>vi artik-platform-artik710s-sources.list</code><br>
+            </li>
+            <li>
+            Comment out this line. <br>
+            <code><font color="red">#</font>deb http://repo.artik.cloud/artik/bin/pub/artik-platform/ubuntu/artik710s A710s_os_3.3.0 main</code>
+            </li>
+            <li>
+            Update the repo lists.<br>
+            <code>apt update</code>
+            </li>
+            </ul>
+            </li>
+            <li>
+            Manually install the latest version of <span class="code-font">libdrm-dev</span><br>
+            <code>apt install libdrm-dev</code>
+            </li>
+            
+            <li>
+            Upgrade the <span class="code-font">libdrm*</span> packages installed above to the latest version.<br>
+            <code>apt upgrade</code>
+            
+            </li>
+            
+            </ol>
+            
+            
+            
+            </li>
+            <li>
+            
+            Install the Qt5 base libraries.<br>
+            <code>&#x000A;apt install qt5-default qtwayland5<br></code>
+            </li>
+            
+            <li>
+            Install the Qt5 debs in a separate directory.<br>
+            <code>&#x000A;tar xf qt5-debs.tar.gz<br>&#x000A;cd qt5-debs<br>&#x000A;dpkg -i *.deb<br>&#x000A;apt install -f<br>&#x000A;cd</code>
+            </li>
+            
+            
+            <li>
+            Install the Qt5 development libraries.<br>
+            <code>&#x000A;apt install qmlscene qml-module-qtgraphicaleffects</code>
+            </li>
+            
+            <li>
+            Install Qt5 example files in a separate directory.<br>
+            
+            <code>&#x000A;tar xf qt5-examples-debs.tar.gz<br>&#x000A;cd qt5-examples-debs<br>&#x000A;dpkg -i *.deb<br>&#x000A;apt install -f<br>&#x000A;cd</code>
+            
+            </li>
+            
+            
+            
+            
+            <li>
+            Install opengl libraries.<br>
+            <code>&#x000A;dpkg -i opengl-es-mali-utgard-wayland_7.0-2.1_arm64.deb<br></code>
+            Failed to install? See below.
+            </li>
+            
+            
+            
+            
+            <li>
+            
+            <p>Create a file 'kms.json' in your root directory or elsewhere to hold the configuration parameters.<br>
+            a) Put the following lines in it, editing out the unneeded display devices. <br>   UNKNOWN1 refers to the MIPI display.
+            <br>
+            <code>&#x000A;{<br>&#x000A;&nbsp;&nbsp;"device": "/dev/dri/card0",<br>&#x000A;&nbsp;&nbsp;"hwcursor": false,<br>&#x000A;&nbsp;&nbsp;"outputs": [<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "LVDS1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1024x600"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "UNKNOWN1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1080x1920"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "HDMI1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1920x1080"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&#x000A;&nbsp;&nbsp;]<br>&#x000A;}</code><br>
+            b) Add these lines to your <code>/etc/profile</code> or other start-up batch file to point Qt to the right parameters. Use the path you chose above for 'kms.json'.<code><br>export QT_QPA_PLATFORM=eglfs<br>&#x000A;export QT_QPA_EGLFS_KMS_CONFIG=~/kms.json</code></p>
+            
+            
+            </li>
+            
+            
+            
+            
+            </ol>
+            
+                  <p><br></p>
+            
+                  <p>Now you can run some of the demonstration programs. Start with Cube.<br></p>
+            
+                  <p><code>cd /usr/lib/aarch64-linux-gnu/qt5/examples/opengl/cube</code></p>
+            
+                  <p><code>./cube</code></p>
+            
+                  <p>Use the touch screen (MIPI/LVDS) or mouse (HDMI) to manipulate the cube.</p>
+            
+                  <p><strong>Note:</strong> If you get an error message due to a previously installed opengl X11 driver, uninstall it: <br>
+            <code>&#x000A;dpkg <font color="red">-r</font> opengl-es-mali-utgard-x11</code><br>
+            then retry the Wayland opengl installation.</p>
+            
+                </div>
+              </div>
+            
+              <div role="tabpanel" class="tab-pane" id="fedora-qt">
+                <div class="boxed" style="min-height:500px">
+            
+                  <p>These instructions are for Fedora 24 platforms.</p>
+            
+                  <ol>
+            <li>
+            
+            
+            Download the set of files to your development PC, then uncompress and copy them to your ARTIK root.
+            <p>
+              <a class="btn btn-primary" role="button" href="https://developer.artik.io/downloads/qt-fedora-24/download" download="">
+            	ARTIK 520/530/710
+              </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            
+            
+            
+            </li>
+            <li>
+            
+            Start as always with a general update.
+            <br>
+            <code>dnf upgrade</code>
+            </li>
+            <li>
+            
+            
+            Install the Qt5 libraries.<br>
+            <code>&#x000A;tar xf qt5-5.6.2-rpms.tar.gz<br>&#x000A;cd qt5-rpms<br>&#x000A;dnf install *.rpm --allowerasing<br>&#x000A;cd</code>
+            </li>
+            
+            <li>
+            Install Qt5 development libraries.<br>
+            <code>&#x000A;tar xf qt5-5.6.2-devel-rpms.tar.gz<br>&#x000A;cd qt5-devel-rpms<br>&#x000A;dnf install *.rpm --allowerasing<br>&#x000A;cd</code>
+            </li>
+            
+            
+            
+            <li>
+            Install Qt5 example files.<br>
+            <code>&#x000A;tar xf qt5-5.6.2-examples-rpms.tar.gz<br>&#x000A;cd qt5-examples-rpms<br>&#x000A;dnf install *.rpm --allowerasing<br>&#x000A;cd</code>
+            </li>
+            
+            
+            <li>
+            Install opengl libraries.<br>
+            <code>&#x000A;rpm -ivh opengl-es-mali-utgard-wayland-7.0-0.armv7hl.rpm</code>
+            </li>
+            
+            
+            
+            
+            
+            <li>
+            
+            <p>Create a file 'kms.json' in your root directory or elsewhere to hold the configuration parameters.<br>
+            a) Put the following lines in it, editing out the unneeded display devices. <br>   UNKNOWN1 refers to the MIPI display.
+            <br>
+            <code>&#x000A;{<br>&#x000A;&nbsp;&nbsp;"device": "/dev/dri/card0",<br>&#x000A;&nbsp;&nbsp;"hwcursor": false,<br>&#x000A;&nbsp;&nbsp;"outputs": [<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "LVDS1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1024x600"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "UNKNOWN1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1080x1920"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"name": "HDMI1",<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;"mode": "1920x1080"<br>&#x000A;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&#x000A;&nbsp;&nbsp;]<br>&#x000A;}</code><br>
+            b) Add these lines to your <code>/etc/profile</code> or other start-up batch file to point Qt to the right parameters. Use the path you chose above for 'kms.json'.<code><br>export QT_QPA_PLATFORM=eglfs<br>&#x000A;export QT_QPA_EGLFS_KMS_CONFIG=~/kms.json</code></p>
+            
+            
+            </li>
+            
+            </ol>
+            
+                  <p>Now you can run some of the demonstration programs. Start with Cube.</p>
+            
+                  <p><code>cd /usr/lib/qt5/examples/opengl/cube</code></p>
+            
+                  <p><code>./cube</code></p>
+            
+                  <p>Use the touch screen (MIPI/LVDS) or mouse (HDMI) to manipulate the cube.</p>
+            
+                </div>
+              </div>
+            
+            </div>
+            
+            <h2 id="hdmi-edid-workaround">HDMI EDID Workaround</h2>
+            
+            <p>The ARTIK 530, 710, and 1020 boards enable HDMI operation from boot time. Simply having an HDMI monitor plugged in before booting, and having the board updated to the latest firmware, should be sufficient to enable HDMI operation at boot – you should initially see Linux penguins on the screen, followed by a login prompt.</p>
+            
+            <p>You can either use your normal terminal emulator (connected to the debug serial port) and its keyboard for command entry, or can plug in a USB keyboard and mouse to the stacked USB connectors on the ARTIK board to use the local port for standard input.</p>
+            
+            <p><strong>If your ARTIK board does not display anything</strong> on the HDMI output at boot time, follow the instructions below. This typically happens because the OS image currently loaded was configured without an entry for a particular HDMI monitor, or if the board cannot correctly read the EDID ROM in the monitor due to mechanical or electrical reasons.</p>
+            
+            <ol>
+              <li>
+                <p>Enter the u-boot shell during countdown (at the "Hit any key…" line):</p>
+            
+                <pre>&#x000A;Checking Boot Mode ... EMMC  &#x000A;.&#x000A;.&#x000A;Net: No ethernet found.  &#x000A;Hit any key to stop autoboot: 0&#x000A;ARTIK10 #</pre>
+              </li>
+              <li>
+                <p>Run the three commands below in sequence, specifying your monitor resolution within the first one (e.g. 1920x1080).</p>
+            
+                <p><code>setenv opts loglevel=4 drm_kms_helper.edid_firmware=HDMI-A-1:edid/1920x1080.bin</code></p>
+            
+                <p><code>saveenv</code></p>
+            
+                <p><code>reset</code></p>
+              </li>
+            </ol>
+            
+            <p>You should have normal HDMI operation on the next boot.</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-11-19 23:55:21 +0000'>Nov 19 2018, 11:55 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="usb-camera.html">Prev: USB Camera</a></li>
+              <li class='next-page'><a href="..\wireless-iot\index.htm">Next: Wireless IoT Networks</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

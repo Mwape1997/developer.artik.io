@@ -1,0 +1,1237 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='verified-boot.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: Verified Boot' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: Verified Boot' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: Verified Boot</title>
+    <link href="..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_artik documentation_artik_advanced-concepts documentation_artik_advanced-concepts_verified-boot' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="true">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="verified-boot.html" data-name="verified-boot" aria-expanded="false" class="active">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="verified-boot">Verified Boot</h1>
+            
+            <p>U-Boot, a popular bootloader supporting numerous processor architectures, provides a method to generate a single image called a <a href="#building-signed-fit-image">FIT image</a> that can be signed for verification purposes. The kernel, ramdisk, and a modified DTB are contained in this FIT image.</p>
+            
+            <p>ARTIK provides a chain of trust from BL0 (IROM) to U-Boot (bootloader). You can extend this trust to include the kernel and ramdisk by enabling the “verified boot” feature of U-Boot to additionally verify the FIT image.</p>
+            
+            <p>The feature uses cryptographic algorithms like RSA to 'sign' software images. Images are signed using a private key that is known only to the signer, but that can be verified using a mathematically related public key. The  process looks something like this.</p>
+            
+            <p><img alt="" src="..\..\images\docs\getting-started-artik\verified-boot-overview.jpg?1549048075"></p>
+            
+            <p>In case of ARTIK "s" modules, that public key is stored in <span class="code-font">bootloader.img</span> and the image is then signed by the CodeSigner. Learn more about Verified Boot <a href="https://github.com/SamsungARTIK/u-boot-artik/blob/A530_os_3.0.0/doc/uImage.FIT/verified-boot.txt">here</a>.</p>
+            
+            <p>This article describes how to enable and test verified boot on the ARTIK 530s/710s. The procedure is manual but can be incorporated as part of a default build recipe.</p>
+            
+            <h2 id="setting-up-build-environment">Setting Up Build Environment</h2>
+            
+            <p>Start with the build environment set up as described <a href="prepare-dev-env.html">previously</a>.</p>
+            
+            <ol>
+              <li>
+                <p>Compile the standard code and make sure the build completes successfully.</p>
+              </li>
+              <li>
+                <p>Install the U-Boot tools and SSL libraries.</p>
+            
+                <p><code>sudo apt-get install kpartx u-boot-tools libssl-dev</code></p>
+              </li>
+              <li>
+                <p>Create a new directory (workplace) for verified boot and copy <span class="code-font">boot.img</span> into it. Adjust the path to match your release directory (. . . .).</p>
+            
+                <p>A530s<br>
+             <code>cd ${HOME}/artik530s</code><br>
+             <code>mkdir vboot</code><br>
+             <code>cp build-artik/output/images/artik530s/..../boot.img vboot/</code></p>
+            
+                <p>A710s<br>
+             <code>cd ${HOME}/artik710s</code><br>
+             <code>mkdir vboot</code><br>
+             <code>cp build-artik/output/images/artik710s/..../boot.img vboot/</code></p>
+              </li>
+            </ol>
+            
+            <h2 id="enabling-verified-boot-feature">Enabling Verified Boot Feature</h2>
+            
+            <p>The indicated paths in this section are under the <span class="code-font"><b>u-boot-artik</b></span> directory.</p>
+            
+            <ol>
+              <li>
+                <p>Edit VB-related configuration into the noted U-Boot configuration file.</p>
+            
+                <p>A530s : <code>configs/artik530_raptor_defconfig</code></p>
+            
+                <p>A710s : <code>configs/artik710_raptor_defconfig</code><br><br>
+            <span class="code-font">
+            CONFIG_FIT=y  <br>
+            # Enable Verified Boot  <br>
+            <b>CONFIG_FIT_SIGNATURE=y</b>  <br>
+            <strong>CONFIG_RSA=y</strong>  <br>
+            # Debug Verified Boot (optional) <br>
+            <strong>CONFIG_VERBOSE=y</strong><br>
+            <strong>CONFIG_FIT_VERBOSE=y</strong>  <br>
+            </span></p>
+            
+                <p>For the modules to be mounted with integrity checking, the updated <span class="code-font">initrd-artik</span> scripts/init for the uInitrd additionally require <span class="code-font"><b>CONFIG_DM_VERITY=y</b></span> to  be set. Refer to the <a href="https://github.com/SamsungARTIK/linux-artik/blob/ARTIK-SW-18.05.00/Documentation/device-mapper/verity.txt">GitHub documentation</a> for details.</p>
+              </li>
+              <li>
+                <p>In order to verify an image that has been signed with a public key, you need to store a trusted public key as sub-nodes in a <span class="code-font">signature</span> node. Add it to the noted <span class="code-font">dts</span> file.</p>
+            
+                <p>A530s : <code>arch/arm/dts/s5p4418-artik530-raptor.dts</code></p>
+            
+                <p>A710s : <code>arch/arm/dts/s5p6818-artik710-raptor.dts</code></p>
+            
+                <p><span class="code-font">/dts-v1/;<br>
+            #include "s5pxx18-artikxxx-raptor-common.dtsi"<br>
+            <b>   /{<br>
+                    signature {<br>
+                        key-dev {<br>
+                            required = "conf";<br>
+                            algo = "sha1,rsa2048";<br>
+                            key-name-hint = "dev";<br>
+                        };<br>
+                    };<br>
+                };</b></span></p>
+              </li>
+              <li>
+                <p>Modify the  <span class="code-font">dts Makefile</span> to include the necessary device tree compiler flags.</p>
+            
+                <p>In <code>arch/arm/dts/Makefile</code><br><br>
+            <span class="code-font">
+            #Add any required device tree compiler flags here<br>
+            DTC_FLAGS += <b>-R 4 -p 0x1000</b>
+            </span></p>
+              </li>
+            </ol>
+            
+            <h2 id="building-u-boot">Building U-Boot</h2>
+            
+            <p>Build the modified DTS file and copy the tools and DTB file into the <span class="code-font">vboot</span> directory. Run these commands from the <span class="code-font"><b>u-boot-artik</b></span> directory.</p>
+            
+            <p>A530s<br>
+            <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- artik530_raptor_defconfig</code><br>
+            <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs</code><br>
+            <code>cp tools/mkimage ../vboot/</code><br>
+            <code>cp tools/fit_check_sign ../vboot/</code><br>
+            <code>cp arch/arm/dts/s5p4418-artik530-raptor.dtb ../vboot/</code></p>
+            
+            <p>A710s<br>
+            <code>make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- artik710_raptor_defconfig</code><br>
+            <code>make ARCH=arm CROSS_COMPILE=aarch64-linux-gnu- dtbs</code><br>
+            <code>cp tools/mkimage ../vboot/</code><br>
+            <code>cp tools/fit_check_sign ../vboot/</code><br>
+            <code>cp arch/arm/dts/s5p6818-artik710-raptor.dtb ../vboot/</code></p>
+            
+            <h2 id="creating-its-file">Creating ITS File</h2>
+            
+            <p>Create an Image Tree Source file (ITS) file to describe how you want the kernel, DTB, and ramdisk to be packaged, compressed, and signed. For details, refer to the "Signed Configurations” section in <a href="https://github.com/SamsungARTIK/u-boot-artik/blob/A530s_os_3.0.0/doc/uImage.FIT/signature.txt" target="_blank">GitHub</a>.</p>
+            
+            <p>Create the indicated <span class="code-font">its</span> file by copying the file contents provided here.</p>
+            
+            <p><strong>A530s:</strong> <code>vboot/A530s_sign-configs.its</code></p>
+            
+            <pre>&#x000A;/dts-v1/;&#x000A;&#x000A;/ {&#x000A;    description = "ARTIK530 Image with single Linux kernel and FDT blob";&#x000A;    #address-cells = &lt;1&gt;;&#x000A;&#x000A;    images {&#x000A;        kernel@1 {&#x000A;            description = "Linux kernel";&#x000A;            data = /incbin/("./zImage");&#x000A;            type = "kernel";&#x000A;            arch = "arm";&#x000A;            os = "linux";&#x000A;            compression = "none";&#x000A;            load = &lt;0x91080000&gt;;&#x000A;            entry = &lt;0x91080000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;&#x000A;        fdt@1 {&#x000A;            description = "Flattened Device Tree blob";&#x000A;            data = /incbin/("./s5p4418-artik530-raptor-rev03.dtb");&#x000A;            type = "flat_dt";&#x000A;            arch = "arm";&#x000A;            compression = "none";&#x000A;            load = &lt;0x9b000000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;        &#x000A;        ramdisk@1 {&#x000A;            description = "RAMDISK";&#x000A;            data = /incbin/("./uInitrd.fit");&#x000A;            type = "ramdisk";&#x000A;            arch = "arm";&#x000A;            os = "linux";&#x000A;            compression = "none";&#x000A;            load = &lt;0x9a000000&gt;;&#x000A;            entry = &lt;0x9a000000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;    };&#x000A;&#x000A;    configurations {&#x000A;        default = "conf@1";&#x000A;        conf@1 {&#x000A;            description = "Boot Linux kernel with FDT blob";&#x000A;            kernel = "kernel@1";&#x000A;            fdt = "fdt@1";&#x000A;            ramdisk = "ramdisk@1";&#x000A;        };&#x000A;    };&#x000A;};</pre>
+            
+            <p><strong>A530s-1G:</strong> <code>vboot/A530s_sign-configs.its</code></p>
+            
+            <pre>&#x000A;/dts-v1/;&#x000A;&#x000A;/ {&#x000A;    description = "Linux kernel and FDT blob for ARTIK-533(530 1G)";&#x000A;    #address-cells = &lt;1&gt;;&#x000A;&#x000A;    images {&#x000A;        kernel {&#x000A;            description = "Linux kernel for ARTIK-533";&#x000A;            data = /incbin/("./zImage");&#x000A;            type = "kernel";&#x000A;            arch = "arm";&#x000A;            os = "linux";&#x000A;            compression = "none";&#x000A;            load = &lt;0x71080000&gt;;&#x000A;            entry = &lt;0x71080000&gt;;&#x000A;            hash {&#x000A;                algo = "sha1";&#x000A;            };&#x000A;            signature {&#x000A;                required = "image";&#x000A;                algo = "sha1,rsa2048";&#x000A;                key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;        ramdisk {&#x000A;            description = "ramdisk";&#x000A;            data = /incbin/("./initrd.gz");&#x000A;            type = "ramdisk";&#x000A;            arch = "arm";&#x000A;            os = "linux";&#x000A;            compression = "gzip";&#x000A;            load = &lt;0x7a000000&gt;;&#x000A;            hash {&#x000A;                algo = "sha1";&#x000A;            };&#x000A;            signature {&#x000A;                required = "image";&#x000A;                algo = "sha1,rsa2048";&#x000A;                key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;        fdt-rev00 {&#x000A;            description = "FDT blob for artik533 rev00";&#x000A;            data = /incbin/("./s5p4418-artik533-raptor-rev00.dtb");&#x000A;            type = "flat_dt";&#x000A;            arch = "arm";&#x000A;            compression = "none";&#x000A;            load = &lt;0x7b000000&gt;;&#x000A;            hash {&#x000A;                algo = "sha1";&#x000A;            };&#x000A;            signature {&#x000A;                required = "image";&#x000A;                algo = "sha1,rsa2048";&#x000A;                key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;    };&#x000A;    configurations {&#x000A;        default = "rev00";&#x000A;        rev00 {&#x000A;            description = "Boot Linux kernel with FDT blob";&#x000A;            kernel = "kernel";&#x000A;            ramdisk = "ramdisk";&#x000A;            fdt = "fdt-rev00";&#x000A;            signature {&#x000A;                required = "image";&#x000A;                algo = "sha1,rsa2048";&#x000A;                key-name-hint = "dev";&#x000A;                sign-images = "fdt", "kernel", "ramdisk";&#x000A;            };&#x000A;        };&#x000A;    };&#x000A;};</pre>
+            
+            <p><strong>A710s:</strong> <code>vboot/A710s_sign-configs.its</code></p>
+            
+            <pre>&#x000A;/dts-v1/;&#x000A;&#x000A;/ {&#x000A;    description = "ARTIK710S Image with single Linux kernel and FDT blob";&#x000A;    #address-cells = &lt;1&gt;;&#x000A;&#x000A;    images {&#x000A;        kernel@1 {&#x000A;            description = "Linux kernel";&#x000A;            data = /incbin/("./Image");&#x000A;            type = "kernel";&#x000A;            arch = "arm64";&#x000A;            os = "linux";&#x000A;            compression = "none";&#x000A;            load = &lt;0x40080000&gt;;&#x000A;            entry = &lt;0x40080000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;&#x000A;        fdt@1 {&#x000A;            description = "Flattened Device Tree blob";&#x000A;            data = /incbin/("./s5p6818-artik710-raptor-rev03.dtb");&#x000A;            type = "flat_dt";&#x000A;            arch = "arm64";&#x000A;            compression = "none";&#x000A;            load = &lt;0x4a000000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;        &#x000A;        ramdisk@1 {&#x000A;            description = "RAMDISK";&#x000A;            data = /incbin/("./uInitrd.fit");&#x000A;            type = "ramdisk";&#x000A;            arch = "arm64";&#x000A;            os = "linux";&#x000A;            compression = "none";&#x000A;            load = &lt;0x49000000&gt;;&#x000A;            entry = &lt;0x49000000&gt;;&#x000A;            signature@1 {&#x000A;            algo = "sha1,rsa2048";&#x000A;            key-name-hint = "dev";&#x000A;            };&#x000A;        };&#x000A;    };&#x000A;&#x000A;    configurations {&#x000A;        default = "conf@1";&#x000A;        conf@1 {&#x000A;            description = "Boot Linux kernel with FDT blob";&#x000A;            kernel = "kernel@1";&#x000A;            fdt = "fdt@1";&#x000A;            ramdisk = "ramdisk@1";&#x000A;        };&#x000A;    };&#x000A;};&#x000A;</pre>
+            
+            <h2 id="key-pair-generation">Key Pair Generation</h2>
+            
+            <p>Use OpenSSL commands to generate an RSA key and certificate for the firmware build and the kernel binary.</p>
+            
+            <p>Start in your <span class="code-font"><b>vboot/</b></span> directory.</p>
+            
+            <p><code>mkdir keys</code></p>
+            
+            <p><code>openssl genpkey -algorithm RSA -out keys/dev.key -pkeyopt rsa_keygen_bits:2048 -pkeyopt rsa_keygen_pubexp:3</code></p>
+            
+            <p><code>openssl req -batch -new -x509 -key keys/dev.key -out keys/dev.crt</code></p>
+            
+            <p>The key pair is now available in the <span class="code-font">keys/</span> directory.</p>
+            
+            <p class="info">Note that <span class="code-font">keys/dev.key</span> contains your private key, so it should be kept secure and secret. Anyone with access to that file will able to sign any unknown kernel/ramdisk with it.</p>
+            
+            <h2 id="building-signed-fit-image">Building Signed FIT Image</h2>
+            
+            <p>Building U-Boot creates tools to generate and check a monolithic image referred to as a Flattened Image Tree (FIT), a single binary that contains all the images required to boot up a system: kernel, ramdisk, and device tree.</p>
+            
+            <p>The FIT Image is signed using a private key. The tool embeds the signature within the FIT image, and the corresponding public key within the U-Boot device tree. Since U-Boot is authenticated by <a href="..\..\advanced-concepts\secure-os\secure-boot.html">Secure Boot</a>, you can trust its public key and use that key to verify the FIT image.</p>
+            
+            <p>The Device Tree Blob (DTB), also referred to as a flat device tree or device tree binary, is a database that represents hardware components on a given device. U-Boot supports DTB, used the same way the kernel does to probe drivers, and stores the public key there for kernel image signature verification.</p>
+            
+            <h3 id="copy-images-to-span-classcode-fontvbootspan">Copy images to <span class="code-font">vboot</span></h3>
+            
+            <p>Creating a FIT image requires kernel, dtb, and ramdisk images, which can be extracted from the <span class="code-font">boot.img</span>  that you created and copied earlier.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the <span class="code-font"><b>vboot/</b></span> directory.</p>
+              </li>
+              <li>
+                <p>Mount the boot image.<br>
+             <code>sudo mount -o loop boot.img /mnt</code></p>
+              </li>
+              <li>
+                <p>Extract the kernel image.<br>
+             <code>cp /mnt/zImage ./</code></p>
+              </li>
+              <li>
+                <p>Extract the ramdisk image <span class="code-font">uInitrd</span>, removing the header – the U-Boot in use does not support FIT and legacy images at the same time.<br>
+             <code>dd if=/mnt/uInitrd of=./uInitrd.fit skip=64 bs=1</code></p>
+              </li>
+              <li>
+                <p>Extract the dtb.<br>
+             A530s<br>
+             <code>cp /mnt/s5p4418-artik530-raptor-rev03.dtb ./</code><br>
+             A710s<br>
+             <code>cp /mnt/s5p6818-artik710-raptor-rev03.dtb  ./</code></p>
+              </li>
+            </ol>
+            
+            <p>Leave the boot image mounted for now.</p>
+            
+            <h3 id="make-fit-image">Make FIT image</h3>
+            
+            <p>Use the U-Boot tool <span class="code-font">mkimage</span> to create the FIT image. The tool packages together:<br>
+            - kernel (<span class="code-font">zImage</span>)<br>
+            - DTB<br>
+            - ramdisk (<span class="code-font">uInitrd.fit</span>)<br>
+            into a FIT image according to the <span class="code-font">sign-configs.its</span> file settings, using the key pair in the <span class="code-font">/keys</span> directory that you created earlier.</p>
+            
+            <p>Make sure you are in the <span class="code-font"><b>vboot/</b></span> directory.</p>
+            
+            <p>A530s<br>
+            <code>./mkimage -D "-I dts -O dtb -p 0x1000" -f A530s_sign-configs.its -K s5p4418-artik530-raptor.dtb -k keys -r signed_fit.img</code></p>
+            
+            <p>A710s<br>
+            <code>./mkimage -D "-I dts -O dtb -p 0x1000" -f A710s_sign-configs.its -K s5p6818-artik710-raptor.dtb -k keys -r signed_fit.img</code></p>
+            
+            <p>The command output file <span class="code-font">signed_fit.img</span> contains <span class="code-font">zImage</span>, the <span class="code-font">.dtb</span> and <span class="code-font">uInitrd</span>. The modified <span class="code-font">.dtb</span> in the image now contains the public key that U-Boot will use for verification.</p>
+            
+            <h3 id="check-fit-image-signature">Check FIT image signature</h3>
+            
+            <p>Use the U-Boot tool <span class="code-font">fit_check_sign</span> to check and verify the FIT image.</p>
+            
+            <p>A530s<br>
+            <code>./fit_check_sign -k s5p4418-artik530-raptor.dtb -f signed_fit.img</code></p>
+            
+            <p>A710s<br>
+            <code>./fit_check_sign -k s5p6818-artik710-raptor.dtb -f signed_fit.img</code></p>
+            
+            <h2 id="updating-bootimg">Updating boot.img</h2>
+            
+            <p>After creating  <span class="code-font">signed_fit.img</span>, <span class="code-font">boot.img</span> must be updated to replace the unsigned kernel and ramdisk images with the signed FIT image.</p>
+            
+            <p>This procedure starts in the <span class="code-font"><b>vboot/</b></span> directory and with <span class="code-font">boot.img</span> still mounted from the previous steps.</p>
+            
+            <p>A530s<br>
+            <code>sudo rm /mnt/s5p4418-artik530-raptor-rev03.dtb</code></p>
+            
+            <p>A710s<br>
+            <code>sudo rm /mnt/s5p6818-artik710-raptor-rev03.dtb</code></p>
+            
+            <p>For both:<br>
+            <code>sudo rm /mnt/zImage</code><br>
+            <code>sudo rm /mnt/uInitrd</code><br>
+            <code>sudo cp signed_fit.img /mnt</code><br>
+            <code>sudo sync</code><br>
+            <code>sudo umount /mnt</code></p>
+            
+            <p><span class="code-font">boot.img</span> now contains the signed FIT image in place of the separate unsigned ones.</p>
+            
+            <h2 id="rebuilding-u-boot">Rebuilding U-Boot</h2>
+            
+            <p>You'll need to generate a new U-Boot (bootloader) image that includes the updated DTB containing the public key. To do so, it is necessary to add extra flags in the U-Boot build script to build using the prebuilt DT file.</p>
+            
+            <h3 id="sequence-for-a530s">Sequence for A530s</h3>
+            <p>1. Edit <code>build-artik/build_uboot.sh</code> as follows.</p>
+            
+            <p>Comment out:<br>
+            <span class="code-font"><b>#</b> make ARCH=arm EXTRAVERSION="-$BUILD_VERSION" -j$JOBS O=$UBOOT_DIR/output</span></p>
+            
+            <p>Replace with:<br>
+            <span class="code-font"><b>
+            export UBOOT_SIGN_OPT="EXT_DTB=${HOME}/artik530s/vboot/s5p4418-artik530-raptor.dtb"  <br>
+            make ARCH=arm EXTRAVERSION="-$BUILD_VERSION" ${UBOOT_BUILD_OPT} ${UBOOT_SIGN_OPT} -j$JOBS O=$UBOOT_DIR/output
+            </b></span></p>
+            
+            <p>2. Build U-Boot again, and copy the updated bootloader image to <span class="code-font">vboot/</span> in anticipation of flash loading.</p>
+            
+            <p>3. Go to the <span class="code-font"><b>build-artik/</b></span> directory and run these commands.</p>
+            
+            <p><code>./build_uboot.sh -b artik530s</code><br>
+            <code>cp output/images/artik530s/bootloader.img ../vboot/</code><br>
+            <code>cp output/images/artik530s/UNRELEASED/YYYYMMDD.HHMMSS/partmap_emmc.txt ../vboot/</code></p>
+            
+            <h3 id="sequence-for-a710s">Sequence for A710s</h3>
+            
+            <p>1. Edit <code>build-artik/build_uboot.sh</code> as follows.</p>
+            
+            <p>Comment out:<br>
+            <span class="code-font"><b>#</b> make ARCH=arm EXTRAVERSION="-$BUILD_VERSION" -j$JOBS O=$UBOOT_DIR/output</span></p>
+            
+            <p>Replace with:<br>
+            <span class="code-font"><b>
+            export UBOOT_SIGN_OPT="EXT_DTB=${HOME}/artik710s/vboot/s5p6818-artik710-raptor.dtb"  <br>
+            make ARCH=arm EXTRAVERSION="-$BUILD_VERSION" ${UBOOT_BUILD_OPT} ${UBOOT_SIGN_OPT} -j$JOBS O=$UBOOT_DIR/output
+            </b></span></p>
+            
+            <p>2. Unaligned Access Patch – There is an unaligned access issue in A710 bootloader because DT properties are 4-byte aligned. Therefore, you will need to apply a patch to get public-exponent property.</p>
+            
+            <pre>&#x000A;Subject: [PATCH] ARM: Avoid unaligned access to DT on 64bit SoC&#x000A;&#x000A;Because DT properties are 4-byte aligned, the pointer access in this code causes unaligned access.&#x000A;---&#x000A; lib/rsa/rsa-mod-exp.c | 6 ++++--&#x000A; 1 file changed, 4 insertions(+), 2 deletions(-)&#x000A;&#x000A;diff --git a/lib/rsa/rsa-mod-exp.c b/lib/rsa/rsa-mod-exp.c&#x000A;index 4a6de2b..9f153c6 100644&#x000A;--- a/lib/rsa/rsa-mod-exp.c&#x000A;+++ b/lib/rsa/rsa-mod-exp.c&#x000A;@@ -262,9 +262,11 @@ int rsa_mod_exp_sw(const uint8_t *sig, uint32_t sig_len,&#x000A; &#x000A; 	if (!prop-&gt;public_exponent)&#x000A; 		key.exponent = RSA_DEFAULT_PUBEXP;&#x000A;-	else&#x000A;+	else {&#x000A;+		prop-&gt;public_exponent += sizeof(uint32_t);&#x000A; 		key.exponent =&#x000A;-			fdt64_to_cpu(*((uint64_t *)(prop-&gt;public_exponent)));&#x000A;+				(uint64_t)fdt32_to_cpu(*((uint32_t *)(prop-&gt;public_exponent)));&#x000A;+	}&#x000A; &#x000A; 	if (!key.len || !prop-&gt;modulus || !prop-&gt;rr) {&#x000A; 		debug("%s: Missing RSA key info", __func__);&#x000A;---&#x000A;</pre>
+            
+            <p>3. Build U-Boot again, and copy the updated bootloader image to <span class="code-font">vboot/</span> in anticipation of flash loading.</p>
+            
+            <p>4. Go to the <span class="code-font"><b>build-artik/</b></span> directory and run these commands.</p>
+            
+            <p><code>./build_uboot.sh -b artik710s</code><br>
+            <code>cp build-artik/output/images/artik710s/YYYYMMDD.HHMMSS/fip-nonsecure.img ../vboot/</code><br>
+            <code>cp build-artik/output/images/artik710s/YYYYMMDD.HHMMSS/partmap_emmc.txt ../vboot/</code></p>
+            
+            <h2 id="flash-loading-and-testing">Flash Loading and Testing</h2>
+            
+            <p>The updated bootloader and boot image can be flashed to the target board by following the <a href="..\..\developer-guide\update-image\usb-update.html"><span class="code-font">fastboot</span> over USB instructions</a>.</p>
+            
+            <p>When the setup is ready, reset your ARTIK board and stop autoboot by pressing any key. Then type <code>fastboot 0</code> at the U-Boot prompt.</p>
+            
+            <p><span class="code-font">
+            U-Boot 2016.01 (Dec 19 2017 - 19:33:47 -0800)<br>
+            Model: Samsung artik305 raptor board based on Nexell s5p4418<br>
+            . . .<br>
+            Hit any key to stop autoboot:  0 <br>
+            artik305# </span><code>fastboot 0</code></p>
+            
+            <p>On the development machine, start in the <span class="code-font"><b>vboot/</b></span> directory and run these commands to flash load the bootloader and boot images.</p>
+            
+            <h3 id="sequence-for-a530s-1">Sequence for A530s</h3>
+            
+            <p><code>sudo fastboot flash partmap partmap_emmc.txt</code><br>
+            <code>sudo fastboot flash bootloader bootloader.img</code><br>
+            <code>sudo fastboot flash boot boot.img</code></p>
+            
+            <p>Once bootloader and boot images get flashed successfully, reset the board and stop the autoboot once again and run the following commands at the U-Boot prompt.</p>
+            
+            <p><span class="code-font">
+            . . .<br>
+            Hit any key to stop autoboot:  0 <br>
+            artik530# </span><code>run gen_addr; run load_args</code><br>
+            <span class="code-font">artik530#</span> <code>ext4load mmc 0:2 0x98000000 signed_fit.img</code><br>
+            <span class="code-font">8433458 bytes read in 569 ms (14.1 MiB/s)<br>
+            artik530#</span> <code>bootm 0x98000000</code></p>
+            
+            <pre>&#x000A;## Loading kernel from FIT Image at 98000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Verifying Hash Integrity ... OK&#x000A;   Trying 'kernel@1' kernel subimage&#x000A;     Description:  Linux kernel&#x000A;     Type:         Kernel Image&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x980000e8&#x000A;     Data Size:    5954424 Bytes = 5.7 MiB&#x000A;     Architecture: ARM&#x000A;     OS:           Linux&#x000A;     Load Address: 0x91080000&#x000A;     Entry Point:  0x91080000&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   4169b42d2724f0ba2cb17a6c333db2ca26a52de6fb5d7601d5c37546e4052a9cd2445f2ec685549384f9ec97d2d5&#x000A;26814b6da0ec46678656e7a4b3bbf3248bf287338639e5a6bcd2f9b6418a63231922e8973d1fec5c276f1332cfbef443c62e4d199e36b97&#x000A;701e91883e569c31464e6f37c66be1426c9f37da2e86d25008a21876812212f714a8555fb3b4ce9a1b05c801095f35170b90d031d194a66&#x000A;adbff615481cf0abf4a0d0a96e98aef2955b429aa25dc56f03ad8d1e95c145e2d0e7dc145f464e7d20708f5486f70a93004fca352881f51&#x000A;950d232f4725d12113af8a9bb2c8853e4db8c54cda7285a2fe395c1993a581d93a8079fd17a5b092b53031d&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;## Loading ramdisk from FIT Image at 98000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Trying 'ramdisk@1' ramdisk subimage&#x000A;     Description:  RAMDISK&#x000A;     Type:         RAMDisk Image&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x985b93dc&#x000A;     Data Size:    2427923 Bytes = 2.3 MiB&#x000A;     Architecture: ARM&#x000A;     OS:           Linux&#x000A;     Load Address: 0x9a000000&#x000A;     Entry Point:  0x9a000000&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   558935a47337f3347f30e3b31db40de164f7459f5002530f665a5cdb75beeab77280589b45cdbb57d3e35ca3ff92&#x000A;25e453a6f0ff0744d43b697268552078d8662655cab828924bac954db6df98f2dd09f24a9a041e2a40c2dcab3d91dc050f69c4378029f72&#x000A;65dbc153d544ade8fc1c87c1dcec3e52304e575a975db7e38c24fd153d60873791559bb303af87285eff46655a5a835143db015612c52cc&#x000A;d8a5e075d812fe38315dc4f38638eb1f5645da8411341e255b2b81aba554298855a724db18a1bd46144256016fbe20e9930fd8f18b7985a&#x000A;651f25bb3526ca3687c64f9dc14422642ef1ba6c0c07f44edb41619633e18cad9798769d5af8469c59bdbfc&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;   Loading ramdisk from 0x985b93dc to 0x9a000000&#x000A;## Loading fdt from FIT Image at 98000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Trying 'fdt@1' fdt subimage&#x000A;     Description:  Flattened Device Tree blob&#x000A;     Type:         Flat Device Tree&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x985ade94&#x000A;     Data Size:    45895 Bytes = 44.8 KiB&#x000A;     Architecture: ARM&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   8951ddf17d15a6ce61fb3975a56737ac845db84d35e6cc692420c34ca850eb9f331c1919505f030629326329de7e&#x000A;226ed6d2462731b864dd8585ea541aecab2c9bb80568ad9d0e5ee2f65f7d71a308cfd3783ab8533e47d80a4ed573f44c9e6a4bbcad9a569&#x000A;90a527ee43f56a9de40a413338110e08e53ca9a89eb02322c1af0fe89b381d5cb58a2e8fd1291dc7ccaae50528b52af0a1c3e4b7e47dfba&#x000A;83551e2763c7fc6cea6c9cfa511da6916ce5ce3ab0ae0be9411bae8891e66f7d86a5859e79bfad61fff971c7b82f810657f20a04612ca15&#x000A;b4bd9455614c9f2c3ce56b9d672803a224c48e481e7f380b79cd95a2048141d92f7e024e2a133293a64f63d&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;   Loading fdt from 0x985ade94 to 0x9b000000&#x000A;   Booting using the fdt blob at 0x9b000000&#x000A;   Loading Kernel Image ... OK&#x000A;   Loading Ramdisk to ab3e8000, end ab638c13 ... OK&#x000A;   Using Device Tree in place at 9b000000, end 9b00e346&#x000A;&#x000A;Starting kernel ...&#x000A;</pre>
+            
+            <h3 id="sequence-for-a710s-1">Sequence for A710s</h3>
+            
+            <p><code>sudo fastboot flash partmap partmap_emmc.txt</code><br>
+            <code>sudo fastboot flash fip-nonsecure fip-nonsecure.img</code><br>
+            <code>sudo fastboot flash boot boot.img</code></p>
+            
+            <p>Once bootloader and boot images get flashed successfully, reset the board and stop the autoboot once again and run the following commands at the U-Boot prompt.</p>
+            
+            <p><span class="code-font">
+            . . .<br>
+            Hit any key to stop autoboot:  0 <br>
+            artik710# </span><code>run load_args</code><br>
+            <span class="code-font">artik710#</span> <code>ext4load mmc 0:2 0x46000000 signed_fit.img</code><br>
+            <span class="code-font">16101338 bytes read in 750 ms (20.5 MiB/s)<br>
+            artik710#</span> <code>bootm 0x46000000</code></p>
+            
+            <pre>&#x000A;## Loading kernel from FIT Image at 46000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Verifying Hash Integrity ... OK&#x000A;   Trying 'kernel@1' kernel subimage&#x000A;     Description:  Linux kernel&#x000A;     Type:         Kernel Image&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x460000e8&#x000A;     Data Size:    13623400 Bytes = 13 MiB&#x000A;     Architecture: AArch64&#x000A;     OS:           Linux&#x000A;     Load Address: 0x40080000&#x000A;     Entry Point:  0x40080000&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   99e83143c1c14d2ce394fc180ddea30aee45b38e6cdfb0f657c0a8ebb7eaad49017c49ac36634157f98d7cf9fe13763f130a23bc510d4f2568f628260f9d47bce29f54b5f905fa7c41a63234ba8dfd9b059d8876cb6a10643fb9f3f3c9d675bfc3f8b86d9b53108c1ad8c787c36df2310cae509b7554c9b2395a684da746c85586fc2a64a9e4a98a150c2a194e119d51db44fc33ee5a9eca3ce1943fab2099b9e8a96e487f3b22c1fd875ec2d6548d1a9519358d35eb28e253cdc1ec45b06a062ac14c811a6b87ccec297f05bcfaf07bcb42533d63c2aec69320fdb43ae882728723c6a841efb55a85a2184556f34d3c9a31f3ef56ece22c23b2680ad792758e&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;## Loading ramdisk from FIT Image at 46000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Trying 'ramdisk@1' ramdisk subimage&#x000A;     Description:  RAMDISK&#x000A;     Type:         RAMDisk Image&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x46d0ae2c&#x000A;     Data Size:    2423496 Bytes = 2.3 MiB&#x000A;     Architecture: AArch64&#x000A;     OS:           Linux&#x000A;     Load Address: 0x49000000&#x000A;     Entry Point:  0x49000000&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   1c5da763eefa2fe6aa6193610a507845566cf67235ff64621e152e98fa5df107281880e9b8f09018cfd973f802dd2e9e4776f69eb1fc6971b06d783939502d32512447eb1866d8f35fd8caf8fe100fd2c71a30d3825cda80232373a37eb736f3a7ef69f1e184fe562241c9bdf95f63225951e20aad9602cb7e820669d8e5d0adc7cbc69760792f75290266433c825f09432576a28dcc07d6874ed1489e53b173dde93ec8a80db8d98f9787c9fa37bd799d383695969799603b5e704bdff99142785a50d53812c45a87eca576aaeac6245a68b6335d557e541c4304b4ee43b40619bc8c61d949b939fe0e132269e07d794eacfcd69dfd7f5d834b2c58bd3e5079&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;   Loading ramdisk from 0x46d0ae2c to 0x49000000&#x000A;## Loading fdt from FIT Image at 46000000 ...&#x000A;   Using 'conf@1' configuration&#x000A;   Trying 'fdt@1' fdt subimage&#x000A;     Description:  Flattened Device Tree blob&#x000A;     Type:         Flat Device Tree&#x000A;     Compression:  uncompressed&#x000A;     Data Start:   0x46cfe3a0&#x000A;     Data Size:    51310 Bytes = 50.1 KiB&#x000A;     Architecture: AArch64&#x000A;     Sign algo:    sha1,rsa2048:dev&#x000A;     Sign value:   2e9a59401babccb96ac9b9d2b0861a8627e46a03a98f7bf9d749921e2d6f3dab27bc70c3bb663d0cfbf04579ed2ddaceda705f18b8cd9cacd1227f4212c76ad5a13206fcb48a742fc1a0df36c0b4099734b5a910309df93b65872cb93c8384a26f7e3ec561b238e66b35282b825a3d0631cdea34f7e7e4eb3c0a92baab851511c16c2dd28ee00bf947cc268ca9bf6501a61cc273b83576f63218911f48d215f34afee5a43ee40531ccdf3b6e65c784bdf81eed7e1ff877208f3c08c22a9c7c9a012766f19be1dc3da47b0101a9ee55d061b3490b0b8cb73fba23539e6f416c038ffaa548670c4f5e960e197736071a367d759584294bebdb422d423743f9477f&#x000A;   Verifying Hash Integrity ... sha1,rsa2048:dev+ OK&#x000A;   Loading fdt from 0x46cfe3a0 to 0x4a000000&#x000A;   Booting using the fdt blob at 0x4a000000&#x000A;   Loading Kernel Image ... OK&#x000A;   reserving fdt memory region: addr=7de00000 size=100000&#x000A;   Loading Ramdisk to 792e4000, end 79533ac8 ... OK&#x000A;   Using Device Tree in place at 000000004a000000, end 000000004a00f86d&#x000A;&#x000A;Starting kernel ...&#x000A;&#x000A;</pre>
+            
+            <h2 id="completing-chain-of-trust">Completing Chain of Trust</h2>
+            
+            <p>Verified Boot is now enabled and tested. At this point, kernel and ramdisk are verified by the bootloader using the public key that was included in <span class="code-font">bootloader.img</span>.</p>
+            
+            <p>To complete the chain of trust, you can also sign <span class="code-font">bootloader.img</span> using the <a href="..\..\advanced-concepts\secure-os\kms.html">CodeSigner/KMS</a> service provided by ARTIK to ensure the authenticity of the bootloader. In this way, the chain of trust starting from BL0 (IROM) to U-Boot (bootloader) can be extended to kernel and ramdisk.</p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-11-29 00:04:00 +0000'>Nov 29 2018, 12:04 AM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="configure.html">Prev: Customization Tools</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

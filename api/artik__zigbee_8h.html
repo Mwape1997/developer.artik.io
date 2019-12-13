@@ -1,0 +1,1624 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='artik__zigbee_8h.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Software API: inc/zigbee/artik_zigbee.h File Reference</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_api documentation_api_artik__zigbee_8h' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option value='/documentation/api/artik__zigbee_8h.html'>1.8</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-7/download'>1.7</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-6/download'>1.6</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-5/download'>1.5</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-4/download'>1.4</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-3/download'>1.3</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-2/download'>1.2</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-1/download'>1.1</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-0/download'>1.0</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('artik__zigbee_8h.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="summary">
+            <a href="#nested-classes">Data Structures</a> &#124;
+            <a href="#define-members">Macros</a> &#124;
+            <a href="#typedef-members">Typedefs</a> &#124;
+            <a href="#enum-members">Enumerations</a> &#124;
+            <a href="#var-members">Variables</a>  </div>
+              <div class="headertitle">
+            <div class="title">artik_zigbee.h File Reference</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            
+            <p>ZigBee module definition.  
+            <a href="#details">More...</a></p>
+            <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br>
+            <code>#include &quot;<a class="el" href="artik__error_8h_source.html">artik_error.h</a>&quot;</code><br>
+            <code>#include &quot;<a class="el" href="artik__types_8h_source.html">artik_types.h</a>&quot;</code><br>
+            <code>#include &quot;<a class="el" href="artik__zigbee__clusters_8h_source.html">artik_zigbee_clusters.h</a>&quot;</code><br>
+            </div>
+            <p><a href="artik__zigbee_8h_source.html">Go to the source code of this file.</a></p>
+            <table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+            Data Structures</h2></td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__local__endpoint.html">artik_zigbee_local_endpoint</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local endpoint.  <a href="structartik__zigbee__local__endpoint.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__local__endpoint__info.html">artik_zigbee_local_endpoint_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local endpoint information.  <a href="structartik__zigbee__local__endpoint__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__endpoint.html">artik_zigbee_endpoint</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for endpoint information.  <a href="structartik__zigbee__endpoint.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__endpoint__list.html">artik_zigbee_endpoint_list</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for endpoint list to find endpoints by cluster ID.  <a href="structartik__zigbee__endpoint__list.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device.html">artik_zigbee_device</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device information This is used when sending cluster commands to select device.  <a href="structartik__zigbee__device.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__info.html">artik_zigbee_device_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of device information.  <a href="structartik__zigbee__device__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__discovery.html">artik_zigbee_device_discovery</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device discovery response.  <a href="structartik__zigbee__device__discovery.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__network__info.html">artik_zigbee_network_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for network information.  <a href="structartik__zigbee__network__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__network__find__result.html">artik_zigbee_network_find_result</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network find result.  <a href="structartik__zigbee__network__find__result.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__received__command.html">artik_zigbee_received_command</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Received command from remote device.  <a href="structartik__zigbee__received__command.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__attribute__changed__response.html">artik_zigbee_attribute_changed_response</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribute changed response from zigbeed.  <a href="structartik__zigbee__attribute__changed__response.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__reporting__info.html">artik_zigbee_reporting_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure used to store reporting configurations. If endpoint field is ::EMBER_AF_PLUGIN_REPORTING_UNUSED_ENDPOINT_ID, this configure is unused.  <a href="structartik__zigbee__reporting__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__report__attribute__info.html">artik_zigbee_report_attribute_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for report attribute from remote server.  <a href="structartik__zigbee__report__attribute__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__identify__feedback__info.html">artik_zigbee_identify_feedback_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure for notifying identify feedback.  <a href="structartik__zigbee__identify__feedback__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__commissioning__target__info.html">artik_zigbee_commissioning_target_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of target that ezmode commissioning find Used in callback, to notify user.  <a href="structartik__zigbee__commissioning__target__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__commissioning__bound__info.html">artik_zigbee_commissioning_bound_info</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure of clusters that bound by ezmode commissioning Used in callback, to notify user.  <a href="structartik__zigbee__commissioning__bound__info.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__simple__descriptor__response.html">artik_zigbee_simple_descriptor_response</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple descriptor response Used in callback, to notify user.  <a href="structartik__zigbee__simple__descriptor__response.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__broadcast__identify__query__response.html">artik_zigbee_broadcast_identify_query_response</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcast identify query response Used in callback, to notify user.  <a href="structartik__zigbee__broadcast__identify__query__response.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__ieee__addr__response.html">artik_zigbee_ieee_addr_response</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ieee addr response Used in callback, to notify user.  <a href="structartik__zigbee__ieee__addr__response.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__match__desc__response.html">artik_zigbee_match_desc_response</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Match descriptor response Used in callback, to notify user.  <a href="structartik__zigbee__match__desc__response.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__binding__table__entry.html">artik_zigbee_binding_table_entry</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zigbee binding table entry.  <a href="structartik__zigbee__binding__table__entry.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__on__off__switch.html">artik_zigbee_device_on_off_switch</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device on/off switch, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__on__off__switch.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__level__control__switch.html">artik_zigbee_device_level_control_switch</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device level control switch, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__level__control__switch.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__on__off__light.html">artik_zigbee_device_on_off_light</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device on/off light, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__on__off__light.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__dimmable__light.html">artik_zigbee_device_dimmable_light</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device dimmable light, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__dimmable__light.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__light__sensor.html">artik_zigbee_device_light_sensor</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device light sensor, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__light__sensor.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__device__remote__control.html">artik_zigbee_device_remote_control</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for device remote control, to storage the local endpoint information and functions can be invoked.  <a href="structartik__zigbee__device__remote__control.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structartik__zigbee__module.html">artik_zigbee_module</a></td></tr>
+            <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZigBee module operations.  <a href="structartik__zigbee__module.html#details">More...</a><br></td></tr>
+            <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+            Macros</h2></td></tr>
+            <tr class="memitem:a9698bb89248815dec54c0b957efd0693"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9698bb89248815dec54c0b957efd0693"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_PROFILE_HA</b>&#160;&#160;&#160;0x0104</td></tr>
+            <tr class="separator:a9698bb89248815dec54c0b957efd0693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad7870501ed4b99d2d75a9847363a9203"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7870501ed4b99d2d75a9847363a9203"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_PROFILE_ZLL</b>&#160;&#160;&#160;0xC05E</td></tr>
+            <tr class="separator:ad7870501ed4b99d2d75a9847363a9203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ab7c5c01aa42cace29fe955db9623b648"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7c5c01aa42cace29fe955db9623b648"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_PROFILE_GP</b>&#160;&#160;&#160;0xA1E0</td></tr>
+            <tr class="separator:ab7c5c01aa42cace29fe955db9623b648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0900f4270d2c4445c93064ac5bf3ea58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0900f4270d2c4445c93064ac5bf3ea58"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_ON_OFF_SWITCH</b>&#160;&#160;&#160;0x0000</td></tr>
+            <tr class="separator:a0900f4270d2c4445c93064ac5bf3ea58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aff24488b16eae8478e1e7dd3b6dda75f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff24488b16eae8478e1e7dd3b6dda75f"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_LEVEL_CONTROL_SWITCH</b>&#160;&#160;&#160;0x0001</td></tr>
+            <tr class="separator:aff24488b16eae8478e1e7dd3b6dda75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ade2009692bfd70d7c05130299c9b9232"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade2009692bfd70d7c05130299c9b9232"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_REMOTE_CONTROL</b>&#160;&#160;&#160;0x0006</td></tr>
+            <tr class="separator:ade2009692bfd70d7c05130299c9b9232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad6117874e5d9d57c4cd58656d93b5e2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6117874e5d9d57c4cd58656d93b5e2c"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_ON_OFF_LIGHT</b>&#160;&#160;&#160;0x0100</td></tr>
+            <tr class="separator:ad6117874e5d9d57c4cd58656d93b5e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aed79ee23a50f99b5f3f0667475163be8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed79ee23a50f99b5f3f0667475163be8"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_DIMMABLE_LIGHT</b>&#160;&#160;&#160;0x0101</td></tr>
+            <tr class="separator:aed79ee23a50f99b5f3f0667475163be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a31f758c2a6fb54ab6ccc84d34a3d55e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31f758c2a6fb54ab6ccc84d34a3d55e9"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_COLOR_DIMMABLE_LIGHT</b>&#160;&#160;&#160;0x0102</td></tr>
+            <tr class="separator:a31f758c2a6fb54ab6ccc84d34a3d55e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aea6a107489f56f1bd070c2e495f9f6c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea6a107489f56f1bd070c2e495f9f6c8"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_ON_OFF_LIGHT_SWITCH</b>&#160;&#160;&#160;0x0103</td></tr>
+            <tr class="separator:aea6a107489f56f1bd070c2e495f9f6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:adabbfdecd60d0b4aa723901ddac8b0c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adabbfdecd60d0b4aa723901ddac8b0c1"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_DIMMER_SWITCH</b>&#160;&#160;&#160;0x0104</td></tr>
+            <tr class="separator:adabbfdecd60d0b4aa723901ddac8b0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a924f01e724929894536622dc72d1fadb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a924f01e724929894536622dc72d1fadb"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_COLOR_DIMMER_SWITCH</b>&#160;&#160;&#160;0x0105</td></tr>
+            <tr class="separator:a924f01e724929894536622dc72d1fadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a66a2fe5b84d654b46e05c5fa31cb1508"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a66a2fe5b84d654b46e05c5fa31cb1508"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_LIGHT_SENSOR</b>&#160;&#160;&#160;0x0106</td></tr>
+            <tr class="separator:a66a2fe5b84d654b46e05c5fa31cb1508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a067752dc28f59c0d9bd8f02643fb3ed7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a067752dc28f59c0d9bd8f02643fb3ed7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_OCCUPANCY_SENSOR</b>&#160;&#160;&#160;0x0107</td></tr>
+            <tr class="separator:a067752dc28f59c0d9bd8f02643fb3ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:abc008f05da767835250aab376798390d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc008f05da767835250aab376798390d"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_HEATING_COOLING_UNIT</b>&#160;&#160;&#160;0x0300</td></tr>
+            <tr class="separator:abc008f05da767835250aab376798390d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4c7f0c513e1cea36a2b5c8a0e8404e44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c7f0c513e1cea36a2b5c8a0e8404e44"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_THERMOSTAT</b>&#160;&#160;&#160;0x0301</td></tr>
+            <tr class="separator:a4c7f0c513e1cea36a2b5c8a0e8404e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a42bd293ca447cec8675af9865160ffc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42bd293ca447cec8675af9865160ffc1"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_TEMPERATURE_SENSOR</b>&#160;&#160;&#160;0x0302</td></tr>
+            <tr class="separator:a42bd293ca447cec8675af9865160ffc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a327873ffdcc0c174612b10d2d5523e8d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a327873ffdcc0c174612b10d2d5523e8d"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICE_INVALIDATE</b>&#160;&#160;&#160;0x7FFF</td></tr>
+            <tr class="separator:a327873ffdcc0c174612b10d2d5523e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a3a062ae5c65bacf4662ae0ad4bad24ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a062ae5c65bacf4662ae0ad4bad24ae"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_BASIC_CLUSTER_ID</b>&#160;&#160;&#160;0x0000</td></tr>
+            <tr class="separator:a3a062ae5c65bacf4662ae0ad4bad24ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a9e7f398272cb5dfb44645bff2269ce77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e7f398272cb5dfb44645bff2269ce77"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_POWER_CONFIG_CLUSTER_ID</b>&#160;&#160;&#160;0x0001</td></tr>
+            <tr class="separator:a9e7f398272cb5dfb44645bff2269ce77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4c01d72aad8dfc6e9f2620c29c50c1bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c01d72aad8dfc6e9f2620c29c50c1bc"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DEVICE_TEMP_CLUSTER_ID</b>&#160;&#160;&#160;0x0002</td></tr>
+            <tr class="separator:a4c01d72aad8dfc6e9f2620c29c50c1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0b3b4fc8505d0d40158fe4efbc96d663"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b3b4fc8505d0d40158fe4efbc96d663"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_IDENTIFY_CLUSTER_ID</b>&#160;&#160;&#160;0x0003</td></tr>
+            <tr class="separator:a0b3b4fc8505d0d40158fe4efbc96d663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af8c4d99d2f59b860b9e8d8007b47f30a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8c4d99d2f59b860b9e8d8007b47f30a"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_GROUPS_CLUSTER_ID</b>&#160;&#160;&#160;0x0004</td></tr>
+            <tr class="separator:af8c4d99d2f59b860b9e8d8007b47f30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aaea7ab517efbd863bb76b7d90308bc9f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaea7ab517efbd863bb76b7d90308bc9f"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_SCENES_CLUSTER_ID</b>&#160;&#160;&#160;0x0005</td></tr>
+            <tr class="separator:aaea7ab517efbd863bb76b7d90308bc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a24944ae7cedae9ab95a491476cafb1c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24944ae7cedae9ab95a491476cafb1c7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ON_OFF_CLUSTER_ID</b>&#160;&#160;&#160;0x0006</td></tr>
+            <tr class="separator:a24944ae7cedae9ab95a491476cafb1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a282a3a340db3fa15181e96822e1e3838"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a282a3a340db3fa15181e96822e1e3838"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ON_OFF_SWITCH_CONFIG_CLUSTER_ID</b>&#160;&#160;&#160;0x0007</td></tr>
+            <tr class="separator:a282a3a340db3fa15181e96822e1e3838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac04805bfe22a606e5e9e5bc81c105faa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac04805bfe22a606e5e9e5bc81c105faa"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_LEVEL_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0008</td></tr>
+            <tr class="separator:ac04805bfe22a606e5e9e5bc81c105faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a10421e899c6ba82c9f90d7d17f61b94b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10421e899c6ba82c9f90d7d17f61b94b"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ALARM_CLUSTER_ID</b>&#160;&#160;&#160;0x0009</td></tr>
+            <tr class="separator:a10421e899c6ba82c9f90d7d17f61b94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a3ee85b6efd568819f45048bd155054d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ee85b6efd568819f45048bd155054d0"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_TIME_CLUSTER_ID</b>&#160;&#160;&#160;0x000A</td></tr>
+            <tr class="separator:a3ee85b6efd568819f45048bd155054d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8e5220ca53ae1579d27ddeb6b742ec19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e5220ca53ae1579d27ddeb6b742ec19"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_RSSI_LOCATION_CLUSTER_ID</b>&#160;&#160;&#160;0x000B</td></tr>
+            <tr class="separator:a8e5220ca53ae1579d27ddeb6b742ec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4d1798088a289d6c551d5af238b7c7c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d1798088a289d6c551d5af238b7c7c4"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_BINARY_INPUT_BASIC_CLUSTER_ID</b>&#160;&#160;&#160;0x000F</td></tr>
+            <tr class="separator:a4d1798088a289d6c551d5af238b7c7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aaec5ab4b96f968501a56761ac2aaa77a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaec5ab4b96f968501a56761ac2aaa77a"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_COMMISSIONING_CLUSTER_ID</b>&#160;&#160;&#160;0x0015</td></tr>
+            <tr class="separator:aaec5ab4b96f968501a56761ac2aaa77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8ca7ae284209a0ca5370d43e5f243cc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ca7ae284209a0ca5370d43e5f243cc7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PARTITION_CLUSTER_ID</b>&#160;&#160;&#160;0x0016</td></tr>
+            <tr class="separator:a8ca7ae284209a0ca5370d43e5f243cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac1039bb34d705d4d689deb76740ec277"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1039bb34d705d4d689deb76740ec277"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_OTA_BOOTLOAD_CLUSTER_ID</b>&#160;&#160;&#160;0x0019</td></tr>
+            <tr class="separator:ac1039bb34d705d4d689deb76740ec277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aadcc6ff5b1d98f9855eef8ff736eb2ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadcc6ff5b1d98f9855eef8ff736eb2ce"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_POWER_PROFILE_CLUSTER_ID</b>&#160;&#160;&#160;0x001A</td></tr>
+            <tr class="separator:aadcc6ff5b1d98f9855eef8ff736eb2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac25b6d31a33a1c501dea9576f3258961"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac25b6d31a33a1c501dea9576f3258961"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_APPLIANCE_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x001B</td></tr>
+            <tr class="separator:ac25b6d31a33a1c501dea9576f3258961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a45fd323d840135269b80f18f4fbf33c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45fd323d840135269b80f18f4fbf33c5"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_POLL_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0020</td></tr>
+            <tr class="separator:a45fd323d840135269b80f18f4fbf33c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a608f55d375145d12db5286e45124cb69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a608f55d375145d12db5286e45124cb69"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_SHADE_CONFIG_CLUSTER_ID</b>&#160;&#160;&#160;0x0100</td></tr>
+            <tr class="separator:a608f55d375145d12db5286e45124cb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae8a8a84fcdbcb7d5ad7f0be55b2a4439"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae8a8a84fcdbcb7d5ad7f0be55b2a4439"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DOOR_LOCK_CLUSTER_ID</b>&#160;&#160;&#160;0x0101</td></tr>
+            <tr class="separator:ae8a8a84fcdbcb7d5ad7f0be55b2a4439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a487b782dead76e02cadb871837445529"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a487b782dead76e02cadb871837445529"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_WINDOW_COVERING_CLUSTER_ID</b>&#160;&#160;&#160;0x0102</td></tr>
+            <tr class="separator:a487b782dead76e02cadb871837445529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a149127ee883f1eaac28a5609220dce25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a149127ee883f1eaac28a5609220dce25"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PUMP_CONFIG_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0200</td></tr>
+            <tr class="separator:a149127ee883f1eaac28a5609220dce25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aeb3ae1debf77fcd31d47a9771d263495"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb3ae1debf77fcd31d47a9771d263495"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_THERMOSTAT_CLUSTER_ID</b>&#160;&#160;&#160;0x0201</td></tr>
+            <tr class="separator:aeb3ae1debf77fcd31d47a9771d263495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:adec967a26cb50d2b9c64e9468b97b53c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adec967a26cb50d2b9c64e9468b97b53c"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_FAN_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0202</td></tr>
+            <tr class="separator:adec967a26cb50d2b9c64e9468b97b53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a59fd87972f4f5753909a8224673014a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59fd87972f4f5753909a8224673014a9"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DEHUMID_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0203</td></tr>
+            <tr class="separator:a59fd87972f4f5753909a8224673014a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ab78437ad6243caed5f42f963c28424c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab78437ad6243caed5f42f963c28424c4"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_THERMOSTAT_UI_CONFIG_CLUSTER_ID</b>&#160;&#160;&#160;0x0204</td></tr>
+            <tr class="separator:ab78437ad6243caed5f42f963c28424c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a25712ce38444929efc07b74dc8af5ba7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25712ce38444929efc07b74dc8af5ba7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_COLOR_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0300</td></tr>
+            <tr class="separator:a25712ce38444929efc07b74dc8af5ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8b6649c7dcfe5ed585976bede20ca2e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b6649c7dcfe5ed585976bede20ca2e1"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_BALLAST_CONFIGURATION_CLUSTER_ID</b>&#160;&#160;&#160;0x0301</td></tr>
+            <tr class="separator:a8b6649c7dcfe5ed585976bede20ca2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acb3b3d1a1271efe53e3a21bdb30ea3e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb3b3d1a1271efe53e3a21bdb30ea3e9"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ILLUM_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0400</td></tr>
+            <tr class="separator:acb3b3d1a1271efe53e3a21bdb30ea3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aa63b4391c550f6cfacad30e16fb57fc6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa63b4391c550f6cfacad30e16fb57fc6"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ILLUM_LEVEL_SENSING_CLUSTER_ID</b>&#160;&#160;&#160;0x0401</td></tr>
+            <tr class="separator:aa63b4391c550f6cfacad30e16fb57fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aebd784eb253993a90648b43b7942ca5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aebd784eb253993a90648b43b7942ca5f"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_TEMP_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0402</td></tr>
+            <tr class="separator:aebd784eb253993a90648b43b7942ca5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acf0a6350c34d46772d8d8e91e89d5788"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf0a6350c34d46772d8d8e91e89d5788"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PRESSURE_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0403</td></tr>
+            <tr class="separator:acf0a6350c34d46772d8d8e91e89d5788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a5b9d2c252ed3045ce7dd9e46a66763c8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5b9d2c252ed3045ce7dd9e46a66763c8"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_FLOW_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0404</td></tr>
+            <tr class="separator:a5b9d2c252ed3045ce7dd9e46a66763c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aba6f1cc6f69efc71146dee46aba063c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba6f1cc6f69efc71146dee46aba063c5"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_RELATIVE_HUMIDITY_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0405</td></tr>
+            <tr class="separator:aba6f1cc6f69efc71146dee46aba063c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a7a21e5405781fb7997e820dd9d77b094"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a21e5405781fb7997e820dd9d77b094"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_OCCUPANCY_SENSING_CLUSTER_ID</b>&#160;&#160;&#160;0x0406</td></tr>
+            <tr class="separator:a7a21e5405781fb7997e820dd9d77b094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acfdc020a564a15556ad0e02deef58aa2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfdc020a564a15556ad0e02deef58aa2"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_IAS_ZONE_CLUSTER_ID</b>&#160;&#160;&#160;0x0500</td></tr>
+            <tr class="separator:acfdc020a564a15556ad0e02deef58aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a352ebceebe103e7985e84fca0f6f8f72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a352ebceebe103e7985e84fca0f6f8f72"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_IAS_ACE_CLUSTER_ID</b>&#160;&#160;&#160;0x0501</td></tr>
+            <tr class="separator:a352ebceebe103e7985e84fca0f6f8f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a319b3a6977726b31494d2f882532600f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a319b3a6977726b31494d2f882532600f"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_IAS_WD_CLUSTER_ID</b>&#160;&#160;&#160;0x0502</td></tr>
+            <tr class="separator:a319b3a6977726b31494d2f882532600f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a22c9d777df08aab12bac4cb16fdafcef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22c9d777df08aab12bac4cb16fdafcef"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_GENERIC_TUNNEL_CLUSTER_ID</b>&#160;&#160;&#160;0x0600</td></tr>
+            <tr class="separator:a22c9d777df08aab12bac4cb16fdafcef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:abb726d63acb7900eb9f90565294f29e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb726d63acb7900eb9f90565294f29e8"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_BACNET_PROTOCOL_TUNNEL_CLUSTER_ID</b>&#160;&#160;&#160;0x0601</td></tr>
+            <tr class="separator:abb726d63acb7900eb9f90565294f29e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af3c56ec76c8c3ea0739fb7d34d7c7243"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3c56ec76c8c3ea0739fb7d34d7c7243"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_11073_PROTOCOL_TUNNEL_CLUSTER_ID</b>&#160;&#160;&#160;0x0614</td></tr>
+            <tr class="separator:af3c56ec76c8c3ea0739fb7d34d7c7243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad5d04ed26d147bad976e1d990d97c75d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad5d04ed26d147bad976e1d990d97c75d"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ISO7816_PROTOCOL_TUNNEL_CLUSTER_ID</b>&#160;&#160;&#160;0x0615</td></tr>
+            <tr class="separator:ad5d04ed26d147bad976e1d990d97c75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a50ef9a729c92b3495f8c83f4098a5f92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50ef9a729c92b3495f8c83f4098a5f92"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PRICE_CLUSTER_ID</b>&#160;&#160;&#160;0x0700</td></tr>
+            <tr class="separator:a50ef9a729c92b3495f8c83f4098a5f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a89b747b24994351ec1cb45a97491e5f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a89b747b24994351ec1cb45a97491e5f8"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DEMAND_RESPONSE_LOAD_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0701</td></tr>
+            <tr class="separator:a89b747b24994351ec1cb45a97491e5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acc6e3dcc345fba15631d055fbf65ce60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc6e3dcc345fba15631d055fbf65ce60"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_SIMPLE_METERING_CLUSTER_ID</b>&#160;&#160;&#160;0x0702</td></tr>
+            <tr class="separator:acc6e3dcc345fba15631d055fbf65ce60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a29802977b0f21cd34316cdca02f0751c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a29802977b0f21cd34316cdca02f0751c"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_MESSAGING_CLUSTER_ID</b>&#160;&#160;&#160;0x0703</td></tr>
+            <tr class="separator:a29802977b0f21cd34316cdca02f0751c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a69dda901042d9c48dcfe181235e10c73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69dda901042d9c48dcfe181235e10c73"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_TUNNELING_CLUSTER_ID</b>&#160;&#160;&#160;0x0704</td></tr>
+            <tr class="separator:a69dda901042d9c48dcfe181235e10c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a59d89070aea5a480dd94cfd04eeb3bc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59d89070aea5a480dd94cfd04eeb3bc3"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PREPAYMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0705</td></tr>
+            <tr class="separator:a59d89070aea5a480dd94cfd04eeb3bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac7d0ed3c98d109c95e2646ab3c6b8d58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7d0ed3c98d109c95e2646ab3c6b8d58"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ENERGY_MANAGEMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0706</td></tr>
+            <tr class="separator:ac7d0ed3c98d109c95e2646ab3c6b8d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acf80e9de677bf7167d5fa4866be2c9a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf80e9de677bf7167d5fa4866be2c9a1"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_CALENDAR_CLUSTER_ID</b>&#160;&#160;&#160;0x0707</td></tr>
+            <tr class="separator:acf80e9de677bf7167d5fa4866be2c9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a45b2551eb0f9ca2fe53a30ac0a28da78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45b2551eb0f9ca2fe53a30ac0a28da78"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DEVICE_MANAGEMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0708</td></tr>
+            <tr class="separator:a45b2551eb0f9ca2fe53a30ac0a28da78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac534ca2c6e1b6ac74463b699a86112b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac534ca2c6e1b6ac74463b699a86112b7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_EVENTS_CLUSTER_ID</b>&#160;&#160;&#160;0x0709</td></tr>
+            <tr class="separator:ac534ca2c6e1b6ac74463b699a86112b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a066034076a8757041a3c3271dc20e764"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a066034076a8757041a3c3271dc20e764"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_MDU_PAIRING_CLUSTER_ID</b>&#160;&#160;&#160;0x070A</td></tr>
+            <tr class="separator:a066034076a8757041a3c3271dc20e764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a5ef5a74a8d35115253a73fca55a34609"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ef5a74a8d35115253a73fca55a34609"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_KEY_ESTABLISHMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0800</td></tr>
+            <tr class="separator:a5ef5a74a8d35115253a73fca55a34609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4cf1d284d5618ff9fa37f22d77fa643e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cf1d284d5618ff9fa37f22d77fa643e"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_INFORMATION_CLUSTER_ID</b>&#160;&#160;&#160;0x0900</td></tr>
+            <tr class="separator:a4cf1d284d5618ff9fa37f22d77fa643e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8945bd75d7bd4160cb325dbe44153838"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8945bd75d7bd4160cb325dbe44153838"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DATA_SHARING_CLUSTER_ID</b>&#160;&#160;&#160;0x0901</td></tr>
+            <tr class="separator:a8945bd75d7bd4160cb325dbe44153838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae33525405397ff71e5f5fba2708729ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae33525405397ff71e5f5fba2708729ed"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_GAMING_CLUSTER_ID</b>&#160;&#160;&#160;0x0902</td></tr>
+            <tr class="separator:ae33525405397ff71e5f5fba2708729ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ab7e936f410baef2089daae80c126c259"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7e936f410baef2089daae80c126c259"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DATA_RATE_CONTROL_CLUSTER_ID</b>&#160;&#160;&#160;0x0903</td></tr>
+            <tr class="separator:ab7e936f410baef2089daae80c126c259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acce319140c53776261c9d9dbaa0bf692"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acce319140c53776261c9d9dbaa0bf692"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_VOICE_OVER_ZIGBEE_CLUSTER_ID</b>&#160;&#160;&#160;0x0904</td></tr>
+            <tr class="separator:acce319140c53776261c9d9dbaa0bf692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a31864069c39a7ce09190f220cbe6c694"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31864069c39a7ce09190f220cbe6c694"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_CHATTING_CLUSTER_ID</b>&#160;&#160;&#160;0x0905</td></tr>
+            <tr class="separator:a31864069c39a7ce09190f220cbe6c694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:acf7e4a0e3627407a1093a1e4a3bab019"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf7e4a0e3627407a1093a1e4a3bab019"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_PAYMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0A01</td></tr>
+            <tr class="separator:acf7e4a0e3627407a1093a1e4a3bab019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aca047e689f512d77abed87b177f6b4a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca047e689f512d77abed87b177f6b4a0"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_BILLING_CLUSTER_ID</b>&#160;&#160;&#160;0x0A02</td></tr>
+            <tr class="separator:aca047e689f512d77abed87b177f6b4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4006f36bb30c1d360bb29a9a4c3ad43b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4006f36bb30c1d360bb29a9a4c3ad43b"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_APPLIANCE_IDENTIFICATION_CLUSTER_ID</b>&#160;&#160;&#160;0x0B00</td></tr>
+            <tr class="separator:a4006f36bb30c1d360bb29a9a4c3ad43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aabf72c43861cbe297b54c707f2be81eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabf72c43861cbe297b54c707f2be81eb"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_METER_IDENTIFICATION_CLUSTER_ID</b>&#160;&#160;&#160;0x0B01</td></tr>
+            <tr class="separator:aabf72c43861cbe297b54c707f2be81eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ade531d2eeda6c4ee286f049f14507282"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade531d2eeda6c4ee286f049f14507282"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_APPLIANCE_EVENTS_AND_ALERT_CLUSTER_ID</b>&#160;&#160;&#160;0x0B02</td></tr>
+            <tr class="separator:ade531d2eeda6c4ee286f049f14507282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:adfcba27c9b5ec838a23e8cb02e952b60"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfcba27c9b5ec838a23e8cb02e952b60"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_APPLIANCE_STATISTICS_CLUSTER_ID</b>&#160;&#160;&#160;0x0B03</td></tr>
+            <tr class="separator:adfcba27c9b5ec838a23e8cb02e952b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac2a33272b9c68a282f3ae11e866a19f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2a33272b9c68a282f3ae11e866a19f5"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ELECTRICAL_MEASUREMENT_CLUSTER_ID</b>&#160;&#160;&#160;0x0B04</td></tr>
+            <tr class="separator:ac2a33272b9c68a282f3ae11e866a19f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a5ecbd2b529d8928658ef29d2011f7f33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ecbd2b529d8928658ef29d2011f7f33"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_DIAGNOSTICS_CLUSTER_ID</b>&#160;&#160;&#160;0x0B05</td></tr>
+            <tr class="separator:a5ecbd2b529d8928658ef29d2011f7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae28a2904bef9a041419420071bc1386e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae28a2904bef9a041419420071bc1386e"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_ZLL_COMMISSIONING_CLUSTER_ID</b>&#160;&#160;&#160;0x1000</td></tr>
+            <tr class="separator:ae28a2904bef9a041419420071bc1386e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a4c91d0e10382250f82414269a7cf9bd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c91d0e10382250f82414269a7cf9bd1"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZCL_SAMPLE_MFG_SPECIFIC_CLUSTER_ID</b>&#160;&#160;&#160;0xFC00</td></tr>
+            <tr class="separator:a4c91d0e10382250f82414269a7cf9bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a3cf8613bdeaca1ba46a18404461de077"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cf8613bdeaca1ba46a18404461de077"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_COMMAND_BUFFER_SIZE</b>&#160;&#160;&#160;5000</td></tr>
+            <tr class="separator:a3cf8613bdeaca1ba46a18404461de077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a6a10b066fe9c48d2cff3b41bc2c2f079"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a10b066fe9c48d2cff3b41bc2c2f079"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_RESPONSE_SIZE</b>&#160;&#160;&#160;10000</td></tr>
+            <tr class="separator:a6a10b066fe9c48d2cff3b41bc2c2f079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a75a70e36274a1fb299ec9c02812e44b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75a70e36274a1fb299ec9c02812e44b7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_RECEIVED_COMMAND_PLAYLOAD_LENGTH</b>&#160;&#160;&#160;1024</td></tr>
+            <tr class="separator:a75a70e36274a1fb299ec9c02812e44b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac095c5b41cbad1cd9a781e3dfb5eded2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac095c5b41cbad1cd9a781e3dfb5eded2"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_DEVICE_INFO_SIZE</b>&#160;&#160;&#160;20</td></tr>
+            <tr class="separator:ac095c5b41cbad1cd9a781e3dfb5eded2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8a44b82959d10b4be974aed46d042652"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a44b82959d10b4be974aed46d042652"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_ENDPOINT_SIZE</b>&#160;&#160;&#160;5</td></tr>
+            <tr class="separator:a8a44b82959d10b4be974aed46d042652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac910c0106ba1c6bcfbf78cc3b20f6da7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac910c0106ba1c6bcfbf78cc3b20f6da7"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_MAX_CLUSTER_SIZE</b>&#160;&#160;&#160;9</td></tr>
+            <tr class="separator:ac910c0106ba1c6bcfbf78cc3b20f6da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a10c35d2bbf420b89592ee4edd85eeb71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10c35d2bbf420b89592ee4edd85eeb71"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_EUI64_SIZE</b>&#160;&#160;&#160;8</td></tr>
+            <tr class="separator:a10c35d2bbf420b89592ee4edd85eeb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:adcb85995447b96baa0f4017fa277934b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcb85995447b96baa0f4017fa277934b"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_COORDINATOR_NODEID</b>&#160;&#160;&#160;0x0000</td></tr>
+            <tr class="separator:adcb85995447b96baa0f4017fa277934b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac261b48200f4504e501564c323bf6d37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac261b48200f4504e501564c323bf6d37"></a>
+            #define&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_BROADCAST_ENDPOINT</b>&#160;&#160;&#160;0xFF</td></tr>
+            <tr class="separator:ac261b48200f4504e501564c323bf6d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+            Typedefs</h2></td></tr>
+            <tr class="memitem:a71ab5dfa0f92961579d97aed5b87761b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71ab5dfa0f92961579d97aed5b87761b"></a>
+            typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_PROFILE</b></td></tr>
+            <tr class="separator:a71ab5dfa0f92961579d97aed5b87761b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aed4c54807b188cb73aed3dd44e2939fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed4c54807b188cb73aed3dd44e2939fe"></a>
+            typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>ARTIK_ZIGBEE_DEVICEID</b></td></tr>
+            <tr class="separator:aed4c54807b188cb73aed3dd44e2939fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae7124ad519e1c002b998f8aebe387df9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7124ad519e1c002b998f8aebe387df9"></a>
+            typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#ae7124ad519e1c002b998f8aebe387df9">artik_zigbee_endpoint_handle</a></td></tr>
+            <tr class="memdesc:ae7124ad519e1c002b998f8aebe387df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">endpoint instance <br></td></tr>
+            <tr class="separator:ae7124ad519e1c002b998f8aebe387df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0097dae2de5c46d24f0278677e434d54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0097dae2de5c46d24f0278677e434d54"></a>
+            typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a0097dae2de5c46d24f0278677e434d54">artik_zigbee_client_callback</a>) (void *user_data, <a class="el" href="artik__zigbee_8h.html#a7b3f5c2c5bf75a5dd0c592450b95dcd0">artik_zigbee_response_type</a> response_type, void *payload)</td></tr>
+            <tr class="memdesc:a0097dae2de5c46d24f0278677e434d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function type. <br></td></tr>
+            <tr class="separator:a0097dae2de5c46d24f0278677e434d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+            Enumerations</h2></td></tr>
+            <tr class="memitem:a11286182414861a99a5bfba0bccd744b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11286182414861a99a5bfba0bccd744b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a11286182414861a99a5bfba0bccd744b">artik_zigbee_notification</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_CMD_SUCCESS</b> = 0, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_PORT_PROBLEM</b> = -3001, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_NO_SUCH_COMMAND</b> = -3002, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_WRONG_NUMBER_OF_ARGUMENTS</b> = -3003, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_CMD_ERR_ARGUMENT_OUT_OF_RANGE</b> = -3004, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_ARGUMENT_SYNTAX_ERROR</b> = -3005, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_STRING_TOO_LONG</b> = -3006, 
+            <b>ARTIK_ZIGBEE_CMD_ERR_INVALID_ARGUMENT_TYPE</b> = -3007, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_CMD_ERR</b> = -3008
+            <br>
+             }</td></tr><tr class="memdesc:a11286182414861a99a5bfba0bccd744b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving command notification type from ZigBee Daemon This is one of response types. <br></td></tr>
+            
+            <tr class="separator:a11286182414861a99a5bfba0bccd744b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a846fae810969d7615a144f97144f5028"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a846fae810969d7615a144f97144f5028"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a846fae810969d7615a144f97144f5028">artik_zigbee_network_notification</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_NETWORK_JOIN</b> = 3100, 
+            <b>ARTIK_ZIGBEE_NETWORK_LEAVE</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_FIND_FORM_SUCCESS</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_FIND_FORM_FAILED</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_NETWORK_FIND_JOIN_SUCCESS</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_FIND_JOIN_FAILED</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_EXIST</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_FORM_SUCCESS</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_NETWORK_FORM_FAILED</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_JOIN_SUCCESS</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_JOIN_FAILED</b>
+            <br>
+             }</td></tr><tr class="memdesc:a846fae810969d7615a144f97144f5028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving network notification type from ZigBee Daemon This is one of response types. <br></td></tr>
+            
+            <tr class="separator:a846fae810969d7615a144f97144f5028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a327408635f502a0425b022212547fbd6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a327408635f502a0425b022212547fbd6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a327408635f502a0425b022212547fbd6">artik_zigbee_node_type</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_UNKNOWN_DEVICE</b> = 3200, 
+            <b>ARTIK_ZIGBEE_COORDINATOR</b> = 3201, 
+            <b>ARTIK_ZIGBEE_ROUTER</b> = 3202, 
+            <b>ARTIK_ZIGBEE_END_DEVICE</b> = 3203, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_SLEEPY_END_DEVICE</b> = 3204
+            <br>
+             }</td></tr><tr class="memdesc:a327408635f502a0425b022212547fbd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving node type from ZigBee Daemon This is one of response types. <br></td></tr>
+            
+            <tr class="separator:a327408635f502a0425b022212547fbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ae900b8b14030852e7649bd8a808f2234"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae900b8b14030852e7649bd8a808f2234"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#ae900b8b14030852e7649bd8a808f2234">artik_zigbee_network_state</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_NO_NETWORK</b> = 3210, 
+            <b>ARTIK_ZIGBEE_JOINING_NETWORK</b>, 
+            <b>ARTIK_ZIGBEE_JOINED_NETWORK</b>, 
+            <b>ARTIK_ZIGBEE_JOINED_NETWORK_NO_PARENT</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_LEAVING_NETWORK</b>
+            <br>
+             }</td></tr><tr class="memdesc:ae900b8b14030852e7649bd8a808f2234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving network state from ZigBee Daemon This is one of response types. <br></td></tr>
+            
+            <tr class="separator:ae900b8b14030852e7649bd8a808f2234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a5f9c71a4aeb68fabf0c56c114978c90c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f9c71a4aeb68fabf0c56c114978c90c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a5f9c71a4aeb68fabf0c56c114978c90c">artik_zigbee_device_discovery_status</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_NO_DEVICE</b> = 3220, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_FOUND</b>, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_DONE</b>, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_START</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_ERROR</b>, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_IN_PROGRESS</b>, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_CHANGED</b>, 
+            <b>ARTIK_ZIGBEE_DEVICE_DISCOVERY_LOST</b>
+            <br>
+             }</td></tr><tr class="memdesc:a5f9c71a4aeb68fabf0c56c114978c90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device discovery result. <br></td></tr>
+            
+            <tr class="separator:a5f9c71a4aeb68fabf0c56c114978c90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af96c096c6999f31f16c03aee176016b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af96c096c6999f31f16c03aee176016b6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#af96c096c6999f31f16c03aee176016b6">artik_zigbee_network_find_status</a> { <b>ARTIK_ZIGBEE_NETWORK_FOUND</b> = 3230, 
+            <b>ARTIK_ZIGBEE_NETWORK_FIND_FINISHED</b>, 
+            <b>ARTIK_ZIGBEE_NETWORK_FIND_ERR</b>
+             }</td></tr><tr class="memdesc:af96c096c6999f31f16c03aee176016b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network find status. <br></td></tr>
+            
+            <tr class="separator:af96c096c6999f31f16c03aee176016b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ac532f8bbe43c7f8d3e07b41e4f949336"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac532f8bbe43c7f8d3e07b41e4f949336"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>artik_zigbee_service_discovery_result</b> { <b>ARTIK_ZIGBEE_SERVICE_DISCOVERY_RECEIVED</b> = 3240, 
+            <b>ARTIK_ZIGBEE_SERVICE_DISCOVERY_DONE</b>, 
+            <b>ARTIK_ZIGBEE_SERVICE_DISCOVERY_ERROR</b>
+             }</td></tr>
+            <tr class="separator:ac532f8bbe43c7f8d3e07b41e4f949336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a7b3f5c2c5bf75a5dd0c592450b95dcd0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b3f5c2c5bf75a5dd0c592450b95dcd0"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a7b3f5c2c5bf75a5dd0c592450b95dcd0">artik_zigbee_response_type</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_NOTIFICATION</b> = 3300, 
+            <b>ARTIK_ZIGBEE_RESPONSE_CLIENT_TO_SERVER_COMMAND_RECEIVED</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_ATTRIBUTE_CHANGE</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_REPORTING_CONFIGURE</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_REPORT_ATTRIBUTE</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_IDENTIFY_FEEDBACK_START</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_IDENTIFY_FEEDBACK_STOP</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_NETWORK_NOTIFICATION</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_NETWORK_FIND</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_DEVICE_DISCOVER</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_BROADCAST_IDENTIFY_QUERY</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_GROUPS_INFO</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_COMMISSIONING_STATUS</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_COMMISSIONING_TARGET_INFO</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_COMMISSIONING_BOUND_INFO</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_IEEE_ADDR_RESP</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_SIMPLE_DESC_RESP</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_MATCH_DESC_RESP</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_END_DEVICE_BIND</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_BASIC_RESET_TO_FACTORY</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_RESPONSE_LEVEL_CONTROL</b>, 
+            <b>ARTIK_ZIGBEE_RESPONSE_NONE</b> = 3399
+            <br>
+             }</td></tr><tr class="memdesc:a7b3f5c2c5bf75a5dd0c592450b95dcd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving response type from ZigBee Daemon. <br></td></tr>
+            
+            <tr class="separator:a7b3f5c2c5bf75a5dd0c592450b95dcd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ad2737de75c181ae5fadb882552f7aaa2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2737de75c181ae5fadb882552f7aaa2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#ad2737de75c181ae5fadb882552f7aaa2">artik_zigbee_attribute_type</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_ATTR_ONOFF_STATUS</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_LEVELCONTROL_LEVEL</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_COLOR_HUE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_COLOR_SATURATION</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_ATTR_COLOR_CURRENT_X</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_COLOR_CURRENT_Y</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_COLOR_TEMP</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_FAN_MODE</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_ATTR_FAN_MODE_SEQUENCE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_OCCUPIED_HEATING_SETPOINT</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_OCCUPIED_COOLING_SETPOINT</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_SYSTEM_MODE</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_ATTR_CONTROL_SEQUENCE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_ILLUMINANCE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_TEMPERATURE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_OCCUPANCY</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_ATTR_THERMOSTAT_TEMPERATURE</b>, 
+            <b>ARTIK_ZIGBEE_ATTR_NONE</b>
+            <br>
+             }</td></tr><tr class="memdesc:ad2737de75c181ae5fadb882552f7aaa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribute change type. <br></td></tr>
+            
+            <tr class="separator:ad2737de75c181ae5fadb882552f7aaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a274f7bb0ef0b4daba3626942b702927e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a274f7bb0ef0b4daba3626942b702927e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#a274f7bb0ef0b4daba3626942b702927e">artik_zigbee_tx_power</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_8</b> = 8, 
+            <b>ARTIK_ZIGBEE_TX_POWER_7</b> = 7, 
+            <b>ARTIK_ZIGBEE_TX_POWER_6</b> = 6, 
+            <b>ARTIK_ZIGBEE_TX_POWER_5</b> = 5, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_4</b> = 4, 
+            <b>ARTIK_ZIGBEE_TX_POWER_3</b> = 3, 
+            <b>ARTIK_ZIGBEE_TX_POWER_2</b> = 2, 
+            <b>ARTIK_ZIGBEE_TX_POWER_1</b> = 1, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_0</b> = 0, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS1</b> = -1, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS2</b> = -2, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS3</b> = -3, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_MINUS4</b> = -4, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS5</b> = -5, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS6</b> = -6, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS7</b> = -7, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_MINUS8</b> = -8, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS9</b> = -9, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS11</b> = -11, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS12</b> = -12, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_MINUS14</b> = -14, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS17</b> = -17, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS20</b> = -20, 
+            <b>ARTIK_ZIGBEE_TX_POWER_MINUS26</b> = -26, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_TX_POWER_MINUS43</b> = -43
+            <br>
+             }</td></tr><tr class="memdesc:a274f7bb0ef0b4daba3626942b702927e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selectable tx power level. <br></td></tr>
+            
+            <tr class="separator:a274f7bb0ef0b4daba3626942b702927e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:aea510be7aa4868ef55648873515064ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea510be7aa4868ef55648873515064ef"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#aea510be7aa4868ef55648873515064ef">artik_zigbee_reporting_type</a> { <b>ARTIK_ZIGBEE_REPORTING_THERMOSTAT_TEMPERATURE</b> = 0, 
+            <b>ARTIK_ZIGBEE_REPORTING_OCCUPANCY_SENSING</b>, 
+            <b>ARTIK_ZIGBEE_REPORTING_MEASURED_ILLUMINANCE</b>, 
+            <b>ARTIK_ZIGBEE_REPORTING_MEASURED_TEMPERATURE</b>
+             }</td></tr><tr class="memdesc:aea510be7aa4868ef55648873515064ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request for device attribute information reporting. <br></td></tr>
+            
+            <tr class="separator:aea510be7aa4868ef55648873515064ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ab047b954fe7b9b67facb53a50eb45d5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab047b954fe7b9b67facb53a50eb45d5c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#ab047b954fe7b9b67facb53a50eb45d5c">artik_zigbee_commissioning_state</a> { <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_COMMISSIONING_ERROR</b> = 0x00, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_ERR_IN_PROGRESS</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_NETWORK_STEERING_FORM</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_NETWORK_STEERING_SUCCESS</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_COMMISSIONING_NETWORK_STEERING_FAILED</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_WAIT_NETWORK_STEERING</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_TARGET_SUCCESS</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_TARGET_STOP</b>, 
+            <br>
+            &#160;&#160;<b>ARTIK_ZIGBEE_COMMISSIONING_TARGET_FAILED</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_INITIATOR_SUCCESS</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_INITIATOR_STOP</b>, 
+            <b>ARTIK_ZIGBEE_COMMISSIONING_INITIATOR_FAILED</b>
+            <br>
+             }</td></tr><tr class="memdesc:ab047b954fe7b9b67facb53a50eb45d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commissioning state Used in callback, to notify user. <br></td></tr>
+            
+            <tr class="separator:ab047b954fe7b9b67facb53a50eb45d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:af88ce551f3f19973238d710ae3f56156"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af88ce551f3f19973238d710ae3f56156"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="artik__zigbee_8h.html#af88ce551f3f19973238d710ae3f56156">artik_zigbee_binding_type</a> { <b>ARTIK_UNUSED_BINDING</b> = 0, 
+            <b>ARTIK_UNICAST_BINDING</b> = 1, 
+            <b>ARTIK_MANY_TO_ONE_BINDING</b> = 2, 
+            <b>ARTIK_MULTICAST_BINDING</b> = 3
+             }</td></tr><tr class="memdesc:af88ce551f3f19973238d710ae3f56156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zigbee binding type. <br></td></tr>
+            
+            <tr class="separator:af88ce551f3f19973238d710ae3f56156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table><table class="memberdecls">
+            <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+            Variables</h2></td></tr>
+            <tr class="memitem:ab0da9b39d4223489e7174c61f4af3a83"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0da9b39d4223489e7174c61f4af3a83"></a>
+            const <a class="el" href="structartik__zigbee__device__on__off__switch.html">artik_zigbee_device_on_off_switch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_on_off_switch_func</b></td></tr>
+            <tr class="separator:ab0da9b39d4223489e7174c61f4af3a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a538dfe32899076748e19c992f1c01769"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a538dfe32899076748e19c992f1c01769"></a>
+            const <a class="el" href="structartik__zigbee__device__level__control__switch.html">artik_zigbee_device_level_control_switch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_level_control_switch_func</b></td></tr>
+            <tr class="separator:a538dfe32899076748e19c992f1c01769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:ab0ea348c89df7b3e1a8b070c9b2b354d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0ea348c89df7b3e1a8b070c9b2b354d"></a>
+            const <a class="el" href="structartik__zigbee__device__on__off__light.html">artik_zigbee_device_on_off_light</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_on_off_light_func</b></td></tr>
+            <tr class="separator:ab0ea348c89df7b3e1a8b070c9b2b354d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:adf0284e9239faf8aad820acc418dc978"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf0284e9239faf8aad820acc418dc978"></a>
+            const <a class="el" href="structartik__zigbee__device__dimmable__light.html">artik_zigbee_device_dimmable_light</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_dimmable_light_func</b></td></tr>
+            <tr class="separator:adf0284e9239faf8aad820acc418dc978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a8de66f97f7db5511c63d0d3801b0b75d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8de66f97f7db5511c63d0d3801b0b75d"></a>
+            const <a class="el" href="structartik__zigbee__device__light__sensor.html">artik_zigbee_device_light_sensor</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_light_sensor_func</b></td></tr>
+            <tr class="separator:a8de66f97f7db5511c63d0d3801b0b75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a0aa827b52b8ad5c429c34a97e7e4e5dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0aa827b52b8ad5c429c34a97e7e4e5dd"></a>
+            const <a class="el" href="structartik__zigbee__device__remote__control.html">artik_zigbee_device_remote_control</a>&#160;</td><td class="memItemRight" valign="bottom"><b>device_remote_control_func</b></td></tr>
+            <tr class="separator:a0aa827b52b8ad5c429c34a97e7e4e5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            <tr class="memitem:a83e31be603f02f3ebc4f5c88e016ee65"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83e31be603f02f3ebc4f5c88e016ee65"></a>
+            const <a class="el" href="structartik__zigbee__module.html">artik_zigbee_module</a>&#160;</td><td class="memItemRight" valign="bottom"><b>zigbee_module</b></td></tr>
+            <tr class="separator:a83e31be603f02f3ebc4f5c88e016ee65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+            </table>
+            <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+            <div class="textblock"><p>Definitions and functions for accessing the ZigBee module and performing operations </p>
+            
+            <p>Definition in file <a class="el" href="artik__zigbee_8h_source.html">artik_zigbee.h</a>.</p>
+            </div></div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2017-06-12 16:05:31 +0000'>Jun 12 2017,  4:05 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="datasheets"]').parent();
+      $($sideNavListItem).insertBefore($betaFeatures);
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1393 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='aws-iot-jitr.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta content='ARTIK Documentation: IoT -- JIT Register' property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta content='ARTIK Documentation: IoT -- JIT Register' name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Documentation: IoT -- JIT Register</title>
+    <link href="..\..\..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\..\..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="..\..\..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_artik documentation_artik_cloud-services documentation_artik_cloud-services_aws documentation_artik_cloud-services_aws_aws-iot-jitr' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="..\..\..\images\logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\..\..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\..\..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\..\..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="true">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="index.htm" data-directory="true" data-name="aws-iot" aria-expanded="true">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false" class="active">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\..\..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\..\..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\..\..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\..\..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\..\..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\..\..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\..\..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            <h1 id="aws-iot-device-registration">AWS IoT Device Registration</h1>
+            
+            <p>You can create an ecosystem in which your ARTIK modules auto-register with AWS on initial connection – based on the unique keys and certificates with which you have provisioned the modules.</p>
+            
+            <p>Your cloud-based code checks against your "whitelist" to decide whether the device may safely be connected. The initial communication takes place over an SSL/TLS-secured channel, with an unhackable key in ARTIK Secure Storage.</p>
+            
+            <p>This tutorial describes how to use AWS and OpenSSL to create and install the keys and certificates needed. It is designed for use with the ARTIK 530 or 710 board with the Ubuntu OS installed.</p>
+            
+            <p><img src="..\..\..\images\docs\developer-guide\aws-iot-registration.jpg" class="lightbox"></p>
+            
+            <h3 id="references">References</h3>
+            <p><a href="https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/" target="_blank">Just In Time Registration of Device Certificates on AWS IoT</a></p>
+            
+            <p><a href="https://aws.amazon.com/blogs/iot/deploy-fleets-easily-with-aws-iot-device-management-services/" target="_blank">Deploy Fleets Easily with AWS IoT Device Management services</a></p>
+            
+            <p><a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-certs-your-own.html" target="_blank">Use Your Own Certificate</a></p>
+            
+            <p><a href="https://www.digitalocean.com/community/tutorials/openssl-essentials-working-with-ssl-certificates-private-keys-and-csrs" target="_blank">OpenSSL Essentials - Digital Ocean</a></p>
+            
+            <h2 id="prerequisites">Prerequisites</h2>
+            
+            <p>Follow the <a href="index.htm">introductory article</a> to set up your AWS account, the CLI, and your credentials.</p>
+            
+            <h2 id="one-time-ca-cert-registration">One-time CA Cert Registration</h2>
+            
+            <p>You'll need to register a CA certificate with AWS. Typically, you might do this once for each type of device you plan to use with AWS IoT.</p>
+            
+            <p>Start here by creating an intermediate CA certificate. Later in the process you'll derive a second certificate, uniquely identifying a single one of your devices, and put both on the device.</p>
+            
+            <p>For the purposes of this tutorial, you will be acting as a Certificate Authority. You'll need access to the CA private key to act on a certificate signing request. For background on this topic, refer to <a href="..\..\..\advanced-concepts\secure\secure-intro.html#creating-certificates">create your own "mini CA"</a>. In this example, we'll use ECC instead RSA for the CA certificate.</p>
+            
+            <ul>
+              <li>
+                <p><strong>Begin by entering into the Python virtual environment.</strong> You'll need to be in Python 3.5 whenever you need to use the AWS CLI.<br>
+            <code>source ~/cli-ve/bin/activate</code><br>
+            You'll use<br>
+            <code>deactivate</code> <br>
+            to leave the environment and return to normal Python 2.7 operation, which (for example) you'll need to do for AWS Greengrass operations.</p>
+              </li>
+              <li>
+                <p><strong>Make sure you are connected to a network before issuing any AWS CLI commands.</strong></p>
+              </li>
+            </ul>
+            
+            <h3 id="request-an-aws-registration-code">Request an AWS registration code</h3>
+            
+            <p>As you may know, during a TLS handshake, the certificate Common Name gets transmitted to the server.  By using an AWS-generated registration code as Common Name, AWS will receive this information on every attempt at secure connection (even if the process is not completed).</p>
+            
+            <p>In the following procedures, you'll use an AWS registration code as the certificate Common Name when assembling a Certificate Signing Request (CSR). Run the code request command now.</p>
+            
+            <p><code>aws iot get-registration-code</code></p>
+            
+            <p>Copy the response – you'll use it shortly.</p>
+            
+            <h3 id="obtain-or-create-a-ca-certificate">Obtain or Create a CA certificate</h3>
+            
+            <p>Normally you'd start with a CA certificate signed by the root provider of your choice, but here you will simply generate one as your own <a href="..\..\..\advanced-concepts\secure\secure-intro.html#creating-certificates">mini CA</a>.</p>
+            
+            <p>Generate your CA private key and public certificate using ECC parameters.</p>
+            
+            <p><code>openssl ecparam -out sampleCACertificate.key -name prime256v1 -genkey</code></p>
+            
+            <p><code>openssl req -x509 -new -nodes -key sampleCACertificate.key -sha256 -days 365 -out sampleCACertificate.pem</code></p>
+            
+            <p>For the purposes of this article, we'll consider <code>sampleCACertificate.pem</code> to be a valid intermediate CA certificate.</p>
+            
+            <p>You could instead have chosen to make an <a data-toggle="collapse" href="#create-rsa-ca" aria-expanded="false" aria-controls="create-rsa-ca">
+                RSA intermediate CA certificate.
+              </a></p>
+            
+            <div class="collapse" id="create-rsa-ca">
+              <div class="boxed" style="max-height:200px">
+            
+                <p>
+            
+            Generate RSA intermediate CA certificate
+            </p>
+            
+                <p><code>openssl genrsa -out rsaCACertificate.key 2048</code><br>
+            <br>
+            <code>openssl req -x509 -new -nodes -key rsaCACertificate.key -sha256 -days 365 -out rsaCACertificate.pem</code></p>
+            
+              </div>
+            </div>
+            
+            <h3 id="register-the-ca-certificate">Register the CA certificate</h3>
+            
+            <p>Starting from a valid intermediate CA certificate, we'll register it with AWS IoT.</p>
+            
+            <ol>
+              <li>
+                <p><strong>Create a privateKeyVerification key</strong> that will be used to sign the CSR. Here we create ECC keys so that the CSR can be signed by our ECC CA.</p>
+            
+                <p><code>openssl ecparam -out privateKeyVerification.key -name prime256v1 -genkey</code></p>
+              </li>
+              <li>
+                <p><strong>Create a certificate signing request</strong> using the key.</p>
+            
+                <p><code>openssl req -new -key privateKeyVerification.key -out privateKeyVerification.csr</code></p>
+            
+                <p>During the ensuing interrogation, copy in the AWS registration code you got earlier as the Common Name (CN). When you get to the challenge password, just hit enter to skip through.</p>
+              </li>
+              <li>
+                <p><strong>Create a submission package</strong> containing both the CA certificate and privateKeyVerification certificate inside a single file.</p>
+            
+                <p><code>openssl x509 -req -in privateKeyVerification.csr -CA sampleCACertificate.pem -CAkey sampleCACertificate.key -CAcreateserial -out privateKeyVerification.crt -days 365 -sha256</code></p>
+              </li>
+              <li>
+                <p><strong>Register the CA and privateKeyVerification certificates with AWS.</strong> An example response is shown.</p>
+            
+                <p><span class="code-font">
+            <code>aws iot register-ca-certificate --ca-certificate file://sampleCACertificate.pem --verification-certificate file://privateKeyVerification.crt</code>
+             <span class="code-font"><br>
+            {
+             "certificateId": "2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",
+             "certificateArn": "arn:aws:iot:us-west-2:759497405763:cacert/2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025"
+            }
+            </span></span></p>
+              </li>
+            </ol>
+            
+            <p>Your CA certificate for your product is now "on file" with AWS IoT.</p>
+            
+            <p>You could instead have chosen to register an <a data-toggle="collapse" href="#register-rsa-ca" aria-expanded="false" aria-controls="register-rsa-ca">
+                RSA certificate.
+              </a></p>
+            
+            <div class="collapse" id="register-rsa-ca">
+              <div class="boxed">
+            
+                <p>
+            
+            <strong>Register CA Certificate using RSA instead of ECC</strong>
+            </p>
+                <ol>
+            <li>
+            
+            
+            Create a privateKeyVerification key.  
+            <br>
+            	<code>openssl genrsa -out rsaPrivate.key 2048</code>
+            </li>
+            
+            <li>
+            
+            
+            Create a certificate signing request using the AWS registration code you received earlier.  
+            <br>
+            	<code>openssl req -new -key rsaPrivate.key -out rsaPrivate.csr</code>
+            </li>
+            
+            
+            <li>
+            
+            Create a submission package.   
+            <br>
+            	<code>openssl x509 -req -in rsaPrivate.csr -CA rsaCACertificate.pem -CAkey rsaCACertificate.key -CAcreateserial -out rsaPrivate.crt -days 365 -sha256</code>
+            
+            
+            </li>
+            <li>
+            
+            Register with AWS.
+            <br>
+            	<span class="code-font">(cli-ve) [root@artik ~]#</span> <code>aws iot register-ca-certificate --ca-certificate file://rsaCACertificate.pem --verification-certificate file://rsaPrivate.crt</code>
+            <br><br>
+            	<span class="code-font">{
+            	    "certificateId": "15ce939dcbd415769b1fd3dcac665d370cbd822c68957e8758c76e0c79526fd0",
+            	    "certificateArn": "arn:aws:iot:us-west-2:759497405763:cacert/15ce939dcbd415769b1fd3dcac665d370cbd822c68957e8758c76e0c79526fd0"
+            </span>
+            
+            
+            
+            
+            </li>
+            </ol>
+            
+                <p>A new RSA CA cert is now registered with AWS.<br>
+            <br>
+            CA key and cert:  <br>
+            – rsaCACertificate.key  <br>
+            – rsaCACertificate.pem</p>
+            
+              </div>
+            </div>
+            
+            <p>Take a look at the output from your submission to see that both your CA common name and the AWS IoT registration code are bound together.</p>
+            
+            <p><code>openssl x509 -in _your_cert_name_.crt -noout -text</code></p>
+            
+            <h3 id="review-activate-certificate-enable-device-auto-registration">Review, activate certificate, enable device auto-registration</h3>
+            
+            <p>A small amount of setup is required to activate your certificate. Here we'll show you the quick way to do it.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the AWS IoT dashboard and select <strong>Secure</strong> » <strong>CAs</strong>.</p>
+              </li>
+              <li>
+                <p>Click on the certificate corresponding to the certificate ID you just saw in the ARTIK board CLI. You'll see that the ID matches.</p>
+            
+                <p><img src="..\..\..\images\docs\getting-started-artik\aws-iot-view-cas.jpg" class="lightbox"></p>
+              </li>
+              <li>
+                <p>Click <strong>Actions</strong> (upper right corner) and select "Activate".</p>
+              </li>
+              <li>
+                <p>Click <strong>Actions</strong> again and select "Enable auto-registration".</p>
+              </li>
+            </ol>
+            
+            <p>Your certificate is now configured to accept connection requests from ARTIK.</p>
+            
+            <p>You could instead have chosen to make these configuration changes directly from the AWS CLI. For details, click to  <a data-toggle="collapse" href="#cli-reg" aria-expanded="false" aria-controls="cli-reg">
+                register using the CLI.
+              </a></p>
+            
+            <div class="collapse" id="cli-reg">
+              <div class="boxed">
+            
+                <p>
+            
+            <strong>Register Using CLI</strong>
+            
+            
+            </p>
+            
+                <p><strong>Verify status.</strong> Use this command to show the certificate and its status.</p>
+            
+                <p><code>aws iot describe-ca-certificate --certificate-id &lt;certificateId&gt;</code></p>
+            
+                <p>For example:</p>
+            
+                <p><span class="code-font">(cli-ve) [root@artik ~]# </span><code>aws iot describe-ca-certificate --certificate-id 2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025</code></p>
+                <pre>&#x000A;{&#x000A;    "certificateDescription": {&#x000A;    "creationDate": 1533917086.702,&#x000A;    "status": "INACTIVE",&#x000A;    "certificateId": "2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",&#x000A;    "autoRegistrationStatus": "DISABLE",&#x000A;    "ownedBy": "759497405763",&#x000A;    "certificateArn": "arn:aws:iot:us-west-2:759497405763:cacert/2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",&#x000A;    "certificatePem": "-----BEGIN CERTIFICATE-----\n&#x000A;MIICaDCCAg2gAwIBAgIJAOoTEQt/sIu+MAoGCCqGSM49BAMCMIGPMQswCQYDVQQG\n&#x000A;EwJVUzELMAkGA1UECAwCQ0ExETAPBgNVBAcMCFNhbiBKb3NlMRAwDgYDVQQKDAdT\n&#x000A;YW1zdW5nMQ4wDAYDVQQLDAVTLUxTSTESMBAGA1UEAwwJbWFya3MtaW90MSowKAYJ\n&#x000A;KoZIhvcNAQkBFhttYS53aWxsaWFtc0Bzc2kuc2Ftc3VuZy5jb20wHhcNMTgwODEw\n&#x000A;MTU0ODU0WhcNMTkwODEwMTU0ODU0WjCBjzELMAkGA1UEBhMCVVMxCzAJBgNVBAgM\n&#x000A;AkNBMREwDwYDVQQHDAhTYW4gSm9zZTEQMA4GA1UECgwHU2Ftc3VuZzEOMAwGA1UE\n&#x000A;CwwFUy1MU0kxEjAQBgNVBAMMCW1hcmtzLWlvdDEqMCgGCSqGSIb3DQEJARYbbWEu\n&#x000A;d2lsbGlhbXNAc3NpLnNhbXN1bmcuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcD\n&#x000A;QgAE0VzPToBtE7POu+TisgnUqMOo4j6l5B6baItslLrZ11t6WVLydJQB1ZL0kq31\n&#x000A;MqkL2cqJ3oFLcL4Djo6p989bt6NQME4wHQYDVR0OBBYEFKbUWc69BcL5xjGzJujR\n&#x000A;/h/xvCWJMB8GA1UdIwQYMBaAFKbUWc69BcL5xjGzJujR/h/xvCWJMAwGA1UdEwQF\n&#x000A;MAMBAf8wCgYIKoZIzj0EAwIDSQAwRgIhANW4eu9RrFQYVFTq43oEYI9vJquXQB9h\n&#x000A;EzG8dQ1+G+S0AiEA7rH+xRdWPYAKiEndRtGQsaeq42mmQ38gt/hHuacL6F0=\n&#x000A;-----END CERTIFICATE-----\n"&#x000A;    }&#x000A;}&#x000A;(cli-ve) [root@artik ~]#</pre>
+            
+                <p><strong>Activation.</strong> By default, the CA certificate that is registered is in inactive state, so you need activate the registered CA using AWS CLI. If the CA certificate is not in active state, AWS IoT will not register any device (client) certificates.</p>
+            
+                <p>Activate the CA certificate by updating the CA status to ACTIVE through the AWS CLI.</p>
+            
+                <p><code>aws iot update-ca-certificate --certificate-id &lt;certificateId&gt; --new-status ACTIVE</code></p>
+            
+                <pre>&#x000A;&#x000A;(cli-ve) [root@artik ~]# aws iot update-ca-certificate --certificate-id 2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025 --new-status ACTIVE&#x000A;(cli-ve) [root@artik ~]#&#x000A;&#x000A;</pre>
+            
+                <p><strong>Auto registration.</strong>  Optionally, devices can be registered automatically the first time they connect to AWS IoT.  This feature defaults to disabled after initial certificate activation. Opt in for auto-registration of device certificates by enabling auto-registration status for the CA, using the CLI.</p>
+            
+                <p><code>aws iot update-ca-certificate --certificate-id &lt;certificateId&gt; --new-auto-registration-status ENABLE</code></p>
+            
+                <p><strong>Verify updated status.</strong> This time, you'll see the changes you've made.</p>
+            
+                <p><span class="code-font">
+            (cli-ve) [root@artik ~]# </span><code>aws iot describe-ca-certificate --certificate-id 2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025</code></p>
+                <pre>{&#x000A;  "certificateDescription": {&#x000A;  "certificatePem": "-----BEGIN CERTIFICATE-----\n&#x000A;  MIICaDCCAg2gAwIBAgIJAOoTEQt/sIu+MAoGCCqGSM49BAMCMIGPMQswCQYDVQQG\n&#x000A;  . . .&#x000A;  EzG8dQ1+G+S0AiEA7rH+xRdWPYAKiEndRtGQsaeq42mmQ38gt/hHuacL6F0=\n&#x000A;  -----END CERTIFICATE-----\n",&#x000A;        "creationDate": 1533917086.702,&#x000A;        "status": <strong>"ACTIVE"</strong>,&#x000A;        "certificateId": "2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",&#x000A;        "ownedBy": "759497405763",&#x000A;        "certificateArn": "arn:aws:iot:us-west-2:759497405763:cacert/2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",&#x000A;        "autoRegistrationStatus": <strong>"ENABLE"</strong>&#x000A;    }&#x000A;}</pre>
+            
+              </div>
+            </div>
+            
+            <h2 id="provisioning-each-device">Provisioning Each Device</h2>
+            
+            <p>For each device unit you expect to connect to AWS IoT, you must provision that device with its own key.</p>
+            
+            <p>Here, using the CA certificate we created previously and registered with AWS IoT, we will generate a device certificate (client certificate) and key that uniquely identify this individual unit.</p>
+            
+            <p>This time, the Common Name (CN) and other information refer to your own device, so you don't use the registration code here.</p>
+            
+            <p>The serial number of the certificate will be used to prepare a "white list" of devices that are approved for eventual registration, as discussed in the next article. You can read it from the certificate as shown. AWS IoT can provide this value upon initial connection to check against your list.</p>
+            
+            <p><code>openssl x509 -in rsaDevCert.crt -noout -text</code></p>
+            
+            <p>In the following sections, we give you two options: External ECC keys or internal RSA keys. You can choose either, or do both for comparison.</p>
+            
+            <h3 id="provision-with-ecc">Provision with ECC</h3>
+            
+            <p>This procedure creates an ECC key externally.</p>
+            
+            <ol>
+              <li>
+                <p>Generate an ECC private key.</p>
+            
+                <p><code>openssl ecparam -out deviceCert.key -name prime256v1 -genkey</code></p>
+              </li>
+              <li>
+                <p>Use it to create a certificate signing request (CSR). Replace the subject information as you choose.</p>
+            
+                <p><code>openssl req -new -key deviceCert.key -out deviceCert.csr -subj "/O=company/OU=team/CN=marks-iot/C=US"</code></p>
+              </li>
+              <li>
+                <p>Submit the CSR to your CA for signing, to create a device-unique certificate.</p>
+            
+                <p><code>openssl x509 -req -in deviceCert.csr -CA sampleCACertificate.pem -CAkey sampleCACertificate.key -out deviceCert.crt -days 365 -sha256 -set_serial 0x123456</code></p>
+              </li>
+              <li>
+                <p>Concatenate it with your CA certificate.</p>
+            
+                <p><code>cat deviceCert.crt sampleCACertificate.pem &gt; deviceCertAndCACert.crt</code></p>
+            
+                <p>You now have a client device certificate chain <span class="code-font">deviceCertAndCACert.crt</span> that will be sent to AWS as part of the TLS handshake process.</p>
+              </li>
+            </ol>
+            
+            <h3 id="provision-with-rsa-place-in-secure-storage">Provision with RSA, place in Secure Storage</h3>
+            
+            <p>This procedure creates an RSA key externally and puts it in Secure Storage for later secure access.</p>
+            
+            <ol>
+              <li>
+                <p>Generate an RSA private key.</p>
+            
+                <p><code>openssl genrsa -out rsaDevCert.key 2048</code></p>
+              </li>
+              <li>
+                <p>Convert it to DER format and put it in Secure Storage.</p>
+            
+                <p><code>openssl rsa -in rsaDevCert.key -outform DER -out rsaDevCert.der</code><br>
+             <code>see_test -K set-key -a 4097 -k rsaDevCert.key -I rsaDevCert.der</code></p>
+              </li>
+              <li>
+                <p>Use the key to create a certificate signing request (CSR). Replace the subject information as you choose.</p>
+            
+                <p><code>openssl req -new -key rsaDevCert.key -out "filename.csr" -subj "/O=company/OU=team/CN=marks-iot/C=US"</code></p>
+            
+                <p>You can view the CSR if you want.</p>
+            
+                <p><code>openssl req -text -noout -verify -in filename.csr</code></p>
+              </li>
+              <li>
+                <p>Submit the CSR to your CA for signing, to create a device-unique certificate.</p>
+            
+                <p><code>openssl x509 -req -in filename.csr -CA rsaCACertificate.pem -CAkey rsaCACertificate.key -out rsaDevCert.crt -days 365 -sha256 -set_serial 0x123456</code></p>
+              </li>
+              <li>
+                <p>Concatenate it with your CA certificate.</p>
+            
+                <p><code>cat rsaDevCert.crt rsaCACertificate.pem &gt; rsaDevCertAndCACert.crt</code></p>
+              </li>
+            </ol>
+            
+            <p>You now have a client device certificate chain <span class="code-font">rsaDevCertAndCACert.crt</span> that will be sent to AWS as part of the TLS handshake process.</p>
+            
+            <!---
+            
+            ### Provision with RSA generated by Secure Element
+            
+            
+            Ideally, we'd like to use the Secure Element for key generation and CSR creation.
+            
+            This approach is not valid for older SDKs. The generated Exponent can be a large value (not fixed to 0x10001), so it fails in most use cases. SDK 1.9.0 and newer allow generation of the correct Exponent.
+            {:.warning}
+            
+            1. Generate an rsa2048 private key internally.  
+            
+            	`see_test -K gen-key -k "my_rsa" -a 4097`
+            
+            2. Without ever exposing the key, use it to create a certificate signing request (CSR). Replace the subject information as you choose.
+            
+            	`openssl req -new -engine artiksee -key "rsa2048://my_rsa" -keyform e -out "filename.csr" -subj "/O=company/OU=team/CN=marks-iot/C=US"`
+            
+            	You can view the CSR if you want. Note the large Exponent.
+            
+            	`openssl req -text -noout -verify -in filename.csr`
+            
+            
+            3. Submit the CSR to your CA for signing, to create a device-unique certificate.
+            
+            	`openssl x509 -req -in filename.csr -CA rsaCACertificate.pem -CAkey rsaCACertificate.key -out rsaDevCert.crt -days 365 -sha256 -set_serial 0x123456`
+            
+            5. Concatenate it with your CA certificate.
+            
+            	`cat rsaDevCert.crt rsaCACertificate.pem > rsaDevCertAndCACert.crt`
+            
+            You now have a client device certificate chain that will be sent to AWS as part of the TLS handshake process. 
+            
+            --->
+            
+            <h2 id="initial-testing-and-connect-event">Initial Testing and Connect Event</h2>
+            
+            <p>Your ARTIK board is now ready to communicate with AWS IoT.  At this stage, we want you to see that you can make a connection to the AWS IoT MQTT broker, that it will attempt to connect through TLS, but will reject the connection. However, it will also trigger an event that you can act on in the cloud.</p>
+            
+            <p>When a device with a previously unknown cert (issued by registered CA) connects to AWS IoT for the first time, it will be auto-registered in  PENDING_ACTIVATION state. Any device that is in PENDING_ACTIVATION state will fail to connect after the TLS handshake.</p>
+            
+            <h3 id="set-up-viewing-of-event-message-on-aws-iot-console">Set up viewing of event message on AWS IoT Console</h3>
+            
+            <p>Here you'll be switching to an AWS IoT test console that will allow you to see the event message that results from your connect attempt.</p>
+            
+            <p class="warning">The MQTT messaging path here is UNRELATED to the MQTT command you are sending from your ARTIK board.</p>
+            
+            <p>The event message is published to an MQTT topic that is serviced in the cloud and does not involve ARTIK.
+            That is, ANY method by which you connect on the ARTIK board to AWS IoT (WebSockets, HTTPS, MQTTS) would still result in the same event message published to the same topic at a separate MQTT endpoint.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the AWS IoT Console, under <strong>Test</strong>.</p>
+              </li>
+              <li>
+                <p>Select "Subscribe to a topic".</p>
+              </li>
+              <li>
+                <p>Enter the following subscription topic, where <code>#</code> indicates that a message based on any certificate will be accepted.</p>
+            
+                <p><code>$aws/events/certificates/registered/#</code></p>
+              </li>
+              <li>
+                <p>Click the [Subscribe to topic] button.</p>
+              </li>
+            </ol>
+            
+            <p>The console jumps to a "Publish" page, but you will only be looking for incoming subscription messages below that.</p>
+            
+            <h3 id="trigger-event----ecc-device-cert-and-key">Trigger event – ECC device cert and key</h3>
+            
+            <p>You'll be using a command line MQTT client to publish a message to AWS IoT. You could instead  use <a href="..\..\..\advanced-concepts\mqtt\color-mqtt.html">Node-RED</a>, the <a href="..\..\..\developer-guide\ethernet-wifi\ap.html#kura-management-portal">Kura</a> portal integrated MQTT console, ARTIK SDK, or other means that you find more convenient.</p>
+            
+            <ol>
+              <li>
+                <p>Install the <span class="code-font">mosquitto</span> client on your ARTIK board.<br>
+             <code>apt install mosquitto-clients</code></p>
+              </li>
+              <li>
+                <p>The AWS Root CA certificate should come in the standard bundle on your board. To be sure, find it  <a href="https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem" target="_blank">here</a>, copy it into the file indicated, and reference it as <span class="code-font">--cafile</span>.</p>
+            
+                <p><code>vi root.cert</code></p>
+              </li>
+              <li>
+                <p>Copy and paste this command line into your ARTIK console, but don't hit Enter yet.</p>
+            
+                <p><span class="code-font">[root@artik ~]#</span> <code>mosquitto_pub --cafile root.cert --cert deviceCertAndCACert.crt --key deviceCert.key -h _your_custom_endpoint_.amazonaws.com -p 8883 -q 1 -t  foo/bar -i  anyclientID --tls-version tlsv1.2 -m "Hello" -d</code></p>
+              </li>
+              <li>
+                <p>Go to the AWS IoT Console, under <strong>Settings</strong>, and copy the Custom Endpoint for your account. It will look something like this:</p>
+            
+                <p><code>abcdefgh1234567.iot.us-west-2.amazonaws.com</code></p>
+              </li>
+              <li>
+                <p>Replace <code>_your_custom_endpoint_.amazonaws.com</code> in the command line with your own copied endpoint.</p>
+              </li>
+            </ol>
+            
+            <p><strong>Trigger the event message.</strong> On your ARTIK console, hit Enter. You should see:</p>
+            
+            <pre>&#x000A;Client anyclientID sending CONNECT&#x000A;Error: The connection was lost.</pre>
+            
+            <p>indicating that the connection was made but then rejected.</p>
+            
+            <p>Now look at the AWS IoT console. You should see the event message published, indicating that a new device has tried to connect and needs attention.</p>
+            
+            <pre>&#x000A;{&#x000A;  "certificateId": "4c4d5d97687eb429ccda703664155164bf1c388d0dd714bbf8526b79a25d4b6b",&#x000A;  "caCertificateId": "2d12b5bb2574dab95d54d98bfa07a20fb8a81d23208ffddf58b77971ec0d4025",&#x000A;  "timestamp": 1534527652433,&#x000A;  "certificateStatus": "PENDING_ACTIVATION",&#x000A;  "awsAccountId": "123456123456",&#x000A;  "certificateRegistrationTimestamp": "1534527528642"&#x000A;}</pre>
+            
+            <p>That was it! You can see that AWS IoT has securely recognized the device as one of your own, and is giving you the opportunity to either activate it or take other action.</p>
+            
+            <p>We'll assemble a cloud-based AWS Lambda function in the next section to automatically take care of these events in the future.</p>
+            
+            <h3 id="trigger-event----rsa-cert-and-secured-key">Trigger event – RSA cert and secured key</h3>
+            
+            <p>The ECC method used an exposed key file. To create a connect event securely, you can instead use the RSA key you copied into ARTIK Secure Storage.</p>
+            
+            <p>Because this phase of testing requires only an initial connection attempt, an MQTT client is not required; instead, you can use a simple openssl connection to trigger the event.</p>
+            
+            <ol>
+              <li>
+                <p>Go to the AWS IoT Console, under <strong>Settings</strong>, and copy the Custom Endpoint for your account. It will look something like this:</p>
+            
+                <p><code>abcdefgh1234567.iot.us-west-2.amazonaws.com</code></p>
+              </li>
+              <li>
+                <p>Replace <code>_your_custom_endpoint_.amazonaws.com</code> in the command line with your own copied endpoint.</p>
+              </li>
+            </ol>
+            
+            <p><code>openssl s_client -connect _your_custom_endpoint_.amazonaws.com:8883 -engine artiksee -cert rsaDevCertAndCACert.crt -keyform e -key rsa2048://rsaDevCert.key  --cipher "ECDHE-ECDSA-AES256-GCM-SHA384"</code></p>
+            
+            <p><strong>Trigger the event message.</strong> When you hit Enter on your ARTIK console, you should see full details of the connection process.</p>
+            
+            <p>Now look at the AWS IoT MQTT broker console. You should see the event message published (as shown for ECC), indicating that a new device has tried to connect and needs attention.</p>
+            
+            <h2 id="servicing-the-event">Servicing the event</h2>
+            
+            <p>Now that AWS IoT has become aware of the connecting device, it's time to service the event. We'll be using the <a href="https://aws.amazon.com/blogs/iot/just-in-time-registration-of-device-certificates-on-aws-iot/" target="_blank">Just-In-Time Registration</a> (JITR) feature of AWS IoT to determine, based on the device ID, exactly how to validate, register, and configure it.</p>
+            
+            <p>Normally, when you manually connect a device to AWS IoT for the first time, you would need to:</p>
+            
+            <ul>
+              <li>
+                <p><a href="https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html">Register the device in the registry</a> (get a certificate ID to uniquely identify that device)</p>
+              </li>
+              <li>
+                <p><a href="https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html">Create an AWS IoT Policy</a> that tells AWS what permissions this device will have (can it publish messages? subscribe to topics?)</p>
+              </li>
+              <li>
+                <p><a href="https://docs.aws.amazon.com/iot/latest/developerguide/attach-policy-to-certificate.html">Attach the policy to the device certificate</a></p>
+              </li>
+            </ul>
+            
+            <p>With JITR, these steps can all be taken care of in the cloud, by the AWS Lambda function that receives the connect event notification. We put links above for your reference, but we'll be automating the process in the next article.</p>
+            
+            <p><a href="lambda.html"><strong>» Create JITR Lambda Function</strong></a></p>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2018-10-31 15:21:25 +0000'>Oct 31 2018,  3:21 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+              <li class='prev-page'><a href="aws-iot.html">Prev: IoT -- Overview</a></li>
+              <li class='next-page'><a href="lambda.html">Next: Lambda - JIT Register</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\..\..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\..\..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

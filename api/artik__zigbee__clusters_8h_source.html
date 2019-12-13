@@ -1,0 +1,988 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link href='artik__zigbee__clusters_8h_source.html' rel='canonical'>
+    <meta charset='utf-8'>
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <meta content='width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0' name='viewport'>
+    <meta content='UA-62517590-18' name='ua-id'>
+    <meta property='og:title'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' property='og:image'>
+    <meta content='ARTIK Documentation' property='og:site_name'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' property='og:description'>
+    <meta content='summary_large_image' name='twitter:card'>
+    <meta content='@SamsungIoT' name='twitter:site'>
+    <meta content='@SamsungIoT' name='twitter:creator'>
+    <meta name='twitter:title'>
+    <meta content='Here you will find information to help you get started, as well as the developer guides for more advanced activities.' name='twitter:description'>
+    <meta content='https://developer.artik.io//documentation/images/artik-modules-og.png?1549048075' name='twitter:image'>
+    <meta class='swiftype' content='modules' data-type='string' name='tags'>
+    <meta class='swiftype' content='developer' data-type='string' name='tags'>
+    <meta class='swiftype' content='5.0' data-type='float' name='doc_weight'>
+    <title>ARTIK Software API: inc/zigbee/artik_zigbee_clusters.h Source File</title>
+    <link href="..\stylesheets\application.css?1549048074" rel="stylesheet">
+    <link href="https://static.artik.io/css/navigation_v3.css" rel="stylesheet">
+    <link href="..\stylesheets\print.css?1549048074" rel="stylesheet" media="print">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="search\search.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="shortcut icon" href="..\images\favicon-family.ico">
+    <!-- Start of samsungartik Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","samsungartik.zendesk.com");
+    /*]]>*/</script>
+    <!-- End of samsungartik Zendesk Widget script -->
+    
+    <script>
+      window.zESettings = {
+        webWidget: {
+          chat: {
+            suppress: true
+          },
+          helpCenter: {
+            suppress: true
+          }
+        }
+      };
+    
+      zE(function() {
+        zE.hide();
+      });
+    </script>
+  </head>
+  <body class='documentation documentation_api documentation_api_artik__zigbee__clusters_8h_source' data-offset='50' data-spy='scroll' data-target='#toc'>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NG3HTN5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NG3HTN5');</script>
+    <header class="sa-header" data-swiftype-index="false">
+      <nav class="navbar yamm navbar-default">
+        <div class="sa-container">
+          <div class="navbar-header">
+            
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sa-collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+              <img alt="Samsung ARTIK" src="logo.png?1549048075">
+            </a>
+          </div>
+    
+          <div class="collapse navbar-collapse" id="sa-collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="/">Downloads Archive</a>
+              </li>
+              <li>
+                <a href="..\index.htm" class="active">Documentation Archive</a>
+              </li>
+              <li>
+                <a href="https://www.artik.io/blog/">Blog Archive</a>
+              </li>
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class='container container-full-width'>
+      <div class='content side'>
+        <a class='toggle-menu' href='#'>
+          &#8595;
+        </a>
+        <nav class='section-nav' data-swiftype-index='false'>
+          <ul class='section-nav-list'>
+            <li class='section-nav-item'>
+              <h4 class='section-title'>
+                Documentation
+              </h4>
+              <div class='section-subtitle'><a href="..\index.htm">Quick Index</a></div>
+              <ul class='subsections'>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\security-topics\index.htm" data-name="security-topics" aria-expanded="false">Security Topics</a>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\overview.html" data-name="artik-overview-faq" aria-expanded="false">ARTIK Overview / FAQ</a>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="artik-0-020-030" aria-expanded="true" override="true">ARTIK 0 (020/030)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\in-the-box.html" data-name="open-the-box-and-go" aria-expanded="false">Open the box and go!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-0\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-0\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0]'>
+                  <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="artik-0-053-055" aria-expanded="true" override="true">ARTIK 0 (053/055)</a>
+                  <ul class='subsections'>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\in-the-box.html" data-name="in-the-box" aria-expanded="false">In the box</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\communicate.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\board-ref.html" data-name="board-reference-br-header-map-gpio" aria-expanded="false">Board Reference /<br>Header Map / GPIO</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\up-to-date.html" data-name="bring-sdk-up-to-date" aria-expanded="false">Bring SDK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\getting-started\s-modules.html" data-name="font-color-green-strong-s-modules-strong-font" aria-expanded="false"><font color="green"><strong>"s" modules</strong></font></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-subscriber.html" data-name="mqtt-subscriber" aria-expanded="false">MQTT Subscriber</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-publisher.html" data-name="mqtt-publisher" aria-expanded="false">MQTT Publisher</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\mqtt-to-cloud.html" data-name="mqtt-to-artik-cloud" aria-expanded="false">MQTT to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\tutorials\i2c.html" data-name="i2c-interface" aria-expanded="false">I2C Interface</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik-05x\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\aws-iot-sdk.html" data-name="aws-iot-sdk" aria-expanded="false">AWS IoT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\smartthings.html" data-name="smartthings-iot" aria-expanded="false">SmartThings IoT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\modbus.html" data-name="shoreline-modbus" aria-expanded="false">Shoreline -- Modbus</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\projects\smart-light.html" data-name="smart-dimmable-light-artik-cloud" aria-expanded="false">Smart Dimmable Light -- ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0]'>
+                      <a href="..\artik-05x\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\communicate-053.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\configure-053.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik-05x\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="artik-5-7-10" aria-expanded="true" override="true">ARTIK 5 / 7 / 10</a>
+                  <ul class='subsections'>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\getting-started\index.htm" data-directory="true" data-name="getting-started" aria-expanded="false">Getting Started</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\in-the-box.html" data-name="in-the-box-antennas-br-board-reference" aria-expanded="false">In the box / antennas /<br>board reference</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\powering-up.html" data-name="power-up-the-board" aria-expanded="false">Power up the board</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\prepare-ide.html" data-name="set-up-the-artik-ide" aria-expanded="false">Set up the ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\up-to-date.html" data-name="bring-artik-up-to-date" aria-expanded="false">Bring ARTIK up-to-date</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\connect.html" data-name="connect-to-the-world" aria-expanded="false">Connect to the World</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\getting-started\s-modules.html" data-name="strong-s-strong-modules" aria-expanded="false"><strong>s</strong> modules</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\tutorials\index.htm" data-directory="true" data-name="tutorials" aria-expanded="false">Tutorials</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\say-hello.html" data-name="first-say-hello" aria-expanded="false">First: Say Hello!</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\blink-an-led.html" data-name="blink-an-led" aria-expanded="false">Blink an LED</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\read-a-button.html" data-name="read-a-button-press" aria-expanded="false">Read a button press</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\sensor-tutorial.html" data-name="sensors-artik-ide" aria-expanded="false">Sensors -- ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\tutorials\node-red.html" data-name="intro-to-node-red" aria-expanded="false">Intro to Node-RED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\cloud-services\index.htm" data-directory="true" data-name="iot-in-the-cloud" aria-expanded="false">IoT in the Cloud</a>
+                      <ul class='subsections'>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\aws\index.htm" data-directory="true" data-name="aws-iot" aria-expanded="false">AWS IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\greengrass.html" data-name="greengrass-azul" aria-expanded="false">Greengrass + Azul</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot.html" data-name="iot-overview" aria-expanded="false">IoT -- Overview</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\aws-iot-jitr.html" data-name="iot-jit-register" aria-expanded="false">IoT -- JIT Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\aws\lambda.html" data-name="lambda-jit-register" aria-expanded="false">Lambda - JIT Register</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\azure\index.htm" data-directory="true" data-name="azure-iot" aria-expanded="false">Azure IoT</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-enroll.html" data-name="hub-enroll-x-509" aria-expanded="false">Hub - Enroll X.509</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-register.html" data-name="hub-register" aria-expanded="false">Hub - Register</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\artik\cloud-services\azure\azure-iot-edge.html" data-name="edge-stream" aria-expanded="false">Edge - Stream</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\artik\cloud-services\google\index.htm" data-directory="true" data-name="google-iot" aria-expanded="false">Google IoT</a>
+                          <ul class='subsections'>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\thingworx.html" data-name="thingworx" aria-expanded="false">ThingWorx</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\opc-ua.html" data-name="opc-ua-interface" aria-expanded="false">OPC-UA Interface</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\cloud-services\node-red-cloud.html" data-name="sense-tecnic-fred" aria-expanded="false">Sense Tecnic -- FRED</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\ml\index.htm" data-directory="true" data-name="machine-learning" aria-expanded="false">Machine Learning</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\ml\tensorflowlite.html" data-name="machine-learning-tensorflow" aria-expanded="false">Machine Learning-TensorFlow</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\db\index.htm" data-directory="true" data-name="database-services" aria-expanded="false">Database Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\db\influx.html" data-name="store-data-influxdb" aria-expanded="false">Store Data - InfluxDB</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\remote-cloud\index.htm" data-directory="true" data-name="cloud-services" aria-expanded="false">Cloud Services</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\rekognition.html" data-name="objects-rekognition" aria-expanded="false">Objects - Rekognition</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\s3.html" data-name="file-bucket-s3" aria-expanded="false">File Bucket - S3</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\goog-asst.html" data-name="voice-assistant-google" aria-expanded="false">Voice Assistant-Google</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\remote-cloud\kairos.html" data-name="recognize-faces-kairos" aria-expanded="false">Recognize Faces-Kairos</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\projects\index.htm" data-directory="true" data-name="technology-projects" aria-expanded="false">Technology Projects</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\arduino-if.html" data-name="arduino-i-f-projects" aria-expanded="false">Arduino I-F Projects</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\gesture-tutorial.html" data-name="gesture-control" aria-expanded="false">Gesture Control</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\trashcan.html" data-name="smart-trash-can" aria-expanded="false">Smart Trash Can</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\facial-recog.html" data-name="face-identity-detection" aria-expanded="false">Face/Identity Detection</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\cellular.html" data-name="cellular-modem" aria-expanded="false">Cellular Modem</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\projects\canbus.html" data-name="serial-can-bus" aria-expanded="false">Serial CAN Bus</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\artik\advanced-concepts\index.htm" data-directory="true" data-name="advanced-developers" aria-expanded="false">Advanced Developers</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\prepare-dev-env.html" data-name="set-up-environment" aria-expanded="false">Set Up Environment</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\compile.html" data-name="compile-and-load" aria-expanded="false">Compile and Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\sign.html" data-name="kms-code-signing" aria-expanded="false">KMS Code Signing</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\configure.html" data-name="customization-tools" aria-expanded="false">Customization Tools</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\artik\advanced-concepts\verified-boot.html" data-name="verified-boot" aria-expanded="false">Verified Boot</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\developer-guide\index.htm" data-directory="true" data-name="developer-guide" aria-expanded="true">Developer Guide</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\artik-ide\index.htm" data-directory="true" data-name="artik-ide-terminal" aria-expanded="false">ARTIK IDE / Terminal</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\install-ide.html" data-name="installing-artik-ide" aria-expanded="false">Installing ARTIK IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\serial-debug.html" data-name="terminal-console" aria-expanded="false">Terminal Console</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\linux-apps.html" data-name="building-linux-apps" aria-expanded="false">Building Linux Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\tizen-apps.html" data-name="building-tizen-rt-apps" aria-expanded="false">Building Tizen RT Apps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\create-sdk.html" data-name="creating-tizen-rt-sdk" aria-expanded="false">Creating Tizen RT SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\update-sdk.html" data-name="updating-artik-sdk" aria-expanded="false">Updating ARTIK SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\artik-ide\release_notes.html" data-name="release-notes" aria-expanded="false">Release Notes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\ethernet-wifi\index.htm" data-directory="true" data-name="ethernet-and-wi-fi" aria-expanded="false">Ethernet and Wi-Fi</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ethernet.html" data-name="ethernet" aria-expanded="false">Ethernet</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\wifi.html" data-name="wi-fi-client" aria-expanded="false">Wi-Fi Client</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\ap.html" data-name="wi-fi-access-point" aria-expanded="false">Wi-Fi Access Point</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\p2p.html" data-name="wi-fi-direct-p2p" aria-expanded="false">Wi-Fi Direct/P2P</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ethernet-wifi\proxies.html" data-name="proxies-and-certificates" aria-expanded="false">Proxies and Certificates</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\gpio\index.htm" data-directory="true" data-name="programmable-pins" aria-expanded="false">Programmable Pins</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\gpio-mapping.html" data-name="gpio-header-maps" aria-expanded="false">GPIO Header Maps</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\gpio\kernel-gpio.html" data-name="pin-programming" aria-expanded="false">Pin Programming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\multimedia\index.htm" data-directory="true" data-name="audio-display-camera" aria-expanded="false">Audio-Display-Camera</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\audio-guide.html" data-name="audio-record-play" aria-expanded="false">Audio Record/Play</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\camera-input-guide-a10.html" data-name="mipi-camera" aria-expanded="false">MIPI Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\usb-camera.html" data-name="usb-camera" aria-expanded="false">USB Camera</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\multimedia\display.html" data-name="mipi-lvds-hdmi-display" aria-expanded="false">MIPI/LVDS/HDMI Display</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\wireless-iot\index.htm" data-directory="true" data-name="wireless-iot-networks" aria-expanded="false">Wireless IoT Networks</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\bluetooth\index.htm" data-directory="true" data-name="bluetooth" aria-expanded="false">Bluetooth</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-central.html" data-name="artik-5-7-linux" aria-expanded="false">ARTIK 5/7 -- Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\bluetooth\bluetooth-020.html" data-name="artik-020-gcc-iar" aria-expanded="false">ARTIK 020 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zigbee\index.htm" data-directory="true" data-name="zigbee" aria-expanded="false">ZigBee</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-cli.html" data-name="zigbee-cli" aria-expanded="false">ZigBee CLI</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-prog.html" data-name="artik-5-7-sdk-api" aria-expanded="false">ARTIK 5/7 SDK API</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\libzigbee.html" data-name="artik-5-7-libzigbee" aria-expanded="false">ARTIK 5/7 libzigbee</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\wireless-iot\zigbee\zigbee-030.html" data-name="artik-030-gcc-iar" aria-expanded="false">ARTIK 030 -- gcc/IAR</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\zwave.html" data-name="z-wave" aria-expanded="false">Z-Wave</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\sigfox.html" data-name="sigfox" aria-expanded="false">SIGFOX</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\wireless-iot\hass.html" data-name="home-assistant" aria-expanded="false">Home Assistant</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\storage\index.htm" data-directory="true" data-name="usb-and-microsd" aria-expanded="false">USB and microSD</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\microSD-usb.html" data-name="microsd-and-usb-storage" aria-expanded="false">microSD and USB Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-device.html" data-name="usb-device" aria-expanded="false">USB -- Device</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\storage\usb-host.html" data-name="usb-host" aria-expanded="false">USB -- Host</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\developer-guide\ide\index.htm" data-directory="true" data-name="software-tools" aria-expanded="false">Software Tools</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\arduino.html" data-name="arduino-ide" aria-expanded="false">Arduino IDE</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'>
+                          <a href="..\developer-guide\ide\eclipse\index.htm" data-directory="true" data-name="eclipse-ide" aria-expanded="false">Eclipse IDE</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-cdt.html" data-name="linux" aria-expanded="false">>> Linux</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\eclipse-win.html" data-name="windows" aria-expanded="false">>> Windows</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\developer-guide\ide\eclipse\sysroot.html" data-name="artik-sdk" aria-expanded="false">>> ARTIK SDK</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\iar.html" data-name="iar-embedded-workbench-arm-ide" aria-expanded="false">IAR Embedded Workbench ARM IDE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\resin-io.html" data-name="resin-io" aria-expanded="false">resin-io</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\simplicity.html" data-name="simplicity-studio" aria-expanded="false">Simplicity Studio</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\ide\virtualbox.html" data-name="virtualbox" aria-expanded="false">VirtualBox</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\libraries\index.htm" data-directory="true" data-name="libraries" aria-expanded="false">Libraries</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\arduino-lib.html" data-name="arduino-libraries-overview" aria-expanded="false">Arduino Libraries - Overview</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\libraries\temboo.html" data-name="temboo-arduino-library" aria-expanded="false">Temboo Arduino Library</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\developer-guide\update-image\index.htm" data-directory="true" data-name="updating-artik-image" aria-expanded="false">Updating ARTIK Image</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\updating-artik-image.html" data-name="update-full-image-br-microsd" aria-expanded="false">Update Full Image <br>(microSD)</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-update.html" data-name="update-image-over-usb" aria-expanded="false">Update Image over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\usb-recovery.html" data-name="recovery-over-usb" aria-expanded="false">Recovery over USB</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\u-boot.html" data-name="environment-variables-update" aria-expanded="false">Environment Variables Update</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\developer-guide\update-image\ncp-update.html" data-name="zigbee-thread-radio-ncp-update" aria-expanded="false">ZigBee/Thread Radio (NCP) Update</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[5, 7, 10]'>
+                  <a href="..\advanced-concepts\index.htm" data-directory="true" data-name="advanced-concepts" aria-expanded="true">Advanced Concepts</a>
+                  <ul class='subsections'>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\mqtt\index.htm" data-directory="true" data-name="mqtt-web-coding" aria-expanded="false">MQTT/Web Coding</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt.html" data-name="mqtt-message-broker" aria-expanded="false">MQTT Message Broker</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-adv.html" data-name="mqtt-pub-sub-topics" aria-expanded="false">MQTT Pub/Sub Topics</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-web.html" data-name="web-window-to-mqtt" aria-expanded="false">Web Window to MQTT</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-client.html" data-name="publish-to-artik-cloud" aria-expanded="false">Publish to ARTIK Cloud</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-arduino.html" data-name="artik-cloud-via-arduino" aria-expanded="false">ARTIK Cloud via Arduino</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\mqtt\color-mqtt-actions.html" data-name="actions-and-artik-cloud" aria-expanded="false">Actions and ARTIK Cloud</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure\index.htm" data-directory="true" data-name="ssl-tls-security" aria-expanded="false">SSL/TLS Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-intro.html" data-name="ssl-tls-secured-links" aria-expanded="false">SSL/TLS-Secured Links</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\secure-programs.html" data-name="start-up-program-load" aria-expanded="false">Start-up Program Load</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure\wifi-reconnect.html" data-name="robust-wi-fi" aria-expanded="false">Robust Wi-Fi</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-os\index.htm" data-directory="true" data-name="s-module-security" aria-expanded="false">s Module Security</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-os.html" data-name="secure-os-and-tls" aria-expanded="false">Secure OS and TLS</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-storage.html" data-name="secure-storage" aria-expanded="false">Secure Storage</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api-sdk.html" data-name="security-api-thru-sdk" aria-expanded="false">Security API thru SDK</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-api.html" data-name="security-api-thru-see" aria-expanded="false">Security API thru SEE</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\openssl.html" data-name="openssl-support" aria-expanded="false">OpenSSL Support</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\secure-boot.html" data-name="secure-boot" aria-expanded="false">Secure Boot</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\jtag-lock.html" data-name="jtag-port-lock" aria-expanded="false">JTAG Port Lock</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-os\kms.html" data-name="production-kms" aria-expanded="false">Production KMS</a>
+                        </li>
+                        <li data-family='[5, 7, 10]'><a href="..\security-api\index.htm" data-directory="true" data-name="security-api" aria-expanded="false">ARTIK Security (SEE) API</a></li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\onboarding\index.htm" data-directory="true" data-name="onboarding-qr-codes" aria-expanded="false">Onboarding/QR Codes</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\onboarding.html" data-name="on-boarding" aria-expanded="false">On-boarding</a>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\onboarding\qr-codes.html" data-name="printing-qr-codes" aria-expanded="false">Printing QR Codes</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-family='[0, 5, 7, 10]'>
+                      <a href="..\advanced-concepts\secure-ota\index.htm" data-directory="true" data-name="ota-firmware-update" aria-expanded="false">OTA Firmware Update</a>
+                      <ul class='subsections'>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\gateway-ota\index.htm" data-directory="true" data-name="gateway-a530-710" aria-expanded="false">Gateway-A530/710</a>
+                          <ul class='subsections'>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\gateway-ota\general-ota.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\wifi-ota\index.htm" data-directory="true" data-name="wi-fi-node-a05x" aria-expanded="false">Wi-Fi Node - A05X</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\wifi-ota\edge-node-update.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li data-family='[0]'>
+                          <a href="..\advanced-concepts\secure-ota\thread-ota\index.htm" data-directory="true" data-name="thread-node-a030" aria-expanded="false">Thread Node - A030</a>
+                          <ul class='subsections'>
+                            <li data-family='[0]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\ota-guide.html" data-name="update-procedure" aria-expanded="false">Update Procedure</a>
+                            </li>
+                            <li data-family='[0, 5, 7, 10]'>
+                              <a href="..\advanced-concepts\secure-ota\thread-ota\enm-intro.html" data-name="edge-node-manager" aria-expanded="false">Edge Node Manager</a>
+                            </li>
+                            <li class='enm-nav' data-family='[0, 5, 7, 10]'><a href="..\advanced-concepts\coap\enm-rest-api\index.htm" data-directory="false" aria-expanded="false">ENM REST API</a></li>
+                          </ul>
+                        </li>
+                        <li data-family='[0, 5, 7, 10]'>
+                          <a href="..\advanced-concepts\secure-ota\signing.html" data-name="package-signing" aria-expanded="false">Package Signing</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li data-family='[0, 5, 7, 10]'>
+                  <a href="..\changelog.html" data-name="changelog" aria-expanded="false">Changelog</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id='st-results-container'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='st-filters'>
+                  <h3>Filter results by</h3>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='modules'>
+                      ARTIK Modules
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='cloud'>
+                      ARTIK Cloud
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='developer'>
+                      Developer
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='forums'>
+                      Forums
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <input type='checkbox' value='marketplace'>
+                      IoT Marketplace
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-12'>
+                <div id='swiftype-results'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='main content' data-view='Content'>
+          <div class='table-of-contents'>
+            <h2 class='table-of-contents-title'>Older Versions</h2>
+            <p style='padding: 0 28px;'>Older API versions are available as a download. To view, extract the file and open the index.html file in a web browser.</p>
+          </div>
+          <div id='family-selectors'>
+            <button data-family='0'>ARTIK 0</button>
+            <button data-family='5'>ARTIK 5/7/10</button>
+            <!-- %button{data: { family: 7 }} ARTIK 7 -->
+            <!-- %button{data: { family: 10 }} ARTIK 10 -->
+          </div>
+          <div id='sdk-version-selector'>
+            <label>API Version</label>
+            <select>
+              <option value='/documentation/api/artik__zigbee__clusters_8h_source.html'>1.8</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-7/download'>1.7</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-6/download'>1.6</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-5/download'>1.5</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-4/download'>1.4</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-3/download'>1.3</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-2/download'>1.2</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-1/download'>1.1</option>
+              <option value='https://developer.artik.io/downloads/sdk-doc-1-0/download'>1.0</option>
+            </select>
+          </div>
+          <div class='main-content-interior' data-swiftype-name='body' data-swiftype-type='text'>
+            
+            
+            <div id="side-nav" class="ui-resizable side-nav-resizable">
+              <div id="nav-tree">
+                <div id="nav-tree-contents">
+                  <div id="nav-sync" class="sync"></div>
+                </div>
+              </div>
+              <div id="splitbar" style="-moz-user-select:none;" class="ui-resizable-handle">
+              </div>
+            </div>
+            <script type="text/javascript">
+            $(document).ready(function(){initNavTree('artik__zigbee__clusters_8h_source.html','');});
+            </script>
+            <div id="doc-content">
+            <!-- window showing the filter options -->
+            <div id="MSearchSelectWindow" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()" onkeydown="return searchBox.OnSearchSelectKey(event)">
+            </div>
+            
+            <!-- iframe showing the search results (closed by default) -->
+            <div id="MSearchResultsWindow">
+            <iframe src="javascript:void(0)" frameborder="0" name="MSearchResults" id="MSearchResults">
+            </iframe>
+            </div>
+            
+            <div class="header">
+              <div class="headertitle">
+            <div class="title">artik_zigbee_clusters.h</div>  </div>
+            </div><!--header-->
+            <div class="contents">
+            <a href="artik__zigbee__clusters_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright 2017 Samsung Electronics All Rights Reserved.</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *      http://www.apache.org/licenses/LICENSE-2.0</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing,</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * software distributed under the License is distributed on an</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * either express or implied. See the License for the specific</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * language governing permissions and limitations under the License.</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef __ARTIK_ZIGBEE_CLUSTERS_H__</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define __ARTIK_ZIGBEE_CLUSTERS_H__</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a27010295b597677ad80cf36afedc1422">   38</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ARTIK_ZIGBEE_GROUPS_ADD = 3230,</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ARTIK_ZIGBEE_GROUPS_REMOVE,</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ARTIK_ZIGBEE_GROUPS_REMOVE_ALL,</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ARTIK_ZIGBEE_GROUPS_ADD_IF_IDENTIFYING</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a27010295b597677ad80cf36afedc1422">artik_zigbee_group_command</a>;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structartik__zigbee__groups__info.html">   48</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> group_id;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> endpoint_id;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    artik_zigbee_group_command group_cmd;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <a class="code" href="structartik__zigbee__groups__info.html">artik_zigbee_groups_info</a>;</div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structartik__zigbee__scene__mgmt__info.html">   56</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> scene_count;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> current_scene;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> current_group;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> scene_valid;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <a class="code" href="structartik__zigbee__scene__mgmt__info.html">artik_zigbee_scene_mgmt_info</a>;</div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#aa129df30dce6eea1d0cbebd3c6a3ec2d">   66</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ARTIK_ZIGBEE_ONOFF_OFF = 3220,</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    ARTIK_ZIGBEE_ONOFF_ON,</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ARTIK_ZIGBEE_ONOFF_TOGGLE</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#aa129df30dce6eea1d0cbebd3c6a3ec2d">artik_zigbee_onoff_status</a>;</div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structartik__zigbee__onoff__info.html">   75</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    artik_zigbee_onoff_status prev_value;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    artik_zigbee_onoff_status curr_value;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    artik_zigbee_onoff_status command;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">int</span> endpoint_id;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <a class="code" href="structartik__zigbee__onoff__info.html">artik_zigbee_onoff_info</a>;</div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#aed7fbc5ab38481fa925b763f73a315a2">   84</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_LEVEL = 0x00,</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ARTIK_ZIGBEE_MOVE = 0x01,</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ARTIK_ZIGBEE_STEP = 0x02,</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ARTIK_ZIGBEE_STOP = 0x03,</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_LEVEL_ONOFF = 0x04,</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ARTIK_ZIGBEE_MOVE_ONOFF = 0x05,</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ARTIK_ZIGBEE_STEP_ONOFF = 0x06,</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ARTIK_ZIGBEE_STOP_ONOFF = 0x07</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#aed7fbc5ab38481fa925b763f73a315a2">artik_zigbee_level_control_type</a>;</div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a61d07735f4898d1b8d03b8fac0354225">   97</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ARTIK_ZIGBEE_LEVEL_CONTROL_UP = 0x00,</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ARTIK_ZIGBEE_LEVEL_CONTROL_DOWN = 0x01</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a61d07735f4898d1b8d03b8fac0354225">artik_zigbee_level_control_mode</a>;</div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structartik__zigbee__level__control__command.html">  104</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="artik__zigbee__clusters_8h.html#aed7fbc5ab38481fa925b763f73a315a2">artik_zigbee_level_control_type</a> control_type;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">union </span>{</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">int</span> level;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">int</span> transition_time; <span class="comment">/* tenths of a second */</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        } move_to_level;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a61d07735f4898d1b8d03b8fac0354225">artik_zigbee_level_control_mode</a> control_mode;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">int</span> rate; <span class="comment">/* changes per second */</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        } move;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a61d07735f4898d1b8d03b8fac0354225">artik_zigbee_level_control_mode</a> control_mode;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordtype">int</span> step_size;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordtype">int</span> transition_time; <span class="comment">/* tehnths of a second */</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        } step;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    } parameters;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;} <a class="code" href="structartik__zigbee__level__control__command.html">artik_zigbee_level_control_command</a>;</div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structartik__zigbee__level__control__update.html">  126</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">int</span> prev_level;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">int</span> curr_level;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">int</span> endpoint_id;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;} <a class="code" href="structartik__zigbee__level__control__update.html">artik_zigbee_level_control_update</a>;</div><div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a8092cc3239d8e429b6629f8392064ed0">  134</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_HUE = 0x00,</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    ARTIK_ZIGBEE_MOVE_HUE,</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    ARTIK_ZIGBEE_STEP_HUE,</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_SATURATION,</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    ARTIK_ZIGBEE_MOVE_SATURATION,</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    ARTIK_ZIGBEE_STEP_SATURATION,</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_HUE_SATURATION,</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_COLOR,</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    ARTIK_ZIGBEE_MOVE_COLOR,</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    ARTIK_ZIGBEE_STEP_COLOR,</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    ARTIK_ZIGBEE_MOVE_TO_COLOR_TEMP,</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    ARTIK_ZIGBEE_EMOVE_TO_HUE = 0x40,</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ARTIK_ZIGBEE_EMOVE_HUE,</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    ARTIK_ZIGBEE_ESTEP_HUE,</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    ARTIK_ZIGBEE_EMOVE_TO_HUE_SATURATION,</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ARTIK_ZIGBEE_COLOR_LOOP_SET,</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    ARTIK_ZIGBEE_STOP_MOVE_STEP = 0x47,</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ARTIK_ZIGBEE_MOVE_COLOR_TEMP = 0x4b,</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    ARTIK_ZIGBEE_STEP_COLOR_TEMP = 0x4c</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a8092cc3239d8e429b6629f8392064ed0">artik_zigbee_color_control_type</a>;</div><div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#aa1ab4a429c3894ed95db095890f9e690">  158</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_DIRECTION_SHORTEST_DISTANCE = 0x00,</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_DIRECTION_LONGEST_DISTANCE = 0x01,</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_DIRECTION_UP = 0x02,</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_DIRECTION_DOWN = 0x03</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#aa1ab4a429c3894ed95db095890f9e690">artik_zigbee_color_control_direction</a>;</div><div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">  167</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_MOVE_MODE_STOP = 0x00,</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_MOVE_MODE_UP = 0x01,</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_MOVE_MODE_DOWN = 0x03</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">artik_zigbee_color_control_move_mode</a>;</div><div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">  175</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_STEP_MODE_UP = 0x01,</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    ARTIK_ZIGBEE_COLOR_CONTROL_STEP_MODE_DOWN = 0x03</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">artik_zigbee_color_control_step_mode</a>;</div><div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a9046be07be00da6ced22e4b2a0ec4e3c">  182</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;ARTIK_ZIGBEE_COLOR_CONTROL_LOOP_ACTION_DEACTIVATE = 0x00,</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;ARTIK_ZIGBEE_COLOR_CONTROL_LOOP_ACTION_ACTIVATE_FROM_START_ENHANCED_HUE = 0x01,</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;ARTIK_ZIGBEE_COLOR_CONTROL_LOOP_ACTION_ACTIVATE_FROM_ENHANCED_CURRENT_HUE = 0x02</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a9046be07be00da6ced22e4b2a0ec4e3c">artik_zigbee_color_control_loop_set_action</a>;</div><div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="structartik__zigbee__color__control__command.html">  190</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="artik__zigbee__clusters_8h.html#a8092cc3239d8e429b6629f8392064ed0">artik_zigbee_color_control_type</a> control_type;</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">union </span>{</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordtype">int</span> hue;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#aa1ab4a429c3894ed95db095890f9e690">artik_zigbee_color_control_direction</a> direction;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        } move_to_hue;</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">artik_zigbee_color_control_move_mode</a> move_mode;</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keywordtype">int</span> rate;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        } move_hue;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">artik_zigbee_color_control_step_mode</a> step_mode;</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">int</span> step_size;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        } step_hue;</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordtype">int</span> saturation;</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        } move_to_sat;</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">artik_zigbee_color_control_move_mode</a> move_mode;</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keywordtype">int</span> rate;</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        } move_sat;</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">artik_zigbee_color_control_step_mode</a> step_mode;</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordtype">int</span> step_size;</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        } step_sat;</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordtype">int</span> hue;</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordtype">int</span> saturation;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        } move_to_hue_sat;</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordtype">int</span> color_x;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordtype">int</span> color_y;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        } move_to_color;</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordtype">int</span> rate_x;</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordtype">int</span> rate_y;</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        } move_color;</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordtype">int</span> step_x;</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordtype">int</span> step_y;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        } step_color;</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordtype">int</span> color_temp;</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        } move_to_color_temp;</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordtype">int</span> update_flag;</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a9046be07be00da6ced22e4b2a0ec4e3c">artik_zigbee_color_control_loop_set_action</a> action;</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#aa1ab4a429c3894ed95db095890f9e690">artik_zigbee_color_control_direction</a> direction;</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">int</span> time;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordtype">int</span> start_hue;</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        } color_loop_set;</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">artik_zigbee_color_control_move_mode</a> move_mode;</div><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordtype">int</span> rate;</div><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordtype">int</span> min_color_temp;</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordtype">int</span> max_color_temp;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        } move_color_temp;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keyword">struct </span>{</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <a class="code" href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">artik_zigbee_color_control_step_mode</a> step_mode;</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordtype">int</span> step_size;</div><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordtype">int</span> transition_time;</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordtype">int</span> min_color_temp;</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordtype">int</span> max_color_temp;</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        } step_color_temp;</div><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    } parameters;</div><div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;} <a class="code" href="structartik__zigbee__color__control__command.html">artik_zigbee_color_control_command</a>;</div><div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="structartik__zigbee__color__control__value.html">  268</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">int</span> hue;</div><div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">int</span> saturation;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">int</span> color_x;</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordtype">int</span> color_y;</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordtype">int</span> color_temp;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;} <a class="code" href="structartik__zigbee__color__control__value.html">artik_zigbee_color_control_value</a>;</div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div><div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a3ead62120a5c5a869078df41d802be30">  279</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    ARTIK_ZIGBEE_OCCUPIED,</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    ARTIK_ZIGBEE_UNOCCUPIED</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a3ead62120a5c5a869078df41d802be30">artik_zigbee_occupancy_status</a>;</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div><div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a49a9b826f41cb606c9ba265ca6a5d8cb">  287</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    ARTIK_ZIGBEE_OCCUPANCY_PIR,</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    ARTIK_ZIGBEE_OCCUPANCY_ULTRASONIC,</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    ARTIK_ZIGBEE_OCCUPANCY_PIR_ULTRASONIC</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a49a9b826f41cb606c9ba265ca6a5d8cb">artik_zigbee_occupancy_type</a>;</div><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div><div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_OFF,</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_LOW,</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_MEDIUM,</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_HIGH,</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_ON,</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_AUTO,</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SMART,</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_RESERVED</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;} artik_zigbee_fan_mode;</div><div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_LOW_MED_HIGH,</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_LOW_HIGH,</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_LOW_MED_HIGH_AUTO,</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_LOW_HIGH_AUTO,</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_ON_AUTO,</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    ARTIK_ZIGBEE_FAN_MODE_SEQUENCE_RESERVED</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;} artik_zigbee_fan_mode_sequence;</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div><div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a863c32b33a9a47c0e461c8ca25013587">  316</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    ARTIK_ZIGBEE_SETPOINT_MODE_HEAT = 0x00,</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    ARTIK_ZIGBEE_SETPOINT_MODE_COOL,</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    ARTIK_ZIGBEE_SETPOINT_MODE_BOTH,</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    ARTIK_ZIGBEE_SETPOINT_MODE_RESERVED</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a863c32b33a9a47c0e461c8ca25013587">artik_zigbee_thermostat_setpoint_mode</a>;</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div><div class="line"><a name="l00326"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#a5a848d232251eee919e28268c99eedb1">  326</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_OFF = 0x00,</div><div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_AUTO,</div><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_COOL,</div><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_HEAT,</div><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_EMERGENCY_HEATING,</div><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_PRECOOLING,</div><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_FAN_ONLY,</div><div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    ARTIK_ZIGBEE_SYSTEM_MODE_RESERVED</div><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#a5a848d232251eee919e28268c99eedb1">artik_zigbee_thermostat_system_mode</a>;</div><div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div><div class="line"><a name="l00340"></a><span class="lineno"><a class="line" href="artik__zigbee__clusters_8h.html#ac9d7add92a056438274993db0e6d6c2d">  340</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_COOLING_ONLY = 0x00,</div><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_COOLING_WITH_REHEAT,</div><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_HEATING_ONLY,</div><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_HEATING_WITH_REHEAT,</div><div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_COOLING_HEATING,</div><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_COOLING_HEATING_WITH_REHEAT,</div><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    ARTIK_ZIGBEE_CONTROL_SEQUENCE_RESERVED</div><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;} <a class="code" href="artik__zigbee__clusters_8h.html#ac9d7add92a056438274993db0e6d6c2d">artik_zigbee_thermostat_control_sequence</a>;</div><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">/* __ARTIK_ZIGBEE_CLUSTERS_H__ */</span><span class="preprocessor"></span></div><div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div><div class="ttc" id="artik__zigbee__clusters_8h_html_ac9d7add92a056438274993db0e6d6c2d"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#ac9d7add92a056438274993db0e6d6c2d">artik_zigbee_thermostat_control_sequence</a></div><div class="ttdeci">artik_zigbee_thermostat_control_sequence</div><div class="ttdoc">The Thermostat control sequence of operation. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00340">artik_zigbee_clusters.h:340</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a25caf8cc1642ee8a7d63f80574b07bd6"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a25caf8cc1642ee8a7d63f80574b07bd6">artik_zigbee_color_control_move_mode</a></div><div class="ttdeci">artik_zigbee_color_control_move_mode</div><div class="ttdoc">The move mode for Color Control. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00167">artik_zigbee_clusters.h:167</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a5a848d232251eee919e28268c99eedb1"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a5a848d232251eee919e28268c99eedb1">artik_zigbee_thermostat_system_mode</a></div><div class="ttdeci">artik_zigbee_thermostat_system_mode</div><div class="ttdoc">The Thermostat system mode. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00326">artik_zigbee_clusters.h:326</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_aa129df30dce6eea1d0cbebd3c6a3ec2d"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#aa129df30dce6eea1d0cbebd3c6a3ec2d">artik_zigbee_onoff_status</a></div><div class="ttdeci">artik_zigbee_onoff_status</div><div class="ttdoc">On/Off status for On/Off cluster This is used when both sending and receiving command. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00066">artik_zigbee_clusters.h:66</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a27010295b597677ad80cf36afedc1422"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a27010295b597677ad80cf36afedc1422">artik_zigbee_group_command</a></div><div class="ttdeci">artik_zigbee_group_command</div><div class="ttdoc">Group command for Group cluster This is used when both sending and receiving command. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00038">artik_zigbee_clusters.h:38</a></div></div>
+            <div class="ttc" id="structartik__zigbee__color__control__value_html"><div class="ttname"><a href="structartik__zigbee__color__control__value.html">artik_zigbee_color_control_value</a></div><div class="ttdoc">The Color current values. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00268">artik_zigbee_clusters.h:268</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a9046be07be00da6ced22e4b2a0ec4e3c"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a9046be07be00da6ced22e4b2a0ec4e3c">artik_zigbee_color_control_loop_set_action</a></div><div class="ttdeci">artik_zigbee_color_control_loop_set_action</div><div class="ttdoc">The loop action for Color Control. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00182">artik_zigbee_clusters.h:182</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_aed7fbc5ab38481fa925b763f73a315a2"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#aed7fbc5ab38481fa925b763f73a315a2">artik_zigbee_level_control_type</a></div><div class="ttdeci">artik_zigbee_level_control_type</div><div class="ttdoc">Level Control cluster command type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00084">artik_zigbee_clusters.h:84</a></div></div>
+            <div class="ttc" id="structartik__zigbee__color__control__command_html"><div class="ttname"><a href="structartik__zigbee__color__control__command.html">artik_zigbee_color_control_command</a></div><div class="ttdoc">The command for cluster Color Control. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00190">artik_zigbee_clusters.h:190</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_aa1ab4a429c3894ed95db095890f9e690"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#aa1ab4a429c3894ed95db095890f9e690">artik_zigbee_color_control_direction</a></div><div class="ttdeci">artik_zigbee_color_control_direction</div><div class="ttdoc">Color Control cluster command direction. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00158">artik_zigbee_clusters.h:158</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a49a9b826f41cb606c9ba265ca6a5d8cb"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a49a9b826f41cb606c9ba265ca6a5d8cb">artik_zigbee_occupancy_type</a></div><div class="ttdeci">artik_zigbee_occupancy_type</div><div class="ttdoc">The sensor type of occupancy. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00287">artik_zigbee_clusters.h:287</a></div></div>
+            <div class="ttc" id="structartik__zigbee__groups__info_html"><div class="ttname"><a href="structartik__zigbee__groups__info.html">artik_zigbee_groups_info</a></div><div class="ttdoc">Structure for receiving a notification of group command from ZigBee Daemon. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00048">artik_zigbee_clusters.h:48</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a8092cc3239d8e429b6629f8392064ed0"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a8092cc3239d8e429b6629f8392064ed0">artik_zigbee_color_control_type</a></div><div class="ttdeci">artik_zigbee_color_control_type</div><div class="ttdoc">Color Control cluster command type. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00134">artik_zigbee_clusters.h:134</a></div></div>
+            <div class="ttc" id="structartik__zigbee__onoff__info_html"><div class="ttname"><a href="structartik__zigbee__onoff__info.html">artik_zigbee_onoff_info</a></div><div class="ttdoc">Structure for receiving a command notification of On/Off cluster from ZigBee Daemon. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00075">artik_zigbee_clusters.h:75</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_aa01968870f1381535cd54dc723762cc3"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#aa01968870f1381535cd54dc723762cc3">artik_zigbee_color_control_step_mode</a></div><div class="ttdeci">artik_zigbee_color_control_step_mode</div><div class="ttdoc">The step mode for Color Control. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00175">artik_zigbee_clusters.h:175</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a3ead62120a5c5a869078df41d802be30"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a3ead62120a5c5a869078df41d802be30">artik_zigbee_occupancy_status</a></div><div class="ttdeci">artik_zigbee_occupancy_status</div><div class="ttdoc">The status of occupancy. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00279">artik_zigbee_clusters.h:279</a></div></div>
+            <div class="ttc" id="structartik__zigbee__scene__mgmt__info_html"><div class="ttname"><a href="structartik__zigbee__scene__mgmt__info.html">artik_zigbee_scene_mgmt_info</a></div><div class="ttdoc">Structure for saving Scene information. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00056">artik_zigbee_clusters.h:56</a></div></div>
+            <div class="ttc" id="structartik__zigbee__level__control__update_html"><div class="ttname"><a href="structartik__zigbee__level__control__update.html">artik_zigbee_level_control_update</a></div><div class="ttdoc">Structure for receiving a update notification of Level Control cluster from ZigBee Daemon...</div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00126">artik_zigbee_clusters.h:126</a></div></div>
+            <div class="ttc" id="structartik__zigbee__level__control__command_html"><div class="ttname"><a href="structartik__zigbee__level__control__command.html">artik_zigbee_level_control_command</a></div><div class="ttdoc">Structure for Level Control cluster command. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00104">artik_zigbee_clusters.h:104</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a863c32b33a9a47c0e461c8ca25013587"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a863c32b33a9a47c0e461c8ca25013587">artik_zigbee_thermostat_setpoint_mode</a></div><div class="ttdeci">artik_zigbee_thermostat_setpoint_mode</div><div class="ttdoc">The Thermostat setpoint mode. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00316">artik_zigbee_clusters.h:316</a></div></div>
+            <div class="ttc" id="artik__zigbee__clusters_8h_html_a61d07735f4898d1b8d03b8fac0354225"><div class="ttname"><a href="artik__zigbee__clusters_8h.html#a61d07735f4898d1b8d03b8fac0354225">artik_zigbee_level_control_mode</a></div><div class="ttdeci">artik_zigbee_level_control_mode</div><div class="ttdoc">Level Control cluster command mode. </div><div class="ttdef"><b>Definition:</b> <a href="artik__zigbee__clusters_8h_source.html#l00097">artik_zigbee_clusters.h:97</a></div></div>
+            </div><!-- fragment --></div><!-- contents -->
+            </div>
+            <div class='page-updated-on'>
+              <i class='fa fa-clock-o'></i>
+              <strong>Last updated on:</strong>
+              <time datetime='2017-08-07 17:35:34 +0000'>Aug 7 2017,  5:35 PM</time>
+            </div>
+            <div></div>
+            <ul class='paging-links'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="sa-footer" data-swiftype-index="false">
+      <section style="display: none;">
+      </section>
+      <section>
+        <div class="sa-container">
+          <div class="row">
+            <div class="col-xs-12">
+              <small>Copyright &copy; 1995-2019 SAMSUNG All Rights Reserved.</small>
+              <div class="pull-right">
+                <a style="margin-right: 10px;" href="javascript:zE.activate()">Contact</a>
+                <a style="margin-right: 10px;" href="/agreement">Developer License Agreement</a>
+                <a href="http://www.samsung.com">Samsung.com <i class="fa fa-chevron-right fa-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+    <script id='toc' type='text/html'>
+      <div>
+        {{#title}}
+        <h2 class='table-of-contents-title'>
+          <a href='#{{href}}'>{{ text }}</a>
+        </h2>
+        {{/title}}
+        <ul class='table-of-contents-list nav'>
+          {{#items}}
+          <li class='{{className}}'>
+            <a href='#{{href}}'>{{text}}</a>
+          </li>
+          {{/items}}
+        </ul>
+      </div>
+    </script>
+    <script src="..\javascripts\manifest.js?1549048180"></script>
+    <script src="..\javascripts\doxygen\resize.js?1549048163"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script type="text/javascript" src="navtreedata.js"></script>
+    <script type="text/javascript" src="navtree.js"></script>
+    <script type="text/javascript" src="search\search.js"></script>
+    
+    <script>
+      $(document).ready(initResizable);
+      $(window).load(resizeHeight);
+      var searchBox = new SearchBox("searchBox", "search",false,'Search');
+    
+      var $sideNav = $('#side-nav').wrap('<li class="api-nav" data-family="[5, 7, 10]"></li>');
+      var $sideNavListItem = $('#side-nav').parent();
+      var $betaFeatures = $('a[data-name="datasheets"]').parent();
+      $($sideNavListItem).insertBefore($betaFeatures);
+    
+      $('#nav-tree').floatingScrollbar();
+    </script>
+    <script src="..\javascripts\lib\scrollbar.js?1549048170"></script>
+    <script type='text/javascript'>
+      function getCookieDomain() {
+        var temp = window.location.hostname.split('.').reverse();
+      
+        if (temp.length == 1) {
+          domain = temp[0]; // localhost
+        } else if (temp.length > 1) {
+          domain = temp[1] + '.' + temp[0]; // staging + production
+        }
+      
+        return domain;
+      }
+      
+      $(function() {
+        if (typeof Cookies.get('eol') === 'undefined') {
+          Cookies.set('eol', 'true', { expires: 0.5, path: '/' });
+      
+          var p = document.createElement('p');
+      
+          p.innerHTML = "Please kindly note that due to the closure of ARTIK business, log-on required services on the ARTIK.io website will no longer be accessible beginning on February 1, 2019.\
+           Most of the menu functionalities will be removed from the website, and we are going to provide only downloads, documentation and blog pages as below:<br>\
+          <br>\
+          <a href='https://developer.artik.io/downloads' target='_blank'>https://developer.artik.io/downloads</a><br>\
+          <a href='https://developer.artik.io/documentation' target='_blank'>https://developer.artik.io/documentation</a><br>\
+          <a href='https://www.artik.io/blog' target='_blank'>https://www.artik.io/blog</a><br>\
+          <br>\
+          The downloads, documentation and blog pages will be accessible until November 30, 2019.\
+           ARTIK.io will be completely shut down on November 30, 2019. All of your personal data and account profile will be permanently and safely destroyed in accordance with the applicable privacy laws.\
+          <br><br>\
+          Thank you for your interest and support towards ARTIK business.";
+      
+          swal({
+            html: true,
+            title: "Dear ARTIK Customers,",
+            content: p,
+            icon: "warning",
+            dangerMode: false,
+          });
+        }
+      
+        // cookies overlay
+        var cookieName = 'cookiesOverlay';
+      
+        _onload_cookiesOverlay = function() {
+          var acceptedPP = !!Cookies.get(cookieName);
+      
+          if (!acceptedPP) {
+            var overlay = document.createElement("div");
+            var policy = '<div class="frame"><p>We use cookies on our website as described in our\
+             <a href="https://www.samsung.com/us/account/privacy-policy/">Privacy Policy</a>,\
+             to enhance your browsing experience and we process personal information in the United States which, for users outside the United States, may have a lower standard of data privacy laws compared to your country of residence. Please click Accept to confirm your acceptance to our use of cookies. By continuing to use the website you are deemed to have consented to our use of cookies.</p>\
+             <a class="button" onclick="cookiesOverlayAcceptPP()">Accept</a></div>';
+      
+            overlay.id = "cookies-alert";
+            overlay.innerHTML = policy;
+            document.getElementsByTagName("body")[0].appendChild(overlay);
+          }
+        }
+      
+        if (window.addEventListener) {window.addEventListener('load', _onload_cookiesOverlay, false);}
+        else {window.attachEvent('onload', _onload_cookiesOverlay)}
+      
+        window.cookiesOverlayAcceptPP = function() {
+          Cookies.set(cookieName, "true", { expires: 365, path: '/', domain: getCookieDomain() });
+          document.getElementById("cookies-alert").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
